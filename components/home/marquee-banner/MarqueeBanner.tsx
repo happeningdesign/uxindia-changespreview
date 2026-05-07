@@ -2,7 +2,7 @@
 
 const items = [
   "India's #1 Design Leadership Gathering",
-  "CXO Dinner · 22 Sep",
+  "CXO Dinner · 23 Sep",
   "Vision & Strategy · 23 Sep",
   "Industry & Practice · 24 Sep",
   "Deep Learning · 25 Sep",
