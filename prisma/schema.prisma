@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model SpeakerSubmission {
+  id                String   @id @default(cuid())
+  createdAt         DateTime @default(now())
+
+  // Selection fields
+  track             String
+  format            String
+  category          String
+
+  // Talk
+  talkTitle         String
+  talkAbstract      String
+  talkDescription   String
+  learningOutcomes  String
+  alignment         String
+
+  // Speaker
+  speakerName       String
+  speakerEmail      String
+  countryCode       String
+  speakerPhone      String
+  speakerTitle      String
+  speakerBio        String
+  speakerPhotoUrl   String
+
+  speakerLinkedin   String?
+  speakerWebsite    String?
+  speakerTwitter    String?
+
+  // Experience
+  experience        String
+  speakingExp       String
+  pastTalks         String?
+  presentationLink  String
+  recordingLink     String?
+
+  // Extras
+  specialRequirements String?
+  attendeeMaterials   String?
+  additionalNotes     String?
+
+  // Confirmations
+  confirmOriginal       Boolean
+  confirmNonPromotional Boolean
+  confirmAvailable      Boolean
+  confirmIteration      Boolean
+  confirmRecording      Boolean
+  confirmCoc            Boolean
+}
