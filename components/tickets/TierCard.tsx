@@ -131,15 +131,18 @@ export default function TierCard({
 
           {/* Price and Chevron */}
           <div className="flex items-start gap-3 flex-shrink-0">
-            <p
-              className="font-sans text-xl font-semibold"
-              style={{
-                color: currentTextColor,
-                textDecoration: isSoldOut || isExpired ? "line-through" : "none",
-              }}
-            >
-              {tier.price.replace("₹", "")}
-            </p>
+            {/* Hide price for upcoming (Coming Soon) state */}
+            {!isUpcoming && (
+              <p
+                className="font-sans text-xl font-semibold"
+                style={{
+                  color: currentTextColor,
+                  textDecoration: isSoldOut || isExpired ? "line-through" : "none",
+                }}
+              >
+                ₹{tier.price.replace("₹", "").replace("₹", "")}
+              </p>
+            )}
             {/* Only show chevron for Leadership Summit (has add-ons) and active state */}
             {hasAddons && isActive && (
               <button
