@@ -56,9 +56,10 @@ export default function TicketsSection() {
     state: getTierState(tier, currentTime),
   }));
 
-  // Find ALL active tiers for each event
-  const lsActiveTiers = lsTiers.filter((t) => t.state === "active");
-  const rlfActiveTiers = rlfTiers.filter((t) => t.state === "active");
+  // Find ALL visible tiers (active + sold_out) for each event
+  // Sold out tiers should still be shown but greyed out
+  const lsVisibleTiers = lsTiers.filter((t) => t.state === "active" || t.state === "sold_out");
+  const rlfVisibleTiers = rlfTiers.filter((t) => t.state === "active" || t.state === "sold_out");
 
   // Find first upcoming tier for each event (for Coming Soon section)
   const lsUpcomingTier = lsTiers.find((t) => t.state === "upcoming");
@@ -114,16 +115,16 @@ export default function TicketsSection() {
             <EventHeader event={risingLeaders} />
           </div>
 
-          {/* Active Tiers with Buy Buttons - Side by Side */}
+          {/* Visible Tiers (Active + Sold Out) with Buy Buttons - Side by Side */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <ActiveTierSection
               event={leadershipSummit}
-              activeTiers={lsActiveTiers}
+              activeTiers={lsVisibleTiers}
               currentTime={currentTime}
             />
             <ActiveTierSection
               event={risingLeaders}
-              activeTiers={rlfActiveTiers}
+              activeTiers={rlfVisibleTiers}
               currentTime={currentTime}
             />
           </div>

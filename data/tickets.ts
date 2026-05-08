@@ -56,7 +56,7 @@ export const leadershipSummit: EventConfig = {
       name: "Super Early Bird",
       order: 0,
       saleStart: "2026-01-01T00:00:00Z",  // Already open
-      soldOutAt: "2026-01-02T00:00:00Z",  // SOLD OUT - past date
+      soldOutAt: "2026-06-30T23:59:59Z",  // Matches saleEnd
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹9,998",
       description: "3-day access to all keynotes, talks, and networking sessions. Includes lunch and conference swag.",
@@ -122,7 +122,7 @@ export const risingLeadersForum: EventConfig = {
       name: "Super Early Bird — Professionals",
       order: 0,
       saleStart: "2026-01-01T00:00:00Z",  // Already open
-      soldOutAt: "2026-01-02T00:00:00Z",  // SOLD OUT - past date
+      soldOutAt: "2026-06-30T23:59:59Z",  // Matches saleEnd
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹7,998",
       description: "3-day access to all keynotes, talks, workshops and networking sessions. Includes lunch and conference swag.",
@@ -133,7 +133,7 @@ export const risingLeadersForum: EventConfig = {
       name: "Super Early Bird — Students",
       order: 1,
       saleStart: "2026-01-01T00:00:00Z",  // Already open
-      soldOutAt: "2026-01-02T00:00:00Z",  // SOLD OUT - past date
+      soldOutAt: "2026-06-30T23:59:59Z",  // Matches saleEnd
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹2,998",
       description: "3-day access to all keynotes, talks, workshops and networking sessions. Includes lunch and conference swag.",
