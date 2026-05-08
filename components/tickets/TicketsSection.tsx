@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { events } from "@/data/tickets";
-import EventColumn from "./EventColumn";
+import { events, getTierState } from "@/data/tickets";
+import EventHeader from "./EventHeader";
+import ActiveTierSection from "./ActiveTierSection";
+import ComingSoonSection from "./ComingSoonSection";
 
 export default function TicketsSection() {
   const [currentTime, setCurrentTime] = useState<Date | null>(null);
@@ -39,6 +41,30 @@ export default function TicketsSection() {
       </section>
     );
   }
+
+  const leadershipSummit = events.find((e) => e.id === "leadership-summit")!;
+  const risingLeaders = events.find((e) => e.id === "rising-leaders-forum")!;
+
+  // Get tier states for each event
+  const lsTiers = leadershipSummit.tiers.map((tier) => ({
+    tier,
+    state: getTierState(tier, currentTime),
+  }));
+  const rlfTiers = risingLeaders.tiers.map((tier) => ({
+    tier,
+    state: getTierState(tier, currentTime),
+  }));
+
+  // Find active tiers
+  const lsActiveTier = lsTiers.find((t) => t.state === "active");
+  const rlfActiveTier = rlfTiers.find((t) => t.state === "active");
+
+  // Find first upcoming tiers
+  const lsUpcomingTier = lsTiers.find((t) => t.state === "upcoming");
+  const rlfUpcomingTier = rlfTiers.find((t) => t.state === "upcoming");
+
+  // Check if both have upcoming tiers
+  const hasComingSoon = lsUpcomingTier || rlfUpcomingTier;
 
   return (
     <section className="bg-[#0D0D0D] min-h-screen pt-32 pb-24 relative overflow-hidden">
@@ -80,15 +106,45 @@ export default function TicketsSection() {
           </p>
         </div>
 
-        {/* Two-column layout */}
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {events.map((event) => (
-            <EventColumn
-              key={event.id}
-              event={event}
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Event Headers - Side by Side */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <EventHeader event={leadershipSummit} />
+            <EventHeader event={risingLeaders} />
+          </div>
+
+          {/* Active Tiers with Buy Buttons - Side by Side */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <ActiveTierSection
+              event={leadershipSummit}
+              activeTier={lsActiveTier}
               currentTime={currentTime}
             />
-          ))}
+            <ActiveTierSection
+              event={risingLeaders}
+              activeTier={rlfActiveTier}
+              currentTime={currentTime}
+            />
+          </div>
+
+          {/* Coming Soon Section - Side by Side */}
+          {hasComingSoon && (
+            <>
+              <p className="text-center font-sans text-sm text-white/50 mb-4">
+                Coming Soon
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <ComingSoonSection
+                  event={leadershipSummit}
+                  upcomingTier={lsUpcomingTier}
+                />
+                <ComingSoonSection
+                  event={risingLeaders}
+                  upcomingTier={rlfUpcomingTier}
+                />
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>
