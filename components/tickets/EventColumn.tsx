@@ -1,26 +1,54 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { type EventConfig, getTierState } from "@/data/tickets";
 import TierCard from "./TierCard";
+import AddonCard from "./AddonCard";
 
 interface EventColumnProps {
   event: EventConfig;
   currentTime: Date;
-  activeTierIndex: number;
-  isFirstRender: boolean;
 }
 
 export default function EventColumn({
   event,
   currentTime,
-  activeTierIndex,
-  isFirstRender,
 }: EventColumnProps) {
-  // Determine which tiers should show additional cards
-  // Only the active tier shows its additional cards
-  const shouldShowAdditionalCards = (tierIndex: number): boolean => {
-    return tierIndex === activeTierIndex;
-  };
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Find the active tier index (first active tier)
+  const activeTierIndex = event.tiers.findIndex(
+    (tier) => getTierState(tier, currentTime) === "active"
+  );
+
+  // Track which tier is expanded - default to active tier
+  const [expandedTierIndex, setExpandedTierIndex] = useState<number>(
+    activeTierIndex >= 0 ? activeTierIndex : 0
+  );
+
+  // Group tiers by their state for rendering
+  const tiersWithState = event.tiers.map((tier, index) => ({
+    tier,
+    index,
+    state: getTierState(tier, currentTime),
+  }));
+
+  // Separate active/sold_out tiers from upcoming tiers
+  const activeTiers = tiersWithState.filter(
+    (t) => t.state === "active" || t.state === "sold_out" || t.state === "expired"
+  );
+  const upcomingTiers = tiersWithState.filter((t) => t.state === "upcoming");
+
+  // Only show the first upcoming tier as "Coming Soon"
+  const firstUpcomingTier = upcomingTiers.length > 0 ? upcomingTiers[0] : null;
+
+  // Get the active tier's additional cards
+  const activeTierData = activeTierIndex >= 0 ? event.tiers[activeTierIndex] : null;
+  const additionalCards = activeTierData?.additionalCards || [];
 
   return (
     <div className="flex flex-col gap-4">
@@ -61,54 +89,61 @@ export default function EventColumn({
         </div>
       </div>
 
-      {/* Tier Cards */}
-      {event.tiers.map((tier, index) => {
-        const state = getTierState(tier, currentTime);
-        
-        // Card visibility logic: 
-        // - Show active tier with its additional cards
-        // - Show sold_out tiers (greyed out)
-        // - Show upcoming tiers until we hit the first one, then stop
-        // - Show expired tiers (greyed out)
-        
-        // Determine if we should render this tier
-        let shouldRender = true;
-        
-        // Find the first upcoming tier index
-        let firstUpcomingIndex = -1;
-        for (let i = 0; i < event.tiers.length; i++) {
-          const s = getTierState(event.tiers[i], currentTime);
-          if (s === 'upcoming') {
-            firstUpcomingIndex = i;
-            break;
-          }
-        }
-        
-        // Only show the first upcoming tier (as "Coming Soon"), hide subsequent upcoming tiers
-        if (state === 'upcoming' && firstUpcomingIndex !== -1 && index > firstUpcomingIndex) {
-          shouldRender = false;
-        }
+      {/* Active and Sold Out Tier Cards */}
+      {activeTiers.map(({ tier, index, state }) => (
+        <TierCard
+          key={tier.id}
+          tier={tier}
+          state={state}
+          themeColor={event.themeColor}
+          textColor={event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF"}
+          isExpanded={expandedTierIndex === index}
+          onToggle={() => setExpandedTierIndex(expandedTierIndex === index ? -1 : index)}
+        />
+      ))}
 
-        if (!shouldRender) return null;
+      {/* Add-on Cards - only show when active tier is expanded */}
+      {additionalCards.length > 0 && expandedTierIndex === activeTierIndex && (
+        <>
+          {additionalCards.map((card, idx) => (
+            <AddonCard
+              key={card.id}
+              card={card}
+              themeColor={event.themeColor}
+              index={idx}
+              mounted={mounted}
+            />
+          ))}
+        </>
+      )}
 
-        return (
+      {/* Coming Soon Section */}
+      {firstUpcomingTier && (
+        <>
+          <p className="text-center font-sans text-sm text-white/50 mt-2">
+            Coming Soon
+          </p>
           <TierCard
-            key={tier.id}
-            tier={tier}
-            state={state}
+            tier={firstUpcomingTier.tier}
+            state={firstUpcomingTier.state}
             themeColor={event.themeColor}
-            showAdditionalCards={shouldShowAdditionalCards(index)}
-            isFirstRender={isFirstRender}
+            textColor={event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF"}
+            isExpanded={expandedTierIndex === firstUpcomingTier.index}
+            onToggle={() =>
+              setExpandedTierIndex(
+                expandedTierIndex === firstUpcomingTier.index ? -1 : firstUpcomingTier.index
+              )
+            }
           />
-        );
-      })}
+        </>
+      )}
 
       {/* Buy Button */}
       <a
         href={event.externalBuyUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full py-4 px-6 rounded-xl text-center font-sans font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-[1.02] flex items-center justify-center gap-2"
+        className="w-full py-4 px-6 rounded-xl text-center font-sans font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-[1.02] flex items-center justify-center gap-2 mt-2"
         style={{
           backgroundColor: event.themeColor,
           color: event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF",

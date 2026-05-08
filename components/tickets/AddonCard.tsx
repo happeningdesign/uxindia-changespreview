@@ -6,7 +6,6 @@ interface AddonCardProps {
   card: CardConfig;
   themeColor: string;
   index: number;
-  suppressAnimation: boolean;
   mounted: boolean;
 }
 
@@ -14,64 +13,39 @@ export default function AddonCard({
   card,
   themeColor,
   index,
-  suppressAnimation,
   mounted,
 }: AddonCardProps) {
   // Animation styles
   const animationDelay = index * 80;
-  
-  const getAnimationStyles = () => {
-    if (suppressAnimation) {
-      // Already active on mount, show immediately without animation
-      return {
-        opacity: 1,
-        transform: 'translateY(0)',
-      };
-    }
-    
-    if (!mounted) {
-      // Initial state before animation
-      return {
-        opacity: 0,
-        transform: 'translateY(12px)',
-      };
-    }
-    
-    // Animated state
-    return {
-      opacity: 1,
-      transform: 'translateY(0)',
-      transition: `opacity 300ms ease-out ${animationDelay}ms, transform 300ms ease-out ${animationDelay}ms`,
-    };
-  };
 
   return (
     <div
-      className="rounded-xl p-4"
+      className="rounded-xl p-5 transition-all duration-300"
       style={{
-        backgroundColor: '#1A1A1A',
-        border: `1px dashed ${themeColor}66`, // 40% opacity
-        ...getAnimationStyles(),
+        backgroundColor: "#141414",
+        border: "1px solid #2A2A2A",
+        borderLeft: `4px solid ${themeColor}`,
+        opacity: mounted ? 1 : 0,
+        transform: mounted ? "translateY(0)" : "translateY(12px)",
+        transitionDelay: `${animationDelay}ms`,
       }}
     >
-      <div className="flex items-start justify-between gap-4 mb-2">
+      <div className="flex items-start justify-between gap-4">
         <div className="flex-1">
-          <span className="inline-block px-2 py-0.5 rounded text-xs font-medium text-[#888] border border-[#333] mb-2">
-            Add-on
+          {/* Add-on badge */}
+          <span className="inline-block px-2.5 py-0.5 rounded text-xs font-medium text-[#1B7A6E] border border-[#1B7A6E]/40 mb-2">
+            Add On
           </span>
-          <h4 className="font-sans text-sm font-medium text-white/90">
+          <h4 className="font-sans text-base font-medium text-white">
             {card.label}
           </h4>
         </div>
         {card.price && (
-          <p className="font-sans text-base font-semibold text-white/90">
-            {card.price}
+          <p className="font-sans text-lg font-semibold text-white">
+            {card.price.replace("₹", "")}
           </p>
         )}
       </div>
-      <p className="font-sans text-xs text-[#888] leading-relaxed">
-        {card.description}
-      </p>
     </div>
   );
 }

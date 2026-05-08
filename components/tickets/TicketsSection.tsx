@@ -1,17 +1,15 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { events, getTierState, type EventConfig, type TierState } from "@/data/tickets";
+import { useState, useEffect } from "react";
+import { events } from "@/data/tickets";
 import EventColumn from "./EventColumn";
 
 export default function TicketsSection() {
   const [currentTime, setCurrentTime] = useState<Date | null>(null);
-  const isFirstRender = useRef(true);
 
   // Set initial time on client mount
   useEffect(() => {
     setCurrentTime(new Date());
-    isFirstRender.current = false;
   }, []);
 
   // Refresh state every 60 seconds
@@ -41,17 +39,6 @@ export default function TicketsSection() {
       </section>
     );
   }
-
-  // Find active tier index for each event
-  const getActiveTierIndex = (event: EventConfig): number => {
-    for (let i = 0; i < event.tiers.length; i++) {
-      const state = getTierState(event.tiers[i], currentTime);
-      if (state === 'active') return i;
-      if (state === 'upcoming') return -1; // No active tier yet
-      // If sold_out, continue to next tier
-    }
-    return -1; // All sold out or expired
-  };
 
   return (
     <section className="bg-[#0D0D0D] min-h-screen pt-32 pb-24 relative overflow-hidden">
@@ -100,8 +87,6 @@ export default function TicketsSection() {
               key={event.id}
               event={event}
               currentTime={currentTime}
-              activeTierIndex={getActiveTierIndex(event)}
-              isFirstRender={isFirstRender.current}
             />
           ))}
         </div>

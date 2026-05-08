@@ -1,190 +1,170 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { type TicketTier, type TierState, formatOpeningDate } from "@/data/tickets";
-import AddonCard from "./AddonCard";
+import { ChevronUp, ChevronDown } from "lucide-react";
+import { type TicketTier, type TierState } from "@/data/tickets";
 
 interface TierCardProps {
   tier: TicketTier;
   state: TierState;
   themeColor: string;
-  showAdditionalCards: boolean;
-  isFirstRender: boolean;
+  textColor: string;
+  isExpanded: boolean;
+  onToggle: () => void;
 }
 
 export default function TierCard({
   tier,
   state,
   themeColor,
-  showAdditionalCards,
-  isFirstRender,
+  textColor,
+  isExpanded,
+  onToggle,
 }: TierCardProps) {
-  const [mounted, setMounted] = useState(false);
-  const wasActiveOnMount = useRef(state === 'active' && isFirstRender);
+  // Determine if the card should show as active (full color) or muted
+  const isActive = state === "active";
+  const isUpcoming = state === "upcoming";
+  const isSoldOut = state === "sold_out";
+  const isExpired = state === "expired";
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // Base styling
+  const baseClasses = "rounded-xl transition-all duration-300 cursor-pointer";
 
-  // Base card styles
-  const baseCardClasses = "rounded-xl p-5 transition-all duration-300";
-  
-  // State-specific styles
+  // Get card background and styling based on state
   const getCardStyles = () => {
-    switch (state) {
-      case 'upcoming':
-        return {
-          background: '#141414',
-          border: '1px dashed #2A2A2A',
-          opacity: 0.6,
-        };
-      case 'active':
-        return {
-          background: '#141414',
-          border: '1px solid #2A2A2A',
-          borderLeft: `4px solid ${themeColor}`,
-          opacity: 1,
-        };
-      case 'sold_out':
-      case 'expired':
-        return {
-          background: '#141414',
-          border: '1px solid #2A2A2A',
-          opacity: 0.5,
-        };
-      default:
-        return {
-          background: '#141414',
-          border: '1px solid #2A2A2A',
-        };
+    if (isActive) {
+      return {
+        backgroundColor: themeColor,
+        border: "none",
+      };
     }
+    // Upcoming, sold out, expired - muted dark card
+    return {
+      backgroundColor: "#141414",
+      border: "1px solid #2A2A2A",
+    };
+  };
+
+  // Get text color based on state
+  const getTextColor = () => {
+    if (isActive) {
+      return textColor;
+    }
+    return "#888888"; // Muted text for non-active
+  };
+
+  // Get tier badge styling
+  const getTierBadgeStyles = () => {
+    if (isActive) {
+      // Active: outlined badge on colored background
+      return {
+        backgroundColor: "transparent",
+        border: `1px solid ${textColor}`,
+        color: textColor,
+      };
+    }
+    if (isSoldOut) {
+      return {
+        backgroundColor: "#7F1D1D",
+        border: "none",
+        color: "#FCA5A5",
+      };
+    }
+    // Upcoming/expired: subtle badge
+    return {
+      backgroundColor: "transparent",
+      border: "1px solid #444",
+      color: "#666",
+    };
   };
 
   const cardStyles = getCardStyles();
+  const currentTextColor = getTextColor();
+  const badgeStyles = getTierBadgeStyles();
 
-  // Render upcoming state
-  if (state === 'upcoming') {
-    return (
-      <div
-        className={baseCardClasses}
-        style={{
-          backgroundColor: cardStyles.background,
-          border: cardStyles.border,
-          opacity: cardStyles.opacity,
-        }}
-      >
-        <p className="font-sans text-sm text-[#888]">Coming Soon</p>
-        <p className="font-sans text-xs text-[#555] mt-1">
-          Opens {formatOpeningDate(tier.saleStart)}
-        </p>
-      </div>
-    );
-  }
+  // Get badge text
+  const getBadgeText = () => {
+    if (isSoldOut) return "Sold Out";
+    if (isExpired) return "Unavailable";
+    return tier.name;
+  };
 
-  // Render sold_out state
-  if (state === 'sold_out') {
-    return (
-      <div
-        className={baseCardClasses}
-        style={{
-          backgroundColor: cardStyles.background,
-          border: cardStyles.border,
-          opacity: cardStyles.opacity,
-        }}
-      >
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex-1">
-            <span className="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-red-600 text-white mb-2">
-              SOLD OUT
-            </span>
-            <h3 className="font-sans text-base font-medium text-[#555]">
-              {tier.name}
-            </h3>
-          </div>
-          <p className="font-sans text-lg font-bold text-[#555] line-through">
-            {tier.price}
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  // Render expired state
-  if (state === 'expired') {
-    return (
-      <div
-        className={baseCardClasses}
-        style={{
-          backgroundColor: cardStyles.background,
-          border: cardStyles.border,
-          opacity: cardStyles.opacity,
-        }}
-      >
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex-1">
-            <span className="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-[#444] text-[#888] mb-2">
-              Unavailable
-            </span>
-            <h3 className="font-sans text-base font-medium text-[#555]">
-              {tier.name}
-            </h3>
-          </div>
-          <p className="font-sans text-lg font-bold text-[#555] line-through">
-            {tier.price}
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  // Render active state
   return (
-    <>
-      <div
-        className={baseCardClasses}
-        style={{
-          backgroundColor: cardStyles.background,
-          border: cardStyles.border,
-          borderLeft: cardStyles.borderLeft,
-          opacity: cardStyles.opacity,
-        }}
-      >
-        <div className="flex items-start justify-between gap-4 mb-3">
-          <div className="flex-1">
+    <div
+      className={baseClasses}
+      style={{
+        ...cardStyles,
+        opacity: isUpcoming || isSoldOut || isExpired ? 0.7 : 1,
+      }}
+      onClick={onToggle}
+    >
+      <div className="p-5">
+        {/* Header row with badge, title, price, and chevron */}
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex-1 min-w-0">
+            {/* Tier badge */}
             <span
-              className="inline-block px-2.5 py-1 rounded-full text-xs font-semibold mb-2"
-              style={{ backgroundColor: themeColor, color: '#FFFFFF' }}
+              className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-2"
+              style={badgeStyles}
             >
-              {tier.name}
+              {getBadgeText()}
             </span>
-            <h3 className="font-sans text-base font-medium text-white">
-              {tier.name} Pass
+
+            {/* Pass name */}
+            <h3
+              className="font-sans text-lg font-medium leading-tight"
+              style={{
+                color: currentTextColor,
+                textDecoration: isSoldOut || isExpired ? "line-through" : "none",
+              }}
+            >
+              {tier.id.includes("ls-") ? "Leadership Summit Pass" : "Rising Leaders Pass"}
             </h3>
           </div>
-          <p className="font-sans text-xl font-bold text-white">
-            {tier.price}
+
+          {/* Price and Chevron */}
+          <div className="flex items-start gap-3 flex-shrink-0">
+            <p
+              className="font-sans text-xl font-semibold"
+              style={{
+                color: currentTextColor,
+                textDecoration: isSoldOut || isExpired ? "line-through" : "none",
+              }}
+            >
+              {tier.price.replace("₹", "")}
+            </p>
+            <button
+              type="button"
+              className="p-1 rounded hover:bg-white/10 transition-colors"
+              style={{ color: currentTextColor }}
+              aria-label={isExpanded ? "Collapse" : "Expand"}
+            >
+              {isExpanded ? (
+                <ChevronUp className="w-5 h-5" />
+              ) : (
+                <ChevronDown className="w-5 h-5" />
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Expandable description */}
+        <div
+          className="overflow-hidden transition-all duration-300"
+          style={{
+            maxHeight: isExpanded ? "200px" : "0px",
+            opacity: isExpanded ? 1 : 0,
+            marginTop: isExpanded ? "12px" : "0px",
+          }}
+        >
+          <p
+            className="font-sans text-sm leading-relaxed"
+            style={{ color: isActive ? `${textColor}CC` : "#666" }}
+          >
+            {tier.description}
           </p>
         </div>
-        <p className="font-sans text-sm text-[#888] leading-relaxed">
-          {tier.description}
-        </p>
       </div>
-
-      {/* Additional Cards (Add-ons) */}
-      {showAdditionalCards && tier.additionalCards.length > 0 && (
-        <div className="flex flex-col gap-3">
-          {tier.additionalCards.map((card, index) => (
-            <AddonCard
-              key={card.id}
-              card={card}
-              themeColor={themeColor}
-              index={index}
-              suppressAnimation={wasActiveOnMount.current}
-              mounted={mounted}
-            />
-          ))}
-        </div>
-      )}
-    </>
+    </div>
   );
 }

@@ -64,9 +64,16 @@ export const leadershipSummit: EventConfig = {
         {
           id: "ls-workshop",
           type: "addon",
-          label: "Workshop Add-on",
-          price: "₹9,998",
+          label: "Workshops",
+          price: "₹5,000",
           description: "Pre-conference full-day workshop. Limited seats."
+        },
+        {
+          id: "ls-dinner",
+          type: "addon",
+          label: "Networking Dinner",
+          price: "₹5,000",
+          description: "Exclusive networking dinner with industry leaders."
         }
       ]
     },
