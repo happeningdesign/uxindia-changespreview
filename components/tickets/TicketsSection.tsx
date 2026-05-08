@@ -55,11 +55,11 @@ export default function TicketsSection() {
     state: getTierState(tier, currentTime),
   }));
 
-  // Find active tiers
-  const lsActiveTier = lsTiers.find((t) => t.state === "active");
-  const rlfActiveTier = rlfTiers.find((t) => t.state === "active");
+  // Find ALL active tiers for each event
+  const lsActiveTiers = lsTiers.filter((t) => t.state === "active");
+  const rlfActiveTiers = rlfTiers.filter((t) => t.state === "active");
 
-  // Find first upcoming tiers
+  // Find first upcoming tier for each event (for Coming Soon section)
   const lsUpcomingTier = lsTiers.find((t) => t.state === "upcoming");
   const rlfUpcomingTier = rlfTiers.find((t) => t.state === "upcoming");
 
@@ -117,12 +117,12 @@ export default function TicketsSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <ActiveTierSection
               event={leadershipSummit}
-              activeTier={lsActiveTier}
+              activeTiers={lsActiveTiers}
               currentTime={currentTime}
             />
             <ActiveTierSection
               event={risingLeaders}
-              activeTier={rlfActiveTier}
+              activeTiers={rlfActiveTiers}
               currentTime={currentTime}
             />
           </div>
