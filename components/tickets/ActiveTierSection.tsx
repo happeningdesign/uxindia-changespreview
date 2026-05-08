@@ -29,6 +29,10 @@ function TierWithAddons({
   const cardTextColor = event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF";
   const additionalCards = tier.additionalCards || [];
   const hasAddons = isLeadershipSummit && additionalCards.length > 0;
+  const isSoldOut = state === "sold_out";
+  
+  // Don't show expandable add-ons for sold out tiers (stacked effect shows they exist)
+  const showAddons = hasAddons && !isSoldOut;
 
   return (
     <div className="flex flex-col gap-4">
@@ -42,8 +46,8 @@ function TierWithAddons({
         hasAddons={hasAddons}
       />
 
-      {/* Add-on Cards with smooth animation */}
-      {hasAddons && (
+      {/* Add-on Cards with smooth animation - only for active tiers, not sold out */}
+      {showAddons && (
         <div
           className="grid transition-all duration-300 ease-out overflow-hidden"
           style={{
