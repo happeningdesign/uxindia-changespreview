@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { type TicketTier, type TierState } from "@/data/tickets";
 
@@ -11,6 +10,7 @@ interface TierCardProps {
   textColor: string;
   isExpanded: boolean;
   onToggle: () => void;
+  hasAddons: boolean; // Whether this tier has add-ons (only LS has this)
 }
 
 export default function TierCard({
@@ -20,6 +20,7 @@ export default function TierCard({
   textColor,
   isExpanded,
   onToggle,
+  hasAddons,
 }: TierCardProps) {
   // Determine if the card should show as active (full color) or muted
   const isActive = state === "active";
@@ -28,7 +29,7 @@ export default function TierCard({
   const isExpired = state === "expired";
 
   // Base styling
-  const baseClasses = "rounded-xl transition-all duration-300 cursor-pointer";
+  const baseClasses = "rounded-xl transition-all duration-300";
 
   // Get card background and styling based on state
   const getCardStyles = () => {
@@ -89,14 +90,17 @@ export default function TierCard({
     return tier.name;
   };
 
+  // Determine pass name based on tier id
+  const passName = tier.id.includes("ls-") ? "Leadership Summit Pass" : "Rising Leaders Pass";
+
   return (
     <div
-      className={baseClasses}
+      className={`${baseClasses} ${hasAddons && isActive ? "cursor-pointer" : ""}`}
       style={{
         ...cardStyles,
         opacity: isUpcoming || isSoldOut || isExpired ? 0.7 : 1,
       }}
-      onClick={onToggle}
+      onClick={hasAddons && isActive ? onToggle : undefined}
     >
       <div className="p-5">
         {/* Header row with badge, title, price, and chevron */}
@@ -110,15 +114,18 @@ export default function TierCard({
               {getBadgeText()}
             </span>
 
-            {/* Pass name */}
+            {/* Pass name - uses UXILeadershipCondensed font */}
             <h3
-              className="font-sans text-lg font-medium leading-tight"
+              className="leading-tight"
               style={{
+                fontFamily: "'UXILeadershipCondensed'",
+                fontWeight: 500,
+                fontSize: "clamp(1.1rem, 2vw, 1.35rem)",
                 color: currentTextColor,
                 textDecoration: isSoldOut || isExpired ? "line-through" : "none",
               }}
             >
-              {tier.id.includes("ls-") ? "Leadership Summit Pass" : "Rising Leaders Pass"}
+              {passName}
             </h3>
           </div>
 
@@ -133,37 +140,31 @@ export default function TierCard({
             >
               {tier.price.replace("₹", "")}
             </p>
-            <button
-              type="button"
-              className="p-1 rounded hover:bg-white/10 transition-colors"
-              style={{ color: currentTextColor }}
-              aria-label={isExpanded ? "Collapse" : "Expand"}
-            >
-              {isExpanded ? (
-                <ChevronUp className="w-5 h-5" />
-              ) : (
-                <ChevronDown className="w-5 h-5" />
-              )}
-            </button>
+            {/* Only show chevron for Leadership Summit (has add-ons) and active state */}
+            {hasAddons && isActive && (
+              <button
+                type="button"
+                className="p-1 rounded hover:bg-white/10 transition-colors"
+                style={{ color: currentTextColor }}
+                aria-label={isExpanded ? "Hide add-ons" : "Show add-ons"}
+              >
+                {isExpanded ? (
+                  <ChevronUp className="w-5 h-5" />
+                ) : (
+                  <ChevronDown className="w-5 h-5" />
+                )}
+              </button>
+            )}
           </div>
         </div>
 
-        {/* Expandable description */}
-        <div
-          className="overflow-hidden transition-all duration-300"
-          style={{
-            maxHeight: isExpanded ? "200px" : "0px",
-            opacity: isExpanded ? 1 : 0,
-            marginTop: isExpanded ? "12px" : "0px",
-          }}
+        {/* Description - ALWAYS visible */}
+        <p
+          className="font-sans text-sm leading-relaxed mt-3"
+          style={{ color: isActive ? `${textColor}CC` : "#666" }}
         >
-          <p
-            className="font-sans text-sm leading-relaxed"
-            style={{ color: isActive ? `${textColor}CC` : "#666" }}
-          >
-            {tier.description}
-          </p>
-        </div>
+          {tier.description}
+        </p>
       </div>
     </div>
   );

@@ -20,15 +20,16 @@ export default function EventColumn({
     setMounted(true);
   }, []);
 
+  // Check if this is Leadership Summit (only LS has add-ons)
+  const isLeadershipSummit = event.id === "leadership-summit";
+
   // Find the active tier index (first active tier)
   const activeTierIndex = event.tiers.findIndex(
     (tier) => getTierState(tier, currentTime) === "active"
   );
 
-  // Track which tier is expanded - default to active tier
-  const [expandedTierIndex, setExpandedTierIndex] = useState<number>(
-    activeTierIndex >= 0 ? activeTierIndex : 0
-  );
+  // Track whether add-ons are expanded - only for Leadership Summit
+  const [addonsExpanded, setAddonsExpanded] = useState(true);
 
   // Group tiers by their state for rendering
   const tiersWithState = event.tiers.map((tier, index) => ({
@@ -46,9 +47,12 @@ export default function EventColumn({
   // Only show the first upcoming tier as "Coming Soon"
   const firstUpcomingTier = upcomingTiers.length > 0 ? upcomingTiers[0] : null;
 
-  // Get the active tier's additional cards
+  // Get the active tier's additional cards (only for Leadership Summit)
   const activeTierData = activeTierIndex >= 0 ? event.tiers[activeTierIndex] : null;
-  const additionalCards = activeTierData?.additionalCards || [];
+  const additionalCards = isLeadershipSummit ? (activeTierData?.additionalCards || []) : [];
+
+  // Text color for RLF is dark, for LS is white
+  const cardTextColor = event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF";
 
   return (
     <div className="flex flex-col gap-4">
@@ -96,14 +100,15 @@ export default function EventColumn({
           tier={tier}
           state={state}
           themeColor={event.themeColor}
-          textColor={event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF"}
-          isExpanded={expandedTierIndex === index}
-          onToggle={() => setExpandedTierIndex(expandedTierIndex === index ? -1 : index)}
+          textColor={cardTextColor}
+          isExpanded={addonsExpanded}
+          onToggle={() => setAddonsExpanded(!addonsExpanded)}
+          hasAddons={isLeadershipSummit && index === activeTierIndex && additionalCards.length > 0}
         />
       ))}
 
-      {/* Add-on Cards - only show when active tier is expanded */}
-      {additionalCards.length > 0 && expandedTierIndex === activeTierIndex && (
+      {/* Add-on Cards - only for Leadership Summit, shown when expanded */}
+      {isLeadershipSummit && additionalCards.length > 0 && addonsExpanded && (
         <>
           {additionalCards.map((card, idx) => (
             <AddonCard
@@ -127,13 +132,10 @@ export default function EventColumn({
             tier={firstUpcomingTier.tier}
             state={firstUpcomingTier.state}
             themeColor={event.themeColor}
-            textColor={event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF"}
-            isExpanded={expandedTierIndex === firstUpcomingTier.index}
-            onToggle={() =>
-              setExpandedTierIndex(
-                expandedTierIndex === firstUpcomingTier.index ? -1 : firstUpcomingTier.index
-              )
-            }
+            textColor={cardTextColor}
+            isExpanded={false}
+            onToggle={() => {}}
+            hasAddons={false}
           />
         </>
       )}
