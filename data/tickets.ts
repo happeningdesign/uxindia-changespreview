@@ -37,7 +37,7 @@ export type EventConfig = {
   tiers: TicketTier[];
 };
 
-// Test time: May 8, 2026 at 4:45 PM IST = 11:15 AM UTC
+// Tickets are LIVE now - saleStart set to past date for immediate activation
 // Adjust these dates for actual launch
 
 export const leadershipSummit: EventConfig = {
@@ -55,8 +55,8 @@ export const leadershipSummit: EventConfig = {
       id: "ls-seb",
       name: "Super Early Bird",
       order: 0,
-      saleStart: "2026-05-08T11:15:00Z",  // 4:45 PM IST
-      soldOutAt: "2026-05-08T11:45:00Z",  // 30 mins after go-live
+      saleStart: "2026-01-01T00:00:00Z",  // Already open
+      soldOutAt: "2026-06-30T23:59:59Z",  // Matches saleEnd
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹9,998",
       description: "3-day access to all keynotes, talks, and networking sessions. Includes lunch and conference swag.",
@@ -110,8 +110,8 @@ export const risingLeadersForum: EventConfig = {
       id: "rlf-seb-full",
       name: "Super Early Bird — Full Pass",
       order: 0,
-      saleStart: "2026-05-08T11:15:00Z",  // 4:45 PM IST
-      soldOutAt: "2026-05-08T11:50:00Z",  // 35 mins — staggered 5 mins from LS
+      saleStart: "2026-01-01T00:00:00Z",  // Already open
+      soldOutAt: "2026-06-30T23:59:59Z",  // Matches saleEnd
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹7,998",
       description: "Full 2-day access to all sessions.",
@@ -121,8 +121,8 @@ export const risingLeadersForum: EventConfig = {
       id: "rlf-seb-day",
       name: "Super Early Bird — Day Pass",
       order: 1,
-      saleStart: "2026-05-08T11:15:00Z",
-      soldOutAt: "2026-05-08T11:50:00Z",
+      saleStart: "2026-01-01T00:00:00Z",  // Already open
+      soldOutAt: "2026-06-30T23:59:59Z",  // Matches saleEnd
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹2,998",
       description: "Single day access.",
