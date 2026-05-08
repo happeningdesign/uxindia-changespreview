@@ -58,8 +58,21 @@ export default function TicketsSection() {
 
   // Find ALL visible tiers (active + sold_out) for each event
   // Sold out tiers should still be shown but greyed out
-  const lsVisibleTiers = lsTiers.filter((t) => t.state === "active" || t.state === "sold_out");
-  const rlfVisibleTiers = rlfTiers.filter((t) => t.state === "active" || t.state === "sold_out");
+  // Sort so active tiers come first, sold out tiers move down
+  const lsVisibleTiers = lsTiers
+    .filter((t) => t.state === "active" || t.state === "sold_out")
+    .sort((a, b) => {
+      if (a.state === "active" && b.state === "sold_out") return -1;
+      if (a.state === "sold_out" && b.state === "active") return 1;
+      return a.tier.order - b.tier.order;
+    });
+  const rlfVisibleTiers = rlfTiers
+    .filter((t) => t.state === "active" || t.state === "sold_out")
+    .sort((a, b) => {
+      if (a.state === "active" && b.state === "sold_out") return -1;
+      if (a.state === "sold_out" && b.state === "active") return 1;
+      return a.tier.order - b.tier.order;
+    });
 
   // Find first upcoming tier for each event (for Coming Soon section)
   const lsUpcomingTier = lsTiers.find((t) => t.state === "upcoming");
