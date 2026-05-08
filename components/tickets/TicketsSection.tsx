@@ -112,12 +112,10 @@ export default function TicketsSection() {
               fontSize: "clamp(2.4rem, 4.5vw, 4rem)",
             }}
           >
-            Five Days. Two Tracks.
-            <br />
-            One Leadership Arc.
+            Be in the room.
           </h1>
           <p className="font-sans text-sm text-white/40 max-w-md mx-auto">
-            Talks may be curated across both forums to maximize impact and cross-pollination.
+            Get your ticket to UXINDIA 2026 — Leadership Summit or Rising Leaders Forum.
           </p>
         </div>
 
