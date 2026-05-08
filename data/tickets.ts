@@ -10,7 +10,7 @@
 // 3 = SUPER EARLY SOLD OUT - Super Early Bird sold out, Early Bird coming soon
 // 4 = EARLY BIRD LIVE  - Super Early Bird sold out, Early Bird active
 // ============================================================================
-const DEMO_PRESET = 4; // <-- CHANGE THIS NUMBER (1-4)
+const DEMO_PRESET = 1; // <-- CHANGE THIS NUMBER (1-4)
 // ============================================================================
 
 // Preset date configurations
