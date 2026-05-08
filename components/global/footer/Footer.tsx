@@ -234,7 +234,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8">
           <p className="font-sans text-xs text-white/25">
-            &copy; 2026 UXINDIA. Organised by UMO Design Foundation.
+            &copy; 2026 UXINDIA. Organised by UMO Design Foundation | Handcrafted by Happening
           </p>
           <div className="flex gap-6">
             <a
