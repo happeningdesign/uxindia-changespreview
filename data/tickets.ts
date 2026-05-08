@@ -141,7 +141,7 @@ export const risingLeadersForum: EventConfig = {
     },
     {
       id: "rlf-eb-full",
-      name: "Early Bird — Full Pass",
+      name: "Early Bird — Professionals",
       order: 2,
       saleStart: "2026-01-01T00:00:00Z",  // Set to active
       soldOutAt: "2026-08-15T23:59:59Z",
@@ -152,7 +152,7 @@ export const risingLeadersForum: EventConfig = {
     },
     {
       id: "rlf-eb-day",
-      name: "Early Bird — Day Pass",
+      name: "Early Bird — Students",
       order: 3,
       saleStart: "2026-01-01T00:00:00Z",  // Set to active
       soldOutAt: "2026-08-15T23:59:59Z",
