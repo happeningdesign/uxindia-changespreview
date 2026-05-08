@@ -60,8 +60,10 @@ export default function TierCard({
   // Determine pass name based on tier id
   const passName = tier.id.includes("ls-") ? "Leadership Summit Pass" : "Rising Leaders Pass";
 
-  // Show stacked effect only for LS active tier with add-ons when collapsed
-  const showStackedEffect = hasAddons && isActive && !isExpanded;
+  // Show stacked effect for LS tiers with add-ons:
+  // - Active: when collapsed (to hint at expandable add-ons)
+  // - Sold out: always show stacked effect (add-ons hidden underneath)
+  const showStackedEffect = hasAddons && ((isActive && !isExpanded) || isSoldOut);
 
   return (
     <div className="relative">
@@ -72,7 +74,7 @@ export default function TierCard({
           <div
             className="absolute left-2 right-2 top-3 h-full rounded-xl transition-all duration-300"
             style={{
-              backgroundColor: "#0D3D35",
+              backgroundColor: isSoldOut ? "#1A1A1A" : "#0D3D35",
               transform: "translateY(8px)",
               zIndex: 0,
             }}
@@ -81,7 +83,7 @@ export default function TierCard({
           <div
             className="absolute left-1 right-1 top-1.5 h-full rounded-xl transition-all duration-300"
             style={{
-              backgroundColor: "#145045",
+              backgroundColor: isSoldOut ? "#222222" : "#145045",
               transform: "translateY(4px)",
               zIndex: 1,
             }}
