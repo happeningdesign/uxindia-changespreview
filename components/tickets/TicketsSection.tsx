@@ -74,12 +74,12 @@ export default function TicketsSection() {
       return a.tier.order - b.tier.order;
     });
 
-  // Find first upcoming tier for each event (for Coming Soon section)
-  const lsUpcomingTier = lsTiers.find((t) => t.state === "upcoming");
-  const rlfUpcomingTier = rlfTiers.find((t) => t.state === "upcoming");
+  // Find ALL upcoming tiers for each event (for Coming Soon section)
+  const lsUpcomingTiers = lsTiers.filter((t) => t.state === "upcoming");
+  const rlfUpcomingTiers = rlfTiers.filter((t) => t.state === "upcoming");
 
-  // Check if both have upcoming tiers
-  const hasComingSoon = lsUpcomingTier || rlfUpcomingTier;
+  // Check if any event has upcoming tiers
+  const hasComingSoon = lsUpcomingTiers.length > 0 || rlfUpcomingTiers.length > 0;
 
   return (
     <section className="bg-[#0D0D0D] min-h-screen pt-32 pb-24 relative overflow-hidden">
@@ -147,11 +147,11 @@ export default function TicketsSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 <ComingSoonSection
                   event={leadershipSummit}
-                  upcomingTier={lsUpcomingTier}
+                  upcomingTiers={lsUpcomingTiers}
                 />
                 <ComingSoonSection
                   event={risingLeaders}
-                  upcomingTier={rlfUpcomingTier}
+                  upcomingTiers={rlfUpcomingTiers}
                 />
               </div>
             </>
