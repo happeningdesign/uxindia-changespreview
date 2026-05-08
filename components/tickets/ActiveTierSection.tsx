@@ -79,15 +79,20 @@ export default function ActiveTierSection({
     setMounted(true);
   }, []);
 
-  // If no active tiers, show empty placeholder to maintain grid alignment
+  // If no tiers, show empty placeholder to maintain grid alignment
   if (activeTiers.length === 0) {
     return <div className="flex flex-col gap-4" />;
   }
 
+  // Separate active tiers from sold out tiers
+  const liveTiers = activeTiers.filter((t) => t.state === "active");
+  const soldOutTiers = activeTiers.filter((t) => t.state === "sold_out");
+  const hasLiveTiers = liveTiers.length > 0;
+
   return (
     <div className="flex flex-col gap-4">
-      {/* Each Active Tier with its own collapsible add-ons */}
-      {activeTiers.map((activeTier) => (
+      {/* Active (live) tiers first */}
+      {liveTiers.map((activeTier) => (
         <TierWithAddons
           key={activeTier.tier.id}
           tier={activeTier.tier}
@@ -97,34 +102,47 @@ export default function ActiveTierSection({
         />
       ))}
 
-      {/* Buy Button - appears right after all active tiers + add-ons */}
-      <a
-        href={event.externalBuyUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-full py-4 px-6 rounded-xl text-center font-sans font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-[1.02] flex items-center justify-center gap-2"
-        style={{
-          backgroundColor: event.themeColor,
-          color: event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF",
-        }}
-      >
-        Buy tickets
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          aria-hidden="true"
+      {/* Buy Button - appears right after active tiers, before sold out */}
+      {hasLiveTiers && (
+        <a
+          href={event.externalBuyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full py-4 px-6 rounded-xl text-center font-sans font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-[1.02] flex items-center justify-center gap-2"
+          style={{
+            backgroundColor: event.themeColor,
+            color: event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF",
+          }}
         >
-          <path
-            d="M3 8h10M9 4l4 4-4 4"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </a>
+          Buy tickets
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 8h10M9 4l4 4-4 4"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </a>
+      )}
+
+      {/* Sold out tiers below the Buy button */}
+      {soldOutTiers.map((soldOutTier) => (
+        <TierWithAddons
+          key={soldOutTier.tier.id}
+          tier={soldOutTier.tier}
+          state={soldOutTier.state}
+          event={event}
+          mounted={mounted}
+        />
+      ))}
     </div>
   );
 }
