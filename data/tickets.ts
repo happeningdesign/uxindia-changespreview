@@ -81,7 +81,7 @@ export const leadershipSummit: EventConfig = {
       id: "ls-eb",
       name: "Early Bird",
       order: 1,
-      saleStart: "2026-07-01T00:00:00Z",
+      saleStart: "2026-01-01T00:00:00Z",  // Set to active
       soldOutAt: "2026-08-15T23:59:59Z",
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹17,998",
@@ -92,7 +92,7 @@ export const leadershipSummit: EventConfig = {
       id: "ls-ga",
       name: "General Admission",
       order: 2,
-      saleStart: "2026-08-16T00:00:00Z",
+      saleStart: "2026-01-01T00:00:00Z",  // Set to active
       soldOutAt: "2026-09-20T23:59:59Z",
       saleEnd: "2026-09-20T23:59:59Z",
       price: "₹22,998",
@@ -139,7 +139,7 @@ export const risingLeadersForum: EventConfig = {
       id: "rlf-eb-full",
       name: "Early Bird — Full Pass",
       order: 2,
-      saleStart: "2026-07-01T00:00:00Z",
+      saleStart: "2026-01-01T00:00:00Z",  // Set to active
       soldOutAt: "2026-08-15T23:59:59Z",
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹9,998",
@@ -150,7 +150,7 @@ export const risingLeadersForum: EventConfig = {
       id: "rlf-eb-day",
       name: "Early Bird — Day Pass",
       order: 3,
-      saleStart: "2026-07-01T00:00:00Z",
+      saleStart: "2026-01-01T00:00:00Z",  // Set to active
       soldOutAt: "2026-08-15T23:59:59Z",
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹3,998",
