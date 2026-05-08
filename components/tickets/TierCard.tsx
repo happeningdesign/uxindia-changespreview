@@ -93,16 +93,45 @@ export default function TierCard({
   // Determine pass name based on tier id
   const passName = tier.id.includes("ls-") ? "Leadership Summit Pass" : "Rising Leaders Pass";
 
+  // Show stacked effect only for LS active tier with add-ons when collapsed
+  const showStackedEffect = hasAddons && isActive && !isExpanded;
+
   return (
-    <div
-      className={`${baseClasses} ${hasAddons && isActive ? "cursor-pointer" : ""}`}
-      style={{
-        ...cardStyles,
-        opacity: isUpcoming || isSoldOut || isExpired ? 0.7 : 1,
-      }}
-      onClick={hasAddons && isActive ? onToggle : undefined}
-    >
-      <div className="p-5">
+    <div className="relative">
+      {/* Stacked cards effect - visible when collapsed to hint at more content */}
+      {showStackedEffect && (
+        <>
+          {/* Bottom stack card */}
+          <div
+            className="absolute left-2 right-2 top-3 h-full rounded-xl transition-all duration-300"
+            style={{
+              backgroundColor: "#0D3D35",
+              transform: "translateY(8px)",
+              zIndex: 0,
+            }}
+          />
+          {/* Middle stack card */}
+          <div
+            className="absolute left-1 right-1 top-1.5 h-full rounded-xl transition-all duration-300"
+            style={{
+              backgroundColor: "#145045",
+              transform: "translateY(4px)",
+              zIndex: 1,
+            }}
+          />
+        </>
+      )}
+      
+      {/* Main card */}
+      <div
+        className={`${baseClasses} relative z-10 ${hasAddons && isActive ? "cursor-pointer" : ""}`}
+        style={{
+          ...cardStyles,
+          opacity: isUpcoming || isSoldOut || isExpired ? 0.7 : 1,
+        }}
+        onClick={hasAddons && isActive ? onToggle : undefined}
+      >
+        <div className="p-5">
         {/* Header row with badge, title, price, and chevron */}
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
@@ -168,6 +197,7 @@ export default function TierCard({
         >
           {tier.description}
         </p>
+      </div>
       </div>
     </div>
   );

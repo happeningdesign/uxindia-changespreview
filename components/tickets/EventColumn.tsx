@@ -107,19 +107,27 @@ export default function EventColumn({
         />
       ))}
 
-      {/* Add-on Cards - only for Leadership Summit, shown when expanded */}
-      {isLeadershipSummit && additionalCards.length > 0 && addonsExpanded && (
-        <>
-          {additionalCards.map((card, idx) => (
-            <AddonCard
-              key={card.id}
-              card={card}
-              themeColor={event.themeColor}
-              index={idx}
-              mounted={mounted}
-            />
-          ))}
-        </>
+      {/* Add-on Cards - only for Leadership Summit, with smooth animation */}
+      {isLeadershipSummit && additionalCards.length > 0 && (
+        <div
+          className="grid transition-all duration-300 ease-out overflow-hidden"
+          style={{
+            gridTemplateRows: addonsExpanded ? "1fr" : "0fr",
+            opacity: addonsExpanded ? 1 : 0,
+          }}
+        >
+          <div className="min-h-0 flex flex-col gap-4">
+            {additionalCards.map((card, idx) => (
+              <AddonCard
+                key={card.id}
+                card={card}
+                themeColor={event.themeColor}
+                index={idx}
+                mounted={mounted}
+              />
+            ))}
+          </div>
+        </div>
       )}
 
       {/* Coming Soon Section */}
