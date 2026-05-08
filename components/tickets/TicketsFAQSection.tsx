@@ -24,7 +24,7 @@ const faqItems: FAQItem[] = [
     id: "ls-1",
     question: "Who should attend the Leadership Summit?",
     answer:
-      "The Design Leadership Summit (September 22–25) is designed for senior audiences including design leaders, CXOs, CDOs, heads of design, senior UX professionals, and strategic decision-makers who are shaping the future of design within their organizations.",
+      "The Design Leadership Summit (September 23–25) is designed for senior audiences including design leaders, CXOs, CDOs, heads of design, senior UX professionals, and strategic decision-makers who are shaping the future of design within their organizations.",
     filter: "leadership-summit",
   },
   {
