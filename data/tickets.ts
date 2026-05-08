@@ -82,7 +82,7 @@ export const leadershipSummit: EventConfig = {
   id: "leadership-summit",
   name: "Leadership Summit",
   track: "Track 1",
-  dates: "22–25 Sept",
+  dates: "23–25 Sept",
   venue: "The Leela Bhartiya City, Bengaluru",
   externalBuyUrl: "https://example.com/buy-ls",
   themeColor: "#1B7A6E",
