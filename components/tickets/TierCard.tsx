@@ -54,41 +54,8 @@ export default function TierCard({
     return "#888888"; // Muted text for non-active
   };
 
-  // Get tier badge styling
-  const getTierBadgeStyles = () => {
-    if (isActive) {
-      // Active: outlined badge on colored background
-      return {
-        backgroundColor: "transparent",
-        border: `1px solid ${textColor}`,
-        color: textColor,
-      };
-    }
-    if (isSoldOut) {
-      return {
-        backgroundColor: "#7F1D1D",
-        border: "none",
-        color: "#FCA5A5",
-      };
-    }
-    // Upcoming/expired: subtle badge
-    return {
-      backgroundColor: "transparent",
-      border: "1px solid #444",
-      color: "#666",
-    };
-  };
-
   const cardStyles = getCardStyles();
   const currentTextColor = getTextColor();
-  const badgeStyles = getTierBadgeStyles();
-
-  // Get badge text
-  const getBadgeText = () => {
-    if (isSoldOut) return "Sold Out";
-    if (isExpired) return "Unavailable";
-    return tier.name;
-  };
 
   // Determine pass name based on tier id
   const passName = tier.id.includes("ls-") ? "Leadership Summit Pass" : "Rising Leaders Pass";
@@ -135,13 +102,34 @@ export default function TierCard({
         {/* Header row with badge, title, price, and chevron */}
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
-            {/* Tier badge */}
-            <span
-              className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-2"
-              style={badgeStyles}
-            >
-              {getBadgeText()}
-            </span>
+            {/* Tier badges - show both tier name and sold out badge when sold out */}
+            <div className="flex flex-wrap gap-2 mb-2">
+              {/* Tier name badge - always visible */}
+              <span
+                className="inline-block px-3 py-1 rounded-full text-xs font-medium"
+                style={{
+                  backgroundColor: "transparent",
+                  border: isActive ? `1px solid ${textColor}` : "1px solid #444",
+                  color: isActive ? textColor : "#666",
+                }}
+              >
+                {tier.name}
+              </span>
+              
+              {/* Sold Out badge - only when sold out */}
+              {isSoldOut && (
+                <span
+                  className="inline-block px-3 py-1 rounded-full text-xs font-medium"
+                  style={{
+                    backgroundColor: "#7F1D1D",
+                    border: "none",
+                    color: "#FCA5A5",
+                  }}
+                >
+                  Sold Out
+                </span>
+              )}
+            </div>
 
             {/* Pass name - uses UXILeadershipCondensed font */}
             <h3
@@ -160,21 +148,13 @@ export default function TierCard({
 
           {/* Price and Chevron */}
           <div className="flex items-start gap-3 flex-shrink-0">
-            {/* Show price for active, show "Sold Out" for sold out, hide for upcoming */}
+            {/* Show price only for active state, hide for upcoming and sold out */}
             {isActive && (
               <p
                 className="font-sans text-xl font-semibold"
                 style={{ color: currentTextColor }}
               >
                 ₹{tier.price.replace("₹", "").replace("₹", "")}
-              </p>
-            )}
-            {isSoldOut && (
-              <p
-                className="font-sans text-base font-medium"
-                style={{ color: "#888888" }}
-              >
-                Sold Out
               </p>
             )}
             {/* Only show chevron for Leadership Summit (has add-ons) and active state */}
