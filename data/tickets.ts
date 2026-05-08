@@ -5,39 +5,66 @@
 // ============================================================================
 // DEMO PRESETS - Change this value to show different states to stakeholders
 // ============================================================================
-// 1 = COMING SOON     - All tickets show "Coming Soon" with marquee
-// 2 = SUPER EARLY LIVE - Super Early Bird is active, Early Bird coming soon
-// 3 = SUPER EARLY SOLD OUT - Super Early Bird sold out, Early Bird coming soon
-// 4 = EARLY BIRD LIVE  - Super Early Bird sold out, Early Bird active
+// 1 = COMING SOON           - All tickets show "Coming Soon" with marquee
+// 2 = SUPER EARLY LIVE      - Super Early Bird active for both, Early Bird coming soon
+// 3 = LS SOLD OUT, RLF LIVE - LS Super Early sold out + LS Early Bird live, RLF Super Early still live
+// 4 = BOTH SEB SOLD OUT     - Both Super Early Birds sold out, RLF Early Bird live, LS Early Bird live
+// 5 = BOTH EARLY BIRDS LIVE - Both Super Early Birds sold out, Both Early Birds active
 // ============================================================================
-const DEMO_PRESET = 1; // <-- CHANGE THIS NUMBER (1-4)
+const DEMO_PRESET = 2; // <-- CHANGE THIS NUMBER (1-5)
 // ============================================================================
 
-// Preset date configurations
+// Preset date configurations (separate dates for LS and RLF)
 const PRESETS = {
-  1: { // COMING SOON
-    sebStart: "2026-12-01T00:00:00Z",
-    sebSoldOut: "2026-12-15T00:00:00Z",
-    ebStart: "2026-12-15T00:00:00Z",
-    ebSoldOut: "2026-12-30T00:00:00Z",
+  1: { // COMING SOON - All tickets coming soon
+    lsSebStart: "2026-12-01T00:00:00Z",
+    lsSebSoldOut: "2026-12-15T00:00:00Z",
+    lsEbStart: "2026-12-15T00:00:00Z",
+    lsEbSoldOut: "2026-12-30T00:00:00Z",
+    rlfSebStart: "2026-12-01T00:00:00Z",
+    rlfSebSoldOut: "2026-12-15T00:00:00Z",
+    rlfEbStart: "2026-12-15T00:00:00Z",
+    rlfEbSoldOut: "2026-12-30T00:00:00Z",
   },
-  2: { // SUPER EARLY LIVE
-    sebStart: "2026-01-01T00:00:00Z",
-    sebSoldOut: "2026-12-01T00:00:00Z",
-    ebStart: "2026-12-01T00:00:00Z",
-    ebSoldOut: "2026-12-30T00:00:00Z",
+  2: { // SUPER EARLY LIVE - Both Super Early Birds active
+    lsSebStart: "2026-01-01T00:00:00Z",
+    lsSebSoldOut: "2026-12-01T00:00:00Z",
+    lsEbStart: "2026-12-01T00:00:00Z",
+    lsEbSoldOut: "2026-12-30T00:00:00Z",
+    rlfSebStart: "2026-01-01T00:00:00Z",
+    rlfSebSoldOut: "2026-12-01T00:00:00Z",
+    rlfEbStart: "2026-12-01T00:00:00Z",
+    rlfEbSoldOut: "2026-12-30T00:00:00Z",
   },
-  3: { // SUPER EARLY SOLD OUT (Early Bird still coming soon)
-    sebStart: "2026-01-01T00:00:00Z",
-    sebSoldOut: "2026-01-02T00:00:00Z",
-    ebStart: "2026-12-01T00:00:00Z",
-    ebSoldOut: "2026-12-30T00:00:00Z",
+  3: { // LS SOLD OUT - LS Super Early sold out + LS Early Bird live, RLF Super Early still live
+    lsSebStart: "2026-01-01T00:00:00Z",
+    lsSebSoldOut: "2026-01-02T00:00:00Z",
+    lsEbStart: "2026-01-01T00:00:00Z",
+    lsEbSoldOut: "2026-12-30T00:00:00Z",
+    rlfSebStart: "2026-01-01T00:00:00Z",
+    rlfSebSoldOut: "2026-12-01T00:00:00Z",
+    rlfEbStart: "2026-12-01T00:00:00Z",
+    rlfEbSoldOut: "2026-12-30T00:00:00Z",
   },
-  4: { // EARLY BIRD LIVE (Super Early Bird sold out)
-    sebStart: "2026-01-01T00:00:00Z",
-    sebSoldOut: "2026-01-02T00:00:00Z",
-    ebStart: "2026-01-01T00:00:00Z",
-    ebSoldOut: "2026-12-30T00:00:00Z",
+  4: { // BOTH SEB SOLD OUT - Both Super Early Birds sold out, Both Early Birds live
+    lsSebStart: "2026-01-01T00:00:00Z",
+    lsSebSoldOut: "2026-01-02T00:00:00Z",
+    lsEbStart: "2026-01-01T00:00:00Z",
+    lsEbSoldOut: "2026-12-30T00:00:00Z",
+    rlfSebStart: "2026-01-01T00:00:00Z",
+    rlfSebSoldOut: "2026-01-02T00:00:00Z",
+    rlfEbStart: "2026-01-01T00:00:00Z",
+    rlfEbSoldOut: "2026-12-30T00:00:00Z",
+  },
+  5: { // BOTH EARLY BIRDS LIVE (same as 4, kept for clarity)
+    lsSebStart: "2026-01-01T00:00:00Z",
+    lsSebSoldOut: "2026-01-02T00:00:00Z",
+    lsEbStart: "2026-01-01T00:00:00Z",
+    lsEbSoldOut: "2026-12-30T00:00:00Z",
+    rlfSebStart: "2026-01-01T00:00:00Z",
+    rlfSebSoldOut: "2026-01-02T00:00:00Z",
+    rlfEbStart: "2026-01-01T00:00:00Z",
+    rlfEbSoldOut: "2026-12-30T00:00:00Z",
   },
 };
 
@@ -93,8 +120,8 @@ export const leadershipSummit: EventConfig = {
       id: "ls-seb",
       name: "Super Early Bird",
       order: 0,
-      saleStart: dates.sebStart,
-      soldOutAt: dates.sebSoldOut,
+      saleStart: dates.lsSebStart,
+      soldOutAt: dates.lsSebSoldOut,
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹9,998",
       description: "3-day access to all keynotes, talks, and networking sessions. Includes lunch and conference swag.",
@@ -119,8 +146,8 @@ export const leadershipSummit: EventConfig = {
       id: "ls-eb",
       name: "Early Bird",
       order: 1,
-      saleStart: dates.ebStart,
-      soldOutAt: dates.ebSoldOut,
+      saleStart: dates.lsEbStart,
+      soldOutAt: dates.lsEbSoldOut,
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹17,998",
       description: "3-day access to all keynotes, talks, and networking sessions.",
@@ -159,8 +186,8 @@ export const risingLeadersForum: EventConfig = {
       id: "rlf-seb-full",
       name: "Super Early Bird — Professionals",
       order: 0,
-      saleStart: dates.sebStart,
-      soldOutAt: dates.sebSoldOut,
+      saleStart: dates.rlfSebStart,
+      soldOutAt: dates.rlfSebSoldOut,
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹7,998",
       description: "3-day access to all keynotes, talks, workshops and networking sessions. Includes lunch and conference swag.",
@@ -170,8 +197,8 @@ export const risingLeadersForum: EventConfig = {
       id: "rlf-seb-day",
       name: "Super Early Bird — Students",
       order: 1,
-      saleStart: dates.sebStart,
-      soldOutAt: dates.sebSoldOut,
+      saleStart: dates.rlfSebStart,
+      soldOutAt: dates.rlfSebSoldOut,
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹2,998",
       description: "3-day access to all keynotes, talks, workshops and networking sessions. Includes lunch and conference swag.",
@@ -181,8 +208,8 @@ export const risingLeadersForum: EventConfig = {
       id: "rlf-eb-full",
       name: "Early Bird — Professionals",
       order: 2,
-      saleStart: dates.ebStart,
-      soldOutAt: dates.ebSoldOut,
+      saleStart: dates.rlfEbStart,
+      soldOutAt: dates.rlfEbSoldOut,
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹9,998",
       description: "2-day access to all keynotes, talks, workshops and networking sessions. Includes lunch and conference swag.",
@@ -192,8 +219,8 @@ export const risingLeadersForum: EventConfig = {
       id: "rlf-eb-day",
       name: "Early Bird — Students",
       order: 3,
-      saleStart: dates.ebStart,
-      soldOutAt: dates.ebSoldOut,
+      saleStart: dates.rlfEbStart,
+      soldOutAt: dates.rlfEbSoldOut,
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹3,998",
       description: "2-day access to all keynotes, talks, workshops and networking sessions. Includes lunch and conference swag.",
