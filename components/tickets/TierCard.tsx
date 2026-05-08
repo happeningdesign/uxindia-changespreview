@@ -103,7 +103,8 @@ export default function TierCard({
         className={`${baseClasses} relative z-10 ${hasAddons && isActive ? "cursor-pointer" : ""}`}
         style={{
           ...cardStyles,
-          opacity: isUpcoming || isSoldOut || isExpired ? 0.7 : 1,
+          // Don't use opacity for sold out with stacked effect - use solid background instead
+          opacity: isUpcoming || isExpired ? 0.7 : 1,
         }}
         onClick={hasAddons && isActive ? onToggle : undefined}
       >
