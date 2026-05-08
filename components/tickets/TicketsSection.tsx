@@ -5,6 +5,7 @@ import { events, getTierState } from "@/data/tickets";
 import EventHeader from "./EventHeader";
 import ActiveTierSection from "./ActiveTierSection";
 import ComingSoonSection from "./ComingSoonSection";
+import ComingSoonMarquee from "./ComingSoonMarquee";
 
 export default function TicketsSection() {
   const [currentTime, setCurrentTime] = useState<Date | null>(null);
@@ -127,13 +128,11 @@ export default function TicketsSection() {
             />
           </div>
 
-          {/* Coming Soon Section - Side by Side */}
+          {/* Coming Soon Section - Marquee + Cards Side by Side */}
           {hasComingSoon && (
             <>
-              <p className="text-center font-sans text-sm text-white/50 mb-4">
-                Coming Soon
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <ComingSoonMarquee />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 <ComingSoonSection
                   event={leadershipSummit}
                   upcomingTier={lsUpcomingTier}

@@ -42,7 +42,7 @@ export default function AddonCard({
         </div>
         {card.price && (
           <p className="font-sans text-lg font-semibold text-white">
-            {card.price.replace("₹", "")}
+            ₹{card.price.replace("₹", "").replace("₹", "")}
           </p>
         )}
       </div>
