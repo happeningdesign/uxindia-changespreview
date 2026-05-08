@@ -115,7 +115,7 @@ export const risingLeadersForum: EventConfig = {
   tiers: [
     {
       id: "rlf-seb-full",
-      name: "Super Early Bird — Full Pass",
+      name: "Super Early Bird — Professionals",
       order: 0,
       saleStart: "2026-01-01T00:00:00Z",  // Already open
       soldOutAt: "2026-06-30T23:59:59Z",  // Matches saleEnd
@@ -126,7 +126,7 @@ export const risingLeadersForum: EventConfig = {
     },
     {
       id: "rlf-seb-day",
-      name: "Super Early Bird — Day Pass",
+      name: "Super Early Bird — Students",
       order: 1,
       saleStart: "2026-01-01T00:00:00Z",  // Already open
       soldOutAt: "2026-06-30T23:59:59Z",  // Matches saleEnd
