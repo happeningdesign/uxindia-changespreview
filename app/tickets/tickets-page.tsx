@@ -3,6 +3,7 @@
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
 import TicketsSection from "@/components/tickets/TicketsSection";
+import TicketsFAQSection from "@/components/tickets/TicketsFAQSection";
 
 export default function TicketsPage() {
   return (
@@ -10,6 +11,7 @@ export default function TicketsPage() {
       <Nav forceSolid />
       <main className="bg-[#0D0D0D]">
         <TicketsSection />
+        <TicketsFAQSection />
       </main>
       <Footer />
     </>
