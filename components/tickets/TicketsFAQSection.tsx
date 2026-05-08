@@ -140,29 +140,38 @@ export default function TicketsFAQSection() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="flex justify-center gap-3 mb-10"
         >
-          {filters.map((filter) => (
-            <button
-              key={filter.id}
-              onClick={() => setActiveFilter(filter.id)}
-              className="font-sans text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200"
-              style={{
-                backgroundColor:
-                  activeFilter === filter.id ? filter.color : "transparent",
-                color:
-                  activeFilter === filter.id
+          {filters.map((filter) => {
+            const isActive = activeFilter === filter.id;
+            return (
+              <motion.button
+                key={filter.id}
+                onClick={() => setActiveFilter(filter.id)}
+                className="relative font-sans text-sm font-medium px-5 py-2.5 rounded-full overflow-hidden"
+                style={{
+                  color: isActive
                     ? filter.id === "rising-leaders"
                       ? "#1A1000"
                       : "#FFFFFF"
                     : "#888888",
-                border:
-                  activeFilter === filter.id
-                    ? "none"
-                    : "1px solid #333333",
-              }}
-            >
-              {filter.label}
-            </button>
-          ))}
+                  border: isActive ? "1px solid transparent" : "1px solid #333333",
+                }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.15 }}
+              >
+                {/* Animated background */}
+                <motion.span
+                  className="absolute inset-0 rounded-full"
+                  initial={false}
+                  animate={{
+                    backgroundColor: isActive ? filter.color : "transparent",
+                    opacity: isActive ? 1 : 0,
+                  }}
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                />
+                <span className="relative z-10">{filter.label}</span>
+              </motion.button>
+            );
+          })}
         </motion.div>
 
         {/* Accordion */}
@@ -170,29 +179,36 @@ export default function TicketsFAQSection() {
           initial={{ opacity: 0, y: 24 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.15 }}
-          key={activeFilter} // Re-mount accordion when filter changes
         >
-          <Accordion
-            type="single"
-            collapsible
-            defaultValue={filteredFAQs[0]?.id}
-            className="w-full"
+          <motion.div
+            key={activeFilter}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
           >
-            {filteredFAQs.map((item) => (
-              <AccordionItem
-                key={item.id}
-                value={item.id}
-                className="border-b border-white/10 last:border-b-0"
-              >
-                <AccordionTrigger className="py-6 text-left text-lg md:text-xl font-semibold text-white hover:no-underline [&[data-state=open]>svg]:rotate-180 [&>svg]:text-[#E85520]">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-white/60 text-base md:text-lg leading-relaxed pb-6">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+            <Accordion
+              type="single"
+              collapsible
+              defaultValue={filteredFAQs[0]?.id}
+              className="w-full"
+            >
+              {filteredFAQs.map((item) => (
+                <AccordionItem
+                  key={item.id}
+                  value={item.id}
+                  className="border-b border-white/10 last:border-b-0"
+                >
+                  <AccordionTrigger className="py-6 text-left text-lg md:text-xl font-semibold text-white hover:no-underline [&[data-state=open]>svg]:rotate-180 [&>svg]:text-[#E85520]">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-white/60 text-base md:text-lg leading-relaxed pb-6">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
         </motion.div>
       </div>
     </section>
