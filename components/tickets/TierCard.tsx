@@ -39,7 +39,14 @@ export default function TierCard({
         border: "none",
       };
     }
-    // Upcoming, sold out, expired - muted dark card
+    // Sold out - muted dark card without border
+    if (isSoldOut) {
+      return {
+        backgroundColor: "#1A1A1A",
+        border: "none",
+      };
+    }
+    // Upcoming, expired - muted dark card with subtle border
     return {
       backgroundColor: "#141414",
       border: "1px solid #2A2A2A",
