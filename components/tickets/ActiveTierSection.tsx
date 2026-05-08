@@ -11,53 +11,38 @@ interface ActiveTierSectionProps {
   currentTime: Date;
 }
 
-export default function ActiveTierSection({
+// Individual tier with its own collapsible add-ons
+function TierWithAddons({
+  tier,
+  state,
   event,
-  activeTiers,
-  currentTime,
-}: ActiveTierSectionProps) {
-  const [mounted, setMounted] = useState(false);
+  mounted,
+}: {
+  tier: TicketTier;
+  state: TierState;
+  event: EventConfig;
+  mounted: boolean;
+}) {
   const [addonsExpanded, setAddonsExpanded] = useState(true);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
+  
   const isLeadershipSummit = event.id === "leadership-summit";
   const cardTextColor = event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF";
-
-  // Get add-on cards only for Leadership Summit (from the first active tier)
-  const firstActiveTier = activeTiers[0];
-  const additionalCards = isLeadershipSummit ? (firstActiveTier?.tier.additionalCards || []) : [];
+  const additionalCards = tier.additionalCards || [];
   const hasAddons = isLeadershipSummit && additionalCards.length > 0;
-
-  // If no active tiers, show empty placeholder to maintain grid alignment
-  if (activeTiers.length === 0) {
-    return <div className="flex flex-col gap-4" />;
-  }
 
   return (
     <div className="flex flex-col gap-4">
-      {/* All Active Tier Cards */}
-      {activeTiers.map((activeTier, index) => {
-        // Only the first tier in LS gets the dropdown for add-ons
-        const showDropdown = isLeadershipSummit && index === 0 && hasAddons;
-        
-        return (
-          <TierCard
-            key={activeTier.tier.id}
-            tier={activeTier.tier}
-            state={activeTier.state}
-            themeColor={event.themeColor}
-            textColor={cardTextColor}
-            isExpanded={addonsExpanded}
-            onToggle={() => setAddonsExpanded(!addonsExpanded)}
-            hasAddons={showDropdown}
-          />
-        );
-      })}
+      <TierCard
+        tier={tier}
+        state={state}
+        themeColor={event.themeColor}
+        textColor={cardTextColor}
+        isExpanded={addonsExpanded}
+        onToggle={() => setAddonsExpanded(!addonsExpanded)}
+        hasAddons={hasAddons}
+      />
 
-      {/* Add-on Cards - only for Leadership Summit with smooth animation */}
+      {/* Add-on Cards with smooth animation */}
       {hasAddons && (
         <div
           className="grid transition-all duration-300 ease-out overflow-hidden"
@@ -79,6 +64,38 @@ export default function ActiveTierSection({
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+export default function ActiveTierSection({
+  event,
+  activeTiers,
+  currentTime,
+}: ActiveTierSectionProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // If no active tiers, show empty placeholder to maintain grid alignment
+  if (activeTiers.length === 0) {
+    return <div className="flex flex-col gap-4" />;
+  }
+
+  return (
+    <div className="flex flex-col gap-4">
+      {/* Each Active Tier with its own collapsible add-ons */}
+      {activeTiers.map((activeTier) => (
+        <TierWithAddons
+          key={activeTier.tier.id}
+          tier={activeTier.tier}
+          state={activeTier.state}
+          event={event}
+          mounted={mounted}
+        />
+      ))}
 
       {/* Buy Button - appears right after all active tiers + add-ons */}
       <a

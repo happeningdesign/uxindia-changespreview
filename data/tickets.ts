@@ -86,18 +86,22 @@ export const leadershipSummit: EventConfig = {
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹17,998",
       description: "3-day access to all keynotes, talks, and networking sessions.",
-      additionalCards: []
-    },
-    {
-      id: "ls-ga",
-      name: "General Admission",
-      order: 2,
-      saleStart: "2026-01-01T00:00:00Z",  // Set to active
-      soldOutAt: "2026-09-20T23:59:59Z",
-      saleEnd: "2026-09-20T23:59:59Z",
-      price: "₹22,998",
-      description: "3-day access to all keynotes, talks, and networking sessions.",
-      additionalCards: []
+      additionalCards: [
+        {
+          id: "ls-eb-workshop",
+          type: "addon",
+          label: "Workshops",
+          price: "₹5,000",
+          description: "Pre-conference full-day workshop. Limited seats."
+        },
+        {
+          id: "ls-eb-dinner",
+          type: "addon",
+          label: "Networking Dinner",
+          price: "₹5,000",
+          description: "Exclusive networking dinner with industry leaders."
+        }
+      ]
     }
   ]
 };
