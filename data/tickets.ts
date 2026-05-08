@@ -143,7 +143,7 @@ export const risingLeadersForum: EventConfig = {
       soldOutAt: "2026-08-15T23:59:59Z",
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹9,998",
-      description: "Full 2-day access to all sessions.",
+      description: "3-day access to all keynotes, talks, workshops and networking sessions. Includes lunch and conference swag.",
       additionalCards: []
     },
     {
