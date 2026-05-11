@@ -12,7 +12,7 @@
 // 5 = BOTH EARLY BIRDS LIVE - Both Super Early Birds sold out, Both Early Birds active
 // 6 = ALL LIVE               - All tiers active simultaneously (both SEB + EB live together)
 // ============================================================================
-const DEMO_PRESET = 2; // <-- CHANGE THIS NUMBER (1-6)
+const DEMO_PRESET = 4; // <-- CHANGE THIS NUMBER (1-6)
 // ============================================================================
 
 // Preset date configurations (separate dates for LS and RLF)
@@ -143,15 +143,15 @@ export const leadershipSummit: EventConfig = {
           id: "ls-workshop",
           type: "addon",
           label: "Workshops",
-          price: "₹5,000",
-          description: "Pre-conference full-day workshop. Limited seats."
+          price: "₹9,999",
+          description: "Select any 2 workshops on Day 1. Limited seats per workshop."
         },
         {
-          id: "ls-dinner",
+          id: "ls-tshirt",
           type: "addon",
-          label: "Networking Dinner",
-          price: "₹5,000",
-          description: "Exclusive networking dinner with industry leaders."
+          label: "T-Shirt",
+          price: "₹899",
+          description: "Official UXINDIA 2026 conference T-shirt."
         }
       ]
     },
@@ -169,15 +169,15 @@ export const leadershipSummit: EventConfig = {
           id: "ls-eb-workshop",
           type: "addon",
           label: "Workshops",
-          price: "₹5,000",
-          description: "Pre-conference full-day workshop. Limited seats."
+          price: "₹9,999",
+          description: "Select any 2 workshops on Day 1. Limited seats per workshop."
         },
         {
-          id: "ls-eb-dinner",
+          id: "ls-eb-tshirt",
           type: "addon",
-          label: "Networking Dinner",
-          price: "₹5,000",
-          description: "Exclusive networking dinner with industry leaders."
+          label: "T-Shirt",
+          price: "₹899",
+          description: "Official UXINDIA 2026 conference T-shirt."
         }
       ]
     }
