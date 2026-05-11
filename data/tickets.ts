@@ -115,7 +115,7 @@ export const leadershipSummit: EventConfig = {
   externalBuyUrl: "https://example.com/buy-ls",
   themeColor: "#1B7A6E",
   themeBgColor: "#1B7A6E",
-  tierCardColor: "#236B62", // Lighter teal for tier cards
+  tierCardColor: "#3A9090", // Lighter teal for tier cards
   textColor: "#FFFFFF",
   tiers: [
     {
