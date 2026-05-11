@@ -192,7 +192,7 @@ export const risingLeadersForum: EventConfig = {
   venue: "Srishti Institute of Art, Design and Technology, Bengaluru",
   externalBuyUrl: "https://example.com/buy-rlf",
   themeColor: "#E6A817",
-  themeBgColor: "#E6A817",
+  themeBgColor: "#F5BF42",
   tierCardColor: "#F5C842", // Lighter amber/gold for tier cards
   textColor: "#1A1000",
   tiers: [
