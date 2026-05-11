@@ -112,11 +112,7 @@ export default function ActiveTierSection({
           href={event.externalBuyUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full py-4 px-6 rounded-xl text-center font-sans font-semibold text-base transition-all duration-200 hover:opacity-90 hover:scale-[1.02] flex items-center justify-center gap-2"
-          style={{
-            backgroundColor: event.themeColor,
-            color: event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF",
-          }}
+          className="w-full py-4 px-8 rounded-full text-center font-sans font-semibold text-base text-white bg-[#E85520] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#E85520]/30 flex items-center justify-center gap-2"
         >
           Buy tickets
           <svg
