@@ -193,7 +193,7 @@ export const risingLeadersForum: EventConfig = {
   externalBuyUrl: "https://example.com/buy-rlf",
   themeColor: "#E6A817",
   themeBgColor: "#F5BF42",
-  tierCardColor: "#FFCC55", // Lighter amber/gold for tier cards
+  tierCardColor: "#DCAC3B", // Lighter amber/gold for tier cards
   textColor: "#1A1000",
   tiers: [
     {
