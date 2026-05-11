@@ -124,7 +124,7 @@ export const leadershipSummit: EventConfig = {
       soldOutAt: dates.lsSebSoldOut,
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹9,998",
-      description: "3-day access to all keynotes, talks, and networking sessions. Includes lunch and conference swag.",
+      description: "3-Day Access to Grand Keynotes, Deep Dives, Spark Sessions, and Panel Discussions. Includes the High tea lunch, Networking Dinner on Day 2 and conference swag.",
       additionalCards: [
         {
           id: "ls-workshop",
@@ -150,7 +150,7 @@ export const leadershipSummit: EventConfig = {
       soldOutAt: dates.lsEbSoldOut,
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹17,998",
-      description: "3-day access to all keynotes, talks, and networking sessions.",
+      description: "3-Day Access to Grand Keynotes, Deep Dives, Spark Sessions, and Panel Discussions. Includes the High tea lunch, Networking Dinner on Day 2 and conference swag.",
       additionalCards: [
         {
           id: "ls-eb-workshop",
