@@ -126,7 +126,7 @@ export const leadershipSummit: EventConfig = {
   externalBuyUrl: "https://example.com/buy-ls",
   themeColor: "#1B7A6E",
   themeBgColor: "#1B7A6E",
-  tierCardColor: "#3A9090", // Lighter teal for tier cards
+  tierCardColor: "#114F47", // Darker teal for tier cards
   textColor: "#FFFFFF",
   tiers: [
     {
@@ -193,7 +193,7 @@ export const risingLeadersForum: EventConfig = {
   externalBuyUrl: "https://example.com/buy-rlf",
   themeColor: "#E6A817",
   themeBgColor: "#F5BF42",
-  tierCardColor: "#F5C842", // Lighter amber/gold for tier cards
+  tierCardColor: "#FFCC55", // Lighter amber/gold for tier cards
   textColor: "#1A1000",
   tiers: [
     {
