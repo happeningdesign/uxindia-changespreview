@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { type EventConfig, type TicketTier, type TierState } from "@/data/tickets";
 import TierCard from "./TierCard";
 import AddonCard from "./AddonCard";
+import StackedCardsSection from "./StackedCardsSection";
 
 interface ActiveTierSectionProps {
   event: EventConfig;
@@ -135,16 +136,14 @@ export default function ActiveTierSection({
         </div>
       )}
 
-      {/* Sold out tiers below the Buy button */}
-      {soldOutTiers.map((soldOutTier) => (
-        <TierWithAddons
-          key={soldOutTier.tier.id}
-          tier={soldOutTier.tier}
-          state={soldOutTier.state}
+      {/* Sold out tiers - stacked by default, expandable */}
+      {soldOutTiers.length > 0 && (
+        <StackedCardsSection
           event={event}
-          mounted={mounted}
+          tiers={soldOutTiers}
+          label="Sold Out"
         />
-      ))}
+      )}
     </div>
   );
 }
