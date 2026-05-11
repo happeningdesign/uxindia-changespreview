@@ -108,29 +108,31 @@ export default function ActiveTierSection({
 
       {/* Buy Button - appears right after active tiers, before sold out */}
       {hasLiveTiers && (
-        <a
-          href={event.externalBuyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full py-4 px-8 rounded-full text-center font-sans font-semibold text-base text-white bg-[#E85520] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#E85520]/30 flex items-center justify-center gap-2"
-        >
-          Buy tickets
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            aria-hidden="true"
+        <div className="flex justify-center mt-2">
+          <a
+            href={event.externalBuyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="py-3 px-8 rounded-full text-center font-sans font-semibold text-sm text-white bg-[#E85520] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#E85520]/30 inline-flex items-center gap-2"
           >
-            <path
-              d="M3 8h10M9 4l4 4-4 4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </a>
+            Buy tickets
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
       )}
 
       {/* Sold out tiers below the Buy button */}
