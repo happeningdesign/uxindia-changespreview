@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { type EventConfig, type TicketTier, type TierState } from "@/data/tickets";
 import TierCard from "./TierCard";
 import AddonCard from "./AddonCard";
-import StackedCardsSection from "./StackedCardsSection";
 
 interface ActiveTierSectionProps {
   event: EventConfig;
@@ -84,20 +83,17 @@ export default function ActiveTierSection({
     setMounted(true);
   }, []);
 
-  // If no tiers, show empty placeholder to maintain grid alignment
+  // If no active tiers, show empty placeholder to maintain grid alignment
   if (activeTiers.length === 0) {
     return <div className="flex flex-col gap-4" />;
   }
 
-  // Separate active tiers from sold out tiers
-  const liveTiers = activeTiers.filter((t) => t.state === "active");
-  const soldOutTiers = activeTiers.filter((t) => t.state === "sold_out");
-  const hasLiveTiers = liveTiers.length > 0;
+  const hasActiveTiers = activeTiers.length > 0;
 
   return (
     <div className="flex flex-col gap-4">
-      {/* Active (live) tiers first */}
-      {liveTiers.map((activeTier) => (
+      {/* Active (live) tiers */}
+      {activeTiers.map((activeTier) => (
         <TierWithAddons
           key={activeTier.tier.id}
           tier={activeTier.tier}
@@ -107,8 +103,8 @@ export default function ActiveTierSection({
         />
       ))}
 
-      {/* Buy Button - appears right after active tiers, before sold out */}
-      {hasLiveTiers && (
+      {/* Buy Button - appears right after active tiers */}
+      {hasActiveTiers && (
         <div className="flex justify-center mt-2">
           <a
             href={event.externalBuyUrl}
@@ -134,15 +130,6 @@ export default function ActiveTierSection({
             </svg>
           </a>
         </div>
-      )}
-
-      {/* Sold out tiers - stacked by default, expandable */}
-      {soldOutTiers.length > 0 && (
-        <StackedCardsSection
-          event={event}
-          tiers={soldOutTiers}
-          label="Sold Out"
-        />
       )}
     </div>
   );
