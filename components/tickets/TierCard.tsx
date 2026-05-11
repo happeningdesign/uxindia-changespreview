@@ -105,12 +105,12 @@ export default function TierCard({
           ...cardStyles,
           // Don't use opacity for sold out with stacked effect - use solid background instead
           opacity: isUpcoming || isExpired ? 0.7 : 1,
-          // Fixed height for consistent card sizing across both events
-          height: "160px",
+          // Min-height for consistent card sizing - matches LS card natural height
+          minHeight: "180px",
         }}
         onClick={hasAddons && isActive ? onToggle : undefined}
       >
-        <div className="p-5 h-full flex flex-col overflow-hidden">
+        <div className="p-5 flex flex-col">
         {/* Header row with badge, title, price, and chevron */}
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
@@ -187,9 +187,9 @@ export default function TierCard({
           </div>
         </div>
 
-        {/* Description - ALWAYS visible, clamped to 2 lines for consistent height */}
+        {/* Description - ALWAYS visible */}
         <p
-          className="font-sans text-sm leading-relaxed mt-3 line-clamp-2"
+          className="font-sans text-sm leading-relaxed mt-3"
           style={{ color: isActive ? `${textColor}CC` : "#666" }}
         >
           {tier.description}
