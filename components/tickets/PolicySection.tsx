@@ -111,7 +111,7 @@ export default function PolicySection() {
               fontWeight: 500,
             }}
           >
-            Policies <span className="text-[#E85520]">&amp; Terms</span>
+            Policies &amp; Terms
           </h2>
           <p className="font-sans text-sm text-white/40 max-w-md mx-auto">
             Important information about registrations, cancellations, and event policies.
