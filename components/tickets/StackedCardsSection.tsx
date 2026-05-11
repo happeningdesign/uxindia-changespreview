@@ -59,7 +59,7 @@ export default function StackedCardsSection({
           </>
         )}
 
-        {/* First card - always visible */}
+        {/* First card - always visible, forced opaque so stacked cards behind don't show through */}
         <div className="relative z-10">
           <TierCard
             tier={firstTier.tier}
@@ -69,6 +69,7 @@ export default function StackedCardsSection({
             isExpanded={false}
             onToggle={() => {}}
             hasAddons={false}
+            forceOpaque={true}
           />
           
           {/* Expand indicator overlay */}
