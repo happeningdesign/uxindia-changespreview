@@ -8,10 +8,11 @@
 // 1 = COMING SOON           - All tickets show "Coming Soon" with marquee
 // 2 = SUPER EARLY LIVE      - Super Early Bird active for both, Early Bird coming soon
 // 3 = LS SOLD OUT, RLF LIVE - LS Super Early sold out + LS Early Bird live, RLF Super Early still live
-// 4 = BOTH SEB SOLD OUT     - Both Super Early Birds sold out, RLF Early Bird live, LS Early Bird live
+// 4 = BOTH SEB SOLD OUT     - Both Super Early Birds sold out, Both Early Birds live
 // 5 = BOTH EARLY BIRDS LIVE - Both Super Early Birds sold out, Both Early Birds active
+// 6 = ALL LIVE               - All tiers active simultaneously (both SEB + EB live together)
 // ============================================================================
-const DEMO_PRESET = 2; // <-- CHANGE THIS NUMBER (1-5)
+const DEMO_PRESET = 2; // <-- CHANGE THIS NUMBER (1-6)
 // ============================================================================
 
 // Preset date configurations (separate dates for LS and RLF)
@@ -56,13 +57,23 @@ const PRESETS = {
     rlfEbStart: "2026-01-01T00:00:00Z",
     rlfEbSoldOut: "2026-12-30T00:00:00Z",
   },
-  5: { // BOTH EARLY BIRDS LIVE (same as 4, kept for clarity)
+  5: { // BOTH EARLY BIRDS LIVE - Both Super Early Birds sold out, Both Early Birds active
     lsSebStart: "2026-01-01T00:00:00Z",
     lsSebSoldOut: "2026-01-02T00:00:00Z",
     lsEbStart: "2026-01-01T00:00:00Z",
     lsEbSoldOut: "2026-12-30T00:00:00Z",
     rlfSebStart: "2026-01-01T00:00:00Z",
     rlfSebSoldOut: "2026-01-02T00:00:00Z",
+    rlfEbStart: "2026-01-01T00:00:00Z",
+    rlfEbSoldOut: "2026-12-30T00:00:00Z",
+  },
+  6: { // ALL LIVE - All tiers active simultaneously (SEB + EB both live)
+    lsSebStart: "2026-01-01T00:00:00Z",
+    lsSebSoldOut: "2026-12-30T00:00:00Z",
+    lsEbStart: "2026-01-01T00:00:00Z",
+    lsEbSoldOut: "2026-12-30T00:00:00Z",
+    rlfSebStart: "2026-01-01T00:00:00Z",
+    rlfSebSoldOut: "2026-12-30T00:00:00Z",
     rlfEbStart: "2026-01-01T00:00:00Z",
     rlfEbSoldOut: "2026-12-30T00:00:00Z",
   },
