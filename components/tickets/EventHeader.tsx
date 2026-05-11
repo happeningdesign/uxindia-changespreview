@@ -29,7 +29,7 @@ export default function EventHeader({ event }: EventHeaderProps) {
           style={{
             fontFamily: "'UXILeadershipCondensed'",
             fontWeight: 500,
-            fontSize: "clamp(1.6rem, 2.5vw, 2rem)",
+            fontSize: "clamp(2rem, 3.5vw, 2.4rem)",
             color: event.textColor,
           }}
         >
