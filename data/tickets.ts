@@ -123,7 +123,7 @@ export const leadershipSummit: EventConfig = {
       saleStart: dates.lsSebStart,
       soldOutAt: dates.lsSebSoldOut,
       saleEnd: "2026-06-30T23:59:59Z",
-      price: "₹9,998",
+      price: "₹14,999",
       description: "3-Day Access to Grand Keynotes, Deep Dives, Spark Sessions, and Panel Discussions. Includes the High tea lunch, Networking Dinner on Day 2 and conference swag.",
       additionalCards: [
         {
@@ -149,7 +149,7 @@ export const leadershipSummit: EventConfig = {
       saleStart: dates.lsEbStart,
       soldOutAt: dates.lsEbSoldOut,
       saleEnd: "2026-08-15T23:59:59Z",
-      price: "₹17,998",
+      price: "₹17,999",
       description: "3-Day Access to Grand Keynotes, Deep Dives, Spark Sessions, and Panel Discussions. Includes the High tea lunch, Networking Dinner on Day 2 and conference swag.",
       additionalCards: [
         {
@@ -189,7 +189,7 @@ export const risingLeadersForum: EventConfig = {
       saleStart: dates.rlfSebStart,
       soldOutAt: dates.rlfSebSoldOut,
       saleEnd: "2026-06-30T23:59:59Z",
-      price: "₹7,998",
+      price: "₹8,999",
       description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
       additionalCards: []
     },
@@ -200,7 +200,7 @@ export const risingLeadersForum: EventConfig = {
       saleStart: dates.rlfSebStart,
       soldOutAt: dates.rlfSebSoldOut,
       saleEnd: "2026-06-30T23:59:59Z",
-      price: "₹2,998",
+      price: "₹2,599",
       description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
       additionalCards: []
     },
@@ -211,7 +211,7 @@ export const risingLeadersForum: EventConfig = {
       saleStart: dates.rlfEbStart,
       soldOutAt: dates.rlfEbSoldOut,
       saleEnd: "2026-08-15T23:59:59Z",
-      price: "₹9,998",
+      price: "₹10,499",
       description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
       additionalCards: []
     },
@@ -222,7 +222,7 @@ export const risingLeadersForum: EventConfig = {
       saleStart: dates.rlfEbStart,
       soldOutAt: dates.rlfEbSoldOut,
       saleEnd: "2026-08-15T23:59:59Z",
-      price: "₹3,998",
+      price: "₹3,299",
       description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
       additionalCards: []
     }
