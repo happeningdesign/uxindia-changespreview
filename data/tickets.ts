@@ -101,6 +101,7 @@ export type EventConfig = {
   externalBuyUrl: string;
   themeColor: string;
   themeBgColor: string;
+  tierCardColor: string; // Lighter color for tier cards to distinguish from event header
   textColor: string;
   tiers: TicketTier[];
 };
@@ -114,6 +115,7 @@ export const leadershipSummit: EventConfig = {
   externalBuyUrl: "https://example.com/buy-ls",
   themeColor: "#1B7A6E",
   themeBgColor: "#1B7A6E",
+  tierCardColor: "#236B62", // Lighter teal for tier cards
   textColor: "#FFFFFF",
   tiers: [
     {
@@ -180,6 +182,7 @@ export const risingLeadersForum: EventConfig = {
   externalBuyUrl: "https://example.com/buy-rlf",
   themeColor: "#E6A817",
   themeBgColor: "#E6A817",
+  tierCardColor: "#D4990F", // Slightly muted amber for tier cards
   textColor: "#1A1000",
   tiers: [
     {

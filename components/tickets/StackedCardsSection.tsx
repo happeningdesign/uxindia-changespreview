@@ -64,7 +64,7 @@ export default function StackedCardsSection({
           <TierCard
             tier={firstTier.tier}
             state={firstTier.state}
-            themeColor={event.themeColor}
+            themeColor={event.tierCardColor}
             textColor={cardTextColor}
             isExpanded={false}
             onToggle={() => {}}
@@ -98,7 +98,7 @@ export default function StackedCardsSection({
               key={item.tier.id}
               tier={item.tier}
               state={item.state}
-              themeColor={event.themeColor}
+              themeColor={event.tierCardColor}
               textColor={cardTextColor}
               isExpanded={false}
               onToggle={() => {}}

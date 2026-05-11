@@ -39,7 +39,7 @@ function TierWithAddons({
       <TierCard
         tier={tier}
         state={state}
-        themeColor={event.themeColor}
+        themeColor={event.tierCardColor}
         textColor={cardTextColor}
         isExpanded={addonsExpanded}
         onToggle={() => setAddonsExpanded(!addonsExpanded)}
