@@ -95,17 +95,19 @@ export default function ActiveTierSection({
   const hasLiveTiers = liveTiers.length > 0;
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 h-full">
       {/* Active (live) tiers first */}
-      {liveTiers.map((activeTier) => (
-        <TierWithAddons
-          key={activeTier.tier.id}
-          tier={activeTier.tier}
-          state={activeTier.state}
-          event={event}
-          mounted={mounted}
-        />
-      ))}
+      <div className="flex flex-col gap-4">
+        {liveTiers.map((activeTier) => (
+          <TierWithAddons
+            key={activeTier.tier.id}
+            tier={activeTier.tier}
+            state={activeTier.state}
+            event={event}
+            mounted={mounted}
+          />
+        ))}
+      </div>
 
       {/* Buy Button - appears right after active tiers, before sold out */}
       {hasLiveTiers && (
@@ -135,6 +137,9 @@ export default function ActiveTierSection({
           </a>
         </div>
       )}
+
+      {/* Spacer to push sold out section to bottom for alignment */}
+      <div className="flex-grow" />
 
       {/* Sold out tiers - stacked by default, expandable */}
       {soldOutTiers.length > 0 && (
