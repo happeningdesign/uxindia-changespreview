@@ -11,6 +11,7 @@ interface TierCardProps {
   isExpanded: boolean;
   onToggle: () => void;
   hasAddons: boolean; // Whether this tier has add-ons (only LS has this)
+  forceOpaque?: boolean; // Force full opacity even for upcoming/expired states
 }
 
 export default function TierCard({
@@ -21,6 +22,7 @@ export default function TierCard({
   isExpanded,
   onToggle,
   hasAddons,
+  forceOpaque = false,
 }: TierCardProps) {
   // Determine if the card should show as active (full color) or muted
   const isActive = state === "active";
@@ -104,11 +106,14 @@ export default function TierCard({
         style={{
           ...cardStyles,
           // Don't use opacity for sold out with stacked effect - use solid background instead
-          opacity: isUpcoming || isExpired ? 0.7 : 1,
+          // forceOpaque overrides this for stacked sections where we need solid cards
+          opacity: forceOpaque ? 1 : (isUpcoming || isExpired ? 0.7 : 1),
+          // Min-height for consistent card sizing - matches LS card natural height
+          minHeight: "180px",
         }}
         onClick={hasAddons && isActive ? onToggle : undefined}
       >
-        <div className="p-5">
+        <div className="p-5 flex flex-col">
         {/* Header row with badge, title, price, and chevron */}
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">

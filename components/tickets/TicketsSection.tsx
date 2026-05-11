@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { events, getTierState } from "@/data/tickets";
 import EventHeader from "./EventHeader";
 import ActiveTierSection from "./ActiveTierSection";
+import SoldOutSection from "./SoldOutSection";
 import ComingSoonSection from "./ComingSoonSection";
 import ComingSoonMarquee from "./ComingSoonMarquee";
 
@@ -56,23 +57,16 @@ export default function TicketsSection() {
     state: getTierState(tier, currentTime),
   }));
 
-  // Find ALL visible tiers (active + sold_out) for each event
-  // Sold out tiers should still be shown but greyed out
-  // Sort so active tiers come first, sold out tiers move down
-  const lsVisibleTiers = lsTiers
-    .filter((t) => t.state === "active" || t.state === "sold_out")
-    .sort((a, b) => {
-      if (a.state === "active" && b.state === "sold_out") return -1;
-      if (a.state === "sold_out" && b.state === "active") return 1;
-      return a.tier.order - b.tier.order;
-    });
-  const rlfVisibleTiers = rlfTiers
-    .filter((t) => t.state === "active" || t.state === "sold_out")
-    .sort((a, b) => {
-      if (a.state === "active" && b.state === "sold_out") return -1;
-      if (a.state === "sold_out" && b.state === "active") return 1;
-      return a.tier.order - b.tier.order;
-    });
+  // Find active tiers only (for the main section with add-ons)
+  const lsActiveTiers = lsTiers.filter((t) => t.state === "active");
+  const rlfActiveTiers = rlfTiers.filter((t) => t.state === "active");
+
+  // Find sold out tiers separately (for their own aligned row)
+  const lsSoldOutTiers = lsTiers.filter((t) => t.state === "sold_out");
+  const rlfSoldOutTiers = rlfTiers.filter((t) => t.state === "sold_out");
+
+  // Check if any event has sold out tiers
+  const hasSoldOut = lsSoldOutTiers.length > 0 || rlfSoldOutTiers.length > 0;
 
   // Find ALL upcoming tiers for each event (for Coming Soon section)
   const lsUpcomingTiers = lsTiers.filter((t) => t.state === "upcoming");
@@ -126,19 +120,33 @@ export default function TicketsSection() {
             <EventHeader event={risingLeaders} />
           </div>
 
-          {/* Visible Tiers (Active + Sold Out) with Buy Buttons - Side by Side */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          {/* Active Tiers with Buy Buttons - Side by Side */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 items-start">
             <ActiveTierSection
               event={leadershipSummit}
-              activeTiers={lsVisibleTiers}
+              activeTiers={lsActiveTiers}
               currentTime={currentTime}
             />
             <ActiveTierSection
               event={risingLeaders}
-              activeTiers={rlfVisibleTiers}
+              activeTiers={rlfActiveTiers}
               currentTime={currentTime}
             />
           </div>
+
+          {/* Sold Out Section - Separate row for alignment */}
+          {hasSoldOut && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 items-start">
+              <SoldOutSection
+                event={leadershipSummit}
+                soldOutTiers={lsSoldOutTiers}
+              />
+              <SoldOutSection
+                event={risingLeaders}
+                soldOutTiers={rlfSoldOutTiers}
+              />
+            </div>
+          )}
 
           {/* Coming Soon Section - Marquee + Cards Side by Side */}
           {hasComingSoon && (
