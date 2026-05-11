@@ -11,7 +11,7 @@
 // 4 = BOTH SEB SOLD OUT     - Both Super Early Birds sold out, RLF Early Bird live, LS Early Bird live
 // 5 = BOTH EARLY BIRDS LIVE - Both Super Early Birds sold out, Both Early Birds active
 // ============================================================================
-const DEMO_PRESET = 4; // <-- CHANGE THIS NUMBER (1-5)
+const DEMO_PRESET = 2; // <-- CHANGE THIS NUMBER (1-5)
 // ============================================================================
 
 // Preset date configurations (separate dates for LS and RLF)
