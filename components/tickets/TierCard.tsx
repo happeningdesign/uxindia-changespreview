@@ -105,10 +105,12 @@ export default function TierCard({
           ...cardStyles,
           // Don't use opacity for sold out with stacked effect - use solid background instead
           opacity: isUpcoming || isExpired ? 0.7 : 1,
+          // Standard min-height for consistent card sizing across both events
+          minHeight: "140px",
         }}
         onClick={hasAddons && isActive ? onToggle : undefined}
       >
-        <div className="p-5">
+        <div className="p-5 h-full flex flex-col">
         {/* Header row with badge, title, price, and chevron */}
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
