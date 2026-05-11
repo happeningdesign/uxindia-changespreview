@@ -127,7 +127,7 @@ export default function TicketsSection() {
           </div>
 
           {/* Visible Tiers (Active + Sold Out) with Buy Buttons - Side by Side */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 items-start">
             <ActiveTierSection
               event={leadershipSummit}
               activeTiers={lsVisibleTiers}
