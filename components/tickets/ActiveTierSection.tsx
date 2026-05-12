@@ -23,7 +23,7 @@ function TierWithAddons({
   event: EventConfig;
   mounted: boolean;
 }) {
-  const [addonsExpanded, setAddonsExpanded] = useState(true);
+  const [addonsExpanded, setAddonsExpanded] = useState(false);
   
   const cardTextColor = event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF";
   const additionalCards = tier.additionalCards || [];
