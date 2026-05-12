@@ -190,22 +190,7 @@ export const leadershipSummit: EventConfig = {
       saleEnd: "2026-09-22T23:59:59Z",
       price: "₹39,999",
       description: "Exclusive VIP access across all 3 days. Front-row seating, curated speaker dinners, private networking lounge, dedicated concierge, and premium swag kit. Limited to 30 seats.",
-      additionalCards: [
-        {
-          id: "ls-vip-workshop",
-          type: "addon",
-          label: "Workshops",
-          price: "₹9,999",
-          description: "Select any 2 workshops on Day 1. Limited seats per workshop."
-        },
-        {
-          id: "ls-vip-tshirt",
-          type: "addon",
-          label: "T-Shirt",
-          price: "₹899",
-          description: "Official UXINDIA 2026 conference T-shirt."
-        }
-      ]
+      additionalCards: []
     }
   ]
 };
