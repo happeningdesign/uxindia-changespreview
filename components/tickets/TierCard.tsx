@@ -204,8 +204,8 @@ export default function TierCard({
           {tier.description}
         </p>
 
-        {/* Limited Seats Only badge - for LS Super Early Bird, Early Bird, and VIP */}
-        {(tier.id === "ls-seb" || tier.id === "ls-eb" || tier.id === "ls-vip") && (
+        {/* Limited Seats Only badge - for LS Super Early Bird, Early Bird, VIP and RLF Early Bird */}
+        {(tier.id === "ls-seb" || tier.id === "ls-eb" || tier.id === "ls-vip" || tier.id === "rlf-eb-full" || tier.id === "rlf-eb-day") && (
           <p
             className="font-sans text-xs mt-3 italic"
             style={{ color: isActive ? `${textColor}99` : "#666" }}
