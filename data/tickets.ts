@@ -189,7 +189,7 @@ export const leadershipSummit: EventConfig = {
       soldOutAt: "2026-09-30T23:59:59Z",    // Never sold out until after the event
       saleEnd: "2026-09-22T23:59:59Z",
       price: "₹39,999",
-      description: "3-Day Access to Workshops, Grand Keynotes, Deep Dives, Spark Sessions, Panel Discussions & Priority Check-in and Reserved Front-row Seating. Includes High Tea, Lunch, and a curated VIP swag kit. Networking Dinner included on 24th Sept",
+      description: "3-Day Access to Workshops, Grand Keynotes, Deep Dives, Spark Sessions, Panel Discussions & Priority Check-in and Reserved Front-row Seating. Includes High Tea, Lunch, and a curated VIP swag kit. Networking Dinner included on 24th Sept.",
       additionalCards: []
     }
   ]
@@ -234,7 +234,7 @@ export const risingLeadersForum: EventConfig = {
       soldOutAt: dates.rlfSebSoldOut,
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹2,599",
-      description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
+      description: "2-Day access to Keynotes, Workshops, deep dives, panels, and Spark sessions across 2 days. High tea lunch and conference swag included.",
       additionalCards: [
         {
           id: "rlf-seb-day-tshirt",
