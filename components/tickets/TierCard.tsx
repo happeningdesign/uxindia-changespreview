@@ -151,7 +151,7 @@ export default function TierCard({
               className="leading-tight"
               style={{
                 fontFamily: "'UXILeadershipCondensed'",
-                fontWeight: 500,
+                fontWeight: 700,
                 fontSize: "clamp(1.1rem, 2vw, 1.35rem)",
                 color: currentTextColor,
                 textDecoration: isSoldOut || isExpired ? "line-through" : "none",

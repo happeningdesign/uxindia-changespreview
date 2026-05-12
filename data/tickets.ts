@@ -205,7 +205,15 @@ export const risingLeadersForum: EventConfig = {
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹8,999",
       description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
-      additionalCards: []
+      additionalCards: [
+        {
+          id: "rlf-seb-full-tshirt",
+          type: "addon",
+          label: "T-Shirt",
+          price: "₹899",
+          description: "Official UXINDIA 2026 conference T-shirt."
+        }
+      ]
     },
     {
       id: "rlf-seb-day",
@@ -216,7 +224,15 @@ export const risingLeadersForum: EventConfig = {
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹2,599",
       description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
-      additionalCards: []
+      additionalCards: [
+        {
+          id: "rlf-seb-day-tshirt",
+          type: "addon",
+          label: "T-Shirt",
+          price: "₹899",
+          description: "Official UXINDIA 2026 conference T-shirt."
+        }
+      ]
     },
     {
       id: "rlf-eb-full",
@@ -227,7 +243,15 @@ export const risingLeadersForum: EventConfig = {
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹10,499",
       description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
-      additionalCards: []
+      additionalCards: [
+        {
+          id: "rlf-eb-full-tshirt",
+          type: "addon",
+          label: "T-Shirt",
+          price: "₹899",
+          description: "Official UXINDIA 2026 conference T-shirt."
+        }
+      ]
     },
     {
       id: "rlf-eb-day",
@@ -238,7 +262,15 @@ export const risingLeadersForum: EventConfig = {
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹3,299",
       description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
-      additionalCards: []
+      additionalCards: [
+        {
+          id: "rlf-eb-day-tshirt",
+          type: "addon",
+          label: "T-Shirt",
+          price: "₹899",
+          description: "Official UXINDIA 2026 conference T-shirt."
+        }
+      ]
     }
   ]
 };

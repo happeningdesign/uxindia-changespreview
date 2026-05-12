@@ -114,56 +114,118 @@ export default function TicketsSection() {
         </div>
 
         <div className="max-w-6xl mx-auto px-6">
-          {/* Event Headers - Side by Side */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <EventHeader event={leadershipSummit} />
-            <EventHeader event={risingLeaders} />
-          </div>
+          {/* 
+            Layout strategy:
+            - Desktop (md+): two-column grid with LS on left, RLF on right, rows aligned
+            - Mobile: LS venue card → LS tiers → RLF venue card → RLF tiers
+          */}
 
-          {/* Active Tiers with Buy Buttons - Side by Side */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 items-start">
-            <ActiveTierSection
-              event={leadershipSummit}
-              activeTiers={lsActiveTiers}
-              currentTime={currentTime}
-            />
-            <ActiveTierSection
-              event={risingLeaders}
-              activeTiers={rlfActiveTiers}
-              currentTime={currentTime}
-            />
-          </div>
-
-          {/* Sold Out Section - Separate row for alignment */}
-          {hasSoldOut && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 items-start">
-              <SoldOutSection
+          {/* Mobile layout: stacked per event */}
+          <div className="md:hidden flex flex-col gap-6">
+            {/* Leadership Summit column */}
+            <div className="flex flex-col gap-4">
+              <EventHeader event={leadershipSummit} />
+              <ActiveTierSection
                 event={leadershipSummit}
-                soldOutTiers={lsSoldOutTiers}
+                activeTiers={lsActiveTiers}
+                currentTime={currentTime}
               />
-              <SoldOutSection
+              {lsSoldOutTiers.length > 0 && (
+                <SoldOutSection
+                  event={leadershipSummit}
+                  soldOutTiers={lsSoldOutTiers}
+                />
+              )}
+              {lsUpcomingTiers.length > 0 && (
+                <>
+                  <ComingSoonMarquee />
+                  <ComingSoonSection
+                    event={leadershipSummit}
+                    upcomingTiers={lsUpcomingTiers}
+                  />
+                </>
+              )}
+            </div>
+
+            {/* Rising Leaders Forum column */}
+            <div className="flex flex-col gap-4">
+              <EventHeader event={risingLeaders} />
+              <ActiveTierSection
                 event={risingLeaders}
-                soldOutTiers={rlfSoldOutTiers}
+                activeTiers={rlfActiveTiers}
+                currentTime={currentTime}
+              />
+              {rlfSoldOutTiers.length > 0 && (
+                <SoldOutSection
+                  event={risingLeaders}
+                  soldOutTiers={rlfSoldOutTiers}
+                />
+              )}
+              {rlfUpcomingTiers.length > 0 && (
+                <>
+                  <ComingSoonMarquee />
+                  <ComingSoonSection
+                    event={risingLeaders}
+                    upcomingTiers={rlfUpcomingTiers}
+                  />
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Desktop layout: aligned two-column grid rows */}
+          <div className="hidden md:block">
+            {/* Event Headers - Side by Side */}
+            <div className="grid grid-cols-2 gap-6 mb-6">
+              <EventHeader event={leadershipSummit} />
+              <EventHeader event={risingLeaders} />
+            </div>
+
+            {/* Active Tiers with Buy Buttons - Side by Side */}
+            <div className="grid grid-cols-2 gap-6 mb-6 items-start">
+              <ActiveTierSection
+                event={leadershipSummit}
+                activeTiers={lsActiveTiers}
+                currentTime={currentTime}
+              />
+              <ActiveTierSection
+                event={risingLeaders}
+                activeTiers={rlfActiveTiers}
+                currentTime={currentTime}
               />
             </div>
-          )}
 
-          {/* Coming Soon Section - Marquee + Cards Side by Side */}
-          {hasComingSoon && (
-            <>
-              <ComingSoonMarquee />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <ComingSoonSection
+            {/* Sold Out Section - Separate row for alignment */}
+            {hasSoldOut && (
+              <div className="grid grid-cols-2 gap-6 mb-6 items-start">
+                <SoldOutSection
                   event={leadershipSummit}
-                  upcomingTiers={lsUpcomingTiers}
+                  soldOutTiers={lsSoldOutTiers}
                 />
-                <ComingSoonSection
+                <SoldOutSection
                   event={risingLeaders}
-                  upcomingTiers={rlfUpcomingTiers}
+                  soldOutTiers={rlfSoldOutTiers}
                 />
               </div>
-            </>
-          )}
+            )}
+
+            {/* Coming Soon Section - Marquee + Cards Side by Side */}
+            {hasComingSoon && (
+              <>
+                <ComingSoonMarquee />
+                <div className="grid grid-cols-2 gap-6 mt-6">
+                  <ComingSoonSection
+                    event={leadershipSummit}
+                    upcomingTiers={lsUpcomingTiers}
+                  />
+                  <ComingSoonSection
+                    event={risingLeaders}
+                    upcomingTiers={rlfUpcomingTiers}
+                  />
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </section>
