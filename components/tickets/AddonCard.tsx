@@ -39,9 +39,14 @@ export default function AddonCard({
           <h4 className="font-sans text-base font-medium text-white">
             {card.label}
           </h4>
+          {card.description && (
+            <p className="font-sans text-sm text-white/60 mt-2">
+              {card.description}
+            </p>
+          )}
         </div>
         {card.price && (
-          <p className="font-sans text-lg font-semibold text-white">
+          <p className="font-sans text-lg font-semibold text-white flex-shrink-0">
             ₹{card.price.replace("₹", "").replace("₹", "")}
           </p>
         )}

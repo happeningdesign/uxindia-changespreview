@@ -83,7 +83,7 @@ export default function TierCard({
           <div
             className="absolute left-2 right-2 top-3 h-full rounded-xl transition-all duration-300"
             style={{
-              backgroundColor: isSoldOut ? "#1A1A1A" : "#0D3D35",
+              backgroundColor: isSoldOut ? "#1A1A1A" : "#1A5A52",
               transform: "translateY(8px)",
               zIndex: 0,
             }}
@@ -92,7 +92,7 @@ export default function TierCard({
           <div
             className="absolute left-1 right-1 top-1.5 h-full rounded-xl transition-all duration-300"
             style={{
-              backgroundColor: isSoldOut ? "#222222" : "#145045",
+              backgroundColor: isSoldOut ? "#222222" : "#1E625A",
               transform: "translateY(4px)",
               zIndex: 1,
             }}

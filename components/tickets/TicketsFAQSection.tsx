@@ -126,7 +126,7 @@ export default function TicketsFAQSection() {
               fontWeight: 500,
             }}
           >
-            Frequently Asked <span className="text-[#E85520]">Questions</span>
+            Frequently Asked Questions
           </h2>
           <p className="font-sans text-sm text-white/40 max-w-md mx-auto">
             Everything you need to know about attending UXINDIA 2026.
