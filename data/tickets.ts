@@ -12,7 +12,7 @@
 // 5 = BOTH EARLY BIRDS LIVE - Both Super Early Birds sold out, Both Early Birds active
 // 6 = ALL LIVE               - All tiers active simultaneously (both SEB + EB live together)
 // ============================================================================
-const DEMO_PRESET = 6; // <-- CHANGE THIS NUMBER (1-6)
+const DEMO_PRESET = 1; // <-- CHANGE THIS NUMBER (1-6)
 // ============================================================================
 
 // Preset date configurations (separate dates for LS and RLF)
@@ -22,6 +22,8 @@ const PRESETS = {
     lsSebSoldOut: "2026-12-15T00:00:00Z",
     lsEbStart: "2026-12-15T00:00:00Z",
     lsEbSoldOut: "2026-12-30T00:00:00Z",
+    lsVipStart: "2026-12-01T00:00:00Z",
+    lsVipSoldOut: "2026-12-30T00:00:00Z",
     rlfSebStart: "2026-12-01T00:00:00Z",
     rlfSebSoldOut: "2026-12-15T00:00:00Z",
     rlfEbStart: "2026-12-15T00:00:00Z",
@@ -32,6 +34,8 @@ const PRESETS = {
     lsSebSoldOut: "2026-12-01T00:00:00Z",
     lsEbStart: "2026-12-01T00:00:00Z",
     lsEbSoldOut: "2026-12-30T00:00:00Z",
+    lsVipStart: "2026-01-01T00:00:00Z",
+    lsVipSoldOut: "2026-12-30T00:00:00Z",
     rlfSebStart: "2026-01-01T00:00:00Z",
     rlfSebSoldOut: "2026-12-01T00:00:00Z",
     rlfEbStart: "2026-12-01T00:00:00Z",
@@ -42,6 +46,8 @@ const PRESETS = {
     lsSebSoldOut: "2026-01-02T00:00:00Z",
     lsEbStart: "2026-01-01T00:00:00Z",
     lsEbSoldOut: "2026-12-30T00:00:00Z",
+    lsVipStart: "2026-01-01T00:00:00Z",
+    lsVipSoldOut: "2026-12-30T00:00:00Z",
     rlfSebStart: "2026-01-01T00:00:00Z",
     rlfSebSoldOut: "2026-12-01T00:00:00Z",
     rlfEbStart: "2026-12-01T00:00:00Z",
@@ -52,6 +58,8 @@ const PRESETS = {
     lsSebSoldOut: "2026-01-02T00:00:00Z",
     lsEbStart: "2026-01-01T00:00:00Z",
     lsEbSoldOut: "2026-12-30T00:00:00Z",
+    lsVipStart: "2026-01-01T00:00:00Z",
+    lsVipSoldOut: "2026-12-30T00:00:00Z",
     rlfSebStart: "2026-01-01T00:00:00Z",
     rlfSebSoldOut: "2026-01-02T00:00:00Z",
     rlfEbStart: "2026-01-01T00:00:00Z",
@@ -62,6 +70,8 @@ const PRESETS = {
     lsSebSoldOut: "2026-01-02T00:00:00Z",
     lsEbStart: "2026-01-01T00:00:00Z",
     lsEbSoldOut: "2026-12-30T00:00:00Z",
+    lsVipStart: "2026-01-01T00:00:00Z",
+    lsVipSoldOut: "2026-12-30T00:00:00Z",
     rlfSebStart: "2026-01-01T00:00:00Z",
     rlfSebSoldOut: "2026-01-02T00:00:00Z",
     rlfEbStart: "2026-01-01T00:00:00Z",
@@ -72,6 +82,8 @@ const PRESETS = {
     lsSebSoldOut: "2026-12-30T00:00:00Z",
     lsEbStart: "2026-01-01T00:00:00Z",
     lsEbSoldOut: "2026-12-30T00:00:00Z",
+    lsVipStart: "2026-01-01T00:00:00Z",
+    lsVipSoldOut: "2026-12-30T00:00:00Z",
     rlfSebStart: "2026-01-01T00:00:00Z",
     rlfSebSoldOut: "2026-12-30T00:00:00Z",
     rlfEbStart: "2026-01-01T00:00:00Z",
@@ -185,8 +197,8 @@ export const leadershipSummit: EventConfig = {
       id: "ls-vip",
       name: "Leadership Summit VIP Pass",
       order: 2,
-      saleStart: "2026-01-01T00:00:00Z",   // Always live
-      soldOutAt: "2026-09-30T23:59:59Z",    // Never sold out until after the event
+      saleStart: dates.lsVipStart,
+      soldOutAt: dates.lsVipSoldOut,
       saleEnd: "2026-09-22T23:59:59Z",
       price: "₹39,999",
       description: "3-Day Access to Workshops, Grand Keynotes, Deep Dives, Spark Sessions, Panel Discussions & Priority Check-in and Reserved Front-row Seating. Includes High Tea, Lunch, and a curated VIP swag kit. Networking Dinner included on 24th Sept.",
