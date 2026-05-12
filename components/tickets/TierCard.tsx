@@ -69,7 +69,7 @@ export default function TierCard({
   const currentTextColor = getTextColor();
 
   // Determine pass name based on tier id
-  const passName = tier.id.includes("ls-") ? "Leadership Summit Pass" : "Rising Leaders Pass";
+  const passName = tier.id === "ls-vip" ? tier.name : (tier.id.includes("ls-") ? "Leadership Summit Pass" : "Rising Leaders Pass");
 
   // Show stacked effect for LS tiers with add-ons:
   // - Active: when collapsed (to hint at expandable add-ons)
