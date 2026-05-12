@@ -43,6 +43,7 @@ function TierWithAddons({
         isExpanded={addonsExpanded}
         onToggle={() => setAddonsExpanded(!addonsExpanded)}
         hasAddons={hasAddons}
+        addonCount={additionalCards.length}
       />
 
       {/* Add-on Cards with smooth animation - only for active tiers, not sold out */}
