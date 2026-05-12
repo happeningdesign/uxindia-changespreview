@@ -25,10 +25,9 @@ function TierWithAddons({
 }) {
   const [addonsExpanded, setAddonsExpanded] = useState(true);
   
-  const isLeadershipSummit = event.id === "leadership-summit";
   const cardTextColor = event.id === "rising-leaders-forum" ? "#1A1000" : "#FFFFFF";
   const additionalCards = tier.additionalCards || [];
-  const hasAddons = isLeadershipSummit && additionalCards.length > 0;
+  const hasAddons = additionalCards.length > 0;
   const isSoldOut = state === "sold_out";
   
   // Don't show expandable add-ons for sold out tiers (stacked effect shows they exist)
