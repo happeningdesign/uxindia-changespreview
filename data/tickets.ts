@@ -156,9 +156,35 @@ export const leadershipSummit: EventConfig = {
       ]
     },
     {
+      id: "ls-vip",
+      name: "VIP Pass",
+      order: 2,
+      saleStart: "2026-01-01T00:00:00Z",   // Always live
+      soldOutAt: "2026-09-30T23:59:59Z",    // Never sold out until after the event
+      saleEnd: "2026-09-22T23:59:59Z",
+      price: "₹39,999",
+      description: "Exclusive VIP access across all 3 days. Front-row seating, curated speaker dinners, private networking lounge, dedicated concierge, and premium swag kit. Limited to 30 seats.",
+      additionalCards: [
+        {
+          id: "ls-vip-workshop",
+          type: "addon",
+          label: "Workshops",
+          price: "₹9,999",
+          description: "Select any 2 workshops on Day 1. Limited seats per workshop."
+        },
+        {
+          id: "ls-vip-tshirt",
+          type: "addon",
+          label: "T-Shirt",
+          price: "₹899",
+          description: "Official UXINDIA 2026 conference T-shirt."
+        }
+      ]
+    },
+    {
       id: "ls-eb",
       name: "Early Bird",
-      order: 1,
+      order: 3,
       saleStart: dates.lsEbStart,
       soldOutAt: dates.lsEbSoldOut,
       saleEnd: "2026-08-15T23:59:59Z",
