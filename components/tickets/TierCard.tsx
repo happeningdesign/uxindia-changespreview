@@ -134,7 +134,7 @@ export default function TierCard({
                   color: isActive ? textColor : "#666",
                 }}
               >
-                {tier.name}
+                {tier.id === "ls-vip" ? "VIP" : tier.name}
               </span>
               
               {/* Sold Out badge - only when sold out */}
