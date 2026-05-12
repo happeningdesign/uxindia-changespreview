@@ -10,7 +10,8 @@ interface TierCardProps {
   textColor: string;
   isExpanded: boolean;
   onToggle: () => void;
-  hasAddons: boolean; // Whether this tier has add-ons (only LS has this)
+  hasAddons: boolean;
+  addonCount?: number; // Number of add-ons to determine stack depth
   forceOpaque?: boolean; // Force full opacity even for upcoming/expired states
 }
 
@@ -22,6 +23,7 @@ export default function TierCard({
   isExpanded,
   onToggle,
   hasAddons,
+  addonCount = 0,
   forceOpaque = false,
 }: TierCardProps) {
   // Determine if the card should show as active (full color) or muted
@@ -67,7 +69,7 @@ export default function TierCard({
   const currentTextColor = getTextColor();
 
   // Determine pass name based on tier id
-  const passName = tier.id.includes("ls-") ? "Leadership Summit Pass" : "Rising Leaders Pass";
+  const passName = tier.id === "ls-vip" ? tier.name : (tier.id.includes("ls-") ? "Leadership Summit Pass" : "Rising Leaders Pass");
 
   // Show stacked effect for LS tiers with add-ons:
   // - Active: when collapsed (to hint at expandable add-ons)
@@ -76,24 +78,28 @@ export default function TierCard({
 
   return (
     <div className="relative">
-      {/* Stacked cards effect - visible when collapsed to hint at more content */}
+      {/* Stacked cards effect - depth based on addonCount */}
       {showStackedEffect && (
         <>
-          {/* Bottom stack card */}
-          <div
-            className="absolute left-2 right-2 top-3 h-full rounded-xl transition-all duration-300"
-            style={{
-              backgroundColor: isSoldOut ? "#1A1A1A" : "#1A5A52",
-              transform: "translateY(8px)",
-              zIndex: 0,
-            }}
-          />
-          {/* Middle stack card */}
+          {/* Show 2 stack cards only when there are 2+ add-ons */}
+          {addonCount >= 2 && (
+            <div
+              className="absolute left-2 right-2 top-3 h-full rounded-xl transition-all duration-300"
+              style={{
+                backgroundColor: isSoldOut ? "#1A1A1A" : themeColor,
+                opacity: isSoldOut ? 1 : 0.4,
+                transform: "translateY(8px)",
+                zIndex: 0,
+              }}
+            />
+          )}
+          {/* Single stack card - always shown when there's at least 1 add-on */}
           <div
             className="absolute left-1 right-1 top-1.5 h-full rounded-xl transition-all duration-300"
             style={{
-              backgroundColor: isSoldOut ? "#222222" : "#1E625A",
-              transform: "translateY(4px)",
+              backgroundColor: isSoldOut ? "#222222" : themeColor,
+              opacity: isSoldOut ? 1 : 0.55,
+              transform: addonCount >= 2 ? "translateY(4px)" : "translateY(6px)",
               zIndex: 1,
             }}
           />
@@ -128,7 +134,7 @@ export default function TierCard({
                   color: isActive ? textColor : "#666",
                 }}
               >
-                {tier.name}
+                {tier.id === "ls-vip" ? "VIP" : tier.name}
               </span>
               
               {/* Sold Out badge - only when sold out */}
@@ -151,7 +157,7 @@ export default function TierCard({
               className="leading-tight"
               style={{
                 fontFamily: "'UXILeadershipCondensed'",
-                fontWeight: 500,
+                fontWeight: 700,
                 fontSize: "clamp(1.1rem, 2vw, 1.35rem)",
                 color: currentTextColor,
                 textDecoration: isSoldOut || isExpired ? "line-through" : "none",

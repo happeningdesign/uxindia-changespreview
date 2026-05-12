@@ -36,7 +36,10 @@ export default function AddonCard({
           <span className="inline-block px-2.5 py-0.5 rounded text-xs font-medium text-[#1B7A6E] border border-[#1B7A6E]/40 mb-2">
             Add On
           </span>
-          <h4 className="font-sans text-base font-medium text-white">
+          <h4
+            className="text-base text-white"
+            style={{ fontFamily: "'UXILeadershipCondensed'", fontWeight: 700, fontSize: "1.1rem" }}
+          >
             {card.label}
           </h4>
           {card.description && (

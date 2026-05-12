@@ -137,7 +137,7 @@ export const leadershipSummit: EventConfig = {
       soldOutAt: dates.lsSebSoldOut,
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹14,999",
-      description: "3-Day Access to Grand Keynotes, Deep Dives, Spark Sessions, and Panel Discussions. Includes the High tea lunch, Networking Dinner on Day 2 and conference swag.",
+      description: "2-Day Access to Grand Keynotes, Deep Dives, Spark Sessions, and Panel Discussions. Includes the High tea, lunch, and conference swag. Networking Dinner included on 24th Sept.",
       additionalCards: [
         {
           id: "ls-workshop",
@@ -163,7 +163,7 @@ export const leadershipSummit: EventConfig = {
       soldOutAt: dates.lsEbSoldOut,
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹17,999",
-      description: "3-Day Access to Grand Keynotes, Deep Dives, Spark Sessions, and Panel Discussions. Includes the High tea lunch, Networking Dinner on Day 2 and conference swag.",
+      description: "2-Day Access to Grand Keynotes, Deep Dives, Spark Sessions, and Panel Discussions. Includes the High tea, lunch, and conference swag. Networking Dinner included on 24th Sept.",
       additionalCards: [
         {
           id: "ls-eb-workshop",
@@ -180,6 +180,17 @@ export const leadershipSummit: EventConfig = {
           description: "Official UXINDIA 2026 conference T-shirt."
         }
       ]
+    },
+    {
+      id: "ls-vip",
+      name: "Leadership Summit VIP Pass",
+      order: 2,
+      saleStart: "2026-01-01T00:00:00Z",   // Always live
+      soldOutAt: "2026-09-30T23:59:59Z",    // Never sold out until after the event
+      saleEnd: "2026-09-22T23:59:59Z",
+      price: "₹39,999",
+      description: "3-Day Access to Workshops, Grand Keynotes, Deep Dives, Spark Sessions, Panel Discussions & Priority Check-in and Reserved Front-row Seating. Includes High Tea, Lunch, and a curated VIP swag kit. Networking Dinner included on 24th Sept.",
+      additionalCards: []
     }
   ]
 };
@@ -204,8 +215,16 @@ export const risingLeadersForum: EventConfig = {
       soldOutAt: dates.rlfSebSoldOut,
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹8,999",
-      description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
-      additionalCards: []
+      description: "2-Day access to Keynotes, Workshops, deep dives, panels, and Spark sessions across 2 days. High tea lunch and conference swag included.",
+      additionalCards: [
+        {
+          id: "rlf-seb-full-tshirt",
+          type: "addon",
+          label: "T-Shirt",
+          price: "₹899",
+          description: "Official UXINDIA 2026 conference T-shirt."
+        }
+      ]
     },
     {
       id: "rlf-seb-day",
@@ -215,8 +234,16 @@ export const risingLeadersForum: EventConfig = {
       soldOutAt: dates.rlfSebSoldOut,
       saleEnd: "2026-06-30T23:59:59Z",
       price: "₹2,599",
-      description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
-      additionalCards: []
+      description: "2-Day access to Keynotes, Workshops, deep dives, panels, and Spark sessions across 2 days. High tea lunch and conference swag included.",
+      additionalCards: [
+        {
+          id: "rlf-seb-day-tshirt",
+          type: "addon",
+          label: "T-Shirt",
+          price: "₹899",
+          description: "Official UXINDIA 2026 conference T-shirt."
+        }
+      ]
     },
     {
       id: "rlf-eb-full",
@@ -226,8 +253,16 @@ export const risingLeadersForum: EventConfig = {
       soldOutAt: dates.rlfEbSoldOut,
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹10,499",
-      description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
-      additionalCards: []
+      description: "2-Day access to Keynotes, Workshops, deep dives, panels, and Spark sessions across 2 days. High tea lunch and conference swag included.",
+      additionalCards: [
+        {
+          id: "rlf-eb-full-tshirt",
+          type: "addon",
+          label: "T-Shirt",
+          price: "₹899",
+          description: "Official UXINDIA 2026 conference T-shirt."
+        }
+      ]
     },
     {
       id: "rlf-eb-day",
@@ -237,8 +272,16 @@ export const risingLeadersForum: EventConfig = {
       soldOutAt: dates.rlfEbSoldOut,
       saleEnd: "2026-08-15T23:59:59Z",
       price: "₹3,299",
-      description: "Workshops, deep dives, panels, and 15 spark sessions across 2 days. Daily lunch and conference swag included.",
-      additionalCards: []
+      description: "2-Day access to Keynotes, Workshops, deep dives, panels, and Spark sessions across 2 days. High tea lunch and conference swag included.",
+      additionalCards: [
+        {
+          id: "rlf-eb-day-tshirt",
+          type: "addon",
+          label: "T-Shirt",
+          price: "₹899",
+          description: "Official UXINDIA 2026 conference T-shirt."
+        }
+      ]
     }
   ]
 };
