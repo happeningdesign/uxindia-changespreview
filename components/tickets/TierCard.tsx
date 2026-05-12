@@ -114,12 +114,12 @@ export default function TierCard({
           // Don't use opacity for sold out with stacked effect - use solid background instead
           // forceOpaque overrides this for stacked sections where we need solid cards
           opacity: forceOpaque ? 1 : (isUpcoming || isExpired ? 0.7 : 1),
-          // Min-height for consistent card sizing - matches LS card natural height
-          minHeight: "180px",
+          // Fixed height for consistent card sizing across both events
+          height: "220px",
         }}
         onClick={hasAddons && isActive ? onToggle : undefined}
       >
-        <div className="p-5 flex flex-col">
+        <div className="p-5 flex flex-col h-full">
         {/* Header row with badge, title, price, and chevron */}
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
@@ -204,8 +204,8 @@ export default function TierCard({
           {tier.description}
         </p>
 
-        {/* Limited Seats Only badge - for LS Super Early Bird, Early Bird, VIP and RLF Early Bird */}
-        {(tier.id === "ls-seb" || tier.id === "ls-eb" || tier.id === "ls-vip" || tier.id === "rlf-eb-full" || tier.id === "rlf-eb-day") && (
+        {/* Limited Seats Only badge - for all Super Early Bird, Early Bird, and VIP cards */}
+        {(tier.id === "ls-seb" || tier.id === "ls-eb" || tier.id === "ls-vip" || tier.id === "rlf-seb-full" || tier.id === "rlf-seb-day" || tier.id === "rlf-eb-full" || tier.id === "rlf-eb-day") && (
           <p
             className="font-sans text-xs mt-3 italic"
             style={{ color: isActive ? `${textColor}99` : "#666" }}
