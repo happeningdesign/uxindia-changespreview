@@ -183,13 +183,13 @@ export const leadershipSummit: EventConfig = {
     },
     {
       id: "ls-vip",
-      name: "VIP Pass",
+      name: "Leadership Summit VIP Pass",
       order: 2,
       saleStart: "2026-01-01T00:00:00Z",   // Always live
       soldOutAt: "2026-09-30T23:59:59Z",    // Never sold out until after the event
       saleEnd: "2026-09-22T23:59:59Z",
       price: "₹39,999",
-      description: "Exclusive VIP access across all 3 days. Front-row seating, curated speaker dinners, private networking lounge, dedicated concierge, and premium swag kit. Limited to 30 seats.",
+      description: "3-Day Access to Workshops, Grand Keynotes, Deep Dives, Spark Sessions, Panel Discussions & Priority Check-in and Reserved Front-row Seating. Includes High Tea, Lunch, and a curated VIP swag kit. Networking Dinner included on 24th Sept",
       additionalCards: []
     }
   ]
