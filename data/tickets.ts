@@ -156,6 +156,32 @@ export const leadershipSummit: EventConfig = {
       ]
     },
     {
+      id: "ls-eb",
+      name: "Early Bird",
+      order: 1,
+      saleStart: dates.lsEbStart,
+      soldOutAt: dates.lsEbSoldOut,
+      saleEnd: "2026-08-15T23:59:59Z",
+      price: "₹17,999",
+      description: "2-Day Access to Grand Keynotes, Deep Dives, Spark Sessions, and Panel Discussions. Includes the High tea, lunch, and conference swag. Networking Dinner included on 24th Sept.",
+      additionalCards: [
+        {
+          id: "ls-eb-workshop",
+          type: "addon",
+          label: "Workshops",
+          price: "₹9,999",
+          description: "Select any 2 workshops on Day 1. Limited seats per workshop."
+        },
+        {
+          id: "ls-eb-tshirt",
+          type: "addon",
+          label: "T-Shirt",
+          price: "₹899",
+          description: "Official UXINDIA 2026 conference T-shirt."
+        }
+      ]
+    },
+    {
       id: "ls-vip",
       name: "VIP Pass",
       order: 2,
@@ -174,32 +200,6 @@ export const leadershipSummit: EventConfig = {
         },
         {
           id: "ls-vip-tshirt",
-          type: "addon",
-          label: "T-Shirt",
-          price: "₹899",
-          description: "Official UXINDIA 2026 conference T-shirt."
-        }
-      ]
-    },
-    {
-      id: "ls-eb",
-      name: "Early Bird",
-      order: 3,
-      saleStart: dates.lsEbStart,
-      soldOutAt: dates.lsEbSoldOut,
-      saleEnd: "2026-08-15T23:59:59Z",
-      price: "₹17,999",
-      description: "2-Day Access to Grand Keynotes, Deep Dives, Spark Sessions, and Panel Discussions. Includes the High tea, lunch, and conference swag. Networking Dinner included on 24th Sept.",
-      additionalCards: [
-        {
-          id: "ls-eb-workshop",
-          type: "addon",
-          label: "Workshops",
-          price: "₹9,999",
-          description: "Select any 2 workshops on Day 1. Limited seats per workshop."
-        },
-        {
-          id: "ls-eb-tshirt",
           type: "addon",
           label: "T-Shirt",
           price: "₹899",
