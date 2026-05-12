@@ -200,7 +200,7 @@ export const leadershipSummit: EventConfig = {
       saleStart: dates.lsVipStart,
       soldOutAt: dates.lsVipSoldOut,
       saleEnd: "2026-09-22T23:59:59Z",
-      price: "₹39,999",
+      price: "₹34,999",
       description: "3-Day Access to Workshops, Grand Keynotes, Deep Dives, Spark Sessions, Panel Discussions & Priority Check-in and Reserved Front-row Seating. Includes High Tea, Lunch, and a curated VIP swag kit. Networking Dinner included on 24th Sept.",
       additionalCards: []
     }
