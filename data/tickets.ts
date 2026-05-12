@@ -12,7 +12,7 @@
 // 5 = BOTH EARLY BIRDS LIVE - Both Super Early Birds sold out, Both Early Birds active
 // 6 = ALL LIVE               - All tiers active simultaneously (both SEB + EB live together)
 // ============================================================================
-const DEMO_PRESET = 1; // <-- CHANGE THIS NUMBER (1-6)
+const DEMO_PRESET = 6; // <-- CHANGE THIS NUMBER (1-6)
 // ============================================================================
 
 // Preset date configurations (separate dates for LS and RLF)
