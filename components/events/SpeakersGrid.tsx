@@ -24,18 +24,14 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: S
           {speakers.map((speaker, index) => (
             <div key={index} className="group flex flex-col">
               {/* Speaker image container */}
-              <div className="relative mb-4">
-                {/* Circular/rounded speaker photo */}
-                <div className="relative aspect-square rounded-2xl overflow-hidden bg-neutral-800">
+              <div className="mb-4">
+                {/* Rounded speaker photo */}
+                <div className="aspect-square rounded-2xl overflow-hidden bg-neutral-800">
                   <img
                     src={speaker.image}
                     alt={speaker.name}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                   />
-                </div>
-                {/* UX26 badge in top-right corner */}
-                <div className="absolute top-3 right-3 bg-[#E85520] text-white text-[10px] font-sans font-bold px-2 py-1 rounded">
-                  UX26
                 </div>
               </div>
 
