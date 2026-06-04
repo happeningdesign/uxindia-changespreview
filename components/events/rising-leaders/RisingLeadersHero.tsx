@@ -37,7 +37,7 @@ export default function RisingLeadersHero() {
         {/* Event metadata - three columns */}
         <div className="flex flex-wrap gap-x-16 gap-y-4 max-w-4xl">
           <div className="min-w-[140px]">
-            <p className="font-sans text-[11px] text-white/50 uppercase tracking-[0.15em] mb-1.5">
+            <p className="font-sans text-[11px] text-white/70 uppercase tracking-[0.15em] mb-1.5">
               DATE
             </p>
             <p className="font-sans text-sm md:text-base text-white font-medium">
@@ -45,7 +45,7 @@ export default function RisingLeadersHero() {
             </p>
           </div>
           <div className="min-w-[140px]">
-            <p className="font-sans text-[11px] text-white/50 uppercase tracking-[0.15em] mb-1.5">
+            <p className="font-sans text-[11px] text-white/70 uppercase tracking-[0.15em] mb-1.5">
               VENUE
             </p>
             <p className="font-sans text-sm md:text-base text-white font-medium">
@@ -53,7 +53,7 @@ export default function RisingLeadersHero() {
             </p>
           </div>
           <div className="min-w-[140px]">
-            <p className="font-sans text-[11px] text-white/50 uppercase tracking-[0.15em] mb-1.5">
+            <p className="font-sans text-[11px] text-white/70 uppercase tracking-[0.15em] mb-1.5">
               LOCATION
             </p>
             <p className="font-sans text-sm md:text-base text-white font-medium">
