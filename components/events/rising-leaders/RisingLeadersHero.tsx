@@ -15,8 +15,7 @@ export default function RisingLeadersHero() {
         }}
       />
 
-      {/* Teal gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1a5a6e]/90 via-[#1a4d5e]/85 to-[#1a4d5e]/80 z-0" />
+
 
       {/* Content container */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-16 h-full flex flex-col justify-between min-h-[85vh]">
@@ -67,8 +66,6 @@ export default function RisingLeadersHero() {
         </div>
       </div>
 
-      {/* Bottom teal bar */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#1a5a6e] z-10" />
     </section>
   );
 }
