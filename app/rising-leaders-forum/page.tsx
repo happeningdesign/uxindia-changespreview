@@ -27,25 +27,21 @@ export default function RisingLeadersForum() {
         speakers={[
           {
             name: "Mohan Krishnaraj",
-            role: "Design Advisor",
+            role: "Design Leader",
             image: "/placeholder.svg?height=300&width=300",
           },
           {
             name: "Kate Moran",
-            role: "UX Researcher",
+            role: "VP Research",
             image: "/placeholder.svg?height=300&width=300",
           },
           {
-            name: "Prof. Kirthi Trivedi",
-            role: "Design Educator",
-            image: "/placeholder.svg?height=300&width=300",
-          },
-          {
-            name: "Rucha Hannabudhar",
-            role: "Design Lead",
+            name: "Prof. Kirti Trivedi",
+            role: "Professor",
             image: "/placeholder.svg?height=300&width=300",
           },
         ]}
+        showMorePlaceholder={true}
       />
       <VenueSection />
       <Footer />

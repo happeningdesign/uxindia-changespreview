@@ -27,35 +27,41 @@ export default function LeadershipSummitPage() {
         speakers={[
           {
             name: "Mohan Krishnaraj",
-            role: "Design Advisor",
+            role: "Design Leader",
             image: "/placeholder.svg?height=300&width=300",
           },
           {
             name: "Kate Moran",
-            role: "UX Researcher",
+            role: "VP Research",
             image: "/placeholder.svg?height=300&width=300",
           },
           {
-            name: "Prof. Kirthi Trivedi",
-            role: "Design Educator",
+            name: "Prof. Kirti Trivedi",
+            role: "Professor",
             image: "/placeholder.svg?height=300&width=300",
           },
           {
-            name: "Rucha Hannabudhar",
-            role: "Design Lead",
+            name: "Rucha Humnabadkar",
+            role: "Design Leader",
             image: "/placeholder.svg?height=300&width=300",
           },
           {
-            name: "Miriam Wouters",
-            role: "Design Strategist",
+            name: "Mirjam Wouters",
+            role: "Design Director",
             image: "/placeholder.svg?height=300&width=300",
           },
           {
             name: "Donald Chesnut",
-            role: "Product Director",
+            role: "Chief Experience Officer",
+            image: "/placeholder.svg?height=300&width=300",
+          },
+          {
+            name: "Ravinder Singh",
+            role: "Design Leader",
             image: "/placeholder.svg?height=300&width=300",
           },
         ]}
+        showMorePlaceholder={true}
       />
       <VenueSection />
       <Footer />
