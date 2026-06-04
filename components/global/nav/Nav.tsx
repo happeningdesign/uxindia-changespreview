@@ -18,10 +18,10 @@ export default function Nav({ forceSolid = false }: NavProps) {
   }, [])
 
   const navLinks = [
-    { label: "Speakers", href: "/#speakers" },
+    { label: "Leadership Summit", href: "/leadership-summit" },
+    { label: "Rising Leaders Forum", href: "/rising-leaders-forum" },
     { label: "About", href: "/about" },
     { label: "Sponsor", href: "https://2026.ux-india.org/sponsor/" },
-    { label: "Waitlist", href: "https://2026.ux-india.org/waitlist/" },
   ]
 
   const showSolidBg = forceSolid || scrolled
