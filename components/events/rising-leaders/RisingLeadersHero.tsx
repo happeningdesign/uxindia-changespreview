@@ -8,7 +8,7 @@ export default function RisingLeadersHero() {
         className="absolute inset-0 z-0"
         style={{
           backgroundImage:
-            "url('/placeholder.svg?height=1080&width=1920')",
+            "url('/images/leela-bhartiya-city.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
