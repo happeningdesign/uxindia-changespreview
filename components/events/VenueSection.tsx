@@ -1,6 +1,10 @@
 "use client";
 
 export default function VenueSection() {
+  const handleGetDirections = () => {
+    window.open("https://maps.app.goo.gl/GefGLLqYJ4ECABMcA", "_blank");
+  };
+
   return (
     <section className="bg-[#0D0D0D] py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -15,8 +19,8 @@ export default function VenueSection() {
             {/* Left - Image */}
             <div className="relative aspect-video md:aspect-auto md:h-96 rounded-xl overflow-hidden border border-white/10">
               <img
-                src="/placeholder.svg?height=400&width=400"
-                alt="Leela Bhartiya City"
+                src="/The Leela Bhartiya City.jpg"
+                alt="The Leela Bhartiya City"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -32,32 +36,40 @@ export default function VenueSection() {
                 </p>
               </div>
 
+              {/* Description */}
+              <p className="font-sans text-sm text-white/60 leading-relaxed">
+                An iconic five-star destination known for its grandeur, world-class amenities, and impeccable hospitality. The perfect setting for design leaders to connect, collaborate, and shape the future.
+              </p>
+
               {/* Transport info */}
               <div className="space-y-6">
-                {/* Trains */}
-                <div>
-                  <h4 className="font-leadership font-semibold text-white text-base mb-2">
-                    Trains
-                  </h4>
-                  <p className="font-sans text-sm text-white/60 leading-relaxed">
-                    Easy connectivity to designed specifically for us designers, researchers, and product builders who are looking for a space to collaborate, build, brainstorm, and innovate.
-                  </p>
-                </div>
-
                 {/* By Air */}
                 <div>
                   <h4 className="font-leadership font-semibold text-white text-base mb-2">
                     By Air
                   </h4>
                   <p className="font-sans text-sm text-white/60 leading-relaxed">
-                    For founders, operators, and design leaders entrepreneurs who are passionate about creating world-class systems and building impactful businesses that stand out in competitive markets.
+                    Kempegowda International Airport (BLR) is approximately 35 km from the venue, with convenient taxi and ride-share options available.
+                  </p>
+                </div>
+
+                {/* By Train */}
+                <div>
+                  <h4 className="font-leadership font-semibold text-white text-base mb-2">
+                    By Train
+                  </h4>
+                  <p className="font-sans text-sm text-white/60 leading-relaxed">
+                    Bengaluru City Railway Station is well-connected to major cities. The venue is accessible via metro and local transport.
                   </p>
                 </div>
               </div>
 
               {/* CTA Button */}
               <div>
-                <button className="inline-flex items-center gap-2 bg-[#E85520] hover:bg-[#E85520]/90 text-white font-sans font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#E85520]/30">
+                <button 
+                  onClick={handleGetDirections}
+                  className="inline-flex items-center gap-2 bg-[#E85520] hover:bg-[#E85520]/90 text-white font-sans font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#E85520]/30 cursor-pointer"
+                >
                   Get Directions
                   <svg
                     width="16"
