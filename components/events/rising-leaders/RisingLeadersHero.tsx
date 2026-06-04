@@ -17,6 +17,9 @@ export default function RisingLeadersHero() {
       {/* Slight black overlay for text readability */}
       <div className="absolute inset-0 bg-black/40 z-0" />
 
+      {/* Darker gradient from bottom for metadata readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70 z-0" />
+
       {/* Content container */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col justify-end min-h-[90vh]">
         {/* Large title */}
