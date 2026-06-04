@@ -15,7 +15,8 @@ export default function LeadershipSummitHero() {
         }}
       />
 
-
+      {/* Slight black overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40 z-0" />
 
       {/* Content container */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-16 h-full flex flex-col justify-between min-h-[85vh]">
@@ -42,7 +43,7 @@ export default function LeadershipSummitHero() {
               <p className="font-sans text-[10px] md:text-xs text-white/50 uppercase tracking-[0.2em] mb-2">
                 DATE
               </p>
-              <p className="font-sans text-sm md:text-base text-[#E85520] font-medium">
+              <p className="font-sans text-sm md:text-base text-white font-medium">
                 23-25 September 2026
               </p>
             </div>
@@ -58,7 +59,7 @@ export default function LeadershipSummitHero() {
               <p className="font-sans text-[10px] md:text-xs text-white/50 uppercase tracking-[0.2em] mb-2">
                 LOCATION
               </p>
-              <p className="font-sans text-sm md:text-base text-[#4ECDC4] font-medium">
+              <p className="font-sans text-sm md:text-base text-white font-medium">
                 Bengaluru, India
               </p>
             </div>
