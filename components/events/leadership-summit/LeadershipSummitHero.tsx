@@ -34,10 +34,10 @@ export default function LeadershipSummitHero() {
           {/* Left content */}
           <div className="flex flex-col gap-8">
             <div>
-              <h1 className="font-serif text-5xl md:text-6xl text-white leading-tight mb-6">
+              <h1 className="font-leadership text-5xl md:text-6xl text-white leading-tight mb-6">
                 Leadership Summit 2026
               </h1>
-              <p className="font-sans text-base text-white/70 leading-relaxed max-w-md">
+              <p className="font-leadership text-base text-white/70 leading-relaxed max-w-md">
                 For senior design professionals, heads of design, CDOs, and strategic decision-makers shaping design inside their organisations.
               </p>
             </div>
@@ -45,26 +45,26 @@ export default function LeadershipSummitHero() {
             {/* Event details */}
             <div className="grid grid-cols-3 gap-8">
               <div>
-                <p className="font-sans text-xs text-white/50 uppercase tracking-widest mb-2">
+                <p className="font-leadership text-xs text-white/50 uppercase tracking-widest mb-2">
                   DATE
                 </p>
-                <p className="font-sans text-sm text-white font-semibold">
+                <p className="font-leadership text-sm text-white font-semibold">
                   23-25 September 2026
                 </p>
               </div>
               <div>
-                <p className="font-sans text-xs text-white/50 uppercase tracking-widest mb-2">
+                <p className="font-leadership text-xs text-white/50 uppercase tracking-widest mb-2">
                   VENUE
                 </p>
-                <p className="font-sans text-sm text-white font-semibold">
+                <p className="font-leadership text-sm text-white font-semibold">
                   Leela Bhartiya City
                 </p>
               </div>
               <div>
-                <p className="font-sans text-xs text-white/50 uppercase tracking-widest mb-2">
+                <p className="font-leadership text-xs text-white/50 uppercase tracking-widest mb-2">
                   LOCATION
                 </p>
-                <p className="font-sans text-sm text-white font-semibold">
+                <p className="font-leadership text-sm text-white font-semibold">
                   Bengaluru, India
                 </p>
               </div>
