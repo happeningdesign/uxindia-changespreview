@@ -27,38 +27,38 @@ export default function LeadershipSummitPage() {
         speakers={[
           {
             name: "Mohan Krishnaraj",
-            role: "Design Leader",
-            image: "/placeholder.svg?height=300&width=300",
+            role: "Global Head, Cognizant",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
           },
           {
             name: "Kate Moran",
-            role: "VP Research",
-            image: "/placeholder.svg?height=300&width=300",
+            role: "VP Research, N/NG",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
           },
           {
             name: "Prof. Kirti Trivedi",
-            role: "Professor",
-            image: "/placeholder.svg?height=300&width=300",
+            role: "VDP, IIT Indore",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
           },
           {
             name: "Rucha Humnabadkar",
-            role: "Design Leader",
-            image: "/placeholder.svg?height=300&width=300",
+            role: "Director Of Design, Youtube",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
           },
           {
             name: "Mirjam Wouters",
-            role: "Design Director",
-            image: "/placeholder.svg?height=300&width=300",
+            role: "Experience Labs Lead, Royal Philips",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
           },
           {
             name: "Donald Chesnut",
-            role: "Chief Experience Officer",
-            image: "/placeholder.svg?height=300&width=300",
+            role: "CDO, CANDESCENT",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
           },
           {
             name: "Ravinder Singh",
-            role: "Design Leader",
-            image: "/placeholder.svg?height=300&width=300",
+            role: "Co-Founder, Rishihood",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
           },
         ]}
         showMorePlaceholder={true}

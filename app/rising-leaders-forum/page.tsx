@@ -27,18 +27,18 @@ export default function RisingLeadersForum() {
         speakers={[
           {
             name: "Mohan Krishnaraj",
-            role: "Design Leader",
-            image: "/placeholder.svg?height=300&width=300",
+            role: "Global Head, Cognizant",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
           },
           {
             name: "Kate Moran",
-            role: "VP Research",
-            image: "/placeholder.svg?height=300&width=300",
+            role: "VP Research, N/NG",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
           },
           {
             name: "Prof. Kirti Trivedi",
-            role: "Professor",
-            image: "/placeholder.svg?height=300&width=300",
+            role: "VDP, IIT Indore",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
           },
         ]}
         showMorePlaceholder={true}
