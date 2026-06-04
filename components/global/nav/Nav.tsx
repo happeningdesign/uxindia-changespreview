@@ -18,10 +18,10 @@ export default function Nav({ forceSolid = false }: NavProps) {
   }, [])
 
   const navLinks = [
-    { label: "Home", href: "/" },
+    { label: "Speakers", href: "/#speakers" },
     { label: "About", href: "/about" },
-    { label: "Leadership Summit", href: "/#format-section" },
-    { label: "Rising Leaders Forum", href: "/#format-section" },
+    { label: "Sponsor", href: "https://2026.ux-india.org/sponsor/" },
+    { label: "Waitlist", href: "https://2026.ux-india.org/waitlist/" },
   ]
 
   const showSolidBg = forceSolid || scrolled
@@ -64,9 +64,9 @@ export default function Nav({ forceSolid = false }: NavProps) {
               href="https://2026.ux-india.org/waitlist/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center gap-2 bg-[#E85520] hover:bg-[#E85520] text-white text-sm font-sans font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#E85520]/30"
+              className="hidden md:inline-flex items-center gap-2 bg-[#E85520] hover:bg-[#E85520]/90 text-white text-sm font-sans font-semibold px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#E85520]/30"
             >
-              Join Waitlist
+              Buy Passes
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
