@@ -7,7 +7,7 @@ export default function RisingLeadersHero() {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/images/leela-bhartiya-city.webp')",
+          backgroundImage: "url('/images/rising-leaders-venue.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
