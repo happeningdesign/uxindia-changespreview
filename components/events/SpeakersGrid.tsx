@@ -15,7 +15,7 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: S
   return (
     <section className="bg-[#0D0D0D] py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="font-sans text-4xl md:text-5xl text-white mb-12 md:mb-16 tracking-tight">
+        <h2 className="font-serif text-4xl md:text-5xl text-white mb-12 md:mb-16 tracking-tight">
           Speakers
         </h2>
 
@@ -38,10 +38,10 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: S
 
               {/* Speaker info - inside card at bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
-                <h3 className="font-sans font-semibold text-white text-sm md:text-base leading-tight mb-1 tracking-tight">
+                <h3 className="font-serif font-semibold text-white text-sm md:text-base leading-tight mb-1 tracking-tight">
                   {speaker.name}
                 </h3>
-                <p className="font-sans text-xs md:text-sm text-[#4ECDC4] leading-tight">
+                <p className="font-serif text-xs md:text-sm text-[#4ECDC4] leading-tight">
                   {speaker.role}
                 </p>
               </div>
@@ -66,10 +66,10 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: S
                     <line x1="5" y1="12" x2="19" y2="12" />
                   </svg>
                 </div>
-                <p className="font-sans text-xs md:text-sm text-white/60">
+                <p className="font-serif text-xs md:text-sm text-white/60">
                   More speakers
                 </p>
-                <p className="font-sans text-xs text-white/40">
+                <p className="font-serif text-xs text-white/40">
                   announced soon.
                 </p>
               </div>
