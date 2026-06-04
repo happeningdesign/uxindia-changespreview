@@ -10,8 +10,9 @@
   font-display: swap;
 }
 
-@theme inline {
-  --font-serif: 'UXILeadershipCondensed', serif;
+/* Custom utility for UXI Leadership font */
+.font-leadership {
+  font-family: 'UXILeadershipCondensed', sans-serif;
 }
 
 :root {
