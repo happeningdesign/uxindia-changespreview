@@ -14,33 +14,33 @@ export default function EventTabs({ eventType }: EventTabsProps) {
   const isLeadership = eventType === "leadership";
 
   return (
-    <section className="bg-[#0D0D0D] border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 py-0">
-        {/* Tab navigation */}
-        <div className="flex gap-0">
-          <button
-            onClick={() => setActiveTab("overview")}
-            className={`flex-1 py-6 font-sans font-semibold text-center transition-all duration-300 ${
-              activeTab === "overview"
-                ? "bg-[#E85520] text-white"
-                : "bg-[#1a1a1a] text-white/50 hover:text-white"
-            }`}
-          >
-            Overview
-          </button>
-          <button
-            onClick={() => setActiveTab("schedule")}
-            className={`flex-1 py-6 font-sans font-semibold text-center transition-all duration-300 ${
-              activeTab === "schedule"
-                ? "bg-[#E85520] text-white"
-                : "bg-[#1a1a1a] text-white/50 hover:text-white"
-            }`}
-          >
-            Schedule
-          </button>
-        </div>
+    <section className="bg-[#0D0D0D]">
+      {/* Tab navigation - full width */}
+      <div className="flex w-full">
+        <button
+          onClick={() => setActiveTab("overview")}
+          className={`flex-1 py-5 font-sans text-base font-medium text-center transition-all duration-300 border-b-2 ${
+            activeTab === "overview"
+              ? "bg-[#1a1a1a] text-white border-[#E85520]"
+              : "bg-[#0D0D0D] text-white/40 border-transparent hover:text-white/70 hover:bg-[#151515]"
+          }`}
+        >
+          Overview
+        </button>
+        <button
+          onClick={() => setActiveTab("schedule")}
+          className={`flex-1 py-5 font-sans text-base font-medium text-center transition-all duration-300 border-b-2 ${
+            activeTab === "schedule"
+              ? "bg-[#1a1a1a] text-white border-[#E85520]"
+              : "bg-[#0D0D0D] text-white/40 border-transparent hover:text-white/70 hover:bg-[#151515]"
+          }`}
+        >
+          Schedule
+        </button>
+      </div>
 
-        {/* Tab content */}
+      {/* Tab content */}
+      <div className="max-w-7xl mx-auto px-6">
         {activeTab === "overview" && (
           <div className="py-12">
             <div className="space-y-8">
