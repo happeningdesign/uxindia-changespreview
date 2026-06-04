@@ -28,7 +28,7 @@ export default function WhoAttends({
 
           {/* Right side - Description */}
           <div className="md:w-3/5">
-            <p className="font-leadership text-base md:text-lg text-white/60 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-white/60 leading-relaxed">
               {subtitle}
             </p>
           </div>

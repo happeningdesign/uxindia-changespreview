@@ -27,7 +27,7 @@ export default function RisingLeadersHero() {
               <h1 className="font-leadership text-5xl md:text-6xl text-white leading-tight mb-6">
                 Rising Leaders Forum 2026
               </h1>
-              <p className="font-leadership text-base text-white/70 leading-relaxed max-w-md">
+              <p className="font-sans text-base text-white/70 leading-relaxed max-w-md">
                 For emerging design leaders, mid-career professionals, and leaders in transition ready to scale their impact.
               </p>
             </div>
@@ -35,26 +35,26 @@ export default function RisingLeadersHero() {
             {/* Event details */}
             <div className="grid grid-cols-3 gap-8">
               <div>
-                <p className="font-leadership text-xs text-white/50 uppercase tracking-widest mb-2">
+                <p className="font-sans text-xs text-white/50 uppercase tracking-widest mb-2">
                   DATE
                 </p>
-                <p className="font-leadership text-sm text-white font-semibold">
+                <p className="font-sans text-sm text-white font-semibold">
                   26-27 September 2026
                 </p>
               </div>
               <div>
-                <p className="font-leadership text-xs text-white/50 uppercase tracking-widest mb-2">
+                <p className="font-sans text-xs text-white/50 uppercase tracking-widest mb-2">
                   VENUE
                 </p>
-                <p className="font-leadership text-sm text-white font-semibold">
+                <p className="font-sans text-sm text-white font-semibold">
                   Leela Bhartiya City
                 </p>
               </div>
               <div>
-                <p className="font-leadership text-xs text-white/50 uppercase tracking-widest mb-2">
+                <p className="font-sans text-xs text-white/50 uppercase tracking-widest mb-2">
                   LOCATION
                 </p>
-                <p className="font-leadership text-sm text-white font-semibold">
+                <p className="font-sans text-sm text-white font-semibold">
                   Bengaluru, India
                 </p>
               </div>

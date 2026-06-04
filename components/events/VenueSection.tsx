@@ -27,7 +27,7 @@ export default function VenueSection() {
                 <h3 className="font-leadership text-3xl md:text-4xl text-white mb-2">
                   The Leela Bhartiya City
                 </h3>
-                <p className="font-leadership text-sm text-[#E85520] font-semibold uppercase tracking-widest">
+                <p className="font-sans text-sm text-[#E85520] font-semibold uppercase tracking-widest">
                   Bengaluru, India
                 </p>
               </div>
@@ -39,7 +39,7 @@ export default function VenueSection() {
                   <h4 className="font-leadership font-semibold text-white text-base mb-2">
                     Trains
                   </h4>
-                  <p className="font-leadership text-sm text-white/60 leading-relaxed">
+                  <p className="font-sans text-sm text-white/60 leading-relaxed">
                     Easy connectivity to designed specifically for us designers, researchers, and product builders who are looking for a space to collaborate, build, brainstorm, and innovate.
                   </p>
                 </div>
@@ -49,7 +49,7 @@ export default function VenueSection() {
                   <h4 className="font-leadership font-semibold text-white text-base mb-2">
                     By Air
                   </h4>
-                  <p className="font-leadership text-sm text-white/60 leading-relaxed">
+                  <p className="font-sans text-sm text-white/60 leading-relaxed">
                     For founders, operators, and design leaders entrepreneurs who are passionate about creating world-class systems and building impactful businesses that stand out in competitive markets.
                   </p>
                 </div>
@@ -57,7 +57,7 @@ export default function VenueSection() {
 
               {/* CTA Button */}
               <div>
-                <button className="inline-flex items-center gap-2 bg-[#E85520] hover:bg-[#E85520]/90 text-white font-leadership font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#E85520]/30">
+                <button className="inline-flex items-center gap-2 bg-[#E85520] hover:bg-[#E85520]/90 text-white font-sans font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#E85520]/30">
                   Get Directions
                   <svg
                     width="16"

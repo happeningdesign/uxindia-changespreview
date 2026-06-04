@@ -41,7 +41,7 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: S
                 <h3 className="font-leadership font-semibold text-white text-sm md:text-base leading-tight mb-1 tracking-tight">
                   {speaker.name}
                 </h3>
-                <p className="font-leadership text-xs md:text-sm text-[#4ECDC4] leading-tight">
+                <p className="font-sans text-xs md:text-sm text-[#4ECDC4] leading-tight">
                   {speaker.role}
                 </p>
               </div>
@@ -66,10 +66,10 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: S
                     <line x1="5" y1="12" x2="19" y2="12" />
                   </svg>
                 </div>
-                <p className="font-leadership text-xs md:text-sm text-white/60">
+                <p className="font-sans text-xs md:text-sm text-white/60">
                   More speakers
                 </p>
-                <p className="font-leadership text-xs text-white/40">
+                <p className="font-sans text-xs text-white/40">
                   announced soon.
                 </p>
               </div>
