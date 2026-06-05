@@ -100,13 +100,13 @@ export default function RisingLeadersHero({ activeTab, setActiveTab }) {
               </div>
 
               {/* VENUE */}
-              <div className="flex items-start gap-6 md:gap-0 md:flex-col md:border-r md:border-white/15 md:pr-12">
+              <div className="flex items-start gap-6 md:gap-0 md:flex-col md:border-r md:border-white/15 md:pr-8">
                 <div className="md:w-full">
                   <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
                     VENUE
                   </p>
                   <p className="font-sans text-base md:text-lg text-white font-medium">
-                    Srishti Manipal Institute of Art, Design & Technology
+                    <span className="whitespace-nowrap">Srishti Manipal</span><br />Institute
                   </p>
                 </div>
               </div>
