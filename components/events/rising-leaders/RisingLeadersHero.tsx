@@ -13,131 +13,143 @@ export default function RisingLeadersHero({ activeTab, setActiveTab }) {
   };
 
   return (
-    <section className="relative w-full">
-      {/* Hero container */}
-      <div className="relative min-h-[90vh] overflow-hidden">
-        {/* Background image */}
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: "url('/images/rising-leaders-venue.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
+    <section className="relative w-full bg-black">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/images/rising-leaders-venue.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
 
-        {/* Left to right scrim */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent z-0" />
+      {/* Left-to-right dark scrim for text legibility */}
+      <div className="absolute inset-0 z-1 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
-        {/* Subtle bottom to top gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40 z-0" />
+      {/* Bottom-to-top dark gradient (90% to 20%) */}
+      <div className="absolute inset-0 z-1 bg-gradient-to-b from-transparent via-transparent to-black/90" />
 
-        {/* Subtle orange tint overlay */}
-        <div className="absolute inset-0 bg-orange-950/5 z-0" />
+      {/* Optional brand-orange multiply tint (~12%) */}
+      <div className="absolute inset-0 z-1 mix-blend-multiply opacity-[0.12] bg-[#E85520]" />
 
-        {/* Content container - flex column with space-between to position content at bottom */}
-        <div className="relative z-10 h-[90vh] max-w-7xl mx-auto px-6 flex flex-col justify-between pt-32 pb-0">
-          {/* Top section - eyebrow kicker */}
-          <div className="flex flex-col gap-16">
-            <div className="space-y-6 max-w-3xl animate-fade-up opacity-0" style={{ animationDelay: "0.1s", animationFillMode: "forwards", animation: "fadeUp 0.6s ease-out 0.1s forwards" }}>
-              {/* Eyebrow kicker */}
-              <div className="space-y-2">
-                <p className="font-sans text-xs md:text-sm text-[#E85520] font-semibold uppercase tracking-widest leading-tight">
-                  DESIGN LEADERSHIP WEEK 2026 · TRACK 02
-                </p>
-              </div>
-
-              {/* Large headline - clamped sizing */}
-              <h1 className="font-leadership text-[3.5rem] sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl text-white leading-[1.1] tracking-tight">
-                Rising Leaders
-                <br />
-                Forum 2026
-              </h1>
-
-              {/* Subcopy - max 46 chars */}
-              <p className="font-sans text-sm md:text-base text-white/80 leading-relaxed max-w-xs">
-                For emerging design leaders ready to scale their impact.
+      {/* Hero content container - adds padding at top for nav clearance */}
+      <div className="relative z-10 min-h-screen flex flex-col pt-24 md:pt-32 pb-0">
+        {/* Main content - positioned to fill space */}
+        <div className="flex-1 flex flex-col justify-end pl-6 md:pl-12 pr-6 pb-24">
+          <div className="max-w-2xl">
+            {/* Eyebrow kicker */}
+            <div className="animate-float-up opacity-0 mb-8">
+              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] letter-spacing">
+                DESIGN LEADERSHIP WEEK 2026 · TRACK 02
               </p>
             </div>
-          </div>
 
-          {/* Bottom section - metadata and tabs */}
-          <div className="space-y-6 animate-fade-up opacity-0" style={{ animationDelay: "0.2s", animationFillMode: "forwards", animation: "fadeUp 0.6s ease-out 0.2s forwards" }}>
-            {/* Thin divider */}
-            <div className="h-px w-32 bg-gradient-to-r from-white/40 to-transparent" />
+            {/* H1 Headline */}
+            <h1
+              className="animate-float-up opacity-0 font-leadership text-white leading-[1.05] mb-6 md:mb-8"
+              style={{
+                fontSize: "clamp(3.5rem, 8vw, 7rem)",
+                animationDelay: "0.1s",
+              }}
+            >
+              Rising Leaders
+              <br />
+              Forum 2026
+            </h1>
 
-            {/* Metadata - three columns with vertical dividers on desktop */}
-            <div className="flex flex-col md:flex-row md:divide-x md:divide-white/20 gap-8 md:gap-0 md:pr-8">
-              <div className="md:pr-8">
-                <p className="font-sans text-xs text-white/50 uppercase tracking-widest font-semibold mb-2">
-                  DATE
-                </p>
-                <p className="font-sans text-sm md:text-base text-white font-medium">
-                  26-27 September
-                </p>
+            {/* Subcopy */}
+            <p
+              className="animate-float-up opacity-0 font-sans text-base md:text-lg text-white/85 leading-relaxed mb-8 md:mb-10"
+              style={{
+                maxWidth: "46ch",
+                animationDelay: "0.2s",
+              }}
+            >
+              For emerging design leaders, mid-career professionals, and leaders in transition ready to scale their impact.
+            </p>
+
+            {/* Thin hairline divider */}
+            <div
+              className="animate-float-up opacity-0 mb-8 md:mb-10"
+              style={{
+                animationDelay: "0.3s",
+              }}
+            >
+              <div className="h-px w-full bg-white/25" />
+            </div>
+
+            {/* Meta row - DATE / VENUE / LOCATION */}
+            <div
+              className="animate-float-up opacity-0 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 md:border-none"
+              style={{
+                animationDelay: "0.4s",
+              }}
+            >
+              {/* DATE */}
+              <div className="flex items-start gap-6 md:gap-0 md:flex-col md:border-r md:border-white/15 md:pr-12">
+                <div className="md:w-full">
+                  <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
+                    DATE
+                  </p>
+                  <p className="font-sans text-base md:text-lg text-white font-medium">
+                    21–22 September 2026
+                  </p>
+                </div>
               </div>
-              <div className="md:pl-8">
-                <p className="font-sans text-xs text-white/50 uppercase tracking-widest font-semibold mb-2">
-                  VENUE
-                </p>
-                <p className="font-sans text-sm md:text-base text-white font-medium">
-                  Leela Bhartiya City
-                </p>
+
+              {/* VENUE */}
+              <div className="flex items-start gap-6 md:gap-0 md:flex-col md:border-r md:border-white/15 md:pr-12">
+                <div className="md:w-full">
+                  <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
+                    VENUE
+                  </p>
+                  <p className="font-sans text-base md:text-lg text-white font-medium">
+                    Leela Bhartiya City
+                  </p>
+                </div>
               </div>
-              <div className="md:pl-8">
-                <p className="font-sans text-xs text-white/50 uppercase tracking-widest font-semibold mb-2">
-                  LOCATION
-                </p>
-                <p className="font-sans text-sm md:text-base text-white font-medium">
-                  Bengaluru, India
-                </p>
+
+              {/* LOCATION */}
+              <div className="flex items-start gap-6 md:gap-0 md:flex-col">
+                <div className="md:w-full">
+                  <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
+                    LOCATION
+                  </p>
+                  <p className="font-sans text-base md:text-lg text-white font-medium">
+                    Bengaluru, India
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Sticky tab navigation - positioned below hero */}
-      <div className="sticky top-20 md:top-24 z-50 w-full bg-[#0D0D0D]/95 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex w-full">
-            <button
-              onClick={() => setActiveTab("overview")}
-              className={`flex-1 px-6 py-4 font-sans text-sm md:text-base font-medium text-center transition-all duration-300 border-b-2 ${
-                activeTab === "overview"
-                  ? "bg-white/5 text-white border-[#E85520]"
-                  : "text-white/40 border-transparent hover:text-white/70 hover:bg-white/[0.02]"
-              }`}
-            >
-              Overview
-            </button>
-            <button
-              onClick={handleScheduleClick}
-              className={`flex-1 px-6 py-4 font-sans text-sm md:text-base font-medium text-center transition-all duration-300 border-b-2 ${
-                activeTab === "schedule"
-                  ? "bg-white/5 text-white border-[#E85520]"
-                  : "text-white/40 border-transparent hover:text-white/70 hover:bg-white/[0.02]"
-              }`}
-            >
-              Schedule
-            </button>
-          </div>
+        {/* Sticky segmented sub-nav at bottom - full width */}
+        <div className="w-full flex border-t border-white/10 bg-black/40 backdrop-blur-md">
+          <button
+            onClick={() => setActiveTab("overview")}
+            className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 ${
+              activeTab === "overview"
+                ? "text-white border-[#E85520]"
+                : "text-white/40 border-transparent hover:text-white/60"
+            }`}
+          >
+            Overview
+          </button>
+          <button
+            onClick={handleScheduleClick}
+            className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 ${
+              activeTab === "schedule"
+                ? "text-white border-[#E85520]"
+                : "text-white/40 border-transparent hover:text-white/60"
+            }`}
+          >
+            Schedule
+          </button>
         </div>
       </div>
-
-      <style>{`
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
 }
