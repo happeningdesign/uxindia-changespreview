@@ -742,6 +742,14 @@ export default function SchedulePreviewPage() {
                       <div
                         className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
                       >
+                        <div className="flex items-center justify-between mb-4 lg:hidden">
+                          <span className="px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-xs font-sans font-medium rounded-full">
+                            {session.tag}
+                          </span>
+                          <p className="text-xs text-white/40">
+                            {session.time}
+                          </p>
+                        </div>
                         <div className="flex items-start gap-4">
                           <img
                             src={session.speaker.image}
@@ -760,12 +768,9 @@ export default function SchedulePreviewPage() {
                               <span className="text-white/40 text-xs">{session.speaker.role}</span>
                             </p>
                           </div>
-                          <span className="px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-xs font-sans font-medium rounded-full">
+                          <span className="hidden lg:inline-block px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-xs font-sans font-medium rounded-full">
                             {session.tag}
                           </span>
-                        </div>
-                        <div className="lg:hidden mt-3 text-xs text-white/40">
-                          {session.time}
                         </div>
                       </div>
                     )}
@@ -830,6 +835,14 @@ export default function SchedulePreviewPage() {
                       <div
                         className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
                       >
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="lg:hidden px-3 py-1 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full">
+                            {session.tag}
+                          </span>
+                          <p className="lg:hidden text-xs text-white/40">
+                            {session.time}
+                          </p>
+                        </div>
                         <div className="flex items-start justify-between mb-4">
                           <div>
                             <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">
@@ -839,7 +852,7 @@ export default function SchedulePreviewPage() {
                               {session.description}
                             </p>
                           </div>
-                          <span className="px-3 py-1 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full shrink-0 ml-4">
+                          <span className="hidden lg:inline-block px-3 py-1 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full shrink-0 ml-4">
                             {session.tag}
                           </span>
                         </div>
@@ -859,9 +872,6 @@ export default function SchedulePreviewPage() {
                             </div>
                           )}
                         </div>
-                        <div className="lg:hidden mt-3 text-xs text-white/40">
-                          {session.time}
-                        </div>
                       </div>
                     )}
                     {session.type === "workshops" && (
@@ -871,9 +881,14 @@ export default function SchedulePreviewPage() {
                             key={wIndex}
                             className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
                           >
-                            <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider mb-3">
-                              {workshop.room}
-                            </p>
+                            <div className="flex items-center justify-between mb-3">
+                              <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
+                                {workshop.room}
+                              </p>
+                              <p className="lg:hidden text-xs text-white/40">
+                                {session.time}
+                              </p>
+                            </div>
                             <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                               {workshop.title}
                             </h3>
@@ -904,9 +919,14 @@ export default function SchedulePreviewPage() {
                             key={sIndex}
                             className={`bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all ${sess.duration ? 'md:row-span-2' : ''}`}
                           >
-                            <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider mb-3">
-                              {sess.room}
-                            </p>
+                            <div className="flex items-center justify-between mb-3">
+                              <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
+                                {sess.room}
+                              </p>
+                              <p className="lg:hidden text-xs text-white/40">
+                                {session.time}
+                              </p>
+                            </div>
                             <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                               {sess.title}
                             </h3>
