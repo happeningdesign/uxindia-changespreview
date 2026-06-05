@@ -94,7 +94,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab }) {
                     DATE
                   </p>
                   <p className="font-sans text-base md:text-lg text-white font-medium">
-                    <span className="whitespace-nowrap">21–22 September</span><br />2026
+                    <span className="whitespace-nowrap">26–27 September</span><br />2026
                   </p>
                 </div>
               </div>
