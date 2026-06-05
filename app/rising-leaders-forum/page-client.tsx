@@ -8,6 +8,24 @@ import WhoAttends from "@/components/events/WhoAttends";
 import SpeakersGrid from "@/components/events/SpeakersGrid";
 import VenueSection from "@/components/events/VenueSection";
 import ScheduleSkeleton from "@/components/events/ScheduleSkeleton";
+import EventDayCards from "@/components/events/EventDayCards";
+
+const risingLeadersDays = [
+  {
+    badge: "DAY 1",
+    badgeColor: "orange" as const,
+    date: "21 September",
+    description: "Leadership foundations and mentorship sessions",
+    bgColor: "bg-[#1C1C1E]",
+  },
+  {
+    badge: "DAY 2",
+    badgeColor: "blue" as const,
+    date: "22 September",
+    description: "Workshops, peer collaboration and networking",
+    bgColor: "bg-[#0E4D5C]",
+  },
+];
 
 export default function RisingLeadersPageClient() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -19,6 +37,17 @@ export default function RisingLeadersPageClient() {
       
       {activeTab === "overview" && (
         <>
+          <section className="bg-[#0D0D0D] w-full py-16 md:py-24">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="prose prose-invert max-w-none">
+                <h2 className="font-leadership text-4xl md:text-5xl text-white mb-6">Overview</h2>
+                <p className="font-sans text-base text-white/70 leading-relaxed">
+                  The Rising Leaders Forum is designed for emerging design leaders and mid-career professionals ready to step into leadership roles.
+                </p>
+              </div>
+              <EventDayCards days={risingLeadersDays} />
+            </div>
+          </section>
           <WhoAttends
             title="Who Attends"
             description="Built for leaders at the threshold."

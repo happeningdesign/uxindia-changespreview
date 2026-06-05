@@ -8,6 +8,31 @@ import WhoAttends from "@/components/events/WhoAttends";
 import SpeakersGrid from "@/components/events/SpeakersGrid";
 import VenueSection from "@/components/events/VenueSection";
 import ScheduleSkeleton from "@/components/events/ScheduleSkeleton";
+import EventDayCards from "@/components/events/EventDayCards";
+
+const leadershipSummitDays = [
+  {
+    badge: "KEYNOTES",
+    badgeColor: "orange" as const,
+    date: "23 September",
+    description: "Opening keynotes and sessions",
+    bgColor: "bg-[#1C1C1E]",
+  },
+  {
+    badge: "GRAND CONF DAY 1",
+    badgeColor: "blue" as const,
+    date: "24 September",
+    description: "Roundtables and workshops",
+    bgColor: "bg-[#0E4D5C]",
+  },
+  {
+    badge: "CONF DAY 2",
+    badgeColor: "orange" as const,
+    date: "25 September",
+    description: "Closing sessions and networking",
+    bgColor: "bg-[#4A2C3D]",
+  },
+];
 
 export default function LeadershipSummitPageClient() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -27,6 +52,7 @@ export default function LeadershipSummitPageClient() {
                   The Leadership Summit 2026 brings together the most influential design voices to shape the future of design leadership.
                 </p>
               </div>
+              <EventDayCards days={leadershipSummitDays} />
             </div>
           </section>
           <WhoAttends
