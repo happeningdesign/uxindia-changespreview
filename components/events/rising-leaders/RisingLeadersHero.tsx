@@ -106,7 +106,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab }) {
                     VENUE
                   </p>
                   <p className="font-sans text-base md:text-lg text-white font-medium">
-                    Leela Bhartiya City
+                    Srishti Manipal Institute of Art, Design & Technology
                   </p>
                 </div>
               </div>
@@ -130,21 +130,19 @@ export default function RisingLeadersHero({ activeTab, setActiveTab }) {
         <div className="w-full flex border-t border-white/10 bg-black/40 backdrop-blur-md">
           <button
             onClick={() => setActiveTab("overview")}
-            className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 ${
-              activeTab === "overview"
+            className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 ${activeTab === "overview"
                 ? "text-white border-[#E85520]"
                 : "text-white/40 border-transparent hover:text-white/60"
-            }`}
+              }`}
           >
             Overview
           </button>
           <button
             onClick={handleScheduleClick}
-            className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 ${
-              activeTab === "schedule"
+            className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 ${activeTab === "schedule"
                 ? "text-white border-[#E85520]"
                 : "text-white/40 border-transparent hover:text-white/60"
-            }`}
+              }`}
           >
             Schedule
           </button>
