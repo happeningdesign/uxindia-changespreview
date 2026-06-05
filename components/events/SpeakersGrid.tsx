@@ -15,11 +15,13 @@ interface Speaker {
 interface SpeakersGridProps {
   speakers: Speaker[];
   showMorePlaceholder?: boolean;
+  variant?: "dark" | "light";
 }
 
-function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
+function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; index: number; variant?: "dark" | "light" }) {
   const [flipped, setFlipped] = useState(false);
   const color = speakerColors[index % speakerColors.length];
+  const isLight = variant === "light";
 
   return (
     <div
@@ -40,7 +42,7 @@ function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
-        {/* FRONT — photo */}
+        {/* FRONT — photo with color overlay for light variant */}
         <div
           className="absolute inset-0 rounded-lg overflow-hidden"
           style={{
@@ -48,18 +50,29 @@ function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(0deg)",
             zIndex: flipped ? 0 : 1,
+            backgroundColor: isLight ? color : undefined,
           }}
         >
           <img
             src={speaker.image}
             alt={speaker.name}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-top"
+            style={isLight ? { filter: "contrast(1.05)" } : undefined}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+          {isLight ? (
+            <div
+              className="absolute inset-0"
+              style={{
+                background: `linear-gradient(to bottom, ${color}10 0%, ${color}cc 100%)`,
+              }}
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+          )}
           {/* Talk type badge on front */}
           {speaker.talkType && (
             <div className="absolute top-2 right-2 md:top-3 md:right-3">
-              <div className="bg-black/60 backdrop-blur-sm rounded px-1.5 py-0.5 text-center">
+              <div className={`${isLight ? "bg-white/20 backdrop-blur-sm" : "bg-black/60 backdrop-blur-sm"} rounded px-1.5 py-0.5 text-center`}>
                 <span className="font-sans text-[7px] md:text-[8px] font-semibold text-white tracking-wider uppercase">
                   {speaker.talkType}
                 </span>
@@ -67,10 +80,12 @@ function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
             </div>
           )}
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
-            <h3 className="font-leadership font-semibold text-white text-sm md:text-base leading-tight mb-1 tracking-tight">
+            <h3 className={`font-leadership font-semibold text-white text-sm md:text-base leading-tight mb-1 tracking-tight ${isLight ? "text-shadow" : ""}`}
+              style={isLight ? { textShadow: "0 2px 12px rgba(0,0,0,0.5)" } : undefined}
+            >
               {speaker.name}
             </h3>
-            <p className="font-sans text-xs md:text-sm text-[#4ECDC4] leading-tight">
+            <p className={`font-sans text-xs md:text-sm leading-tight ${isLight ? "text-white/90" : "text-[#4ECDC4]"}`}>
               {speaker.role}
             </p>
           </div>
@@ -128,8 +143,9 @@ function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
   );
 }
 
-export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: SpeakersGridProps) {
+export default function SpeakersGrid({ speakers, showMorePlaceholder = true, variant = "dark" }: SpeakersGridProps) {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const isLight = variant === "light";
 
   // Extract unique talk types from speakers
   const talkTypes = Array.from(
@@ -142,10 +158,10 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: S
     : speakers;
 
   return (
-    <section className="bg-[#0D0D0D] py-16 md:py-24">
+    <section className={`${isLight ? "bg-[#F5F0E8]" : "bg-[#0D0D0D]"} py-16 md:py-24`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6 mb-12 md:mb-16">
-          <h2 className="font-leadership text-4xl md:text-5xl text-white tracking-tight">
+          <h2 className={`font-leadership text-4xl md:text-5xl tracking-tight ${isLight ? "text-[#0D0D0D]" : "text-white"}`}>
             Speakers
           </h2>
           
@@ -157,7 +173,9 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: S
                 className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all ${
                   activeFilter === null
                     ? "bg-[#E85520] text-white"
-                    : "bg-white/10 text-white/70 hover:bg-white/20"
+                    : isLight 
+                      ? "bg-[#0D0D0D]/10 text-[#0D0D0D]/70 hover:bg-[#0D0D0D]/20"
+                      : "bg-white/10 text-white/70 hover:bg-white/20"
                 }`}
               >
                 All
@@ -169,7 +187,9 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: S
                   className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all ${
                     activeFilter === type
                       ? "bg-[#E85520] text-white"
-                      : "bg-white/10 text-white/70 hover:bg-white/20"
+                      : isLight
+                        ? "bg-[#0D0D0D]/10 text-[#0D0D0D]/70 hover:bg-[#0D0D0D]/20"
+                        : "bg-white/10 text-white/70 hover:bg-white/20"
                   }`}
                 >
                   {type}
@@ -182,12 +202,12 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: S
         {/* Speakers grid - 4 columns on desktop to match design */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
           {filteredSpeakers.map((speaker, index) => (
-            <SpeakerCard key={index} speaker={speaker} index={index} />
+            <SpeakerCard key={index} speaker={speaker} index={index} variant={variant} />
           ))}
 
           {/* More speakers placeholder */}
           {showMorePlaceholder && !activeFilter && (
-            <div className="relative aspect-[4/5] rounded-lg border border-dashed border-white/20 flex items-center justify-center bg-transparent">
+            <div className={`relative aspect-[4/5] rounded-lg border border-dashed flex items-center justify-center bg-transparent ${isLight ? "border-[#0D0D0D]/20" : "border-white/20"}`}>
               <div className="text-center px-4">
                 <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#E85520]/50 mb-3">
                   <svg
@@ -203,10 +223,10 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: S
                     <line x1="5" y1="12" x2="19" y2="12" />
                   </svg>
                 </div>
-                <p className="font-sans text-xs md:text-sm text-white/60">
+                <p className={`font-sans text-xs md:text-sm ${isLight ? "text-[#0D0D0D]/60" : "text-white/60"}`}>
                   More speakers
                 </p>
-                <p className="font-sans text-xs text-white/40">
+                <p className={`font-sans text-xs ${isLight ? "text-[#0D0D0D]/40" : "text-white/40"}`}>
                   announced soon.
                 </p>
               </div>

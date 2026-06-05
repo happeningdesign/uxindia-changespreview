@@ -54,6 +54,7 @@ export default function RisingLeadersPageClient() {
             subtitle="Two days of intensive learning, peer connection, and mentorship from seasoned design leaders. Exclusive to professionals stepping into leadership roles and looking to accelerate their growth."
           />
           <SpeakersGrid
+            variant="light"
             speakers={[
               {
                 name: "Mohan Krishnaraj",
