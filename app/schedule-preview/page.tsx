@@ -343,7 +343,7 @@ export default function SchedulePreviewPage() {
             {currentSessions.map((session, index) => {
               // Render time and event as a row
               return (
-                <div key={index} className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <div key={index} className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
                   {/* Time column - hidden on mobile */}
                   <div className="hidden lg:block lg:col-span-2">
                     <div className="text-sm font-sans text-white/50 sticky top-24">
