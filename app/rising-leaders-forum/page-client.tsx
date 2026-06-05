@@ -37,11 +37,11 @@ export default function RisingLeadersPageClient() {
       
       {activeTab === "overview" && (
         <>
-          <section className="bg-[#0D0D0D] w-full py-16 md:py-24">
+          <section className="bg-[#F5F0E8] w-full py-16 md:py-24">
             <div className="max-w-7xl mx-auto px-6">
-              <div className="prose prose-invert max-w-none">
-                <h2 className="font-leadership text-4xl md:text-5xl text-white mb-6">Overview</h2>
-                <p className="font-sans text-base text-white/70 leading-relaxed">
+              <div className="prose max-w-none">
+                <h2 className="font-leadership text-4xl md:text-5xl text-[#0D0D0D] mb-6">Overview</h2>
+                <p className="font-sans text-base text-[#0D0D0D]/70 leading-relaxed">
                   The Rising Leaders Forum is designed for emerging design leaders and mid-career professionals ready to step into leadership roles.
                 </p>
               </div>
@@ -49,6 +49,7 @@ export default function RisingLeadersPageClient() {
             </div>
           </section>
           <WhoAttends
+            variant="light"
             title="Who Attends"
             description="Built for leaders at the threshold."
             subtitle="Two days of intensive learning, peer connection, and mentorship from seasoned design leaders. Exclusive to professionals stepping into leadership roles and looking to accelerate their growth."
@@ -77,7 +78,7 @@ export default function RisingLeadersPageClient() {
             ]}
             showMorePlaceholder={true}
           />
-          <VenueSection />
+          <VenueSection variant="light" />
         </>
       )}
 
