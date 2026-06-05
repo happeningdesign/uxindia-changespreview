@@ -1002,32 +1002,36 @@ export default function SchedulePreviewPage() {
                           ))}
                         </div>
                         {/* Right column - spanning full height */}
-                        <div className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all h-full">
+                        <div className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all h-full flex flex-col">
                           <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider mb-3">
                             {session.rightSession.room}
                           </p>
                           <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                             {session.rightSession.title}
                           </h3>
-                          <div className="flex gap-2 mb-4 flex-wrap">
-                            {session.rightSession.panelists.map((panelist, pIndex) => (
-                              <img
-                                key={pIndex}
-                                src={panelist.image}
-                                alt={panelist.name}
-                                className="w-10 h-10 rounded-full object-cover border-2 border-white/10"
-                                title={`${panelist.name} - ${panelist.role}`}
-                              />
-                            ))}
-                          </div>
-                          <div className="mb-4">
-                            <p className="font-sans text-xs text-white/60">
-                              {session.rightSession.panelists.length} VC Investors
-                            </p>
-                          </div>
-                          <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">
+                          <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-4">
                             {session.rightSession.description}
                           </p>
+                          <div className="flex-1">
+                            <p className="font-sans text-xs text-white/40 uppercase tracking-wider mb-3">
+                              VC Investors
+                            </p>
+                            <div className="space-y-3">
+                              {session.rightSession.panelists.map((panelist, pIndex) => (
+                                <div key={pIndex} className="flex items-center gap-3">
+                                  <img
+                                    src={panelist.image}
+                                    alt={panelist.name}
+                                    className="w-8 h-8 rounded-full object-cover border border-white/10"
+                                  />
+                                  <div>
+                                    <p className="font-sans text-sm text-white/80">{panelist.name}</p>
+                                    <p className="font-sans text-xs text-white/40">{panelist.role}</p>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       </div>
                     )}
