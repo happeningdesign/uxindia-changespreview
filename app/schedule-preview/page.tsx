@@ -338,66 +338,57 @@ export default function SchedulePreviewPage() {
             ))}
           </div>
 
-          {/* Schedule grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            {/* Time column */}
-            <div className="hidden lg:block lg:col-span-2">
-              <div className="text-sm font-sans text-white/40 uppercase tracking-wider mb-8">
-                Time
-              </div>
-              <div className="space-y-6">
-                {currentSessions.map((session, index) => (
-                  <div key={index} className="text-sm font-sans text-white/50 h-fit">
-                    {session.time}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Main schedule */}
-            <div className="lg:col-span-10 space-y-6">
-              {currentSessions.map((session, index) => {
-                if (session.type === "keynote") {
-                  return (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
-                    >
-                      <div className="flex items-start gap-4">
-                        <img
-                          src={session.speaker.image}
-                          alt={session.speaker.name}
-                          className="w-16 h-16 rounded-full object-cover shrink-0"
-                        />
-                        <div className="flex-1">
-                          <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">
-                            {session.title}
-                          </h3>
-                          <p className="font-sans text-sm text-white/60 mb-3">
-                            {session.description}
-                          </p>
-                          <p className="font-sans text-sm text-white/80">
-                            <span className="block">{session.speaker.name}</span>
-                            <span className="text-white/40 text-xs">{session.speaker.role}</span>
-                          </p>
-                        </div>
-                        <span className="px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-xs font-sans font-medium rounded-full">
-                          {session.tag}
-                        </span>
-                      </div>
-                      <div className="lg:hidden mt-3 text-xs text-white/40">
-                        {session.time}
-                      </div>
+          {/* Schedule */}
+          <div className="space-y-6">
+            {currentSessions.map((session, index) => {
+              // Render time and event as a row
+              return (
+                <div key={index} className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                  {/* Time column - hidden on mobile */}
+                  <div className="hidden lg:block lg:col-span-2">
+                    <div className="text-sm font-sans text-white/50 sticky top-24">
+                      {session.time}
                     </div>
-                  );
-                }
+                  </div>
 
-                if (session.type === "break") {
-                  // Determine icon based on break type
-                  const isLunch = session.title.toLowerCase().includes("lunch");
-                  const isRegistration = session.title.toLowerCase().includes("registration");
-
-                  return (
+                  {/* Event card */}
+                  <div className="lg:col-span-10">
+                    {session.type === "keynote" && (
+                      <div
+                        className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
+                      >
+                        <div className="flex items-start gap-4">
+                          <img
+                            src={session.speaker.image}
+                            alt={session.speaker.name}
+                            className="w-16 h-16 rounded-full object-cover shrink-0"
+                          />
+                          <div className="flex-1">
+                            <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">
+                              {session.title}
+                            </h3>
+                            <p className="font-sans text-sm text-white/60 mb-3">
+                              {session.description}
+                            </p>
+                            <p className="font-sans text-sm text-white/80">
+                              <span className="block">{session.speaker.name}</span>
+                              <span className="text-white/40 text-xs">{session.speaker.role}</span>
+                            </p>
+                          </div>
+                          <span className="px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-xs font-sans font-medium rounded-full">
+                            {session.tag}
+                          </span>
+                        </div>
+                        <div className="lg:hidden mt-3 text-xs text-white/40">
+                          {session.time}
+                        </div>
+                      </div>
+                    )}
+                    {session.type === "break" && (
+                      (() => {
+                        const isLunch = session.title.toLowerCase().includes("lunch");
+                        const isRegistration = session.title.toLowerCase().includes("registration");
+                        return (
                     <div
                       key={index}
                       className="bg-gradient-to-r from-[#E85520]/10 to-transparent border border-white/10 rounded-xl p-4 flex items-center gap-4"
@@ -452,54 +443,51 @@ export default function SchedulePreviewPage() {
                         </p>
                       </div>
                     </div>
-                  );
-                }
-
-                if (session.type === "panel") {
-                  return (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
-                    >
-                      <div className="flex items-start justify-between mb-4">
-                        <div>
-                          <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">
-                            {session.title}
-                          </h3>
-                          <p className="font-sans text-sm text-white/60">
-                            {session.description}
-                          </p>
-                        </div>
-                        <span className="px-3 py-1 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full shrink-0 ml-4">
-                          {session.tag}
-                        </span>
-                      </div>
-                      <div className="flex gap-3 mt-6">
-                        {session.panelists.map((panelist, pIndex) => (
-                          <img
-                            key={pIndex}
-                            src={panelist.image}
-                            alt={panelist.name}
-                            className="w-10 h-10 rounded-full object-cover border-2 border-white/10"
-                            title={panelist.name}
-                          />
-                        ))}
-                        {session.panelists.length < 5 && (
-                          <div className="w-10 h-10 rounded-full border-2 border-dashed border-white/20 flex items-center justify-center">
-                            <span className="text-white/30 text-xs">+{5 - session.panelists.length}</span>
+                        );
+                      })()
+                    )}
+                    {session.type === "panel" && (
+                      <div
+                        className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
+                      >
+                        <div className="flex items-start justify-between mb-4">
+                          <div>
+                            <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">
+                              {session.title}
+                            </h3>
+                            <p className="font-sans text-sm text-white/60">
+                              {session.description}
+                            </p>
                           </div>
-                        )}
+                          <span className="px-3 py-1 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full shrink-0 ml-4">
+                            {session.tag}
+                          </span>
+                        </div>
+                        <div className="flex gap-3 mt-6">
+                          {session.panelists.map((panelist, pIndex) => (
+                            <img
+                              key={pIndex}
+                              src={panelist.image}
+                              alt={panelist.name}
+                              className="w-10 h-10 rounded-full object-cover border-2 border-white/10"
+                              title={panelist.name}
+                            />
+                          ))}
+                          {session.panelists.length < 5 && (
+                            <div className="w-10 h-10 rounded-full border-2 border-dashed border-white/20 flex items-center justify-center">
+                              <span className="text-white/30 text-xs">+{5 - session.panelists.length}</span>
+                            </div>
+                          )}
+                        </div>
+                        <div className="lg:hidden mt-3 text-xs text-white/40">
+                          {session.time}
+                        </div>
                       </div>
-                      <div className="lg:hidden mt-3 text-xs text-white/40">
-                        {session.time}
-                      </div>
-                    </div>
-                  );
-                }
-
-                return null;
-              })}
-            </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
