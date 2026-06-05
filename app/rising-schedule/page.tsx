@@ -743,7 +743,7 @@ export default function RisingSchedulePage() {
                         className="bg-white border border-[#0D0D0D]/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all shadow-sm"
                       >
                         <div className="flex items-center justify-between mb-4 lg:hidden">
-                          <span className="px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-xs font-sans font-medium rounded-full">
+                          <span className="px-3 py-1 bg-[#1D5078] text-white text-xs font-sans font-medium rounded-full">
                             {session.tag}
                           </span>
                           <p className="text-xs text-[#0D0D0D]/40">
@@ -768,7 +768,7 @@ export default function RisingSchedulePage() {
                               <span className="text-[#0D0D0D]/40 text-xs">{session.speaker.role}</span>
                             </p>
                           </div>
-                          <span className="hidden lg:inline-block px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-xs font-sans font-medium rounded-full">
+                          <span className="hidden lg:inline-block px-3 py-1 bg-[#1D5078] text-white text-xs font-sans font-medium rounded-full">
                             {session.tag}
                           </span>
                         </div>
@@ -836,7 +836,7 @@ export default function RisingSchedulePage() {
                         className="bg-white border border-[#0D0D0D]/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all shadow-sm"
                       >
                         <div className="flex items-center justify-between mb-4">
-                          <span className="lg:hidden px-3 py-1 bg-[#0D0D0D]/10 text-[#0D0D0D]/70 text-xs font-sans font-medium rounded-full">
+                          <span className="lg:hidden px-3 py-1 bg-[#1A7A6E] text-white text-xs font-sans font-medium rounded-full">
                             {session.tag}
                           </span>
                           <p className="lg:hidden text-xs text-[#0D0D0D]/40">
@@ -852,7 +852,7 @@ export default function RisingSchedulePage() {
                               {session.description}
                             </p>
                           </div>
-                          <span className="hidden lg:inline-block px-3 py-1 bg-[#0D0D0D]/10 text-[#0D0D0D]/70 text-xs font-sans font-medium rounded-full shrink-0 ml-4">
+                          <span className="hidden lg:inline-block px-3 py-1 bg-[#1A7A6E] text-white text-xs font-sans font-medium rounded-full shrink-0 ml-4">
                             {session.tag}
                           </span>
                         </div>
@@ -882,7 +882,7 @@ export default function RisingSchedulePage() {
                             className="bg-white border border-[#0D0D0D]/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all shadow-sm"
                           >
                             <div className="flex items-center justify-between mb-3">
-                              <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
+                              <p className="font-sans text-xs text-white bg-[#C8365A] rounded-full px-3 py-1 font-semibold uppercase tracking-wider">
                                 {workshop.room}
                               </p>
                               <p className="lg:hidden text-xs text-[#0D0D0D]/40">
@@ -920,7 +920,7 @@ export default function RisingSchedulePage() {
                             className={`bg-white border border-[#0D0D0D]/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all shadow-sm ${sess.duration ? 'md:row-span-2' : ''}`}
                           >
                             <div className="flex items-center justify-between mb-3">
-                              <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
+                              <p className="font-sans text-xs text-white bg-[#E85520] rounded-full px-3 py-1 font-semibold uppercase tracking-wider">
                                 {sess.room}
                               </p>
                               <p className="lg:hidden text-xs text-[#0D0D0D]/40">
@@ -988,7 +988,7 @@ export default function RisingSchedulePage() {
                               className="bg-white border border-[#0D0D0D]/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all shadow-sm"
                             >
                               <div className="flex items-center justify-between mb-3">
-                                <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
+                                <p className="font-sans text-xs text-white bg-[#1D5078] rounded-full px-3 py-1 font-semibold uppercase tracking-wider">
                                   {sess.room}
                                 </p>
                                 <p className="font-sans text-xs text-[#0D0D0D]/40">
@@ -1020,7 +1020,7 @@ export default function RisingSchedulePage() {
                         {/* Right column - spanning full height */}
                         <div className="bg-white border border-[#0D0D0D]/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all shadow-sm h-full flex flex-col">
                           <div className="flex items-center justify-between mb-3">
-                            <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
+                            <p className="font-sans text-xs text-white bg-[#1A7A6E] rounded-full px-3 py-1 font-semibold uppercase tracking-wider">
                               {session.rightSession.room}
                             </p>
                             <p className="lg:hidden text-xs text-[#0D0D0D]/40">
