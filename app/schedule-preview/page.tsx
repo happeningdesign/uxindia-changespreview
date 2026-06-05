@@ -353,10 +353,8 @@ export default function SchedulePreviewPage() {
                             {session.description}
                           </p>
                           <p className="font-sans text-sm text-white/80">
-                            {session.speaker.name}
-                            <span className="text-white/40 ml-2">
-                              {session.speaker.role}
-                            </span>
+                            <span className="block">{session.speaker.name}</span>
+                            <span className="text-white/40 text-xs">{session.speaker.role}</span>
                           </p>
                         </div>
                         <span className="px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-xs font-sans font-medium rounded-full">
@@ -371,22 +369,54 @@ export default function SchedulePreviewPage() {
                 }
 
                 if (session.type === "break") {
+                  // Determine icon based on break type
+                  const isLunch = session.title.toLowerCase().includes("lunch");
+                  const isRegistration = session.title.toLowerCase().includes("registration");
+
                   return (
                     <div
                       key={index}
                       className="bg-gradient-to-r from-[#E85520]/10 to-transparent border border-white/10 rounded-xl p-4 flex items-center gap-4"
                     >
                       <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center">
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="#E85520"
-                          strokeWidth="2"
-                        >
-                          <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3" />
-                        </svg>
+                        {isLunch ? (
+                          // Lunch icon: fork and knife
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#E85520"
+                            strokeWidth="2"
+                          >
+                            <path d="M3 2v7c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2V2M12 2v20M19 2v7c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2V2" />
+                          </svg>
+                        ) : isRegistration ? (
+                          // Ticket icon
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#E85520"
+                            strokeWidth="2"
+                          >
+                            <path d="M2 9a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9z" />
+                            <path d="M9 5v14" />
+                          </svg>
+                        ) : (
+                          // Default coffee icon
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#E85520"
+                            strokeWidth="2"
+                          >
+                            <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3" />
+                          </svg>
+                        )}
                       </div>
                       <div>
                         <p className="font-sans text-base text-white font-medium">
