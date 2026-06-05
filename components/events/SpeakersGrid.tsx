@@ -9,6 +9,7 @@ interface Speaker {
   role: string;
   image: string;
   bio?: string;
+  talkType?: string;
 }
 
 interface SpeakersGridProps {
@@ -79,8 +80,8 @@ function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
           {/* Top accent */}
           <div className="flex items-center justify-between flex-shrink-0 mb-3">
             <div className="bg-white/20 rounded-md px-2 py-1">
-              <span className="font-sans text-[10px] font-bold text-white tracking-wider">
-                UXI25
+              <span className="font-sans text-[10px] font-bold text-white tracking-wider uppercase">
+                {speaker.talkType || "Speaker"}
               </span>
             </div>
             <div
