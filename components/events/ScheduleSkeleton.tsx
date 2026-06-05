@@ -2,7 +2,7 @@
 
 export default function ScheduleSkeleton() {
   return (
-    <div className="bg-[#0D0D0D] w-full py-16 md:py-24 relative min-h-[800px]">
+    <div id="schedule-section" className="bg-[#0D0D0D] w-full py-16 md:py-24 relative min-h-[800px]">
       {/* Blur overlay with "Announcing Soon" */}
       <div className="absolute inset-0 z-40 backdrop-blur-sm bg-black/40 flex items-center justify-center">
         <div className="text-center">

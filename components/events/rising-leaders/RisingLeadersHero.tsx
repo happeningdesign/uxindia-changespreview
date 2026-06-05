@@ -1,6 +1,16 @@
 "use client";
 
 export default function RisingLeadersHero({ activeTab, setActiveTab }) {
+  const handleScheduleClick = () => {
+    setActiveTab("schedule");
+    // Scroll to schedule section after state update
+    setTimeout(() => {
+      const scheduleSection = document.getElementById("schedule-section");
+      if (scheduleSection) {
+        scheduleSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
+  };
 
   return (
     <section className="relative w-full">
@@ -103,7 +113,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab }) {
               Overview
             </button>
             <button
-              onClick={() => setActiveTab("schedule")}
+              onClick={handleScheduleClick}
               className={`flex-1 px-6 py-4 font-sans text-sm md:text-base font-medium text-center transition-all duration-300 border-b-2 ${
                 activeTab === "schedule"
                   ? "bg-white/5 text-white border-[#E85520]"

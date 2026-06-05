@@ -1,8 +1,17 @@
 "use client";
 
-import { useState } from "react";
-
 export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
+  const handleScheduleClick = () => {
+    setActiveTab("schedule");
+    // Scroll to schedule section after state update
+    setTimeout(() => {
+      const scheduleSection = document.getElementById("schedule-section");
+      if (scheduleSection) {
+        scheduleSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
+  };
+
   return (
     <section className="relative w-full bg-black">
       {/* Background image */}
@@ -130,7 +139,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
             Overview
           </button>
           <button
-            onClick={() => setActiveTab("schedule")}
+            onClick={handleScheduleClick}
             className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 ${
               activeTab === "schedule"
                 ? "text-white border-[#E85520]"
