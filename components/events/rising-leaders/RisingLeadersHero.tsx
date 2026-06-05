@@ -1,19 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
-export default function RisingLeadersHero() {
-  const [activeTab, setActiveTab] = useState("overview");
-  const [showScheduleModal, setShowScheduleModal] = useState(false);
-
-  const handleScheduleClick = () => {
-    setActiveTab("schedule");
-    setShowScheduleModal(true);
-  };
-
-  const closeModal = () => {
-    setShowScheduleModal(false);
-  };
+export default function RisingLeadersHero({ activeTab, setActiveTab }) {
 
   return (
     <section className="relative w-full">
@@ -116,7 +103,7 @@ export default function RisingLeadersHero() {
               Overview
             </button>
             <button
-              onClick={handleScheduleClick}
+              onClick={() => setActiveTab("schedule")}
               className={`flex-1 px-6 py-4 font-sans text-sm md:text-base font-medium text-center transition-all duration-300 border-b-2 ${
                 activeTab === "schedule"
                   ? "bg-white/5 text-white border-[#E85520]"
@@ -128,51 +115,6 @@ export default function RisingLeadersHero() {
           </div>
         </div>
       </div>
-
-      {/* Schedule modal overlay */}
-      {showScheduleModal && (
-        <div
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center"
-          onClick={closeModal}
-        >
-          <div
-            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 md:p-12 max-w-2xl w-11/12 flex flex-col items-center justify-center min-h-96"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Skeletal schedule structure */}
-            <div className="w-full space-y-6 mb-12">
-              <div className="space-y-3">
-                <div className="h-4 bg-white/10 rounded w-32 mx-auto" />
-                <div className="h-3 bg-white/10 rounded w-48 mx-auto" />
-              </div>
-              <div className="space-y-3">
-                <div className="h-4 bg-white/10 rounded w-32 mx-auto" />
-                <div className="h-3 bg-white/10 rounded w-48 mx-auto" />
-              </div>
-              <div className="space-y-3">
-                <div className="h-4 bg-white/10 rounded w-32 mx-auto" />
-                <div className="h-3 bg-white/10 rounded w-48 mx-auto" />
-              </div>
-            </div>
-
-            {/* "Schedule Announcing Soon" text */}
-            <h3 className="font-leadership text-3xl md:text-4xl text-white text-center mb-4">
-              Schedule
-            </h3>
-            <p className="font-sans text-base md:text-lg text-white/70 text-center">
-              Announcing Soon
-            </p>
-
-            {/* Close button */}
-            <button
-              onClick={closeModal}
-              className="mt-8 px-6 py-2 font-sans text-sm text-white/60 hover:text-white transition-colors"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
 
       {/* Tab content area */}
       {activeTab === "overview" && (
@@ -189,8 +131,36 @@ export default function RisingLeadersHero() {
       )}
 
       {activeTab === "schedule" && (
-        <div className="bg-[#0D0D0D] py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-6">
+        <div className="bg-[#0D0D0D] py-16 md:py-24 relative">
+          <div className="absolute inset-0 z-40 backdrop-blur-md bg-black/30 flex items-center justify-center">
+            <div className="text-center">
+              {/* Skeletal schedule structure */}
+              <div className="space-y-6 mb-12 max-w-md mx-auto">
+                <div className="space-y-3">
+                  <div className="h-4 bg-white/10 rounded w-32 mx-auto" />
+                  <div className="h-3 bg-white/10 rounded w-48 mx-auto" />
+                </div>
+                <div className="space-y-3">
+                  <div className="h-4 bg-white/10 rounded w-32 mx-auto" />
+                  <div className="h-3 bg-white/10 rounded w-48 mx-auto" />
+                </div>
+                <div className="space-y-3">
+                  <div className="h-4 bg-white/10 rounded w-32 mx-auto" />
+                  <div className="h-3 bg-white/10 rounded w-48 mx-auto" />
+                </div>
+              </div>
+
+              {/* "Schedule Announcing Soon" text */}
+              <h3 className="font-leadership text-3xl md:text-4xl text-white text-center mb-4">
+                Schedule
+              </h3>
+              <p className="font-sans text-base md:text-lg text-white/70 text-center">
+                Announcing Soon
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-6 relative z-0">
             <h2 className="font-leadership text-4xl md:text-5xl text-white mb-6">
               Schedule
             </h2>
