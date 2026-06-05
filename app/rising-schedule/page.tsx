@@ -4,179 +4,139 @@ import React from "react";
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
 
+// Room colors for workshop badges
+const roomColors: Record<string, string> = {
+  "Auditorium": "#1D5078",
+  "Room 1": "#E85520",
+  "Room 2": "#1A7A6E",
+  "Room 3": "#C8365A",
+  "Room 4": "#7C3AED",
+  "Room 5": "#0891B2",
+  "Room 6": "#D97706",
+  "Room 7": "#059669",
+  "Room 8": "#DC2626",
+  "Room 9": "#4F46E5",
+  "Room 10": "#9333EA",
+};
+
 const scheduleData = {
   days: [
     { id: "day1", label: "Day 1", date: "Sept 23" },
     { id: "day2", label: "Day 2", date: "Sept 24" },
-    { id: "day3", label: "Day 3", date: "Sept 25" },
   ],
   day1: [
     {
       time: "8:00 AM",
       type: "break",
       title: "Registrations",
+      location: "Auditorium",
     },
     {
       time: "9:00 AM",
-      type: "workshops",
-      workshops: [
-        {
-          room: "Room 1",
-          title: "Workshop 01",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-          },
-          description: "Learn foundational design principles and practices.",
-        },
-        {
-          room: "Room 2",
-          title: "Workshop 02",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-          },
-          description: "Explore advanced design methodologies.",
-        },
-        {
-          room: "Room 3",
-          title: "Workshop 03",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
-          },
-          description: "Master emerging design trends and tools.",
-        },
-      ],
+      type: "keynote",
+      title: "Opening Keynote",
+      description: "Setting the stage for the Rising Leaders Forum - a journey of growth, mentorship, and leadership in design.",
+      tag: "Keynote",
+      location: "Auditorium",
+      speaker: {
+        name: "Speaker TBA",
+        role: "Design Leader",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
+      },
     },
     {
-      time: "10:30 AM",
+      time: "9:40 AM",
+      type: "keynote",
+      title: "Deep Dive Talk 01",
+      description: "An in-depth exploration of emerging design leadership practices and methodologies.",
+      tag: "Deep Dive",
+      location: "Auditorium",
+      speaker: {
+        name: "Speaker TBA",
+        role: "Design Leader",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
+      },
+    },
+    {
+      time: "10:20 AM",
       type: "break",
       title: "Coffee Break",
+      location: "Multiple Rooms",
     },
     {
-      time: "11:15 AM",
-      type: "workshops",
-      workshops: [
-        {
-          room: "Room 1",
-          title: "Workshop 01 (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-          },
-          description: "Learn foundational design principles and practices.",
-        },
-        {
-          room: "Room 2",
-          title: "Workshop 02 (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-          },
-          description: "Explore advanced design methodologies.",
-        },
-        {
-          room: "Room 3",
-          title: "Workshop 03 (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
-          },
-          description: "Master emerging design trends and tools.",
-        },
+      time: "11:05 AM",
+      type: "keynote",
+      title: "Deep Dive Talk 02",
+      description: "Continuing the conversation on design leadership with practical frameworks and insights.",
+      tag: "Deep Dive",
+      location: "Auditorium",
+      speaker: {
+        name: "Speaker TBA",
+        role: "Design Leader",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
+      },
+    },
+    {
+      time: "11:45 AM",
+      type: "panel",
+      title: "Panel Discussion",
+      description: "Industry leaders share their perspectives on navigating the path to design leadership.",
+      tag: "Panel",
+      location: "Auditorium",
+      panelists: [
+        { name: "Panelist 1", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
+        { name: "Panelist 2", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+        { name: "Panelist 3", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
       ],
     },
     {
-      time: "12:15 PM",
+      time: "12:45 PM",
       type: "break",
       title: "Lunch",
+      location: "Multiple Rooms",
     },
     {
       time: "1:45 PM",
-      type: "workshops",
+      type: "parallel-workshops",
+      duration: "90 min",
       workshops: [
-        {
-          room: "Room 1",
-          title: "Workshop 04",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
-          },
-          description: "Develop practical design solutions.",
-        },
-        {
-          room: "Room 2",
-          title: "Workshop 05",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
-          },
-          description: "Innovate with design thinking.",
-        },
-        {
-          room: "Room 3",
-          title: "Workshop 06",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
-          },
-          description: "Transform ideas into impactful designs.",
-        },
+        { room: "Room 1", title: "Workshop 01", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 2", title: "Workshop 02", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 3", title: "Workshop 03", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 4", title: "Workshop 04", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 5", title: "Workshop 05", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 6", title: "Workshop 06", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 7", title: "Workshop 07", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 8", title: "Workshop 08", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 9", title: "Workshop 09", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 10", title: "Workshop 10", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Hands-on workshop focusing on practical design skills." },
       ],
     },
     {
       time: "3:15 PM",
       type: "break",
       title: "Coffee Break",
+      location: "Multiple Rooms",
     },
     {
       time: "4:00 PM",
-      type: "workshops",
+      type: "parallel-workshops",
+      duration: "60 min",
       workshops: [
-        {
-          room: "Room 1",
-          title: "Workshop 04 (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
-          },
-          description: "Develop practical design solutions.",
-        },
-        {
-          room: "Room 2",
-          title: "Workshop 05 (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
-          },
-          description: "Innovate with design thinking.",
-        },
-        {
-          room: "Room 3",
-          title: "Workshop 06 (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
-          },
-          description: "Transform ideas into impactful designs.",
-        },
+        { room: "Room 1", title: "Workshop 01 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 2", title: "Workshop 02 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 3", title: "Workshop 03 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 4", title: "Workshop 04 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 5", title: "Workshop 05 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 6", title: "Workshop 06 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 7", title: "Workshop 07 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 8", title: "Workshop 08 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 9", title: "Workshop 09 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 10", title: "Workshop 10 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Continuation of the morning workshop session." },
       ],
     },
   ],
-  day3: [
+  day2: [
     {
       time: "8:00 AM",
       type: "break",
@@ -701,7 +661,7 @@ export default function RisingSchedulePage() {
               Rising Leaders Forum 2026
             </h1>
             <p className="font-sans text-base text-[#0D0D0D]/60">
-              September 23-25, 2026 — Leela Bhartiya City, Bengaluru
+              September 23-24, 2026 — Leela Bhartiya City, Bengaluru
             </p>
           </div>
 
@@ -872,6 +832,70 @@ export default function RisingSchedulePage() {
                             </div>
                           )}
                         </div>
+                      </div>
+                    )}
+                    {session.type === "parallel-workshops" && (
+                      <div className="space-y-4">
+                        {/* Header with time on mobile */}
+                        <div className="flex items-center justify-between lg:hidden">
+                          <div className="flex items-center gap-2">
+                            <span className="px-3 py-1 bg-[#C8365A] text-white text-xs font-sans font-medium rounded-full">
+                              10 Workshops
+                            </span>
+                            <span className="text-xs text-[#0D0D0D]/40">{session.duration}</span>
+                          </div>
+                          <p className="text-xs text-[#0D0D0D]/40">{session.time}</p>
+                        </div>
+                        
+                        {/* Desktop header */}
+                        <div className="hidden lg:flex items-center gap-3 mb-2">
+                          <span className="px-3 py-1 bg-[#C8365A] text-white text-xs font-sans font-medium rounded-full">
+                            Parallel Workshops
+                          </span>
+                          <span className="text-sm text-[#0D0D0D]/50">{session.duration} · 10 rooms</span>
+                        </div>
+                        
+                        {/* Horizontally scrollable on mobile, grid on desktop */}
+                        <div className="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-5 lg:overflow-visible scrollbar-hide">
+                          {session.workshops.map((workshop, wIndex) => (
+                            <div
+                              key={wIndex}
+                              className="flex-shrink-0 w-64 lg:w-auto bg-white border border-[#0D0D0D]/10 rounded-2xl p-4 hover:border-[#E85520]/30 transition-all shadow-sm"
+                            >
+                              <div className="flex items-center gap-2 mb-3">
+                                <span 
+                                  className="px-2 py-0.5 text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider"
+                                  style={{ backgroundColor: roomColors[workshop.room] || "#1D5078" }}
+                                >
+                                  {workshop.room}
+                                </span>
+                              </div>
+                              <h4 className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2">
+                                {workshop.title}
+                              </h4>
+                              <div className="flex items-center gap-2">
+                                <img
+                                  src={workshop.speaker.image}
+                                  alt={workshop.speaker.name}
+                                  className="w-8 h-8 rounded-full object-cover shrink-0"
+                                />
+                                <div className="min-w-0">
+                                  <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">
+                                    {workshop.speaker.name}
+                                  </p>
+                                  <p className="font-sans text-[10px] text-[#0D0D0D]/40 truncate">
+                                    {workshop.speaker.role}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        
+                        {/* Scroll hint on mobile */}
+                        <p className="lg:hidden text-xs text-[#0D0D0D]/40 text-center">
+                          Swipe to see all workshops →
+                        </p>
                       </div>
                     )}
                     {session.type === "workshops" && (
