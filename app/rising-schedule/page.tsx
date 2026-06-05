@@ -238,39 +238,29 @@ const scheduleData = {
     },
     {
       time: "2:40 PM",
-      type: "mixed-sessions",
-      auditoriumSession: {
-        title: "Deep Dive Talk 03",
-        description: "Advanced strategies for design leadership and team growth.",
-        tag: "Deep Dive",
-        speaker: {
-          name: "Speaker TBA",
-          role: "Design Leader",
-          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-        },
+      type: "keynote",
+      title: "Deep Dive Talk 03",
+      description: "Advanced strategies for design leadership and team growth.",
+      tag: "Deep Dive",
+      location: "Auditorium",
+      speaker: {
+        name: "Speaker TBA",
+        role: "Design Leader",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
       },
-      parallelSessions: [
-        { room: "Room 4", title: "Spark Session 09", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Quick insights for rising leaders." },
-        { room: "Room 5", title: "Spark Session 10", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Quick insights for rising leaders." },
-      ],
     },
     {
       time: "3:20 PM",
-      type: "mixed-sessions",
-      auditoriumSession: {
-        title: "Closing Ceremony",
-        description: "Celebrating the Rising Leaders Forum and looking ahead to the future.",
-        tag: "Closing",
-        speaker: {
-          name: "Speaker TBA",
-          role: "Conference Host",
-          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
-        },
+      type: "keynote",
+      title: "Closing Ceremony",
+      description: "Celebrating the Rising Leaders Forum and looking ahead to the future.",
+      tag: "Closing",
+      location: "Auditorium",
+      speaker: {
+        name: "Speaker TBA",
+        role: "Conference Host",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
       },
-      parallelSessions: [
-        { room: "Room 4", title: "Spark Session 14", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Quick insights for rising leaders." },
-        { room: "Room 5", title: "Spark Session 15", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Quick insights for rising leaders." },
-      ],
     },
     {
       time: "4:00 PM",
