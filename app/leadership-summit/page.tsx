@@ -16,12 +16,14 @@ export default function LeadershipSummitPage() {
     <main>
       <Nav forceSolid={false} />
       <LeadershipSummitHero />
-      <section className="bg-[#0D0D0D] max-w-7xl mx-auto px-6 py-16 md:py-24">
-        <div className="prose prose-invert max-w-none">
-          <h2 className="font-leadership text-4xl md:text-5xl text-white mb-6">Overview</h2>
-          <p className="font-sans text-base text-white/70 leading-relaxed">
-            The Leadership Summit 2026 brings together the most influential design voices to shape the future of design leadership.
-          </p>
+      <section className="bg-[#0D0D0D] w-full py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="prose prose-invert max-w-none">
+            <h2 className="font-leadership text-4xl md:text-5xl text-white mb-6">Overview</h2>
+            <p className="font-sans text-base text-white/70 leading-relaxed">
+              The Leadership Summit 2026 brings together the most influential design voices to shape the future of design leadership.
+            </p>
+          </div>
         </div>
       </section>
       <WhoAttends
