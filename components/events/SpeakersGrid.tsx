@@ -129,21 +129,64 @@ function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
 }
 
 export default function SpeakersGrid({ speakers, showMorePlaceholder = true }: SpeakersGridProps) {
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+
+  // Extract unique talk types from speakers
+  const talkTypes = Array.from(
+    new Set(speakers.map((s) => s.talkType).filter(Boolean))
+  ) as string[];
+
+  // Filter speakers based on active filter
+  const filteredSpeakers = activeFilter
+    ? speakers.filter((s) => s.talkType === activeFilter)
+    : speakers;
+
   return (
     <section className="bg-[#0D0D0D] py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="font-leadership text-4xl md:text-5xl text-white mb-12 md:mb-16 tracking-tight">
-          Speakers
-        </h2>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6 mb-12 md:mb-16">
+          <h2 className="font-leadership text-4xl md:text-5xl text-white tracking-tight">
+            Speakers
+          </h2>
+          
+          {/* Filter chips */}
+          {talkTypes.length > 0 && (
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setActiveFilter(null)}
+                className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all ${
+                  activeFilter === null
+                    ? "bg-[#E85520] text-white"
+                    : "bg-white/10 text-white/70 hover:bg-white/20"
+                }`}
+              >
+                All
+              </button>
+              {talkTypes.map((type) => (
+                <button
+                  key={type}
+                  onClick={() => setActiveFilter(type)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all ${
+                    activeFilter === type
+                      ? "bg-[#E85520] text-white"
+                      : "bg-white/10 text-white/70 hover:bg-white/20"
+                  }`}
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
 
         {/* Speakers grid - 4 columns on desktop to match design */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
-          {speakers.map((speaker, index) => (
+          {filteredSpeakers.map((speaker, index) => (
             <SpeakerCard key={index} speaker={speaker} index={index} />
           ))}
 
           {/* More speakers placeholder */}
-          {showMorePlaceholder && (
+          {showMorePlaceholder && !activeFilter && (
             <div className="relative aspect-[4/5] rounded-lg border border-dashed border-white/20 flex items-center justify-center bg-transparent">
               <div className="text-center px-4">
                 <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#E85520]/50 mb-3">
