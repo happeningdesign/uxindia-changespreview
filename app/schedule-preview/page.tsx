@@ -1,10 +1,8 @@
+"use client";
+
+import React from "react";
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
-
-export const metadata = {
-  title: "Schedule Preview — UX India",
-  description: "Preview of the Leadership Summit 2026 schedule.",
-};
 
 const scheduleData = {
   days: [
@@ -12,7 +10,7 @@ const scheduleData = {
     { id: "day2", label: "Day 2", date: "Sept 24" },
     { id: "day3", label: "Day 3", date: "Sept 25" },
   ],
-  sessions: [
+  day1: [
     {
       time: "9:00 AM",
       type: "keynote",
@@ -140,9 +138,146 @@ const scheduleData = {
       ],
     },
   ],
+  day2: [
+    {
+      time: "8:00 AM",
+      type: "break",
+      title: "Registrations",
+    },
+    {
+      time: "9:00 AM",
+      type: "keynote",
+      title: "Opening Design Leadership Vision",
+      description: "Setting the tone for day two with insights on the future of design-led organizations.",
+      speaker: {
+        name: "Bapu",
+        role: "Design Leader",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
+      },
+      tag: "Opening Keynote",
+    },
+    {
+      time: "9:50 AM",
+      type: "keynote",
+      title: "Grand Keynote 01: Design at Enterprise Scale",
+      description: "Exploring design leadership in large, complex organizational structures.",
+      speaker: {
+        name: "Industry Expert",
+        role: "Executive Design Lead",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
+      },
+      tag: "Grand Keynote",
+    },
+    {
+      time: "10:40 AM",
+      type: "break",
+      title: "Coffee Break",
+    },
+    {
+      time: "11:25 AM",
+      type: "keynote",
+      title: "Plenary Keynote 01: Building Design Culture",
+      description: "Creating and sustaining a strong design culture within organizations.",
+      speaker: {
+        name: "Suff",
+        role: "Culture & Design Strategist",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
+      },
+      tag: "Plenary Keynote",
+    },
+    {
+      time: "12:05 PM",
+      type: "keynote",
+      title: "Plenary Keynote 02: Design Ethics in AI",
+      description: "Responsible design practices in an AI-driven world.",
+      speaker: {
+        name: "Jose",
+        role: "Ethical Design Specialist",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
+      },
+      tag: "Plenary Keynote",
+    },
+    {
+      time: "12:45 PM",
+      type: "break",
+      title: "Lunch Break",
+    },
+    {
+      time: "2:30 PM",
+      type: "panel",
+      title: "Panel Discussion 01: Future of Design Leadership",
+      description: "Thought leaders share perspectives on emerging trends and challenges in design leadership.",
+      panelists: [
+        {
+          name: "Mohan Krishnaraj",
+          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
+        },
+        {
+          name: "Kate Moran",
+          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
+        },
+        {
+          name: "Rucha Humnabadkar",
+          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
+        },
+      ],
+      tag: "Panel Discussion",
+    },
+    {
+      time: "3:40 PM",
+      type: "keynote",
+      title: "Plenary Keynote 03: Global Design Perspectives",
+      description: "Cross-cultural insights into design leadership practices worldwide.",
+      speaker: {
+        name: "Design Leader",
+        role: "Global Design Director",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
+      },
+      tag: "Plenary Keynote",
+    },
+    {
+      time: "4:20 PM",
+      type: "break",
+      title: "Coffee Break & Networking",
+    },
+    {
+      time: "5:20 PM",
+      type: "keynote",
+      title: "Plenary Keynote 04: The Next Wave of Design",
+      description: "What's next in design leadership and innovation.",
+      speaker: {
+        name: "Rowan",
+        role: "Innovation Strategist",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
+      },
+      tag: "Plenary Keynote",
+    },
+    {
+      time: "6:00 PM",
+      type: "keynote",
+      title: "Grand Keynote 02: Design's Role in Transformation",
+      description: "How design drives organizational and social transformation.",
+      speaker: {
+        name: "Doug",
+        role: "Design Transformation Expert",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
+      },
+      tag: "Grand Keynote",
+    },
+    {
+      time: "6:50 PM",
+      type: "break",
+      title: "Networking Dinner",
+    },
+  ],
 };
 
+const sessions = scheduleData.day1;
+
 export default function SchedulePreviewPage() {
+  const [activeDay, setActiveDay] = React.useState("day1");
+  const currentSessions = activeDay === "day1" ? scheduleData.day1 : scheduleData.day2;
+
   return (
     <main>
       <Nav forceSolid={true} />
@@ -163,11 +298,12 @@ export default function SchedulePreviewPage() {
 
           {/* Day tabs */}
           <div className="flex gap-4 mb-12">
-            {scheduleData.days.map((day, index) => (
+            {scheduleData.days.map((day) => (
               <button
                 key={day.id}
+                onClick={() => setActiveDay(day.id)}
                 className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all ${
-                  index === 0
+                  activeDay === day.id
                     ? "bg-[#E85520] text-white"
                     : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
                 }`}
@@ -186,7 +322,7 @@ export default function SchedulePreviewPage() {
                 Time
               </div>
               <div className="space-y-[7.5rem]">
-                {scheduleData.sessions.map((session, index) => (
+                {currentSessions.map((session, index) => (
                   <div key={index} className="text-sm font-sans text-white/50">
                     {session.time}
                   </div>
@@ -196,7 +332,7 @@ export default function SchedulePreviewPage() {
 
             {/* Main schedule */}
             <div className="lg:col-span-10 space-y-6">
-              {scheduleData.sessions.map((session, index) => {
+              {currentSessions.map((session, index) => {
                 if (session.type === "keynote") {
                   return (
                     <div
@@ -234,44 +370,6 @@ export default function SchedulePreviewPage() {
                   );
                 }
 
-                if (session.type === "dual") {
-                  return (
-                    <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {session.sessions.map((s, sIndex) => (
-                        <div
-                          key={sIndex}
-                          className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all"
-                        >
-                          <div className="flex items-start gap-4 mb-4">
-                            <img
-                              src={s.speaker.image}
-                              alt={s.speaker.name}
-                              className="w-12 h-12 rounded-full object-cover shrink-0"
-                            />
-                            <div>
-                              <p className="font-sans text-sm text-white font-medium">
-                                {s.speaker.name}
-                              </p>
-                              <p className="font-sans text-xs text-white/40">
-                                {s.speaker.role}
-                              </p>
-                            </div>
-                          </div>
-                          <h4 className="font-leadership text-lg text-white mb-2">
-                            {s.title}
-                          </h4>
-                          <p className="font-sans text-sm text-white/50">
-                            {s.description}
-                          </p>
-                          <div className="lg:hidden mt-3 text-xs text-white/40">
-                            {session.time}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  );
-                }
-
                 if (session.type === "break") {
                   return (
                     <div
@@ -298,46 +396,6 @@ export default function SchedulePreviewPage() {
                           {session.time}
                         </p>
                       </div>
-                    </div>
-                  );
-                }
-
-                if (session.type === "tracks") {
-                  return (
-                    <div key={index} className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      {session.tracks.map((track, tIndex) => (
-                        <div
-                          key={tIndex}
-                          className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-white/20 transition-all"
-                        >
-                          <span
-                            className={`inline-block px-2 py-1 text-[10px] font-sans font-semibold uppercase tracking-wider rounded-full mb-4 ${
-                              tIndex === 0
-                                ? "bg-[#E85520]/20 text-[#E85520]"
-                                : "bg-white/10 text-white/60"
-                            }`}
-                          >
-                            {track.tag}
-                          </span>
-                          <img
-                            src={track.speaker.image}
-                            alt={track.speaker.name}
-                            className="w-10 h-10 rounded-full object-cover mb-3"
-                          />
-                          <h4 className="font-leadership text-base text-white mb-1">
-                            {track.title}
-                          </h4>
-                          <p className="font-sans text-xs text-white/40 mb-3">
-                            {track.speaker.name}
-                          </p>
-                          <p className="font-sans text-xs text-white/50 leading-relaxed">
-                            {track.description}
-                          </p>
-                          <div className="lg:hidden mt-3 text-xs text-white/40">
-                            {session.time}
-                          </div>
-                        </div>
-                      ))}
                     </div>
                   );
                 }
@@ -371,9 +429,11 @@ export default function SchedulePreviewPage() {
                             title={panelist.name}
                           />
                         ))}
-                        <div className="w-10 h-10 rounded-full border-2 border-dashed border-white/20 flex items-center justify-center">
-                          <span className="text-white/30 text-xs">+2</span>
-                        </div>
+                        {session.panelists.length < 5 && (
+                          <div className="w-10 h-10 rounded-full border-2 border-dashed border-white/20 flex items-center justify-center">
+                            <span className="text-white/30 text-xs">+{5 - session.panelists.length}</span>
+                          </div>
+                        )}
                       </div>
                       <div className="lg:hidden mt-3 text-xs text-white/40">
                         {session.time}
