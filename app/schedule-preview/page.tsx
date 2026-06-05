@@ -384,19 +384,15 @@ const scheduleData = {
     },
     {
       time: "4:00 PM",
-      type: "sessions",
-      sessions: [
-        {
-          room: "Main Stage",
-          title: "Closing Ceremony",
-          speaker: {
-            name: "John Doe",
-            role: "Conference Lead, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
-          },
-          description: "Closing remarks and key takeaways from the conference.",
-        },
-      ],
+      type: "keynote",
+      title: "Closing Ceremony",
+      tag: "Main Stage",
+      speaker: {
+        name: "John Doe",
+        role: "Conference Lead, UMO Design Foundation",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
+      },
+      description: "Closing remarks and key takeaways from the conference.",
     },
   ],
   day1Keynote: [
