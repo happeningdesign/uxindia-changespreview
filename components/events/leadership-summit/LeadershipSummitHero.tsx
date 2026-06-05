@@ -6,7 +6,7 @@ export default function LeadershipSummitHero() {
   const [activeTab, setActiveTab] = useState("overview");
 
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative w-full bg-black">
       {/* Background image */}
       <div
         className="absolute inset-0 z-0"
@@ -27,10 +27,10 @@ export default function LeadershipSummitHero() {
       {/* Optional brand-orange multiply tint (~12%) */}
       <div className="absolute inset-0 z-1 mix-blend-multiply opacity-[0.12] bg-[#E85520]" />
 
-      {/* Content container */}
-      <div className="relative z-10 h-full flex flex-col justify-between pb-24">
-        {/* Main content - positioned in lower-left */}
-        <div className="flex-1 flex flex-col justify-end pl-6 md:pl-12">
+      {/* Hero content container - adds padding at top for nav clearance */}
+      <div className="relative z-10 min-h-screen flex flex-col pt-24 md:pt-32 pb-0">
+        {/* Main content - positioned to fill space */}
+        <div className="flex-1 flex flex-col justify-end pl-6 md:pl-12 pr-6 pb-24">
           <div className="max-w-2xl">
             {/* Eyebrow kicker */}
             <div className="animate-float-up opacity-0 mb-8">
@@ -119,8 +119,8 @@ export default function LeadershipSummitHero() {
           </div>
         </div>
 
-        {/* Sticky segmented sub-nav at bottom */}
-        <div className="flex w-full border-t border-white/10 bg-black/20 backdrop-blur-md">
+        {/* Sticky segmented sub-nav at bottom - full width */}
+        <div className="w-full flex border-t border-white/10 bg-black/40 backdrop-blur-md">
           <button
             onClick={() => setActiveTab("overview")}
             className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 ${
