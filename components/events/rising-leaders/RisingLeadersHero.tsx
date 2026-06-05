@@ -82,45 +82,39 @@ export default function RisingLeadersHero({ activeTab, setActiveTab }) {
 
             {/* Meta row - DATE / VENUE / LOCATION */}
             <div
-              className="animate-float-up opacity-0 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 md:border-none"
+              className="animate-float-up opacity-0 flex flex-col md:flex-row gap-8 md:gap-0"
               style={{
                 animationDelay: "0.4s",
               }}
             >
               {/* DATE */}
-              <div className="flex items-start gap-6 md:gap-0 md:flex-col md:border-r md:border-white/15 md:pr-12">
-                <div className="md:w-full">
-                  <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
-                    DATE
-                  </p>
-                  <p className="font-sans text-base md:text-lg text-white font-medium">
-                    <span className="whitespace-nowrap">26–27 September</span><br />2026
-                  </p>
-                </div>
+              <div className="md:border-r md:border-white/15 md:pr-8 md:mr-8">
+                <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
+                  DATE
+                </p>
+                <p className="font-sans text-base md:text-lg text-white font-medium">
+                  <span className="whitespace-nowrap">26–27 September</span><br />2026
+                </p>
               </div>
 
               {/* VENUE */}
-              <div className="flex items-start gap-6 md:gap-0 md:flex-col md:border-r md:border-white/15 md:pr-8">
-                <div className="md:w-full">
-                  <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
-                    VENUE
-                  </p>
-                  <p className="font-sans text-base md:text-lg text-white font-medium">
-                    <span className="whitespace-nowrap">Srishti Manipal</span><br />Institute
-                  </p>
-                </div>
+              <div className="md:border-r md:border-white/15 md:pr-8 md:mr-8 md:max-w-[280px]">
+                <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
+                  VENUE
+                </p>
+                <p className="font-sans text-base md:text-lg text-white font-medium leading-snug">
+                  Srishti Manipal Institute of Art, Design & Technology
+                </p>
               </div>
 
               {/* LOCATION */}
-              <div className="flex items-start gap-6 md:gap-0 md:flex-col">
-                <div className="md:w-full">
-                  <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
-                    LOCATION
-                  </p>
-                  <p className="font-sans text-base md:text-lg text-white font-medium">
-                    Bengaluru, India
-                  </p>
-                </div>
+              <div>
+                <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
+                  LOCATION
+                </p>
+                <p className="font-sans text-base md:text-lg text-white font-medium">
+                  Bengaluru, India
+                </p>
               </div>
             </div>
           </div>
