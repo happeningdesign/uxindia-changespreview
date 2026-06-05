@@ -339,11 +339,29 @@ const scheduleData = {
         {
           room: "Room 2",
           title: "Design Pitch VC Sessions",
-          speaker: {
-            name: "John Doe",
-            role: "VC Investor, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
-          },
+          duration: "90min",
+          panelists: [
+            {
+              name: "John Doe",
+              role: "VC Investor, UMO Design Foundation",
+              image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
+            },
+            {
+              name: "John Doe",
+              role: "VC Investor, UMO Design Foundation",
+              image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
+            },
+            {
+              name: "John Doe",
+              role: "VC Investor, UMO Design Foundation",
+              image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
+            },
+            {
+              name: "John Doe",
+              role: "VC Investor, UMO Design Foundation",
+              image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
+            },
+          ],
           description: "Pitch your design-driven startup to VCs.",
         },
       ],
@@ -893,7 +911,7 @@ export default function SchedulePreviewPage() {
                         {session.sessions.map((sess, sIndex) => (
                           <div
                             key={sIndex}
-                            className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
+                            className={`bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all ${sess.duration ? 'md:row-span-2' : ''}`}
                           >
                             <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider mb-3">
                               {sess.room}
@@ -901,22 +919,50 @@ export default function SchedulePreviewPage() {
                             <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                               {sess.title}
                             </h3>
-                            <div className="flex items-start gap-3 mb-4">
-                              <img
-                                src={sess.speaker.image}
-                                alt={sess.speaker.name}
-                                className="w-10 h-10 rounded-full object-cover shrink-0"
-                              />
-                              <div className="flex-1 min-w-0">
-                                <p className="font-sans text-sm text-white/80 font-medium">
-                                  <span className="block">{sess.speaker.name}</span>
-                                  <span className="text-white/40 text-xs">{sess.speaker.role}</span>
-                                </p>
+                            {sess.panelists ? (
+                              // Multiple panelists
+                              <>
+                                <div className="flex gap-2 mb-4 flex-wrap">
+                                  {sess.panelists.map((panelist, pIndex) => (
+                                    <img
+                                      key={pIndex}
+                                      src={panelist.image}
+                                      alt={panelist.name}
+                                      className="w-10 h-10 rounded-full object-cover border-2 border-white/10"
+                                      title={`${panelist.name} - ${panelist.role}`}
+                                    />
+                                  ))}
+                                </div>
+                                <div className="mb-4">
+                                  <p className="font-sans text-xs text-white/60">
+                                    {sess.panelists.length} VC Investors
+                                  </p>
+                                </div>
+                              </>
+                            ) : (
+                              // Single speaker
+                              <div className="flex items-start gap-3 mb-4">
+                                <img
+                                  src={sess.speaker.image}
+                                  alt={sess.speaker.name}
+                                  className="w-10 h-10 rounded-full object-cover shrink-0"
+                                />
+                                <div className="flex-1 min-w-0">
+                                  <p className="font-sans text-sm text-white/80 font-medium">
+                                    <span className="block">{sess.speaker.name}</span>
+                                    <span className="text-white/40 text-xs">{sess.speaker.role}</span>
+                                  </p>
+                                </div>
                               </div>
-                            </div>
+                            )}
                             <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">
                               {sess.description}
                             </p>
+                            {sess.duration && (
+                              <p className="font-sans text-xs text-white/40 mt-4 pt-4 border-t border-white/10">
+                                Duration: {sess.duration}
+                              </p>
+                            )}
                           </div>
                         ))}
                       </div>
