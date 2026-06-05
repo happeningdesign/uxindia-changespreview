@@ -1,7 +1,6 @@
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
 import RisingLeadersHero from "@/components/events/rising-leaders/RisingLeadersHero";
-import EventTabs from "@/components/events/EventTabs";
 import WhoAttends from "@/components/events/WhoAttends";
 import SpeakersGrid from "@/components/events/SpeakersGrid";
 import VenueSection from "@/components/events/VenueSection";
@@ -17,7 +16,6 @@ export default function RisingLeadersForum() {
     <main>
       <Nav forceSolid={false} />
       <RisingLeadersHero />
-      <EventTabs eventType="rising" />
       <WhoAttends
         title="Who Attends"
         description="Built for leaders at the threshold."
