@@ -7,6 +7,7 @@ import RisingLeadersHero from "@/components/events/rising-leaders/RisingLeadersH
 import WhoAttends from "@/components/events/WhoAttends";
 import SpeakersGrid from "@/components/events/SpeakersGrid";
 import VenueSection from "@/components/events/VenueSection";
+import ScheduleSkeleton from "@/components/events/ScheduleSkeleton";
 
 export default function RisingLeadersPageClient() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -46,6 +47,9 @@ export default function RisingLeadersPageClient() {
           <VenueSection />
         </>
       )}
+
+      {activeTab === "schedule" && <ScheduleSkeleton />}
+      
       <Footer />
     </main>
   );

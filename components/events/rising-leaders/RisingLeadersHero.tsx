@@ -116,61 +116,6 @@ export default function RisingLeadersHero({ activeTab, setActiveTab }) {
         </div>
       </div>
 
-      {/* Tab content area */}
-      {activeTab === "overview" && (
-        <div className="bg-[#0D0D0D] py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-6">
-            <h2 className="font-leadership text-4xl md:text-5xl text-white mb-6">
-              Overview
-            </h2>
-            <p className="font-sans text-base text-white/70 leading-relaxed max-w-3xl">
-              The Rising Leaders Forum is designed for emerging design leaders and mid-career professionals ready to step into leadership roles. Over two intensive days, participants will engage with seasoned design leaders, collaborate with peers, and access mentorship to accelerate their growth and impact in the design industry.
-            </p>
-          </div>
-        </div>
-      )}
-
-      {activeTab === "schedule" && (
-        <div className="bg-[#0D0D0D] py-16 md:py-24 relative">
-          <div className="absolute inset-0 z-40 backdrop-blur-md bg-black/30 flex items-center justify-center">
-            <div className="text-center">
-              {/* Skeletal schedule structure */}
-              <div className="space-y-6 mb-12 max-w-md mx-auto">
-                <div className="space-y-3">
-                  <div className="h-4 bg-white/10 rounded w-32 mx-auto" />
-                  <div className="h-3 bg-white/10 rounded w-48 mx-auto" />
-                </div>
-                <div className="space-y-3">
-                  <div className="h-4 bg-white/10 rounded w-32 mx-auto" />
-                  <div className="h-3 bg-white/10 rounded w-48 mx-auto" />
-                </div>
-                <div className="space-y-3">
-                  <div className="h-4 bg-white/10 rounded w-32 mx-auto" />
-                  <div className="h-3 bg-white/10 rounded w-48 mx-auto" />
-                </div>
-              </div>
-
-              {/* "Schedule Announcing Soon" text */}
-              <h3 className="font-leadership text-3xl md:text-4xl text-white text-center mb-4">
-                Schedule
-              </h3>
-              <p className="font-sans text-base md:text-lg text-white/70 text-center">
-                Announcing Soon
-              </p>
-            </div>
-          </div>
-
-          <div className="max-w-7xl mx-auto px-6 relative z-0">
-            <h2 className="font-leadership text-4xl md:text-5xl text-white mb-6">
-              Schedule
-            </h2>
-            <p className="font-sans text-base text-white/70">
-              Schedule details coming soon...
-            </p>
-          </div>
-        </div>
-      )}
-
       <style>{`
         @keyframes fadeUp {
           from {
