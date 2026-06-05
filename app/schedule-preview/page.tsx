@@ -1019,9 +1019,14 @@ export default function SchedulePreviewPage() {
                         </div>
                         {/* Right column - spanning full height */}
                         <div className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all h-full flex flex-col">
-                          <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider mb-3">
-                            {session.rightSession.room}
-                          </p>
+                          <div className="flex items-center justify-between mb-3">
+                            <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
+                              {session.rightSession.room}
+                            </p>
+                            <p className="lg:hidden text-xs text-white/40">
+                              {session.time}
+                            </p>
+                          </div>
                           <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                             {session.rightSession.title}
                           </h3>
