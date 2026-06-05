@@ -56,6 +56,16 @@ function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+          {/* Talk type badge on front */}
+          {speaker.talkType && (
+            <div className="absolute top-3 left-3 md:top-4 md:left-4">
+              <div className="bg-black/60 backdrop-blur-sm rounded-md px-2 py-1">
+                <span className="font-sans text-[9px] md:text-[10px] font-bold text-white tracking-wider uppercase">
+                  {speaker.talkType}
+                </span>
+              </div>
+            </div>
+          )}
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
             <h3 className="font-leadership font-semibold text-white text-sm md:text-base leading-tight mb-1 tracking-tight">
               {speaker.name}
