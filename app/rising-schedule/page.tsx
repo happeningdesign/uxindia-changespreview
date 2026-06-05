@@ -466,25 +466,6 @@ export default function RisingSchedulePage() {
                     )}
                     {session.type === "parallel-workshops" && (
                       <div className="space-y-4">
-                        {/* Header with time on mobile */}
-                        <div className="flex items-center justify-between lg:hidden">
-                          <div className="flex items-center gap-2">
-                            <span className="px-3 py-1 bg-[#C8365A] text-white text-xs font-sans font-medium rounded-full">
-                              10 Workshops
-                            </span>
-                            <span className="text-xs text-[#0D0D0D]/40">{session.duration}</span>
-                          </div>
-                          <p className="text-xs text-[#0D0D0D]/40">{session.time}</p>
-                        </div>
-                        
-                        {/* Desktop header */}
-                        <div className="hidden lg:flex items-center gap-3 mb-2">
-                          <span className="px-3 py-1 bg-[#C8365A] text-white text-xs font-sans font-medium rounded-full">
-                            Parallel Workshops
-                          </span>
-                          <span className="text-sm text-[#0D0D0D]/50">{session.duration} · 10 rooms</span>
-                        </div>
-                        
                         {/* Horizontally scrollable on mobile, grid on desktop */}
                         <div className="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-5 lg:overflow-visible scrollbar-hide">
                           {session.workshops.map((workshop, wIndex) => (
@@ -530,24 +511,6 @@ export default function RisingSchedulePage() {
                     )}
                     {session.type === "parallel-sessions" && (
                       <div className="space-y-4">
-                        {/* Header */}
-                        <div className="flex items-center justify-between lg:hidden">
-                          <div className="flex items-center gap-2">
-                            <span className="px-3 py-1 bg-[#1A7A6E] text-white text-xs font-sans font-medium rounded-full">
-                              {session.sessions.length} Parallel Sessions
-                            </span>
-                            <span className="text-xs text-[#0D0D0D]/40">{session.duration}</span>
-                          </div>
-                          <p className="text-xs text-[#0D0D0D]/40">{session.time}</p>
-                        </div>
-                        
-                        <div className="hidden lg:flex items-center gap-3 mb-2">
-                          <span className="px-3 py-1 bg-[#1A7A6E] text-white text-xs font-sans font-medium rounded-full">
-                            Parallel Sessions
-                          </span>
-                          <span className="text-sm text-[#0D0D0D]/50">{session.duration} · {session.sessions.length} rooms</span>
-                        </div>
-                        
                         {/* Horizontally scrollable on mobile, grid on desktop */}
                         <div className="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-3 lg:overflow-visible scrollbar-hide">
                           {session.sessions.map((sess, sIndex) => (
