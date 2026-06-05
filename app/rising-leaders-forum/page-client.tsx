@@ -14,14 +14,14 @@ const risingLeadersDays = [
   {
     badge: "DAY 1",
     badgeColor: "orange" as const,
-    date: "21 September",
+    date: "26 September",
     description: "Leadership foundations and mentorship sessions",
     bgColor: "bg-[#1C1C1E]",
   },
   {
     badge: "DAY 2",
     badgeColor: "blue" as const,
-    date: "22 September",
+    date: "27 September",
     description: "Workshops, peer collaboration and networking",
     bgColor: "bg-[#0E4D5C]",
   },
