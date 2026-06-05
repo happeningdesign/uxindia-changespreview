@@ -93,9 +93,9 @@ export default function Footer({
   ctaButtonText,
   ctaButtonHref,
 }: FooterProps) {
-  const displayText = ctaText || "Don't watch from the\nsidelines. Lead the room.";
-  const buttonText = ctaButtonText || "Join The Waitlist";
-  const buttonHref = ctaButtonHref || "https://2026.ux-india.org/waitlist/";
+  const displayText = ctaText || "Don't watch from the\nsidelines. Be a part of it.";
+  const buttonText = ctaButtonText || "Get your Passes";
+  const buttonHref = ctaButtonHref || "/passes";
   
   return (
     <footer className="bg-[#0D0D0D] border-t border-white/10 overflow-hidden relative">

@@ -84,11 +84,7 @@ export default function RisingLeadersPageClient() {
 
       {activeTab === "schedule" && <ScheduleSkeleton />}
       
-      <Footer 
-        ctaText={"Don't watch from the\nsidelines. Be a part of it."}
-        ctaButtonText="Get your Passes"
-        ctaButtonHref="/passes"
-      />
+      <Footer />
     </main>
   );
 }
