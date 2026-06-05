@@ -32,7 +32,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Workshop 03",
+          title: "Workshop 02",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -42,7 +42,7 @@ const scheduleData = {
         },
         {
           room: "Room 3",
-          title: "Workshop 05",
+          title: "Workshop 03",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -73,7 +73,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Workshop 03 (Continued)",
+          title: "Workshop 02 (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -83,7 +83,7 @@ const scheduleData = {
         },
         {
           room: "Room 3",
-          title: "Workshop 05 (Continued)",
+          title: "Workshop 03 (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -104,7 +104,7 @@ const scheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Workshop 02",
+          title: "Workshop 04",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -114,7 +114,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Workshop 04",
+          title: "Workshop 05",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -145,7 +145,7 @@ const scheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Workshop 02 (Continued)",
+          title: "Workshop 04 (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -155,7 +155,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Workshop 04 (Continued)",
+          title: "Workshop 05 (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
