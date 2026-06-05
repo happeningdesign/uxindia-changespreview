@@ -1,7 +1,6 @@
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
 import LeadershipSummitHero from "@/components/events/leadership-summit/LeadershipSummitHero";
-import EventTabs from "@/components/events/EventTabs";
 import WhoAttends from "@/components/events/WhoAttends";
 import SpeakersGrid from "@/components/events/SpeakersGrid";
 import VenueSection from "@/components/events/VenueSection";
@@ -17,7 +16,14 @@ export default function LeadershipSummitPage() {
     <main>
       <Nav forceSolid={false} />
       <LeadershipSummitHero />
-      <EventTabs eventType="leadership" />
+      <section className="bg-[#0D0D0D] max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <div className="prose prose-invert max-w-none">
+          <h2 className="font-leadership text-4xl md:text-5xl text-white mb-6">Overview</h2>
+          <p className="font-sans text-base text-white/70 leading-relaxed">
+            The Leadership Summit 2026 brings together the most influential design voices to shape the future of design leadership.
+          </p>
+        </div>
+      </section>
       <WhoAttends
         title="Who Attends"
         description="Built for leaders who decide."

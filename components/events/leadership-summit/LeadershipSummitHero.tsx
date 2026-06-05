@@ -1,8 +1,12 @@
 "use client";
 
+import { useState } from "react";
+
 export default function LeadershipSummitHero() {
+  const [activeTab, setActiveTab] = useState("overview");
+
   return (
-    <section className="relative min-h-[90vh] overflow-hidden">
+    <section className="relative h-screen overflow-hidden">
       {/* Background image */}
       <div
         className="absolute inset-0 z-0"
@@ -14,55 +18,129 @@ export default function LeadershipSummitHero() {
         }}
       />
 
-      {/* Slight black overlay for text readability */}
-      <div className="absolute inset-0 bg-black/40 z-0" />
+      {/* Left-to-right dark scrim for text legibility */}
+      <div className="absolute inset-0 z-1 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
-      {/* Darker gradient from bottom for metadata readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70 z-0" />
+      {/* Bottom-to-top dark gradient (90% to 20%) */}
+      <div className="absolute inset-0 z-1 bg-gradient-to-b from-transparent via-transparent to-black/90" />
+
+      {/* Optional brand-orange multiply tint (~12%) */}
+      <div className="absolute inset-0 z-1 mix-blend-multiply opacity-[0.12] bg-[#E85520]" />
 
       {/* Content container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col justify-end min-h-[90vh]">
-        {/* Large title */}
-        <h1 className="font-leadership text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.05] mb-6 max-w-4xl">
-          Leadership
-          <br />
-          Summit 2026
-        </h1>
+      <div className="relative z-10 h-full flex flex-col justify-between pb-24">
+        {/* Main content - positioned in lower-left */}
+        <div className="flex-1 flex flex-col justify-end pl-6 md:pl-12">
+          <div className="max-w-2xl">
+            {/* Eyebrow kicker */}
+            <div className="animate-float-up opacity-0 mb-8">
+              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] letter-spacing">
+                DESIGN LEADERSHIP WEEK 2026 · TRACK 01
+              </p>
+            </div>
 
-        {/* Subtitle */}
-        <p className="font-sans text-sm md:text-base text-white/80 leading-relaxed max-w-md mb-10">
-          For senior design professionals, heads of design, CXOs, CDOs, and strategic decision-makers shaping design inside their organisations.
-        </p>
+            {/* H1 Headline */}
+            <h1
+              className="animate-float-up opacity-0 font-leadership text-white leading-[1.05] mb-6 md:mb-8"
+              style={{
+                fontSize: "clamp(3.5rem, 8vw, 7rem)",
+                animationDelay: "0.1s",
+              }}
+            >
+              Leadership
+              <br />
+              Summit 2026
+            </h1>
 
-        {/* Horizontal line separator */}
-        <div className="w-full max-w-4xl h-px bg-white/30 mb-6" />
+            {/* Subcopy */}
+            <p
+              className="animate-float-up opacity-0 font-sans text-base md:text-lg text-white/85 leading-relaxed mb-8 md:mb-10"
+              style={{
+                maxWidth: "46ch",
+                animationDelay: "0.2s",
+              }}
+            >
+              For senior design professionals, heads of design, CXOs, CDOs, and strategic decision-makers shaping design inside their organisations.
+            </p>
 
-        {/* Event metadata - three columns */}
-        <div className="flex flex-wrap gap-x-16 gap-y-4 max-w-4xl">
-          <div className="min-w-[140px]">
-            <p className="font-sans text-[11px] text-white/70 uppercase tracking-[0.15em] mb-1.5">
-              DATE
-            </p>
-            <p className="font-sans text-sm md:text-base text-white font-medium">
-              23-25 September 2026
-            </p>
+            {/* Thin hairline divider */}
+            <div
+              className="animate-float-up opacity-0 mb-8 md:mb-10"
+              style={{
+                animationDelay: "0.3s",
+              }}
+            >
+              <div className="h-px w-full bg-white/25" />
+            </div>
+
+            {/* Meta row - DATE / VENUE / LOCATION */}
+            <div
+              className="animate-float-up opacity-0 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 md:border-none"
+              style={{
+                animationDelay: "0.4s",
+              }}
+            >
+              {/* DATE */}
+              <div className="flex items-start gap-6 md:gap-0 md:flex-col md:border-r md:border-white/15 md:pr-12">
+                <div className="md:w-full">
+                  <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
+                    DATE
+                  </p>
+                  <p className="font-sans text-base md:text-lg text-white font-medium">
+                    23–25 September 2026
+                  </p>
+                </div>
+              </div>
+
+              {/* VENUE */}
+              <div className="flex items-start gap-6 md:gap-0 md:flex-col md:border-r md:border-white/15 md:pr-12">
+                <div className="md:w-full">
+                  <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
+                    VENUE
+                  </p>
+                  <p className="font-sans text-base md:text-lg text-white font-medium">
+                    Leela Bhartiya City
+                  </p>
+                </div>
+              </div>
+
+              {/* LOCATION */}
+              <div className="flex items-start gap-6 md:gap-0 md:flex-col">
+                <div className="md:w-full">
+                  <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
+                    LOCATION
+                  </p>
+                  <p className="font-sans text-base md:text-lg text-white font-medium">
+                    Bengaluru, India
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="min-w-[140px]">
-            <p className="font-sans text-[11px] text-white/70 uppercase tracking-[0.15em] mb-1.5">
-              VENUE
-            </p>
-            <p className="font-sans text-sm md:text-base text-white font-medium">
-              Leela Bhartiya City
-            </p>
-          </div>
-          <div className="min-w-[140px]">
-            <p className="font-sans text-[11px] text-white/70 uppercase tracking-[0.15em] mb-1.5">
-              LOCATION
-            </p>
-            <p className="font-sans text-sm md:text-base text-white font-medium">
-              Bengaluru, India
-            </p>
-          </div>
+        </div>
+
+        {/* Sticky segmented sub-nav at bottom */}
+        <div className="flex w-full border-t border-white/10 bg-black/20 backdrop-blur-md">
+          <button
+            onClick={() => setActiveTab("overview")}
+            className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 ${
+              activeTab === "overview"
+                ? "text-white border-[#E85520]"
+                : "text-white/40 border-transparent hover:text-white/60"
+            }`}
+          >
+            Overview
+          </button>
+          <button
+            onClick={() => setActiveTab("schedule")}
+            className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 ${
+              activeTab === "schedule"
+                ? "text-white border-[#E85520]"
+                : "text-white/40 border-transparent hover:text-white/60"
+            }`}
+          >
+            Schedule
+          </button>
         </div>
       </div>
     </section>
