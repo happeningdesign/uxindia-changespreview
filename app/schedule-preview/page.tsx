@@ -12,6 +12,172 @@ const scheduleData = {
   ],
   day1: [
     {
+      time: "8:00 AM",
+      type: "break",
+      title: "Registrations",
+    },
+    {
+      time: "9:00 AM",
+      type: "workshops",
+      workshops: [
+        {
+          room: "Room 1",
+          title: "Workshop 01",
+          speaker: {
+            name: "John Doe",
+            role: "Workshop Leader, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
+          },
+          description: "Learn foundational design principles and practices.",
+        },
+        {
+          room: "Room 2",
+          title: "Workshop 03",
+          speaker: {
+            name: "John Doe",
+            role: "Workshop Leader, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
+          },
+          description: "Explore advanced design methodologies.",
+        },
+        {
+          room: "Room 3",
+          title: "Workshop 05",
+          speaker: {
+            name: "John Doe",
+            role: "Workshop Leader, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
+          },
+          description: "Master emerging design trends and tools.",
+        },
+      ],
+    },
+    {
+      time: "10:30 AM",
+      type: "break",
+      title: "Coffee Break",
+    },
+    {
+      time: "11:15 AM",
+      type: "workshops",
+      workshops: [
+        {
+          room: "Room 1",
+          title: "Workshop 01 (Continued)",
+          speaker: {
+            name: "John Doe",
+            role: "Workshop Leader, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
+          },
+          description: "Learn foundational design principles and practices.",
+        },
+        {
+          room: "Room 2",
+          title: "Workshop 03 (Continued)",
+          speaker: {
+            name: "John Doe",
+            role: "Workshop Leader, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
+          },
+          description: "Explore advanced design methodologies.",
+        },
+        {
+          room: "Room 3",
+          title: "Workshop 05 (Continued)",
+          speaker: {
+            name: "John Doe",
+            role: "Workshop Leader, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
+          },
+          description: "Master emerging design trends and tools.",
+        },
+      ],
+    },
+    {
+      time: "12:15 PM",
+      type: "break",
+      title: "Lunch",
+    },
+    {
+      time: "1:45 PM",
+      type: "workshops",
+      workshops: [
+        {
+          room: "Room 1",
+          title: "Workshop 02",
+          speaker: {
+            name: "John Doe",
+            role: "Workshop Leader, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
+          },
+          description: "Develop practical design solutions.",
+        },
+        {
+          room: "Room 2",
+          title: "Workshop 04",
+          speaker: {
+            name: "John Doe",
+            role: "Workshop Leader, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
+          },
+          description: "Innovate with design thinking.",
+        },
+        {
+          room: "Room 3",
+          title: "Workshop 06",
+          speaker: {
+            name: "John Doe",
+            role: "Workshop Leader, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
+          },
+          description: "Transform ideas into impactful designs.",
+        },
+      ],
+    },
+    {
+      time: "3:15 PM",
+      type: "break",
+      title: "Coffee Break",
+    },
+    {
+      time: "4:00 PM",
+      type: "workshops",
+      workshops: [
+        {
+          room: "Room 1",
+          title: "Workshop 02 (Continued)",
+          speaker: {
+            name: "John Doe",
+            role: "Workshop Leader, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
+          },
+          description: "Develop practical design solutions.",
+        },
+        {
+          room: "Room 2",
+          title: "Workshop 04 (Continued)",
+          speaker: {
+            name: "John Doe",
+            role: "Workshop Leader, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
+          },
+          description: "Innovate with design thinking.",
+        },
+        {
+          room: "Room 3",
+          title: "Workshop 06 (Continued)",
+          speaker: {
+            name: "John Doe",
+            role: "Workshop Leader, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
+          },
+          description: "Transform ideas into impactful designs.",
+        },
+      ],
+    },
+  ],
+  day1Keynote: [
+    {
       time: "9:00 AM",
       type: "keynote",
       title: "The Future of Design Leadership",
@@ -300,7 +466,7 @@ const sessions = scheduleData.day1;
 
 export default function SchedulePreviewPage() {
   const [activeDay, setActiveDay] = React.useState("day1");
-  const currentSessions = activeDay === "day1" ? scheduleData.day1 : scheduleData.day2;
+  const currentSessions = activeDay === "day1" ? scheduleData.day1 : (activeDay === "day2" ? scheduleData.day2 : scheduleData.day2);
 
   return (
     <main>
@@ -477,6 +643,39 @@ export default function SchedulePreviewPage() {
                         <div className="lg:hidden mt-3 text-xs text-white/40">
                           {session.time}
                         </div>
+                      </div>
+                    )}
+                    {session.type === "workshops" && (
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {session.workshops.map((workshop, wIndex) => (
+                          <div
+                            key={wIndex}
+                            className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
+                          >
+                            <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider mb-3">
+                              {workshop.room}
+                            </p>
+                            <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
+                              {workshop.title}
+                            </h3>
+                            <div className="flex items-start gap-3 mb-4">
+                              <img
+                                src={workshop.speaker.image}
+                                alt={workshop.speaker.name}
+                                className="w-10 h-10 rounded-full object-cover shrink-0"
+                              />
+                              <div className="flex-1 min-w-0">
+                                <p className="font-sans text-sm text-white/80 font-medium">
+                                  <span className="block">{workshop.speaker.name}</span>
+                                  <span className="text-white/40 text-xs">{workshop.speaker.role}</span>
+                                </p>
+                              </div>
+                            </div>
+                            <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">
+                              {workshop.description}
+                            </p>
+                          </div>
+                        ))}
                       </div>
                     )}
                   </div>
