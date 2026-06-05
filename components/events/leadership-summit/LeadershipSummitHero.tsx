@@ -94,7 +94,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
                     DATE
                   </p>
                   <p className="font-sans text-base md:text-lg text-white font-medium">
-                    23–25 September 2026
+                    <span className="whitespace-nowrap">23–25 September</span><br />2026
                   </p>
                 </div>
               </div>
