@@ -7,6 +7,9 @@ import Footer from "@/components/global/footer/Footer";
 // Room colors for workshop badges
 const roomColors: Record<string, string> = {
   "Auditorium": "#1D5078",
+  "Mini-Auditorium 1": "#1A7A6E",
+  "Mini-Auditorium 2": "#C8365A",
+  "Mini-Auditorium 3": "#7C3AED",
   "Room 1": "#E85520",
   "Room 2": "#1A7A6E",
   "Room 3": "#C8365A",
@@ -141,502 +144,139 @@ const scheduleData = {
       time: "8:00 AM",
       type: "break",
       title: "Registrations",
+      location: "Auditorium",
     },
     {
       time: "9:00 AM",
-      type: "sessions",
-      sessions: [
-        {
-          room: "Room 1",
-          title: "Opening Remarks",
-          speaker: {
-            name: "John Doe",
-            role: "Design Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-          },
-          description: "Welcome to Day 3 Design Leadership Conference.",
-        },
-        {
-          room: "Room 2",
-          title: "Opening Remarks",
-          speaker: {
-            name: "John Doe",
-            role: "Design Entrepreneur, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-          },
-          description: "Welcome to Day 3 Design Entrepreneurship Track.",
-        },
-      ],
-    },
-    {
-      time: "9:25 AM",
-      type: "sessions",
-      sessions: [
-        {
-          room: "Room 1",
-          title: "Deep Dive Talk 01",
-          speaker: {
-            name: "John Doe",
-            role: "Design Strategist, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
-          },
-          description: "Exploring advanced design strategies and implementation.",
-        },
-        {
-          room: "Room 2",
-          title: "Deep Dive Talk 03",
-          speaker: {
-            name: "John Doe",
-            role: "Design Entrepreneur, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
-          },
-          description: "Building and scaling design-driven businesses.",
-        },
-      ],
-    },
-    {
-      time: "10:05 AM",
-      type: "sessions",
-      sessions: [
-        {
-          room: "Room 1",
-          title: "Spark Session 01",
-          speaker: {
-            name: "John Doe",
-            role: "Design Innovator, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
-          },
-          description: "Lightning talks on design innovation.",
-        },
-        {
-          room: "Room 2",
-          title: "Spark Session 04",
-          speaker: {
-            name: "John Doe",
-            role: "Design Entrepreneur, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
-          },
-          description: "Quick insights on entrepreneurial design thinking.",
-        },
-      ],
-    },
-    {
-      time: "10:30 AM",
-      type: "break",
-      title: "Coffee Break",
-    },
-    {
-      time: "11:15 AM",
-      type: "sessions",
-      sessions: [
-        {
-          room: "Room 1",
-          title: "Spark Session 02",
-          speaker: {
-            name: "John Doe",
-            role: "Design Innovator, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
-          },
-          description: "Creative approaches to design challenges.",
-        },
-        {
-          room: "Room 2",
-          title: "Spark Session 05",
-          speaker: {
-            name: "John Doe",
-            role: "Design Entrepreneur, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-          },
-          description: "Entrepreneurial insights from design leaders.",
-        },
-      ],
-    },
-    {
-      time: "11:40 AM",
-      type: "sessions",
-      sessions: [
-        {
-          room: "Room 1",
-          title: "Panel Discussion 02",
-          speaker: {
-            name: "John Doe",
-            role: "Panel Moderator, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-          },
-          description: "Discussion on design leadership in modern organizations.",
-        },
-        {
-          room: "Room 2",
-          title: "Panel Discussion 03",
-          speaker: {
-            name: "John Doe",
-            role: "Panel Moderator, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
-          },
-          description: "Navigating design entrepreneurship and growth.",
-        },
-      ],
-    },
-    {
-      time: "12:40 PM",
-      type: "break",
-      title: "Lunch",
-    },
-    {
-      time: "2:10 PM",
-      type: "grid-sessions",
-      leftSessions: [
-        {
-          time: "2:10 PM",
-          room: "Room 1",
-          title: "Deep Dive Talk 02",
-          speaker: {
-            name: "John Doe",
-            role: "Design Strategist, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
-          },
-          description: "Advanced strategies for design transformation.",
-        },
-        {
-          time: "2:50 PM",
-          room: "Room 1",
-          title: "Spark Session 03",
-          speaker: {
-            name: "John Doe",
-            role: "Design Innovator, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
-          },
-          description: "Final insights and takeaways from the day.",
-        },
-      ],
-      rightSession: {
-        room: "Room 2",
-        title: "Design Pitch VC Sessions",
-        panelists: [
-          {
-            name: "John Doe",
-            role: "VC Investor, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
-          },
-          {
-            name: "John Doe",
-            role: "VC Investor, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
-          },
-          {
-            name: "John Doe",
-            role: "VC Investor, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
-          },
-          {
-            name: "John Doe",
-            role: "VC Investor, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-          },
-        ],
-        description: "Pitch your design-driven startup to VCs.",
-      },
-    },
-    {
-      time: "3:15 PM",
-      type: "break",
-      title: "Coffee Break & Networking",
-    },
-    {
-      time: "4:00 PM",
       type: "keynote",
-      title: "Closing Ceremony",
-      tag: "Main Stage",
-      speaker: {
-        name: "John Doe",
-        role: "Conference Lead, UMO Design Foundation",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
-      },
-      description: "Closing remarks and key takeaways from the conference.",
-    },
-  ],
-  day1Keynote: [
-    {
-      time: "9:00 AM",
-      type: "keynote",
-      title: "The Future of Design Leadership",
-      description: "Opening keynote on how design leadership is evolving in the age of AI and rapid technological change.",
-      speaker: {
-        name: "John Doe",
-        role: "Global Head of Design, UMO Design Foundation",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-      },
+      title: "Opening Keynote",
+      description: "Kicking off Day 2 with inspiring insights on design leadership and the path forward.",
       tag: "Keynote",
-    },
-    {
-      time: "10:30 AM",
-      type: "dual",
-      sessions: [
-        {
-          title: "Building Design Systems at Scale",
-          description: "Learn how to create and maintain design systems that work across global organizations.",
-          speaker: {
-            name: "John Doe",
-            role: "VP Research, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-          },
-        },
-        {
-          title: "Research-Driven Design Decisions",
-          description: "Frameworks for integrating user research into strategic design decisions.",
-          speaker: {
-            name: "John Doe",
-            role: "VP Design, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
-          },
-        },
-      ],
-    },
-    {
-      time: "12:00 PM",
-      type: "break",
-      title: "Networking Lunch",
-    },
-    {
-      time: "1:30 PM",
-      type: "tracks",
-      tracks: [
-        {
-          tag: "Leadership",
-          title: "Managing Up: Design at the C-Suite",
-          speaker: {
-            name: "John Doe",
-            role: "Director Of Design, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
-          },
-          description: "Strategies for communicating design value to executive leadership.",
-        },
-        {
-          tag: "Strategy",
-          title: "Design Operations Excellence",
-          speaker: {
-            name: "John Doe",
-            role: "Experience Labs Lead, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
-          },
-          description: "Optimizing design workflows and team structures for maximum impact.",
-        },
-        {
-          tag: "Innovation",
-          title: "AI-Augmented Design Process",
-          speaker: {
-            name: "John Doe",
-            role: "CDO, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
-          },
-          description: "Integrating AI tools into the design workflow without losing creativity.",
-        },
-      ],
-    },
-    {
-      time: "3:00 PM",
-      type: "panel",
-      title: "Panel: The State of Design in 2026",
-      description: "Industry leaders discuss trends, challenges, and opportunities in design leadership.",
-      panelists: [
-        {
-          name: "John Doe",
-          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-        },
-        {
-          name: "John Doe",
-          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-        },
-        {
-          name: "John Doe",
-          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
-        },
-        {
-          name: "John Doe",
-          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
-        },
-      ],
-      tag: "Panel Discussion",
-    },
-    {
-      time: "4:30 PM",
-      type: "dual",
-      sessions: [
-        {
-          title: "Building Inclusive Design Teams",
-          description: "Creating diverse, equitable, and inclusive design organizations.",
-          speaker: {
-            name: "John Doe",
-            role: "Co-Founder, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
-          },
-        },
-        {
-          title: "Measuring Design Impact",
-          description: "Metrics and frameworks for demonstrating design ROI.",
-          speaker: {
-            name: "John Doe",
-            role: "Experience Labs Lead, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
-          },
-        },
-      ],
-    },
-  ],
-  day2: [
-    {
-      time: "8:00 AM",
-      type: "break",
-      title: "Registrations",
-    },
-    {
-      time: "9:00 AM",
-      type: "keynote",
-      title: "Opening Design Leadership Vision",
-      description: "Setting the tone for day two with insights on the future of design-led organizations.",
+      location: "Auditorium",
       speaker: {
-        name: "John Doe",
-        role: "Design Leader, UMO Design Foundation",
+        name: "Speaker TBA",
+        role: "Design Leader",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
       },
-      tag: "Opening Keynote",
     },
     {
-      time: "9:50 AM",
+      time: "9:40 AM",
       type: "keynote",
-      title: "Grand Keynote 01: Design at Enterprise Scale",
-      description: "Exploring design leadership in large, complex organizational structures.",
+      title: "Deep Dive Talk 01",
+      description: "An in-depth exploration of design leadership practices and methodologies.",
+      tag: "Deep Dive",
+      location: "Auditorium",
       speaker: {
-        name: "John Doe",
-        role: "Executive Design Lead, UMO Design Foundation",
+        name: "Speaker TBA",
+        role: "Design Leader",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
       },
-      tag: "Grand Keynote",
     },
     {
-      time: "10:40 AM",
+      time: "10:20 AM",
       type: "break",
       title: "Coffee Break",
+      location: "Multiple Areas",
     },
     {
-      time: "11:25 AM",
-      type: "keynote",
-      title: "Plenary Keynote 01: Building Design Culture",
-      description: "Creating and sustaining a strong design culture within organizations.",
-      speaker: {
-        name: "John Doe",
-        role: "Culture & Design Strategist, UMO Design Foundation",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
-      },
-      tag: "Plenary Keynote",
+      time: "11:05 AM",
+      type: "parallel-sessions",
+      duration: "60 min",
+      sessions: [
+        { room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", description: "Industry leaders discuss emerging trends in design leadership.", panelists: [
+          { name: "Panelist 1", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
+          { name: "Panelist 2", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+        ]},
+        { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", description: "Exploring design-led transformation in organizations.", panelists: [
+          { name: "Panelist 1", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
+          { name: "Panelist 2", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
+        ]},
+        { room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", description: "Building high-performing design teams.", panelists: [
+          { name: "Panelist 1", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
+          { name: "Panelist 2", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
+        ]},
+      ],
     },
     {
       time: "12:05 PM",
-      type: "keynote",
-      title: "Plenary Keynote 02: Design Ethics in AI",
-      description: "Responsible design practices in an AI-driven world.",
-      speaker: {
-        name: "John Doe",
-        role: "Ethical Design Specialist, UMO Design Foundation",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
-      },
-      tag: "Plenary Keynote",
+      type: "parallel-sessions",
+      duration: "25 min",
+      sessions: [
+        { room: "Mini-Auditorium 1", title: "Spark Session 01", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Quick insights on design innovation." },
+        { room: "Mini-Auditorium 2", title: "Spark Session 02", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Quick insights on design strategy." },
+        { room: "Mini-Auditorium 3", title: "Spark Session 03", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Quick insights on design operations." },
+      ],
     },
     {
-      time: "12:45 PM",
+      time: "12:30 PM",
+      type: "parallel-sessions",
+      duration: "25 min",
+      sessions: [
+        { room: "Mini-Auditorium 1", title: "Spark Session 04", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Quick insights on design thinking." },
+        { room: "Mini-Auditorium 2", title: "Spark Session 05", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Quick insights on user research." },
+        { room: "Mini-Auditorium 3", title: "Spark Session 06", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Quick insights on design systems." },
+      ],
+    },
+    {
+      time: "12:55 PM",
       type: "break",
-      title: "Lunch Break",
+      title: "Lunch",
+      location: "Multiple Areas",
     },
     {
-      time: "2:30 PM",
-      type: "panel",
-      title: "Panel Discussion 01: Future of Design Leadership",
-      description: "Thought leaders share perspectives on emerging trends and challenges in design leadership.",
-      panelists: [
-        {
-          name: "John Doe",
+      time: "2:00 PM",
+      type: "keynote",
+      title: "Deep Dive Talk 02",
+      description: "Continuing the conversation on design leadership with practical frameworks.",
+      tag: "Deep Dive",
+      location: "Auditorium",
+      speaker: {
+        name: "Speaker TBA",
+        role: "Design Leader",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
+      },
+    },
+    {
+      time: "2:40 PM",
+      type: "mixed-sessions",
+      auditoriumSession: {
+        title: "Deep Dive Talk 03",
+        description: "Advanced strategies for design leadership and team growth.",
+        tag: "Deep Dive",
+        speaker: {
+          name: "Speaker TBA",
+          role: "Design Leader",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
         },
-        {
-          name: "John Doe",
-          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-        },
-        {
-          name: "John Doe",
+      },
+      parallelSessions: [
+        { room: "Room 4", title: "Spark Session 09", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Quick insights for rising leaders." },
+        { room: "Room 5", title: "Spark Session 10", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Quick insights for rising leaders." },
+      ],
+    },
+    {
+      time: "3:20 PM",
+      type: "mixed-sessions",
+      auditoriumSession: {
+        title: "Closing Ceremony",
+        description: "Celebrating the Rising Leaders Forum and looking ahead to the future.",
+        tag: "Closing",
+        speaker: {
+          name: "Speaker TBA",
+          role: "Conference Host",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
         },
+      },
+      parallelSessions: [
+        { room: "Room 4", title: "Spark Session 14", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Quick insights for rising leaders." },
+        { room: "Room 5", title: "Spark Session 15", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Quick insights for rising leaders." },
       ],
-      tag: "Panel Discussion",
     },
     {
-      time: "3:40 PM",
-      type: "keynote",
-      title: "Plenary Keynote 03: Global Design Perspectives",
-      description: "Cross-cultural insights into design leadership practices worldwide.",
-      speaker: {
-        name: "John Doe",
-        role: "Global Design Director, UMO Design Foundation",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
-      },
-      tag: "Plenary Keynote",
-    },
-    {
-      time: "5:20 PM",
-      type: "keynote",
-      title: "Plenary Keynote 04: The Next Wave of Design",
-      description: "What's next in design leadership and innovation.",
-      speaker: {
-        name: "John Doe",
-        role: "Innovation Strategist, UMO Design Foundation",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
-      },
-      tag: "Plenary Keynote",
-    },
-    {
-      time: "6:00 PM",
-      type: "keynote",
-      title: "Grand Keynote 02: Design's Role in Transformation",
-      description: "How design drives organizational and social transformation.",
-      speaker: {
-        name: "John Doe",
-        role: "Design Transformation Expert, UMO Design Foundation",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
-      },
-      tag: "Grand Keynote",
-    },
-    {
-      time: "4:20 PM",
+      time: "4:00 PM",
       type: "break",
-      title: "Coffee Break & Networking",
-    },
-    {
-      time: "5:20 PM",
-      type: "keynote",
-      title: "Plenary Keynote 04: The Next Wave of Design",
-      description: "What's next in design leadership and innovation.",
-      speaker: {
-        name: "John Doe",
-        role: "Innovation Strategist, UMO Design Foundation",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
-      },
-      tag: "Plenary Keynote",
-    },
-    {
-      time: "6:00 PM",
-      type: "keynote",
-      title: "Grand Keynote 02: Design's Role in Transformation",
-      description: "How design drives organizational and social transformation.",
-      speaker: {
-        name: "Doug",
-        role: "Design Transformation Expert",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
-      },
-      tag: "Grand Keynote",
-    },
-    {
-      time: "6:50 PM",
-      type: "break",
-      title: "Networking Dinner",
+      title: "High Tea",
+      location: "Multiple Areas",
     },
   ],
 };
@@ -896,6 +536,162 @@ export default function RisingSchedulePage() {
                         <p className="lg:hidden text-xs text-[#0D0D0D]/40 text-center">
                           Swipe to see all workshops →
                         </p>
+                      </div>
+                    )}
+                    {session.type === "parallel-sessions" && (
+                      <div className="space-y-4">
+                        {/* Header */}
+                        <div className="flex items-center justify-between lg:hidden">
+                          <div className="flex items-center gap-2">
+                            <span className="px-3 py-1 bg-[#1A7A6E] text-white text-xs font-sans font-medium rounded-full">
+                              {session.sessions.length} Parallel Sessions
+                            </span>
+                            <span className="text-xs text-[#0D0D0D]/40">{session.duration}</span>
+                          </div>
+                          <p className="text-xs text-[#0D0D0D]/40">{session.time}</p>
+                        </div>
+                        
+                        <div className="hidden lg:flex items-center gap-3 mb-2">
+                          <span className="px-3 py-1 bg-[#1A7A6E] text-white text-xs font-sans font-medium rounded-full">
+                            Parallel Sessions
+                          </span>
+                          <span className="text-sm text-[#0D0D0D]/50">{session.duration} · {session.sessions.length} rooms</span>
+                        </div>
+                        
+                        {/* Horizontally scrollable on mobile, grid on desktop */}
+                        <div className="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-3 lg:overflow-visible scrollbar-hide">
+                          {session.sessions.map((sess, sIndex) => (
+                            <div
+                              key={sIndex}
+                              className="flex-shrink-0 w-72 lg:w-auto bg-white border border-[#0D0D0D]/10 rounded-2xl p-5 hover:border-[#E85520]/30 transition-all shadow-sm"
+                            >
+                              <div className="flex items-center gap-2 mb-3">
+                                <span 
+                                  className="px-2 py-0.5 text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider"
+                                  style={{ backgroundColor: roomColors[sess.room] || "#1D5078" }}
+                                >
+                                  {sess.room}
+                                </span>
+                              </div>
+                              <h4 className="font-leadership text-lg text-[#0D0D0D] mb-2">
+                                {sess.title}
+                              </h4>
+                              <p className="font-sans text-xs text-[#0D0D0D]/60 mb-3 line-clamp-2">
+                                {sess.description}
+                              </p>
+                              {sess.type === "panel" && sess.panelists && (
+                                <div className="flex gap-2 mt-3">
+                                  {sess.panelists.map((panelist, pIndex) => (
+                                    <img
+                                      key={pIndex}
+                                      src={panelist.image}
+                                      alt={panelist.name}
+                                      className="w-8 h-8 rounded-full object-cover border border-[#0D0D0D]/10"
+                                      title={panelist.name}
+                                    />
+                                  ))}
+                                </div>
+                              )}
+                              {sess.type === "spark" && sess.speaker && (
+                                <div className="flex items-center gap-2 mt-3">
+                                  <img
+                                    src={sess.speaker.image}
+                                    alt={sess.speaker.name}
+                                    className="w-8 h-8 rounded-full object-cover shrink-0"
+                                  />
+                                  <div className="min-w-0">
+                                    <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">
+                                      {sess.speaker.name}
+                                    </p>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                        
+                        <p className="lg:hidden text-xs text-[#0D0D0D]/40 text-center">
+                          Swipe to see all sessions →
+                        </p>
+                      </div>
+                    )}
+                    {session.type === "mixed-sessions" && (
+                      <div className="space-y-4">
+                        {/* Header on mobile */}
+                        <div className="flex items-center justify-between lg:hidden">
+                          <span className="px-3 py-1 bg-[#1D5078] text-white text-xs font-sans font-medium rounded-full">
+                            Auditorium + {session.parallelSessions.length} Rooms
+                          </span>
+                          <p className="text-xs text-[#0D0D0D]/40">{session.time}</p>
+                        </div>
+                        
+                        {/* Grid layout: Auditorium on left, parallel sessions on right */}
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                          {/* Auditorium session - takes 2 columns */}
+                          <div className="lg:col-span-2 bg-white border border-[#0D0D0D]/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all shadow-sm">
+                            <div className="flex items-center gap-2 mb-3">
+                              <span className="px-2 py-0.5 text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider bg-[#1D5078]">
+                                Auditorium
+                              </span>
+                              <span className="px-2 py-0.5 text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider bg-[#E85520]">
+                                {session.auditoriumSession.tag}
+                              </span>
+                            </div>
+                            <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">
+                              {session.auditoriumSession.title}
+                            </h3>
+                            <p className="font-sans text-sm text-[#0D0D0D]/60 mb-4">
+                              {session.auditoriumSession.description}
+                            </p>
+                            <div className="flex items-center gap-3">
+                              <img
+                                src={session.auditoriumSession.speaker.image}
+                                alt={session.auditoriumSession.speaker.name}
+                                className="w-10 h-10 rounded-full object-cover"
+                              />
+                              <div>
+                                <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
+                                  {session.auditoriumSession.speaker.name}
+                                </p>
+                                <p className="font-sans text-xs text-[#0D0D0D]/40">
+                                  {session.auditoriumSession.speaker.role}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Parallel sessions - stacked in 1 column */}
+                          <div className="space-y-4">
+                            {session.parallelSessions.map((sess, sIndex) => (
+                              <div
+                                key={sIndex}
+                                className="bg-white border border-[#0D0D0D]/10 rounded-2xl p-4 hover:border-[#E85520]/30 transition-all shadow-sm"
+                              >
+                                <div className="flex items-center gap-2 mb-2">
+                                  <span 
+                                    className="px-2 py-0.5 text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider"
+                                    style={{ backgroundColor: roomColors[sess.room] || "#7C3AED" }}
+                                  >
+                                    {sess.room}
+                                  </span>
+                                </div>
+                                <h4 className="font-leadership text-base text-[#0D0D0D] mb-2">
+                                  {sess.title}
+                                </h4>
+                                <div className="flex items-center gap-2">
+                                  <img
+                                    src={sess.speaker.image}
+                                    alt={sess.speaker.name}
+                                    className="w-7 h-7 rounded-full object-cover shrink-0"
+                                  />
+                                  <p className="font-sans text-xs text-[#0D0D0D]/70 truncate">
+                                    {sess.speaker.name}
+                                  </p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     )}
                     {session.type === "workshops" && (
