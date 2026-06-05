@@ -396,17 +396,12 @@ export default function SchedulePreviewPage() {
                       <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center">
                         {isLunch ? (
                           // Food plate icon for lunch/dinner
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="#E85520"
-                            strokeWidth="2"
-                          >
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M12 7v10M7 12h10" />
-                          </svg>
+                          <img
+                            src="/icons/lunch.svg"
+                            alt="lunch"
+                            className="w-6 h-6"
+                            style={{ filter: "brightness(0) saturate(100%) invert(57%) sepia(71%) saturate(1241%) hue-rotate(7deg)" }}
+                          />
                         ) : isRegistration ? (
                           // Ticket icon
                           <svg
