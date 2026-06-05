@@ -4,6 +4,24 @@ import { useState } from "react";
 
 const speakerColors = ["#E85520", "#1D5078", "#1A7A6E", "#C8365A"];
 
+// Talk type colors using brand palette
+const talkTypeColors: Record<string, string> = {
+  "Grand Keynote": "#E85520",      // Orange - primary brand
+  "Plenary Keynote": "#1D5078",    // Blue
+  "Panel Discussion": "#1A7A6E",   // Teal
+  "Deep Dive Talk": "#C8365A",     // Pink/Magenta
+  "Spark Session": "#4ECDC4",      // Cyan/Turquoise
+  "Workshop Lead": "#E85520",      // Orange
+  "Mentor Session": "#1D5078",     // Blue
+  "Keynote": "#E85520",            // Orange
+  "Speaker": "#0D0D0D",            // Dark (default)
+};
+
+function getTalkTypeColor(talkType?: string): string {
+  if (!talkType) return talkTypeColors["Speaker"];
+  return talkTypeColors[talkType] || talkTypeColors["Speaker"];
+}
+
 interface Speaker {
   name: string;
   role: string;
@@ -20,6 +38,7 @@ interface SpeakersGridProps {
 function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
   const [flipped, setFlipped] = useState(false);
   const color = speakerColors[index % speakerColors.length];
+  const talkTypeColor = getTalkTypeColor(speaker.talkType);
 
   return (
     <div
@@ -58,8 +77,11 @@ function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
           {/* Talk type badge on front */}
           {speaker.talkType && (
-            <div className="absolute top-3 left-3 md:top-4 md:left-4">
-              <div className="bg-black/60 backdrop-blur-sm rounded-md px-2 py-1">
+            <div className="absolute top-3 right-3 md:top-4 md:right-4">
+              <div 
+                className="rounded-md px-2 py-1 text-center"
+                style={{ backgroundColor: talkTypeColor }}
+              >
                 <span className="font-sans text-[9px] md:text-[10px] font-bold text-white tracking-wider uppercase">
                   {speaker.talkType}
                 </span>
@@ -89,11 +111,6 @@ function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
         >
           {/* Top accent */}
           <div className="flex items-center justify-between flex-shrink-0 mb-3">
-            <div className="bg-white/20 rounded-md px-2 py-1">
-              <span className="font-sans text-[10px] font-bold text-white tracking-wider uppercase">
-                {speaker.talkType || "Speaker"}
-              </span>
-            </div>
             <div
               className="w-7 h-7 rounded-full flex items-center justify-center"
               style={{ backgroundColor: "rgba(255,255,255,0.15)" }}
@@ -107,6 +124,14 @@ function SpeakerCard({ speaker, index }: { speaker: Speaker; index: number }) {
                   strokeLinecap="round"
                 />
               </svg>
+            </div>
+            <div 
+              className="rounded-md px-2 py-1 text-center"
+              style={{ backgroundColor: talkTypeColor }}
+            >
+              <span className="font-sans text-[10px] font-bold text-white tracking-wider uppercase">
+                {speaker.talkType || "Speaker"}
+              </span>
             </div>
           </div>
 
