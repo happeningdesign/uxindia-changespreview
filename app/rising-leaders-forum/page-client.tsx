@@ -37,11 +37,11 @@ export default function RisingLeadersPageClient() {
       
       {activeTab === "overview" && (
         <>
-          <section className="bg-[#0D0D0D] w-full py-16 md:py-24">
+          <section className="bg-[#F5F0E8] w-full py-16 md:py-24">
             <div className="max-w-7xl mx-auto px-6">
-              <div className="prose prose-invert max-w-none">
-                <h2 className="font-leadership text-4xl md:text-5xl text-white mb-6">Overview</h2>
-                <p className="font-sans text-base text-white/70 leading-relaxed">
+              <div className="prose max-w-none">
+                <h2 className="font-leadership text-4xl md:text-5xl text-[#0D0D0D] mb-6">Overview</h2>
+                <p className="font-sans text-base text-[#0D0D0D]/70 leading-relaxed">
                   The Rising Leaders Forum is designed for emerging design leaders and mid-career professionals ready to step into leadership roles.
                 </p>
               </div>
@@ -49,31 +49,36 @@ export default function RisingLeadersPageClient() {
             </div>
           </section>
           <WhoAttends
+            variant="light"
             title="Who Attends"
             description="Built for leaders at the threshold."
             subtitle="Two days of intensive learning, peer connection, and mentorship from seasoned design leaders. Exclusive to professionals stepping into leadership roles and looking to accelerate their growth."
           />
           <SpeakersGrid
+            variant="light"
             speakers={[
               {
                 name: "Mohan Krishnaraj",
                 role: "Global Head, Cognizant",
                 image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
+                talkType: "Mentor Session",
               },
               {
                 name: "Kate Moran",
                 role: "VP Research, N/NG",
                 image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
+                talkType: "Workshop Lead",
               },
               {
                 name: "Prof. Kirti Trivedi",
                 role: "VDP, IIT Indore",
                 image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
+                talkType: "Keynote",
               },
             ]}
             showMorePlaceholder={true}
           />
-          <VenueSection />
+          <VenueSection variant="light" />
         </>
       )}
 

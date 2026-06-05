@@ -2,6 +2,12 @@
 
 import Link from "next/link";
 
+interface FooterProps {
+  ctaText?: string;
+  ctaButtonText?: string;
+  ctaButtonHref?: string;
+}
+
 const initiatives = [
   { label: "W Summit", href: "https://wsummit.umo.design/" },
   { label: "Design X Social", href: "https://dxs.umo.design/" },
@@ -82,7 +88,15 @@ const socials = [
   },
 ];
 
-export default function Footer() {
+export default function Footer({
+  ctaText,
+  ctaButtonText,
+  ctaButtonHref,
+}: FooterProps) {
+  const displayText = ctaText || "Don't watch from the\nsidelines. Be a part of it.";
+  const buttonText = ctaButtonText || "Get your Passes";
+  const buttonHref = ctaButtonHref || "/passes";
+  
   return (
     <footer className="bg-[#0D0D0D] border-t border-white/10 overflow-hidden relative">
       {/* Giant background text */}
@@ -101,19 +115,17 @@ export default function Footer() {
             <p className="font-sans text-xs text-white/70 uppercase tracking-widest mb-2">
               UXINDIA26 · Bangalore · September 2026
             </p>
-            <h3 className="font-serif text-3xl md:text-4xl text-white leading-tight">
-              Don&apos;t watch from the
-              <br />
-              sidelines. Lead the room.
+            <h3 className="font-serif text-3xl md:text-4xl text-white leading-tight whitespace-pre-line">
+              {displayText}
             </h3>
           </div>
           <Link
-            href="https://2026.ux-india.org/waitlist/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={buttonHref}
+            target={buttonHref.startsWith("/") ? undefined : "_blank"}
+            rel={buttonHref.startsWith("/") ? undefined : "noopener noreferrer"}
             className="relative inline-flex items-center gap-2 bg-[#0D0D0D] hover:bg-white text-white hover:text-[#E85520] font-sans font-semibold text-base px-7 py-4 rounded-full transition-all duration-300 flex-shrink-0 group"
           >
-            Join The Waitlist
+            {buttonText}
             <svg
               width="16"
               height="16"
