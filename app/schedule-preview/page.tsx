@@ -17,8 +17,8 @@ const scheduleData = {
       title: "The Future of Design Leadership",
       description: "Opening keynote on how design leadership is evolving in the age of AI and rapid technological change.",
       speaker: {
-        name: "Mohan Krishnaraj",
-        role: "Global Head of Design, Cognizant",
+        name: "John Doe",
+        role: "Global Head of Design, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
       },
       tag: "Keynote",
@@ -31,8 +31,8 @@ const scheduleData = {
           title: "Building Design Systems at Scale",
           description: "Learn how to create and maintain design systems that work across global organizations.",
           speaker: {
-            name: "Kate Moran",
-            role: "VP Research, N/NG",
+            name: "John Doe",
+            role: "VP Research, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
           },
         },
@@ -40,8 +40,8 @@ const scheduleData = {
           title: "Research-Driven Design Decisions",
           description: "Frameworks for integrating user research into strategic design decisions.",
           speaker: {
-            name: "Prof. Kirti Trivedi",
-            role: "VDP, IIT Indore",
+            name: "John Doe",
+            role: "VP Design, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
           },
         },
@@ -60,8 +60,8 @@ const scheduleData = {
           tag: "Leadership",
           title: "Managing Up: Design at the C-Suite",
           speaker: {
-            name: "Rucha Humnabadkar",
-            role: "Director Of Design, Youtube",
+            name: "John Doe",
+            role: "Director Of Design, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
           },
           description: "Strategies for communicating design value to executive leadership.",
@@ -70,8 +70,8 @@ const scheduleData = {
           tag: "Strategy",
           title: "Design Operations Excellence",
           speaker: {
-            name: "Mirjam Wouters",
-            role: "Experience Labs Lead, Royal Philips",
+            name: "John Doe",
+            role: "Experience Labs Lead, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
           },
           description: "Optimizing design workflows and team structures for maximum impact.",
@@ -80,8 +80,8 @@ const scheduleData = {
           tag: "Innovation",
           title: "AI-Augmented Design Process",
           speaker: {
-            name: "Donald Chesnut",
-            role: "CDO, CANDESCENT",
+            name: "John Doe",
+            role: "CDO, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
           },
           description: "Integrating AI tools into the design workflow without losing creativity.",
@@ -95,19 +95,19 @@ const scheduleData = {
       description: "Industry leaders discuss trends, challenges, and opportunities in design leadership.",
       panelists: [
         {
-          name: "Mohan Krishnaraj",
+          name: "John Doe",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
         },
         {
-          name: "Kate Moran",
+          name: "John Doe",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
         },
         {
-          name: "Rucha Humnabadkar",
+          name: "John Doe",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
         },
         {
-          name: "Donald Chesnut",
+          name: "John Doe",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
         },
       ],
@@ -121,8 +121,8 @@ const scheduleData = {
           title: "Building Inclusive Design Teams",
           description: "Creating diverse, equitable, and inclusive design organizations.",
           speaker: {
-            name: "Ravinder Singh",
-            role: "Co-Founder, Rishihood",
+            name: "John Doe",
+            role: "Co-Founder, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
           },
         },
@@ -130,8 +130,8 @@ const scheduleData = {
           title: "Measuring Design Impact",
           description: "Metrics and frameworks for demonstrating design ROI.",
           speaker: {
-            name: "Mirjam Wouters",
-            role: "Experience Labs Lead, Royal Philips",
+            name: "John Doe",
+            role: "Experience Labs Lead, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
           },
         },
@@ -150,8 +150,8 @@ const scheduleData = {
       title: "Opening Design Leadership Vision",
       description: "Setting the tone for day two with insights on the future of design-led organizations.",
       speaker: {
-        name: "Bapu",
-        role: "Design Leader",
+        name: "John Doe",
+        role: "Design Leader, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
       },
       tag: "Opening Keynote",
@@ -162,8 +162,8 @@ const scheduleData = {
       title: "Grand Keynote 01: Design at Enterprise Scale",
       description: "Exploring design leadership in large, complex organizational structures.",
       speaker: {
-        name: "Industry Expert",
-        role: "Executive Design Lead",
+        name: "John Doe",
+        role: "Executive Design Lead, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
       },
       tag: "Grand Keynote",
@@ -179,8 +179,8 @@ const scheduleData = {
       title: "Plenary Keynote 01: Building Design Culture",
       description: "Creating and sustaining a strong design culture within organizations.",
       speaker: {
-        name: "Suff",
-        role: "Culture & Design Strategist",
+        name: "John Doe",
+        role: "Culture & Design Strategist, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
       },
       tag: "Plenary Keynote",
@@ -191,8 +191,8 @@ const scheduleData = {
       title: "Plenary Keynote 02: Design Ethics in AI",
       description: "Responsible design practices in an AI-driven world.",
       speaker: {
-        name: "Jose",
-        role: "Ethical Design Specialist",
+        name: "John Doe",
+        role: "Ethical Design Specialist, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
       },
       tag: "Plenary Keynote",
@@ -209,15 +209,15 @@ const scheduleData = {
       description: "Thought leaders share perspectives on emerging trends and challenges in design leadership.",
       panelists: [
         {
-          name: "Mohan Krishnaraj",
+          name: "John Doe",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
         },
         {
-          name: "Kate Moran",
+          name: "John Doe",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
         },
         {
-          name: "Rucha Humnabadkar",
+          name: "John Doe",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
         },
       ],
@@ -229,11 +229,35 @@ const scheduleData = {
       title: "Plenary Keynote 03: Global Design Perspectives",
       description: "Cross-cultural insights into design leadership practices worldwide.",
       speaker: {
-        name: "Design Leader",
-        role: "Global Design Director",
+        name: "John Doe",
+        role: "Global Design Director, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
       },
       tag: "Plenary Keynote",
+    },
+    {
+      time: "5:20 PM",
+      type: "keynote",
+      title: "Plenary Keynote 04: The Next Wave of Design",
+      description: "What's next in design leadership and innovation.",
+      speaker: {
+        name: "John Doe",
+        role: "Innovation Strategist, UMO Design Foundation",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
+      },
+      tag: "Plenary Keynote",
+    },
+    {
+      time: "6:00 PM",
+      type: "keynote",
+      title: "Grand Keynote 02: Design's Role in Transformation",
+      description: "How design drives organizational and social transformation.",
+      speaker: {
+        name: "John Doe",
+        role: "Design Transformation Expert, UMO Design Foundation",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
+      },
+      tag: "Grand Keynote",
     },
     {
       time: "4:20 PM",
@@ -246,8 +270,8 @@ const scheduleData = {
       title: "Plenary Keynote 04: The Next Wave of Design",
       description: "What's next in design leadership and innovation.",
       speaker: {
-        name: "Rowan",
-        role: "Innovation Strategist",
+        name: "John Doe",
+        role: "Innovation Strategist, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
       },
       tag: "Plenary Keynote",
@@ -380,7 +404,7 @@ export default function SchedulePreviewPage() {
                     >
                       <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center">
                         {isLunch ? (
-                          // Lunch icon: fork and knife
+                          // Food plate icon for lunch/dinner
                           <svg
                             width="20"
                             height="20"
@@ -389,7 +413,8 @@ export default function SchedulePreviewPage() {
                             stroke="#E85520"
                             strokeWidth="2"
                           >
-                            <path d="M3 2v7c0 1.1.9 2 2 2h4c1.1 0 2-.9 2-2V2M12 2v20M19 2v7c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2V2" />
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 7v10M7 12h10" />
                           </svg>
                         ) : isRegistration ? (
                           // Ticket icon
