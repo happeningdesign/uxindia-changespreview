@@ -345,9 +345,9 @@ export default function SchedulePreviewPage() {
               <div className="text-sm font-sans text-white/40 uppercase tracking-wider mb-8">
                 Time
               </div>
-              <div className="space-y-[7.5rem]">
+              <div className="space-y-6">
                 {currentSessions.map((session, index) => (
-                  <div key={index} className="text-sm font-sans text-white/50">
+                  <div key={index} className="text-sm font-sans text-white/50 h-fit">
                     {session.time}
                   </div>
                 ))}
