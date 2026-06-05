@@ -324,9 +324,10 @@ const scheduleData = {
     },
     {
       time: "2:10 PM",
-      type: "sessions",
-      sessions: [
+      type: "grid-sessions",
+      leftSessions: [
         {
+          time: "2:10 PM",
           room: "Room 1",
           title: "Deep Dive Talk 02",
           speaker: {
@@ -337,40 +338,7 @@ const scheduleData = {
           description: "Advanced strategies for design transformation.",
         },
         {
-          room: "Room 2",
-          title: "Design Pitch VC Sessions",
-          duration: "90min",
-          panelists: [
-            {
-              name: "John Doe",
-              role: "VC Investor, UMO Design Foundation",
-              image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
-            },
-            {
-              name: "John Doe",
-              role: "VC Investor, UMO Design Foundation",
-              image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
-            },
-            {
-              name: "John Doe",
-              role: "VC Investor, UMO Design Foundation",
-              image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
-            },
-            {
-              name: "John Doe",
-              role: "VC Investor, UMO Design Foundation",
-              image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-            },
-          ],
-          description: "Pitch your design-driven startup to VCs.",
-        },
-      ],
-    },
-    {
-      time: "2:50 PM",
-      type: "sessions",
-      sessions: [
-        {
+          time: "2:50 PM",
           room: "Room 1",
           title: "Spark Session 03",
           speaker: {
@@ -381,6 +349,33 @@ const scheduleData = {
           description: "Final insights and takeaways from the day.",
         },
       ],
+      rightSession: {
+        room: "Room 2",
+        title: "Design Pitch VC Sessions",
+        panelists: [
+          {
+            name: "John Doe",
+            role: "VC Investor, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
+          },
+          {
+            name: "John Doe",
+            role: "VC Investor, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
+          },
+          {
+            name: "John Doe",
+            role: "VC Investor, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
+          },
+          {
+            name: "John Doe",
+            role: "VC Investor, UMO Design Foundation",
+            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
+          },
+        ],
+        description: "Pitch your design-driven startup to VCs.",
+      },
     },
     {
       time: "3:15 PM",
@@ -965,6 +960,75 @@ export default function SchedulePreviewPage() {
                             )}
                           </div>
                         ))}
+                      </div>
+                    )}
+                    {session.type === "grid-sessions" && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {/* Left column - stacked sessions */}
+                        <div className="grid grid-rows-2 gap-4">
+                          {session.leftSessions.map((sess, sIndex) => (
+                            <div
+                              key={sIndex}
+                              className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
+                            >
+                              <div className="flex items-center justify-between mb-3">
+                                <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
+                                  {sess.room}
+                                </p>
+                                <p className="font-sans text-xs text-white/40">
+                                  {sess.time}
+                                </p>
+                              </div>
+                              <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
+                                {sess.title}
+                              </h3>
+                              <div className="flex items-start gap-3 mb-4">
+                                <img
+                                  src={sess.speaker.image}
+                                  alt={sess.speaker.name}
+                                  className="w-10 h-10 rounded-full object-cover shrink-0"
+                                />
+                                <div className="flex-1 min-w-0">
+                                  <p className="font-sans text-sm text-white/80 font-medium">
+                                    <span className="block">{sess.speaker.name}</span>
+                                    <span className="text-white/40 text-xs">{sess.speaker.role}</span>
+                                  </p>
+                                </div>
+                              </div>
+                              <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">
+                                {sess.description}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                        {/* Right column - spanning full height */}
+                        <div className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all h-full">
+                          <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider mb-3">
+                            {session.rightSession.room}
+                          </p>
+                          <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
+                            {session.rightSession.title}
+                          </h3>
+                          <div className="flex gap-2 mb-4 flex-wrap">
+                            {session.rightSession.panelists.map((panelist, pIndex) => (
+                              <img
+                                key={pIndex}
+                                src={panelist.image}
+                                alt={panelist.name}
+                                className="w-10 h-10 rounded-full object-cover border-2 border-white/10"
+                                title={`${panelist.name} - ${panelist.role}`}
+                              />
+                            ))}
+                          </div>
+                          <div className="mb-4">
+                            <p className="font-sans text-xs text-white/60">
+                              {session.rightSession.panelists.length} VC Investors
+                            </p>
+                          </div>
+                          <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">
+                            {session.rightSession.description}
+                          </p>
+                        </div>
                       </div>
                     )}
                   </div>
