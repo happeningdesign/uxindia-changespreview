@@ -74,16 +74,6 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
           ) : (
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
           )}
-          {/* Talk type badge on front */}
-          {speaker.talkType && (
-            <div className="absolute top-2 right-2 md:top-3 md:right-3">
-              <div className={`${isLight ? "bg-white/20 backdrop-blur-sm" : "bg-black/60 backdrop-blur-sm"} rounded px-1.5 py-0.5 text-center`}>
-                <span className="font-sans text-[7px] md:text-[8px] font-semibold text-white tracking-wider uppercase">
-                  {speaker.talkType}
-                </span>
-              </div>
-            </div>
-          )}
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
             <h3 className={`font-leadership font-semibold text-white text-sm md:text-base leading-tight mb-1 tracking-tight ${isLight ? "text-shadow" : ""}`}
               style={isLight ? { textShadow: "0 2px 12px rgba(0,0,0,0.5)" } : undefined}
@@ -107,29 +97,6 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
             backgroundColor: color,
           }}
         >
-          {/* Top accent */}
-          <div className="flex items-center justify-between flex-shrink-0 mb-3">
-            <div
-              className="w-6 h-6 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: "rgba(255,255,255,0.15)" }}
-            >
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                <circle cx="7" cy="7" r="6" stroke="white" strokeWidth="1.2" />
-                <path
-                  d="M7 5v4M7 4.5v.5"
-                  stroke="white"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
-            <div className="bg-white/20 rounded px-1.5 py-0.5 text-center">
-              <span className="font-sans text-[8px] font-semibold text-white tracking-wider uppercase">
-                {speaker.talkType || "Speaker"}
-              </span>
-            </div>
-          </div>
-
           {/* Bio content */}
           <div className="flex-1 overflow-y-auto min-h-0 mt-auto flex flex-col justify-end scrollbar-none">
             <h3 className="font-leadership text-base md:text-lg text-white leading-tight mb-1">
