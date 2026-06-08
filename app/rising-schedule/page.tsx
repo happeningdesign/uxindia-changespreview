@@ -24,8 +24,8 @@ const roomColors: Record<string, string> = {
 
 const scheduleData = {
   days: [
-    { id: "day1", label: "Day 1", date: "Sept 23" },
-    { id: "day2", label: "Day 2", date: "Sept 24" },
+    { id: "day1", label: "Day 1", date: "Sept 26" },
+    { id: "day2", label: "Day 2", date: "Sept 27" },
   ],
   day1: [
     {
@@ -50,7 +50,7 @@ const scheduleData = {
     {
       time: "9:40 AM",
       type: "keynote",
-      title: "Deep Dive Talk 01",
+      title: "Deep Dive Talk",
       description: "An in-depth exploration of emerging design leadership practices and methodologies.",
       tag: "Deep Dive",
       location: "Auditorium",
@@ -69,7 +69,7 @@ const scheduleData = {
     {
       time: "11:05 AM",
       type: "keynote",
-      title: "Deep Dive Talk 02",
+      title: "Deep Dive Talk",
       description: "Continuing the conversation on design leadership with practical frameworks and insights.",
       tag: "Deep Dive",
       location: "Auditorium",
@@ -103,16 +103,16 @@ const scheduleData = {
       type: "parallel-workshops",
       duration: "90 min",
       workshops: [
-        { room: "Room 1", title: "Workshop 01", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 2", title: "Workshop 02", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 3", title: "Workshop 03", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 4", title: "Workshop 04", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 5", title: "Workshop 05", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 6", title: "Workshop 06", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 7", title: "Workshop 07", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 8", title: "Workshop 08", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 9", title: "Workshop 09", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 10", title: "Workshop 10", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 1", title: "Leading Design Teams Through Change", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 2", title: "From Designer to Design Manager", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 3", title: "Building Scalable Design Systems", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 4", title: "Storytelling for Design Leaders", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 5", title: "Research-Driven Decision Making", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 6", title: "Designing with AI in the Loop", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 7", title: "Facilitating High-Impact Workshops", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 8", title: "Communicating Design Value to Stakeholders", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 9", title: "Inclusive and Accessible Design Practices", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 10", title: "Measuring and Proving Design Impact", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Hands-on workshop focusing on practical design skills." },
       ],
     },
     {
@@ -126,16 +126,16 @@ const scheduleData = {
       type: "parallel-workshops",
       duration: "60 min",
       workshops: [
-        { room: "Room 1", title: "Workshop 01 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 2", title: "Workshop 02 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 3", title: "Workshop 03 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 4", title: "Workshop 04 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 5", title: "Workshop 05 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 6", title: "Workshop 06 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 7", title: "Workshop 07 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 8", title: "Workshop 08 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 9", title: "Workshop 09 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 10", title: "Workshop 10 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 1", title: "Leading Design Teams Through Change (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 2", title: "From Designer to Design Manager (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 3", title: "Building Scalable Design Systems (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 4", title: "Storytelling for Design Leaders (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 5", title: "Research-Driven Decision Making (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 6", title: "Designing with AI in the Loop (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 7", title: "Facilitating High-Impact Workshops (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 8", title: "Communicating Design Value to Stakeholders (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 9", title: "Inclusive and Accessible Design Practices (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 10", title: "Measuring and Proving Design Impact (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Continuation of the morning workshop session." },
       ],
     },
   ],
@@ -162,7 +162,7 @@ const scheduleData = {
     {
       time: "9:40 AM",
       type: "keynote",
-      title: "Deep Dive Talk 01",
+      title: "Deep Dive Talk",
       description: "An in-depth exploration of design leadership practices and methodologies.",
       tag: "Deep Dive",
       location: "Auditorium",
@@ -202,9 +202,9 @@ const scheduleData = {
       type: "parallel-sessions",
       duration: "25 min",
       sessions: [
-        { room: "Mini-Auditorium 1", title: "Spark Session 01", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Quick insights on design innovation." },
-        { room: "Mini-Auditorium 2", title: "Spark Session 02", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Quick insights on design strategy." },
-        { room: "Mini-Auditorium 3", title: "Spark Session 03", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Quick insights on design operations." },
+        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Quick insights on design innovation." },
+        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Quick insights on design strategy." },
+        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Quick insights on design operations." },
       ],
     },
     {
@@ -212,9 +212,9 @@ const scheduleData = {
       type: "parallel-sessions",
       duration: "25 min",
       sessions: [
-        { room: "Mini-Auditorium 1", title: "Spark Session 04", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Quick insights on design thinking." },
-        { room: "Mini-Auditorium 2", title: "Spark Session 05", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Quick insights on user research." },
-        { room: "Mini-Auditorium 3", title: "Spark Session 06", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Quick insights on design systems." },
+        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Quick insights on design thinking." },
+        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Quick insights on user research." },
+        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Quick insights on design systems." },
       ],
     },
     {
@@ -226,7 +226,7 @@ const scheduleData = {
     {
       time: "2:00 PM",
       type: "keynote",
-      title: "Deep Dive Talk 02",
+      title: "Deep Dive Talk",
       description: "Continuing the conversation on design leadership with practical frameworks.",
       tag: "Deep Dive",
       location: "Auditorium",
@@ -239,7 +239,7 @@ const scheduleData = {
     {
       time: "2:40 PM",
       type: "keynote",
-      title: "Deep Dive Talk 03",
+      title: "Deep Dive Talk",
       description: "Advanced strategies for design leadership and team growth.",
       tag: "Deep Dive",
       location: "Auditorium",
@@ -273,9 +273,33 @@ const scheduleData = {
 
 const sessions = scheduleData.day1;
 
+function parseTimeToMinutes(t: string): number | null {
+  const m = t.match(/(\d+):(\d+)\s*(AM|PM)/i);
+  if (!m) return null;
+  let h = parseInt(m[1], 10);
+  const min = parseInt(m[2], 10);
+  const ap = m[3].toUpperCase();
+  if (ap === "PM" && h !== 12) h += 12;
+  if (ap === "AM" && h === 12) h = 0;
+  return h * 60 + min;
+}
+
+function formatDuration(mins: number): string | null {
+  if (mins <= 0) return null;
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  if (h && m) return `${h} hr ${m} min`;
+  if (h) return `${h} hr`;
+  return `${m} min`;
+}
+
 export default function RisingSchedulePage() {
   const [activeDay, setActiveDay] = React.useState("day1");
   const currentSessions = activeDay === "day1" ? scheduleData.day1 : (activeDay === "day2" ? scheduleData.day2 : scheduleData.day3);
+  const activeDayIndex = scheduleData.days.findIndex((d) => d.id === activeDay);
+  const activeDayLabel = scheduleData.days[activeDayIndex]?.label ?? "";
+  const prevDay = activeDayIndex > 0 ? scheduleData.days[activeDayIndex - 1] : null;
+  const nextDay = activeDayIndex < scheduleData.days.length - 1 ? scheduleData.days[activeDayIndex + 1] : null;
 
   return (
     <main>
@@ -368,12 +392,19 @@ export default function RisingSchedulePage() {
                       (() => {
                         const isLunch = session.title.toLowerCase().includes("lunch");
                         const isRegistration = session.title.toLowerCase().includes("registration");
+                        const start = parseTimeToMinutes(session.time);
+                        const nextSession = currentSessions[index + 1];
+                        const nextStart = nextSession ? parseTimeToMinutes(nextSession.time) : null;
+                        const durationLabel =
+                          !isRegistration && start !== null && nextStart !== null
+                            ? formatDuration(nextStart - start)
+                            : null;
                         return (
                     <div
                       key={index}
                       className="bg-[#E85520]/10 border border-[#0D0D0D]/10 rounded-xl p-4 flex items-center gap-4"
                     >
-                      <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center shrink-0">
                         {isLunch ? (
                           // Food plate icon for lunch/dinner
                           <img
@@ -409,10 +440,17 @@ export default function RisingSchedulePage() {
                           </svg>
                         )}
                       </div>
-                      <div>
-                        <p className="font-sans text-base text-[#0D0D0D] font-medium">
-                          {session.title}
-                        </p>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <p className="font-sans text-base text-[#0D0D0D] font-medium">
+                            {session.title}
+                          </p>
+                          {durationLabel && (
+                            <span className="px-2.5 py-0.5 bg-[#0D0D0D]/10 text-[#0D0D0D]/70 text-xs font-sans font-medium rounded-full">
+                              {durationLabel}
+                            </span>
+                          )}
+                        </div>
                         <p className="font-sans text-xs text-[#0D0D0D]/40 lg:hidden">
                           {session.time}
                         </p>
@@ -471,7 +509,7 @@ export default function RisingSchedulePage() {
                           {session.workshops.map((workshop, wIndex) => (
                             <div
                               key={wIndex}
-                              className="flex-shrink-0 w-64 lg:w-auto bg-white border border-[#0D0D0D]/10 rounded-2xl p-4 hover:border-[#E85520]/30 transition-all shadow-sm"
+                              className="group/ws flex-shrink-0 w-64 lg:w-auto bg-white border border-[#0D0D0D]/10 rounded-2xl p-4 hover:border-[#E85520]/30 transition-all shadow-sm"
                             >
                               <div className="flex items-center gap-2 mb-3">
                                 <span 
@@ -480,8 +518,14 @@ export default function RisingSchedulePage() {
                                 >
                                   {workshop.room}
                                 </span>
+                                <span className="px-2 py-0.5 bg-[#1A7A6E]/10 text-[#1A7A6E] text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">
+                                  Workshop
+                                </span>
                               </div>
-                              <h4 className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2">
+                              <h4
+                                title={workshop.title}
+                                className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2 group-hover/ws:line-clamp-none transition-all"
+                              >
                                 {workshop.title}
                               </h4>
                               <div className="flex items-center gap-2">
@@ -833,6 +877,67 @@ export default function RisingSchedulePage() {
                 </div>
               );
             })}
+
+            {/* Day ends card */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <div className="hidden lg:block lg:col-span-2" />
+              <div className="lg:col-span-10">
+                <div className="border border-dashed border-[#0D0D0D]/15 rounded-xl py-5 px-6 flex items-center justify-center gap-3 text-center">
+                  <span className="h-px w-8 bg-[#0D0D0D]/15" />
+                  <p className="font-sans text-sm text-[#0D0D0D]/50">
+                    {activeDayLabel} ends here
+                  </p>
+                  <span className="h-px w-8 bg-[#0D0D0D]/15" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom day navigation */}
+          <div className="mt-12 pt-8 border-t border-[#0D0D0D]/10 flex items-center justify-between gap-4">
+            {prevDay ? (
+              <button
+                onClick={() => {
+                  setActiveDay(prevDay.id);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="group flex items-center gap-3 text-left cursor-pointer max-w-[45%]"
+              >
+                <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#0D0D0D]/5 group-hover:bg-[#E85520] transition-colors shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-sans text-[11px] text-[#0D0D0D]/40 uppercase tracking-wider">Previous</span>
+                  <span className="block font-sans text-sm text-[#0D0D0D]/80 truncate group-hover:text-[#0D0D0D] transition-colors">{prevDay.label}</span>
+                </span>
+              </button>
+            ) : (
+              <div />
+            )}
+
+            {nextDay ? (
+              <button
+                onClick={() => {
+                  setActiveDay(nextDay.id);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="group flex items-center gap-3 text-right cursor-pointer max-w-[45%] ml-auto"
+              >
+                <span className="min-w-0">
+                  <span className="block font-sans text-[11px] text-[#0D0D0D]/40 uppercase tracking-wider">Next</span>
+                  <span className="block font-sans text-sm text-[#0D0D0D]/80 truncate group-hover:text-[#0D0D0D] transition-colors">{nextDay.label}</span>
+                </span>
+                <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#0D0D0D]/5 group-hover:bg-[#E85520] transition-colors shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </span>
+              </button>
+            ) : (
+              <div />
+            )}
           </div>
         </div>
       </div>

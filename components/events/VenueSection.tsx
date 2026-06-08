@@ -1,12 +1,30 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 interface VenueSectionProps {
   variant?: "dark" | "light";
+  venueName?: string;
 }
 
-export default function VenueSection({ variant = "dark" }: VenueSectionProps) {
+const venueImages = [
+  { src: "/The Leela Bhartiya City.jpg", alt: "The Leela Bhartiya City exterior" },
+  { src: "/Leela Bharatiya City Image.jpg", alt: "The Leela Bhartiya City grounds" },
+  { src: "/uxindia-stage.jpg", alt: "UX India main stage" },
+  { src: "/uxindia-audience.jpg", alt: "UX India audience" },
+];
+
+export default function VenueSection({ variant = "dark", venueName = "The Leela Bhartiya City" }: VenueSectionProps) {
   const isLight = variant === "light";
-  
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % venueImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   const handleGetDirections = () => {
     window.open("https://maps.app.goo.gl/GefGLLqYJ4ECABMcA", "_blank");
   };
@@ -22,20 +40,41 @@ export default function VenueSection({ variant = "dark" }: VenueSectionProps) {
         {/* Venue card */}
         <div className={`rounded-2xl overflow-hidden p-8 md:p-12 ${isLight ? "bg-[#1D5078] border border-[#1D5078]" : "bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10"}`}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left - Image */}
+            {/* Left - Image slideshow */}
             <div className={`relative aspect-video md:aspect-auto md:h-96 rounded-xl overflow-hidden ${isLight ? "border border-white/20" : "border border-white/10"}`}>
-              <img
-                src="/The Leela Bhartiya City.jpg"
-                alt="The Leela Bhartiya City"
-                className="w-full h-full object-cover"
-              />
+              {venueImages.map((image, index) => (
+                <img
+                  key={image.src}
+                  src={image.src || "/placeholder.svg"}
+                  alt={image.alt}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                    index === activeIndex ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
+
+              {/* Slide indicators */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+                {venueImages.map((image, index) => (
+                  <button
+                    key={image.src}
+                    onClick={() => setActiveIndex(index)}
+                    aria-label={`Show ${image.alt}`}
+                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      index === activeIndex
+                        ? "w-6 bg-white"
+                        : "w-1.5 bg-white/50 hover:bg-white/80"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
 
             {/* Right - Info */}
             <div className="space-y-8">
               <div>
                 <h3 className="font-leadership text-3xl md:text-4xl mb-2 text-white">
-                  The Leela Bhartiya City
+                  {venueName}
                 </h3>
                 <p className={`font-sans text-sm font-semibold uppercase tracking-widest ${isLight ? "text-white/70" : "text-[#E85520]"}`}>
                   Bengaluru, India
@@ -66,6 +105,16 @@ export default function VenueSection({ variant = "dark" }: VenueSectionProps) {
                   </h4>
                   <p className={`font-sans text-sm leading-relaxed ${isLight ? "text-white/70" : "text-white/60"}`}>
                     Bengaluru City Railway Station is well-connected to major cities. The venue is accessible via metro and local transport.
+                  </p>
+                </div>
+
+                {/* By Bus */}
+                <div>
+                  <h4 className="font-leadership font-semibold text-base mb-2 text-white">
+                    By Bus
+                  </h4>
+                  <p className={`font-sans text-sm leading-relaxed ${isLight ? "text-white/70" : "text-white/60"}`}>
+                    Kempegowda Bus Station (Majestic), the city&apos;s main KSRTC and BMTC terminal, offers extensive intercity and local connectivity, with taxis and ride-shares available to the venue.
                   </p>
                 </div>
               </div>

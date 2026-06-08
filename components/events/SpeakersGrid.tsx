@@ -31,6 +31,7 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
       }}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
+      onClick={() => setFlipped((prev) => !prev)}
     >
       {/* Inner flip container */}
       <div
@@ -38,19 +39,24 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
         style={{
           transformStyle: "preserve-3d",
           WebkitTransformStyle: "preserve-3d",
-          transition: "transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1)",
+          transition: "transform 1.1s cubic-bezier(0.4, 0.2, 0.2, 1)",
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
         {/* FRONT — photo with color overlay for light variant */}
         <div
-          className="absolute inset-0 rounded-lg overflow-hidden"
+          className="absolute inset-0 rounded-lg overflow-hidden ring-1 shadow-lg"
           style={{
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(0deg)",
             zIndex: flipped ? 0 : 1,
-            backgroundColor: isLight ? color : undefined,
+            backgroundColor: isLight ? color : "#1F1F1F",
+            // @ts-expect-error CSS custom prop for ring color
+            "--tw-ring-color": isLight ? "rgba(13,13,13,0.08)" : "rgba(255,255,255,0.12)",
+            boxShadow: isLight
+              ? "0 8px 24px rgba(0,0,0,0.12)"
+              : "0 8px 28px rgba(0,0,0,0.55)",
           }}
         >
           <img
@@ -68,16 +74,6 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
             />
           ) : (
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
-          )}
-          {/* Talk type badge on front */}
-          {speaker.talkType && (
-            <div className="absolute top-2 right-2 md:top-3 md:right-3">
-              <div className={`${isLight ? "bg-white/20 backdrop-blur-sm" : "bg-black/60 backdrop-blur-sm"} rounded px-1.5 py-0.5 text-center`}>
-                <span className="font-sans text-[7px] md:text-[8px] font-semibold text-white tracking-wider uppercase">
-                  {speaker.talkType}
-                </span>
-              </div>
-            </div>
           )}
           <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
             <h3 className={`font-leadership font-semibold text-white text-sm md:text-base leading-tight mb-1 tracking-tight ${isLight ? "text-shadow" : ""}`}
@@ -102,29 +98,14 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
             backgroundColor: color,
           }}
         >
-          {/* Top accent */}
-          <div className="flex items-center justify-between flex-shrink-0 mb-3">
-            <div
-              className="w-6 h-6 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: "rgba(255,255,255,0.15)" }}
-            >
-              <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                <circle cx="7" cy="7" r="6" stroke="white" strokeWidth="1.2" />
-                <path
-                  d="M7 5v4M7 4.5v.5"
-                  stroke="white"
-                  strokeWidth="1.2"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
-            <div className="bg-white/20 rounded px-1.5 py-0.5 text-center">
-              <span className="font-sans text-[8px] font-semibold text-white tracking-wider uppercase">
-                {speaker.talkType || "Speaker"}
+          {/* Talk type */}
+          {speaker.talkType && (
+            <div className="flex-shrink-0 mb-3">
+              <span className="font-sans text-[8px] md:text-[9px] font-semibold text-white/70 tracking-widest uppercase">
+                {speaker.talkType}
               </span>
             </div>
-          </div>
-
+          )}
           {/* Bio content */}
           <div className="flex-1 overflow-y-auto min-h-0 mt-auto flex flex-col justify-end scrollbar-none">
             <h3 className="font-leadership text-base md:text-lg text-white leading-tight mb-1">
@@ -136,6 +117,25 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
             <p className="font-sans text-[10px] md:text-xs text-white/85 leading-relaxed">
               {speaker.bio || `${speaker.name} is a respected voice in the design community, bringing valuable insights and experience to UXINDIA. Their work spans across design leadership, innovation, and building impactful user experiences.`}
             </p>
+            <button
+              type="button"
+              onClick={(e) => e.stopPropagation()}
+              className="group/btn mt-3 inline-flex items-center gap-1 self-start font-sans text-[10px] md:text-[11px] font-semibold text-white uppercase tracking-wider cursor-pointer"
+            >
+              Read more
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.4"
+                className="transition-transform duration-200 group-hover/btn:translate-x-0.5"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -170,7 +170,7 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setActiveFilter(null)}
-                className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all ${
+                className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
                   activeFilter === null
                     ? "bg-[#E85520] text-white"
                     : isLight 
@@ -184,7 +184,7 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
                 <button
                   key={type}
                   onClick={() => setActiveFilter(type)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all ${
+                  className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
                     activeFilter === type
                       ? "bg-[#E85520] text-white"
                       : isLight
@@ -200,7 +200,7 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
         </div>
 
         {/* Speakers grid - 4 columns on desktop to match design */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
           {filteredSpeakers.map((speaker, index) => (
             <SpeakerCard key={index} speaker={speaker} index={index} variant={variant} />
           ))}

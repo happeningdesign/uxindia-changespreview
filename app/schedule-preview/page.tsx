@@ -6,9 +6,9 @@ import Footer from "@/components/global/footer/Footer";
 
 const scheduleData = {
   days: [
-    { id: "day1", label: "Day 1", date: "Sept 23" },
-    { id: "day2", label: "Day 2", date: "Sept 24" },
-    { id: "day3", label: "Day 3", date: "Sept 25" },
+    { id: "day1", label: "Pre-Conference Workshops", date: "Sept 23" },
+    { id: "day2", label: "Conference Day 1", date: "Sept 24" },
+    { id: "day3", label: "Conference Day 2", date: "Sept 25" },
   ],
   day1: [
     {
@@ -22,7 +22,7 @@ const scheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Workshop 01",
+          title: "Design Foundations & Principles",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -32,7 +32,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Workshop 02",
+          title: "Advanced Design Methodologies",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -42,7 +42,7 @@ const scheduleData = {
         },
         {
           room: "Room 3",
-          title: "Workshop 03",
+          title: "Emerging Design Trends & Tools",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -63,7 +63,7 @@ const scheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Workshop 01 (Continued)",
+          title: "Design Foundations & Principles (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -73,7 +73,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Workshop 02 (Continued)",
+          title: "Advanced Design Methodologies (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -83,7 +83,7 @@ const scheduleData = {
         },
         {
           room: "Room 3",
-          title: "Workshop 03 (Continued)",
+          title: "Emerging Design Trends & Tools (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -104,7 +104,7 @@ const scheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Workshop 04",
+          title: "Practical Design Solutions",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -114,7 +114,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Workshop 05",
+          title: "Innovating with Design Thinking",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -124,7 +124,7 @@ const scheduleData = {
         },
         {
           room: "Room 3",
-          title: "Workshop 06",
+          title: "From Ideas to Impactful Design",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -145,7 +145,7 @@ const scheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Workshop 04 (Continued)",
+          title: "Practical Design Solutions (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -155,7 +155,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Workshop 05 (Continued)",
+          title: "Innovating with Design Thinking (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -165,7 +165,7 @@ const scheduleData = {
         },
         {
           room: "Room 3",
-          title: "Workshop 06 (Continued)",
+          title: "From Ideas to Impactful Design (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -214,7 +214,7 @@ const scheduleData = {
       sessions: [
         {
           room: "Room 1",
-          title: "Deep Dive Talk 01",
+          title: "Deep Dive Talk",
           speaker: {
             name: "John Doe",
             role: "Design Strategist, UMO Design Foundation",
@@ -224,7 +224,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Deep Dive Talk 03",
+          title: "Deep Dive Talk",
           speaker: {
             name: "John Doe",
             role: "Design Entrepreneur, UMO Design Foundation",
@@ -240,7 +240,7 @@ const scheduleData = {
       sessions: [
         {
           room: "Room 1",
-          title: "Spark Session 01",
+          title: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Innovator, UMO Design Foundation",
@@ -250,7 +250,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Spark Session 04",
+          title: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Entrepreneur, UMO Design Foundation",
@@ -271,7 +271,7 @@ const scheduleData = {
       sessions: [
         {
           room: "Room 1",
-          title: "Spark Session 02",
+          title: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Innovator, UMO Design Foundation",
@@ -281,7 +281,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Spark Session 05",
+          title: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Entrepreneur, UMO Design Foundation",
@@ -297,7 +297,7 @@ const scheduleData = {
       sessions: [
         {
           room: "Room 1",
-          title: "Panel Discussion 02",
+          title: "Panel Discussion",
           speaker: {
             name: "John Doe",
             role: "Panel Moderator, UMO Design Foundation",
@@ -307,7 +307,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Panel Discussion 03",
+          title: "Panel Discussion",
           speaker: {
             name: "John Doe",
             role: "Panel Moderator, UMO Design Foundation",
@@ -329,7 +329,7 @@ const scheduleData = {
         {
           time: "2:10 PM",
           room: "Room 1",
-          title: "Deep Dive Talk 02",
+          title: "Deep Dive Talk",
           speaker: {
             name: "John Doe",
             role: "Design Strategist, UMO Design Foundation",
@@ -340,7 +340,7 @@ const scheduleData = {
         {
           time: "2:50 PM",
           room: "Room 1",
-          title: "Spark Session 03",
+          title: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Innovator, UMO Design Foundation",
@@ -544,7 +544,7 @@ const scheduleData = {
     {
       time: "9:50 AM",
       type: "keynote",
-      title: "Grand Keynote 01: Design at Enterprise Scale",
+      title: "Grand Keynote: Design at Enterprise Scale",
       description: "Exploring design leadership in large, complex organizational structures.",
       speaker: {
         name: "John Doe",
@@ -561,7 +561,7 @@ const scheduleData = {
     {
       time: "11:25 AM",
       type: "keynote",
-      title: "Plenary Keynote 01: Building Design Culture",
+      title: "Plenary Keynote: Building Design Culture",
       description: "Creating and sustaining a strong design culture within organizations.",
       speaker: {
         name: "John Doe",
@@ -573,7 +573,7 @@ const scheduleData = {
     {
       time: "12:05 PM",
       type: "keynote",
-      title: "Plenary Keynote 02: Design Ethics in AI",
+      title: "Plenary Keynote: Design Ethics in AI",
       description: "Responsible design practices in an AI-driven world.",
       speaker: {
         name: "John Doe",
@@ -590,7 +590,7 @@ const scheduleData = {
     {
       time: "2:30 PM",
       type: "panel",
-      title: "Panel Discussion 01: Future of Design Leadership",
+      title: "Panel Discussion: Future of Design Leadership",
       description: "Thought leaders share perspectives on emerging trends and challenges in design leadership.",
       panelists: [
         {
@@ -611,7 +611,7 @@ const scheduleData = {
     {
       time: "3:40 PM",
       type: "keynote",
-      title: "Plenary Keynote 03: Global Design Perspectives",
+      title: "Plenary Keynote: Global Design Perspectives",
       description: "Cross-cultural insights into design leadership practices worldwide.",
       speaker: {
         name: "John Doe",
@@ -623,7 +623,7 @@ const scheduleData = {
     {
       time: "5:20 PM",
       type: "keynote",
-      title: "Plenary Keynote 04: The Next Wave of Design",
+      title: "Plenary Keynote: The Next Wave of Design",
       description: "What's next in design leadership and innovation.",
       speaker: {
         name: "John Doe",
@@ -635,7 +635,7 @@ const scheduleData = {
     {
       time: "6:00 PM",
       type: "keynote",
-      title: "Grand Keynote 02: Design's Role in Transformation",
+      title: "Grand Keynote: Design's Role in Transformation",
       description: "How design drives organizational and social transformation.",
       speaker: {
         name: "John Doe",
@@ -652,7 +652,7 @@ const scheduleData = {
     {
       time: "5:20 PM",
       type: "keynote",
-      title: "Plenary Keynote 04: The Next Wave of Design",
+      title: "Plenary Keynote: The Next Wave of Design",
       description: "What's next in design leadership and innovation.",
       speaker: {
         name: "John Doe",
@@ -664,7 +664,7 @@ const scheduleData = {
     {
       time: "6:00 PM",
       type: "keynote",
-      title: "Grand Keynote 02: Design's Role in Transformation",
+      title: "Grand Keynote: Design's Role in Transformation",
       description: "How design drives organizational and social transformation.",
       speaker: {
         name: "Doug",
@@ -683,9 +683,33 @@ const scheduleData = {
 
 const sessions = scheduleData.day1;
 
+function parseTimeToMinutes(t: string): number | null {
+  const m = t.match(/(\d+):(\d+)\s*(AM|PM)/i);
+  if (!m) return null;
+  let h = parseInt(m[1], 10);
+  const min = parseInt(m[2], 10);
+  const ap = m[3].toUpperCase();
+  if (ap === "PM" && h !== 12) h += 12;
+  if (ap === "AM" && h === 12) h = 0;
+  return h * 60 + min;
+}
+
+function formatDuration(mins: number): string | null {
+  if (mins <= 0) return null;
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  if (h && m) return `${h} hr ${m} min`;
+  if (h) return `${h} hr`;
+  return `${m} min`;
+}
+
 export default function SchedulePreviewPage() {
   const [activeDay, setActiveDay] = React.useState("day1");
   const currentSessions = activeDay === "day1" ? scheduleData.day1 : (activeDay === "day2" ? scheduleData.day2 : scheduleData.day3);
+  const activeDayIndex = scheduleData.days.findIndex((d) => d.id === activeDay);
+  const activeDayLabel = scheduleData.days[activeDayIndex]?.label ?? "";
+  const prevDay = activeDayIndex > 0 ? scheduleData.days[activeDayIndex - 1] : null;
+  const nextDay = activeDayIndex < scheduleData.days.length - 1 ? scheduleData.days[activeDayIndex + 1] : null;
 
   return (
     <main>
@@ -711,7 +735,7 @@ export default function SchedulePreviewPage() {
               <button
                 key={day.id}
                 onClick={() => setActiveDay(day.id)}
-                className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all ${
+                className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all cursor-pointer ${
                   activeDay === day.id
                     ? "bg-[#E85520] text-white"
                     : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
@@ -778,12 +802,19 @@ export default function SchedulePreviewPage() {
                       (() => {
                         const isLunch = session.title.toLowerCase().includes("lunch");
                         const isRegistration = session.title.toLowerCase().includes("registration");
+                        const start = parseTimeToMinutes(session.time);
+                        const nextSession = currentSessions[index + 1];
+                        const nextStart = nextSession ? parseTimeToMinutes(nextSession.time) : null;
+                        const durationLabel =
+                          !isRegistration && start !== null && nextStart !== null
+                            ? formatDuration(nextStart - start)
+                            : null;
                         return (
                     <div
                       key={index}
                       className="bg-gradient-to-r from-[#E85520]/10 to-transparent border border-white/10 rounded-xl p-4 flex items-center gap-4"
                     >
-                      <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center shrink-0">
                         {isLunch ? (
                           // Food plate icon for lunch/dinner
                           <img
@@ -819,10 +850,17 @@ export default function SchedulePreviewPage() {
                           </svg>
                         )}
                       </div>
-                      <div>
-                        <p className="font-sans text-base text-white font-medium">
-                          {session.title}
-                        </p>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <p className="font-sans text-base text-white font-medium">
+                            {session.title}
+                          </p>
+                          {durationLabel && (
+                            <span className="px-2.5 py-0.5 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full">
+                              {durationLabel}
+                            </span>
+                          )}
+                        </div>
                         <p className="font-sans text-xs text-white/40 lg:hidden">
                           {session.time}
                         </p>
@@ -1060,6 +1098,67 @@ export default function SchedulePreviewPage() {
                 </div>
               );
             })}
+
+            {/* Day ends card */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <div className="hidden lg:block lg:col-span-2" />
+              <div className="lg:col-span-10">
+                <div className="border border-dashed border-white/15 rounded-xl py-5 px-6 flex items-center justify-center gap-3 text-center">
+                  <span className="h-px w-8 bg-white/15" />
+                  <p className="font-sans text-sm text-white/50">
+                    {activeDayLabel} ends here
+                  </p>
+                  <span className="h-px w-8 bg-white/15" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom day navigation */}
+          <div className="mt-12 pt-8 border-t border-white/10 flex items-center justify-between gap-4">
+            {prevDay ? (
+              <button
+                onClick={() => {
+                  setActiveDay(prevDay.id);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="group flex items-center gap-3 text-left cursor-pointer max-w-[45%]"
+              >
+                <span className="flex items-center justify-center w-9 h-9 rounded-full bg-white/5 group-hover:bg-[#E85520] transition-colors shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-sans text-[11px] text-white/40 uppercase tracking-wider">Previous</span>
+                  <span className="block font-sans text-sm text-white/80 truncate group-hover:text-white transition-colors">{prevDay.label}</span>
+                </span>
+              </button>
+            ) : (
+              <div />
+            )}
+
+            {nextDay ? (
+              <button
+                onClick={() => {
+                  setActiveDay(nextDay.id);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="group flex items-center gap-3 text-right cursor-pointer max-w-[45%] ml-auto"
+              >
+                <span className="min-w-0">
+                  <span className="block font-sans text-[11px] text-white/40 uppercase tracking-wider">Next</span>
+                  <span className="block font-sans text-sm text-white/80 truncate group-hover:text-white transition-colors">{nextDay.label}</span>
+                </span>
+                <span className="flex items-center justify-center w-9 h-9 rounded-full bg-white/5 group-hover:bg-[#E85520] transition-colors shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </span>
+              </button>
+            ) : (
+              <div />
+            )}
           </div>
         </div>
       </div>

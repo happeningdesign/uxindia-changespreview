@@ -37,7 +37,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
       {/* Hero content container - adds padding at top for nav clearance */}
       <div className="relative z-10 min-h-screen flex flex-col pt-24 md:pt-32 pb-0">
         {/* Main content - positioned to fill space */}
-        <div className="flex-1 flex flex-col justify-end pl-6 md:pl-12 pr-6 pb-24">
+        <div className="flex-1 flex flex-col justify-end pl-6 md:pl-20 lg:pl-32 pr-6 pb-24">
           <div className="max-w-2xl">
             {/* Eyebrow kicker */}
             <div className="animate-float-up opacity-0 mb-8">
@@ -105,9 +105,30 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
                   <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
                     VENUE
                   </p>
-                  <p className="font-sans text-base md:text-lg text-white font-medium">
+                  <a
+                    href="https://maps.app.goo.gl/GefGLLqYJ4ECABMcA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-start gap-1.5 font-sans text-base md:text-lg text-white font-medium cursor-pointer hover:text-[#E85520] transition-colors duration-200"
+                  >
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className="shrink-0 mt-1 opacity-70 group-hover:opacity-100 transition-opacity"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 21s-7-6.4-7-11a7 7 0 1 1 14 0c0 4.6-7 11-7 11z"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinejoin="round"
+                      />
+                      <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.6" />
+                    </svg>
                     Leela Bhartiya City
-                  </p>
+                  </a>
                 </div>
               </div>
 
@@ -130,17 +151,17 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
         <div className="w-full flex border-t border-white/10 bg-black/40 backdrop-blur-md">
           <button
             onClick={() => setActiveTab("overview")}
-            className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 ${
+            className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 cursor-pointer ${
               activeTab === "overview"
                 ? "text-white border-[#E85520]"
                 : "text-white/40 border-transparent hover:text-white/60"
             }`}
           >
-            Overview
+            Speakers
           </button>
           <button
             onClick={handleScheduleClick}
-            className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 ${
+            className={`flex-1 py-4 px-6 font-sans text-sm md:text-base font-medium transition-all duration-300 border-b-2 cursor-pointer ${
               activeTab === "schedule"
                 ? "text-white border-[#E85520]"
                 : "text-white/40 border-transparent hover:text-white/60"
