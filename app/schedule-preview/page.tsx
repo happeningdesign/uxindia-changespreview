@@ -22,7 +22,7 @@ const scheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Workshop 01",
+          title: "Design Foundations & Principles",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -32,7 +32,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Workshop 02",
+          title: "Advanced Design Methodologies",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -42,7 +42,7 @@ const scheduleData = {
         },
         {
           room: "Room 3",
-          title: "Workshop 03",
+          title: "Emerging Design Trends & Tools",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -63,7 +63,7 @@ const scheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Workshop 01 (Continued)",
+          title: "Design Foundations & Principles (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -73,7 +73,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Workshop 02 (Continued)",
+          title: "Advanced Design Methodologies (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -83,7 +83,7 @@ const scheduleData = {
         },
         {
           room: "Room 3",
-          title: "Workshop 03 (Continued)",
+          title: "Emerging Design Trends & Tools (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -104,7 +104,7 @@ const scheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Workshop 04",
+          title: "Practical Design Solutions",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -114,7 +114,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Workshop 05",
+          title: "Innovating with Design Thinking",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -124,7 +124,7 @@ const scheduleData = {
         },
         {
           room: "Room 3",
-          title: "Workshop 06",
+          title: "From Ideas to Impactful Design",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -145,7 +145,7 @@ const scheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Workshop 04 (Continued)",
+          title: "Practical Design Solutions (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -155,7 +155,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Workshop 05 (Continued)",
+          title: "Innovating with Design Thinking (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -165,7 +165,7 @@ const scheduleData = {
         },
         {
           room: "Room 3",
-          title: "Workshop 06 (Continued)",
+          title: "From Ideas to Impactful Design (Continued)",
           speaker: {
             name: "John Doe",
             role: "Workshop Leader, UMO Design Foundation",
@@ -214,7 +214,7 @@ const scheduleData = {
       sessions: [
         {
           room: "Room 1",
-          title: "Deep Dive Talk 01",
+          title: "Deep Dive Talk",
           speaker: {
             name: "John Doe",
             role: "Design Strategist, UMO Design Foundation",
@@ -224,7 +224,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Deep Dive Talk 03",
+          title: "Deep Dive Talk",
           speaker: {
             name: "John Doe",
             role: "Design Entrepreneur, UMO Design Foundation",
@@ -240,7 +240,7 @@ const scheduleData = {
       sessions: [
         {
           room: "Room 1",
-          title: "Spark Session 01",
+          title: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Innovator, UMO Design Foundation",
@@ -250,7 +250,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Spark Session 04",
+          title: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Entrepreneur, UMO Design Foundation",
@@ -271,7 +271,7 @@ const scheduleData = {
       sessions: [
         {
           room: "Room 1",
-          title: "Spark Session 02",
+          title: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Innovator, UMO Design Foundation",
@@ -281,7 +281,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Spark Session 05",
+          title: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Entrepreneur, UMO Design Foundation",
@@ -297,7 +297,7 @@ const scheduleData = {
       sessions: [
         {
           room: "Room 1",
-          title: "Panel Discussion 02",
+          title: "Panel Discussion",
           speaker: {
             name: "John Doe",
             role: "Panel Moderator, UMO Design Foundation",
@@ -307,7 +307,7 @@ const scheduleData = {
         },
         {
           room: "Room 2",
-          title: "Panel Discussion 03",
+          title: "Panel Discussion",
           speaker: {
             name: "John Doe",
             role: "Panel Moderator, UMO Design Foundation",
@@ -329,7 +329,7 @@ const scheduleData = {
         {
           time: "2:10 PM",
           room: "Room 1",
-          title: "Deep Dive Talk 02",
+          title: "Deep Dive Talk",
           speaker: {
             name: "John Doe",
             role: "Design Strategist, UMO Design Foundation",
@@ -340,7 +340,7 @@ const scheduleData = {
         {
           time: "2:50 PM",
           room: "Room 1",
-          title: "Spark Session 03",
+          title: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Innovator, UMO Design Foundation",
@@ -544,7 +544,7 @@ const scheduleData = {
     {
       time: "9:50 AM",
       type: "keynote",
-      title: "Grand Keynote 01: Design at Enterprise Scale",
+      title: "Grand Keynote: Design at Enterprise Scale",
       description: "Exploring design leadership in large, complex organizational structures.",
       speaker: {
         name: "John Doe",
@@ -561,7 +561,7 @@ const scheduleData = {
     {
       time: "11:25 AM",
       type: "keynote",
-      title: "Plenary Keynote 01: Building Design Culture",
+      title: "Plenary Keynote: Building Design Culture",
       description: "Creating and sustaining a strong design culture within organizations.",
       speaker: {
         name: "John Doe",
@@ -573,7 +573,7 @@ const scheduleData = {
     {
       time: "12:05 PM",
       type: "keynote",
-      title: "Plenary Keynote 02: Design Ethics in AI",
+      title: "Plenary Keynote: Design Ethics in AI",
       description: "Responsible design practices in an AI-driven world.",
       speaker: {
         name: "John Doe",
@@ -590,7 +590,7 @@ const scheduleData = {
     {
       time: "2:30 PM",
       type: "panel",
-      title: "Panel Discussion 01: Future of Design Leadership",
+      title: "Panel Discussion: Future of Design Leadership",
       description: "Thought leaders share perspectives on emerging trends and challenges in design leadership.",
       panelists: [
         {
@@ -611,7 +611,7 @@ const scheduleData = {
     {
       time: "3:40 PM",
       type: "keynote",
-      title: "Plenary Keynote 03: Global Design Perspectives",
+      title: "Plenary Keynote: Global Design Perspectives",
       description: "Cross-cultural insights into design leadership practices worldwide.",
       speaker: {
         name: "John Doe",
@@ -623,7 +623,7 @@ const scheduleData = {
     {
       time: "5:20 PM",
       type: "keynote",
-      title: "Plenary Keynote 04: The Next Wave of Design",
+      title: "Plenary Keynote: The Next Wave of Design",
       description: "What's next in design leadership and innovation.",
       speaker: {
         name: "John Doe",
@@ -635,7 +635,7 @@ const scheduleData = {
     {
       time: "6:00 PM",
       type: "keynote",
-      title: "Grand Keynote 02: Design's Role in Transformation",
+      title: "Grand Keynote: Design's Role in Transformation",
       description: "How design drives organizational and social transformation.",
       speaker: {
         name: "John Doe",
@@ -652,7 +652,7 @@ const scheduleData = {
     {
       time: "5:20 PM",
       type: "keynote",
-      title: "Plenary Keynote 04: The Next Wave of Design",
+      title: "Plenary Keynote: The Next Wave of Design",
       description: "What's next in design leadership and innovation.",
       speaker: {
         name: "John Doe",
@@ -664,7 +664,7 @@ const scheduleData = {
     {
       time: "6:00 PM",
       type: "keynote",
-      title: "Grand Keynote 02: Design's Role in Transformation",
+      title: "Grand Keynote: Design's Role in Transformation",
       description: "How design drives organizational and social transformation.",
       speaker: {
         name: "Doug",

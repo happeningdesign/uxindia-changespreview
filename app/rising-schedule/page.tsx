@@ -50,7 +50,7 @@ const scheduleData = {
     {
       time: "9:40 AM",
       type: "keynote",
-      title: "Deep Dive Talk 01",
+      title: "Deep Dive Talk",
       description: "An in-depth exploration of emerging design leadership practices and methodologies.",
       tag: "Deep Dive",
       location: "Auditorium",
@@ -69,7 +69,7 @@ const scheduleData = {
     {
       time: "11:05 AM",
       type: "keynote",
-      title: "Deep Dive Talk 02",
+      title: "Deep Dive Talk",
       description: "Continuing the conversation on design leadership with practical frameworks and insights.",
       tag: "Deep Dive",
       location: "Auditorium",
@@ -103,16 +103,16 @@ const scheduleData = {
       type: "parallel-workshops",
       duration: "90 min",
       workshops: [
-        { room: "Room 1", title: "Workshop 01", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 2", title: "Workshop 02", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 3", title: "Workshop 03", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 4", title: "Workshop 04", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 5", title: "Workshop 05", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 6", title: "Workshop 06", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 7", title: "Workshop 07", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 8", title: "Workshop 08", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 9", title: "Workshop 09", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 10", title: "Workshop 10", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 1", title: "Leading Design Teams Through Change", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 2", title: "From Designer to Design Manager", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 3", title: "Building Scalable Design Systems", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 4", title: "Storytelling for Design Leaders", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 5", title: "Research-Driven Decision Making", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 6", title: "Designing with AI in the Loop", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 7", title: "Facilitating High-Impact Workshops", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 8", title: "Communicating Design Value to Stakeholders", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 9", title: "Inclusive and Accessible Design Practices", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Hands-on workshop focusing on practical design skills." },
+        { room: "Room 10", title: "Measuring and Proving Design Impact", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Hands-on workshop focusing on practical design skills." },
       ],
     },
     {
@@ -126,16 +126,16 @@ const scheduleData = {
       type: "parallel-workshops",
       duration: "60 min",
       workshops: [
-        { room: "Room 1", title: "Workshop 01 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 2", title: "Workshop 02 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 3", title: "Workshop 03 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 4", title: "Workshop 04 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 5", title: "Workshop 05 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 6", title: "Workshop 06 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 7", title: "Workshop 07 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 8", title: "Workshop 08 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 9", title: "Workshop 09 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 10", title: "Workshop 10 (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 1", title: "Leading Design Teams Through Change (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 2", title: "From Designer to Design Manager (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 3", title: "Building Scalable Design Systems (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 4", title: "Storytelling for Design Leaders (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 5", title: "Research-Driven Decision Making (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 6", title: "Designing with AI in the Loop (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 7", title: "Facilitating High-Impact Workshops (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 8", title: "Communicating Design Value to Stakeholders (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 9", title: "Inclusive and Accessible Design Practices (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Continuation of the morning workshop session." },
+        { room: "Room 10", title: "Measuring and Proving Design Impact (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Continuation of the morning workshop session." },
       ],
     },
   ],
@@ -162,7 +162,7 @@ const scheduleData = {
     {
       time: "9:40 AM",
       type: "keynote",
-      title: "Deep Dive Talk 01",
+      title: "Deep Dive Talk",
       description: "An in-depth exploration of design leadership practices and methodologies.",
       tag: "Deep Dive",
       location: "Auditorium",
@@ -202,9 +202,9 @@ const scheduleData = {
       type: "parallel-sessions",
       duration: "25 min",
       sessions: [
-        { room: "Mini-Auditorium 1", title: "Spark Session 01", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Quick insights on design innovation." },
-        { room: "Mini-Auditorium 2", title: "Spark Session 02", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Quick insights on design strategy." },
-        { room: "Mini-Auditorium 3", title: "Spark Session 03", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Quick insights on design operations." },
+        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Quick insights on design innovation." },
+        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Quick insights on design strategy." },
+        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Quick insights on design operations." },
       ],
     },
     {
@@ -212,9 +212,9 @@ const scheduleData = {
       type: "parallel-sessions",
       duration: "25 min",
       sessions: [
-        { room: "Mini-Auditorium 1", title: "Spark Session 04", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Quick insights on design thinking." },
-        { room: "Mini-Auditorium 2", title: "Spark Session 05", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Quick insights on user research." },
-        { room: "Mini-Auditorium 3", title: "Spark Session 06", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Quick insights on design systems." },
+        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Quick insights on design thinking." },
+        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Quick insights on user research." },
+        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Quick insights on design systems." },
       ],
     },
     {
@@ -226,7 +226,7 @@ const scheduleData = {
     {
       time: "2:00 PM",
       type: "keynote",
-      title: "Deep Dive Talk 02",
+      title: "Deep Dive Talk",
       description: "Continuing the conversation on design leadership with practical frameworks.",
       tag: "Deep Dive",
       location: "Auditorium",
@@ -239,7 +239,7 @@ const scheduleData = {
     {
       time: "2:40 PM",
       type: "keynote",
-      title: "Deep Dive Talk 03",
+      title: "Deep Dive Talk",
       description: "Advanced strategies for design leadership and team growth.",
       tag: "Deep Dive",
       location: "Auditorium",
@@ -471,7 +471,7 @@ export default function RisingSchedulePage() {
                           {session.workshops.map((workshop, wIndex) => (
                             <div
                               key={wIndex}
-                              className="flex-shrink-0 w-64 lg:w-auto bg-white border border-[#0D0D0D]/10 rounded-2xl p-4 hover:border-[#E85520]/30 transition-all shadow-sm"
+                              className="group/ws flex-shrink-0 w-64 lg:w-auto bg-white border border-[#0D0D0D]/10 rounded-2xl p-4 hover:border-[#E85520]/30 transition-all shadow-sm"
                             >
                               <div className="flex items-center gap-2 mb-3">
                                 <span 
@@ -480,8 +480,14 @@ export default function RisingSchedulePage() {
                                 >
                                   {workshop.room}
                                 </span>
+                                <span className="px-2 py-0.5 bg-[#1A7A6E]/10 text-[#1A7A6E] text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">
+                                  Workshop
+                                </span>
                               </div>
-                              <h4 className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2">
+                              <h4
+                                title={workshop.title}
+                                className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2 group-hover/ws:line-clamp-none transition-all"
+                              >
                                 {workshop.title}
                               </h4>
                               <div className="flex items-center gap-2">
