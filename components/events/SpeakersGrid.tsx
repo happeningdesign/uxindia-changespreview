@@ -31,6 +31,7 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
       }}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
+      onClick={() => setFlipped((prev) => !prev)}
     >
       {/* Inner flip container */}
       <div
