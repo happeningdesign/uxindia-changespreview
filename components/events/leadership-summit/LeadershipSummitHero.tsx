@@ -109,15 +109,14 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
                     href="https://maps.app.goo.gl/GefGLLqYJ4ECABMcA"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-1.5 font-sans text-base md:text-lg text-white font-medium cursor-pointer hover:text-[#E85520] transition-colors duration-200"
+                    className="group inline-flex items-start gap-1.5 font-sans text-base md:text-lg text-white font-medium cursor-pointer hover:text-[#E85520] transition-colors duration-200"
                   >
-                    Leela Bhartiya City
                     <svg
                       width="15"
                       height="15"
                       viewBox="0 0 24 24"
                       fill="none"
-                      className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity"
+                      className="shrink-0 mt-1 opacity-70 group-hover:opacity-100 transition-opacity"
                       aria-hidden="true"
                     >
                       <path
@@ -128,6 +127,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
                       />
                       <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.6" />
                     </svg>
+                    Leela Bhartiya City
                   </a>
                 </div>
               </div>
