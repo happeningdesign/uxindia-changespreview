@@ -97,6 +97,14 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
             backgroundColor: color,
           }}
         >
+          {/* Talk type */}
+          {speaker.talkType && (
+            <div className="flex-shrink-0 mb-3">
+              <span className="font-sans text-[8px] md:text-[9px] font-semibold text-white/70 tracking-widest uppercase">
+                {speaker.talkType}
+              </span>
+            </div>
+          )}
           {/* Bio content */}
           <div className="flex-1 overflow-y-auto min-h-0 mt-auto flex flex-col justify-end scrollbar-none">
             <h3 className="font-leadership text-base md:text-lg text-white leading-tight mb-1">
