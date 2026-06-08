@@ -38,19 +38,24 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
         style={{
           transformStyle: "preserve-3d",
           WebkitTransformStyle: "preserve-3d",
-          transition: "transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1)",
+          transition: "transform 1.1s cubic-bezier(0.4, 0.2, 0.2, 1)",
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
         {/* FRONT — photo with color overlay for light variant */}
         <div
-          className="absolute inset-0 rounded-lg overflow-hidden"
+          className="absolute inset-0 rounded-lg overflow-hidden ring-1 shadow-lg"
           style={{
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(0deg)",
             zIndex: flipped ? 0 : 1,
             backgroundColor: isLight ? color : undefined,
+            // @ts-expect-error CSS custom prop for ring color
+            "--tw-ring-color": isLight ? "rgba(13,13,13,0.08)" : "rgba(255,255,255,0.12)",
+            boxShadow: isLight
+              ? "0 8px 24px rgba(0,0,0,0.12)"
+              : "0 8px 28px rgba(0,0,0,0.55)",
           }}
         >
           <img
@@ -200,7 +205,7 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
         </div>
 
         {/* Speakers grid - 4 columns on desktop to match design */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
           {filteredSpeakers.map((speaker, index) => (
             <SpeakerCard key={index} speaker={speaker} index={index} variant={variant} />
           ))}
