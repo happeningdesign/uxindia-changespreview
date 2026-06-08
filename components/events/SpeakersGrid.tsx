@@ -151,7 +151,7 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setActiveFilter(null)}
-                className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all ${
+                className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
                   activeFilter === null
                     ? "bg-[#E85520] text-white"
                     : isLight 
@@ -165,7 +165,7 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
                 <button
                   key={type}
                   onClick={() => setActiveFilter(type)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all ${
+                  className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
                     activeFilter === type
                       ? "bg-[#E85520] text-white"
                       : isLight

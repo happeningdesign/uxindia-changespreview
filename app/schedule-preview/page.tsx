@@ -6,9 +6,9 @@ import Footer from "@/components/global/footer/Footer";
 
 const scheduleData = {
   days: [
-    { id: "day1", label: "Day 1", date: "Sept 23" },
-    { id: "day2", label: "Day 2", date: "Sept 24" },
-    { id: "day3", label: "Day 3", date: "Sept 25" },
+    { id: "day1", label: "Pre-Conference Workshops", date: "Sept 23" },
+    { id: "day2", label: "Conference Day 1", date: "Sept 24" },
+    { id: "day3", label: "Conference Day 2", date: "Sept 25" },
   ],
   day1: [
     {
@@ -711,7 +711,7 @@ export default function SchedulePreviewPage() {
               <button
                 key={day.id}
                 onClick={() => setActiveDay(day.id)}
-                className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all ${
+                className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all cursor-pointer ${
                   activeDay === day.id
                     ? "bg-[#E85520] text-white"
                     : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"

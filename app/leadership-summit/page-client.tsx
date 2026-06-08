@@ -12,24 +12,24 @@ import EventDayCards from "@/components/events/EventDayCards";
 
 const leadershipSummitDays = [
   {
-    badge: "KEYNOTES",
+    badge: "PRE-CONFERENCE WORKSHOPS",
     badgeColor: "orange" as const,
     date: "23 September",
-    description: "Opening keynotes and sessions",
+    description: "Hands-on workshops and skill-building sessions",
     bgColor: "bg-[#1C1C1E]",
   },
   {
-    badge: "GRAND CONF DAY 1",
+    badge: "CONFERENCE DAY 1",
     badgeColor: "blue" as const,
     date: "24 September",
-    description: "Roundtables and workshops",
+    description: "Keynotes, roundtables, and curated conversations",
     bgColor: "bg-[#0E4D5C]",
   },
   {
-    badge: "CONF DAY 2",
+    badge: "CONFERENCE DAY 2",
     badgeColor: "orange" as const,
     date: "25 September",
-    description: "Closing sessions and networking",
+    description: "Closing sessions and leadership networking",
     bgColor: "bg-[#4A2C3D]",
   },
 ];
@@ -56,9 +56,9 @@ export default function LeadershipSummitPageClient() {
             </div>
           </section>
           <WhoAttends
-            title="Who Attends"
+            title="Why Attend"
             description="Built for leaders who decide."
-            subtitle="Three days of high-signal conversation — on stage, in curated roundtables, and over CXO dinners — designed exclusively for design and product leaders shaping the future of businesses and systems."
+            subtitle="This is where strategy meets craft. Step away from the day-to-day to think bigger — exchange hard-won lessons with peers who face the same decisions, pressure-test your ideas in intimate roundtables, and leave with sharper conviction, a stronger network, and a clearer view of where design is headed next."
           />
           <SpeakersGrid
             speakers={[
