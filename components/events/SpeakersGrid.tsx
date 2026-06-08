@@ -117,6 +117,25 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
             <p className="font-sans text-[10px] md:text-xs text-white/85 leading-relaxed">
               {speaker.bio || `${speaker.name} is a respected voice in the design community, bringing valuable insights and experience to UXINDIA. Their work spans across design leadership, innovation, and building impactful user experiences.`}
             </p>
+            <button
+              type="button"
+              onClick={(e) => e.stopPropagation()}
+              className="group/btn mt-3 inline-flex items-center gap-1 self-start font-sans text-[10px] md:text-[11px] font-semibold text-white uppercase tracking-wider cursor-pointer"
+            >
+              Read more
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.4"
+                className="transition-transform duration-200 group-hover/btn:translate-x-0.5"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
