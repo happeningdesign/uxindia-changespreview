@@ -50,7 +50,7 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(0deg)",
             zIndex: flipped ? 0 : 1,
-            backgroundColor: isLight ? color : undefined,
+            backgroundColor: isLight ? color : "#1F1F1F",
             // @ts-expect-error CSS custom prop for ring color
             "--tw-ring-color": isLight ? "rgba(13,13,13,0.08)" : "rgba(255,255,255,0.12)",
             boxShadow: isLight
