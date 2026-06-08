@@ -24,8 +24,8 @@ const roomColors: Record<string, string> = {
 
 const scheduleData = {
   days: [
-    { id: "day1", label: "Day 1", date: "Sept 23" },
-    { id: "day2", label: "Day 2", date: "Sept 24" },
+    { id: "day1", label: "Day 1", date: "Sept 26" },
+    { id: "day2", label: "Day 2", date: "Sept 27" },
   ],
   day1: [
     {
@@ -273,9 +273,33 @@ const scheduleData = {
 
 const sessions = scheduleData.day1;
 
+function parseTimeToMinutes(t: string): number | null {
+  const m = t.match(/(\d+):(\d+)\s*(AM|PM)/i);
+  if (!m) return null;
+  let h = parseInt(m[1], 10);
+  const min = parseInt(m[2], 10);
+  const ap = m[3].toUpperCase();
+  if (ap === "PM" && h !== 12) h += 12;
+  if (ap === "AM" && h === 12) h = 0;
+  return h * 60 + min;
+}
+
+function formatDuration(mins: number): string | null {
+  if (mins <= 0) return null;
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  if (h && m) return `${h} hr ${m} min`;
+  if (h) return `${h} hr`;
+  return `${m} min`;
+}
+
 export default function RisingSchedulePage() {
   const [activeDay, setActiveDay] = React.useState("day1");
   const currentSessions = activeDay === "day1" ? scheduleData.day1 : (activeDay === "day2" ? scheduleData.day2 : scheduleData.day3);
+  const activeDayIndex = scheduleData.days.findIndex((d) => d.id === activeDay);
+  const activeDayLabel = scheduleData.days[activeDayIndex]?.label ?? "";
+  const prevDay = activeDayIndex > 0 ? scheduleData.days[activeDayIndex - 1] : null;
+  const nextDay = activeDayIndex < scheduleData.days.length - 1 ? scheduleData.days[activeDayIndex + 1] : null;
 
   return (
     <main>
@@ -368,12 +392,19 @@ export default function RisingSchedulePage() {
                       (() => {
                         const isLunch = session.title.toLowerCase().includes("lunch");
                         const isRegistration = session.title.toLowerCase().includes("registration");
+                        const start = parseTimeToMinutes(session.time);
+                        const nextSession = currentSessions[index + 1];
+                        const nextStart = nextSession ? parseTimeToMinutes(nextSession.time) : null;
+                        const durationLabel =
+                          !isRegistration && start !== null && nextStart !== null
+                            ? formatDuration(nextStart - start)
+                            : null;
                         return (
                     <div
                       key={index}
                       className="bg-[#E85520]/10 border border-[#0D0D0D]/10 rounded-xl p-4 flex items-center gap-4"
                     >
-                      <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center shrink-0">
                         {isLunch ? (
                           // Food plate icon for lunch/dinner
                           <img
@@ -409,10 +440,17 @@ export default function RisingSchedulePage() {
                           </svg>
                         )}
                       </div>
-                      <div>
-                        <p className="font-sans text-base text-[#0D0D0D] font-medium">
-                          {session.title}
-                        </p>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <p className="font-sans text-base text-[#0D0D0D] font-medium">
+                            {session.title}
+                          </p>
+                          {durationLabel && (
+                            <span className="px-2.5 py-0.5 bg-[#0D0D0D]/10 text-[#0D0D0D]/70 text-xs font-sans font-medium rounded-full">
+                              {durationLabel}
+                            </span>
+                          )}
+                        </div>
                         <p className="font-sans text-xs text-[#0D0D0D]/40 lg:hidden">
                           {session.time}
                         </p>
@@ -839,6 +877,67 @@ export default function RisingSchedulePage() {
                 </div>
               );
             })}
+
+            {/* Day ends card */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <div className="hidden lg:block lg:col-span-2" />
+              <div className="lg:col-span-10">
+                <div className="border border-dashed border-[#0D0D0D]/15 rounded-xl py-5 px-6 flex items-center justify-center gap-3 text-center">
+                  <span className="h-px w-8 bg-[#0D0D0D]/15" />
+                  <p className="font-sans text-sm text-[#0D0D0D]/50">
+                    {activeDayLabel} ends here
+                  </p>
+                  <span className="h-px w-8 bg-[#0D0D0D]/15" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom day navigation */}
+          <div className="mt-12 pt-8 border-t border-[#0D0D0D]/10 flex items-center justify-between gap-4">
+            {prevDay ? (
+              <button
+                onClick={() => {
+                  setActiveDay(prevDay.id);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="group flex items-center gap-3 text-left cursor-pointer max-w-[45%]"
+              >
+                <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#0D0D0D]/5 group-hover:bg-[#E85520] transition-colors shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                </span>
+                <span className="min-w-0">
+                  <span className="block font-sans text-[11px] text-[#0D0D0D]/40 uppercase tracking-wider">Previous</span>
+                  <span className="block font-sans text-sm text-[#0D0D0D]/80 truncate group-hover:text-[#0D0D0D] transition-colors">{prevDay.label}</span>
+                </span>
+              </button>
+            ) : (
+              <div />
+            )}
+
+            {nextDay ? (
+              <button
+                onClick={() => {
+                  setActiveDay(nextDay.id);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="group flex items-center gap-3 text-right cursor-pointer max-w-[45%] ml-auto"
+              >
+                <span className="min-w-0">
+                  <span className="block font-sans text-[11px] text-[#0D0D0D]/40 uppercase tracking-wider">Next</span>
+                  <span className="block font-sans text-sm text-[#0D0D0D]/80 truncate group-hover:text-[#0D0D0D] transition-colors">{nextDay.label}</span>
+                </span>
+                <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#0D0D0D]/5 group-hover:bg-[#E85520] transition-colors shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </span>
+              </button>
+            ) : (
+              <div />
+            )}
           </div>
         </div>
       </div>
