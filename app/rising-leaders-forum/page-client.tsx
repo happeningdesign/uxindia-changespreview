@@ -50,9 +50,9 @@ export default function RisingLeadersPageClient() {
           </section>
           <WhoAttends
             variant="light"
-            title="Who Attends"
+            title="Why Attend"
             description="Built for leaders at the threshold."
-            subtitle="Two days of intensive learning, peer connection, and mentorship from seasoned design leaders. Exclusive to professionals stepping into leadership roles and looking to accelerate their growth."
+            subtitle="This is where your next chapter begins. Step into rooms with peers navigating the same leap — learn directly from seasoned design leaders in intimate mentor sessions, pressure-test your thinking in hands-on workshops, and build the network and confidence to grow into the leader you're becoming."
           />
           <SpeakersGrid
             variant="light"
@@ -78,7 +78,7 @@ export default function RisingLeadersPageClient() {
             ]}
             showMorePlaceholder={true}
           />
-          <VenueSection variant="light" />
+          <VenueSection variant="light" venueName="Srishti Manipal Institute of Art, Design & Technology" />
         </>
       )}
 

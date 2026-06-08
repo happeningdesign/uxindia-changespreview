@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 interface VenueSectionProps {
   variant?: "dark" | "light";
+  venueName?: string;
 }
 
 const venueImages = [
@@ -13,7 +14,7 @@ const venueImages = [
   { src: "/uxindia-audience.jpg", alt: "UX India audience" },
 ];
 
-export default function VenueSection({ variant = "dark" }: VenueSectionProps) {
+export default function VenueSection({ variant = "dark", venueName = "The Leela Bhartiya City" }: VenueSectionProps) {
   const isLight = variant === "light";
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -73,7 +74,7 @@ export default function VenueSection({ variant = "dark" }: VenueSectionProps) {
             <div className="space-y-8">
               <div>
                 <h3 className="font-leadership text-3xl md:text-4xl mb-2 text-white">
-                  The Leela Bhartiya City
+                  {venueName}
                 </h3>
                 <p className={`font-sans text-sm font-semibold uppercase tracking-widest ${isLight ? "text-white/70" : "text-[#E85520]"}`}>
                   Bengaluru, India
