@@ -817,7 +817,7 @@ export default function SchedulePreviewPage() {
                     >
                       {/* Background image */}
                       <img
-                        src="/uxindia-audience.jpg"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/67db8d7961e189ecb4d2e27c_planning-corporate-dinner-2-562ArrQaZrqltVu0iW3joDkxpdYFEV.jpg"
                         alt="Networking Dinner"
                         className="absolute inset-0 w-full h-full object-cover"
                       />
@@ -836,10 +836,10 @@ export default function SchedulePreviewPage() {
                           </div>
                           <div>
                             <p className="font-leadership text-xl text-white">{session.title}</p>
-                            <p className="font-sans text-xs text-white/60 mt-0.5">Join us for an evening of curated conversations and connections</p>
+                            <p className="font-sans text-xs text-white/90 mt-0.5">Join us for an evening of curated conversations and connections</p>
                           </div>
                         </div>
-                        <p className="font-sans text-xs text-white/50 lg:hidden shrink-0">{session.time}</p>
+                        <p className="font-sans text-xs text-white/80 lg:hidden shrink-0">{session.time}</p>
                       </div>
                     </div>
                         );
