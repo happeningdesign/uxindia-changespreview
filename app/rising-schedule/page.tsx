@@ -451,9 +451,11 @@ export default function RisingSchedulePage() {
                             </span>
                           )}
                         </div>
-                        <p className="font-sans text-[11px] text-[#0D0D0D]/60 mt-1">
-                          Student attendees must show valid student ID
-                        </p>
+                        {isRegistration && (
+                          <p className="font-sans text-[11px] text-[#0D0D0D]/60 mt-1">
+                            Student attendees must show valid student ID
+                          </p>
+                        )}
                         <p className="font-sans text-xs text-[#0D0D0D]/40 lg:hidden">
                           {session.time}
                         </p>
