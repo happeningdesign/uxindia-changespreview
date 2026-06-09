@@ -801,6 +801,7 @@ export default function SchedulePreviewPage() {
                     {session.type === "break" && (
                       (() => {
                         const isLunch = session.title.toLowerCase().includes("lunch");
+                        const isDinner = session.title.toLowerCase().includes("dinner");
                         const isRegistration = session.title.toLowerCase().includes("registration");
                         const start = parseTimeToMinutes(session.time);
                         const nextSession = currentSessions[index + 1];
@@ -809,13 +810,46 @@ export default function SchedulePreviewPage() {
                           !isRegistration && start !== null && nextStart !== null
                             ? formatDuration(nextStart - start)
                             : null;
+                        if (isDinner) return (
+                    <div
+                      key={index}
+                      className="relative overflow-hidden rounded-2xl border border-white/10 min-h-[180px] flex flex-col justify-end"
+                    >
+                      {/* Background image */}
+                      <img
+                        src="/uxindia-audience.jpg"
+                        alt="Networking Dinner"
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      {/* Gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+                      {/* Content */}
+                      <div className="relative z-10 p-6 flex items-end justify-between gap-4">
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 bg-[#E85520]/80 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
+                            <img
+                              src="/icons/lunch.svg"
+                              alt="dinner"
+                              className="w-6 h-6"
+                              style={{ filter: "brightness(0) invert(1)" }}
+                            />
+                          </div>
+                          <div>
+                            <p className="font-leadership text-xl text-white">{session.title}</p>
+                            <p className="font-sans text-xs text-white/60 mt-0.5">Join us for an evening of curated conversations and connections</p>
+                          </div>
+                        </div>
+                        <p className="font-sans text-xs text-white/50 lg:hidden shrink-0">{session.time}</p>
+                      </div>
+                    </div>
+                        );
                         return (
                     <div
                       key={index}
                       className="bg-gradient-to-r from-[#E85520]/10 to-transparent border border-white/10 rounded-xl p-4 flex items-center gap-4"
                     >
                       <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center shrink-0">
-                        {isLunch ? (
+                        {isLunch || isDinner ? (
                           // Food plate icon for lunch/dinner
                           <img
                             src="/icons/lunch.svg"
