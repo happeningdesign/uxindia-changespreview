@@ -315,7 +315,7 @@ export default function RisingSchedulePage() {
               Rising Leaders Forum 2026
             </h1>
             <p className="font-sans text-base text-[#0D0D0D]/60">
-              September 23-24, 2026 — Leela Bhartiya City, Bengaluru
+              September 26-27, 2026 — Srishti Manipal Institute of Art, Design & Technology, Bengaluru
             </p>
           </div>
 
