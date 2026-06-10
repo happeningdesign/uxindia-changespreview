@@ -344,10 +344,7 @@ export default function RisingSchedulePage() {
                   {/* Time column - hidden on mobile */}
                   <div className="hidden lg:block lg:col-span-2">
                     <div className="text-sm font-sans text-[#0D0D0D]/50 sticky top-24">
-                      <p>{session.time}</p>
-                      {session.endTime && session.type === "parallel-workshops" && (
-                        <p className="text-sm mt-0.5">{session.endTime}</p>
-                      )}
+                      <p>{session.time}{session.endTime && session.type === "parallel-workshops" ? ` – ${session.endTime}` : ""}</p>
                     </div>
                   </div>
 
