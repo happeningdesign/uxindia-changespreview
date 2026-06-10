@@ -20,6 +20,9 @@ const scheduleData = {
       time: "9:00 AM",
       endTime: "10:30 AM",
       type: "workshops",
+      workshops: [
+        {
+          room: "Room 1",
           title: "Design Foundations & Principles",
           speaker: {
             name: "John Doe",
