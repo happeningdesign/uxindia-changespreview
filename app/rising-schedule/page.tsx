@@ -359,7 +359,7 @@ export default function RisingSchedulePage() {
                             {session.tag}
                           </span>
                           <p className="text-xs text-[#0D0D0D]/40">
-                            {session.time}
+                            {session.time}{session.endTime && session.type === "parallel-workshops" ? ` – ${session.endTime}` : ""}
                           </p>
                         </div>
                         <div className="flex items-start gap-4">

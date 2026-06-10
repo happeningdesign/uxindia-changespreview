@@ -783,7 +783,7 @@ export default function SchedulePreviewPage() {
                             {session.tag}
                           </span>
                           <p className="text-xs text-white/40">
-                            {session.time}
+                            {session.time}{session.endTime && session.type === "workshops" ? ` – ${session.endTime}` : ""}
                           </p>
                         </div>
                         <div className="flex items-start gap-4">
