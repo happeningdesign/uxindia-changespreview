@@ -78,7 +78,12 @@ export default function RisingLeadersPageClient() {
             ]}
             showMorePlaceholder={true}
           />
-          <VenueSection variant="light" venueName="Srishti Manipal Institute of Art, Design & Technology" />
+          <VenueSection
+            variant="light"
+            venueName="Srishti Manipal Institute of Art, Design & Technology"
+            mapsUrl="https://maps.app.goo.gl/he73UFRv2daCrPzY8"
+            embedQuery="Srishti+Manipal+Institute+of+Art+Design+and+Technology+Bengaluru"
+          />
         </>
       )}
 

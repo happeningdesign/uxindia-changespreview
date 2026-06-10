@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 interface VenueSectionProps {
   variant?: "dark" | "light";
   venueName?: string;
+  mapsUrl?: string;
+  embedQuery?: string;
 }
 
 const venueImages = [
@@ -14,9 +16,15 @@ const venueImages = [
   { src: "/uxindia-audience.jpg", alt: "UX India audience" },
 ];
 
-const MAPS_URL = "https://maps.app.goo.gl/GefGLLqYJ4ECABMcA";
+const DEFAULT_MAPS_URL = "https://maps.app.goo.gl/GefGLLqYJ4ECABMcA";
+const DEFAULT_EMBED_QUERY = "The+Leela+Bhartiya+City+Bengaluru";
 
-export default function VenueSection({ variant = "dark", venueName = "The Leela Bhartiya City" }: VenueSectionProps) {
+export default function VenueSection({
+  variant = "dark",
+  venueName = "The Leela Bhartiya City",
+  mapsUrl = DEFAULT_MAPS_URL,
+  embedQuery = DEFAULT_EMBED_QUERY,
+}: VenueSectionProps) {
   const isLight = variant === "light";
   const [activeIndex, setActiveIndex] = useState(0);
   const [mediaTab, setMediaTab] = useState<"photos" | "map">("photos");
@@ -95,14 +103,14 @@ export default function VenueSection({ variant = "dark", venueName = "The Leela 
                 {/* Map */}
                 {mediaTab === "map" && (
                   <a
-                    href={MAPS_URL}
+                    href={mapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full h-full group relative"
                     aria-label="Open venue in Google Maps"
                   >
                     <iframe
-                      src="https://maps.google.com/maps?q=The+Leela+Bhartiya+City+Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                      src={`https://maps.google.com/maps?q=${embedQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
                       width="100%"
                       height="100%"
                       style={{ border: 0, pointerEvents: "none" }}
@@ -188,7 +196,7 @@ export default function VenueSection({ variant = "dark", venueName = "The Leela 
               {/* CTA Button */}
               <div>
                 <a
-                  href={MAPS_URL}
+                  href={mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`inline-flex items-center gap-2 font-sans font-semibold px-6 py-3 rounded-full transition-all duration-300 cursor-pointer ${isLight ? "bg-white text-[#1D5078] hover:bg-white/90" : "bg-[#E85520] hover:bg-[#E85520]/90 text-white hover:shadow-lg hover:shadow-[#E85520]/30"}`}
