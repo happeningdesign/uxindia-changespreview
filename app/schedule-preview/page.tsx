@@ -595,14 +595,17 @@ const scheduleData = {
       panelists: [
         {
           name: "John Doe",
+          role: "Design Director, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
         },
         {
           name: "John Doe",
+          role: "Creative Lead, Design Thinking Institute",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
         },
         {
           name: "John Doe",
+          role: "Product Head, Digital Innovation Lab",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
         },
       ],
