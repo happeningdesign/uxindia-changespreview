@@ -523,6 +523,10 @@ export default function RisingSchedulePage() {
                     )}
                     {session.type === "parallel-workshops" && (
                       <div className="space-y-4">
+                        {/* Mobile time display */}
+                        <p className="text-xs text-[#0D0D0D]/40 lg:hidden">
+                          {session.time}{session.endTime ? ` – ${session.endTime}` : ""}
+                        </p>
                         {/* Horizontally scrollable on mobile, grid on desktop */}
                         <div className="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-5 lg:overflow-visible scrollbar-hide">
                           {session.workshops.map((workshop, wIndex) => (
