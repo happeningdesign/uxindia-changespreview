@@ -893,12 +893,16 @@ export default function RisingSchedulePage() {
 
             {/* Day ends card */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-              <div className="hidden lg:block lg:col-span-2" />
+              <div className="hidden lg:block lg:col-span-2">
+                <div className="text-sm font-sans text-[#0D0D0D]/50 sticky top-24">
+                  {scheduleData.days[activeDayIndex]?.endTime}
+                </div>
+              </div>
               <div className="lg:col-span-10">
                 <div className="border border-dashed border-[#0D0D0D]/15 rounded-xl py-5 px-6 flex items-center justify-center gap-3 text-center">
                   <span className="h-px w-8 bg-[#0D0D0D]/15" />
                   <p className="font-sans text-sm text-[#0D0D0D]/50">
-                    End of {activeDayLabel} • {scheduleData.days[activeDayIndex]?.endTime}
+                    End of {activeDayLabel}
                   </p>
                   <span className="h-px w-8 bg-[#0D0D0D]/15" />
                 </div>
