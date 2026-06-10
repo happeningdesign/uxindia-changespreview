@@ -18,10 +18,8 @@ const scheduleData = {
     },
     {
       time: "9:00 AM",
+      endTime: "10:30 AM",
       type: "workshops",
-      workshops: [
-        {
-          room: "Room 1",
           title: "Design Foundations & Principles",
           speaker: {
             name: "John Doe",
@@ -59,6 +57,7 @@ const scheduleData = {
     },
     {
       time: "11:15 AM",
+      endTime: "12:15 PM",
       type: "workshops",
       workshops: [
         {
@@ -100,6 +99,7 @@ const scheduleData = {
     },
     {
       time: "1:45 PM",
+      endTime: "3:15 PM",
       type: "workshops",
       workshops: [
         {
@@ -141,6 +141,7 @@ const scheduleData = {
     },
     {
       time: "4:00 PM",
+      endTime: "5:00 PM",
       type: "workshops",
       workshops: [
         {
@@ -767,7 +768,7 @@ export default function SchedulePreviewPage() {
                   {/* Time column - hidden on mobile */}
                   <div className="hidden lg:block lg:col-span-2">
                     <div className="text-sm font-sans text-white/50 sticky top-24">
-                      {session.time}
+                      {session.time}{session.endTime && session.type === "workshops" ? ` – ${session.endTime}` : ""}
                     </div>
                   </div>
 
