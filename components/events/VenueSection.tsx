@@ -11,6 +11,8 @@ interface VenueSectionProps {
 }
 
 const leelaImages = [
+  { src: "/The Leela Bhartiya City.jpg", alt: "The Leela Bhartiya City exterior" },
+  { src: "/Leela Bharatiya City Image.jpg", alt: "The Leela Bhartiya City grounds" },
   { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Falak_1920x950-Et7Dn5Fr1hLfdCGK3z7R6Q7GsrTtKu.webp", alt: "Falak rooftop bar and restaurant at The Leela Bhartiya City" },
   { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/UXI23-Stay-Leela-Bhartiya-City-Library-scaled-XfOxzfLy6rBCbpXaty2P9LHZaZ4dpC.webp", alt: "The Leela library lounge with chandelier" },
   { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/e77b65eeb6514eeeaae4fde89c081217_large%21_%2169b5792c5ab81b513e75f14b1dd61e79-xanlbB9gkQpkolPD4J6E4rXTgrR4tr.webp", alt: "Grand foyer corridor at The Leela Bhartiya City" },
