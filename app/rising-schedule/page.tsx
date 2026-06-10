@@ -24,8 +24,8 @@ const roomColors: Record<string, string> = {
 
 const scheduleData = {
   days: [
-    { id: "day1", label: "Day 1", date: "Sept 26" },
-    { id: "day2", label: "Day 2", date: "Sept 27" },
+    { id: "day1", label: "Day 1", date: "Sept 26", endTime: "5:00 PM" },
+    { id: "day2", label: "Day 2", date: "Sept 27", endTime: "4:00 PM" },
   ],
   day1: [
     {
@@ -87,9 +87,9 @@ const scheduleData = {
       tag: "Panel",
       location: "Auditorium",
       panelists: [
-        { name: "Panelist 1", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
-        { name: "Panelist 2", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
-        { name: "Panelist 3", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
+        { name: "Panelist 1", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
+        { name: "Panelist 2", role: "Head of Design, Innovation Labs", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+        { name: "Panelist 3", role: "Design Lead, Digital Ventures", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
       ],
     },
     {
@@ -100,6 +100,7 @@ const scheduleData = {
     },
     {
       time: "1:45 PM",
+      endTime: "5:00 PM",
       type: "parallel-workshops",
       duration: "90 min",
       workshops: [
@@ -123,20 +124,9 @@ const scheduleData = {
     },
     {
       time: "4:00 PM",
-      type: "parallel-workshops",
-      duration: "60 min",
-      workshops: [
-        { room: "Room 1", title: "Leading Design Teams Through Change (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 2", title: "From Designer to Design Manager (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 3", title: "Building Scalable Design Systems (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 4", title: "Storytelling for Design Leaders (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 5", title: "Research-Driven Decision Making (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 6", title: "Designing with AI in the Loop (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 7", title: "Facilitating High-Impact Workshops (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 8", title: "Communicating Design Value to Stakeholders (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 9", title: "Inclusive and Accessible Design Practices (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Continuation of the morning workshop session." },
-        { room: "Room 10", title: "Measuring and Proving Design Impact (Continued)", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Continuation of the morning workshop session." },
-      ],
+      type: "continuation",
+      title: "Workshops Continue after Coffee Break",
+      description: "Workshops continue in same rooms",
     },
   ],
   day2: [
@@ -184,16 +174,16 @@ const scheduleData = {
       duration: "60 min",
       sessions: [
         { room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", description: "Industry leaders discuss emerging trends in design leadership.", panelists: [
-          { name: "Panelist 1", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
-          { name: "Panelist 2", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+          { name: "Panelist 1", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
+          { name: "Panelist 2", role: "Head of Design, Innovation Labs", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
         ]},
         { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", description: "Exploring design-led transformation in organizations.", panelists: [
-          { name: "Panelist 1", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
-          { name: "Panelist 2", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
+          { name: "Panelist 1", role: "Design Lead, Digital Ventures", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
+          { name: "Panelist 2", role: "Product Design Manager, Tech Innovations", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
         ]},
         { room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", description: "Building high-performing design teams.", panelists: [
-          { name: "Panelist 1", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
-          { name: "Panelist 2", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
+          { name: "Panelist 1", role: "UX Lead, Design Systems", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
+          { name: "Panelist 2", role: "Design Strategy Director, Future Design Co", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
         ]},
       ],
     },
@@ -305,36 +295,44 @@ export default function RisingSchedulePage() {
     <main>
       <Nav forceSolid={true} />
       <div className="bg-[#F5F0E8] w-full pt-24 pb-16 md:pt-32 md:pb-24 min-h-screen">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Header */}
-          <div className="mb-12">
-            <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] mb-4">
-              PREVIEW MODE
-            </p>
-            <h1 className="font-leadership text-4xl md:text-5xl lg:text-6xl text-[#0D0D0D] mb-4">
-              Rising Leaders Forum 2026
-            </h1>
-            <p className="font-sans text-base text-[#0D0D0D]/60">
-              September 26-27, 2026 — Srishti Manipal Institute of Art, Design & Technology, Bengaluru
-            </p>
+        <div className="max-w-7xl mx-auto px-6 md:px-0">
+          {/* Header - aligned to card grid */}
+          <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-2" />
+            <div className="lg:col-span-10">
+              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] mb-4">
+                PREVIEW MODE
+              </p>
+              <h1 className="font-leadership text-4xl md:text-5xl lg:text-6xl text-[#0D0D0D] mb-4">
+                Rising Leaders Forum 2026
+              </h1>
+              <p className="font-sans text-base text-[#0D0D0D]/60">
+                September 26-27, 2026 — Srishti Manipal Institute of Art, Design & Technology, Bengaluru
+              </p>
+            </div>
           </div>
 
-          {/* Day tabs */}
-          <div className="flex gap-4 mb-12">
-            {scheduleData.days.map((day) => (
-              <button
-                key={day.id}
-                onClick={() => setActiveDay(day.id)}
-                className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all ${
-                  activeDay === day.id
-                    ? "bg-[#E85520] text-white"
-                    : "bg-[#0D0D0D]/5 text-[#0D0D0D]/60 hover:bg-[#0D0D0D]/10 hover:text-[#0D0D0D]"
-                }`}
-              >
-                {day.label}
-                <span className="ml-2 text-xs opacity-70">{day.date}</span>
-              </button>
-            ))}
+          {/* Day tabs - aligned to card grid */}
+          <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-2" />
+            <div className="lg:col-span-10">
+              <div className="flex gap-4">
+                {scheduleData.days.map((day) => (
+                  <button
+                    key={day.id}
+                    onClick={() => setActiveDay(day.id)}
+                    className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all border cursor-pointer ${
+                      activeDay === day.id
+                        ? "bg-[#E85520]/10 border-[#E85520] text-[#E85520]"
+                        : "bg-transparent border-[#0D0D0D]/20 text-[#0D0D0D]/60 hover:border-[#0D0D0D]/40 hover:text-[#0D0D0D]"
+                    }`}
+                  >
+                    {day.label}
+                    <span className="ml-2 text-xs opacity-70">{day.date}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Schedule */}
@@ -346,7 +344,7 @@ export default function RisingSchedulePage() {
                   {/* Time column - hidden on mobile */}
                   <div className="hidden lg:block lg:col-span-2">
                     <div className="text-sm font-sans text-[#0D0D0D]/50 sticky top-24">
-                      {session.time}
+                      <p>{session.time}{session.endTime && session.type === "parallel-workshops" ? ` – ${session.endTime}` : ""}</p>
                     </div>
                   </div>
 
@@ -361,14 +359,14 @@ export default function RisingSchedulePage() {
                             {session.tag}
                           </span>
                           <p className="text-xs text-[#0D0D0D]/40">
-                            {session.time}
+                            {session.time}{session.endTime && session.type === "parallel-workshops" ? ` – ${session.endTime}` : ""}
                           </p>
                         </div>
                         <div className="flex items-start gap-4">
                           <img
                             src={session.speaker.image}
                             alt={session.speaker.name}
-                            className="w-16 h-16 rounded-full object-cover shrink-0"
+                            className="w-16 h-16 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
                           />
                           <div className="flex-1">
                             <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">
@@ -385,6 +383,21 @@ export default function RisingSchedulePage() {
                           <span className="hidden lg:inline-block px-3 py-1 bg-[#1D5078] text-white text-xs font-sans font-medium rounded-full">
                             {session.tag}
                           </span>
+                        </div>
+                      </div>
+                    )}
+                    {session.type === "continuation" && (
+                      <div className="bg-[#1A7A6E]/5 border border-[#1A7A6E]/20 rounded-xl p-6 flex items-start gap-4">
+                        <svg className="w-6 h-6 text-[#1A7A6E] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                        <div className="flex-1">
+                          <p className="font-leadership text-lg text-[#0D0D0D]">
+                            {session.title}
+                          </p>
+                          <p className="font-sans text-sm text-[#0D0D0D]/60 mt-1">
+                            {session.description}
+                          </p>
                         </div>
                       </div>
                     )}
@@ -406,7 +419,6 @@ export default function RisingSchedulePage() {
                     >
                       <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center shrink-0">
                         {isLunch ? (
-                          // Food plate icon for lunch/dinner
                           <img
                             src="/icons/lunch.svg"
                             alt="lunch"
@@ -414,7 +426,6 @@ export default function RisingSchedulePage() {
                             style={{ filter: "brightness(0) saturate(100%) invert(57%) sepia(71%) saturate(1241%) hue-rotate(7deg)" }}
                           />
                         ) : isRegistration ? (
-                          // Ticket icon
                           <svg
                             width="20"
                             height="20"
@@ -427,7 +438,6 @@ export default function RisingSchedulePage() {
                             <path d="M9 5v14" />
                           </svg>
                         ) : (
-                          // Default coffee icon
                           <svg
                             width="20"
                             height="20"
@@ -476,7 +486,7 @@ export default function RisingSchedulePage() {
                             {session.time}
                           </p>
                         </div>
-                        <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-start justify-between mb-6">
                           <div>
                             <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">
                               {session.title}
@@ -489,26 +499,34 @@ export default function RisingSchedulePage() {
                             {session.tag}
                           </span>
                         </div>
-                        <div className="flex gap-3 mt-6">
+                        {/* Panelists Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                           {session.panelists.map((panelist, pIndex) => (
-                            <img
-                              key={pIndex}
-                              src={panelist.image}
-                              alt={panelist.name}
-                              className="w-10 h-10 rounded-full object-cover border-2 border-[#0D0D0D]/10"
-                              title={panelist.name}
-                            />
-                          ))}
-                          {session.panelists.length < 5 && (
-                            <div className="w-10 h-10 rounded-full border-2 border-dashed border-[#0D0D0D]/20 flex items-center justify-center">
-                              <span className="text-[#0D0D0D]/30 text-xs">+{5 - session.panelists.length}</span>
+                            <div key={pIndex} className="flex items-start gap-3">
+                              <img
+                                src={panelist.image}
+                                alt={panelist.name}
+                                className="w-12 h-12 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
+                              />
+                              <div className="flex flex-col items-start gap-1 min-w-0">
+                                <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">
+                                  {panelist.name}
+                                </p>
+                                <p className="font-sans text-xs text-[#0D0D0D]/60 leading-tight">
+                                  {panelist.role}
+                                </p>
+                              </div>
                             </div>
-                          )}
+                          ))}
                         </div>
                       </div>
                     )}
                     {session.type === "parallel-workshops" && (
                       <div className="space-y-4">
+                        {/* Mobile time display */}
+                        <p className="text-xs text-[#0D0D0D]/40 lg:hidden">
+                          {session.time}{session.endTime ? ` – ${session.endTime}` : ""}
+                        </p>
                         {/* Horizontally scrollable on mobile, grid on desktop */}
                         <div className="flex gap-4 overflow-x-auto pb-4 -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-5 lg:overflow-visible scrollbar-hide">
                           {session.workshops.map((workshop, wIndex) => (
@@ -718,7 +736,7 @@ export default function RisingSchedulePage() {
                               <img
                                 src={workshop.speaker.image}
                                 alt={workshop.speaker.name}
-                                className="w-10 h-10 rounded-full object-cover shrink-0"
+                                className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
                               />
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
@@ -778,7 +796,7 @@ export default function RisingSchedulePage() {
                                 <img
                                   src={sess.speaker.image}
                                   alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0"
+                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
                                 />
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
@@ -824,7 +842,7 @@ export default function RisingSchedulePage() {
                                 <img
                                   src={sess.speaker.image}
                                   alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0"
+                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
                                 />
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
@@ -885,12 +903,16 @@ export default function RisingSchedulePage() {
 
             {/* Day ends card */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-              <div className="hidden lg:block lg:col-span-2" />
+              <div className="hidden lg:block lg:col-span-2">
+                <div className="text-sm font-sans text-[#0D0D0D]/50 sticky top-24">
+                  {scheduleData.days[activeDayIndex]?.endTime}
+                </div>
+              </div>
               <div className="lg:col-span-10">
                 <div className="border border-dashed border-[#0D0D0D]/15 rounded-xl py-5 px-6 flex items-center justify-center gap-3 text-center">
                   <span className="h-px w-8 bg-[#0D0D0D]/15" />
                   <p className="font-sans text-sm text-[#0D0D0D]/50">
-                    {activeDayLabel} ends here
+                    End of {activeDayLabel}
                   </p>
                   <span className="h-px w-8 bg-[#0D0D0D]/15" />
                 </div>

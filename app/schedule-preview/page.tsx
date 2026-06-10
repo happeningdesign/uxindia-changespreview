@@ -6,9 +6,9 @@ import Footer from "@/components/global/footer/Footer";
 
 const scheduleData = {
   days: [
-    { id: "day1", label: "Pre-Conference Workshops", date: "Sept 23" },
-    { id: "day2", label: "Conference Day 1", date: "Sept 24" },
-    { id: "day3", label: "Conference Day 2", date: "Sept 25" },
+    { id: "day1", label: "Pre-Conference Workshops", date: "Sept 23", endTime: "5:00 PM" },
+    { id: "day2", label: "Conference Day 1", date: "Sept 24", endTime: "5:00 PM" },
+    { id: "day3", label: "Conference Day 2", date: "Sept 25", endTime: "4:00 PM" },
   ],
   day1: [
     {
@@ -18,6 +18,7 @@ const scheduleData = {
     },
     {
       time: "9:00 AM",
+      endTime: "12:15 PM",
       type: "workshops",
       workshops: [
         {
@@ -59,39 +60,9 @@ const scheduleData = {
     },
     {
       time: "11:15 AM",
-      type: "workshops",
-      workshops: [
-        {
-          room: "Room 1",
-          title: "Design Foundations & Principles (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-          },
-          description: "Learn foundational design principles and practices.",
-        },
-        {
-          room: "Room 2",
-          title: "Advanced Design Methodologies (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-          },
-          description: "Explore advanced design methodologies.",
-        },
-        {
-          room: "Room 3",
-          title: "Emerging Design Trends & Tools (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
-          },
-          description: "Master emerging design trends and tools.",
-        },
-      ],
+      type: "continuation",
+      title: "Workshops Continue after Coffee Break",
+      description: "Workshops continue in same rooms",
     },
     {
       time: "12:15 PM",
@@ -100,6 +71,7 @@ const scheduleData = {
     },
     {
       time: "1:45 PM",
+      endTime: "5:00 PM",
       type: "workshops",
       workshops: [
         {
@@ -141,39 +113,9 @@ const scheduleData = {
     },
     {
       time: "4:00 PM",
-      type: "workshops",
-      workshops: [
-        {
-          room: "Room 1",
-          title: "Practical Design Solutions (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
-          },
-          description: "Develop practical design solutions.",
-        },
-        {
-          room: "Room 2",
-          title: "Innovating with Design Thinking (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
-          },
-          description: "Innovate with design thinking.",
-        },
-        {
-          room: "Room 3",
-          title: "From Ideas to Impactful Design (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
-          },
-          description: "Transform ideas into impactful designs.",
-        },
-      ],
+      type: "continuation",
+      title: "Workshops Continue after Coffee Break",
+      description: "Workshops continue in same rooms",
     },
   ],
   day3: [
@@ -595,14 +537,17 @@ const scheduleData = {
       panelists: [
         {
           name: "John Doe",
+          role: "Design Director, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
         },
         {
           name: "John Doe",
+          role: "Creative Lead, Design Thinking Institute",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
         },
         {
           name: "John Doe",
+          role: "Product Head, Digital Innovation Lab",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
         },
       ],
@@ -715,36 +660,44 @@ export default function SchedulePreviewPage() {
     <main>
       <Nav forceSolid={true} />
       <div className="bg-[#0D0D0D] w-full pt-24 pb-16 md:pt-32 md:pb-24 min-h-screen">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Header */}
-          <div className="mb-12">
-            <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] mb-4">
-              PREVIEW MODE
-            </p>
-            <h1 className="font-leadership text-4xl md:text-5xl lg:text-6xl text-white mb-4">
-              Leadership Summit 2026
-            </h1>
-            <p className="font-sans text-base text-white/60">
-              September 23-25, 2026 — Leela Bhartiya City, Bengaluru
-            </p>
+        <div className="max-w-7xl mx-auto px-6 md:px-0">
+          {/* Header - aligned to card grid */}
+          <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-2" />
+            <div className="lg:col-span-10">
+              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] mb-4">
+                PREVIEW MODE
+              </p>
+              <h1 className="font-leadership text-4xl md:text-5xl lg:text-6xl text-white mb-4">
+                Leadership Summit 2026
+              </h1>
+              <p className="font-sans text-base text-white/60">
+                September 23-25, 2026 — Leela Bhartiya City, Bengaluru
+              </p>
+            </div>
           </div>
 
-          {/* Day tabs */}
-          <div className="flex gap-4 mb-12">
-            {scheduleData.days.map((day) => (
-              <button
-                key={day.id}
-                onClick={() => setActiveDay(day.id)}
-                className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all cursor-pointer ${
-                  activeDay === day.id
-                    ? "bg-[#E85520] text-white"
-                    : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
-                }`}
-              >
-                {day.label}
-                <span className="ml-2 text-xs opacity-70">{day.date}</span>
-              </button>
-            ))}
+          {/* Day tabs - aligned to card grid */}
+          <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-2" />
+            <div className="lg:col-span-10">
+              <div className="flex gap-4">
+                {scheduleData.days.map((day) => (
+                  <button
+                    key={day.id}
+                    onClick={() => setActiveDay(day.id)}
+                    className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all cursor-pointer border ${
+                      activeDay === day.id
+                        ? "bg-[#E85520]/10 border-[#E85520] text-[#E85520]"
+                        : "bg-transparent border-white/20 text-white/60 hover:border-white/40 hover:text-white"
+                    }`}
+                  >
+                    {day.label}
+                    <span className="ml-2 text-xs opacity-70">{day.date}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Schedule */}
@@ -756,7 +709,7 @@ export default function SchedulePreviewPage() {
                   {/* Time column - hidden on mobile */}
                   <div className="hidden lg:block lg:col-span-2">
                     <div className="text-sm font-sans text-white/50 sticky top-24">
-                      {session.time}
+                      {session.time}{session.endTime && session.type === "workshops" ? ` – ${session.endTime}` : ""}
                     </div>
                   </div>
 
@@ -771,14 +724,14 @@ export default function SchedulePreviewPage() {
                             {session.tag}
                           </span>
                           <p className="text-xs text-white/40">
-                            {session.time}
+                            {session.time}{session.endTime && session.type === "workshops" ? ` – ${session.endTime}` : ""}
                           </p>
                         </div>
                         <div className="flex items-start gap-4">
                           <img
                             src={session.speaker.image}
                             alt={session.speaker.name}
-                            className="w-16 h-16 rounded-full object-cover shrink-0"
+                            className="w-16 h-16 rounded-full object-cover shrink-0 border border-white/15"
                           />
                           <div className="flex-1">
                             <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">
@@ -795,6 +748,21 @@ export default function SchedulePreviewPage() {
                           <span className="hidden lg:inline-block px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-xs font-sans font-medium rounded-full">
                             {session.tag}
                           </span>
+                        </div>
+                      </div>
+                    )}
+                    {session.type === "continuation" && (
+                      <div className="bg-white/5 border border-white/10 rounded-xl p-6 flex items-start gap-4">
+                        <svg className="w-6 h-6 text-[#E85520] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                        <div className="flex-1">
+                          <p className="font-leadership text-lg text-white">
+                            {session.title}
+                          </p>
+                          <p className="font-sans text-sm text-white/60 mt-1">
+                            {session.description}
+                          </p>
                         </div>
                       </div>
                     )}
@@ -850,7 +818,6 @@ export default function SchedulePreviewPage() {
                     >
                       <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center shrink-0">
                         {isLunch || isDinner ? (
-                          // Food plate icon for lunch/dinner
                           <img
                             src="/icons/lunch.svg"
                             alt="lunch"
@@ -858,7 +825,6 @@ export default function SchedulePreviewPage() {
                             style={{ filter: "brightness(0) saturate(100%) invert(57%) sepia(71%) saturate(1241%) hue-rotate(7deg)" }}
                           />
                         ) : isRegistration ? (
-                          // Ticket icon
                           <svg
                             width="20"
                             height="20"
@@ -871,7 +837,6 @@ export default function SchedulePreviewPage() {
                             <path d="M9 5v14" />
                           </svg>
                         ) : (
-                          // Default coffee icon
                           <svg
                             width="20"
                             height="20"
@@ -915,7 +880,7 @@ export default function SchedulePreviewPage() {
                             {session.time}
                           </p>
                         </div>
-                        <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-start justify-between mb-6">
                           <div>
                             <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">
                               {session.title}
@@ -928,21 +893,25 @@ export default function SchedulePreviewPage() {
                             {session.tag}
                           </span>
                         </div>
-                        <div className="flex gap-3 mt-6">
+                        {/* Panelists Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                           {session.panelists.map((panelist, pIndex) => (
-                            <img
-                              key={pIndex}
-                              src={panelist.image}
-                              alt={panelist.name}
-                              className="w-10 h-10 rounded-full object-cover border-2 border-white/10"
-                              title={panelist.name}
-                            />
-                          ))}
-                          {session.panelists.length < 5 && (
-                            <div className="w-10 h-10 rounded-full border-2 border-dashed border-white/20 flex items-center justify-center">
-                              <span className="text-white/30 text-xs">+{5 - session.panelists.length}</span>
+                            <div key={pIndex} className="flex items-start gap-3">
+                              <img
+                                src={panelist.image}
+                                alt={panelist.name}
+                                className="w-12 h-12 rounded-full object-cover shrink-0 border border-white/15"
+                              />
+                              <div className="flex flex-col items-start gap-1 min-w-0">
+                                <p className="font-sans text-sm text-white font-medium leading-tight">
+                                  {panelist.name}
+                                </p>
+                                <p className="font-sans text-xs text-white/60 leading-tight">
+                                  {panelist.role}
+                                </p>
+                              </div>
                             </div>
-                          )}
+                          ))}
                         </div>
                       </div>
                     )}
@@ -968,7 +937,7 @@ export default function SchedulePreviewPage() {
                               <img
                                 src={workshop.speaker.image}
                                 alt={workshop.speaker.name}
-                                className="w-10 h-10 rounded-full object-cover shrink-0"
+                                className="w-10 h-10 rounded-full object-cover shrink-0 border border-white/15"
                               />
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-sm text-white/80 font-medium">
@@ -1005,21 +974,24 @@ export default function SchedulePreviewPage() {
                             {sess.panelists ? (
                               // Multiple panelists
                               <>
-                                <div className="flex gap-2 mb-4 flex-wrap">
+                                <div className="grid grid-cols-2 gap-4 mb-4">
                                   {sess.panelists.map((panelist, pIndex) => (
-                                    <img
-                                      key={pIndex}
-                                      src={panelist.image}
-                                      alt={panelist.name}
-                                      className="w-10 h-10 rounded-full object-cover border-2 border-white/10"
-                                      title={`${panelist.name} - ${panelist.role}`}
-                                    />
+                                    <div key={pIndex} className="flex items-start gap-2">
+                                      <img
+                                        src={panelist.image}
+                                        alt={panelist.name}
+                                        className="w-8 h-8 rounded-full object-cover shrink-0 border border-white/15"
+                                      />
+                                      <div className="flex flex-col items-start gap-0.5 min-w-0">
+                                        <p className="font-sans text-xs text-white font-medium leading-tight truncate">
+                                          {panelist.name}
+                                        </p>
+                                        <p className="font-sans text-xs text-white/60 leading-tight">
+                                          {panelist.role}
+                                        </p>
+                                      </div>
+                                    </div>
                                   ))}
-                                </div>
-                                <div className="mb-4">
-                                  <p className="font-sans text-xs text-white/60">
-                                    {sess.panelists.length} VC Investors
-                                  </p>
                                 </div>
                               </>
                             ) : (
@@ -1028,7 +1000,7 @@ export default function SchedulePreviewPage() {
                                 <img
                                   src={sess.speaker.image}
                                   alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0"
+                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-white/15"
                                 />
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-white/80 font-medium">
@@ -1074,7 +1046,7 @@ export default function SchedulePreviewPage() {
                                 <img
                                   src={sess.speaker.image}
                                   alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0"
+                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-white/15"
                                 />
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-white/80 font-medium">
@@ -1115,7 +1087,7 @@ export default function SchedulePreviewPage() {
                                   <img
                                     src={panelist.image}
                                     alt={panelist.name}
-                                    className="w-8 h-8 rounded-full object-cover border border-white/10"
+                                    className="w-8 h-8 rounded-full object-cover border border-white/15"
                                   />
                                   <div>
                                     <p className="font-sans text-sm text-white/80">{panelist.name}</p>
@@ -1133,19 +1105,25 @@ export default function SchedulePreviewPage() {
               );
             })}
 
-            {/* Day ends card */}
+            {/* Day ends card - skip for Conference Day 1 as it has Networking Dinner */}
+            {activeDay !== "day2" && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-              <div className="hidden lg:block lg:col-span-2" />
+              <div className="hidden lg:block lg:col-span-2">
+                <div className="text-sm font-sans text-white/50 sticky top-24">
+                  {scheduleData.days[activeDayIndex]?.endTime}
+                </div>
+              </div>
               <div className="lg:col-span-10">
                 <div className="border border-dashed border-white/15 rounded-xl py-5 px-6 flex items-center justify-center gap-3 text-center">
                   <span className="h-px w-8 bg-white/15" />
                   <p className="font-sans text-sm text-white/50">
-                    {activeDayLabel} ends here
+                    End of {activeDayLabel}
                   </p>
                   <span className="h-px w-8 bg-white/15" />
                 </div>
               </div>
             </div>
+            )}
           </div>
 
           {/* Bottom day navigation */}
