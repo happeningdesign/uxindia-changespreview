@@ -6,7 +6,7 @@ interface VenueSectionProps {
   variant?: "dark" | "light";
   venueName?: string;
   mapsUrl?: string;
-  embedQuery?: string;
+  embedCoords?: string;
 }
 
 const venueImages = [
@@ -17,13 +17,13 @@ const venueImages = [
 ];
 
 const DEFAULT_MAPS_URL = "https://maps.app.goo.gl/GefGLLqYJ4ECABMcA";
-const DEFAULT_EMBED_QUERY = "The+Leela+Bhartiya+City+Bengaluru";
+const DEFAULT_EMBED_COORDS = "13.0846294,77.643066";
 
 export default function VenueSection({
   variant = "dark",
   venueName = "The Leela Bhartiya City",
   mapsUrl = DEFAULT_MAPS_URL,
-  embedQuery = DEFAULT_EMBED_QUERY,
+  embedCoords = DEFAULT_EMBED_COORDS,
 }: VenueSectionProps) {
   const isLight = variant === "light";
   const [activeIndex, setActiveIndex] = useState(0);
@@ -110,7 +110,7 @@ export default function VenueSection({
                     aria-label="Open venue in Google Maps"
                   >
                     <iframe
-                      src={`https://maps.google.com/maps?q=${embedQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                      src={`https://maps.google.com/maps?q=${embedCoords}&z=16&output=embed`}
                       width="100%"
                       height="100%"
                       style={{ border: 0, pointerEvents: "none" }}
