@@ -90,7 +90,10 @@ export default function VenueSection({ variant = "dark", venueName = "The Leela 
               <div className="space-y-6">
                 {/* By Air */}
                 <div>
-                  <h4 className="font-leadership font-semibold text-base mb-2 text-white">
+                  <h4 className="font-leadership font-semibold text-base mb-2 text-white flex items-center gap-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-[#E85520] shrink-0">
+                      <path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                    </svg>
                     By Air
                   </h4>
                   <p className={`font-sans text-sm leading-relaxed ${isLight ? "text-white/70" : "text-white/60"}`}>
@@ -100,7 +103,13 @@ export default function VenueSection({ variant = "dark", venueName = "The Leela 
 
                 {/* By Train */}
                 <div>
-                  <h4 className="font-leadership font-semibold text-base mb-2 text-white">
+                  <h4 className="font-leadership font-semibold text-base mb-2 text-white flex items-center gap-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-[#E85520] shrink-0">
+                      <rect x="4" y="3" width="16" height="13" rx="2"/>
+                      <path d="M4 11h16M12 3v8M8 19l-2 2M16 19l2 2M8 19h8"/>
+                      <circle cx="8.5" cy="14.5" r="1" fill="currentColor" stroke="none"/>
+                      <circle cx="15.5" cy="14.5" r="1" fill="currentColor" stroke="none"/>
+                    </svg>
                     By Train
                   </h4>
                   <p className={`font-sans text-sm leading-relaxed ${isLight ? "text-white/70" : "text-white/60"}`}>
@@ -110,7 +119,12 @@ export default function VenueSection({ variant = "dark", venueName = "The Leela 
 
                 {/* By Bus */}
                 <div>
-                  <h4 className="font-leadership font-semibold text-base mb-2 text-white">
+                  <h4 className="font-leadership font-semibold text-base mb-2 text-white flex items-center gap-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-[#E85520] shrink-0">
+                      <path d="M8 6v6M16 6v6M2 12h19.6M18 18h2M4 18H2M18 6H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/>
+                      <circle cx="7" cy="18" r="1" fill="currentColor" stroke="none"/>
+                      <circle cx="17" cy="18" r="1" fill="currentColor" stroke="none"/>
+                    </svg>
                     By Bus
                   </h4>
                   <p className={`font-sans text-sm leading-relaxed ${isLight ? "text-white/70" : "text-white/60"}`}>
