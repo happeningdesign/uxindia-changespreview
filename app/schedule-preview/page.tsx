@@ -60,40 +60,9 @@ const scheduleData = {
     },
     {
       time: "11:15 AM",
-      endTime: "12:15 PM",
-      type: "workshops",
-      workshops: [
-        {
-          room: "Room 1",
-          title: "Design Foundations & Principles (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-          },
-          description: "Learn foundational design principles and practices.",
-        },
-        {
-          room: "Room 2",
-          title: "Advanced Design Methodologies (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-          },
-          description: "Explore advanced design methodologies.",
-        },
-        {
-          room: "Room 3",
-          title: "Emerging Design Trends & Tools (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
-          },
-          description: "Master emerging design trends and tools.",
-        },
-      ],
+      type: "continuation",
+      title: "Workshops Continue after Coffee Break",
+      description: "Workshops continue in same rooms",
     },
     {
       time: "12:15 PM",
@@ -144,40 +113,9 @@ const scheduleData = {
     },
     {
       time: "4:00 PM",
-      endTime: "5:00 PM",
-      type: "workshops",
-      workshops: [
-        {
-          room: "Room 1",
-          title: "Practical Design Solutions (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
-          },
-          description: "Develop practical design solutions.",
-        },
-        {
-          room: "Room 2",
-          title: "Innovating with Design Thinking (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
-          },
-          description: "Innovate with design thinking.",
-        },
-        {
-          room: "Room 3",
-          title: "From Ideas to Impactful Design (Continued)",
-          speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
-          },
-          description: "Transform ideas into impactful designs.",
-        },
-      ],
+      type: "continuation",
+      title: "Workshops Continue after Coffee Break",
+      description: "Workshops continue in same rooms",
     },
   ],
   day3: [
@@ -810,6 +748,21 @@ export default function SchedulePreviewPage() {
                           <span className="hidden lg:inline-block px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-xs font-sans font-medium rounded-full">
                             {session.tag}
                           </span>
+                        </div>
+                      </div>
+                    )}
+                    {session.type === "continuation" && (
+                      <div className="bg-white/5 border border-white/10 rounded-xl p-6 flex items-start gap-4">
+                        <svg className="w-6 h-6 text-[#E85520] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                        <div className="flex-1">
+                          <p className="font-leadership text-lg text-white">
+                            {session.title}
+                          </p>
+                          <p className="font-sans text-sm text-white/60 mt-1">
+                            {session.description}
+                          </p>
                         </div>
                       </div>
                     )}
