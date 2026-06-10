@@ -7,13 +7,13 @@ interface VenueSectionProps {
   venueName?: string;
   mapsUrl?: string;
   embedCoords?: string;
+  images?: { src: string; alt: string }[];
 }
 
-const venueImages = [
-  { src: "/The Leela Bhartiya City.jpg", alt: "The Leela Bhartiya City exterior" },
-  { src: "/Leela Bharatiya City Image.jpg", alt: "The Leela Bhartiya City grounds" },
-  { src: "/uxindia-stage.jpg", alt: "UX India main stage" },
-  { src: "/uxindia-audience.jpg", alt: "UX India audience" },
+const leelaImages = [
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Falak_1920x950-Et7Dn5Fr1hLfdCGK3z7R6Q7GsrTtKu.webp", alt: "Falak rooftop bar and restaurant at The Leela Bhartiya City" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/UXI23-Stay-Leela-Bhartiya-City-Library-scaled-XfOxzfLy6rBCbpXaty2P9LHZaZ4dpC.webp", alt: "The Leela library lounge with chandelier" },
+  { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/e77b65eeb6514eeeaae4fde89c081217_large%21_%2169b5792c5ab81b513e75f14b1dd61e79-xanlbB9gkQpkolPD4J6E4rXTgrR4tr.webp", alt: "Grand foyer corridor at The Leela Bhartiya City" },
 ];
 
 const DEFAULT_MAPS_URL = "https://maps.app.goo.gl/GefGLLqYJ4ECABMcA";
@@ -24,6 +24,7 @@ export default function VenueSection({
   venueName = "The Leela Bhartiya City",
   mapsUrl = DEFAULT_MAPS_URL,
   embedCoords = DEFAULT_EMBED_COORDS,
+  images = leelaImages,
 }: VenueSectionProps) {
   const isLight = variant === "light";
   const [activeIndex, setActiveIndex] = useState(0);
@@ -31,8 +32,8 @@ export default function VenueSection({
 
   useEffect(() => {
     if (mediaTab !== "photos") return;
-    const timer = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % venueImages.length);
+                    const timer = setInterval(() => {
+                      setActiveIndex((prev) => (prev + 1) % images.length);
     }, 4000);
     return () => clearInterval(timer);
   }, [mediaTab]);
@@ -73,10 +74,10 @@ export default function VenueSection({
                 {/* Photos */}
                 {mediaTab === "photos" && (
                   <>
-                    {venueImages.map((image, index) => (
+                    {images.map((image, index) => (
                       <img
                         key={image.src}
-                        src={image.src || "/placeholder.svg"}
+                        src={image.src}
                         alt={image.alt}
                         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
                           index === activeIndex ? "opacity-100" : "opacity-0"
@@ -84,7 +85,7 @@ export default function VenueSection({
                       />
                     ))}
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
-                      {venueImages.map((image, index) => (
+                      {images.map((image, index) => (
                         <button
                           key={image.src}
                           onClick={() => setActiveIndex(index)}
