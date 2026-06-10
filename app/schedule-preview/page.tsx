@@ -6,9 +6,9 @@ import Footer from "@/components/global/footer/Footer";
 
 const scheduleData = {
   days: [
-    { id: "day1", label: "Pre-Conference Workshops", date: "Sept 23" },
-    { id: "day2", label: "Conference Day 1", date: "Sept 24" },
-    { id: "day3", label: "Conference Day 2", date: "Sept 25" },
+    { id: "day1", label: "Pre-Conference Workshops", date: "Sept 23", endTime: "5:00 PM" },
+    { id: "day2", label: "Conference Day 1", date: "Sept 24", endTime: "5:00 PM" },
+    { id: "day3", label: "Conference Day 2", date: "Sept 25", endTime: "4:00 PM" },
   ],
   day1: [
     {
@@ -1148,7 +1148,7 @@ export default function SchedulePreviewPage() {
                 <div className="border border-dashed border-white/15 rounded-xl py-5 px-6 flex items-center justify-center gap-3 text-center">
                   <span className="h-px w-8 bg-white/15" />
                   <p className="font-sans text-sm text-white/50">
-                    {activeDayLabel} ends here
+                    End of {activeDayLabel} • {scheduleData.days[activeDayIndex]?.endTime}
                   </p>
                   <span className="h-px w-8 bg-white/15" />
                 </div>

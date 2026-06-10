@@ -24,8 +24,8 @@ const roomColors: Record<string, string> = {
 
 const scheduleData = {
   days: [
-    { id: "day1", label: "Day 1", date: "Sept 26" },
-    { id: "day2", label: "Day 2", date: "Sept 27" },
+    { id: "day1", label: "Day 1", date: "Sept 26", endTime: "5:00 PM" },
+    { id: "day2", label: "Day 2", date: "Sept 27", endTime: "4:00 PM" },
   ],
   day1: [
     {
@@ -898,7 +898,7 @@ export default function RisingSchedulePage() {
                 <div className="border border-dashed border-[#0D0D0D]/15 rounded-xl py-5 px-6 flex items-center justify-center gap-3 text-center">
                   <span className="h-px w-8 bg-[#0D0D0D]/15" />
                   <p className="font-sans text-sm text-[#0D0D0D]/50">
-                    {activeDayLabel} ends here
+                    End of {activeDayLabel} • {scheduleData.days[activeDayIndex]?.endTime}
                   </p>
                   <span className="h-px w-8 bg-[#0D0D0D]/15" />
                 </div>
