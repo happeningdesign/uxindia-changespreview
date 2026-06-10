@@ -715,18 +715,44 @@ export default function SchedulePreviewPage() {
     <main>
       <Nav forceSolid={true} />
       <div className="bg-[#0D0D0D] w-full pt-24 pb-16 md:pt-32 md:pb-24 min-h-screen">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Header */}
-          <div className="mb-12">
-            <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] mb-4">
-              PREVIEW MODE
-            </p>
-            <h1 className="font-leadership text-4xl md:text-5xl lg:text-6xl text-white mb-4">
-              Leadership Summit 2026
-            </h1>
-            <p className="font-sans text-base text-white/60">
-              September 23-25, 2026 — Leela Bhartiya City, Bengaluru
-            </p>
+        <div className="max-w-7xl mx-auto px-6 md:px-0">
+          {/* Header - aligned to card grid */}
+          <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-2" />
+            <div className="lg:col-span-10">
+              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] mb-4">
+                PREVIEW MODE
+              </p>
+              <h1 className="font-leadership text-4xl md:text-5xl lg:text-6xl text-white mb-4">
+                Leadership Summit 2026
+              </h1>
+              <p className="font-sans text-base text-white/60">
+                September 23-25, 2026 — Leela Bhartiya City, Bengaluru
+              </p>
+            </div>
+          </div>
+
+          {/* Day tabs - aligned to card grid */}
+          <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-2" />
+            <div className="lg:col-span-10">
+              <div className="flex gap-4">
+                {scheduleData.days.map((day) => (
+                  <button
+                    key={day.id}
+                    onClick={() => setActiveDay(day.id)}
+                    className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all cursor-pointer border ${
+                      activeDay === day.id
+                        ? "bg-[#E85520]/10 border-[#E85520] text-[#E85520]"
+                        : "bg-transparent border-white/20 text-white/60 hover:border-white/40 hover:text-white"
+                    }`}
+                  >
+                    {day.label}
+                    <span className="ml-2 text-xs opacity-70">{day.date}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Day tabs */}

@@ -305,36 +305,44 @@ export default function RisingSchedulePage() {
     <main>
       <Nav forceSolid={true} />
       <div className="bg-[#F5F0E8] w-full pt-24 pb-16 md:pt-32 md:pb-24 min-h-screen">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Header */}
-          <div className="mb-12">
-            <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] mb-4">
-              PREVIEW MODE
-            </p>
-            <h1 className="font-leadership text-4xl md:text-5xl lg:text-6xl text-[#0D0D0D] mb-4">
-              Rising Leaders Forum 2026
-            </h1>
-            <p className="font-sans text-base text-[#0D0D0D]/60">
-              September 26-27, 2026 — Srishti Manipal Institute of Art, Design & Technology, Bengaluru
-            </p>
+        <div className="max-w-7xl mx-auto px-6 md:px-0">
+          {/* Header - aligned to card grid */}
+          <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-2" />
+            <div className="lg:col-span-10">
+              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] mb-4">
+                PREVIEW MODE
+              </p>
+              <h1 className="font-leadership text-4xl md:text-5xl lg:text-6xl text-[#0D0D0D] mb-4">
+                Rising Leaders Forum 2026
+              </h1>
+              <p className="font-sans text-base text-[#0D0D0D]/60">
+                September 26-27, 2026 — Srishti Manipal Institute of Art, Design & Technology, Bengaluru
+              </p>
+            </div>
           </div>
 
-          {/* Day tabs */}
-          <div className="flex gap-4 mb-12">
-            {scheduleData.days.map((day) => (
-              <button
-                key={day.id}
-                onClick={() => setActiveDay(day.id)}
-                className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all ${
-                  activeDay === day.id
-                    ? "bg-[#E85520] text-white"
-                    : "bg-[#0D0D0D]/5 text-[#0D0D0D]/60 hover:bg-[#0D0D0D]/10 hover:text-[#0D0D0D]"
-                }`}
-              >
-                {day.label}
-                <span className="ml-2 text-xs opacity-70">{day.date}</span>
-              </button>
-            ))}
+          {/* Day tabs - aligned to card grid */}
+          <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-2" />
+            <div className="lg:col-span-10">
+              <div className="flex gap-4">
+                {scheduleData.days.map((day) => (
+                  <button
+                    key={day.id}
+                    onClick={() => setActiveDay(day.id)}
+                    className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all border cursor-pointer ${
+                      activeDay === day.id
+                        ? "bg-[#E85520]/10 border-[#E85520] text-[#E85520]"
+                        : "bg-transparent border-[#0D0D0D]/20 text-[#0D0D0D]/60 hover:border-[#0D0D0D]/40 hover:text-[#0D0D0D]"
+                    }`}
+                  >
+                    {day.label}
+                    <span className="ml-2 text-xs opacity-70">{day.date}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Schedule */}
