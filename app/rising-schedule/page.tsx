@@ -500,20 +500,20 @@ export default function RisingSchedulePage() {
                         {/* Panelists Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                           {session.panelists.map((panelist, pIndex) => (
-                            <div key={pIndex} className="flex flex-col items-start gap-3">
-                              <div className="flex items-center gap-3 w-full">
-                                <img
-                                  src={panelist.image}
-                                  alt={panelist.name}
-                                  className="w-12 h-12 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
-                                />
+                            <div key={pIndex} className="flex items-start gap-3">
+                              <img
+                                src={panelist.image}
+                                alt={panelist.name}
+                                className="w-12 h-12 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
+                              />
+                              <div className="flex flex-col items-start gap-1 min-w-0">
                                 <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">
                                   {panelist.name}
                                 </p>
+                                <p className="font-sans text-xs text-[#0D0D0D]/60 leading-tight">
+                                  {panelist.role}
+                                </p>
                               </div>
-                              <p className="font-sans text-xs text-[#0D0D0D]/60">
-                                {panelist.role}
-                              </p>
                             </div>
                           ))}
                         </div>

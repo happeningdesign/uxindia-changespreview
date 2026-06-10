@@ -942,20 +942,20 @@ export default function SchedulePreviewPage() {
                         {/* Panelists Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                           {session.panelists.map((panelist, pIndex) => (
-                            <div key={pIndex} className="flex flex-col items-start gap-3">
-                              <div className="flex items-center gap-3 w-full">
-                                <img
-                                  src={panelist.image}
-                                  alt={panelist.name}
-                                  className="w-12 h-12 rounded-full object-cover shrink-0 border border-white/15"
-                                />
+                            <div key={pIndex} className="flex items-start gap-3">
+                              <img
+                                src={panelist.image}
+                                alt={panelist.name}
+                                className="w-12 h-12 rounded-full object-cover shrink-0 border border-white/15"
+                              />
+                              <div className="flex flex-col items-start gap-1 min-w-0">
                                 <p className="font-sans text-sm text-white font-medium leading-tight">
                                   {panelist.name}
                                 </p>
+                                <p className="font-sans text-xs text-white/60 leading-tight">
+                                  {panelist.role}
+                                </p>
                               </div>
-                              <p className="font-sans text-xs text-white/60">
-                                {panelist.role}
-                              </p>
                             </div>
                           ))}
                         </div>
@@ -1022,20 +1022,20 @@ export default function SchedulePreviewPage() {
                               <>
                                 <div className="grid grid-cols-2 gap-4 mb-4">
                                   {sess.panelists.map((panelist, pIndex) => (
-                                    <div key={pIndex} className="flex flex-col items-start gap-2">
-                                      <div className="flex items-center gap-2 w-full">
-                                        <img
-                                          src={panelist.image}
-                                          alt={panelist.name}
-                                          className="w-8 h-8 rounded-full object-cover shrink-0 border border-white/15"
-                                        />
+                                    <div key={pIndex} className="flex items-start gap-2">
+                                      <img
+                                        src={panelist.image}
+                                        alt={panelist.name}
+                                        className="w-8 h-8 rounded-full object-cover shrink-0 border border-white/15"
+                                      />
+                                      <div className="flex flex-col items-start gap-0.5 min-w-0">
                                         <p className="font-sans text-xs text-white font-medium leading-tight truncate">
                                           {panelist.name}
                                         </p>
+                                        <p className="font-sans text-xs text-white/60 leading-tight">
+                                          {panelist.role}
+                                        </p>
                                       </div>
-                                      <p className="font-sans text-xs text-white/60 ml-10">
-                                        {panelist.role}
-                                      </p>
                                     </div>
                                   ))}
                                 </div>
