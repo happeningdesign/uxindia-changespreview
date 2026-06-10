@@ -102,7 +102,7 @@ export default function VenueSection({ variant = "dark", venueName = "The Leela 
                     aria-label="Open venue in Google Maps"
                   >
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.4!2d77.6107!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19b31a2f7a85%3A0x9c9f2f7a1e3b6c0!2sThe%20Leela%20Bhartiya%20City%20Bengaluru!5e0!3m2!1sen!2sin!4v1"
+                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=The+Leela+Bhartiya+City+Bengaluru&zoom=15"
                       width="100%"
                       height="100%"
                       style={{ border: 0, pointerEvents: "none" }}
