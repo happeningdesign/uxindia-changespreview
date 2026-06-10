@@ -755,24 +755,6 @@ export default function SchedulePreviewPage() {
             </div>
           </div>
 
-          {/* Day tabs */}
-          <div className="flex gap-4 mb-12">
-            {scheduleData.days.map((day) => (
-              <button
-                key={day.id}
-                onClick={() => setActiveDay(day.id)}
-                className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all cursor-pointer ${
-                  activeDay === day.id
-                    ? "bg-[#E85520] text-white"
-                    : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
-                }`}
-              >
-                {day.label}
-                <span className="ml-2 text-xs opacity-70">{day.date}</span>
-              </button>
-            ))}
-          </div>
-
           {/* Schedule */}
           <div className="space-y-6">
             {currentSessions.map((session, index) => {
