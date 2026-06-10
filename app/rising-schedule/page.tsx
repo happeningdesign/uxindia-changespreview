@@ -376,7 +376,7 @@ export default function RisingSchedulePage() {
                           <img
                             src={session.speaker.image}
                             alt={session.speaker.name}
-                            className="w-16 h-16 rounded-full object-cover shrink-0"
+                            className="w-16 h-16 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
                           />
                           <div className="flex-1">
                             <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">
@@ -726,7 +726,7 @@ export default function RisingSchedulePage() {
                               <img
                                 src={workshop.speaker.image}
                                 alt={workshop.speaker.name}
-                                className="w-10 h-10 rounded-full object-cover shrink-0"
+                                className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
                               />
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
@@ -786,7 +786,7 @@ export default function RisingSchedulePage() {
                                 <img
                                   src={sess.speaker.image}
                                   alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0"
+                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
                                 />
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
@@ -832,7 +832,7 @@ export default function RisingSchedulePage() {
                                 <img
                                   src={sess.speaker.image}
                                   alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0"
+                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
                                 />
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
