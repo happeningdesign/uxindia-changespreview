@@ -18,7 +18,7 @@ const scheduleData = {
     },
     {
       time: "9:00 AM",
-      endTime: "10:30 AM",
+      endTime: "12:15 PM",
       type: "workshops",
       workshops: [
         {
@@ -71,7 +71,7 @@ const scheduleData = {
     },
     {
       time: "1:45 PM",
-      endTime: "3:15 PM",
+      endTime: "5:00 PM",
       type: "workshops",
       workshops: [
         {
