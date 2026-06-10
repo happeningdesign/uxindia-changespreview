@@ -923,7 +923,7 @@ export default function SchedulePreviewPage() {
                             {session.time}
                           </p>
                         </div>
-                        <div className="flex items-start justify-between mb-4">
+                        <div className="flex items-start justify-between mb-6">
                           <div>
                             <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">
                               {session.title}
@@ -936,21 +936,25 @@ export default function SchedulePreviewPage() {
                             {session.tag}
                           </span>
                         </div>
-                        <div className="flex gap-3 mt-6">
+                        {/* Panelists Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                           {session.panelists.map((panelist, pIndex) => (
-                            <img
-                              key={pIndex}
-                              src={panelist.image}
-                              alt={panelist.name}
-                              className="w-10 h-10 rounded-full object-cover border-2 border-white/10"
-                              title={panelist.name}
-                            />
-                          ))}
-                          {session.panelists.length < 5 && (
-                            <div className="w-10 h-10 rounded-full border-2 border-dashed border-white/20 flex items-center justify-center">
-                              <span className="text-white/30 text-xs">+{5 - session.panelists.length}</span>
+                            <div key={pIndex} className="flex flex-col items-start gap-3">
+                              <div className="flex items-center gap-3 w-full">
+                                <img
+                                  src={panelist.image}
+                                  alt={panelist.name}
+                                  className="w-12 h-12 rounded-full object-cover shrink-0 border border-white/15"
+                                />
+                                <p className="font-sans text-sm text-white font-medium leading-tight">
+                                  {panelist.name}
+                                </p>
+                              </div>
+                              <p className="font-sans text-xs text-white/60">
+                                {panelist.role}
+                              </p>
                             </div>
-                          )}
+                          ))}
                         </div>
                       </div>
                     )}
@@ -1013,21 +1017,24 @@ export default function SchedulePreviewPage() {
                             {sess.panelists ? (
                               // Multiple panelists
                               <>
-                                <div className="flex gap-2 mb-4 flex-wrap">
+                                <div className="grid grid-cols-2 gap-4 mb-4">
                                   {sess.panelists.map((panelist, pIndex) => (
-                                    <img
-                                      key={pIndex}
-                                      src={panelist.image}
-                                      alt={panelist.name}
-                                      className="w-10 h-10 rounded-full object-cover border-2 border-white/10"
-                                      title={`${panelist.name} - ${panelist.role}`}
-                                    />
+                                    <div key={pIndex} className="flex flex-col items-start gap-2">
+                                      <div className="flex items-center gap-2 w-full">
+                                        <img
+                                          src={panelist.image}
+                                          alt={panelist.name}
+                                          className="w-8 h-8 rounded-full object-cover shrink-0 border border-white/15"
+                                        />
+                                        <p className="font-sans text-xs text-white font-medium leading-tight truncate">
+                                          {panelist.name}
+                                        </p>
+                                      </div>
+                                      <p className="font-sans text-xs text-white/60 ml-10">
+                                        {panelist.role}
+                                      </p>
+                                    </div>
                                   ))}
-                                </div>
-                                <div className="mb-4">
-                                  <p className="font-sans text-xs text-white/60">
-                                    {sess.panelists.length} VC Investors
-                                  </p>
                                 </div>
                               </>
                             ) : (
@@ -1123,7 +1130,7 @@ export default function SchedulePreviewPage() {
                                   <img
                                     src={panelist.image}
                                     alt={panelist.name}
-                                    className="w-8 h-8 rounded-full object-cover border border-white/10"
+                                    className="w-8 h-8 rounded-full object-cover border border-white/15"
                                   />
                                   <div>
                                     <p className="font-sans text-sm text-white/80">{panelist.name}</p>
