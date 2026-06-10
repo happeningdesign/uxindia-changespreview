@@ -100,6 +100,7 @@ const scheduleData = {
     },
     {
       time: "1:45 PM",
+      endTime: "3:15 PM",
       type: "parallel-workshops",
       duration: "90 min",
       workshops: [
@@ -343,7 +344,10 @@ export default function RisingSchedulePage() {
                   {/* Time column - hidden on mobile */}
                   <div className="hidden lg:block lg:col-span-2">
                     <div className="text-sm font-sans text-[#0D0D0D]/50 sticky top-24">
-                      {session.time}
+                      <p>{session.time}</p>
+                      {session.endTime && session.type === "parallel-workshops" && (
+                        <p className="text-xs mt-0.5">{session.endTime}</p>
+                      )}
                     </div>
                   </div>
 
@@ -386,14 +390,18 @@ export default function RisingSchedulePage() {
                       </div>
                     )}
                     {session.type === "continuation" && (
-                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center py-8">
-                        <div className="hidden lg:block lg:col-span-2" />
+                      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                        <div className="hidden lg:block lg:col-span-2">
+                          <p className="font-sans text-xs text-[#0D0D0D]/40">
+                            {session.time}
+                          </p>
+                        </div>
                         <div className="lg:col-span-10">
-                          <div className="bg-[#1A7A6E]/5 border border-[#1A7A6E]/20 rounded-xl p-6 flex items-center justify-center gap-3 text-center">
-                            <svg className="w-5 h-5 text-[#1A7A6E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="bg-[#1A7A6E]/5 border border-[#1A7A6E]/20 rounded-xl p-6 flex items-start gap-4">
+                            <svg className="w-6 h-6 text-[#1A7A6E] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
-                            <div className="text-left">
+                            <div className="flex-1">
                               <p className="font-leadership text-lg text-[#0D0D0D]">
                                 {session.title}
                               </p>
