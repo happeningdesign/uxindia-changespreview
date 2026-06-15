@@ -41,7 +41,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
           <div className="max-w-2xl">
             {/* Eyebrow kicker */}
             <div className="animate-float-up opacity-0 mb-8">
-              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] letter-spacing">
+              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] break-words">
                 DESIGN LEADERSHIP WEEK 2026 · TRACK 01
               </p>
             </div>
@@ -50,7 +50,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
             <h1
               className="animate-float-up opacity-0 font-leadership text-white leading-[1.05] mb-6 md:mb-8"
               style={{
-                fontSize: "clamp(3.5rem, 8vw, 7rem)",
+                fontSize: "clamp(2.8rem, 8vw, 7rem)",
                 animationDelay: "0.1s",
               }}
             >
@@ -61,11 +61,8 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
 
             {/* Subcopy */}
             <p
-              className="animate-float-up opacity-0 font-sans text-base md:text-lg text-white/85 leading-relaxed mb-8 md:mb-10"
-              style={{
-                maxWidth: "46ch",
-                animationDelay: "0.2s",
-              }}
+              className="animate-float-up opacity-0 font-sans text-base md:text-lg text-white/85 leading-relaxed mb-8 md:mb-10 max-w-full md:max-w-[46ch]"
+              style={{ animationDelay: "0.2s" }}
             >
               For senior design professionals, heads of design, CXOs, CDOs, and strategic decision-makers shaping design inside their organisations.
             </p>

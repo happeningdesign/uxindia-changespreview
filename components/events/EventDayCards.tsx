@@ -12,7 +12,7 @@ interface EventDayCardsProps {
 
 export default function EventDayCards({ days }: EventDayCardsProps) {
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-${days.length} gap-4 md:gap-6 mt-12`}>
+    <div className={`grid grid-cols-1 sm:grid-cols-2 ${days.length === 3 ? "lg:grid-cols-3" : days.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-2"} gap-4 md:gap-6 mt-12`}>
       {days.map((day, index) => (
         <div
           key={index}

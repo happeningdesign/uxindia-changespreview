@@ -73,7 +73,7 @@ export default function LeadershipSummitPageClient() {
                       key={label}
                       className="flex items-center justify-center bg-white/[0.04] hover:bg-white/[0.07] transition-colors duration-200 rounded-xl px-6 py-4"
                     >
-                      <span className="font-sans text-sm text-white/70 leading-none whitespace-nowrap">
+                      <span className="font-sans text-sm text-white/70 leading-snug text-center">
                         {label}
                       </span>
                     </div>

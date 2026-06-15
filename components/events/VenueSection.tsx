@@ -49,8 +49,8 @@ export default function VenueSection({
         <div className="h-px w-24 bg-gradient-to-r from-[#E85520] to-transparent mb-12 md:mb-16" />
 
         {/* Venue card */}
-        <div className={`rounded-2xl overflow-hidden p-8 md:p-12 ${isLight ? "bg-[#1D5078] border border-[#1D5078]" : "bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10"}`}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className={`rounded-2xl overflow-hidden p-6 md:p-12 ${isLight ? "bg-[#1D5078] border border-[#1D5078]" : "bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10"}`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 
             {/* Left - Photos / Map */}
             <div className="flex flex-col gap-3">
@@ -138,7 +138,7 @@ export default function VenueSection({
             {/* Right - Info */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-leadership text-3xl md:text-4xl mb-2 text-white">
+                <h3 className="font-leadership text-2xl md:text-4xl mb-2 text-white break-words">
                   {venueName}
                 </h3>
                 <p className={`font-sans text-sm font-semibold uppercase tracking-widest ${isLight ? "text-white/70" : "text-[#E85520]"}`}>
