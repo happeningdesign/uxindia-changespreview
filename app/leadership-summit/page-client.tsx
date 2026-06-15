@@ -53,6 +53,38 @@ export default function LeadershipSummitPageClient() {
                 </p>
               </div>
               <EventDayCards days={leadershipSummitDays} />
+
+              {/* Session formats card */}
+              <div className="mt-6 rounded-2xl bg-white/[0.03] border border-white/10 p-6 md:p-8">
+                <p className="font-sans text-xs font-semibold uppercase tracking-widest text-[#E85520] mb-6">
+                  What&apos;s Inside
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
+                  {[
+                    { label: "Grand Keynote", count: "2" },
+                    { label: "Plenary Keynotes", count: null },
+                    { label: "Panel Discussions", count: null },
+                    { label: "Deep Dive Talks", count: null },
+                    { label: "Spark Sessions", count: null },
+                    { label: "Design Pitch VC Session", count: null },
+                    { label: "Workshop Leaders", count: null },
+                  ].map((item) => (
+                    <div
+                      key={item.label}
+                      className="flex flex-col gap-1 bg-white/[0.04] hover:bg-white/[0.07] transition-colors duration-200 rounded-xl px-4 py-4"
+                    >
+                      {item.count && (
+                        <span className="font-leadership text-2xl text-[#E85520] leading-none">
+                          {item.count}
+                        </span>
+                      )}
+                      <span className="font-sans text-sm text-white/70 leading-snug">
+                        {item.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
           <WhoAttends
