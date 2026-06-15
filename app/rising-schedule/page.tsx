@@ -163,7 +163,6 @@ const scheduleData = {
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
       },
     },
-    },
     {
       time: "10:20 AM",
       type: "break",

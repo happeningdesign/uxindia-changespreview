@@ -940,9 +940,14 @@ export default function SchedulePreviewPage() {
                               <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
                                 {workshop.room}
                               </p>
-                              <p className="lg:hidden text-xs text-white/40">
-                                {session.time}
-                              </p>
+                              <div className="flex items-center gap-2">
+                                <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
+                                  Workshop
+                                </span>
+                                <p className="lg:hidden text-xs text-white/40">
+                                  {session.time}
+                                </p>
+                              </div>
                             </div>
                             <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                               {workshop.title}
