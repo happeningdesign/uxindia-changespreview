@@ -189,11 +189,11 @@ export default function RisingSchedule() {
                       <span className="px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
                       <p className="text-xs text-[#0D0D0D]/40">{session.time}</p>
                     </div>
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-center gap-4">
                       <div className="w-16 h-16 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                         <PersonIconDark size={28} />
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 text-center">
                         <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.tag}</h3>
                         <p className="font-sans text-sm text-[#0D0D0D]/60 mb-3">Announcing Soon</p>
                         <p className="font-sans text-sm text-[#0D0D0D]/80">
@@ -268,7 +268,7 @@ export default function RisingSchedule() {
                           <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                             <PersonIconDark size={22} />
                           </div>
-                          <div className="flex flex-col items-start gap-1 min-w-0">
+                          <div className="flex flex-col items-center gap-1 min-w-0">
                             <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">TBA</p>
                             <p className="font-sans text-xs text-[#0D0D0D]/60 leading-tight">&nbsp;</p>
                           </div>
@@ -298,7 +298,7 @@ export default function RisingSchedule() {
                             <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                               <PersonIconDark size={14} />
                             </div>
-                            <div className="min-w-0">
+                            <div className="min-w-0 text-center">
                               <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">TBA</p>
                               <p className="font-sans text-[10px] text-[#0D0D0D]/40 truncate">&nbsp;</p>
                             </div>
@@ -334,7 +334,7 @@ export default function RisingSchedule() {
                             </div>
                           )}
                           {sess.type === "spark" && sess.speaker && (
-                            <div className="flex items-center gap-2 mt-3">
+                            <div className="flex items-center justify-center gap-2 mt-3">
                               <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                                 <PersonIconDark size={14} />
                               </div>
