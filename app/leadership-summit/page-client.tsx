@@ -7,7 +7,7 @@ import LeadershipSummitHero from "@/components/events/leadership-summit/Leadersh
 import WhoAttends from "@/components/events/WhoAttends";
 import SpeakersGrid from "@/components/events/SpeakersGrid";
 import VenueSection from "@/components/events/VenueSection";
-import ScheduleSkeleton from "@/components/events/ScheduleSkeleton";
+import LeadershipSchedule from "@/components/events/LeadershipSchedule";
 import EventDayCards from "@/components/events/EventDayCards";
 
 const leadershipSummitDays = [
@@ -40,7 +40,25 @@ export default function LeadershipSummitPageClient() {
   return (
     <main>
       <Nav forceSolid={false} />
-      <LeadershipSummitHero activeTab={activeTab} setActiveTab={setActiveTab} />
+      <LeadershipSummitHero activeTab={activeTab} setActiveTab={setActiveTab} hideTabBar={activeTab === "schedule"} />
+
+      {/* Sticky tab bar — only shown when schedule is active */}
+      {activeTab === "schedule" && (
+        <div className="sticky top-0 z-50 w-full flex border-b border-white/10 bg-[#0D0D0D]/95 backdrop-blur-md">
+          <button
+            onClick={() => setActiveTab("overview")}
+            className="flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 border-transparent text-white/40 hover:text-white/70 cursor-pointer"
+          >
+            Speakers
+          </button>
+          <button
+            onClick={() => setActiveTab("schedule")}
+            className="flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 border-[#E85520] text-white cursor-pointer"
+          >
+            Schedule
+          </button>
+        </div>
+      )}
       
       {activeTab === "overview" && (
         <>
@@ -53,6 +71,33 @@ export default function LeadershipSummitPageClient() {
                 </p>
               </div>
               <EventDayCards days={leadershipSummitDays} />
+
+              {/* Session formats card */}
+              <div className="mt-6 rounded-2xl bg-white/[0.03] border border-white/10 p-6 md:p-8">
+                <p className="font-sans text-xs font-semibold uppercase tracking-widest text-[#E85520] mb-6">
+                  What&apos;s Inside
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    "Grand Keynote",
+                    "Plenary Keynotes",
+                    "Panel Discussions",
+                    "Deep Dive Talks",
+                    "Spark Sessions",
+                    "Design Pitch VC Session",
+                    "Workshops",
+                  ].map((label) => (
+                    <div
+                      key={label}
+                      className="flex items-center justify-center bg-white/[0.04] hover:bg-white/[0.07] transition-colors duration-200 rounded-xl px-6 py-4"
+                    >
+                      <span className="font-sans text-sm text-white/70 leading-snug text-center">
+                        {label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
           <WhoAttends
@@ -63,7 +108,7 @@ export default function LeadershipSummitPageClient() {
           <SpeakersGrid
             speakers={[
               {
-                name: "Mohan Krishnaraj",
+                name: "Velmurugan Paneerselvam",
                 role: "Global Head, Cognizant",
                 image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
                 talkType: "Grand Keynote",
@@ -111,7 +156,7 @@ export default function LeadershipSummitPageClient() {
         </>
       )}
 
-      {activeTab === "schedule" && <ScheduleSkeleton />}
+      {activeTab === "schedule" && <LeadershipSchedule />}
       
       <Footer />
     </main>

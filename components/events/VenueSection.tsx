@@ -30,15 +30,13 @@ export default function VenueSection({
 }: VenueSectionProps) {
   const isLight = variant === "light";
   const [activeIndex, setActiveIndex] = useState(0);
-  const [mediaTab, setMediaTab] = useState<"photos" | "map">("photos");
 
   useEffect(() => {
-    if (mediaTab !== "photos") return;
-                    const timer = setInterval(() => {
-                      setActiveIndex((prev) => (prev + 1) % images.length);
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % images.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, [mediaTab]);
+  }, [images.length]);
 
   return (
     <section className={`${isLight ? "bg-[#F5F0E8]" : "bg-[#0D0D0D]"} py-16 md:py-24`}>
@@ -48,103 +46,51 @@ export default function VenueSection({
         </h2>
         <div className="h-px w-24 bg-gradient-to-r from-[#E85520] to-transparent mb-12 md:mb-16" />
 
-        {/* Venue card */}
-        <div className={`rounded-2xl overflow-hidden p-8 md:p-12 ${isLight ? "bg-[#1D5078] border border-[#1D5078]" : "bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10"}`}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* Venue card - Photos only */}
+        <div className={`rounded-2xl overflow-hidden p-6 md:p-12 mb-8 ${isLight ? "bg-[#1D5078] border border-[#1D5078]" : "bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10"}`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 
-            {/* Left - Photos / Map */}
+            {/* Left - Photos slideshow */}
             <div className="flex flex-col gap-3">
-              {/* Tab switcher */}
-              <div className={`flex items-center gap-1 self-start rounded-full p-1 ${isLight ? "bg-white/20" : "bg-white/10"}`}>
-                {(["photos", "map"] as const).map((tab) => (
-                  <button
-                    key={tab}
-                    onClick={() => setMediaTab(tab)}
-                    className={`px-4 py-1.5 rounded-full font-sans text-sm font-medium transition-all duration-200 cursor-pointer capitalize ${
-                      mediaTab === tab
-                        ? "bg-white text-[#0D0D0D]"
-                        : "text-white/60 hover:text-white"
-                    }`}
-                  >
-                    {tab === "photos" ? "Photos" : "Map"}
-                  </button>
-                ))}
-              </div>
-
-              {/* Media panel */}
               <div className={`relative aspect-video md:aspect-auto md:h-96 rounded-xl overflow-hidden ${isLight ? "border border-white/20" : "border border-white/10"}`}>
-                {/* Photos */}
-                {mediaTab === "photos" && (
-                  <>
-                    {images.map((image, index) => (
-                      <img
-                        key={image.src}
-                        src={image.src}
-                        alt={image.alt}
-                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                          index === activeIndex ? "opacity-100" : "opacity-0"
-                        }`}
-                      />
-                    ))}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
-                      {images.map((image, index) => (
-                        <button
-                          key={image.src}
-                          onClick={() => setActiveIndex(index)}
-                          aria-label={`Show ${image.alt}`}
-                          className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                            index === activeIndex
-                              ? "w-6 bg-white"
-                              : "w-1.5 bg-white/50 hover:bg-white/80"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </>
-                )}
-
-                {/* Map */}
-                {mediaTab === "map" && (
-                  <a
-                    href={mapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full h-full group relative"
-                    aria-label="Open venue in Google Maps"
-                  >
-                    <iframe
-                      src={`https://maps.google.com/maps?q=${embedCoords}&z=16&output=embed`}
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0, pointerEvents: "none" }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Venue map"
+                {images.map((image, index) => (
+                  <img
+                    key={image.src}
+                    src={image.src}
+                    alt={image.alt}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                      index === activeIndex ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                ))}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+                  {images.map((image, index) => (
+                    <button
+                      key={image.src}
+                      onClick={() => setActiveIndex(index)}
+                      aria-label={`Show ${image.alt}`}
+                      className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                        index === activeIndex
+                          ? "w-6 bg-white"
+                          : "w-1.5 bg-white/50 hover:bg-white/80"
+                      }`}
                     />
-                    <div className="absolute inset-0 bg-transparent group-hover:bg-black/10 transition-colors duration-200 flex items-end justify-end p-3">
-                      <span className="flex items-center gap-1.5 bg-white text-[#0D0D0D] text-xs font-sans font-semibold px-3 py-1.5 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
-                        </svg>
-                        Open in Maps
-                      </span>
-                    </div>
-                  </a>
-                )}
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Right - Info */}
+            {/* Right - Venue Info */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-leadership text-3xl md:text-4xl mb-2 text-white">
+                <h3 className="font-leadership text-2xl md:text-4xl text-white break-words">
                   {venueName}
                 </h3>
-                <p className={`font-sans text-sm font-semibold uppercase tracking-widest ${isLight ? "text-white/70" : "text-[#E85520]"}`}>
-                  Bengaluru, India
-                </p>
               </div>
+
+              <p className={`font-sans text-sm font-semibold uppercase tracking-widest ${isLight ? "text-white/70" : "text-[#E85520]"}`}>
+                Bengaluru, India
+              </p>
 
               {/* Description */}
               <p className={`font-sans text-sm leading-relaxed ${isLight ? "text-white/70" : "text-white/60"}`}>
@@ -195,6 +141,24 @@ export default function VenueSection({
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Directions card */}
+        <div className={`rounded-2xl overflow-hidden p-6 md:p-12 ${isLight ? "bg-[#1D5078] border border-[#1D5078]" : "bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10"}`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            
+            {/* Directions info */}
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-leadership text-3xl md:text-4xl mb-3 text-white">
+                  Directions
+                </h3>
+                <p className={`font-sans text-sm leading-relaxed ${isLight ? "text-white/70" : "text-white/60"}`}>
+                  Located in the heart of Bengaluru, our venue is easily accessible by all major modes of transportation. Use the map to get directions or click the button to open full directions in Google Maps.
+                </p>
+              </div>
 
               {/* CTA Button */}
               <div>
@@ -210,6 +174,38 @@ export default function VenueSection({
                   </svg>
                 </a>
               </div>
+            </div>
+
+            {/* Map */}
+            <div>
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full group relative rounded-xl overflow-hidden"
+                aria-label="Open venue in Google Maps"
+              >
+                <div className="relative aspect-video md:aspect-auto md:h-96">
+                  <iframe
+                    src={`https://maps.google.com/maps?q=${embedCoords}&z=16&output=embed`}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, pointerEvents: "none" }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Venue map"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-transparent group-hover:bg-black/10 transition-colors duration-200 flex items-end justify-end p-3 rounded-xl">
+                  <span className="flex items-center gap-1.5 bg-white text-[#0D0D0D] text-xs font-sans font-semibold px-3 py-1.5 rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                    </svg>
+                    Open in Maps
+                  </span>
+                </div>
+              </a>
             </div>
           </div>
         </div>

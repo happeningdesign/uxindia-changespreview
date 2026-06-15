@@ -20,6 +20,7 @@ const scheduleData = {
       time: "9:00 AM",
       endTime: "12:15 PM",
       type: "workshops",
+      tag: "Workshop",
       workshops: [
         {
           room: "Room 1",
@@ -61,8 +62,7 @@ const scheduleData = {
     {
       time: "11:15 AM",
       type: "continuation",
-      title: "Workshops Continue after Coffee Break",
-      description: "Workshops continue in same rooms",
+      title: "Workshops continue in same rooms after coffee break",
     },
     {
       time: "12:15 PM",
@@ -73,6 +73,7 @@ const scheduleData = {
       time: "1:45 PM",
       endTime: "5:00 PM",
       type: "workshops",
+      tag: "Workshop",
       workshops: [
         {
           room: "Room 1",
@@ -114,8 +115,12 @@ const scheduleData = {
     {
       time: "4:00 PM",
       type: "continuation",
-      title: "Workshops Continue after Coffee Break",
-      description: "Workshops continue in same rooms",
+      title: "Workshops continue in same rooms after coffee break",
+    },
+    {
+      time: "5:00 PM",
+      type: "dayend",
+      title: "Pre-Conference Workshops End",
     },
   ],
   day3: [
@@ -157,6 +162,7 @@ const scheduleData = {
         {
           room: "Room 1",
           title: "Deep Dive Talk",
+          tag: "Deep Dive",
           speaker: {
             name: "John Doe",
             role: "Design Strategist, UMO Design Foundation",
@@ -167,6 +173,7 @@ const scheduleData = {
         {
           room: "Room 2",
           title: "Deep Dive Talk",
+          tag: "Deep Dive",
           speaker: {
             name: "John Doe",
             role: "Design Entrepreneur, UMO Design Foundation",
@@ -183,6 +190,7 @@ const scheduleData = {
         {
           room: "Room 1",
           title: "Spark Session",
+          tag: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Innovator, UMO Design Foundation",
@@ -193,6 +201,7 @@ const scheduleData = {
         {
           room: "Room 2",
           title: "Spark Session",
+          tag: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Entrepreneur, UMO Design Foundation",
@@ -214,6 +223,7 @@ const scheduleData = {
         {
           room: "Room 1",
           title: "Spark Session",
+          tag: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Innovator, UMO Design Foundation",
@@ -224,6 +234,7 @@ const scheduleData = {
         {
           room: "Room 2",
           title: "Spark Session",
+          tag: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Entrepreneur, UMO Design Foundation",
@@ -235,27 +246,31 @@ const scheduleData = {
     },
     {
       time: "11:40 AM",
-      type: "sessions",
+      type: "dual-panels",
       sessions: [
         {
           room: "Room 1",
           title: "Panel Discussion",
-          speaker: {
-            name: "John Doe",
-            role: "Panel Moderator, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-          },
           description: "Discussion on design leadership in modern organizations.",
+          tag: "Panel Discussion",
+          panelists: [
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
+          ],
         },
         {
           room: "Room 2",
           title: "Panel Discussion",
-          speaker: {
-            name: "John Doe",
-            role: "Panel Moderator, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
-          },
           description: "Navigating design entrepreneurship and growth.",
+          tag: "Panel Discussion",
+          panelists: [
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" },
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+          ],
         },
       ],
     },
@@ -269,7 +284,6 @@ const scheduleData = {
       type: "grid-sessions",
       leftSessions: [
         {
-          time: "2:10 PM",
           room: "Room 1",
           title: "Deep Dive Talk",
           speaker: {
@@ -278,6 +292,7 @@ const scheduleData = {
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
           },
           description: "Advanced strategies for design transformation.",
+          tag: "Deep Dive",
         },
         {
           time: "2:50 PM",
@@ -289,11 +304,13 @@ const scheduleData = {
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
           },
           description: "Final insights and takeaways from the day.",
+          tag: "Spark Session",
         },
       ],
       rightSession: {
         room: "Room 2",
         title: "Design Pitch VC Sessions",
+        tag: "VC Pitch",
         panelists: [
           {
             name: "John Doe",
@@ -326,7 +343,7 @@ const scheduleData = {
     },
     {
       time: "4:00 PM",
-      type: "keynote",
+      type: "closing",
       title: "Closing Ceremony",
       tag: "Main Stage",
       speaker: {
@@ -550,6 +567,11 @@ const scheduleData = {
           role: "Product Head, Digital Innovation Lab",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
         },
+        {
+          name: "John Doe",
+          role: "Strategy Lead, Design Futures",
+          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
+        },
       ],
       tag: "Panel Discussion",
     },
@@ -660,14 +682,11 @@ export default function SchedulePreviewPage() {
     <main>
       <Nav forceSolid={true} />
       <div className="bg-[#0D0D0D] w-full pt-24 pb-16 md:pt-32 md:pb-24 min-h-screen">
-        <div className="max-w-7xl mx-auto px-6 md:px-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
           {/* Header - aligned to card grid */}
           <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="lg:col-span-2" />
             <div className="lg:col-span-10">
-              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] mb-4">
-                PREVIEW MODE
-              </p>
               <h1 className="font-leadership text-4xl md:text-5xl lg:text-6xl text-white mb-4">
                 Leadership Summit 2026
               </h1>
@@ -677,25 +696,27 @@ export default function SchedulePreviewPage() {
             </div>
           </div>
 
-          {/* Day tabs - aligned to card grid */}
-          <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-2" />
-            <div className="lg:col-span-10">
-              <div className="flex gap-4">
-                {scheduleData.days.map((day) => (
-                  <button
-                    key={day.id}
-                    onClick={() => setActiveDay(day.id)}
-                    className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all cursor-pointer border ${
-                      activeDay === day.id
-                        ? "bg-[#E85520]/10 border-[#E85520] text-[#E85520]"
-                        : "bg-transparent border-white/20 text-white/60 hover:border-white/40 hover:text-white"
-                    }`}
-                  >
-                    {day.label}
-                    <span className="ml-2 text-xs opacity-70">{day.date}</span>
-                  </button>
-                ))}
+          {/* Day tabs */}
+          <div className="mb-12 -mx-4 px-4 md:-mx-6 md:px-6 lg:mx-0 lg:px-0">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-6">
+              <div className="lg:col-span-2" />
+              <div className="lg:col-span-10">
+                <div className="grid grid-cols-3 gap-2 md:flex md:gap-3">
+                  {scheduleData.days.map((day) => (
+                    <button
+                      key={day.id}
+                      onClick={() => setActiveDay(day.id)}
+                      className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all cursor-pointer border ${
+                        activeDay === day.id
+                          ? "border-2 border-[#E85520] text-white bg-transparent"
+                          : "border border-white/20 text-white bg-white/5 hover:bg-white/10 hover:border-white/40"
+                      }`}
+                    >
+                      <span className="block truncate">{day.label}</span>
+                      <span className={`text-[10px] md:text-xs mt-0.5 block ${activeDay === day.id ? "text-[#E85520]" : "text-white/50"}`}>{day.date}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -720,7 +741,7 @@ export default function SchedulePreviewPage() {
                         className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
                       >
                         <div className="flex items-center justify-between mb-4 lg:hidden">
-                          <span className="px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-xs font-sans font-medium rounded-full">
+                          <span className="px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">
                             {session.tag}
                           </span>
                           <p className="text-xs text-white/40">
@@ -728,11 +749,9 @@ export default function SchedulePreviewPage() {
                           </p>
                         </div>
                         <div className="flex items-start gap-4">
-                          <img
-                            src={session.speaker.image}
-                            alt={session.speaker.name}
-                            className="w-16 h-16 rounded-full object-cover shrink-0 border border-white/15"
-                          />
+                          <div className="w-16 h-16 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                          </div>
                           <div className="flex-1">
                             <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">
                               {session.title}
@@ -745,9 +764,33 @@ export default function SchedulePreviewPage() {
                               <span className="text-white/40 text-xs">{session.speaker.role}</span>
                             </p>
                           </div>
-                          <span className="hidden lg:inline-block px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-xs font-sans font-medium rounded-full">
+                          <span className="hidden lg:inline-block px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">
                             {session.tag}
                           </span>
+                        </div>
+                      </div>
+                    )}
+                    {session.type === "closing" && (
+                      <div className="relative overflow-hidden rounded-2xl border border-white/10 min-h-[180px] flex flex-col justify-end">
+                        <img
+                          src="/images/closing-ceremony.webp"
+                          alt="Closing Ceremony"
+                          className="absolute inset-0 w-full h-full object-cover object-center"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" />
+                        <div className="relative z-10 p-6 flex items-end justify-between gap-4">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 bg-[#E85520]/80 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white"/>
+                              </svg>
+                            </div>
+                            <div>
+                              <p className="font-leadership text-xl text-white">{session.title}</p>
+                              <p className="font-sans text-xs text-white/70 mt-0.5">Closing remarks and key takeaways from the conference</p>
+                            </div>
+                          </div>
+                          <p className="font-sans text-xs text-white/60 lg:hidden shrink-0">{session.time}</p>
                         </div>
                       </div>
                     )}
@@ -760,17 +803,25 @@ export default function SchedulePreviewPage() {
                           <p className="font-leadership text-lg text-white">
                             {session.title}
                           </p>
-                          <p className="font-sans text-sm text-white/60 mt-1">
-                            {session.description}
-                          </p>
                         </div>
+                      </div>
+                    )}
+                    {session.type === "dayend" && (
+                      <div className="border border-dashed border-white/15 rounded-xl py-5 px-6 flex items-center justify-center gap-3 text-center">
+                        <span className="h-px w-8 bg-white/15" />
+                        <p className="font-sans text-sm text-white/50">
+                          {session.title}
+                        </p>
+                        <span className="h-px w-8 bg-white/15" />
                       </div>
                     )}
                     {session.type === "break" && (
                       (() => {
                         const isLunch = session.title.toLowerCase().includes("lunch");
                         const isDinner = session.title.toLowerCase().includes("dinner");
+                        const isClosing = session.title.toLowerCase().includes("closing");
                         const isRegistration = session.title.toLowerCase().includes("registration");
+                        const isWorkshopContinue = session.title.toLowerCase().includes("continue");
                         const start = parseTimeToMinutes(session.time);
                         const nextSession = currentSessions[index + 1];
                         const nextStart = nextSession ? parseTimeToMinutes(nextSession.time) : null;
@@ -778,93 +829,133 @@ export default function SchedulePreviewPage() {
                           !isRegistration && start !== null && nextStart !== null
                             ? formatDuration(nextStart - start)
                             : null;
+                        if (isWorkshopContinue) return (
+                          <div
+                            key={index}
+                            className="bg-gradient-to-r from-[#E85520]/10 to-transparent border border-white/10 rounded-xl p-4 flex items-center justify-center"
+                          >
+                            <p className="font-sans text-base text-white font-medium text-center">
+                              {session.title}
+                            </p>
+                          </div>
+                        );
                         if (isDinner) return (
-                    <div
-                      key={index}
-                      className="relative overflow-hidden rounded-2xl border border-white/10 min-h-[180px] flex flex-col justify-end"
-                    >
-                      {/* Background image */}
-                      <img
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/67db8d7961e189ecb4d2e27c_planning-corporate-dinner-2-562ArrQaZrqltVu0iW3joDkxpdYFEV.jpg"
-                        alt="Networking Dinner"
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                      {/* Gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
-                      {/* Content */}
-                      <div className="relative z-10 p-6 flex items-end justify-between gap-4">
-                        <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 bg-[#E85520]/80 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
+                          <div
+                            key={index}
+                            className="relative overflow-hidden rounded-2xl border border-white/10 min-h-[180px] flex flex-col justify-end"
+                          >
+                            {/* Background image */}
                             <img
-                              src="/icons/lunch.svg"
-                              alt="dinner"
-                              className="w-6 h-6"
-                              style={{ filter: "brightness(0) invert(1)" }}
+                              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/67db8d7961e189ecb4d2e27c_planning-corporate-dinner-2-562ArrQaZrqltVu0iW3joDkxpdYFEV.jpg"
+                              alt="Networking Dinner"
+                              className="absolute inset-0 w-full h-full object-cover"
                             />
+                            {/* Gradient overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+                            {/* Content */}
+                            <div className="relative z-10 p-6 flex items-end justify-between gap-4">
+                              <div className="flex items-center gap-4">
+                                <div className="w-10 h-10 bg-[#E85520]/80 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
+                                  <img
+                                    src="/icons/lunch.svg"
+                                    alt="dinner"
+                                    className="w-6 h-6"
+                                    style={{ filter: "brightness(0) invert(1)" }}
+                                  />
+                                </div>
+                                <div>
+                                  <p className="font-leadership text-xl text-white">{session.title}</p>
+                                  <p className="font-sans text-xs text-white/90 mt-0.5">Join us for an evening of curated conversations and connections</p>
+                                </div>
+                              </div>
+                              <p className="font-sans text-xs text-white/80 lg:hidden shrink-0">{session.time}</p>
+                            </div>
                           </div>
-                          <div>
-                            <p className="font-leadership text-xl text-white">{session.title}</p>
-                            <p className="font-sans text-xs text-white/90 mt-0.5">Join us for an evening of curated conversations and connections</p>
+                        );
+                        if (isClosing) return (
+                          <div
+                            key={index}
+                            className="relative overflow-hidden rounded-2xl border border-white/10 min-h-[180px] flex flex-col justify-end"
+                          >
+                            {/* Background image */}
+                            <img
+                              src="/images/closing-ceremony.webp"
+                              alt="Closing Ceremony"
+                              className="absolute inset-0 w-full h-full object-cover object-center"
+                            />
+                            {/* Gradient overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" />
+                            {/* Content */}
+                            <div className="relative z-10 p-6 flex items-end justify-between gap-4">
+                              <div className="flex items-center gap-4">
+                                <div className="w-10 h-10 bg-[#E85520]/80 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
+                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white" stroke="none"/>
+                                  </svg>
+                                </div>
+                                <div>
+                                  <p className="font-leadership text-xl text-white">{session.title}</p>
+                                  <p className="font-sans text-xs text-white/90 mt-0.5">Closing remarks and key takeaways from the conference</p>
+                                </div>
+                              </div>
+                              <p className="font-sans text-xs text-white/80 lg:hidden shrink-0">{session.time}</p>
+                            </div>
                           </div>
-                        </div>
-                        <p className="font-sans text-xs text-white/80 lg:hidden shrink-0">{session.time}</p>
-                      </div>
-                    </div>
                         );
                         return (
-                    <div
-                      key={index}
-                      className="bg-gradient-to-r from-[#E85520]/10 to-transparent border border-white/10 rounded-xl p-4 flex items-center gap-4"
-                    >
-                      <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center shrink-0">
-                        {isLunch || isDinner ? (
-                          <img
-                            src="/icons/lunch.svg"
-                            alt="lunch"
-                            className="w-6 h-6"
-                            style={{ filter: "brightness(0) saturate(100%) invert(57%) sepia(71%) saturate(1241%) hue-rotate(7deg)" }}
-                          />
-                        ) : isRegistration ? (
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="#E85520"
-                            strokeWidth="2"
+                          <div
+                            key={index}
+                            className="bg-gradient-to-r from-[#E85520]/10 to-transparent border border-white/10 rounded-xl p-4 flex items-center gap-4"
                           >
-                            <path d="M2 9a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9z" />
-                            <path d="M9 5v14" />
-                          </svg>
-                        ) : (
-                          <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="#E85520"
-                            strokeWidth="2"
-                          >
-                            <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3" />
-                          </svg>
-                        )}
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 flex-wrap">
-                          <p className="font-sans text-base text-white font-medium">
-                            {session.title}
-                          </p>
-                          {durationLabel && (
-                            <span className="px-2.5 py-0.5 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full">
-                              {durationLabel}
-                            </span>
-                          )}
-                        </div>
-                        <p className="font-sans text-xs text-white/40 lg:hidden">
-                          {session.time}
-                        </p>
-                      </div>
-                    </div>
+                            <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center shrink-0">
+                              {isLunch ? (
+                                <img
+                                  src="/icons/lunch.svg"
+                                  alt="lunch"
+                                  className="w-6 h-6"
+                                  style={{ filter: "invert(44%) sepia(79%) saturate(1000%) hue-rotate(349deg) brightness(95%)" }}
+                                />
+                              ) : isRegistration ? (
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="#E85520"
+                                  strokeWidth="2"
+                                >
+                                  <path d="M2 9a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9z" />
+                                  <path d="M9 5v14" />
+                                </svg>
+                              ) : (
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="#E85520"
+                                  strokeWidth="2"
+                                >
+                                  <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3" />
+                                </svg>
+                              )}
+                            </div>
+                            <div className="flex-1">
+                              <div className="flex items-center gap-3 flex-wrap">
+                                <p className="font-sans text-base text-white font-medium">
+                                  {session.title}
+                                </p>
+                                {durationLabel && (
+                                  <span className="px-2.5 py-0.5 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full">
+                                    {durationLabel}
+                                  </span>
+                                )}
+                              </div>
+                              <p className="font-sans text-xs text-white/40 lg:hidden">
+                                {session.time}
+                              </p>
+                            </div>
+                          </div>
                         );
                       })()
                     )}
@@ -873,7 +964,7 @@ export default function SchedulePreviewPage() {
                         className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
                       >
                         <div className="flex items-center justify-between mb-4">
-                          <span className="lg:hidden px-3 py-1 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full">
+                          <span className="lg:hidden px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
                             {session.tag}
                           </span>
                           <p className="lg:hidden text-xs text-white/40">
@@ -889,7 +980,7 @@ export default function SchedulePreviewPage() {
                               {session.description}
                             </p>
                           </div>
-                          <span className="hidden lg:inline-block px-3 py-1 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full shrink-0 ml-4">
+                          <span className="hidden lg:inline-block px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20 shrink-0 ml-4">
                             {session.tag}
                           </span>
                         </div>
@@ -897,11 +988,9 @@ export default function SchedulePreviewPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                           {session.panelists.map((panelist, pIndex) => (
                             <div key={pIndex} className="flex items-start gap-3">
-                              <img
-                                src={panelist.image}
-                                alt={panelist.name}
-                                className="w-12 h-12 rounded-full object-cover shrink-0 border border-white/15"
-                              />
+                              <div className="w-12 h-12 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                              </div>
                               <div className="flex flex-col items-start gap-1 min-w-0">
                                 <p className="font-sans text-sm text-white font-medium leading-tight">
                                   {panelist.name}
@@ -926,19 +1015,22 @@ export default function SchedulePreviewPage() {
                               <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
                                 {workshop.room}
                               </p>
-                              <p className="lg:hidden text-xs text-white/40">
-                                {session.time}
-                              </p>
+                              <div className="flex items-center gap-2">
+                                <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
+                                  Workshop
+                                </span>
+                                <p className="lg:hidden text-xs text-white/40">
+                                  {session.time}
+                                </p>
+                              </div>
                             </div>
                             <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                               {workshop.title}
                             </h3>
                             <div className="flex items-start gap-3 mb-4">
-                              <img
-                                src={workshop.speaker.image}
-                                alt={workshop.speaker.name}
-                                className="w-10 h-10 rounded-full object-cover shrink-0 border border-white/15"
-                              />
+                              <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                              </div>
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-sm text-white/80 font-medium">
                                   <span className="block">{workshop.speaker.name}</span>
@@ -964,9 +1056,16 @@ export default function SchedulePreviewPage() {
                               <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
                                 {sess.room}
                               </p>
-                              <p className="lg:hidden text-xs text-white/40">
-                                {session.time}
-                              </p>
+                              <div className="flex items-center gap-2">
+                                {sess.tag && (
+                                  <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
+                                    {sess.tag}
+                                  </span>
+                                )}
+                                <p className="lg:hidden text-xs text-white/40">
+                                  {session.time}
+                                </p>
+                              </div>
                             </div>
                             <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                               {sess.title}
@@ -977,11 +1076,9 @@ export default function SchedulePreviewPage() {
                                 <div className="grid grid-cols-2 gap-4 mb-4">
                                   {sess.panelists.map((panelist, pIndex) => (
                                     <div key={pIndex} className="flex items-start gap-2">
-                                      <img
-                                        src={panelist.image}
-                                        alt={panelist.name}
-                                        className="w-8 h-8 rounded-full object-cover shrink-0 border border-white/15"
-                                      />
+                                      <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                      </div>
                                       <div className="flex flex-col items-start gap-0.5 min-w-0">
                                         <p className="font-sans text-xs text-white font-medium leading-tight truncate">
                                           {panelist.name}
@@ -997,11 +1094,9 @@ export default function SchedulePreviewPage() {
                             ) : (
                               // Single speaker
                               <div className="flex items-start gap-3 mb-4">
-                                <img
-                                  src={sess.speaker.image}
-                                  alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-white/15"
-                                />
+                                <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-white/80 font-medium">
                                     <span className="block">{sess.speaker.name}</span>
@@ -1022,6 +1117,46 @@ export default function SchedulePreviewPage() {
                         ))}
                       </div>
                     )}
+                    {session.type === "dual-panels" && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {session.sessions.map((sess, sIndex) => (
+                          <div
+                            key={sIndex}
+                            className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
+                          >
+                            {/* Header */}
+                            <div className="flex items-center justify-between mb-4">
+                              <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
+                                {sess.room}
+                              </p>
+                              <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
+                                {sess.tag}
+                              </span>
+                            </div>
+                            <h3 className="font-leadership text-lg md:text-xl text-white mb-4">
+                              {sess.title}
+                            </h3>
+                            <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-5">
+                              {sess.description}
+                            </p>
+                            {/* Panelists grid */}
+                            <div className="grid grid-cols-2 gap-3">
+                              {sess.panelists.map((panelist, pIndex) => (
+                                <div key={pIndex} className="flex items-center gap-2">
+                                  <div className="w-9 h-9 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                  </div>
+                                  <div className="min-w-0">
+                                    <p className="font-sans text-xs text-white/80 font-medium truncate">{panelist.name}</p>
+                                    <p className="font-sans text-[10px] text-white/40 truncate">{panelist.role}</p>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                     {session.type === "grid-sessions" && (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {/* Left column - stacked sessions */}
@@ -1035,19 +1170,24 @@ export default function SchedulePreviewPage() {
                                 <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
                                   {sess.room}
                                 </p>
-                                <p className="font-sans text-xs text-white/40">
-                                  {sess.time}
-                                </p>
+                                <div className="flex items-center gap-2">
+                                  {sess.tag && (
+                                    <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
+                                      {sess.tag}
+                                    </span>
+                                  )}
+                                  <p className="font-sans text-xs text-white/40">
+                                    {sess.time}
+                                  </p>
+                                </div>
                               </div>
                               <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                                 {sess.title}
                               </h3>
                               <div className="flex items-start gap-3 mb-4">
-                                <img
-                                  src={sess.speaker.image}
-                                  alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-white/15"
-                                />
+                                <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-white/80 font-medium">
                                     <span className="block">{sess.speaker.name}</span>
@@ -1067,9 +1207,16 @@ export default function SchedulePreviewPage() {
                             <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
                               {session.rightSession.room}
                             </p>
-                            <p className="lg:hidden text-xs text-white/40">
-                              {session.time}
-                            </p>
+                            <div className="flex items-center gap-2">
+                              {session.rightSession.tag && (
+                                <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
+                                  {session.rightSession.tag}
+                                </span>
+                              )}
+                              <p className="lg:hidden text-xs text-white/40">
+                                {session.time}
+                              </p>
+                            </div>
                           </div>
                           <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                             {session.rightSession.title}
@@ -1084,11 +1231,9 @@ export default function SchedulePreviewPage() {
                             <div className="space-y-3">
                               {session.rightSession.panelists.map((panelist, pIndex) => (
                                 <div key={pIndex} className="flex items-center gap-3">
-                                  <img
-                                    src={panelist.image}
-                                    alt={panelist.name}
-                                    className="w-8 h-8 rounded-full object-cover border border-white/15"
-                                  />
+                                  <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                  </div>
                                   <div>
                                     <p className="font-sans text-sm text-white/80">{panelist.name}</p>
                                     <p className="font-sans text-xs text-white/40">{panelist.role}</p>
@@ -1105,8 +1250,8 @@ export default function SchedulePreviewPage() {
               );
             })}
 
-            {/* Day ends card - skip for Conference Day 1 as it has Networking Dinner */}
-            {activeDay !== "day2" && (
+            {/* Day ends card - skip for days that already have a dayend session or networking dinner */}
+            {activeDay !== "day2" && !currentSessions.some(s => s.type === "dayend") && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
               <div className="hidden lg:block lg:col-span-2">
                 <div className="text-sm font-sans text-white/50 sticky top-24">

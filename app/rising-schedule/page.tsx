@@ -24,8 +24,8 @@ const roomColors: Record<string, string> = {
 
 const scheduleData = {
   days: [
-    { id: "day1", label: "Day 1", date: "Sept 26", endTime: "5:00 PM" },
-    { id: "day2", label: "Day 2", date: "Sept 27", endTime: "4:00 PM" },
+    { id: "day1", label: "Conference and Workshops Day 1", date: "Sept 26", endTime: "5:00 PM" },
+    { id: "day2", label: "Conference Day 2", date: "Sept 27", endTime: "4:00 PM" },
   ],
   day1: [
     {
@@ -84,7 +84,7 @@ const scheduleData = {
       type: "panel",
       title: "Panel Discussion",
       description: "Industry leaders share their perspectives on navigating the path to design leadership.",
-      tag: "Panel",
+      tag: "Panel Discussion",
       location: "Auditorium",
       panelists: [
         { name: "Panelist 1", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
@@ -102,6 +102,7 @@ const scheduleData = {
       time: "1:45 PM",
       endTime: "5:00 PM",
       type: "parallel-workshops",
+      tag: "Workshop",
       duration: "90 min",
       workshops: [
         { room: "Room 1", title: "Leading Design Teams Through Change", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Hands-on workshop focusing on practical design skills." },
@@ -125,8 +126,7 @@ const scheduleData = {
     {
       time: "4:00 PM",
       type: "continuation",
-      title: "Workshops Continue after Coffee Break",
-      description: "Workshops continue in same rooms",
+      title: "Workshops continue in same rooms after coffee break",
     },
   ],
   day2: [
@@ -173,15 +173,15 @@ const scheduleData = {
       type: "parallel-sessions",
       duration: "60 min",
       sessions: [
-        { room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", description: "Industry leaders discuss emerging trends in design leadership.", panelists: [
+        { room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Industry leaders discuss emerging trends in design leadership.", panelists: [
           { name: "Panelist 1", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
           { name: "Panelist 2", role: "Head of Design, Innovation Labs", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
         ]},
-        { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", description: "Exploring design-led transformation in organizations.", panelists: [
+        { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Exploring design-led transformation in organizations.", panelists: [
           { name: "Panelist 1", role: "Design Lead, Digital Ventures", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
           { name: "Panelist 2", role: "Product Design Manager, Tech Innovations", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
         ]},
-        { room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", description: "Building high-performing design teams.", panelists: [
+        { room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Building high-performing design teams.", panelists: [
           { name: "Panelist 1", role: "UX Lead, Design Systems", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
           { name: "Panelist 2", role: "Design Strategy Director, Future Design Co", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
         ]},
@@ -192,9 +192,9 @@ const scheduleData = {
       type: "parallel-sessions",
       duration: "25 min",
       sessions: [
-        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Quick insights on design innovation." },
-        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Quick insights on design strategy." },
-        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Quick insights on design operations." },
+        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Quick insights on design innovation." },
+        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Quick insights on design strategy." },
+        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Quick insights on design operations." },
       ],
     },
     {
@@ -202,9 +202,9 @@ const scheduleData = {
       type: "parallel-sessions",
       duration: "25 min",
       sessions: [
-        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Quick insights on design thinking." },
-        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Quick insights on user research." },
-        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Quick insights on design systems." },
+        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Quick insights on design thinking." },
+        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Quick insights on user research." },
+        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Quick insights on design systems." },
       ],
     },
     {
@@ -295,14 +295,11 @@ export default function RisingSchedulePage() {
     <main>
       <Nav forceSolid={true} />
       <div className="bg-[#F5F0E8] w-full pt-24 pb-16 md:pt-32 md:pb-24 min-h-screen">
-        <div className="max-w-7xl mx-auto px-6 md:px-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
           {/* Header - aligned to card grid */}
           <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="lg:col-span-2" />
             <div className="lg:col-span-10">
-              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] mb-4">
-                PREVIEW MODE
-              </p>
               <h1 className="font-leadership text-4xl md:text-5xl lg:text-6xl text-[#0D0D0D] mb-4">
                 Rising Leaders Forum 2026
               </h1>
@@ -312,25 +309,27 @@ export default function RisingSchedulePage() {
             </div>
           </div>
 
-          {/* Day tabs - aligned to card grid */}
-          <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-2" />
-            <div className="lg:col-span-10">
-              <div className="flex gap-4">
-                {scheduleData.days.map((day) => (
-                  <button
-                    key={day.id}
-                    onClick={() => setActiveDay(day.id)}
-                    className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all border cursor-pointer ${
-                      activeDay === day.id
-                        ? "bg-[#E85520]/10 border-[#E85520] text-[#E85520]"
-                        : "bg-transparent border-[#0D0D0D]/20 text-[#0D0D0D]/60 hover:border-[#0D0D0D]/40 hover:text-[#0D0D0D]"
-                    }`}
-                  >
-                    {day.label}
-                    <span className="ml-2 text-xs opacity-70">{day.date}</span>
-                  </button>
-                ))}
+          {/* Day tabs */}
+          <div className="mb-12 -mx-4 px-4 md:-mx-6 md:px-6 lg:mx-0 lg:px-0">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-6">
+              <div className="lg:col-span-2" />
+              <div className="lg:col-span-10">
+                <div className="grid grid-cols-2 gap-2 md:flex md:gap-3">
+                  {scheduleData.days.map((day) => (
+                    <button
+                      key={day.id}
+                      onClick={() => setActiveDay(day.id)}
+                      className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all border cursor-pointer ${
+                        activeDay === day.id
+                          ? "border-2 border-[#E85520] text-[#0D0D0D] bg-transparent"
+                          : "border border-[#0D0D0D]/20 text-[#0D0D0D] bg-[#0D0D0D]/5 hover:bg-[#0D0D0D]/10 hover:border-[#0D0D0D]/40"
+                      }`}
+                    >
+                      <span className="block truncate">{day.label}</span>
+                      <span className={`text-[10px] md:text-xs mt-0.5 block ${activeDay === day.id ? "text-[#E85520]" : "text-[#0D0D0D]/50"}`}>{day.date}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -355,7 +354,7 @@ export default function RisingSchedulePage() {
                         className="bg-white border border-[#0D0D0D]/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all shadow-sm"
                       >
                         <div className="flex items-center justify-between mb-4 lg:hidden">
-                          <span className="px-3 py-1 bg-[#1D5078] text-white text-xs font-sans font-medium rounded-full">
+                          <span className="px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">
                             {session.tag}
                           </span>
                           <p className="text-xs text-[#0D0D0D]/40">
@@ -363,11 +362,9 @@ export default function RisingSchedulePage() {
                           </p>
                         </div>
                         <div className="flex items-start gap-4">
-                          <img
-                            src={session.speaker.image}
-                            alt={session.speaker.name}
-                            className="w-16 h-16 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
-                          />
+                          <div className="w-16 h-16 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                          </div>
                           <div className="flex-1">
                             <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">
                               {session.title}
@@ -380,23 +377,20 @@ export default function RisingSchedulePage() {
                               <span className="text-[#0D0D0D]/40 text-xs">{session.speaker.role}</span>
                             </p>
                           </div>
-                          <span className="hidden lg:inline-block px-3 py-1 bg-[#1D5078] text-white text-xs font-sans font-medium rounded-full">
+                          <span className="hidden lg:inline-block px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">
                             {session.tag}
                           </span>
                         </div>
                       </div>
                     )}
                     {session.type === "continuation" && (
-                      <div className="bg-[#1A7A6E]/5 border border-[#1A7A6E]/20 rounded-xl p-6 flex items-start gap-4">
-                        <svg className="w-6 h-6 text-[#1A7A6E] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="bg-white border border-[#0D0D0D]/10 rounded-xl p-6 flex items-start gap-4">
+                        <svg className="w-6 h-6 text-[#E85520] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                         </svg>
                         <div className="flex-1">
-                          <p className="font-leadership text-lg text-[#0D0D0D]">
+                          <p className="font-sans text-base text-[#0D0D0D] font-medium">
                             {session.title}
-                          </p>
-                          <p className="font-sans text-sm text-[#0D0D0D]/60 mt-1">
-                            {session.description}
                           </p>
                         </div>
                       </div>
@@ -405,6 +399,7 @@ export default function RisingSchedulePage() {
                       (() => {
                         const isLunch = session.title.toLowerCase().includes("lunch");
                         const isRegistration = session.title.toLowerCase().includes("registration");
+                        const isWorkshopContinue = session.title.toLowerCase().includes("continue");
                         const start = parseTimeToMinutes(session.time);
                         const nextSession = currentSessions[index + 1];
                         const nextStart = nextSession ? parseTimeToMinutes(nextSession.time) : null;
@@ -412,6 +407,16 @@ export default function RisingSchedulePage() {
                           !isRegistration && start !== null && nextStart !== null
                             ? formatDuration(nextStart - start)
                             : null;
+                        if (isWorkshopContinue) return (
+                          <div
+                            key={index}
+                            className="bg-white border border-[#0D0D0D]/10 rounded-2xl p-4 flex items-center justify-center shadow-sm"
+                          >
+                            <p className="font-sans text-base text-[#0D0D0D] font-medium text-center">
+                              {session.title}
+                            </p>
+                          </div>
+                        );
                         return (
                     <div
                       key={index}
@@ -423,7 +428,7 @@ export default function RisingSchedulePage() {
                             src="/icons/lunch.svg"
                             alt="lunch"
                             className="w-6 h-6"
-                            style={{ filter: "brightness(0) saturate(100%) invert(57%) sepia(71%) saturate(1241%) hue-rotate(7deg)" }}
+                            style={{ filter: "invert(44%) sepia(79%) saturate(1000%) hue-rotate(349deg) brightness(95%)" }}
                           />
                         ) : isRegistration ? (
                           <svg
@@ -479,7 +484,7 @@ export default function RisingSchedulePage() {
                         className="bg-white border border-[#0D0D0D]/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all shadow-sm"
                       >
                         <div className="flex items-center justify-between mb-4">
-                          <span className="lg:hidden px-3 py-1 bg-[#1A7A6E] text-white text-xs font-sans font-medium rounded-full">
+                          <span className="lg:hidden px-3 py-1 bg-[#1A7A6E] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">
                             {session.tag}
                           </span>
                           <p className="lg:hidden text-xs text-[#0D0D0D]/40">
@@ -495,7 +500,7 @@ export default function RisingSchedulePage() {
                               {session.description}
                             </p>
                           </div>
-                          <span className="hidden lg:inline-block px-3 py-1 bg-[#1A7A6E] text-white text-xs font-sans font-medium rounded-full shrink-0 ml-4">
+                          <span className="hidden lg:inline-block px-3 py-1 bg-[#1A7A6E] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider shrink-0 ml-4">
                             {session.tag}
                           </span>
                         </div>
@@ -503,11 +508,9 @@ export default function RisingSchedulePage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                           {session.panelists.map((panelist, pIndex) => (
                             <div key={pIndex} className="flex items-start gap-3">
-                              <img
-                                src={panelist.image}
-                                alt={panelist.name}
-                                className="w-12 h-12 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
-                              />
+                              <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                              </div>
                               <div className="flex flex-col items-start gap-1 min-w-0">
                                 <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">
                                   {panelist.name}
@@ -552,11 +555,9 @@ export default function RisingSchedulePage() {
                                 {workshop.title}
                               </h4>
                               <div className="flex items-center gap-2">
-                                <img
-                                  src={workshop.speaker.image}
-                                  alt={workshop.speaker.name}
-                                  className="w-8 h-8 rounded-full object-cover shrink-0"
-                                />
+                                <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
                                 <div className="min-w-0">
                                   <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">
                                     {workshop.speaker.name}
@@ -585,13 +586,18 @@ export default function RisingSchedulePage() {
                               key={sIndex}
                               className="flex-shrink-0 w-72 lg:w-auto bg-white border border-[#0D0D0D]/10 rounded-2xl p-5 hover:border-[#E85520]/30 transition-all shadow-sm"
                             >
-                              <div className="flex items-center gap-2 mb-3">
+                              <div className="flex items-center justify-between gap-2 mb-3">
                                 <span 
-                                  className="px-2 py-0.5 text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider"
+                                  className="px-2 py-0.5 text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider shrink-0"
                                   style={{ backgroundColor: roomColors[sess.room] || "#1D5078" }}
                                 >
                                   {sess.room}
                                 </span>
+                                {sess.tag && (
+                                  <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20 shrink-0">
+                                    {sess.tag}
+                                  </span>
+                                )}
                               </div>
                               <h4 className="font-leadership text-lg text-[#0D0D0D] mb-2">
                                 {sess.title}
@@ -602,23 +608,21 @@ export default function RisingSchedulePage() {
                               {sess.type === "panel" && sess.panelists && (
                                 <div className="flex gap-2 mt-3">
                                   {sess.panelists.map((panelist, pIndex) => (
-                                    <img
+                                    <div
                                       key={pIndex}
-                                      src={panelist.image}
-                                      alt={panelist.name}
-                                      className="w-8 h-8 rounded-full object-cover border border-[#0D0D0D]/10"
+                                      className="w-8 h-8 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0"
                                       title={panelist.name}
-                                    />
+                                    >
+                                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </div>
                                   ))}
                                 </div>
                               )}
                               {sess.type === "spark" && sess.speaker && (
                                 <div className="flex items-center gap-2 mt-3">
-                                  <img
-                                    src={sess.speaker.image}
-                                    alt={sess.speaker.name}
-                                    className="w-8 h-8 rounded-full object-cover shrink-0"
-                                  />
+                                  <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                  </div>
                                   <div className="min-w-0">
                                     <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">
                                       {sess.speaker.name}
@@ -639,7 +643,7 @@ export default function RisingSchedulePage() {
                       <div className="space-y-4">
                         {/* Header on mobile */}
                         <div className="flex items-center justify-between lg:hidden">
-                          <span className="px-3 py-1 bg-[#1D5078] text-white text-xs font-sans font-medium rounded-full">
+                          <span className="px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">
                             Auditorium + {session.parallelSessions.length} Rooms
                           </span>
                           <p className="text-xs text-[#0D0D0D]/40">{session.time}</p>
@@ -664,11 +668,9 @@ export default function RisingSchedulePage() {
                               {session.auditoriumSession.description}
                             </p>
                             <div className="flex items-center gap-3">
-                              <img
-                                src={session.auditoriumSession.speaker.image}
-                                alt={session.auditoriumSession.speaker.name}
-                                className="w-10 h-10 rounded-full object-cover"
-                              />
+                              <div className="w-10 h-10 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                              </div>
                               <div>
                                 <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
                                   {session.auditoriumSession.speaker.name}
@@ -699,11 +701,9 @@ export default function RisingSchedulePage() {
                                   {sess.title}
                                 </h4>
                                 <div className="flex items-center gap-2">
-                                  <img
-                                    src={sess.speaker.image}
-                                    alt={sess.speaker.name}
-                                    className="w-7 h-7 rounded-full object-cover shrink-0"
-                                  />
+                                  <div className="w-7 h-7 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                  </div>
                                   <p className="font-sans text-xs text-[#0D0D0D]/70 truncate">
                                     {sess.speaker.name}
                                   </p>
@@ -733,11 +733,9 @@ export default function RisingSchedulePage() {
                               {workshop.title}
                             </h3>
                             <div className="flex items-start gap-3 mb-4">
-                              <img
-                                src={workshop.speaker.image}
-                                alt={workshop.speaker.name}
-                                className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
-                              />
+                              <div className="w-10 h-10 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                              </div>
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
                                   <span className="block">{workshop.speaker.name}</span>
@@ -775,13 +773,13 @@ export default function RisingSchedulePage() {
                               <>
                                 <div className="flex gap-2 mb-4 flex-wrap">
                                   {sess.panelists.map((panelist, pIndex) => (
-                                    <img
+                                    <div
                                       key={pIndex}
-                                      src={panelist.image}
-                                      alt={panelist.name}
-                                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D0D0D]/10"
+                                      className="w-10 h-10 rounded-full border-2 border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0"
                                       title={`${panelist.name} - ${panelist.role}`}
-                                    />
+                                    >
+                                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </div>
                                   ))}
                                 </div>
                                 <div className="mb-4">
@@ -793,11 +791,9 @@ export default function RisingSchedulePage() {
                             ) : (
                               // Single speaker
                               <div className="flex items-start gap-3 mb-4">
-                                <img
-                                  src={sess.speaker.image}
-                                  alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
-                                />
+                                <div className="w-10 h-10 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
                                     <span className="block">{sess.speaker.name}</span>
@@ -839,11 +835,9 @@ export default function RisingSchedulePage() {
                                 {sess.title}
                               </h3>
                               <div className="flex items-start gap-3 mb-4">
-                                <img
-                                  src={sess.speaker.image}
-                                  alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
-                                />
+                                <div className="w-10 h-10 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
                                     <span className="block">{sess.speaker.name}</span>
@@ -880,11 +874,9 @@ export default function RisingSchedulePage() {
                             <div className="space-y-3">
                               {session.rightSession.panelists.map((panelist, pIndex) => (
                                 <div key={pIndex} className="flex items-center gap-3">
-                                  <img
-                                    src={panelist.image}
-                                    alt={panelist.name}
-                                    className="w-8 h-8 rounded-full object-cover border border-[#0D0D0D]/10"
-                                  />
+                                  <div className="w-8 h-8 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                  </div>
                                   <div>
                                     <p className="font-sans text-sm text-[#0D0D0D]/80">{panelist.name}</p>
                                     <p className="font-sans text-xs text-[#0D0D0D]/40">{panelist.role}</p>

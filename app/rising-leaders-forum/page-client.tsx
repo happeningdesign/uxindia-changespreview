@@ -7,7 +7,7 @@ import RisingLeadersHero from "@/components/events/rising-leaders/RisingLeadersH
 import WhoAttends from "@/components/events/WhoAttends";
 import SpeakersGrid from "@/components/events/SpeakersGrid";
 import VenueSection from "@/components/events/VenueSection";
-import ScheduleSkeleton from "@/components/events/ScheduleSkeleton";
+import RisingSchedule from "@/components/events/RisingSchedule";
 import EventDayCards from "@/components/events/EventDayCards";
 
 const risingLeadersDays = [
@@ -33,7 +33,25 @@ export default function RisingLeadersPageClient() {
   return (
     <main>
       <Nav forceSolid={false} />
-      <RisingLeadersHero activeTab={activeTab} setActiveTab={setActiveTab} />
+      <RisingLeadersHero activeTab={activeTab} setActiveTab={setActiveTab} hideTabBar={activeTab === "schedule"} />
+
+      {/* Sticky tab bar — only shown when schedule is active */}
+      {activeTab === "schedule" && (
+        <div className="sticky top-0 z-50 w-full flex border-b border-[#0D0D0D]/15 bg-[#F5F0E8]/95 backdrop-blur-md">
+          <button
+            onClick={() => setActiveTab("overview")}
+            className="flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 border-transparent text-[#0D0D0D]/40 hover:text-[#0D0D0D]/70 cursor-pointer"
+          >
+            Speakers
+          </button>
+          <button
+            onClick={() => setActiveTab("schedule")}
+            className="flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 border-[#E85520] text-[#0D0D0D] cursor-pointer"
+          >
+            Schedule
+          </button>
+        </div>
+      )}
       
       {activeTab === "overview" && (
         <>
@@ -46,6 +64,30 @@ export default function RisingLeadersPageClient() {
                 </p>
               </div>
               <EventDayCards days={risingLeadersDays} />
+
+              {/* Session formats card */}
+              <div className="mt-6 rounded-2xl bg-[#0D0D0D]/[0.03] border border-[#0D0D0D]/10 p-6 md:p-8">
+                <p className="font-sans text-xs font-semibold uppercase tracking-widest text-[#E85520] mb-6">
+                  What&apos;s Inside
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    "Deep Dive Talks",
+                    "Panel Discussions",
+                    "Spark Sessions",
+                    "Workshop Leaders",
+                  ].map((label) => (
+                    <div
+                      key={label}
+                      className="flex items-center justify-center bg-[#0D0D0D]/[0.04] hover:bg-[#0D0D0D]/[0.08] transition-colors duration-200 rounded-xl px-6 py-4"
+                    >
+                      <span className="font-sans text-sm text-[#0D0D0D]/70 leading-snug text-center">
+                        {label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
           <WhoAttends
@@ -87,7 +129,7 @@ export default function RisingLeadersPageClient() {
         </>
       )}
 
-      {activeTab === "schedule" && <ScheduleSkeleton />}
+      {activeTab === "schedule" && <RisingSchedule />}
       
       <Footer />
     </main>

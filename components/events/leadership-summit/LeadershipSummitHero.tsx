@@ -1,6 +1,6 @@
 "use client";
 
-export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
+export default function LeadershipSummitHero({ activeTab, setActiveTab, hideTabBar = false }: { activeTab: string; setActiveTab: (tab: string) => void; hideTabBar?: boolean }) {
   const handleScheduleClick = () => {
     setActiveTab("schedule");
     // Scroll to schedule section after state update
@@ -41,7 +41,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
           <div className="max-w-2xl">
             {/* Eyebrow kicker */}
             <div className="animate-float-up opacity-0 mb-8">
-              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] letter-spacing">
+              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] break-words">
                 DESIGN LEADERSHIP WEEK 2026 · TRACK 01
               </p>
             </div>
@@ -50,7 +50,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
             <h1
               className="animate-float-up opacity-0 font-leadership text-white leading-[1.05] mb-6 md:mb-8"
               style={{
-                fontSize: "clamp(3.5rem, 8vw, 7rem)",
+                fontSize: "clamp(2.8rem, 8vw, 7rem)",
                 animationDelay: "0.1s",
               }}
             >
@@ -61,11 +61,8 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
 
             {/* Subcopy */}
             <p
-              className="animate-float-up opacity-0 font-sans text-base md:text-lg text-white/85 leading-relaxed mb-8 md:mb-10"
-              style={{
-                maxWidth: "46ch",
-                animationDelay: "0.2s",
-              }}
+              className="animate-float-up opacity-0 font-sans text-base md:text-lg text-white/85 leading-relaxed mb-8 md:mb-10 max-w-full md:max-w-[46ch]"
+              style={{ animationDelay: "0.2s" }}
             >
               For senior design professionals, heads of design, CXOs, CDOs, and strategic decision-makers shaping design inside their organisations.
             </p>
@@ -106,27 +103,19 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
                     VENUE
                   </p>
                   <a
-                    href="https://maps.app.goo.gl/GefGLLqYJ4ECABMcA"
+                    href="https://www.google.com/maps/search/?api=1&query=Leela+Bhartiya+City"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-start gap-1.5 font-sans text-base md:text-lg text-white font-medium cursor-pointer hover:text-[#E85520] transition-colors duration-200"
+                    className="group inline-flex items-start gap-2.5 font-sans text-base md:text-lg text-white font-medium cursor-pointer hover:text-[#E85520] transition-colors duration-200"
                   >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="shrink-0 mt-1 opacity-70 group-hover:opacity-100 transition-opacity"
+                    <img
+                      src="/venue-location-icon.png"
+                      alt=""
+                      width="18"
+                      height="18"
+                      className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity mt-0.5"
                       aria-hidden="true"
-                    >
-                      <path
-                        d="M12 21s-7-6.4-7-11a7 7 0 1 1 14 0c0 4.6-7 11-7 11z"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinejoin="round"
-                      />
-                      <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.6" />
-                    </svg>
+                    />
                     Leela Bhartiya City
                   </a>
                 </div>
@@ -147,8 +136,9 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
           </div>
         </div>
 
-        {/* Sticky segmented sub-nav at bottom - full width */}
-        <div className="w-full flex border-t border-white/10 bg-black/40 backdrop-blur-md">
+        {/* Segmented sub-nav at bottom of hero — hidden when schedule is active (sticky version takes over) */}
+        {!hideTabBar && (
+          <div className="w-full flex border-t border-white/10 bg-black/40 backdrop-blur-md">
           <button
             onClick={() => setActiveTab("overview")}
             className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${
@@ -169,7 +159,8 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
           >
             Schedule
           </button>
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );
