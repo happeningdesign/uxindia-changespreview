@@ -410,6 +410,7 @@ export default function RisingSchedulePage() {
                       (() => {
                         const isLunch = session.title.toLowerCase().includes("lunch");
                         const isRegistration = session.title.toLowerCase().includes("registration");
+                        const isWorkshopContinue = session.title.toLowerCase().includes("continue");
                         const start = parseTimeToMinutes(session.time);
                         const nextSession = currentSessions[index + 1];
                         const nextStart = nextSession ? parseTimeToMinutes(nextSession.time) : null;
@@ -417,6 +418,16 @@ export default function RisingSchedulePage() {
                           !isRegistration && start !== null && nextStart !== null
                             ? formatDuration(nextStart - start)
                             : null;
+                        if (isWorkshopContinue) return (
+                          <div
+                            key={index}
+                            className="bg-[#E85520]/10 border border-[#0D0D0D]/10 rounded-xl p-4 flex items-center justify-center"
+                          >
+                            <p className="font-sans text-base text-[#0D0D0D] font-medium text-center">
+                              {session.title}
+                            </p>
+                          </div>
+                        );
                         return (
                     <div
                       key={index}
