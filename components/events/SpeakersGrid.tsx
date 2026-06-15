@@ -60,29 +60,32 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
         style={isLight ? { filter: "contrast(1.05)" } : undefined}
       />
 
-      {/* Base gradient — always visible */}
+      {/* Base gradient — tighter on mobile so face shows, fuller on desktop */}
       {isLight ? (
         <div
           className="absolute inset-0"
-          style={{ background: `linear-gradient(to bottom, ${color}00 30%, ${color}ee 100%)` }}
+          style={{ background: `linear-gradient(to bottom, ${color}00 45%, ${color}ee 100%)` }}
         />
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+        <>
+          <div className="absolute inset-0 md:hidden bg-gradient-to-t from-black/95 via-black/20 to-transparent" style={{ backgroundImage: "linear-gradient(to top, black 0%, rgba(0,0,0,0.7) 35%, transparent 55%)" }} />
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-t from-black via-black/50 to-transparent" />
+        </>
       )}
 
       {/* Front card name/role — visible when not hovered */}
       <div
-        className="absolute bottom-0 left-0 right-0 p-4 md:p-5 transition-opacity duration-300"
+        className="absolute bottom-0 left-0 right-0 p-3 md:p-5 transition-opacity duration-300"
         style={{ opacity: showOverlay ? 0 : 1 }}
       >
         {/* Orange arrow button — bottom right */}
-        <div className="flex items-end justify-between gap-2">
+        <div className="flex items-end justify-between gap-1.5">
           <div className="flex-1 min-w-0">
             <h3
-              className="font-leadership text-white leading-[0.92] tracking-tight mb-2"
+              className="font-leadership text-white leading-[0.92] tracking-tight mb-1.5"
               style={{
-                fontSize: "clamp(1.55rem, 4vw, 2rem)",
-                textShadow: "0 2px 20px rgba(0,0,0,0.6)",
+                fontSize: "clamp(1.1rem, 5vw, 2rem)",
+                textShadow: "0 2px 20px rgba(0,0,0,0.8)",
               }}
             >
               {(() => {
@@ -95,16 +98,16 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
                 );
               })()}
             </h3>
-            <p className="font-sans text-xs md:text-sm text-white/70 leading-tight">
+            <p className="font-sans text-[10px] md:text-sm text-white/70 leading-tight">
               {speaker.role}
             </p>
           </div>
           {/* Orange circle arrow */}
           <div
-            className="shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-0.5"
+            className="shrink-0 w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-0.5"
             style={{ backgroundColor: "#E85520" }}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>
           </div>
