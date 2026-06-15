@@ -240,7 +240,6 @@ const scheduleData = {
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
       },
     },
-    },
     {
       time: "3:20 PM",
       type: "keynote",
