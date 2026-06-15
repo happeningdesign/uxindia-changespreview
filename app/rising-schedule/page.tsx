@@ -389,18 +389,10 @@ export default function RisingSchedulePage() {
                       </div>
                     )}
                     {session.type === "continuation" && (
-                      <div className="bg-[#1A7A6E]/5 border border-[#1A7A6E]/20 rounded-xl p-6 flex items-start gap-4">
-                        <svg className="w-6 h-6 text-[#1A7A6E] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                        <div className="flex-1">
-                          <p className="font-leadership text-lg text-[#0D0D0D]">
-                            {session.title}
-                          </p>
-                          <p className="font-sans text-sm text-[#0D0D0D]/60 mt-1">
-                            {session.description}
-                          </p>
-                        </div>
+                      <div className="bg-white border border-[#0D0D0D]/10 rounded-2xl p-4 flex items-center justify-center shadow-sm">
+                        <p className="font-sans text-base text-[#0D0D0D] font-medium text-center">
+                          {session.title}
+                        </p>
                       </div>
                     )}
                     {session.type === "break" && (
