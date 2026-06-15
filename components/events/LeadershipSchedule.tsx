@@ -215,17 +215,14 @@ export default function LeadershipSchedule() {
                       <span className="px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
                       <p className="text-xs text-white/40">{session.time}</p>
                     </div>
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-center gap-4">
                       <div className="w-16 h-16 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                         <PersonIcon size={28} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.title}</h3>
-                        <p className="font-sans text-sm text-white/60 mb-3">{session.description}</p>
-                        <p className="font-sans text-sm text-white/80">
-                          <span className="block">{session.speaker.name}</span>
-                          <span className="text-white/40 text-xs">{session.speaker.role}</span>
-                        </p>
+                        <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.tag}</h3>
+                        <p className="font-sans text-sm text-white/60 mb-1">Announcing Soon</p>
+                        <p className="font-sans text-sm text-white/80 font-medium">TBA</p>
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
                     </div>
@@ -331,21 +328,18 @@ export default function LeadershipSchedule() {
                     </div>
                     <div className="flex items-start justify-between mb-6">
                       <div>
-                        <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.title}</h3>
-                        <p className="font-sans text-sm text-white/60">{session.description}</p>
+                        <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.tag}</h3>
+                        <p className="font-sans text-sm text-white/60">Announcing Soon</p>
                       </div>
                       <span className="hidden lg:inline-block px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20 shrink-0 ml-4">{session.tag}</span>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                       {session.panelists.map((panelist, pIndex) => (
-                        <div key={pIndex} className="flex items-start gap-3">
+                        <div key={pIndex} className="flex items-center gap-3">
                           <div className="w-12 h-12 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                             <PersonIcon size={22} />
                           </div>
-                          <div className="flex flex-col items-start gap-1 min-w-0">
-                            <p className="font-sans text-sm text-white font-medium leading-tight">{panelist.name}</p>
-                            <p className="font-sans text-xs text-white/60 leading-tight">{panelist.role}</p>
-                          </div>
+                          <p className="font-sans text-sm text-white font-medium leading-tight">TBA</p>
                         </div>
                       ))}
                     </div>
@@ -364,17 +358,14 @@ export default function LeadershipSchedule() {
                             <p className="lg:hidden text-xs text-white/40">{session.time}</p>
                           </div>
                         </div>
-                        <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{workshop.title}</h3>
-                        <div className="flex items-start gap-3 mb-4">
+                        <h3 className="font-leadership text-lg md:text-xl text-white mb-3">Workshop</h3>
+                        <div className="flex items-center gap-3 mb-4">
                           <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                             <PersonIcon size={18} />
                           </div>
-                          <p className="font-sans text-sm text-white/80 font-medium">
-                            <span className="block">{workshop.speaker.name}</span>
-                            <span className="text-white/40 text-xs">{workshop.speaker.role}</span>
-                          </p>
+                          <p className="font-sans text-sm text-white/80 font-medium">TBA</p>
                         </div>
-                        <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">{workshop.description}</p>
+                        <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">Announcing Soon</p>
                       </div>
                     ))}
                   </div>
@@ -392,29 +383,23 @@ export default function LeadershipSchedule() {
                             <p className="lg:hidden text-xs text-white/40">{session.time}</p>
                           </div>
                         </div>
-                        <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{sess.title}</h3>
+                        <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{sess.tag || "Session"}</h3>
                         {sess.panelists ? (
                           <div className="grid grid-cols-2 gap-4 mb-4">
                             {sess.panelists.map((panelist, pIndex) => (
-                              <div key={pIndex} className="flex items-start gap-2">
+                              <div key={pIndex} className="flex items-center gap-2">
                                 <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={14} /></div>
-                                <div>
-                                  <p className="font-sans text-xs text-white font-medium leading-tight truncate">{panelist.name}</p>
-                                  <p className="font-sans text-xs text-white/60 leading-tight">{panelist.role}</p>
-                                </div>
+                                <p className="font-sans text-xs text-white font-medium leading-tight truncate">TBA</p>
                               </div>
                             ))}
                           </div>
                         ) : (
-                          <div className="flex items-start gap-3 mb-4">
+                          <div className="flex items-center gap-3 mb-4">
                             <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={18} /></div>
-                            <p className="font-sans text-sm text-white/80 font-medium">
-                              <span className="block">{sess.speaker.name}</span>
-                              <span className="text-white/40 text-xs">{sess.speaker.role}</span>
-                            </p>
+                            <p className="font-sans text-sm text-white/80 font-medium">TBA</p>
                           </div>
                         )}
-                        <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">{sess.description}</p>
+                        <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">Announcing Soon</p>
                       </div>
                     ))}
                   </div>
@@ -429,16 +414,13 @@ export default function LeadershipSchedule() {
                           <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">{sess.room}</p>
                           <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">{sess.tag}</span>
                         </div>
-                        <h3 className="font-leadership text-lg md:text-xl text-white mb-4">{sess.title}</h3>
-                        <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-5">{sess.description}</p>
+                        <h3 className="font-leadership text-lg md:text-xl text-white mb-4">{sess.tag}</h3>
+                        <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-5">Announcing Soon</p>
                         <div className="grid grid-cols-2 gap-3">
                           {sess.panelists.map((panelist, pIndex) => (
                             <div key={pIndex} className="flex items-center gap-2">
                               <div className="w-9 h-9 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={16} /></div>
-                              <div className="min-w-0">
-                                <p className="font-sans text-xs text-white/80 font-medium truncate">{panelist.name}</p>
-                                <p className="font-sans text-[10px] text-white/40 truncate">{panelist.role}</p>
-                              </div>
+                              <p className="font-sans text-xs text-white/80 font-medium truncate">TBA</p>
                             </div>
                           ))}
                         </div>
@@ -460,15 +442,12 @@ export default function LeadershipSchedule() {
                               <p className="font-sans text-xs text-white/40">{sess.time}</p>
                             </div>
                           </div>
-                          <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{sess.title}</h3>
-                          <div className="flex items-start gap-3 mb-4">
+                          <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{sess.tag || "Session"}</h3>
+                          <div className="flex items-center gap-3 mb-4">
                             <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={18} /></div>
-                            <p className="font-sans text-sm text-white/80 font-medium">
-                              <span className="block">{sess.speaker.name}</span>
-                              <span className="text-white/40 text-xs">{sess.speaker.role}</span>
-                            </p>
+                            <p className="font-sans text-sm text-white/80 font-medium">TBA</p>
                           </div>
-                          <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">{sess.description}</p>
+                          <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">Announcing Soon</p>
                         </div>
                       ))}
                     </div>
@@ -477,8 +456,8 @@ export default function LeadershipSchedule() {
                         <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">{session.rightSession.room}</p>
                         {session.rightSession.tag && <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">{session.rightSession.tag}</span>}
                       </div>
-                      <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{session.rightSession.title}</h3>
-                      <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-4">{session.rightSession.description}</p>
+                      <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{session.rightSession.tag || "Session"}</h3>
+                      <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-4">Announcing Soon</p>
                       <div className="flex-1">
                         <p className="font-sans text-xs text-white/40 uppercase tracking-wider mb-3">VC Investors</p>
                         <div className="space-y-3">
@@ -486,8 +465,7 @@ export default function LeadershipSchedule() {
                             <div key={pIndex} className="flex items-center gap-3">
                               <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={14} /></div>
                               <div>
-                                <p className="font-sans text-sm text-white/80">{panelist.name}</p>
-                                <p className="font-sans text-xs text-white/40">{panelist.role}</p>
+                                <p className="font-sans text-sm text-white/80">TBA</p>
                               </div>
                             </div>
                           ))}
