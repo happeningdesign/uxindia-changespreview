@@ -1,6 +1,6 @@
 "use client";
 
-export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
+export default function LeadershipSummitHero({ activeTab, setActiveTab, hideTabBar = false }: { activeTab: string; setActiveTab: (tab: string) => void; hideTabBar?: boolean }) {
   const handleScheduleClick = () => {
     setActiveTab("schedule");
     // Scroll to schedule section after state update
@@ -136,8 +136,9 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
           </div>
         </div>
 
-        {/* Sticky segmented sub-nav at bottom - full width */}
-        <div className="w-full flex border-t border-white/10 bg-black/40 backdrop-blur-md">
+        {/* Segmented sub-nav at bottom of hero — hidden when schedule is active (sticky version takes over) */}
+        {!hideTabBar && (
+          <div className="w-full flex border-t border-white/10 bg-black/40 backdrop-blur-md">
           <button
             onClick={() => setActiveTab("overview")}
             className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${
@@ -158,7 +159,8 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
           >
             Schedule
           </button>
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );
