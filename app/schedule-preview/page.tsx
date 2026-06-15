@@ -343,7 +343,7 @@ const scheduleData = {
     },
     {
       time: "4:00 PM",
-      type: "keynote",
+      type: "closing",
       title: "Closing Ceremony",
       tag: "Main Stage",
       speaker: {
@@ -772,6 +772,30 @@ export default function SchedulePreviewPage() {
                           <span className="hidden lg:inline-block px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">
                             {session.tag}
                           </span>
+                        </div>
+                      </div>
+                    )}
+                    {session.type === "closing" && (
+                      <div className="relative overflow-hidden rounded-2xl border border-white/10 min-h-[180px] flex flex-col justify-end">
+                        <img
+                          src="/images/closing-ceremony.webp"
+                          alt="Closing Ceremony"
+                          className="absolute inset-0 w-full h-full object-cover object-center"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" />
+                        <div className="relative z-10 p-6 flex items-end justify-between gap-4">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 bg-[#E85520]/80 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white"/>
+                              </svg>
+                            </div>
+                            <div>
+                              <p className="font-leadership text-xl text-white">{session.title}</p>
+                              <p className="font-sans text-xs text-white/70 mt-0.5">Closing remarks and key takeaways from the conference</p>
+                            </div>
+                          </div>
+                          <p className="font-sans text-xs text-white/60 lg:hidden shrink-0">{session.time}</p>
                         </div>
                       </div>
                     )}
