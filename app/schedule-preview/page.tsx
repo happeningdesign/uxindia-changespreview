@@ -162,6 +162,7 @@ const scheduleData = {
         {
           room: "Room 1",
           title: "Deep Dive Talk",
+          tag: "Deep Dive",
           speaker: {
             name: "John Doe",
             role: "Design Strategist, UMO Design Foundation",
@@ -172,6 +173,7 @@ const scheduleData = {
         {
           room: "Room 2",
           title: "Deep Dive Talk",
+          tag: "Deep Dive",
           speaker: {
             name: "John Doe",
             role: "Design Entrepreneur, UMO Design Foundation",
@@ -188,6 +190,7 @@ const scheduleData = {
         {
           room: "Room 1",
           title: "Spark Session",
+          tag: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Innovator, UMO Design Foundation",
@@ -198,6 +201,7 @@ const scheduleData = {
         {
           room: "Room 2",
           title: "Spark Session",
+          tag: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Entrepreneur, UMO Design Foundation",
@@ -219,6 +223,7 @@ const scheduleData = {
         {
           room: "Room 1",
           title: "Spark Session",
+          tag: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Innovator, UMO Design Foundation",
@@ -229,6 +234,7 @@ const scheduleData = {
         {
           room: "Room 2",
           title: "Spark Session",
+          tag: "Spark Session",
           speaker: {
             name: "John Doe",
             role: "Design Entrepreneur, UMO Design Foundation",
@@ -304,6 +310,7 @@ const scheduleData = {
       rightSession: {
         room: "Room 2",
         title: "Design Pitch VC Sessions",
+        tag: "VC Pitch",
         panelists: [
           {
             name: "John Doe",
@@ -1003,9 +1010,16 @@ export default function SchedulePreviewPage() {
                               <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
                                 {sess.room}
                               </p>
-                              <p className="lg:hidden text-xs text-white/40">
-                                {session.time}
-                              </p>
+                              <div className="flex items-center gap-2">
+                                {sess.tag && (
+                                  <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
+                                    {sess.tag}
+                                  </span>
+                                )}
+                                <p className="lg:hidden text-xs text-white/40">
+                                  {session.time}
+                                </p>
+                              </div>
                             </div>
                             <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                               {sess.title}
@@ -1116,9 +1130,16 @@ export default function SchedulePreviewPage() {
                                 <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
                                   {sess.room}
                                 </p>
-                                <p className="font-sans text-xs text-white/40">
-                                  {sess.time}
-                                </p>
+                                <div className="flex items-center gap-2">
+                                  {sess.tag && (
+                                    <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
+                                      {sess.tag}
+                                    </span>
+                                  )}
+                                  <p className="font-sans text-xs text-white/40">
+                                    {sess.time}
+                                  </p>
+                                </div>
                               </div>
                               <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                                 {sess.title}
@@ -1148,9 +1169,16 @@ export default function SchedulePreviewPage() {
                             <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
                               {session.rightSession.room}
                             </p>
-                            <p className="lg:hidden text-xs text-white/40">
-                              {session.time}
-                            </p>
+                            <div className="flex items-center gap-2">
+                              {session.rightSession.tag && (
+                                <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
+                                  {session.rightSession.tag}
+                                </span>
+                              )}
+                              <p className="lg:hidden text-xs text-white/40">
+                                {session.time}
+                              </p>
+                            </div>
                           </div>
                           <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                             {session.rightSession.title}
