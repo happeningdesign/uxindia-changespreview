@@ -598,13 +598,18 @@ export default function RisingSchedulePage() {
                               key={sIndex}
                               className="flex-shrink-0 w-72 lg:w-auto bg-white border border-[#0D0D0D]/10 rounded-2xl p-5 hover:border-[#E85520]/30 transition-all shadow-sm"
                             >
-                              <div className="flex items-center gap-2 mb-3">
+                              <div className="flex items-center justify-between gap-2 mb-3">
                                 <span 
-                                  className="px-2 py-0.5 text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider"
+                                  className="px-2 py-0.5 text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider shrink-0"
                                   style={{ backgroundColor: roomColors[sess.room] || "#1D5078" }}
                                 >
                                   {sess.room}
                                 </span>
+                                {sess.tag && (
+                                  <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20 shrink-0">
+                                    {sess.tag}
+                                  </span>
+                                )}
                               </div>
                               <h4 className="font-leadership text-lg text-[#0D0D0D] mb-2">
                                 {sess.title}
