@@ -615,7 +615,6 @@ export default function RisingSchedulePage() {
                                     >
                                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                                     </div>
-                                    />
                                   ))}
                                 </div>
                               )}
@@ -624,7 +623,6 @@ export default function RisingSchedulePage() {
                                   <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                                   </div>
-                                  />
                                   <div className="min-w-0">
                                     <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">
                                       {sess.speaker.name}
@@ -782,7 +780,6 @@ export default function RisingSchedulePage() {
                                     >
                                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                                     </div>
-                                    />
                                   ))}
                                 </div>
                                 <div className="mb-4">
@@ -797,7 +794,6 @@ export default function RisingSchedulePage() {
                                 <div className="w-10 h-10 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                                 </div>
-                                />
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
                                     <span className="block">{sess.speaker.name}</span>
@@ -842,7 +838,6 @@ export default function RisingSchedulePage() {
                                 <div className="w-10 h-10 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                                 </div>
-                                />
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
                                     <span className="block">{sess.speaker.name}</span>

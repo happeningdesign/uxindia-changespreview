@@ -991,7 +991,6 @@ export default function SchedulePreviewPage() {
                               <div className="w-12 h-12 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                               </div>
-                              />
                               <div className="flex flex-col items-start gap-1 min-w-0">
                                 <p className="font-sans text-sm text-white font-medium leading-tight">
                                   {panelist.name}
@@ -1032,7 +1031,6 @@ export default function SchedulePreviewPage() {
                               <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                               </div>
-                              />
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-sm text-white/80 font-medium">
                                   <span className="block">{workshop.speaker.name}</span>
@@ -1081,7 +1079,6 @@ export default function SchedulePreviewPage() {
                                       <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                                       </div>
-                                      />
                                       <div className="flex flex-col items-start gap-0.5 min-w-0">
                                         <p className="font-sans text-xs text-white font-medium leading-tight truncate">
                                           {panelist.name}
@@ -1234,11 +1231,9 @@ export default function SchedulePreviewPage() {
                             <div className="space-y-3">
                               {session.rightSession.panelists.map((panelist, pIndex) => (
                                 <div key={pIndex} className="flex items-center gap-3">
-                                  <img
-                                    src={panelist.image}
-                                    alt={panelist.name}
-                                    className="w-8 h-8 rounded-full object-cover border border-white/15"
-                                  />
+                                  <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                  </div>
                                   <div>
                                     <p className="font-sans text-sm text-white/80">{panelist.name}</p>
                                     <p className="font-sans text-xs text-white/40">{panelist.role}</p>
