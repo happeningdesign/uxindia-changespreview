@@ -914,7 +914,7 @@ export default function SchedulePreviewPage() {
                         className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
                       >
                         <div className="flex items-center justify-between mb-4">
-                          <span className="lg:hidden px-3 py-1 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full">
+                          <span className="lg:hidden px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
                             {session.tag}
                           </span>
                           <p className="lg:hidden text-xs text-white/40">
@@ -930,7 +930,7 @@ export default function SchedulePreviewPage() {
                               {session.description}
                             </p>
                           </div>
-                          <span className="hidden lg:inline-block px-3 py-1 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full shrink-0 ml-4">
+                          <span className="hidden lg:inline-block px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20 shrink-0 ml-4">
                             {session.tag}
                           </span>
                         </div>
