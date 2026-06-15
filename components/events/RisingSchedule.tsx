@@ -193,13 +193,10 @@ export default function RisingSchedule() {
                       <div className="w-16 h-16 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                         <PersonIconDark size={28} />
                       </div>
-                      <div className="flex-1 text-center">
+                      <div className="flex-1">
                         <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.tag}</h3>
-                        <p className="font-sans text-sm text-[#0D0D0D]/60 mb-3">Announcing Soon</p>
-                        <p className="font-sans text-sm text-[#0D0D0D]/80">
-                          <span className="block">TBA</span>
-                          <span className="text-[#0D0D0D]/40 text-xs">&nbsp;</span>
-                        </p>
+                        <p className="font-sans text-sm text-[#0D0D0D]/60 mb-1">Announcing Soon</p>
+                        <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">TBA</p>
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
                     </div>
@@ -264,14 +261,11 @@ export default function RisingSchedule() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                       {session.panelists.map((panelist, pIndex) => (
-                        <div key={pIndex} className="flex items-start gap-3">
+                        <div key={pIndex} className="flex items-center gap-3">
                           <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                             <PersonIconDark size={22} />
                           </div>
-                          <div className="flex flex-col items-center gap-1 min-w-0">
-                            <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">TBA</p>
-                            <p className="font-sans text-xs text-[#0D0D0D]/60 leading-tight">&nbsp;</p>
-                          </div>
+                          <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">TBA</p>
                         </div>
                       ))}
                     </div>
@@ -294,13 +288,11 @@ export default function RisingSchedule() {
                           <h4 className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2 group-hover/ws:line-clamp-none transition-all">
                             Workshop Leaders
                           </h4>
-                          <div className="flex flex-col items-center gap-2">
+                          <div className="flex items-center gap-2">
                             <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                               <PersonIconDark size={14} />
                             </div>
-                            <div className="min-w-0 text-center">
-                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">TBA</p>
-                            </div>
+                            <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">TBA</p>
                           </div>
                         </div>
                       ))}
@@ -333,11 +325,11 @@ export default function RisingSchedule() {
                             </div>
                           )}
                           {sess.type === "spark" && sess.speaker && (
-                            <div className="flex flex-col items-center justify-center gap-2 mt-3">
+                            <div className="flex items-center gap-2 mt-3">
                               <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                                 <PersonIconDark size={14} />
                               </div>
-                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">TBA</p>
+                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">TBA</p>
                             </div>
                           )}
                         </div>
