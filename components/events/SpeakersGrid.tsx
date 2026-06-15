@@ -47,26 +47,44 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
       {isLight ? (
         <div
           className="absolute inset-0"
-          style={{ background: `linear-gradient(to bottom, ${color}10 0%, ${color}cc 100%)` }}
+          style={{ background: `linear-gradient(to bottom, ${color}00 30%, ${color}ee 100%)` }}
         />
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
       )}
 
-      {/* Name / role — visible when not hovered */}
+      {/* Front card name/role — visible when not hovered */}
       <div
         className="absolute bottom-0 left-0 right-0 p-4 md:p-5 transition-opacity duration-300"
         style={{ opacity: isHovered ? 0 : 1 }}
       >
-        <h3
-          className="font-leadership font-semibold text-white text-sm md:text-base leading-tight mb-1 tracking-tight"
-          style={isLight ? { textShadow: "0 2px 12px rgba(0,0,0,0.5)" } : undefined}
-        >
-          {speaker.name}
-        </h3>
-        <p className={`font-sans text-xs md:text-sm leading-tight ${isLight ? "text-white/90" : "text-[#4ECDC4]"}`}>
-          {speaker.role}
-        </p>
+        {/* Orange arrow button — bottom right */}
+        <div className="flex items-end justify-between gap-2">
+          <div className="flex-1 min-w-0">
+            <h3
+              className="font-leadership text-white leading-[0.95] tracking-tight mb-2"
+              style={{
+                fontSize: speaker.name.length > 16 ? "clamp(1.4rem, 4.5vw, 2rem)" : "clamp(1.8rem, 5.5vw, 2.6rem)",
+                textShadow: "0 2px 20px rgba(0,0,0,0.6)",
+                wordBreak: "break-word",
+              }}
+            >
+              {speaker.name}
+            </h3>
+            <p className="font-sans text-xs md:text-sm text-white/70 leading-tight">
+              {speaker.role}
+            </p>
+          </div>
+          {/* Orange circle arrow */}
+          <div
+            className="shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-0.5"
+            style={{ backgroundColor: "#E85520" }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M7 17L17 7M17 7H7M17 7v10" />
+            </svg>
+          </div>
+        </div>
       </div>
 
       {/* Glassmorphism overlay — slides up from bottom on hover */}
