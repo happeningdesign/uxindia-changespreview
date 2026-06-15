@@ -119,41 +119,41 @@ function VenueCard({
 
         {/* Content */}
         <div className="relative z-10 p-6 md:p-8 flex-1 flex flex-col">
-          {/* Top - Event badge */}
-          <div className="flex items-start justify-between mb-6">
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
-              style={{ backgroundColor: `${accentColor}15`, border: `1px solid ${accentColor}30` }}
-            >
-              <div
-                className="w-1.5 h-1.5 rounded-full"
-                style={{ backgroundColor: accentColor }}
-              />
-              <span
-                className="font-sans text-[10px] font-semibold uppercase tracking-wider"
-                style={{ color: accentColor }}
-              >
-                {eventName}
-              </span>
-            </div>
-
-          </div>
-
-          {/* Venue info */}
+          {/* Venue info with badge aligned to first line */}
           <div className="space-y-3 flex-1 flex flex-col">
-            <motion.h3
-              className="text-2xl md:text-3xl text-white leading-tight"
-              style={{
-                fontFamily: "'UXILeadershipCondensed'",
-                fontWeight: 500,
-              }}
-              animate={{
-                x: isHovered && !isTBA ? 4 : 0,
-              }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            >
-              {venueName}
-            </motion.h3>
+            <div className="flex items-start gap-3">
+              {/* Event badge aligned to first line of venue name */}
+              <div
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full shrink-0"
+                style={{ backgroundColor: `${accentColor}15`, border: `1px solid ${accentColor}30` }}
+              >
+                <div
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ backgroundColor: accentColor }}
+                />
+                <span
+                  className="font-sans text-[10px] font-semibold uppercase tracking-wider"
+                  style={{ color: accentColor }}
+                >
+                  {eventName}
+                </span>
+              </div>
+
+              {/* Venue name on same line as badge */}
+              <motion.h3
+                className="text-2xl md:text-3xl text-white leading-tight flex-1"
+                style={{
+                  fontFamily: "'UXILeadershipCondensed'",
+                  fontWeight: 500,
+                }}
+                animate={{
+                  x: isHovered && !isTBA ? 4 : 0,
+                }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              >
+                {venueName}
+              </motion.h3>
+            </div>
 
             <div className="flex items-center gap-3">
               <span className="font-sans text-sm" style={{ color: accentColor }}>{city}</span>
