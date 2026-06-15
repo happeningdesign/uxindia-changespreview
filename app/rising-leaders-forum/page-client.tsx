@@ -7,7 +7,7 @@ import RisingLeadersHero from "@/components/events/rising-leaders/RisingLeadersH
 import WhoAttends from "@/components/events/WhoAttends";
 import SpeakersGrid from "@/components/events/SpeakersGrid";
 import VenueSection from "@/components/events/VenueSection";
-import ScheduleSkeleton from "@/components/events/ScheduleSkeleton";
+import RisingSchedule from "@/components/events/RisingSchedule";
 import EventDayCards from "@/components/events/EventDayCards";
 
 const risingLeadersDays = [
@@ -111,7 +111,7 @@ export default function RisingLeadersPageClient() {
         </>
       )}
 
-      {activeTab === "schedule" && <ScheduleSkeleton />}
+      {activeTab === "schedule" && <RisingSchedule />}
       
       <Footer />
     </main>

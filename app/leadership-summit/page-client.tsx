@@ -7,7 +7,7 @@ import LeadershipSummitHero from "@/components/events/leadership-summit/Leadersh
 import WhoAttends from "@/components/events/WhoAttends";
 import SpeakersGrid from "@/components/events/SpeakersGrid";
 import VenueSection from "@/components/events/VenueSection";
-import ScheduleSkeleton from "@/components/events/ScheduleSkeleton";
+import LeadershipSchedule from "@/components/events/LeadershipSchedule";
 import EventDayCards from "@/components/events/EventDayCards";
 
 const leadershipSummitDays = [
@@ -138,7 +138,7 @@ export default function LeadershipSummitPageClient() {
         </>
       )}
 
-      {activeTab === "schedule" && <ScheduleSkeleton />}
+      {activeTab === "schedule" && <LeadershipSchedule />}
       
       <Footer />
     </main>
