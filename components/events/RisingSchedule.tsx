@@ -294,13 +294,12 @@ export default function RisingSchedule() {
                           <h4 className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2 group-hover/ws:line-clamp-none transition-all">
                             Workshop Leaders
                           </h4>
-                          <div className="flex items-center gap-2">
+                          <div className="flex flex-col items-center gap-2">
                             <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                               <PersonIconDark size={14} />
                             </div>
                             <div className="min-w-0 text-center">
                               <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">TBA</p>
-                              <p className="font-sans text-[10px] text-[#0D0D0D]/40 truncate">&nbsp;</p>
                             </div>
                           </div>
                         </div>
@@ -334,7 +333,7 @@ export default function RisingSchedule() {
                             </div>
                           )}
                           {sess.type === "spark" && sess.speaker && (
-                            <div className="flex items-center justify-center gap-2 mt-3">
+                            <div className="flex flex-col items-center justify-center gap-2 mt-3">
                               <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                                 <PersonIconDark size={14} />
                               </div>
