@@ -63,7 +63,6 @@ const scheduleData = {
       time: "11:15 AM",
       type: "continuation",
       title: "Workshops continue in same rooms after coffee break",
-      description: "Workshops continue in same rooms",
     },
     {
       time: "12:15 PM",
@@ -117,7 +116,6 @@ const scheduleData = {
       time: "4:00 PM",
       type: "continuation",
       title: "Workshops continue in same rooms after coffee break",
-      description: "Workshops continue in same rooms",
     },
   ],
   day3: [
