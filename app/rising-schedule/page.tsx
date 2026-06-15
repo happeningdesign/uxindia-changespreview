@@ -418,7 +418,7 @@ export default function RisingSchedulePage() {
                         if (isWorkshopContinue) return (
                           <div
                             key={index}
-                            className="bg-[#E85520]/10 border border-[#0D0D0D]/10 rounded-xl p-4 flex items-center justify-center"
+                            className="bg-white border border-[#0D0D0D]/10 rounded-xl p-4 flex items-center justify-center"
                           >
                             <p className="font-sans text-base text-[#0D0D0D] font-medium text-center">
                               {session.title}
