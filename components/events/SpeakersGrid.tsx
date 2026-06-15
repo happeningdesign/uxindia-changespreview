@@ -18,20 +18,15 @@ interface SpeakersGridProps {
   variant?: "dark" | "light";
 }
 
-function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; index: number; variant?: "dark" | "light" }) {
-  const [flipped, setFlipped] = useState(false);
+function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { speaker: Speaker; index: number; variant?: "dark" | "light"; isFlipped: boolean; onFlip: () => void }) {
   const color = speakerColors[index % speakerColors.length];
   const isLight = variant === "light";
 
   return (
     <div
       className="aspect-[4/5] cursor-pointer"
-      style={{
-        perspective: "1200px",
-      }}
-      onMouseEnter={() => setFlipped(true)}
-      onMouseLeave={() => setFlipped(false)}
-      onClick={() => setFlipped((prev) => !prev)}
+      style={{ perspective: "1200px" }}
+      onClick={onFlip}
     >
       {/* Inner flip container */}
       <div
@@ -40,7 +35,7 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
           transformStyle: "preserve-3d",
           WebkitTransformStyle: "preserve-3d",
           transition: "transform 1.1s cubic-bezier(0.4, 0.2, 0.2, 1)",
-          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
         {/* FRONT — photo with color overlay for light variant */}
@@ -50,7 +45,7 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(0deg)",
-            zIndex: flipped ? 0 : 1,
+            zIndex: isFlipped ? 0 : 1,
             backgroundColor: isLight ? color : "#1F1F1F",
             // @ts-expect-error CSS custom prop for ring color
             "--tw-ring-color": isLight ? "rgba(13,13,13,0.08)" : "rgba(255,255,255,0.12)",
@@ -94,7 +89,7 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
-            zIndex: flipped ? 1 : 0,
+            zIndex: isFlipped ? 1 : 0,
             backgroundColor: color,
           }}
         >
@@ -145,7 +140,12 @@ function SpeakerCard({ speaker, index, variant = "dark" }: { speaker: Speaker; i
 
 export default function SpeakersGrid({ speakers, showMorePlaceholder = true, variant = "dark" }: SpeakersGridProps) {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const [activeCard, setActiveCard] = useState<number | null>(null);
   const isLight = variant === "light";
+
+  const handleFlip = (index: number) => {
+    setActiveCard((prev) => (prev === index ? null : index));
+  };
 
   // Extract unique talk types from speakers
   const talkTypes = Array.from(
@@ -169,7 +169,7 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
           {talkTypes.length > 0 && (
             <div className="flex flex-wrap gap-2">
               <button
-                onClick={() => setActiveFilter(null)}
+                onClick={() => { setActiveFilter(null); setActiveCard(null); }}
                 className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
                   activeFilter === null
                     ? "bg-[#E85520] text-white"
@@ -183,7 +183,7 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
               {talkTypes.map((type) => (
                 <button
                   key={type}
-                  onClick={() => setActiveFilter(type)}
+                  onClick={() => { setActiveFilter(type); setActiveCard(null); }}
                   className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
                     activeFilter === type
                       ? "bg-[#E85520] text-white"
@@ -202,7 +202,14 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
         {/* Speakers grid - 4 columns on desktop to match design */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
           {filteredSpeakers.map((speaker, index) => (
-            <SpeakerCard key={index} speaker={speaker} index={index} variant={variant} />
+            <SpeakerCard
+              key={index}
+              speaker={speaker}
+              index={index}
+              variant={variant}
+              isFlipped={activeCard === index}
+              onFlip={() => handleFlip(index)}
+            />
           ))}
 
           {/* More speakers placeholder */}
