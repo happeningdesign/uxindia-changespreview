@@ -1135,8 +1135,8 @@ export default function SchedulePreviewPage() {
               );
             })}
 
-            {/* Day ends card - skip for Conference Day 1 as it has Networking Dinner */}
-            {activeDay !== "day2" && (
+            {/* Day ends card - skip for days that already have a dayend session or networking dinner */}
+            {activeDay !== "day2" && !currentSessions.some(s => s.type === "dayend") && (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
               <div className="hidden lg:block lg:col-span-2">
                 <div className="text-sm font-sans text-white/50 sticky top-24">
