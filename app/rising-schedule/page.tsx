@@ -300,9 +300,6 @@ export default function RisingSchedulePage() {
           <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="lg:col-span-2" />
             <div className="lg:col-span-10">
-              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.2em] mb-4">
-                PREVIEW MODE
-              </p>
               <h1 className="font-leadership text-4xl md:text-5xl lg:text-6xl text-[#0D0D0D] mb-4">
                 Rising Leaders Forum 2026
               </h1>
@@ -317,19 +314,19 @@ export default function RisingSchedulePage() {
             <div className="lg:grid lg:grid-cols-12 lg:gap-6">
               <div className="lg:col-span-2" />
               <div className="lg:col-span-10">
-                <div className="flex gap-3 overflow-x-auto pb-1 scrollbar-hide">
+                <div className="grid grid-cols-2 gap-2 md:flex md:gap-3">
                   {scheduleData.days.map((day) => (
                     <button
                       key={day.id}
                       onClick={() => setActiveDay(day.id)}
-                      className={`shrink-0 px-5 py-3 rounded-lg font-sans text-sm font-medium transition-all border cursor-pointer ${
+                      className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all border cursor-pointer ${
                         activeDay === day.id
-                          ? "bg-[#E85520]/10 border-[#E85520] text-[#E85520]"
-                          : "bg-transparent border-[#0D0D0D]/20 text-[#0D0D0D]/60 hover:border-[#0D0D0D]/40 hover:text-[#0D0D0D]"
+                          ? "bg-[#E85520] border-[#E85520] text-white shadow-lg shadow-[#E85520]/20"
+                          : "bg-[#0D0D0D]/5 border-[#0D0D0D]/20 text-[#0D0D0D] hover:bg-[#0D0D0D]/10 hover:border-[#0D0D0D]/40"
                       }`}
                     >
-                      {day.label}
-                      <span className="ml-2 text-xs opacity-70">{day.date}</span>
+                      <span className="block truncate">{day.label}</span>
+                      <span className={`text-[10px] md:text-xs mt-0.5 block ${activeDay === day.id ? "text-white/80" : "text-[#0D0D0D]/50"}`}>{day.date}</span>
                     </button>
                   ))}
                 </div>
