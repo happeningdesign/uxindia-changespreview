@@ -59,7 +59,7 @@ export default function LeadershipSummitPageClient() {
                 <p className="font-sans text-xs font-semibold uppercase tracking-widest text-[#E85520] mb-6">
                   What&apos;s Inside
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
+                <div className="flex flex-wrap gap-3">
                   {[
                     "Grand Keynote",
                     "Plenary Keynotes",
@@ -71,9 +71,9 @@ export default function LeadershipSummitPageClient() {
                   ].map((label) => (
                     <div
                       key={label}
-                      className="flex items-center justify-center bg-white/[0.04] hover:bg-white/[0.07] transition-colors duration-200 rounded-xl px-4 py-5"
+                      className="flex items-center justify-center bg-white/[0.04] hover:bg-white/[0.07] transition-colors duration-200 rounded-xl px-6 py-4"
                     >
-                      <span className="font-sans text-sm text-white/70 leading-snug text-center">
+                      <span className="font-sans text-sm text-white/70 leading-none whitespace-nowrap">
                         {label}
                       </span>
                     </div>
