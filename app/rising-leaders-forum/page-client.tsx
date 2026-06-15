@@ -46,6 +46,30 @@ export default function RisingLeadersPageClient() {
                 </p>
               </div>
               <EventDayCards days={risingLeadersDays} />
+
+              {/* Session formats card */}
+              <div className="mt-6 rounded-2xl bg-[#0D0D0D]/[0.03] border border-[#0D0D0D]/10 p-6 md:p-8">
+                <p className="font-sans text-xs font-semibold uppercase tracking-widest text-[#E85520] mb-6">
+                  What&apos;s Inside
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  {[
+                    "Deep Dive Talks",
+                    "Panel Discussions",
+                    "Spark Sessions",
+                    "Workshop Leaders",
+                  ].map((label) => (
+                    <div
+                      key={label}
+                      className="flex items-center justify-center bg-[#0D0D0D]/[0.04] hover:bg-[#0D0D0D]/[0.08] transition-colors duration-200 rounded-xl px-6 py-4"
+                    >
+                      <span className="font-sans text-sm text-[#0D0D0D]/70 leading-snug text-center">
+                        {label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
           <WhoAttends
