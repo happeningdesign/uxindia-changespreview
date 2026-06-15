@@ -321,12 +321,12 @@ export default function RisingSchedulePage() {
                       onClick={() => setActiveDay(day.id)}
                       className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all border cursor-pointer ${
                         activeDay === day.id
-                          ? "bg-[#E85520] border-[#E85520] text-white shadow-lg shadow-[#E85520]/20"
-                          : "bg-[#0D0D0D]/5 border-[#0D0D0D]/20 text-[#0D0D0D] hover:bg-[#0D0D0D]/10 hover:border-[#0D0D0D]/40"
+                          ? "border-2 border-[#E85520] text-[#0D0D0D] bg-transparent"
+                          : "border border-[#0D0D0D]/20 text-[#0D0D0D] bg-[#0D0D0D]/5 hover:bg-[#0D0D0D]/10 hover:border-[#0D0D0D]/40"
                       }`}
                     >
                       <span className="block truncate">{day.label}</span>
-                      <span className={`text-[10px] md:text-xs mt-0.5 block ${activeDay === day.id ? "text-white/80" : "text-[#0D0D0D]/50"}`}>{day.date}</span>
+                      <span className={`text-[10px] md:text-xs mt-0.5 block ${activeDay === day.id ? "text-[#E85520]" : "text-[#0D0D0D]/50"}`}>{day.date}</span>
                     </button>
                   ))}
                 </div>

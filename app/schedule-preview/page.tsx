@@ -708,12 +708,12 @@ export default function SchedulePreviewPage() {
                       onClick={() => setActiveDay(day.id)}
                       className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all cursor-pointer border ${
                         activeDay === day.id
-                          ? "bg-[#E85520] border-[#E85520] text-white shadow-lg shadow-[#E85520]/20"
-                          : "bg-white/5 border-white/20 text-white hover:bg-white/10 hover:border-white/40"
+                          ? "border-2 border-[#E85520] text-white bg-transparent"
+                          : "border border-white/20 text-white bg-white/5 hover:bg-white/10 hover:border-white/40"
                       }`}
                     >
                       <span className="block truncate">{day.label}</span>
-                      <span className={`text-[10px] md:text-xs mt-0.5 block ${activeDay === day.id ? "text-white/80" : "text-white/50"}`}>{day.date}</span>
+                      <span className={`text-[10px] md:text-xs mt-0.5 block ${activeDay === day.id ? "text-[#E85520]" : "text-white/50"}`}>{day.date}</span>
                     </button>
                   ))}
                 </div>
