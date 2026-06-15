@@ -117,6 +117,11 @@ const scheduleData = {
       type: "continuation",
       title: "Workshops continue in same rooms after coffee break",
     },
+    {
+      time: "5:00 PM",
+      type: "dayend",
+      title: "Pre-Conference Workshops End",
+    },
   ],
   day3: [
     {
@@ -763,10 +768,16 @@ export default function SchedulePreviewPage() {
                           <p className="font-leadership text-lg text-white">
                             {session.title}
                           </p>
-                          <p className="font-sans text-sm text-white/60 mt-1">
-                            {session.description}
-                          </p>
                         </div>
+                      </div>
+                    )}
+                    {session.type === "dayend" && (
+                      <div className="border border-dashed border-white/15 rounded-xl py-5 px-6 flex items-center justify-center gap-3 text-center">
+                        <span className="h-px w-8 bg-white/15" />
+                        <p className="font-sans text-sm text-white/50">
+                          {session.title}
+                        </p>
+                        <span className="h-px w-8 bg-white/15" />
                       </div>
                     )}
                     {session.type === "break" && (
