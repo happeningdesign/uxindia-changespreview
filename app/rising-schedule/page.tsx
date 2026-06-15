@@ -313,25 +313,27 @@ export default function RisingSchedulePage() {
             </div>
           </div>
 
-          {/* Day tabs - aligned to card grid */}
-          <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-2" />
-            <div className="lg:col-span-10">
-              <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 md:-mx-6 md:px-6 lg:mx-0 lg:px-0 scrollbar-hide">
-                {scheduleData.days.map((day) => (
-                  <button
-                    key={day.id}
-                    onClick={() => setActiveDay(day.id)}
-                    className={`shrink-0 px-5 py-3 rounded-lg font-sans text-sm font-medium transition-all border cursor-pointer ${
-                      activeDay === day.id
-                        ? "bg-[#E85520]/10 border-[#E85520] text-[#E85520]"
-                        : "bg-transparent border-[#0D0D0D]/20 text-[#0D0D0D]/60 hover:border-[#0D0D0D]/40 hover:text-[#0D0D0D]"
-                    }`}
-                  >
-                    {day.label}
-                    <span className="ml-2 text-xs opacity-70">{day.date}</span>
-                  </button>
-                ))}
+          {/* Day tabs */}
+          <div className="mb-12 -mx-4 px-4 md:-mx-6 md:px-6 lg:mx-0 lg:px-0">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-6">
+              <div className="lg:col-span-2" />
+              <div className="lg:col-span-10">
+                <div className="flex gap-3 overflow-x-auto pb-1 scrollbar-hide">
+                  {scheduleData.days.map((day) => (
+                    <button
+                      key={day.id}
+                      onClick={() => setActiveDay(day.id)}
+                      className={`shrink-0 px-5 py-3 rounded-lg font-sans text-sm font-medium transition-all border cursor-pointer ${
+                        activeDay === day.id
+                          ? "bg-[#E85520]/10 border-[#E85520] text-[#E85520]"
+                          : "bg-transparent border-[#0D0D0D]/20 text-[#0D0D0D]/60 hover:border-[#0D0D0D]/40 hover:text-[#0D0D0D]"
+                      }`}
+                    >
+                      {day.label}
+                      <span className="ml-2 text-xs opacity-70">{day.date}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
