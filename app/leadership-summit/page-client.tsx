@@ -61,25 +61,20 @@ export default function LeadershipSummitPageClient() {
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
                   {[
-                    { label: "Grand Keynote", count: "2" },
-                    { label: "Plenary Keynotes", count: null },
-                    { label: "Panel Discussions", count: null },
-                    { label: "Deep Dive Talks", count: null },
-                    { label: "Spark Sessions", count: null },
-                    { label: "Design Pitch VC Session", count: null },
-                    { label: "Workshop Leaders", count: null },
-                  ].map((item) => (
+                    "Grand Keynote",
+                    "Plenary Keynotes",
+                    "Panel Discussions",
+                    "Deep Dive Talks",
+                    "Spark Sessions",
+                    "Design Pitch VC Session",
+                    "Workshops",
+                  ].map((label) => (
                     <div
-                      key={item.label}
-                      className="flex flex-col gap-1 bg-white/[0.04] hover:bg-white/[0.07] transition-colors duration-200 rounded-xl px-4 py-4"
+                      key={label}
+                      className="flex items-center justify-center bg-white/[0.04] hover:bg-white/[0.07] transition-colors duration-200 rounded-xl px-4 py-5"
                     >
-                      {item.count && (
-                        <span className="font-leadership text-2xl text-[#E85520] leading-none">
-                          {item.count}
-                        </span>
-                      )}
-                      <span className="font-sans text-sm text-white/70 leading-snug">
-                        {item.label}
+                      <span className="font-sans text-sm text-white/70 leading-snug text-center">
+                        {label}
                       </span>
                     </div>
                   ))}
