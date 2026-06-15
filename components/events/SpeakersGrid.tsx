@@ -18,6 +18,14 @@ interface SpeakersGridProps {
   variant?: "dark" | "light";
 }
 
+/** Splits a name into two roughly equal halves at a word boundary */
+function splitNameTwoLines(name: string): [string, string] {
+  const words = name.trim().split(" ");
+  if (words.length === 1) return [words[0], ""];
+  const mid = Math.ceil(words.length / 2);
+  return [words.slice(0, mid).join(" "), words.slice(mid).join(" ")];
+}
+
 function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { speaker: Speaker; index: number; variant?: "dark" | "light"; isFlipped: boolean; onFlip: () => void }) {
   const [isHovered, setIsHovered] = useState(false);
   const color = speakerColors[index % speakerColors.length];
@@ -62,14 +70,21 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
         <div className="flex items-end justify-between gap-2">
           <div className="flex-1 min-w-0">
             <h3
-              className="font-leadership text-white leading-[0.95] tracking-tight mb-2"
+              className="font-leadership text-white leading-[0.92] tracking-tight mb-2"
               style={{
-                fontSize: speaker.name.length > 16 ? "clamp(1.4rem, 4.5vw, 2rem)" : "clamp(1.8rem, 5.5vw, 2.6rem)",
+                fontSize: "clamp(1.55rem, 4vw, 2rem)",
                 textShadow: "0 2px 20px rgba(0,0,0,0.6)",
-                wordBreak: "break-word",
               }}
             >
-              {speaker.name}
+              {(() => {
+                const [line1, line2] = splitNameTwoLines(speaker.name);
+                return (
+                  <>
+                    <span className="block">{line1}</span>
+                    {line2 && <span className="block">{line2}</span>}
+                  </>
+                );
+              })()}
             </h3>
             <p className="font-sans text-xs md:text-sm text-white/70 leading-tight">
               {speaker.role}
