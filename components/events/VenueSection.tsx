@@ -84,7 +84,7 @@ export default function VenueSection({
             <div className="space-y-8">
               <div className="flex items-start gap-3">
                 {/* Venue icon badge */}
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E85520" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-0.5">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E85520" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                   <circle cx="12" cy="10" r="3" fill="#E85520"/>
                 </svg>
