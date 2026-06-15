@@ -92,10 +92,10 @@ export default function VenueSection({
                   {venueName}
                 </h3>
               </div>
-                <p className={`font-sans text-sm font-semibold uppercase tracking-widest ${isLight ? "text-white/70" : "text-[#E85520]"}`}>
-                  Bengaluru, India
-                </p>
-              </div>
+
+              <p className={`font-sans text-sm font-semibold uppercase tracking-widest ${isLight ? "text-white/70" : "text-[#E85520]"}`}>
+                Bengaluru, India
+              </p>
 
               {/* Description */}
               <p className={`font-sans text-sm leading-relaxed ${isLight ? "text-white/70" : "text-white/60"}`}>
