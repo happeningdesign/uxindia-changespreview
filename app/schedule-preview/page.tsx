@@ -793,47 +793,92 @@ export default function SchedulePreviewPage() {
                           </div>
                         );
                         if (isDinner) return (
-                    <div
-                      key={index}
-                      className="relative overflow-hidden rounded-2xl border border-white/10 min-h-[180px] flex flex-col justify-end"
-                    >
-                      {/* Background image */}
-                      <img
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/67db8d7961e189ecb4d2e27c_planning-corporate-dinner-2-562ArrQaZrqltVu0iW3joDkxpdYFEV.jpg"
-                        alt="Networking Dinner"
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                      {/* Gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
-                      {/* Content */}
-                      <div className="relative z-10 p-6 flex items-end justify-between gap-4">
-                        <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 bg-[#E85520]/80 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
+                          <div
+                            key={index}
+                            className="relative overflow-hidden rounded-2xl border border-white/10 min-h-[180px] flex flex-col justify-end"
+                          >
+                            {/* Background image */}
                             <img
-                              src="/icons/lunch.svg"
-                              alt="dinner"
-                              className="w-6 h-6"
-                              style={{ filter: "brightness(0) invert(1)" }}
+                              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/67db8d7961e189ecb4d2e27c_planning-corporate-dinner-2-562ArrQaZrqltVu0iW3joDkxpdYFEV.jpg"
+                              alt="Networking Dinner"
+                              className="absolute inset-0 w-full h-full object-cover"
                             />
+                            {/* Gradient overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+                            {/* Content */}
+                            <div className="relative z-10 p-6 flex items-end justify-between gap-4">
+                              <div className="flex items-center gap-4">
+                                <div className="w-10 h-10 bg-[#E85520]/80 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
+                                  <img
+                                    src="/icons/lunch.svg"
+                                    alt="dinner"
+                                    className="w-6 h-6"
+                                    style={{ filter: "brightness(0) invert(1)" }}
+                                  />
+                                </div>
+                                <div>
+                                  <p className="font-leadership text-xl text-white">{session.title}</p>
+                                  <p className="font-sans text-xs text-white/90 mt-0.5">Join us for an evening of curated conversations and connections</p>
+                                </div>
+                              </div>
+                              <p className="font-sans text-xs text-white/80 lg:hidden shrink-0">{session.time}</p>
+                            </div>
                           </div>
-                          <div>
-                            <p className="font-leadership text-xl text-white">{session.title}</p>
-                            <p className="font-sans text-xs text-white/90 mt-0.5">Join us for an evening of curated conversations and connections</p>
-                          </div>
-                        </div>
-                        <p className="font-sans text-xs text-white/80 lg:hidden shrink-0">{session.time}</p>
-                      </div>
-                    </div>
                         );
                         return (
-                      <div
-                        key={index}
-                        className="bg-gradient-to-r from-[#E85520]/10 to-transparent border border-white/10 rounded-xl p-4 flex items-center justify-center"
-                      >
-                        <p className="font-sans text-base text-white font-medium text-center">
-                          {session.title}
-                        </p>
-                      </div>
+                          <div
+                            key={index}
+                            className="bg-gradient-to-r from-[#E85520]/10 to-transparent border border-white/10 rounded-xl p-4 flex items-center gap-4"
+                          >
+                            <div className="w-10 h-10 bg-[#E85520]/20 rounded-lg flex items-center justify-center shrink-0">
+                              {isLunch ? (
+                                <img
+                                  src="/icons/lunch.svg"
+                                  alt="lunch"
+                                  className="w-6 h-6"
+                                  style={{ filter: "brightness(0) saturate(100%) invert(57%) sepia(71%) saturate(1241%) hue-rotate(7deg)" }}
+                                />
+                              ) : isRegistration ? (
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="#E85520"
+                                  strokeWidth="2"
+                                >
+                                  <path d="M2 9a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9z" />
+                                  <path d="M9 5v14" />
+                                </svg>
+                              ) : (
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="#E85520"
+                                  strokeWidth="2"
+                                >
+                                  <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3" />
+                                </svg>
+                              )}
+                            </div>
+                            <div className="flex-1">
+                              <div className="flex items-center gap-3 flex-wrap">
+                                <p className="font-sans text-base text-white font-medium">
+                                  {session.title}
+                                </p>
+                                {durationLabel && (
+                                  <span className="px-2.5 py-0.5 bg-white/10 text-white/70 text-xs font-sans font-medium rounded-full">
+                                    {durationLabel}
+                                  </span>
+                                )}
+                              </div>
+                              <p className="font-sans text-xs text-white/40 lg:hidden">
+                                {session.time}
+                              </p>
+                            </div>
+                          </div>
                         );
                       })()
                     )}
