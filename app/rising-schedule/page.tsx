@@ -24,7 +24,7 @@ const roomColors: Record<string, string> = {
 
 const scheduleData = {
   days: [
-    { id: "day1", label: "Conference Day 1", date: "Sept 26", endTime: "5:00 PM" },
+    { id: "day1", label: "Conference and Workshops Day 1", date: "Sept 26", endTime: "5:00 PM" },
     { id: "day2", label: "Conference Day 2", date: "Sept 27", endTime: "4:00 PM" },
   ],
   day1: [
