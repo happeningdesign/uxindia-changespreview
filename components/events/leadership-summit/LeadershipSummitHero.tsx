@@ -106,14 +106,14 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
                     href="https://maps.app.goo.gl/GefGLLqYJ4ECABMcA"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2.5 font-sans text-base md:text-lg text-white font-medium cursor-pointer hover:text-[#E85520] transition-colors duration-200"
+                    className="group inline-flex items-start gap-2.5 font-sans text-base md:text-lg text-white font-medium cursor-pointer hover:text-[#E85520] transition-colors duration-200"
                   >
                     <img
                       src="/venue-location-icon.png"
                       alt=""
                       width="18"
                       height="18"
-                      className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity"
+                      className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity mt-0.5"
                       aria-hidden="true"
                     />
                     Leela Bhartiya City
