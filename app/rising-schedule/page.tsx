@@ -60,6 +60,7 @@ const scheduleData = {
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
       },
     },
+    },
     {
       time: "10:20 AM",
       type: "break",
@@ -84,7 +85,7 @@ const scheduleData = {
       type: "panel",
       title: "Panel Discussion",
       description: "Industry leaders share their perspectives on navigating the path to design leadership.",
-      tag: "Panel",
+      tag: "Panel Discussion",
       location: "Auditorium",
       panelists: [
         { name: "Panelist 1", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
@@ -102,6 +103,7 @@ const scheduleData = {
       time: "1:45 PM",
       endTime: "5:00 PM",
       type: "parallel-workshops",
+      tag: "Workshop",
       duration: "90 min",
       workshops: [
         { room: "Room 1", title: "Leading Design Teams Through Change", speaker: { name: "Workshop Leader", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Hands-on workshop focusing on practical design skills." },
@@ -162,6 +164,7 @@ const scheduleData = {
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
       },
     },
+    },
     {
       time: "10:20 AM",
       type: "break",
@@ -173,15 +176,15 @@ const scheduleData = {
       type: "parallel-sessions",
       duration: "60 min",
       sessions: [
-        { room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", description: "Industry leaders discuss emerging trends in design leadership.", panelists: [
+        { room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Industry leaders discuss emerging trends in design leadership.", panelists: [
           { name: "Panelist 1", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
           { name: "Panelist 2", role: "Head of Design, Innovation Labs", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
         ]},
-        { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", description: "Exploring design-led transformation in organizations.", panelists: [
+        { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Exploring design-led transformation in organizations.", panelists: [
           { name: "Panelist 1", role: "Design Lead, Digital Ventures", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
           { name: "Panelist 2", role: "Product Design Manager, Tech Innovations", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
         ]},
-        { room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", description: "Building high-performing design teams.", panelists: [
+        { room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Building high-performing design teams.", panelists: [
           { name: "Panelist 1", role: "UX Lead, Design Systems", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
           { name: "Panelist 2", role: "Design Strategy Director, Future Design Co", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
         ]},
@@ -192,9 +195,9 @@ const scheduleData = {
       type: "parallel-sessions",
       duration: "25 min",
       sessions: [
-        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Quick insights on design innovation." },
-        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Quick insights on design strategy." },
-        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Quick insights on design operations." },
+        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" }, description: "Quick insights on design innovation." },
+        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" }, description: "Quick insights on design strategy." },
+        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" }, description: "Quick insights on design operations." },
       ],
     },
     {
@@ -202,9 +205,9 @@ const scheduleData = {
       type: "parallel-sessions",
       duration: "25 min",
       sessions: [
-        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Quick insights on design thinking." },
-        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Quick insights on user research." },
-        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Quick insights on design systems." },
+        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" }, description: "Quick insights on design thinking." },
+        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" }, description: "Quick insights on user research." },
+        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" }, description: "Quick insights on design systems." },
       ],
     },
     {
@@ -226,6 +229,7 @@ const scheduleData = {
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
       },
     },
+    },
     {
       time: "2:40 PM",
       type: "keynote",
@@ -238,6 +242,7 @@ const scheduleData = {
         role: "Design Leader",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
       },
+    },
     },
     {
       time: "3:20 PM",

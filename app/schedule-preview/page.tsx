@@ -20,6 +20,7 @@ const scheduleData = {
       time: "9:00 AM",
       endTime: "12:15 PM",
       type: "workshops",
+      tag: "Workshop",
       workshops: [
         {
           room: "Room 1",
@@ -73,6 +74,7 @@ const scheduleData = {
       time: "1:45 PM",
       endTime: "5:00 PM",
       type: "workshops",
+      tag: "Workshop",
       workshops: [
         {
           room: "Room 1",
@@ -269,7 +271,6 @@ const scheduleData = {
       type: "grid-sessions",
       leftSessions: [
         {
-          time: "2:10 PM",
           room: "Room 1",
           title: "Deep Dive Talk",
           speaker: {
@@ -278,6 +279,7 @@ const scheduleData = {
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
           },
           description: "Advanced strategies for design transformation.",
+          tag: "Deep Dive",
         },
         {
           time: "2:50 PM",
@@ -289,6 +291,7 @@ const scheduleData = {
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
           },
           description: "Final insights and takeaways from the day.",
+          tag: "Spark Session",
         },
       ],
       rightSession: {
