@@ -19,14 +19,18 @@ interface SpeakersGridProps {
 }
 
 function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { speaker: Speaker; index: number; variant?: "dark" | "light"; isFlipped: boolean; onFlip: () => void }) {
+  const [isHovered, setIsHovered] = useState(false);
   const color = speakerColors[index % speakerColors.length];
   const isLight = variant === "light";
+  const showBack = isFlipped || isHovered;
 
   return (
     <div
       className="aspect-[4/5] cursor-pointer"
       style={{ perspective: "1200px" }}
       onClick={onFlip}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Inner flip container */}
       <div
@@ -35,7 +39,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
           transformStyle: "preserve-3d",
           WebkitTransformStyle: "preserve-3d",
           transition: "transform 1.1s cubic-bezier(0.4, 0.2, 0.2, 1)",
-          transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          transform: showBack ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
         {/* FRONT — photo with color overlay for light variant */}
@@ -45,7 +49,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(0deg)",
-            zIndex: isFlipped ? 0 : 1,
+            zIndex: showBack ? 0 : 1,
             backgroundColor: isLight ? color : "#1F1F1F",
             // @ts-expect-error CSS custom prop for ring color
             "--tw-ring-color": isLight ? "rgba(13,13,13,0.08)" : "rgba(255,255,255,0.12)",
@@ -89,7 +93,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
-            zIndex: isFlipped ? 1 : 0,
+            zIndex: showBack ? 1 : 0,
             backgroundColor: color,
           }}
         >
