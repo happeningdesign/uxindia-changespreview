@@ -103,16 +103,12 @@ export default function RisingLeadersHero({ activeTab, setActiveTab }) {
                   href="https://maps.app.goo.gl/srishti"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2.5 font-sans text-base md:text-lg text-white font-medium leading-snug cursor-pointer hover:text-[#E85520] transition-colors duration-200"
+                  className="group inline-flex items-start gap-2 font-sans text-base md:text-lg text-white font-medium leading-snug cursor-pointer hover:text-[#E85520] transition-colors duration-200"
                 >
-                  <img
-                    src="/venue-location-icon.png"
-                    alt=""
-                    width="18"
-                    height="18"
-                    className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity"
-                    aria-hidden="true"
-                  />
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity" style={{ marginTop: "3px" }} aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
                   Srishti Manipal Institute of Art, Design & Technology
                 </a>
               </div>
