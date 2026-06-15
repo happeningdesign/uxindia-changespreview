@@ -227,7 +227,6 @@ const scheduleData = {
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
       },
     },
-    },
     {
       time: "2:40 PM",
       type: "keynote",
