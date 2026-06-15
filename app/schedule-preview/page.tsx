@@ -749,11 +749,9 @@ export default function SchedulePreviewPage() {
                           </p>
                         </div>
                         <div className="flex items-start gap-4">
-                          <img
-                            src={session.speaker.image}
-                            alt={session.speaker.name}
-                            className="w-16 h-16 rounded-full object-cover shrink-0 border border-white/15"
-                          />
+                          <div className="w-16 h-16 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                          </div>
                           <div className="flex-1">
                             <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">
                               {session.title}
@@ -990,10 +988,9 @@ export default function SchedulePreviewPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                           {session.panelists.map((panelist, pIndex) => (
                             <div key={pIndex} className="flex items-start gap-3">
-                              <img
-                                src={panelist.image}
-                                alt={panelist.name}
-                                className="w-12 h-12 rounded-full object-cover shrink-0 border border-white/15"
+                              <div className="w-12 h-12 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                              </div>
                               />
                               <div className="flex flex-col items-start gap-1 min-w-0">
                                 <p className="font-sans text-sm text-white font-medium leading-tight">
@@ -1032,10 +1029,9 @@ export default function SchedulePreviewPage() {
                               {workshop.title}
                             </h3>
                             <div className="flex items-start gap-3 mb-4">
-                              <img
-                                src={workshop.speaker.image}
-                                alt={workshop.speaker.name}
-                                className="w-10 h-10 rounded-full object-cover shrink-0 border border-white/15"
+                              <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                              </div>
                               />
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-sm text-white/80 font-medium">
@@ -1082,10 +1078,9 @@ export default function SchedulePreviewPage() {
                                 <div className="grid grid-cols-2 gap-4 mb-4">
                                   {sess.panelists.map((panelist, pIndex) => (
                                     <div key={pIndex} className="flex items-start gap-2">
-                                      <img
-                                        src={panelist.image}
-                                        alt={panelist.name}
-                                        className="w-8 h-8 rounded-full object-cover shrink-0 border border-white/15"
+                                      <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                      </div>
                                       />
                                       <div className="flex flex-col items-start gap-0.5 min-w-0">
                                         <p className="font-sans text-xs text-white font-medium leading-tight truncate">
@@ -1102,11 +1097,9 @@ export default function SchedulePreviewPage() {
                             ) : (
                               // Single speaker
                               <div className="flex items-start gap-3 mb-4">
-                                <img
-                                  src={sess.speaker.image}
-                                  alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-white/15"
-                                />
+                                <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-white/80 font-medium">
                                     <span className="block">{sess.speaker.name}</span>
@@ -1153,11 +1146,9 @@ export default function SchedulePreviewPage() {
                             <div className="grid grid-cols-2 gap-3">
                               {sess.panelists.map((panelist, pIndex) => (
                                 <div key={pIndex} className="flex items-center gap-2">
-                                  <img
-                                    src={panelist.image}
-                                    alt={panelist.name}
-                                    className="w-9 h-9 rounded-full object-cover shrink-0 border border-white/15"
-                                  />
+                                  <div className="w-9 h-9 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                  </div>
                                   <div className="min-w-0">
                                     <p className="font-sans text-xs text-white/80 font-medium truncate">{panelist.name}</p>
                                     <p className="font-sans text-[10px] text-white/40 truncate">{panelist.role}</p>
@@ -1197,11 +1188,9 @@ export default function SchedulePreviewPage() {
                                 {sess.title}
                               </h3>
                               <div className="flex items-start gap-3 mb-4">
-                                <img
-                                  src={sess.speaker.image}
-                                  alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-white/15"
-                                />
+                                <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-white/80 font-medium">
                                     <span className="block">{sess.speaker.name}</span>

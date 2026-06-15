@@ -362,11 +362,9 @@ export default function RisingSchedulePage() {
                           </p>
                         </div>
                         <div className="flex items-start gap-4">
-                          <img
-                            src={session.speaker.image}
-                            alt={session.speaker.name}
-                            className="w-16 h-16 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
-                          />
+                          <div className="w-16 h-16 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                          </div>
                           <div className="flex-1">
                             <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">
                               {session.title}
@@ -510,11 +508,9 @@ export default function RisingSchedulePage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                           {session.panelists.map((panelist, pIndex) => (
                             <div key={pIndex} className="flex items-start gap-3">
-                              <img
-                                src={panelist.image}
-                                alt={panelist.name}
-                                className="w-12 h-12 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
-                              />
+                              <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                              </div>
                               <div className="flex flex-col items-start gap-1 min-w-0">
                                 <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">
                                   {panelist.name}
@@ -559,11 +555,9 @@ export default function RisingSchedulePage() {
                                 {workshop.title}
                               </h4>
                               <div className="flex items-center gap-2">
-                                <img
-                                  src={workshop.speaker.image}
-                                  alt={workshop.speaker.name}
-                                  className="w-8 h-8 rounded-full object-cover shrink-0"
-                                />
+                                <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
                                 <div className="min-w-0">
                                   <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">
                                     {workshop.speaker.name}
@@ -614,22 +608,22 @@ export default function RisingSchedulePage() {
                               {sess.type === "panel" && sess.panelists && (
                                 <div className="flex gap-2 mt-3">
                                   {sess.panelists.map((panelist, pIndex) => (
-                                    <img
+                                    <div
                                       key={pIndex}
-                                      src={panelist.image}
-                                      alt={panelist.name}
-                                      className="w-8 h-8 rounded-full object-cover border border-[#0D0D0D]/10"
+                                      className="w-8 h-8 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0"
                                       title={panelist.name}
+                                    >
+                                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </div>
                                     />
                                   ))}
                                 </div>
                               )}
                               {sess.type === "spark" && sess.speaker && (
                                 <div className="flex items-center gap-2 mt-3">
-                                  <img
-                                    src={sess.speaker.image}
-                                    alt={sess.speaker.name}
-                                    className="w-8 h-8 rounded-full object-cover shrink-0"
+                                  <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                  </div>
                                   />
                                   <div className="min-w-0">
                                     <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">
@@ -676,11 +670,9 @@ export default function RisingSchedulePage() {
                               {session.auditoriumSession.description}
                             </p>
                             <div className="flex items-center gap-3">
-                              <img
-                                src={session.auditoriumSession.speaker.image}
-                                alt={session.auditoriumSession.speaker.name}
-                                className="w-10 h-10 rounded-full object-cover"
-                              />
+                              <div className="w-10 h-10 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                              </div>
                               <div>
                                 <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
                                   {session.auditoriumSession.speaker.name}
@@ -711,11 +703,9 @@ export default function RisingSchedulePage() {
                                   {sess.title}
                                 </h4>
                                 <div className="flex items-center gap-2">
-                                  <img
-                                    src={sess.speaker.image}
-                                    alt={sess.speaker.name}
-                                    className="w-7 h-7 rounded-full object-cover shrink-0"
-                                  />
+                                  <div className="w-7 h-7 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                  </div>
                                   <p className="font-sans text-xs text-[#0D0D0D]/70 truncate">
                                     {sess.speaker.name}
                                   </p>
@@ -745,11 +735,9 @@ export default function RisingSchedulePage() {
                               {workshop.title}
                             </h3>
                             <div className="flex items-start gap-3 mb-4">
-                              <img
-                                src={workshop.speaker.image}
-                                alt={workshop.speaker.name}
-                                className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
-                              />
+                              <div className="w-10 h-10 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                              </div>
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
                                   <span className="block">{workshop.speaker.name}</span>
@@ -787,12 +775,13 @@ export default function RisingSchedulePage() {
                               <>
                                 <div className="flex gap-2 mb-4 flex-wrap">
                                   {sess.panelists.map((panelist, pIndex) => (
-                                    <img
+                                    <div
                                       key={pIndex}
-                                      src={panelist.image}
-                                      alt={panelist.name}
-                                      className="w-10 h-10 rounded-full object-cover border-2 border-[#0D0D0D]/10"
+                                      className="w-10 h-10 rounded-full border-2 border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0"
                                       title={`${panelist.name} - ${panelist.role}`}
+                                    >
+                                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    </div>
                                     />
                                   ))}
                                 </div>
@@ -805,10 +794,9 @@ export default function RisingSchedulePage() {
                             ) : (
                               // Single speaker
                               <div className="flex items-start gap-3 mb-4">
-                                <img
-                                  src={sess.speaker.image}
-                                  alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
+                                <div className="w-10 h-10 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
                                 />
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
@@ -851,10 +839,9 @@ export default function RisingSchedulePage() {
                                 {sess.title}
                               </h3>
                               <div className="flex items-start gap-3 mb-4">
-                                <img
-                                  src={sess.speaker.image}
-                                  alt={sess.speaker.name}
-                                  className="w-10 h-10 rounded-full object-cover shrink-0 border border-[#0D0D0D]/20"
+                                <div className="w-10 h-10 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                </div>
                                 />
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">
@@ -892,11 +879,9 @@ export default function RisingSchedulePage() {
                             <div className="space-y-3">
                               {session.rightSession.panelists.map((panelist, pIndex) => (
                                 <div key={pIndex} className="flex items-center gap-3">
-                                  <img
-                                    src={panelist.image}
-                                    alt={panelist.name}
-                                    className="w-8 h-8 rounded-full object-cover border border-[#0D0D0D]/10"
-                                  />
+                                  <div className="w-8 h-8 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                  </div>
                                   <div>
                                     <p className="font-sans text-sm text-[#0D0D0D]/80">{panelist.name}</p>
                                     <p className="font-sans text-xs text-[#0D0D0D]/40">{panelist.role}</p>
