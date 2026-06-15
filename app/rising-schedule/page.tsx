@@ -389,7 +389,7 @@ export default function RisingSchedulePage() {
                       </div>
                     )}
                     {session.type === "continuation" && (
-                      <div className="bg-white border border-[#0D0D0D]/10 rounded-2xl p-4 flex items-center justify-center shadow-sm">
+                      <div className="bg-gradient-to-r from-[#E85520]/10 to-transparent border border-[#0D0D0D]/10 rounded-xl p-4 flex items-center justify-center">
                         <p className="font-sans text-base text-[#0D0D0D] font-medium text-center">
                           {session.title}
                         </p>
