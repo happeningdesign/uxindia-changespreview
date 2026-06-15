@@ -40,8 +40,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
         <div className="flex-1 flex flex-col justify-end pl-6 md:pl-20 lg:pl-32 pr-6 pb-24">
           <div className="max-w-2xl">
             {/* Eyebrow kicker */}
-            <div className="animate-float-up opacity-0 mb-8 flex items-center gap-3">
-              <img src="/map-icon.svg" alt="" width="20" height="20" className="text-[#E85520] shrink-0" style={{ color: "#E85520" }} />
+            <div className="animate-float-up opacity-0 mb-8">
               <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] break-words">
                 DESIGN LEADERSHIP WEEK 2026 · TRACK 01
               </p>
@@ -107,24 +106,16 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab }) {
                     href="https://maps.app.goo.gl/GefGLLqYJ4ECABMcA"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-start gap-1.5 font-sans text-base md:text-lg text-white font-medium cursor-pointer hover:text-[#E85520] transition-colors duration-200"
+                    className="group inline-flex items-center gap-2.5 font-sans text-base md:text-lg text-white font-medium cursor-pointer hover:text-[#E85520] transition-colors duration-200"
                   >
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="shrink-0 mt-1 opacity-70 group-hover:opacity-100 transition-opacity"
+                    <img
+                      src="/venue-location-icon.png"
+                      alt=""
+                      width="18"
+                      height="18"
+                      className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity"
                       aria-hidden="true"
-                    >
-                      <path
-                        d="M12 21s-7-6.4-7-11a7 7 0 1 1 14 0c0 4.6-7 11-7 11z"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinejoin="round"
-                      />
-                      <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.6" />
-                    </svg>
+                    />
                     Leela Bhartiya City
                   </a>
                 </div>
