@@ -28,8 +28,10 @@ function splitNameTwoLines(name: string): [string, string] {
 
 function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { speaker: Speaker; index: number; variant?: "dark" | "light"; isFlipped: boolean; onFlip: () => void }) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isTapped, setIsTapped] = useState(false);
   const color = speakerColors[index % speakerColors.length];
   const isLight = variant === "light";
+  const showOverlay = isHovered || isTapped;
 
   return (
     <div
@@ -39,9 +41,16 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
         boxShadow: isLight ? "0 8px 24px rgba(0,0,0,0.12)" : "0 8px 28px rgba(0,0,0,0.55)",
         ring: isLight ? "1px solid rgba(13,13,13,0.08)" : "1px solid rgba(255,255,255,0.12)",
       }}
-      onClick={onFlip}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => {
+        // On touch devices, toggle the overlay; on desktop this is a no-op (hover handles it)
+        if (window.matchMedia("(hover: none)").matches) {
+          setIsTapped((prev) => !prev);
+        } else {
+          onFlip();
+        }
+      }}
     >
       {/* Photo */}
       <img
@@ -64,7 +73,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
       {/* Front card name/role — visible when not hovered */}
       <div
         className="absolute bottom-0 left-0 right-0 p-4 md:p-5 transition-opacity duration-300"
-        style={{ opacity: isHovered ? 0 : 1 }}
+        style={{ opacity: showOverlay ? 0 : 1 }}
       >
         {/* Orange arrow button — bottom right */}
         <div className="flex items-end justify-between gap-2">
@@ -110,8 +119,8 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
           borderTop: `1px solid rgba(255,255,255,0.12)`,
-          transform: isHovered ? "translateY(0%)" : "translateY(100%)",
-          opacity: isHovered ? 1 : 0,
+          transform: showOverlay ? "translateY(0%)" : "translateY(100%)",
+          opacity: showOverlay ? 1 : 0,
         }}
       >
         {/* Talk type chip */}
