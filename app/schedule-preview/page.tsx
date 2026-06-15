@@ -863,7 +863,7 @@ export default function SchedulePreviewPage() {
                                   src="/icons/lunch.svg"
                                   alt="lunch"
                                   className="w-6 h-6"
-                                  style={{ filter: "brightness(0) saturate(100%) invert(57%) sepia(71%) saturate(1241%) hue-rotate(7deg)" }}
+                                  style={{ filter: "invert(44%) sepia(79%) saturate(1000%) hue-rotate(349deg) brightness(95%)" }}
                                 />
                               ) : isRegistration ? (
                                 <svg
