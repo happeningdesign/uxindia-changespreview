@@ -99,8 +99,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
         <button
           type="button"
           onClick={(e) => e.stopPropagation()}
-          className="group/btn mt-3 inline-flex items-center gap-1 self-start font-sans text-[10px] md:text-[11px] font-semibold text-white uppercase tracking-wider cursor-pointer"
-          style={{ color }}
+          className="group/btn mt-3 inline-flex items-center gap-1 self-start font-sans text-[10px] md:text-[11px] font-semibold uppercase tracking-wider cursor-pointer text-[#E85520]"
         >
           Read more
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover/btn:translate-x-0.5">
