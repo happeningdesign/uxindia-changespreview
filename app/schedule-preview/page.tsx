@@ -62,7 +62,7 @@ const scheduleData = {
     {
       time: "11:15 AM",
       type: "continuation",
-      title: "Workshops Continue after Coffee Break",
+      title: "Workshops continue in same rooms after coffee break",
       description: "Workshops continue in same rooms",
     },
     {
@@ -116,7 +116,7 @@ const scheduleData = {
     {
       time: "4:00 PM",
       type: "continuation",
-      title: "Workshops Continue after Coffee Break",
+      title: "Workshops continue in same rooms after coffee break",
       description: "Workshops continue in same rooms",
     },
   ],
@@ -663,7 +663,7 @@ export default function SchedulePreviewPage() {
     <main>
       <Nav forceSolid={true} />
       <div className="bg-[#0D0D0D] w-full pt-24 pb-16 md:pt-32 md:pb-24 min-h-screen">
-        <div className="max-w-7xl mx-auto px-6 md:px-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
           {/* Header - aligned to card grid */}
           <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="lg:col-span-2" />
@@ -684,12 +684,12 @@ export default function SchedulePreviewPage() {
           <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="lg:col-span-2" />
             <div className="lg:col-span-10">
-              <div className="flex gap-4">
+              <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 md:-mx-6 md:px-6 lg:mx-0 lg:px-0 scrollbar-hide">
                 {scheduleData.days.map((day) => (
                   <button
                     key={day.id}
                     onClick={() => setActiveDay(day.id)}
-                    className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all cursor-pointer border ${
+                    className={`shrink-0 px-5 py-3 rounded-lg font-sans text-sm font-medium transition-all cursor-pointer border ${
                       activeDay === day.id
                         ? "bg-[#E85520]/10 border-[#E85520] text-[#E85520]"
                         : "bg-transparent border-white/20 text-white/60 hover:border-white/40 hover:text-white"

@@ -126,7 +126,7 @@ const scheduleData = {
     {
       time: "4:00 PM",
       type: "continuation",
-      title: "Workshops Continue after Coffee Break",
+      title: "Workshops continue in same rooms after coffee break",
       description: "Workshops continue in same rooms",
     },
   ],
@@ -296,7 +296,7 @@ export default function RisingSchedulePage() {
     <main>
       <Nav forceSolid={true} />
       <div className="bg-[#F5F0E8] w-full pt-24 pb-16 md:pt-32 md:pb-24 min-h-screen">
-        <div className="max-w-7xl mx-auto px-6 md:px-0">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
           {/* Header - aligned to card grid */}
           <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="lg:col-span-2" />
@@ -317,12 +317,12 @@ export default function RisingSchedulePage() {
           <div className="mb-12 grid grid-cols-1 lg:grid-cols-12 gap-6">
             <div className="lg:col-span-2" />
             <div className="lg:col-span-10">
-              <div className="flex gap-4">
+              <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 md:-mx-6 md:px-6 lg:mx-0 lg:px-0 scrollbar-hide">
                 {scheduleData.days.map((day) => (
                   <button
                     key={day.id}
                     onClick={() => setActiveDay(day.id)}
-                    className={`px-6 py-3 rounded-lg font-sans text-sm font-medium transition-all border cursor-pointer ${
+                    className={`shrink-0 px-5 py-3 rounded-lg font-sans text-sm font-medium transition-all border cursor-pointer ${
                       activeDay === day.id
                         ? "bg-[#E85520]/10 border-[#E85520] text-[#E85520]"
                         : "bg-transparent border-[#0D0D0D]/20 text-[#0D0D0D]/60 hover:border-[#0D0D0D]/40 hover:text-[#0D0D0D]"
