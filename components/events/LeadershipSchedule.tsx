@@ -165,7 +165,7 @@ export default function LeadershipSchedule() {
           <div className="lg:col-span-2" />
           <div className="lg:col-span-10">
             <p className="font-sans text-xs font-semibold uppercase tracking-widest text-[#E85520] mb-3">Schedule</p>
-            <h2 className="font-leadership text-3xl md:text-4xl text-white">Full Programme</h2>
+            <h2 className="font-leadership text-3xl md:text-4xl text-white">Leadership Summit 2026</h2>
           </div>
         </div>
 
