@@ -800,6 +800,7 @@ export default function SchedulePreviewPage() {
                       (() => {
                         const isLunch = session.title.toLowerCase().includes("lunch");
                         const isDinner = session.title.toLowerCase().includes("dinner");
+                        const isClosing = session.title.toLowerCase().includes("closing");
                         const isRegistration = session.title.toLowerCase().includes("registration");
                         const isWorkshopContinue = session.title.toLowerCase().includes("continue");
                         const start = parseTimeToMinutes(session.time);
@@ -846,6 +847,36 @@ export default function SchedulePreviewPage() {
                                 <div>
                                   <p className="font-leadership text-xl text-white">{session.title}</p>
                                   <p className="font-sans text-xs text-white/90 mt-0.5">Join us for an evening of curated conversations and connections</p>
+                                </div>
+                              </div>
+                              <p className="font-sans text-xs text-white/80 lg:hidden shrink-0">{session.time}</p>
+                            </div>
+                          </div>
+                        );
+                        if (isClosing) return (
+                          <div
+                            key={index}
+                            className="relative overflow-hidden rounded-2xl border border-white/10 min-h-[180px] flex flex-col justify-end"
+                          >
+                            {/* Background image */}
+                            <img
+                              src="/images/closing-ceremony.webp"
+                              alt="Closing Ceremony"
+                              className="absolute inset-0 w-full h-full object-cover object-center"
+                            />
+                            {/* Gradient overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10" />
+                            {/* Content */}
+                            <div className="relative z-10 p-6 flex items-end justify-between gap-4">
+                              <div className="flex items-center gap-4">
+                                <div className="w-10 h-10 bg-[#E85520]/80 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
+                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white" stroke="none"/>
+                                  </svg>
+                                </div>
+                                <div>
+                                  <p className="font-leadership text-xl text-white">{session.title}</p>
+                                  <p className="font-sans text-xs text-white/90 mt-0.5">Closing remarks and key takeaways from the conference</p>
                                 </div>
                               </div>
                               <p className="font-sans text-xs text-white/80 lg:hidden shrink-0">{session.time}</p>
