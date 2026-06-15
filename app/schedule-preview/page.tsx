@@ -240,27 +240,31 @@ const scheduleData = {
     },
     {
       time: "11:40 AM",
-      type: "sessions",
+      type: "dual-panels",
       sessions: [
         {
           room: "Room 1",
           title: "Panel Discussion",
-          speaker: {
-            name: "John Doe",
-            role: "Panel Moderator, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-          },
           description: "Discussion on design leadership in modern organizations.",
+          tag: "Panel Discussion",
+          panelists: [
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
+          ],
         },
         {
           room: "Room 2",
           title: "Panel Discussion",
-          speaker: {
-            name: "John Doe",
-            role: "Panel Moderator, UMO Design Foundation",
-            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
-          },
           description: "Navigating design entrepreneurship and growth.",
+          tag: "Panel Discussion",
+          panelists: [
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" },
+            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+          ],
         },
       ],
     },
@@ -555,6 +559,11 @@ const scheduleData = {
           name: "John Doe",
           role: "Product Head, Digital Innovation Lab",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
+        },
+        {
+          name: "John Doe",
+          role: "Strategy Lead, Design Futures",
+          image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
         },
       ],
       tag: "Panel Discussion",
@@ -1048,6 +1057,48 @@ export default function SchedulePreviewPage() {
                                 Duration: {sess.duration}
                               </p>
                             )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {session.type === "dual-panels" && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {session.sessions.map((sess, sIndex) => (
+                          <div
+                            key={sIndex}
+                            className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
+                          >
+                            {/* Header */}
+                            <div className="flex items-center justify-between mb-4">
+                              <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
+                                {sess.room}
+                              </p>
+                              <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
+                                {sess.tag}
+                              </span>
+                            </div>
+                            <h3 className="font-leadership text-lg md:text-xl text-white mb-4">
+                              {sess.title}
+                            </h3>
+                            <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-5">
+                              {sess.description}
+                            </p>
+                            {/* Panelists grid */}
+                            <div className="grid grid-cols-2 gap-3">
+                              {sess.panelists.map((panelist, pIndex) => (
+                                <div key={pIndex} className="flex items-center gap-2">
+                                  <img
+                                    src={panelist.image}
+                                    alt={panelist.name}
+                                    className="w-9 h-9 rounded-full object-cover shrink-0 border border-white/15"
+                                  />
+                                  <div className="min-w-0">
+                                    <p className="font-sans text-xs text-white/80 font-medium truncate">{panelist.name}</p>
+                                    <p className="font-sans text-[10px] text-white/40 truncate">{panelist.role}</p>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
                           </div>
                         ))}
                       </div>
