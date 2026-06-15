@@ -220,11 +220,11 @@ export default function LeadershipSchedule() {
                         <PersonIcon size={28} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.title}</h3>
-                        <p className="font-sans text-sm text-white/60 mb-3">{session.description}</p>
+                        <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.tag}</h3>
+                        <p className="font-sans text-sm text-white/60 mb-3">Announcing Soon</p>
                         <p className="font-sans text-sm text-white/80">
-                          <span className="block">{session.speaker.name}</span>
-                          <span className="text-white/40 text-xs">{session.speaker.role}</span>
+                          <span className="block">TBA</span>
+                          <span className="text-white/40 text-xs">&nbsp;</span>
                         </p>
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
@@ -331,8 +331,8 @@ export default function LeadershipSchedule() {
                     </div>
                     <div className="flex items-start justify-between mb-6">
                       <div>
-                        <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.title}</h3>
-                        <p className="font-sans text-sm text-white/60">{session.description}</p>
+                        <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.tag}</h3>
+                        <p className="font-sans text-sm text-white/60">Announcing Soon</p>
                       </div>
                       <span className="hidden lg:inline-block px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20 shrink-0 ml-4">{session.tag}</span>
                     </div>
@@ -343,8 +343,8 @@ export default function LeadershipSchedule() {
                             <PersonIcon size={22} />
                           </div>
                           <div className="flex flex-col items-start gap-1 min-w-0">
-                            <p className="font-sans text-sm text-white font-medium leading-tight">{panelist.name}</p>
-                            <p className="font-sans text-xs text-white/60 leading-tight">{panelist.role}</p>
+                            <p className="font-sans text-sm text-white font-medium leading-tight">TBA</p>
+                            <p className="font-sans text-xs text-white/60 leading-tight">&nbsp;</p>
                           </div>
                         </div>
                       ))}
@@ -364,17 +364,17 @@ export default function LeadershipSchedule() {
                             <p className="lg:hidden text-xs text-white/40">{session.time}</p>
                           </div>
                         </div>
-                        <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{workshop.title}</h3>
+                        <h3 className="font-leadership text-lg md:text-xl text-white mb-3">Workshop</h3>
                         <div className="flex items-start gap-3 mb-4">
                           <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                             <PersonIcon size={18} />
                           </div>
                           <p className="font-sans text-sm text-white/80 font-medium">
-                            <span className="block">{workshop.speaker.name}</span>
-                            <span className="text-white/40 text-xs">{workshop.speaker.role}</span>
+                            <span className="block">TBA</span>
+                            <span className="text-white/40 text-xs">&nbsp;</span>
                           </p>
                         </div>
-                        <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">{workshop.description}</p>
+                        <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">Announcing Soon</p>
                       </div>
                     ))}
                   </div>
@@ -392,15 +392,15 @@ export default function LeadershipSchedule() {
                             <p className="lg:hidden text-xs text-white/40">{session.time}</p>
                           </div>
                         </div>
-                        <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{sess.title}</h3>
+                        <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{sess.tag || "Session"}</h3>
                         {sess.panelists ? (
                           <div className="grid grid-cols-2 gap-4 mb-4">
                             {sess.panelists.map((panelist, pIndex) => (
                               <div key={pIndex} className="flex items-start gap-2">
                                 <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={14} /></div>
                                 <div>
-                                  <p className="font-sans text-xs text-white font-medium leading-tight truncate">{panelist.name}</p>
-                                  <p className="font-sans text-xs text-white/60 leading-tight">{panelist.role}</p>
+                                  <p className="font-sans text-xs text-white font-medium leading-tight truncate">TBA</p>
+                                  <p className="font-sans text-xs text-white/60 leading-tight">&nbsp;</p>
                                 </div>
                               </div>
                             ))}
@@ -409,12 +409,12 @@ export default function LeadershipSchedule() {
                           <div className="flex items-start gap-3 mb-4">
                             <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={18} /></div>
                             <p className="font-sans text-sm text-white/80 font-medium">
-                              <span className="block">{sess.speaker.name}</span>
-                              <span className="text-white/40 text-xs">{sess.speaker.role}</span>
+                              <span className="block">TBA</span>
+                              <span className="text-white/40 text-xs">&nbsp;</span>
                             </p>
                           </div>
                         )}
-                        <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">{sess.description}</p>
+                        <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">Announcing Soon</p>
                       </div>
                     ))}
                   </div>

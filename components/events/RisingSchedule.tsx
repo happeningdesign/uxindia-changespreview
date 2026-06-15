@@ -194,11 +194,11 @@ export default function RisingSchedule() {
                         <PersonIconDark size={28} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.title}</h3>
-                        <p className="font-sans text-sm text-[#0D0D0D]/60 mb-3">{session.description}</p>
+                        <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.tag}</h3>
+                        <p className="font-sans text-sm text-[#0D0D0D]/60 mb-3">Announcing Soon</p>
                         <p className="font-sans text-sm text-[#0D0D0D]/80">
-                          <span className="block">{session.speaker.name}</span>
-                          <span className="text-[#0D0D0D]/40 text-xs">{session.speaker.role}</span>
+                          <span className="block">TBA</span>
+                          <span className="text-[#0D0D0D]/40 text-xs">&nbsp;</span>
                         </p>
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
@@ -257,8 +257,8 @@ export default function RisingSchedule() {
                     </div>
                     <div className="flex items-start justify-between mb-6">
                       <div>
-                        <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.title}</h3>
-                        <p className="font-sans text-sm text-[#0D0D0D]/60">{session.description}</p>
+                        <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.tag}</h3>
+                        <p className="font-sans text-sm text-[#0D0D0D]/60">Announcing Soon</p>
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#1A7A6E] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider shrink-0 ml-4">{session.tag}</span>
                     </div>
@@ -269,8 +269,8 @@ export default function RisingSchedule() {
                             <PersonIconDark size={22} />
                           </div>
                           <div className="flex flex-col items-start gap-1 min-w-0">
-                            <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{panelist.name}</p>
-                            <p className="font-sans text-xs text-[#0D0D0D]/60 leading-tight">{panelist.role}</p>
+                            <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">TBA</p>
+                            <p className="font-sans text-xs text-[#0D0D0D]/60 leading-tight">&nbsp;</p>
                           </div>
                         </div>
                       ))}
@@ -291,16 +291,16 @@ export default function RisingSchedule() {
                             </span>
                             <span className="px-2 py-0.5 bg-[#1A7A6E]/10 text-[#1A7A6E] text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">Workshop</span>
                           </div>
-                          <h4 title={workshop.title} className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2 group-hover/ws:line-clamp-none transition-all">
-                            {workshop.title}
+                          <h4 className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2 group-hover/ws:line-clamp-none transition-all">
+                            Workshop Leaders
                           </h4>
                           <div className="flex items-center gap-2">
                             <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                               <PersonIconDark size={14} />
                             </div>
                             <div className="min-w-0">
-                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">{workshop.speaker.name}</p>
-                              <p className="font-sans text-[10px] text-[#0D0D0D]/40 truncate">{workshop.speaker.role}</p>
+                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">TBA</p>
+                              <p className="font-sans text-[10px] text-[#0D0D0D]/40 truncate">&nbsp;</p>
                             </div>
                           </div>
                         </div>
@@ -322,12 +322,12 @@ export default function RisingSchedule() {
                             </span>
                             {sess.tag && <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20 shrink-0">{sess.tag}</span>}
                           </div>
-                          <h4 className="font-leadership text-lg text-[#0D0D0D] mb-2">{sess.title}</h4>
-                          <p className="font-sans text-xs text-[#0D0D0D]/60 mb-3 line-clamp-2">{sess.description}</p>
+                          <h4 className="font-leadership text-lg text-[#0D0D0D] mb-2">{sess.tag || "Session"}</h4>
+                          <p className="font-sans text-xs text-[#0D0D0D]/60 mb-3 line-clamp-2">Announcing Soon</p>
                           {sess.type === "panel" && sess.panelists && (
                             <div className="flex gap-2 mt-3">
                               {sess.panelists.map((panelist, pIndex) => (
-                                <div key={pIndex} className="w-8 h-8 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0" title={panelist.name}>
+                                <div key={pIndex} className="w-8 h-8 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0" title="TBA">
                                   <PersonIconDark size={14} />
                                 </div>
                               ))}
@@ -338,7 +338,7 @@ export default function RisingSchedule() {
                               <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                                 <PersonIconDark size={14} />
                               </div>
-                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">{sess.speaker.name}</p>
+                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium truncate">TBA</p>
                             </div>
                           )}
                         </div>
