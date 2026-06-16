@@ -116,7 +116,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
 
       {/* Glassmorphism overlay — slides up from bottom on hover */}
       <div
-        className="absolute inset-x-0 bottom-0 flex flex-col p-4 md:p-5 transition-all duration-500 ease-out"
+        className="absolute inset-x-0 bottom-0 flex flex-col p-3 md:p-5 transition-all duration-500 ease-out max-h-[85%] overflow-y-auto"
         style={{
           background: "rgba(10, 10, 10, 0.55)",
           backdropFilter: "blur(16px)",
@@ -128,23 +128,23 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
       >
         {/* Talk type chip */}
         {speaker.talkType && (
-          <span className="font-sans text-[8px] md:text-[9px] font-semibold text-white/60 tracking-widest uppercase mb-2">
+          <span className="font-sans text-[7px] md:text-[9px] font-semibold text-white/60 tracking-widest uppercase mb-1.5 flex-shrink-0">
             {speaker.talkType}
           </span>
         )}
-        <h3 className="font-leadership text-base md:text-lg text-white leading-tight mb-1">
+        <h3 className="font-leadership text-sm md:text-lg text-white leading-tight mb-1 flex-shrink-0">
           {speaker.name}
         </h3>
-        <p className="font-sans text-[9px] md:text-[11px] font-semibold text-white/60 uppercase tracking-widest mb-2">
+        <p className="font-sans text-[8px] md:text-[11px] font-semibold text-white/60 uppercase tracking-widest mb-2 flex-shrink-0">
           {speaker.role}
         </p>
-        <p className="font-sans text-[10px] md:text-xs text-white/80 leading-relaxed line-clamp-4">
+        <p className="font-sans text-[9px] md:text-xs text-white/80 leading-relaxed line-clamp-3 md:line-clamp-4 flex-shrink-0">
           {speaker.bio || `${speaker.name} is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.`}
         </p>
         <button
           type="button"
           onClick={(e) => e.stopPropagation()}
-          className="group/btn mt-3 inline-flex items-center gap-1 self-start font-sans text-[10px] md:text-[11px] font-semibold uppercase tracking-wider cursor-pointer text-[#E85520]"
+          className="group/btn mt-2 md:mt-3 inline-flex items-center gap-1 self-start font-sans text-[8px] md:text-[11px] font-semibold uppercase tracking-wider cursor-pointer text-[#E85520] flex-shrink-0"
         >
           Read more
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover/btn:translate-x-0.5">
