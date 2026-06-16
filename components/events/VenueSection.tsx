@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 interface VenueSectionProps {
   variant?: "dark" | "light";
   venueName?: string;
+  locationText?: string;
   mapsUrl?: string;
   embedCoords?: string;
   images?: { src: string; alt: string }[];
@@ -24,6 +25,7 @@ const DEFAULT_EMBED_COORDS = "13.0846294,77.643066";
 export default function VenueSection({
   variant = "dark",
   venueName = "The Leela Bhartiya City",
+  locationText = "Bengaluru, India",
   mapsUrl = DEFAULT_MAPS_URL,
   embedCoords = DEFAULT_EMBED_COORDS,
   images = leelaImages,
@@ -89,7 +91,7 @@ export default function VenueSection({
               </div>
 
               <p className={`font-sans text-sm font-semibold uppercase tracking-widest ${isLight ? "text-white/70" : "text-[#E85520]"}`}>
-                Bengaluru, India
+                {locationText}
               </p>
 
               {/* Description */}

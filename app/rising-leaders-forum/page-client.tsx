@@ -123,6 +123,7 @@ export default function RisingLeadersPageClient() {
           <VenueSection
             variant="light"
             venueName="Srishti Manipal Institute of Art, Design & Technology"
+            locationText="Yelahanka, Govindapura, Bengaluru, Karnataka 560063"
             mapsUrl="https://maps.app.goo.gl/he73UFRv2daCrPzY8"
             embedCoords="13.1257435,77.591569"
           />
