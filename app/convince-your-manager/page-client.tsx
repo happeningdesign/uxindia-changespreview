@@ -101,7 +101,7 @@ const faqItems = [
     id: "faq-5",
     question: "What makes UXINDIA different?",
     answer:
-      "22+ years of legacy as Asia's leading design leadership platform. Carefully curated sessions, global speakers and industry experts, a strong focus on leadership, AI, and innovation, and high-quality networking with senior professionals.",
+      "23+ years of legacy as Asia's leading design leadership platform. Carefully curated sessions, global speakers and industry experts, a strong focus on leadership, AI, and innovation, and high-quality networking with senior professionals.",
   },
   {
     id: "faq-6",
