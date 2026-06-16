@@ -503,24 +503,17 @@ export default function ConvinceYourManagerClient() {
             <p className="font-sans text-base text-[#0D0D0D]/60 max-w-lg mx-auto leading-relaxed mb-8">
               The ideas, leadership skills, industry connections, and strategic perspectives gained can influence teams, products, and organisations for years to come.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <a
                 href="https://tickets.uxindia.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#E85520] text-white font-sans text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-[#d04a1a] transition-colors"
+                className="inline-flex items-center justify-center gap-3 border border-[#E85520] text-[#E85520] font-sans text-base font-semibold px-8 py-4 rounded-full hover:bg-[#E85520]/10 transition-colors"
               >
-                Register Now
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                Buy Your Passes
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </a>
-              <a
-                href="/downloads/leadership-approval-letter.pdf"
-                download
-                className="inline-flex items-center justify-center gap-2 border border-[#0D0D0D]/20 text-[#0D0D0D] font-sans text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-[#0D0D0D]/5 transition-colors"
-              >
-                Download Letter
               </a>
             </div>
           </FadeIn>
