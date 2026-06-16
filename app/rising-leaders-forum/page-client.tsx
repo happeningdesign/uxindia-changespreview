@@ -94,7 +94,7 @@ export default function RisingLeadersPageClient() {
             variant="light"
             title="Why Attend"
             description="Built for leaders at the threshold."
-            subtitle="This is where your next chapter begins. Step into rooms with peers navigating the same leap — learn directly from seasoned design leaders in intimate mentor sessions, pressure-test your thinking in hands-on workshops, and build the network and confidence to grow into the leader you're becoming."
+            subtitle="This is where your next chapter begins. Step into rooms with peers navigating the same leap learn directly from seasoned design leaders in intimate mentor sessions, pressure-test your thinking in hands on workshops, and build the network and confidence to grow into the leader you're becoming."
           />
           <SpeakersGrid
             variant="light"
