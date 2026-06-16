@@ -103,7 +103,7 @@ export default function LeadershipSummitPageClient() {
           <WhoAttends
             title="Why Attend"
             description="Built for leaders who decide."
-            subtitle="This is where strategy meets craft. Step away from the day-to-day to think bigger — exchange hard-won lessons with peers who face the same decisions, pressure-test your ideas in intimate roundtables, and leave with sharper conviction, a stronger network, and a clearer view of where design is headed next."
+            subtitle="This is where strategy meets craft. Step away from the day to day to think bigger exchange hard won lessons with peers who face the same decisions, pressure test your ideas in intimate roundtables, and leave with sharper conviction, a stronger network, and a clearer view of where design is headed next."
           />
           <SpeakersGrid
             speakers={[
