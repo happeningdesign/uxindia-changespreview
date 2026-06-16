@@ -37,7 +37,7 @@ export default function RisingLeadersPageClient() {
 
       {/* Sticky tab bar — only shown when schedule is active */}
       {activeTab === "schedule" && (
-        <div className="sticky top-[56px] md:top-[68px] z-40 w-full flex border-b border-[#0D0D0D]/15 bg-[#F5F0E8] backdrop-blur-md">
+        <div className="sticky top-[56px] md:top-[68px] z-40 w-full flex border-b border-[#0D0D0D]/20 bg-[#F5F0E8] shadow-lg">
           <button
             onClick={() => setActiveTab("overview")}
             className="flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 border-transparent text-[#0D0D0D]/40 hover:text-[#0D0D0D]/70 cursor-pointer"
