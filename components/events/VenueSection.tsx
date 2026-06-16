@@ -25,7 +25,7 @@ const DEFAULT_EMBED_COORDS = "13.0846294,77.643066";
 export default function VenueSection({
   variant = "dark",
   venueName = "The Leela Bhartiya City",
-  locationText = "Bengaluru, India",
+  locationText = "6/2, Thanisandra Main Road, Thirumenahalli, Bengaluru 560064",
   mapsUrl = DEFAULT_MAPS_URL,
   embedCoords = DEFAULT_EMBED_COORDS,
   images = leelaImages,
