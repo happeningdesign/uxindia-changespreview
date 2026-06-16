@@ -173,9 +173,9 @@ export default function ConvinceYourManagerClient() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="/passes"
-                className="inline-flex items-center gap-2.5 bg-[#E85520] text-white font-sans text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-[#d04a1a] transition-colors"
+                className="inline-flex items-center gap-3 border border-[#E85520] text-[#E85520] font-sans text-base font-semibold px-8 py-4 rounded-full hover:bg-[#E85520]/10 transition-colors"
               >
-                Buy Passes
+                Buy Your Passes
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
