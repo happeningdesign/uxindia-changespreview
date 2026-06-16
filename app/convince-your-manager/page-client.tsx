@@ -172,24 +172,13 @@ export default function ConvinceYourManagerClient() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="/downloads/leadership-approval-letter.pdf"
-                download
+                href="/passes"
                 className="inline-flex items-center gap-2.5 bg-[#E85520] text-white font-sans text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-[#d04a1a] transition-colors"
               >
+                Buy Passes
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                  <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-                Leadership Summit Letter
-              </a>
-              <a
-                href="/downloads/rising-leaders-approval-letter.pdf"
-                download
-                className="inline-flex items-center gap-2.5 bg-white/10 border border-white/20 text-white font-sans text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-white/15 transition-colors"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
-                </svg>
-                Rising Leaders Forum Letter
               </a>
             </div>
           </FadeIn>
