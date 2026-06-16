@@ -170,7 +170,7 @@ export default function ConvinceYourManagerClient() {
             <p className="font-sans text-lg md:text-xl text-white/60 max-w-2xl leading-relaxed mb-10">
               Everything you need to make the case for attending UXINDIA 2026 — a business case, a ready-to-send approval letter, and answers to every question your manager might ask.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <a
                 href="/passes"
                 className="inline-flex items-center gap-3 border border-[#E85520] text-[#E85520] font-sans text-base font-semibold px-8 py-4 rounded-full hover:bg-[#E85520]/10 transition-colors"
@@ -178,6 +178,26 @@ export default function ConvinceYourManagerClient() {
                 Buy Your Passes
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a
+                href="/downloads/leadership-approval-letter.pdf"
+                download
+                className="inline-flex items-center gap-3 border border-white/30 text-white font-sans text-base font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
+              >
+                Leadership Summit Letter
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                </svg>
+              </a>
+              <a
+                href="/downloads/rising-leaders-approval-letter.pdf"
+                download
+                className="inline-flex items-center gap-3 border border-white/30 text-white font-sans text-base font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
+              >
+                Rising Leaders Forum Letter
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
                 </svg>
               </a>
             </div>
