@@ -172,7 +172,7 @@ export default function ConvinceYourManagerClient() {
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <a
-                href="/passes"
+                href="https://www.ux-india.org/tickets"
                 className="inline-flex items-center gap-3 border border-[#E85520] text-[#E85520] font-sans text-base font-semibold px-8 py-4 rounded-full hover:bg-[#E85520]/10 transition-colors"
               >
                 Buy Your Passes
@@ -505,7 +505,7 @@ export default function ConvinceYourManagerClient() {
             </p>
             <div className="flex justify-center">
               <a
-                href="https://tickets.uxindia.org"
+                href="https://www.ux-india.org/tickets"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 border border-[#E85520] text-[#E85520] font-sans text-base font-semibold px-8 py-4 rounded-full hover:bg-[#E85520]/10 transition-colors"
