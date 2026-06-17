@@ -119,16 +119,8 @@ export default function RisingSchedule() {
                       </div>
                       <div className="flex-1">
                         <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.title || session.tag}</h3>
-                        <p className="font-sans text-sm text-[#0D0D0D]/60 mb-2">{session.description || "Announcing Soon"}</p>
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 rounded-full shrink-0 border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center">
-                            <PersonIconDark size={14} />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">{session.speaker?.name || "TBA"}</p>
-                            {session.speaker?.role && <p className="font-sans text-xs text-[#0D0D0D]/60 mt-0.5">{session.speaker.role}</p>}
-                          </div>
-                        </div>
+                        <p className="font-sans text-sm text-[#0D0D0D]/60 mb-1">{session.description || "Announcing Soon"}</p>
+                        <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">{session.speaker?.name || "TBA"}</p>
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
                     </div>
@@ -193,18 +185,11 @@ export default function RisingSchedule() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                       {session.panelists?.map((panelist, pIndex) => (
-                        <div key={pIndex} className="flex items-start gap-3">
-                          <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center overflow-hidden flex-shrink-0">
-                            {panelist.image ? (
-                              <img src={panelist.image} alt={panelist.name} className="w-full h-full object-cover" />
-                            ) : (
-                              <PersonIconDark size={22} />
-                            )}
+                        <div key={pIndex} className="flex items-center gap-3">
+                          <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
+                            <PersonIconDark size={22} />
                           </div>
-                          <div className="flex-1 min-w-0">
-                            <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{panelist.name || "TBA"}</p>
-                            {panelist.role && <p className="font-sans text-xs text-[#0D0D0D]/60 mt-0.5 line-clamp-2">{panelist.role}</p>}
-                          </div>
+                          <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{panelist.name || "TBA"}</p>
                         </div>
                       ))}
                     </div>
@@ -228,12 +213,8 @@ export default function RisingSchedule() {
                             {workshop.title}
                           </h4>
                           <div className="flex items-center gap-2 mb-2">
-                            <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center overflow-hidden flex-shrink-0">
-                              {workshop.speaker?.image ? (
-                                <img src={workshop.speaker.image} alt={workshop.speaker.name} className="w-full h-full object-cover" />
-                              ) : (
-                                <PersonIconDark size={14} />
-                              )}
+                            <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                              <PersonIconDark size={14} />
                             </div>
                             <div className="flex-1">
                               <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{workshop.speaker?.name || "TBA"}</p>
@@ -263,37 +244,23 @@ export default function RisingSchedule() {
                           <h4 className="font-leadership text-lg text-[#0D0D0D] mb-2">{sess.title || sess.tag || "Session"}</h4>
                           <p className="font-sans text-xs text-[#0D0D0D]/60 mb-3 line-clamp-2">{sess.description || "Announcing Soon"}</p>
                           {sess.type === "panel" && sess.panelists && (
-                            <div className="grid grid-cols-2 gap-3 mt-3">
+                            <div className="grid grid-cols-2 gap-2 mt-3">
                               {sess.panelists.map((panelist, pIndex) => (
-                                <div key={pIndex} className="flex gap-2">
-                                  <div className="w-7 h-7 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0 overflow-hidden flex-shrink-0">
-                                    {panelist.image ? (
-                                      <img src={panelist.image} alt={panelist.name} className="w-full h-full object-cover" />
-                                    ) : (
-                                      <PersonIconDark size={12} />
-                                    )}
+                                <div key={pIndex} className="flex items-center gap-2">
+                                  <div className="w-7 h-7 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0">
+                                    <PersonIconDark size={12} />
                                   </div>
-                                  <div className="min-w-0 flex-1">
-                                    <p className="font-sans text-[11px] text-[#0D0D0D]/80 font-medium truncate">{panelist.name || "TBA"}</p>
-                                    {panelist.role && <p className="font-sans text-[9px] text-[#0D0D0D]/60 line-clamp-1">{panelist.role}</p>}
-                                  </div>
+                                  <p className="font-sans text-[11px] text-[#0D0D0D]/70 truncate">{panelist.name || "TBA"}</p>
                                 </div>
                               ))}
                             </div>
                           )}
                           {sess.type === "spark" && sess.speaker && (
-                            <div className="flex items-start gap-2 mt-3">
-                              <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center overflow-hidden flex-shrink-0 mt-0.5">
-                                {sess.speaker?.image ? (
-                                  <img src={sess.speaker.image} alt={sess.speaker.name} className="w-full h-full object-cover" />
-                                ) : (
-                                  <PersonIconDark size={14} />
-                                )}
+                            <div className="flex items-center gap-2 mt-3">
+                              <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                                <PersonIconDark size={14} />
                               </div>
-                              <div className="flex-1 min-w-0">
-                                <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{sess.speaker?.name || "TBA"}</p>
-                                {sess.speaker?.role && <p className="font-sans text-[10px] text-[#0D0D0D]/60">{sess.speaker.role}</p>}
-                              </div>
+                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{sess.speaker?.name || "TBA"}</p>
                             </div>
                           )}
                         </div>
