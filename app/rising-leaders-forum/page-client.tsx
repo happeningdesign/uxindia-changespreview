@@ -23,7 +23,7 @@ const risingLeadersDays = [
     badge: "DAY 2",
     badgeColor: "blue" as const,
     date: "27 September",
-    description: "Specialized workshops, peer-led design critiques, rapid idea exchanges, and an evening of structured networking with fellow emerging leaders and industry experts.",
+    description: "Deep Dive Talks, Spark Sessions, Panel Discussions and an evening of structured networking with fellow emerging leaders and industry experts.",
     bgColor: "bg-[#0E4D5C]",
   },
 ];
