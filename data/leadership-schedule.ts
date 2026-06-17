@@ -73,15 +73,15 @@ export const leadershipScheduleData = {
     {
       time: "10:05 AM", type: "sessions",
       sessions: [
-        { room: "Room 1", title: "Spark Session", tag: "Spark Session", speaker: { name: "TBA", role: "", image: "" }, description: "" },
-        { room: "Room 2", title: "Spark Session", tag: "Spark Session", speaker: { name: "TBA", role: "", image: "" }, description: "" },
+        { room: "Room 1", title: "Death of the Wireframe", tag: "Spark Session", speaker: { name: "Vyoma Pathak", role: "Sr. Design Practice Lead, MOURI Tech", image: "/LS-Speaker-Images/Vyoma.webp" }, description: "Stepping beyond UI generation to explore what design judgment looks like when anyone can design." },
+        { room: "Room 2", title: "The Original Algorithm: Archiving the Intelligence AI Cannot Replicate", tag: "Spark Session", speaker: { name: "Harshita Hassani", role: "Sr. UX Designer, Optum (United Health Group)", image: "/LS-Speaker-Images/Harshita-Hassan.webp" }, description: "Exploring how a decade of archived maternal wisdom became the foundation for an AI built on care, not just data." },
       ],
     },
     { time: "10:30 AM", type: "break", title: "Coffee Break" },
     {
       time: "11:15 AM", type: "sessions",
       sessions: [
-        { room: "Room 1", title: "Spark Session", tag: "Spark Session", speaker: { name: "TBA", role: "", image: "" }, description: "" },
+        { room: "Room 1", title: "The roles they are a-changin: AI and the Great Dissolve", tag: "Spark Session", speaker: { name: "Ish Awasthi", role: "VP, UX research, JPMC", image: "/LS-Speaker-Images/Ish-Awasti.webp" }, description: "AI is dissolving the lines between product, UX, and engineering — three new career paths are emerging in their place." },
         { room: "Room 2", title: "Spark Session", tag: "Spark Session", speaker: { name: "TBA", role: "", image: "" }, description: "" },
       ],
     },

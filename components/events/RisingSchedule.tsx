@@ -64,7 +64,8 @@ export default function RisingSchedule() {
           <div className="lg:col-span-2" />
           <div className="lg:col-span-10">
             <p className="font-sans text-xs font-semibold uppercase tracking-widest text-[#E85520] mb-3">Schedule</p>
-            <h2 className="font-leadership text-3xl md:text-4xl text-[#0D0D0D]">Rising Leaders Forum 2026</h2>
+            <h2 className="font-leadership text-3xl md:text-4xl text-[#0D0D0D] mb-2">Rising Leaders Forum 2026</h2>
+            <p className="font-sans text-sm text-[#0D0D0D]/50 italic">Please note: Speaker line-up and session timings are subject to change.</p>
           </div>
         </div>
 
@@ -115,7 +116,11 @@ export default function RisingSchedule() {
                     </div>
                     <div className="flex items-start gap-4">
                       <div className="w-16 h-16 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
-                        <PersonIconDark size={28} />
+                        {session.speaker?.image ? (
+                          <img src={session.speaker.image} alt={session.speaker?.name} className="w-16 h-16 rounded-full object-cover" crossOrigin="anonymous" />
+                        ) : (
+                          <PersonIconDark size={28} />
+                        )}
                       </div>
                       <div className="flex-1">
                         <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.title || session.tag}</h3>
@@ -188,7 +193,11 @@ export default function RisingSchedule() {
                       {session.panelists?.map((panelist, pIndex) => (
                         <div key={pIndex} className={`flex ${panelist.role ? 'items-start' : 'items-center'} gap-3`}>
                           <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
-                            <PersonIconDark size={22} />
+                            {panelist.image ? (
+                              <img src={panelist.image} alt={panelist.name} className="w-12 h-12 rounded-full object-cover" crossOrigin="anonymous" />
+                            ) : (
+                              <PersonIconDark size={22} />
+                            )}
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{panelist.name || "TBA"}</p>
@@ -218,7 +227,11 @@ export default function RisingSchedule() {
                           </h4>
                           <div className={`flex ${workshop.speaker?.role ? 'items-start' : 'items-center'} gap-2 mb-2`}>
                             <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
-                              <PersonIconDark size={14} />
+                              {workshop.speaker?.image ? (
+                                <img src={workshop.speaker.image} alt={workshop.speaker?.name} className="w-8 h-8 rounded-full object-cover" crossOrigin="anonymous" />
+                              ) : (
+                                <PersonIconDark size={14} />
+                              )}
                             </div>
                             <div className="flex-1">
                               <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{workshop.speaker?.name || "TBA"}</p>
@@ -252,7 +265,11 @@ export default function RisingSchedule() {
                               {sess.panelists.map((panelist, pIndex) => (
                                 <div key={pIndex} className="flex gap-2">
                                   <div className="w-7 h-7 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0 mt-0.5">
-                                    <PersonIconDark size={12} />
+                                    {panelist.image ? (
+                                      <img src={panelist.image} alt={panelist.name} className="w-7 h-7 rounded-full object-cover" crossOrigin="anonymous" />
+                                    ) : (
+                                      <PersonIconDark size={12} />
+                                    )}
                                   </div>
                                   <div className="min-w-0 flex-1">
                                     <p className="font-sans text-[11px] text-[#0D0D0D]/80 font-medium truncate">{panelist.name || "TBA"}</p>
@@ -264,9 +281,13 @@ export default function RisingSchedule() {
                           )}
                           {sess.type === "spark" && sess.speaker && (
                             <div className={`flex ${sess.speaker?.role ? 'items-start' : 'items-center'} gap-2 mt-3`}>
-                              <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
-                                <PersonIconDark size={14} />
-                              </div>
+                              {sess.speaker?.image ? (
+                                <img src={sess.speaker.image} alt={sess.speaker?.name} className="w-8 h-8 rounded-full shrink-0 border border-[#0D0D0D]/15 object-cover" crossOrigin="anonymous" />
+                              ) : (
+                                <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                                  <PersonIconDark size={14} />
+                                </div>
+                              )}
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{sess.speaker?.name || "TBA"}</p>
                                 {sess.speaker?.role && <p className="font-sans text-[10px] text-[#0D0D0D]/60">{sess.speaker.role}</p>}
