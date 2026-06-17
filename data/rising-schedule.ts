@@ -13,10 +13,11 @@ export const risingScheduleData = {
       time: "11:45 AM", type: "panel", title: "Panel Discussion",
       description: "Industry leaders share their perspectives on navigating the path to design leadership.",
       tag: "Panel Discussion", location: "Auditorium",
-      TBAs: [
-        { name: "TBA", role: "Design Director, Creative Studios", image: "" },
-        { name: "TBA", role: "Head of Design, Innovation Labs", image: "" },
-        { name: "TBA", role: "Design Lead, Digital Ventures", image: "" },
+      panelists: [
+        { name: "Panelist TBA", role: "Design Director, Creative Studios", image: "" },
+        { name: "Panelist TBA", role: "Head of Design, Innovation Labs", image: "" },
+        { name: "Panelist TBA", role: "Design Lead, Digital Ventures", image: "" },
+        { name: "Panelist TBA", role: "Creative Director, Design Excellence", image: "" },
       ],
     },
     { time: "12:45 PM", type: "break", title: "Lunch", location: "Multiple Rooms" },

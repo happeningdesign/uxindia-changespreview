@@ -184,12 +184,12 @@ export default function RisingSchedule() {
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#1A7A6E] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider shrink-0 ml-4">{session.tag}</span>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-                      {session.TBAs.map((TBA, pIndex) => (
+                      {session.panelists?.map((panelist, pIndex) => (
                         <div key={pIndex} className="flex items-center gap-3">
                           <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                             <PersonIconDark size={22} />
                           </div>
-                          <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{TBA.name || "TBA"}</p>
+                          <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{panelist.name || "TBA"}</p>
                         </div>
                       ))}
                     </div>
