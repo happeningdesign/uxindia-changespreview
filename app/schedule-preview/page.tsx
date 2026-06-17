@@ -7,6 +7,17 @@ import { leadershipScheduleData } from "@/data/leadership-schedule";
 
 const scheduleData = leadershipScheduleData;
 
+function parseTimeToMinutes(t: string): number | null {
+  const m = t.match(/(\d+):(\d+)\s*(AM|PM)/i);
+  if (!m) return null;
+  let h = parseInt(m[1], 10);
+  const min = parseInt(m[2], 10);
+  const ap = m[3].toUpperCase();
+  if (ap === "PM" && h !== 12) h += 12;
+  if (ap === "AM" && h === 12) h = 0;
+  return h * 60 + min;
+}
+
 export default function SchedulePreviewPage() {
   const [activeDay, setActiveDay] = React.useState("day1");
   const currentSessions = activeDay === "day1" ? scheduleData.day1 : (activeDay === "day2" ? scheduleData.day2 : scheduleData.day3);
