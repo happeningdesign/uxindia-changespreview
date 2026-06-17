@@ -64,14 +64,6 @@ const leadershipSpeakers: Speaker[] = [
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
     talkType: "Panel Discussion",
   },
-  // ── Add more speakers below this line ──────────────────────────────────────
-  // {
-  //   name: "First Last",
-  //   role: "Title, Organisation",
-  //   image: "https://...",
-  //   talkType: "Workshop Lead",
-  //   bio: "Optional short bio text.",
-  // },
 ];
 
 export default leadershipSpeakers;
