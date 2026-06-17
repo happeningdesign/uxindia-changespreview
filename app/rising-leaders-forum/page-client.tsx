@@ -16,7 +16,7 @@ const risingLeadersDays = [
     badge: "DAY 1",
     badgeColor: "orange" as const,
     date: "26 September",
-    description: "Intensive mentorship sessions with seasoned design leaders, foundational talks on transitioning into leadership, and hands-on workshops on team building and strategy.",
+    description: "Deep Dive Talks, Panel Discussions with seasoned design leaders, foundational talks on transitioning into leadership, and hands-on workshops on team building and strategy.",
     bgColor: "bg-[#1C1C1E]",
   },
   {
