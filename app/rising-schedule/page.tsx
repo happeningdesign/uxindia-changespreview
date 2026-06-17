@@ -38,7 +38,7 @@ const scheduleData = {
       time: "9:00 AM",
       type: "keynote",
       title: "Opening Keynote",
-      description: "Setting the stage for the Rising Leaders Forum - a journey of growth, mentorship, and leadership in design.",
+      description: "Announcing Soon",
       tag: "Keynote",
       location: "Auditorium",
       speaker: {

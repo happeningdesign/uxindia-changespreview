@@ -5,8 +5,8 @@ export const risingScheduleData = {
   ],
   day1: [
     { time: "8:00 AM", type: "break", title: "Registrations", location: "Auditorium" },
-    { time: "9:00 AM", type: "keynote", title: "Opening Keynote", description: "Setting the stage for the Rising Leaders Forum - a journey of growth, mentorship, and leadership in design.", tag: "Keynote", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
-    { time: "9:40 AM", type: "keynote", title: "Deep Dive Talk", description: "An in-depth exploration of emerging design leadership practices and methodologies.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
+    { time: "9:00 AM", type: "keynote", title: "Opening Keynote", description: "Announcing Soon", tag: "Keynote", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
+    { time: "9:40 AM", type: "keynote", title: "Deep Dive Talk", description: "", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
     { time: "10:20 AM", type: "break", title: "Coffee Break", location: "Multiple Rooms" },
     { time: "11:05 AM", type: "keynote", title: "Deep Dive Talk", description: "Continuing the conversation on design leadership with practical frameworks and insights.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
     {
@@ -14,9 +14,9 @@ export const risingScheduleData = {
       description: "Industry leaders share their perspectives on navigating the path to design leadership.",
       tag: "Panel Discussion", location: "Auditorium",
       TBAs: [
-        { name: "TBA 1", role: "Design Director, Creative Studios", image: "" },
-        { name: "TBA 2", role: "Head of Design, Innovation Labs", image: "" },
-        { name: "TBA 3", role: "Design Lead, Digital Ventures", image: "" },
+        { name: "TBA", role: "Design Director, Creative Studios", image: "" },
+        { name: "TBA", role: "Head of Design, Innovation Labs", image: "" },
+        { name: "TBA", role: "Design Lead, Digital Ventures", image: "" },
       ],
     },
     { time: "12:45 PM", type: "break", title: "Lunch", location: "Multiple Rooms" },
@@ -46,9 +46,9 @@ export const risingScheduleData = {
     {
       time: "11:05 AM", type: "parallel-sessions", duration: "60 min",
       sessions: [
-        { room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Industry leaders discuss emerging trends in design leadership.", TBAs: [{ name: "TBA 1", role: "Design Director, Creative Studios", image: "" }, { name: "TBA 2", role: "Head of Design, Innovation Labs", image: "" }] },
-        { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Exploring design-led transformation in organizations.", TBAs: [{ name: "TBA 1", role: "Design Lead, Digital Ventures", image: "" }, { name: "TBA 2", role: "Product Design Manager, Tech Innovations", image: "" }] },
-        { room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Building high-performing design teams.", TBAs: [{ name: "TBA 1", role: "UX Lead, Design Systems", image: "" }, { name: "TBA 2", role: "Design Strategy Director, Future Design Co", image: "" }] },
+        { room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Industry leaders discuss emerging trends in design leadership.", TBAs: [{ name: "TBA", role: "Design Director, Creative Studios", image: "" }, { name: "TBA", role: "Head of Design, Innovation Labs", image: "" }] },
+        { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Exploring design-led transformation in organizations.", TBAs: [{ name: "TBA", role: "Design Lead, Digital Ventures", image: "" }, { name: "TBA", role: "Product Design Manager, Tech Innovations", image: "" }] },
+        { room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Building high-performing design teams.", TBAs: [{ name: "TBA", role: "UX Lead, Design Systems", image: "" }, { name: "TBA", role: "Design Strategy Director, Future Design Co", image: "" }] },
       ],
     },
     {
