@@ -14,9 +14,9 @@ export const risingScheduleData = {
       description: "Industry leaders share their perspectives on navigating the path to design leadership.",
       tag: "Panel Discussion", location: "Auditorium",
       panelists: [
-        { name: "Panelist TBA", role: "Design Director, Creative Studios", image: "" },
-        { name: "Panelist TBA", role: "Head of Design, Innovation Labs", image: "" },
-        { name: "Panelist TBA", role: "Design Lead, Digital Ventures", image: "" },
+        { name: "TBA", role: "Design Director, Creative Studios", image: "" },
+        { name: "TBA", role: "Head of Design, Innovation Labs", image: "" },
+        { name: "TBA", role: "Design Lead, Digital Ventures", image: "" },
         { name: "Yadav Narayan", role: "Creative Director, Design Excellence", image: "" },
       ],
     },
@@ -47,9 +47,9 @@ export const risingScheduleData = {
     {
       time: "11:05 AM", type: "parallel-sessions", duration: "60 min",
       sessions: [
-        { room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Industry leaders discuss emerging trends in design leadership.", panelists: [{ name: "Panelist TBA", role: "Design Director, Creative Studios", image: "" }, { name: "Panelist TBA", role: "Head of Design, Innovation Labs", image: "" }, { name: "Panelist TBA", role: "Design Lead, Tech Innovation", image: "" }, { name: "Panelist TBA", role: "Creative Director, Global Design", image: "" }] },
-        { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Exploring design-led transformation in organizations.", panelists: [{ name: "Panelist TBA", role: "Design Lead, Digital Ventures", image: "" }, { name: "Panelist TBA", role: "Product Design Manager, Tech Innovations", image: "" }, { name: "Panelist TBA", role: "Design Strategy Lead, Future Focus", image: "" }, { name: "Panelist TBA", role: "Head of Design Operations, Innovation Hub", image: "" }] },
-        { room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Building high-performing design teams.", panelists: [{ name: "Panelist TBA", role: "UX Lead, Design Systems", image: "" }, { name: "Panelist TBA", role: "Design Strategy Director, Future Design Co", image: "" }, { name: "Panelist TBA", role: "VP Design, Creative Excellence", image: "" }, { name: "Panelist TBA", role: "Director of Design Culture, Digital Labs", image: "" }] },
+        { room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Industry leaders discuss emerging trends in design leadership.", panelists: [{ name: "TBA", role: "Design Director, Creative Studios", image: "" }, { name: "TBA", role: "Head of Design, Innovation Labs", image: "" }, { name: "TBA", role: "Design Lead, Tech Innovation", image: "" }, { name: "TBA", role: "Creative Director, Global Design", image: "" }] },
+        { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Exploring design-led transformation in organizations.", panelists: [{ name: "TBA", role: "Design Lead, Digital Ventures", image: "" }, { name: "TBA", role: "Product Design Manager, Tech Innovations", image: "" }, { name: "TBA", role: "Design Strategy Lead, Future Focus", image: "" }, { name: "TBA", role: "Head of Design Operations, Innovation Hub", image: "" }] },
+        { room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Building high-performing design teams.", panelists: [{ name: "TBA", role: "UX Lead, Design Systems", image: "" }, { name: "TBA", role: "Design Strategy Director, Future Design Co", image: "" }, { name: "TBA", role: "VP Design, Creative Excellence", image: "" }, { name: "TBA", role: "Director of Design Culture, Digital Labs", image: "" }] },
       ],
     },
     {
