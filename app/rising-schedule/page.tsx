@@ -249,7 +249,7 @@ const scheduleData = {
       time: "3:20 PM",
       type: "keynote",
       title: "Closing Ceremony",
-      description: "Celebrating the Rising Leaders Forum and looking ahead to the future.",
+      description: "Announcing Soon",
       tag: "Closing",
       location: "Auditorium",
       speaker: {

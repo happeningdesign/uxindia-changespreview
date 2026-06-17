@@ -70,7 +70,7 @@ export const risingScheduleData = {
     { time: "12:55 PM", type: "break", title: "Lunch", location: "Multiple Areas" },
     { time: "2:00 PM", type: "keynote", title: "Deep Dive Talk", description: "Announcing Soon", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
     { time: "2:40 PM", type: "keynote", title: "Deep Dive Talk", description: "Announcing Soon", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
-    { time: "3:20 PM", type: "keynote", title: "Closing Ceremony", description: "Celebrating the Rising Leaders Forum and looking ahead to the future.", tag: "Closing", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Conference Host", image: "" } },
+    { time: "3:20 PM", type: "keynote", title: "Closing Ceremony", description: "Announcing Soon", tag: "Closing", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Conference Host", image: "" } },
     { time: "4:00 PM", type: "break", title: "High Tea", location: "Multiple Areas" },
   ],
 };
