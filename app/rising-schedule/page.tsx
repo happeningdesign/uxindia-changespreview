@@ -223,7 +223,7 @@ const scheduleData = {
       time: "2:00 PM",
       type: "keynote",
       title: "Deep Dive Talk",
-      description: "Continuing the conversation on design leadership with practical frameworks.",
+      description: "Announcing Soon",
       tag: "Deep Dive",
       location: "Auditorium",
       speaker: {
@@ -236,7 +236,7 @@ const scheduleData = {
       time: "2:40 PM",
       type: "keynote",
       title: "Deep Dive Talk",
-      description: "Advanced strategies for design leadership and team growth.",
+      description: "Announcing Soon",
       tag: "Deep Dive",
       location: "Auditorium",
       speaker: {
