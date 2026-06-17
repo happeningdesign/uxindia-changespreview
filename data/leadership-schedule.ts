@@ -20,9 +20,9 @@ export const leadershipScheduleData = {
     {
       time: "1:45 PM", endTime: "5:00 PM", type: "workshops", tag: "Workshop",
       workshops: [
-        { room: "Room 1", title: "Workshop 04", speaker: { name: "TBA", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Develop Workshop 04." },
-        { room: "Room 2", title: "Workshop 05", speaker: { name: "TBA", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Innovate with design thinking." },
-        { room: "Room 3", title: "Workshop 06", speaker: { name: "TBA", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Transform ideas into impactful designs." },
+        { room: "Room 1", title: "Workshop 04", speaker: { name: "TBA", role: "", image: "" }, description: "" },
+        { room: "Room 2", title: "Workshop 05", speaker: { name: "TBA", role: "", image: "" }, description: "" },
+        { room: "Room 3", title: "Workshop 06", speaker: { name: "TBA", role: "", image: "" }, description: "" },
       ],
     },
     { time: "3:15 PM", type: "break", title: "Coffee Break" },
