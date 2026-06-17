@@ -105,8 +105,9 @@ export default function LeadershipSchedule() {
                       </div>
                       <div className="flex-1">
                         <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.tag}</h3>
-                        <p className="font-sans text-sm text-white/60 mb-1">Announcing Soon</p>
+                        <p className="font-sans text-sm text-white/60 mb-1">{session.description || "Announcing Soon"}</p>
                         <p className="font-sans text-sm text-white/80 font-medium">{session.speaker?.name || "TBA"}</p>
+                        {session.speaker?.role && <p className="font-sans text-xs text-white/70 mt-0.5">{session.speaker.role}</p>}
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#E85520]/20 text-[#E85520] text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
                     </div>
