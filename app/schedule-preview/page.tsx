@@ -46,7 +46,8 @@ const scheduleData = {
           room: "Room 3",
           title: "Emerging Design Trends & Tools",
           speaker: {
-            name: "John Doe",
+            name: "
+            n Doe",
             role: "Workshop Leader, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
           },
