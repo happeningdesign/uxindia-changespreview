@@ -216,7 +216,7 @@ export default function RisingSchedule() {
                           <h4 className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2 group-hover/ws:line-clamp-none transition-all">
                             {workshop.title}
                           </h4>
-                          <div className="flex items-center gap-2 mb-2">
+                          <div className={`flex ${workshop.speaker?.role ? 'items-start' : 'items-center'} gap-2 mb-2`}>
                             <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                               <PersonIconDark size={14} />
                             </div>

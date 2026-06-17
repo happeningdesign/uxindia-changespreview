@@ -247,7 +247,7 @@ export default function LeadershipSchedule() {
                           </div>
                         </div>
                         <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{workshop.title}</h3>
-                        <div className="flex items-start gap-3 mb-4">
+                        <div className={`flex ${workshop.speaker?.role ? 'items-start' : 'items-center'} gap-3 mb-4`}>
                           <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                             <PersonIcon size={18} />
                           </div>
