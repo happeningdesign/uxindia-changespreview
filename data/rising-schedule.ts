@@ -41,7 +41,7 @@ export const risingScheduleData = {
   day2: [
     { time: "8:00 AM", type: "break", title: "Registrations", location: "Auditorium" },
     { time: "9:00 AM", type: "keynote", title: "Opening Keynote", description: "Announcing Soon", tag: "Keynote", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
-    { time: "9:40 AM", type: "keynote", title: "Deep Dive Talk", description: "An in-depth exploration of design leadership practices and methodologies.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
+    { time: "9:40 AM", type: "keynote", title: "Deep Dive Talk", description: "Announcing Soon", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
     { time: "10:20 AM", type: "break", title: "Coffee Break", location: "Multiple Areas" },
     {
       time: "11:05 AM", type: "parallel-sessions", duration: "60 min",
