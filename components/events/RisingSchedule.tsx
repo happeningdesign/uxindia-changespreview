@@ -119,8 +119,16 @@ export default function RisingSchedule() {
                       </div>
                       <div className="flex-1">
                         <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.title || session.tag}</h3>
-                        <p className="font-sans text-sm text-[#0D0D0D]/60 mb-1">{session.description || "Announcing Soon"}</p>
-                        <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">{session.speaker?.name || "TBA"}</p>
+                        <p className="font-sans text-sm text-[#0D0D0D]/60 mb-2">{session.description || "Announcing Soon"}</p>
+                        <div className="flex items-start gap-3">
+                          <div className="w-8 h-8 rounded-full shrink-0 border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center">
+                            <PersonIconDark size={14} />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">{session.speaker?.name || "TBA"}</p>
+                            {session.speaker?.role && <p className="font-sans text-xs text-[#0D0D0D]/60 mt-0.5">{session.speaker.role}</p>}
+                          </div>
+                        </div>
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
                     </div>
@@ -185,11 +193,14 @@ export default function RisingSchedule() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                       {session.panelists?.map((panelist, pIndex) => (
-                        <div key={pIndex} className="flex items-center gap-3">
+                        <div key={pIndex} className="flex items-start gap-3">
                           <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                             <PersonIconDark size={22} />
                           </div>
-                          <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{panelist.name || "TBA"}</p>
+                          <div className="flex-1 min-w-0">
+                            <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{panelist.name || "TBA"}</p>
+                            {panelist.role && <p className="font-sans text-xs text-[#0D0D0D]/60 mt-0.5 line-clamp-2">{panelist.role}</p>}
+                          </div>
                         </div>
                       ))}
                     </div>
