@@ -9,7 +9,7 @@ export const leadershipScheduleData = {
     {
       time: "9:00 AM", endTime: "12:15 PM", type: "workshops", tag: "Workshop",
       workshops: [
-        { room: "Room 1", title: "Design Foundations & Principles", speaker: { name: "John Doe", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Learn foundational design principles and practices." },
+        { room: "Room 1", title: "Design Foundations & Principles", speaker: { name: "TBA", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Learn foundational design principles and practices." },
         { room: "Room 2", title: "Advanced Design Methodologies", speaker: { name: "John Doe", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Explore advanced design methodologies." },
         { room: "Room 3", title: "Emerging Design Trends & Tools", speaker: { name: "John Doe", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Master emerging design trends and tools." },
       ],
