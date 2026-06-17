@@ -81,7 +81,7 @@ export const leadershipScheduleData = {
     {
       time: "11:15 AM", type: "sessions",
       sessions: [
-        { room: "Room 1", title: "Spark Session", tag: "Spark Session", speaker: { name: "TBA", role: "", image: "" }, description: "" },
+        { room: "Room 1", title: "The roles they are a-changin: AI and the Great Dissolve", tag: "Spark Session", speaker: { name: "Ish Awasthi", role: "VP, UX research, JPMC", image: "/LS-Speaker-Images/Ish-Awasti.webp" }, description: "AI is dissolving the lines between product, UX, and engineering — three new career paths are emerging in their place." },
         { room: "Room 2", title: "Spark Session", tag: "Spark Session", speaker: { name: "TBA", role: "", image: "" }, description: "" },
       ],
     },
