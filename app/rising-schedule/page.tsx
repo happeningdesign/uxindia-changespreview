@@ -140,7 +140,7 @@ const scheduleData = {
       time: "9:00 AM",
       type: "keynote",
       title: "Opening Keynote",
-      description: "Kicking off Day 2 with inspiring insights on design leadership and the path forward.",
+      description: "Announcing Soon",
       tag: "Keynote",
       location: "Auditorium",
       speaker: {
