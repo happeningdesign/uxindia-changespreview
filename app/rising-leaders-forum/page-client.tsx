@@ -112,18 +112,7 @@ export default function RisingLeadersPageClient() {
         </>
       )}
 
-      {activeTab === "schedule" && (
-        <>
-          <section className="bg-[#F5F0E8] w-full py-8 md:py-12">
-            <div className="max-w-7xl mx-auto px-6">
-              <p className="font-sans text-sm text-[#0D0D0D]/60 italic">
-                Please note: Speaker line-up and session timings are subject to change.
-              </p>
-            </div>
-          </section>
-          <RisingSchedule />
-        </>
-      )}
+      {activeTab === "schedule" && <RisingSchedule />}
 
       <Footer />
     </main>

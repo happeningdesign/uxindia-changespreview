@@ -114,18 +114,7 @@ export default function LeadershipSummitPageClient() {
         </>
       )}
 
-      {activeTab === "schedule" && (
-        <>
-          <section className="bg-[#0D0D0D] w-full py-8 md:py-12">
-            <div className="max-w-7xl mx-auto px-6">
-              <p className="font-sans text-sm text-white/60 italic">
-                Please note: Speaker line-up and session timings are subject to change.
-              </p>
-            </div>
-          </section>
-          <LeadershipSchedule />
-        </>
-      )}
+      {activeTab === "schedule" && <LeadershipSchedule />}
       
       <Footer />
     </main>
