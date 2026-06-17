@@ -239,11 +239,14 @@ export default function RisingSchedule() {
                           </div>
                           <h4 className="font-leadership text-lg text-[#0D0D0D] mb-2">{sess.tag || "Session"}</h4>
                           <p className="font-sans text-xs text-[#0D0D0D]/60 mb-3 line-clamp-2">Announcing Soon</p>
-                          {sess.type === "panel" && sess.TBAs && (
-                            <div className="flex gap-2 mt-3">
-                              {sess.TBAs.map((TBA, pIndex) => (
-                                <div key={pIndex} className="w-8 h-8 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0" title="TBA">
-                                  <PersonIconDark size={14} />
+                          {sess.type === "panel" && sess.panelists && (
+                            <div className="grid grid-cols-2 gap-2 mt-3">
+                              {sess.panelists.map((panelist, pIndex) => (
+                                <div key={pIndex} className="flex items-center gap-2">
+                                  <div className="w-7 h-7 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0">
+                                    <PersonIconDark size={12} />
+                                  </div>
+                                  <p className="font-sans text-[11px] text-[#0D0D0D]/70 truncate">{panelist.name || "TBA"}</p>
                                 </div>
                               ))}
                             </div>
@@ -253,7 +256,7 @@ export default function RisingSchedule() {
                               <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                                 <PersonIconDark size={14} />
                               </div>
-                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">TBA</p>
+                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{sess.speaker?.name || "TBA"}</p>
                             </div>
                           )}
                         </div>
