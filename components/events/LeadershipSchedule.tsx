@@ -2,6 +2,33 @@
 
 import React from "react";
 import { leadershipScheduleData } from "@/data/leadership-schedule";
+
+function parseTimeToMinutes(t: string): number | null {
+  const m = t.match(/(\d+):(\d+)\s*(AM|PM)/i);
+  if (!m) return null;
+  let h = parseInt(m[1], 10);
+  const min = parseInt(m[2], 10);
+  const ap = m[3].toUpperCase();
+  if (ap === "PM" && h !== 12) h += 12;
+  if (ap === "AM" && h === 12) h = 0;
+  return h * 60 + min;
+}
+
+function formatDuration(mins: number): string | null {
+  if (mins <= 0) return null;
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  if (h && m) return `${h} hr ${m} min`;
+  if (h) return `${h} hr`;
+  return `${m} min`;
+}
+
+const PersonIcon = ({ size = 28, opacity = "0.4" }: { size?: number; opacity?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={`rgba(255,255,255,${opacity})`} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+  </svg>
+);
+
 export default function LeadershipSchedule() {
   const scheduleData = leadershipScheduleData;
   const [activeDay, setActiveDay] = React.useState("day1");
