@@ -43,6 +43,10 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
         alt={speaker.name}
         className="absolute inset-0 w-full h-full object-cover object-top"
         style={isLight ? { filter: "contrast(1.05)" } : undefined}
+        crossOrigin="anonymous"
+        onError={(e) => {
+          console.log("[v0] Image failed to load:", speaker.image, e);
+        }}
       />
 
       {/* Base gradient — tighter on mobile so face shows, fuller on desktop */}
