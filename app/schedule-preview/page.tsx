@@ -18,6 +18,15 @@ function parseTimeToMinutes(t: string): number | null {
   return h * 60 + min;
 }
 
+function formatDuration(mins: number): string | null {
+  if (mins <= 0) return null;
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  if (h && m) return `${h} hr ${m} min`;
+  if (h) return `${h} hr`;
+  return `${m} min`;
+}
+
 export default function SchedulePreviewPage() {
   const [activeDay, setActiveDay] = React.useState("day1");
   const currentSessions = activeDay === "day1" ? scheduleData.day1 : (activeDay === "day2" ? scheduleData.day2 : scheduleData.day3);
