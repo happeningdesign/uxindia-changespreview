@@ -78,11 +78,10 @@ export default function RisingSchedule() {
                   <button
                     key={day.id}
                     onClick={() => setActiveDay(day.id)}
-                    className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all border cursor-pointer ${
-                      activeDay === day.id
+                    className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all border cursor-pointer ${activeDay === day.id
                         ? "border-2 border-[#E85520] text-[#0D0D0D] bg-transparent"
                         : "border border-[#0D0D0D]/20 text-[#0D0D0D] bg-[#0D0D0D]/5 hover:bg-[#0D0D0D]/10 hover:border-[#0D0D0D]/40"
-                    }`}
+                      }`}
                   >
                     <span className="block truncate">{day.label}</span>
                     <span className={`text-[10px] md:text-xs mt-0.5 block ${activeDay === day.id ? "text-[#E85520]" : "text-[#0D0D0D]/50"}`}>{day.date}</span>
@@ -185,12 +184,12 @@ export default function RisingSchedule() {
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#1A7A6E] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider shrink-0 ml-4">{session.tag}</span>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-                      {session.panelists.map((panelist, pIndex) => (
+                      {session.TBAs.map((TBA, pIndex) => (
                         <div key={pIndex} className="flex items-center gap-3">
                           <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                             <PersonIconDark size={22} />
                           </div>
-                          <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{panelist.name || "TBA"}</p>
+                          <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{TBA.name || "TBA"}</p>
                         </div>
                       ))}
                     </div>
@@ -240,9 +239,9 @@ export default function RisingSchedule() {
                           </div>
                           <h4 className="font-leadership text-lg text-[#0D0D0D] mb-2">{sess.tag || "Session"}</h4>
                           <p className="font-sans text-xs text-[#0D0D0D]/60 mb-3 line-clamp-2">Announcing Soon</p>
-                          {sess.type === "panel" && sess.panelists && (
+                          {sess.type === "panel" && sess.TBAs && (
                             <div className="flex gap-2 mt-3">
-                              {sess.panelists.map((panelist, pIndex) => (
+                              {sess.TBAs.map((TBA, pIndex) => (
                                 <div key={pIndex} className="w-8 h-8 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0" title="TBA">
                                   <PersonIconDark size={14} />
                                 </div>

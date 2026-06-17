@@ -34,8 +34,8 @@ export default function LeadershipSchedule() {
   const [activeDay, setActiveDay] = React.useState("day1");
   const currentSessions =
     activeDay === "day1" ? scheduleData.day1 :
-    activeDay === "day2" ? scheduleData.day2 :
-    scheduleData.day3;
+      activeDay === "day2" ? scheduleData.day2 :
+        scheduleData.day3;
   const activeDayIndex = scheduleData.days.findIndex((d) => d.id === activeDay);
   const activeDayLabel = scheduleData.days[activeDayIndex]?.label ?? "";
   const prevDay = activeDayIndex > 0 ? scheduleData.days[activeDayIndex - 1] : null;
@@ -64,11 +64,10 @@ export default function LeadershipSchedule() {
                   <button
                     key={day.id}
                     onClick={() => setActiveDay(day.id)}
-                    className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all cursor-pointer border ${
-                      activeDay === day.id
+                    className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all cursor-pointer border ${activeDay === day.id
                         ? "border-2 border-[#E85520] text-white bg-transparent"
                         : "border border-white/20 text-white bg-white/5 hover:bg-white/10 hover:border-white/40"
-                    }`}
+                      }`}
                   >
                     <span className="block truncate">{day.label}</span>
                     <span className={`text-[10px] md:text-xs mt-0.5 block ${activeDay === day.id ? "text-[#E85520]" : "text-white/50"}`}>{day.date}</span>
@@ -219,12 +218,12 @@ export default function LeadershipSchedule() {
                       <span className="hidden lg:inline-block px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20 shrink-0 ml-4">{session.tag}</span>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-                      {session.panelists.map((panelist, pIndex) => (
+                      {session.TBAs.map((TBA, pIndex) => (
                         <div key={pIndex} className="flex items-center gap-3">
                           <div className="w-12 h-12 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                             <PersonIcon size={22} />
                           </div>
-                          <p className="font-sans text-sm text-white font-medium leading-tight">{panelist.name || "TBA"}</p>
+                          <p className="font-sans text-sm text-white font-medium leading-tight">{TBA.name || "TBA"}</p>
                         </div>
                       ))}
                     </div>
@@ -269,12 +268,12 @@ export default function LeadershipSchedule() {
                           </div>
                         </div>
                         <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{sess.title || sess.tag || "Session"}</h3>
-                        {sess.panelists ? (
+                        {sess.TBAs ? (
                           <div className="grid grid-cols-2 gap-4 mb-4">
-                            {sess.panelists.map((panelist, pIndex) => (
+                            {sess.TBAs.map((TBA, pIndex) => (
                               <div key={pIndex} className="flex items-center gap-2">
                                 <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={14} /></div>
-                                <p className="font-sans text-xs text-white font-medium leading-tight truncate">{panelist.name || "TBA"}</p>
+                                <p className="font-sans text-xs text-white font-medium leading-tight truncate">{TBA.name || "TBA"}</p>
                               </div>
                             ))}
                           </div>
@@ -302,10 +301,10 @@ export default function LeadershipSchedule() {
                         <h3 className="font-leadership text-lg md:text-xl text-white mb-4">{sess.title || sess.tag}</h3>
                         <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-5">{sess.description || "Announcing Soon"}</p>
                         <div className="grid grid-cols-2 gap-3">
-                          {sess.panelists.map((panelist, pIndex) => (
+                          {sess.TBAs.map((TBA, pIndex) => (
                             <div key={pIndex} className="flex items-center gap-2">
                               <div className="w-9 h-9 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={16} /></div>
-                              <p className="font-sans text-xs text-white/80 font-medium truncate">{panelist.name || "TBA"}</p>
+                              <p className="font-sans text-xs text-white/80 font-medium truncate">{TBA.name || "TBA"}</p>
                             </div>
                           ))}
                         </div>
@@ -346,11 +345,11 @@ export default function LeadershipSchedule() {
                       <div className="flex-1">
                         <p className="font-sans text-xs text-white/40 uppercase tracking-wider mb-3">VC Investors</p>
                         <div className="space-y-3">
-                          {session.rightSession.panelists.map((panelist, pIndex) => (
+                          {session.rightSession.TBAs.map((TBA, pIndex) => (
                             <div key={pIndex} className="flex items-center gap-3">
                               <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={14} /></div>
                               <div>
-                                <p className="font-sans text-sm text-white/80">{panelist.name || "TBA"}</p>
+                                <p className="font-sans text-sm text-white/80">{TBA.name || "TBA"}</p>
                               </div>
                             </div>
                           ))}

@@ -86,10 +86,10 @@ const scheduleData = {
       description: "Industry leaders share their perspectives on navigating the path to design leadership.",
       tag: "Panel Discussion",
       location: "Auditorium",
-      panelists: [
-        { name: "Panelist 1", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
-        { name: "Panelist 2", role: "Head of Design, Innovation Labs", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
-        { name: "Panelist 3", role: "Design Lead, Digital Ventures", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
+      TBAs: [
+        { name: "TBA 1", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
+        { name: "TBA 2", role: "Head of Design, Innovation Labs", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+        { name: "TBA 3", role: "Design Lead, Digital Ventures", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
       ],
     },
     {
@@ -174,21 +174,21 @@ const scheduleData = {
       duration: "60 min",
       sessions: [
         {
-          room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Industry leaders discuss emerging trends in design leadership.", panelists: [
-            { name: "Panelist 1", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
-            { name: "Panelist 2", role: "Head of Design, Innovation Labs", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+          room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Industry leaders discuss emerging trends in design leadership.", TBAs: [
+            { name: "TBA 1", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
+            { name: "TBA 2", role: "Head of Design, Innovation Labs", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
           ]
         },
         {
-          room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Exploring design-led transformation in organizations.", panelists: [
-            { name: "Panelist 1", role: "Design Lead, Digital Ventures", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
-            { name: "Panelist 2", role: "Product Design Manager, Tech Innovations", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
+          room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Exploring design-led transformation in organizations.", TBAs: [
+            { name: "TBA 1", role: "Design Lead, Digital Ventures", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
+            { name: "TBA 2", role: "Product Design Manager, Tech Innovations", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
           ]
         },
         {
-          room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Building high-performing design teams.", panelists: [
-            { name: "Panelist 1", role: "UX Lead, Design Systems", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
-            { name: "Panelist 2", role: "Design Strategy Director, Future Design Co", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
+          room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Building high-performing design teams.", TBAs: [
+            { name: "TBA 1", role: "UX Lead, Design Systems", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
+            { name: "TBA 2", role: "Design Strategy Director, Future Design Co", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
           ]
         },
       ],
@@ -326,8 +326,8 @@ export default function RisingSchedulePage() {
                       key={day.id}
                       onClick={() => setActiveDay(day.id)}
                       className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all border cursor-pointer ${activeDay === day.id
-                          ? "border-2 border-[#E85520] text-[#0D0D0D] bg-transparent"
-                          : "border border-[#0D0D0D]/20 text-[#0D0D0D] bg-[#0D0D0D]/5 hover:bg-[#0D0D0D]/10 hover:border-[#0D0D0D]/40"
+                        ? "border-2 border-[#E85520] text-[#0D0D0D] bg-transparent"
+                        : "border border-[#0D0D0D]/20 text-[#0D0D0D] bg-[#0D0D0D]/5 hover:bg-[#0D0D0D]/10 hover:border-[#0D0D0D]/40"
                         }`}
                     >
                       <span className="block truncate">{day.label}</span>
@@ -509,19 +509,19 @@ export default function RisingSchedulePage() {
                             {session.tag}
                           </span>
                         </div>
-                        {/* Panelists Grid */}
+                        {/* TBAs Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-                          {session.panelists.map((panelist, pIndex) => (
+                          {session.TBAs.map((TBA, pIndex) => (
                             <div key={pIndex} className="flex items-start gap-3">
                               <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                               </div>
                               <div className="flex flex-col items-start gap-1 min-w-0">
                                 <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">
-                                  {panelist.name}
+                                  {TBA.name}
                                 </p>
                                 <p className="font-sans text-xs text-[#0D0D0D]/60 leading-tight">
-                                  {panelist.role}
+                                  {TBA.role}
                                 </p>
                               </div>
                             </div>
@@ -610,13 +610,13 @@ export default function RisingSchedulePage() {
                               <p className="font-sans text-xs text-[#0D0D0D]/60 mb-3 line-clamp-2">
                                 {sess.description}
                               </p>
-                              {sess.type === "panel" && sess.panelists && (
+                              {sess.type === "panel" && sess.TBAs && (
                                 <div className="flex gap-2 mt-3">
-                                  {sess.panelists.map((panelist, pIndex) => (
+                                  {sess.TBAs.map((TBA, pIndex) => (
                                     <div
                                       key={pIndex}
                                       className="w-8 h-8 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0"
-                                      title={panelist.name}
+                                      title={TBA.name}
                                     >
                                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                                     </div>
@@ -773,15 +773,15 @@ export default function RisingSchedulePage() {
                             <h3 className="font-leadership text-lg md:text-xl text-[#0D0D0D] mb-3">
                               {sess.title}
                             </h3>
-                            {sess.panelists ? (
-                              // Multiple panelists
+                            {sess.TBAs ? (
+                              // Multiple TBAs
                               <>
                                 <div className="flex gap-2 mb-4 flex-wrap">
-                                  {sess.panelists.map((panelist, pIndex) => (
+                                  {sess.TBAs.map((TBA, pIndex) => (
                                     <div
                                       key={pIndex}
                                       className="w-10 h-10 rounded-full border-2 border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0"
-                                      title={`${panelist.name} - ${panelist.role}`}
+                                      title={`${TBA.name} - ${TBA.role}`}
                                     >
                                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                                     </div>
@@ -789,7 +789,7 @@ export default function RisingSchedulePage() {
                                 </div>
                                 <div className="mb-4">
                                   <p className="font-sans text-xs text-[#0D0D0D]/60">
-                                    {sess.panelists.length} VC Investors
+                                    {sess.TBAs.length} VC Investors
                                   </p>
                                 </div>
                               </>
@@ -877,14 +877,14 @@ export default function RisingSchedulePage() {
                               VC Investors
                             </p>
                             <div className="space-y-3">
-                              {session.rightSession.panelists.map((panelist, pIndex) => (
+                              {session.rightSession.TBAs.map((TBA, pIndex) => (
                                 <div key={pIndex} className="flex items-center gap-3">
                                   <div className="w-8 h-8 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(13,13,13,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                                   </div>
                                   <div>
-                                    <p className="font-sans text-sm text-[#0D0D0D]/80">{panelist.name}</p>
-                                    <p className="font-sans text-xs text-[#0D0D0D]/40">{panelist.role}</p>
+                                    <p className="font-sans text-sm text-[#0D0D0D]/80">{TBA.name}</p>
+                                    <p className="font-sans text-xs text-[#0D0D0D]/40">{TBA.role}</p>
                                   </div>
                                 </div>
                               ))}

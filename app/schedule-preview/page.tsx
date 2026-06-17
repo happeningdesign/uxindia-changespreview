@@ -253,11 +253,11 @@ const scheduleData = {
           title: "Panel Discussion",
           description: "Discussion on design leadership in modern organizations.",
           tag: "Panel Discussion",
-          panelists: [
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
+          TBAs: [
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
           ],
         },
         {
@@ -265,11 +265,11 @@ const scheduleData = {
           title: "Panel Discussion",
           description: "Navigating design entrepreneurship and growth.",
           tag: "Panel Discussion",
-          panelists: [
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" },
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+          TBAs: [
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" },
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
           ],
         },
       ],
@@ -311,7 +311,7 @@ const scheduleData = {
         room: "Room 2",
         title: "Design Pitch VC Sessions",
         tag: "VC Pitch",
-        panelists: [
+        TBAs: [
           {
             name: "TBA",
             role: "VC Investor, UMO Design Foundation",
@@ -437,7 +437,7 @@ const scheduleData = {
       type: "panel",
       title: "Panel: The State of Design in 2026",
       description: "Industry leaders discuss trends, challenges, and opportunities in design leadership.",
-      panelists: [
+      TBAs: [
         {
           name: "TBA",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
@@ -551,7 +551,7 @@ const scheduleData = {
       type: "panel",
       title: "Panel Discussion: Future of Design Leadership",
       description: "Thought leaders share perspectives on emerging trends and challenges in design leadership.",
-      panelists: [
+      TBAs: [
         {
           name: "TBA",
           role: "Design Director, UMO Design Foundation",
@@ -983,19 +983,19 @@ export default function SchedulePreviewPage() {
                             {session.tag}
                           </span>
                         </div>
-                        {/* Panelists Grid */}
+                        {/* TBAs Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-                          {session.panelists.map((panelist, pIndex) => (
+                          {session.TBAs.map((TBA, pIndex) => (
                             <div key={pIndex} className="flex items-start gap-3">
                               <div className="w-12 h-12 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                               </div>
                               <div className="flex flex-col items-start gap-1 min-w-0">
                                 <p className="font-sans text-sm text-white font-medium leading-tight">
-                                  {panelist.name}
+                                  {TBA.name}
                                 </p>
                                 <p className="font-sans text-xs text-white/60 leading-tight">
-                                  {panelist.role}
+                                  {TBA.role}
                                 </p>
                               </div>
                             </div>
@@ -1069,21 +1069,21 @@ export default function SchedulePreviewPage() {
                             <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                               {sess.title}
                             </h3>
-                            {sess.panelists ? (
-                              // Multiple panelists
+                            {sess.TBAs ? (
+                              // Multiple TBAs
                               <>
                                 <div className="grid grid-cols-2 gap-4 mb-4">
-                                  {sess.panelists.map((panelist, pIndex) => (
+                                  {sess.TBAs.map((TBA, pIndex) => (
                                     <div key={pIndex} className="flex items-start gap-2">
                                       <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                                       </div>
                                       <div className="flex flex-col items-start gap-0.5 min-w-0">
                                         <p className="font-sans text-xs text-white font-medium leading-tight truncate">
-                                          {panelist.name}
+                                          {TBA.name}
                                         </p>
                                         <p className="font-sans text-xs text-white/60 leading-tight">
-                                          {panelist.role}
+                                          {TBA.role}
                                         </p>
                                       </div>
                                     </div>
@@ -1138,16 +1138,16 @@ export default function SchedulePreviewPage() {
                             <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-5">
                               {sess.description}
                             </p>
-                            {/* Panelists grid */}
+                            {/* TBAs grid */}
                             <div className="grid grid-cols-2 gap-3">
-                              {sess.panelists.map((panelist, pIndex) => (
+                              {sess.TBAs.map((TBA, pIndex) => (
                                 <div key={pIndex} className="flex items-center gap-2">
                                   <div className="w-9 h-9 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                                   </div>
                                   <div className="min-w-0">
-                                    <p className="font-sans text-xs text-white/80 font-medium truncate">{panelist.name}</p>
-                                    <p className="font-sans text-[10px] text-white/40 truncate">{panelist.role}</p>
+                                    <p className="font-sans text-xs text-white/80 font-medium truncate">{TBA.name}</p>
+                                    <p className="font-sans text-[10px] text-white/40 truncate">{TBA.role}</p>
                                   </div>
                                 </div>
                               ))}
@@ -1228,14 +1228,14 @@ export default function SchedulePreviewPage() {
                               VC Investors
                             </p>
                             <div className="space-y-3">
-                              {session.rightSession.panelists.map((panelist, pIndex) => (
+                              {session.rightSession.TBAs.map((TBA, pIndex) => (
                                 <div key={pIndex} className="flex items-center gap-3">
                                   <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                                   </div>
                                   <div>
-                                    <p className="font-sans text-sm text-white/80">{panelist.name}</p>
-                                    <p className="font-sans text-xs text-white/40">{panelist.role}</p>
+                                    <p className="font-sans text-sm text-white/80">{TBA.name}</p>
+                                    <p className="font-sans text-xs text-white/40">{TBA.role}</p>
                                   </div>
                                 </div>
                               ))}
