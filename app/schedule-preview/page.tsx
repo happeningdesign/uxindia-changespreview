@@ -520,12 +520,12 @@ const scheduleData = {
     {
       time: "11:25 AM",
       type: "keynote",
-      title: "Plenary Keynote: Building Design Culture",
-      description: "Creating and sustaining a strong design culture within organizations.",
+      title: "ghh",
+      description: "A keynote on what it really takes to lead with integrity in design — without losing yourself to politics or pressure.",
       speaker: {
-        name: "TBA",
-        role: "Culture & Design Strategist, UMO Design Foundation",
-        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
+        name: "Mario Van der Meulen",
+        role: "CXO Aleph Labs",
+        image: "/LS-Speaker-Images/Van-Mario.webp",
       },
       tag: "Plenary Keynote",
     },
