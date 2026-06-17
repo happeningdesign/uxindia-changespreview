@@ -41,7 +41,7 @@ const leadershipSpeakers: Speaker[] = [
     image: "/LS-Speaker-Images/Doug.webp",
     talkType: "Spark Session",
     bio: "Velmurugan is a visionary leader with extensive expertise in digital transformation and enterprise design. He drives innovation across global teams, bringing strategic insights on scalable design systems and user-centered business solutions.",
-    readMoreLink: "https://www.cognizant.com",
+    readMoreLink: "",
     readMoreLabel: "Read More",
   },
 ];
