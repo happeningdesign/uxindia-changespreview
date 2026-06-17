@@ -73,7 +73,7 @@ export const leadershipScheduleData = {
     {
       time: "10:05 AM", type: "sessions",
       sessions: [
-        { room: "Room 1", title: "Spark Session", tag: "Spark Session", speaker: { name: "Vyoma Pathak", role: "Sr. Design Practice Lead, MOURI Tech", image: "/LS%20Speaker%20Images/Vyoma.webp" }, description: "Stepping beyond UI generation to explore what design judgment looks like when anyone can design." },
+        { room: "Room 1", title: "Spark Session", tag: "Spark Session", speaker: { name: "Vyoma Pathak", role: "Sr. Design Practice Lead, MOURI Tech", image: "/LS-Speaker-Images/Vyoma.webp" }, description: "Stepping beyond UI generation to explore what design judgment looks like when anyone can design." },
         { room: "Room 2", title: "Death of the Wireframe", tag: "Spark Session", speaker: { name: "TBA", role: "", image: "" }, description: "" },
       ],
     },

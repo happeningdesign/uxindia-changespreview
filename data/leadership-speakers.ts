@@ -29,7 +29,7 @@ const leadershipSpeakers: Speaker[] = [
   {
     name: "Doug Powell",
     role: "Global Head, Cognizant",
-    image: "/LS%20Speaker%20Images/Doug.webp",
+    image: "/LS-Speaker-Images/Doug.webp",
     talkType: "Grand Keynote",
     bio: "Velmurugan is a visionary leader with extensive expertise in digital transformation and enterprise design. He drives innovation across global teams, bringing strategic insights on scalable design systems and user-centered business solutions.",
     readMoreLink: "https://www.cognizant.com",
