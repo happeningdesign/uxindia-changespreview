@@ -38,7 +38,7 @@ const leadershipSpeakers: Speaker[] = [
   {
     name: "Vyoma Pathak",
     role: "Sr. Design Practice Lead, MOURI Tech",
-    image: "/LS-Speaker-Images/Doug.webp",
+    image: "/LS-Speaker-Images/Vyoma.webp",
     talkType: "Spark Session",
     bio: "Velmurugan is a visionary leader with extensive expertise in digital transformation and enterprise design. He drives innovation across global teams, bringing strategic insights on scalable design systems and user-centered business solutions.",
     readMoreLink: "",
