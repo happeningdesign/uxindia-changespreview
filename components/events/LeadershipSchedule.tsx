@@ -328,9 +328,12 @@ export default function LeadershipSchedule() {
                             </div>
                           </div>
                           <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{sess.title || sess.tag || "Session"}</h3>
-                          <div className="flex items-center gap-3 mb-4">
+                          <div className="flex items-start gap-3 mb-4">
                             <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={18} /></div>
-                            <p className="font-sans text-sm text-white/80 font-medium">{sess.speaker?.name || "TBA"}</p>
+                            <div className="flex-1 min-w-0">
+                              <p className="font-sans text-sm text-white/80 font-medium">{sess.speaker?.name || "TBA"}</p>
+                              {sess.speaker?.role && <p className="font-sans text-xs text-white/60 mt-0.5">{sess.speaker.role}</p>}
+                            </div>
                           </div>
                           <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">{sess.description || "Announcing Soon"}</p>
                         </div>
@@ -347,10 +350,11 @@ export default function LeadershipSchedule() {
                         <p className="font-sans text-xs text-white/40 uppercase tracking-wider mb-3">VC Investors</p>
                         <div className="space-y-3">
                           {session.rightSession.panelists?.map((panelist, pIndex) => (
-                            <div key={pIndex} className="flex items-center gap-3">
+                            <div key={pIndex} className="flex items-start gap-3">
                               <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={14} /></div>
-                              <div>
+                              <div className="flex-1 min-w-0">
                                 <p className="font-sans text-sm text-white/80">{panelist.name || "TBA"}</p>
+                                {panelist.role && <p className="font-sans text-xs text-white/60 mt-0.5">{panelist.role}</p>}
                               </div>
                             </div>
                           ))}
