@@ -119,9 +119,9 @@ export default function RisingSchedule() {
                         <PersonIconDark size={28} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.tag}</h3>
-                        <p className="font-sans text-sm text-[#0D0D0D]/60 mb-1">Announcing Soon</p>
-                        <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">TBA</p>
+                        <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.title || session.tag}</h3>
+                        <p className="font-sans text-sm text-[#0D0D0D]/60 mb-1">{session.description || "Announcing Soon"}</p>
+                        <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">{session.speaker?.name || "TBA"}</p>
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
                     </div>
@@ -190,7 +190,7 @@ export default function RisingSchedule() {
                           <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                             <PersonIconDark size={22} />
                           </div>
-                          <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">TBA</p>
+                          <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{panelist.name || "TBA"}</p>
                         </div>
                       ))}
                     </div>
@@ -211,13 +211,13 @@ export default function RisingSchedule() {
                             <span className="px-2 py-0.5 bg-[#1A7A6E]/10 text-[#1A7A6E] text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">Workshop</span>
                           </div>
                           <h4 className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2 group-hover/ws:line-clamp-none transition-all">
-                            Workshop Leaders
+                            {workshop.title}
                           </h4>
                           <div className="flex items-center gap-2">
                             <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                               <PersonIconDark size={14} />
                             </div>
-                            <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">TBA</p>
+                            <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{workshop.speaker?.name || "TBA"}</p>
                           </div>
                         </div>
                       ))}
