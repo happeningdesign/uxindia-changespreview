@@ -212,12 +212,16 @@ export default function RisingSchedule() {
                           <h4 className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2 group-hover/ws:line-clamp-none transition-all">
                             {workshop.title}
                           </h4>
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-2 mb-2">
                             <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                               <PersonIconDark size={14} />
                             </div>
-                            <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{workshop.speaker?.name || "TBA"}</p>
+                            <div className="flex-1">
+                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{workshop.speaker?.name || "TBA"}</p>
+                              {workshop.speaker?.role && <p className="font-sans text-[10px] text-[#0D0D0D]/60">{workshop.speaker.role}</p>}
+                            </div>
                           </div>
+                          {workshop.description && <p className="font-sans text-xs text-[#0D0D0D]/60 leading-snug">{workshop.description}</p>}
                         </div>
                       ))}
                     </div>
@@ -237,26 +241,32 @@ export default function RisingSchedule() {
                             </span>
                             {sess.tag && <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20 shrink-0">{sess.tag}</span>}
                           </div>
-                          <h4 className="font-leadership text-lg text-[#0D0D0D] mb-2">{sess.tag || "Session"}</h4>
-                          <p className="font-sans text-xs text-[#0D0D0D]/60 mb-3 line-clamp-2">Announcing Soon</p>
+                          <h4 className="font-leadership text-lg text-[#0D0D0D] mb-2">{sess.title || sess.tag || "Session"}</h4>
+                          <p className="font-sans text-xs text-[#0D0D0D]/60 mb-3 line-clamp-2">{sess.description || "Announcing Soon"}</p>
                           {sess.type === "panel" && sess.panelists && (
-                            <div className="grid grid-cols-2 gap-2 mt-3">
+                            <div className="grid grid-cols-2 gap-3 mt-3">
                               {sess.panelists.map((panelist, pIndex) => (
-                                <div key={pIndex} className="flex items-center gap-2">
-                                  <div className="w-7 h-7 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0">
+                                <div key={pIndex} className="flex gap-2">
+                                  <div className="w-7 h-7 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0 mt-0.5">
                                     <PersonIconDark size={12} />
                                   </div>
-                                  <p className="font-sans text-[11px] text-[#0D0D0D]/70 truncate">{panelist.name || "TBA"}</p>
+                                  <div className="min-w-0 flex-1">
+                                    <p className="font-sans text-[11px] text-[#0D0D0D]/80 font-medium truncate">{panelist.name || "TBA"}</p>
+                                    {panelist.role && <p className="font-sans text-[9px] text-[#0D0D0D]/60 line-clamp-1">{panelist.role}</p>}
+                                  </div>
                                 </div>
                               ))}
                             </div>
                           )}
                           {sess.type === "spark" && sess.speaker && (
-                            <div className="flex items-center gap-2 mt-3">
-                              <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                            <div className="flex items-start gap-2 mt-3">
+                              <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center mt-0.5">
                                 <PersonIconDark size={14} />
                               </div>
-                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{sess.speaker?.name || "TBA"}</p>
+                              <div className="flex-1 min-w-0">
+                                <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{sess.speaker?.name || "TBA"}</p>
+                                {sess.speaker?.role && <p className="font-sans text-[10px] text-[#0D0D0D]/60">{sess.speaker.role}</p>}
+                              </div>
                             </div>
                           )}
                         </div>
