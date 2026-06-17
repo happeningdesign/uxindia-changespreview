@@ -19,7 +19,7 @@ const workshopsData = [
         room: "Room 1",
         title: "Workshop 01",
         speaker: {
-          name: "John Doe",
+          name: "TBA",
           role: "Workshop Leader, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
         },
@@ -30,7 +30,7 @@ const workshopsData = [
         room: "Room 2",
         title: "Workshop 03",
         speaker: {
-          name: "John Doe",
+          name: "TBA",
           role: "Workshop Leader, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
         },
@@ -41,7 +41,7 @@ const workshopsData = [
         room: "Room 3",
         title: "Workshop 05",
         speaker: {
-          name: "John Doe",
+          name: "TBA",
           role: "Workshop Leader, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
         },
@@ -63,7 +63,7 @@ const workshopsData = [
         room: "Room 1",
         title: "Workshop 01 (Continued)",
         speaker: {
-          name: "John Doe",
+          name: "TBA",
           role: "Workshop Leader, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
         },
@@ -74,7 +74,7 @@ const workshopsData = [
         room: "Room 2",
         title: "Workshop 03 (Continued)",
         speaker: {
-          name: "John Doe",
+          name: "TBA",
           role: "Workshop Leader, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
         },
@@ -85,7 +85,7 @@ const workshopsData = [
         room: "Room 3",
         title: "Workshop 05 (Continued)",
         speaker: {
-          name: "John Doe",
+          name: "TBA",
           role: "Workshop Leader, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
         },
@@ -107,7 +107,7 @@ const workshopsData = [
         room: "Room 1",
         title: "Workshop 02",
         speaker: {
-          name: "John Doe",
+          name: "TBA",
           role: "Workshop Leader, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
         },
@@ -118,7 +118,7 @@ const workshopsData = [
         room: "Room 2",
         title: "Workshop 04",
         speaker: {
-          name: "John Doe",
+          name: "TBA",
           role: "Workshop Leader, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
         },
@@ -129,7 +129,7 @@ const workshopsData = [
         room: "Room 3",
         title: "Workshop 06",
         speaker: {
-          name: "John Doe",
+          name: "TBA",
           role: "Workshop Leader, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
         },
@@ -151,7 +151,7 @@ const workshopsData = [
         room: "Room 1",
         title: "Workshop 02 (Continued)",
         speaker: {
-          name: "John Doe",
+          name: "TBA",
           role: "Workshop Leader, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
         },
@@ -162,7 +162,7 @@ const workshopsData = [
         room: "Room 2",
         title: "Workshop 04 (Continued)",
         speaker: {
-          name: "John Doe",
+          name: "TBA",
           role: "Workshop Leader, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
         },
@@ -173,7 +173,7 @@ const workshopsData = [
         room: "Room 3",
         title: "Workshop 06 (Continued)",
         speaker: {
-          name: "John Doe",
+          name: "TBA",
           role: "Workshop Leader, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
         },
