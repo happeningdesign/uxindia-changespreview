@@ -87,9 +87,9 @@ const scheduleData = {
       tag: "Panel Discussion",
       location: "Auditorium",
       TBAs: [
-        { name: "TBA 1", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
+        { name: "TBA", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
         { name: "TBA 2", role: "Head of Design, Innovation Labs", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
-        { name: "TBA 3", role: "Design Lead, Digital Ventures", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
+        { name: "TBA", role: "Design Lead, Digital Ventures", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
       ],
     },
     {
@@ -175,19 +175,19 @@ const scheduleData = {
       sessions: [
         {
           room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Industry leaders discuss emerging trends in design leadership.", TBAs: [
-            { name: "TBA 1", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
+            { name: "TBA", role: "Design Director, Creative Studios", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
             { name: "TBA 2", role: "Head of Design, Innovation Labs", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
           ]
         },
         {
           room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Exploring design-led transformation in organizations.", TBAs: [
-            { name: "TBA 1", role: "Design Lead, Digital Ventures", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
+            { name: "TBA", role: "Design Lead, Digital Ventures", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
             { name: "TBA 2", role: "Product Design Manager, Tech Innovations", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
           ]
         },
         {
           room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Building high-performing design teams.", TBAs: [
-            { name: "TBA 1", role: "UX Lead, Design Systems", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
+            { name: "TBA", role: "UX Lead, Design Systems", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
             { name: "TBA 2", role: "Design Strategy Director, Future Design Co", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
           ]
         },
