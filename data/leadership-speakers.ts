@@ -6,11 +6,13 @@
  * To remove a speaker: delete the object.
  *
  * Fields:
- *   name      — Full name (required)
- *   role      — Job title and organisation, e.g. "VP Design, Google" (required)
- *   image     — URL to speaker photo — use Vercel Blob or any public CDN URL (required)
- *   talkType  — Session type shown as a small chip, e.g. "Grand Keynote" (optional)
- *   bio       — Short bio shown in the overlay card (optional; falls back to a generic sentence)
+ *   name           — Full name (required)
+ *   role           — Job title and organisation, e.g. "VP Design, Google" (required)
+ *   image          — URL to speaker photo — use Vercel Blob or any public CDN URL (required)
+ *   talkType       — Session type shown as a small chip, e.g. "Grand Keynote" (optional)
+ *   bio            — Short bio shown in the overlay card (optional; falls back to a generic sentence)
+ *   readMoreLink   — URL for "Read more" button in overlay (optional; if provided, makes button clickable)
+ *   readMoreLabel  — Custom text for "Read more" button (optional; defaults to "Read more")
  */
 
 export interface Speaker {
@@ -19,6 +21,8 @@ export interface Speaker {
   image: string;
   talkType?: string;
   bio?: string;
+  readMoreLink?: string;
+  readMoreLabel?: string;
 }
 
 const leadershipSpeakers: Speaker[] = [
