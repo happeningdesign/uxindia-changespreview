@@ -61,11 +61,10 @@ function OptionCard({
   return (
     <label
       htmlFor={id}
-      className={`block p-5 rounded-2xl border-2 cursor-pointer transition-all duration-200 ${
-        selected
+      className={`block p-5 rounded-2xl border-2 cursor-pointer transition-all duration-200 ${selected
           ? "border-[#E85520] bg-[#E85520]/5"
           : "border-[#0D0D0D]/10 hover:border-[#E85520]/50 bg-white"
-      }`}
+        }`}
     >
       <input
         type="radio"
@@ -112,11 +111,10 @@ function CheckboxItem({
   return (
     <label
       htmlFor={id}
-      className={`flex items-start gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
-        checked
+      className={`flex items-start gap-4 p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${checked
           ? "border-[#E85520] bg-[#E85520]/5"
           : "border-[#0D0D0D]/10 hover:border-[#E85520]/50 bg-white"
-      }`}
+        }`}
     >
       <input
         type="checkbox"
@@ -651,7 +649,7 @@ export default function SpeakerSubmissionPage() {
                           value="panel"
                           title="Panel Discussion"
                           duration="40-60 min"
-                          description="Moderated dialogue with multiple perspectives on a focused topic. Requires coordination with other panelists."
+                          description="Moderated dialogue with multiple perspectives on a focused topic. Requires coordination with other TBAs."
                           selected={format === "panel"}
                           onChange={setFormat}
                         />
@@ -947,11 +945,10 @@ export default function SpeakerSubmissionPage() {
                             <label
                               key={opt.id}
                               htmlFor={opt.id}
-                              className={`block p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 text-center ${
-                                experience === opt.value
+                              className={`block p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 text-center ${experience === opt.value
                                   ? "border-[#E85520] bg-[#E85520]/5"
                                   : "border-[#0D0D0D]/10 hover:border-[#E85520]/50 bg-white"
-                              }`}
+                                }`}
                             >
                               <input
                                 type="radio"

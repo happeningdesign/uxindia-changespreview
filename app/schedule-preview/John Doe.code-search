@@ -1,0 +1,303 @@
+# Query: John Doe
+# ContextLines: 1
+
+87 results - 3 files
+
+app/schedule-preview/page.tsx:
+   28            speaker: {
+   29:             name: "John Doe",
+   30              role: "Workshop Leader, UMO Design Foundation",
+
+   38            speaker: {
+   39:             name: "John Doe",
+   40              role: "Workshop Leader, UMO Design Foundation",
+
+   48            speaker: {
+   49:             name: "John Doe",
+   50              role: "Workshop Leader, UMO Design Foundation",
+
+   81            speaker: {
+   82:             name: "John Doe",
+   83              role: "Workshop Leader, UMO Design Foundation",
+
+   91            speaker: {
+   92:             name: "John Doe",
+   93              role: "Workshop Leader, UMO Design Foundation",
+
+  101            speaker: {
+  102:             name: "John Doe",
+  103              role: "Workshop Leader, UMO Design Foundation",
+
+  139            speaker: {
+  140:             name: "John Doe",
+  141              role: "Design Leader, UMO Design Foundation",
+
+  149            speaker: {
+  150:             name: "John Doe",
+  151              role: "Design Entrepreneur, UMO Design Foundation",
+
+  166            speaker: {
+  167:             name: "John Doe",
+  168              role: "Design Strategist, UMO Design Foundation",
+
+  177            speaker: {
+  178:             name: "John Doe",
+  179              role: "Design Entrepreneur, UMO Design Foundation",
+
+  194            speaker: {
+  195:             name: "John Doe",
+  196              role: "Design Innovator, UMO Design Foundation",
+
+  205            speaker: {
+  206:             name: "John Doe",
+  207              role: "Design Entrepreneur, UMO Design Foundation",
+
+  227            speaker: {
+  228:             name: "John Doe",
+  229              role: "Design Innovator, UMO Design Foundation",
+
+  238            speaker: {
+  239:             name: "John Doe",
+  240              role: "Design Entrepreneur, UMO Design Foundation",
+
+  289            speaker: {
+  290:             name: "John Doe",
+  291              role: "Design Strategist, UMO Design Foundation",
+
+  301            speaker: {
+  302:             name: "John Doe",
+  303              role: "Design Innovator, UMO Design Foundation",
+
+  315            {
+  316:             name: "John Doe",
+  317              role: "VC Investor, UMO Design Foundation",
+
+  320            {
+  321:             name: "John Doe",
+  322              role: "VC Investor, UMO Design Foundation",
+
+  325            {
+  326:             name: "John Doe",
+  327              role: "VC Investor, UMO Design Foundation",
+
+  330            {
+  331:             name: "John Doe",
+  332              role: "VC Investor, UMO Design Foundation",
+
+  349        speaker: {
+  350:         name: "John Doe",
+  351          role: "Conference Lead, UMO Design Foundation",
+
+  363        speaker: {
+  364:         name: "John Doe",
+  365          role: "Global Head of Design, UMO Design Foundation",
+
+  377            speaker: {
+  378:             name: "John Doe",
+  379              role: "VP Research, UMO Design Foundation",
+
+  386            speaker: {
+  387:             name: "John Doe",
+  388              role: "VP Design, UMO Design Foundation",
+
+  406            speaker: {
+  407:             name: "John Doe",
+  408              role: "Director Of Design, UMO Design Foundation",
+
+  416            speaker: {
+  417:             name: "John Doe",
+  418              role: "Experience Labs Lead, UMO Design Foundation",
+
+  426            speaker: {
+  427:             name: "John Doe",
+  428              role: "CDO, UMO Design Foundation",
+
+  441          {
+  442:           name: "John Doe",
+  443            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
+
+  445          {
+  446:           name: "John Doe",
+  447            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
+
+  449          {
+  450:           name: "John Doe",
+  451            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
+
+  453          {
+  454:           name: "John Doe",
+  455            image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
+
+  467            speaker: {
+  468:             name: "John Doe",
+  469              role: "Co-Founder, UMO Design Foundation",
+
+  476            speaker: {
+  477:             name: "John Doe",
+  478              role: "Experience Labs Lead, UMO Design Foundation",
+
+  496        speaker: {
+  497:         name: "John Doe",
+  498          role: "Design Leader, UMO Design Foundation",
+
+  508        speaker: {
+  509:         name: "John Doe",
+  510          role: "Executive Design Lead, UMO Design Foundation",
+
+  525        speaker: {
+  526:         name: "John Doe",
+  527          role: "Culture & Design Strategist, UMO Design Foundation",
+
+  537        speaker: {
+  538:         name: "John Doe",
+  539          role: "Ethical Design Specialist, UMO Design Foundation",
+
+  555          {
+  556:           name: "John Doe",
+  557            role: "Design Director, UMO Design Foundation",
+
+  560          {
+  561:           name: "John Doe",
+  562            role: "Creative Lead, Design Thinking Institute",
+
+  565          {
+  566:           name: "John Doe",
+  567            role: "Product Head, Digital Innovation Lab",
+
+  570          {
+  571:           name: "John Doe",
+  572            role: "Strategy Lead, Design Futures",
+
+  583        speaker: {
+  584:         name: "John Doe",
+  585          role: "Global Design Director, UMO Design Foundation",
+
+  595        speaker: {
+  596:         name: "John Doe",
+  597          role: "Innovation Strategist, UMO Design Foundation",
+
+  607        speaker: {
+  608:         name: "John Doe",
+  609          role: "Design Transformation Expert, UMO Design Foundation",
+
+  624        speaker: {
+  625:         name: "John Doe",
+  626          role: "Innovation Strategist, UMO Design Foundation",
+
+app/workshops-schedule/page.tsx:
+   21          speaker: {
+   22:           name: "John Doe",
+   23            role: "Workshop Leader, UMO Design Foundation",
+
+   32          speaker: {
+   33:           name: "John Doe",
+   34            role: "Workshop Leader, UMO Design Foundation",
+
+   43          speaker: {
+   44:           name: "John Doe",
+   45            role: "Workshop Leader, UMO Design Foundation",
+
+   65          speaker: {
+   66:           name: "John Doe",
+   67            role: "Workshop Leader, UMO Design Foundation",
+
+   76          speaker: {
+   77:           name: "John Doe",
+   78            role: "Workshop Leader, UMO Design Foundation",
+
+   87          speaker: {
+   88:           name: "John Doe",
+   89            role: "Workshop Leader, UMO Design Foundation",
+
+  109          speaker: {
+  110:           name: "John Doe",
+  111            role: "Workshop Leader, UMO Design Foundation",
+
+  120          speaker: {
+  121:           name: "John Doe",
+  122            role: "Workshop Leader, UMO Design Foundation",
+
+  131          speaker: {
+  132:           name: "John Doe",
+  133            role: "Workshop Leader, UMO Design Foundation",
+
+  153          speaker: {
+  154:           name: "John Doe",
+  155            role: "Workshop Leader, UMO Design Foundation",
+
+  164          speaker: {
+  165:           name: "John Doe",
+  166            role: "Workshop Leader, UMO Design Foundation",
+
+  175          speaker: {
+  176:           name: "John Doe",
+  177            role: "Workshop Leader, UMO Design Foundation",
+
+data/leadership-schedule.ts:
+   12          { room: "Room 1", title: "Design Foundations & Principles", speaker: { name: "TBA", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Learn foundational design principles and practices." },
+   13:         { room: "Room 2", title: "Advanced Design Methodologies", speaker: { name: "John Doe", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Explore advanced design methodologies." },
+   14:         { room: "Room 3", title: "Emerging Design Trends & Tools", speaker: { name: "John Doe", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Master emerging design trends and tools." },
+   15        ],
+
+   22        workshops: [
+   23:         { room: "Room 1", title: "Practical Design Solutions", speaker: { name: "John Doe", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Develop practical design solutions." },
+   24:         { room: "Room 2", title: "Innovating with Design Thinking", speaker: { name: "John Doe", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Innovate with design thinking." },
+   25:         { room: "Room 3", title: "From Ideas to Impactful Design", speaker: { name: "John Doe", role: "Workshop Leader, UMO Design Foundation", image: "" }, description: "Transform ideas into impactful designs." },
+   26        ],
+
+   33      { time: "8:00 AM", type: "break", title: "Registrations" },
+   34:     { time: "9:00 AM", type: "keynote", title: "Opening Design Leadership Vision", description: "Setting the tone for day two with insights on the future of design-led organizations.", speaker: { name: "John Doe", role: "Design Leader, UMO Design Foundation", image: "" }, tag: "Opening Keynote" },
+   35:     { time: "9:50 AM", type: "keynote", title: "Grand Keynote: Design at Enterprise Scale", description: "Exploring design leadership in large, complex organizational structures.", speaker: { name: "John Doe", role: "Executive Design Lead, UMO Design Foundation", image: "" }, tag: "Grand Keynote" },
+   36      { time: "10:40 AM", type: "break", title: "Coffee Break" },
+   37:     { time: "11:25 AM", type: "keynote", title: "Plenary Keynote: Building Design Culture", description: "Creating and sustaining a strong design culture within organizations.", speaker: { name: "John Doe", role: "Culture & Design Strategist, UMO Design Foundation", image: "" }, tag: "Plenary Keynote" },
+   38:     { time: "12:05 PM", type: "keynote", title: "Plenary Keynote: Design Ethics in AI", description: "Responsible design practices in an AI-driven world.", speaker: { name: "John Doe", role: "Ethical Design Specialist, UMO Design Foundation", image: "" }, tag: "Plenary Keynote" },
+   39      { time: "12:45 PM", type: "break", title: "Lunch Break" },
+
+   43        panelists: [
+   44:         { name: "John Doe", role: "Design Director, UMO Design Foundation", image: "" },
+   45:         { name: "John Doe", role: "Creative Lead, Design Thinking Institute", image: "" },
+   46:         { name: "John Doe", role: "Product Head, Digital Innovation Lab", image: "" },
+   47:         { name: "John Doe", role: "Strategy Lead, Design Futures", image: "" },
+   48        ],
+
+   50      },
+   51:     { time: "3:40 PM", type: "keynote", title: "Plenary Keynote: Global Design Perspectives", description: "Cross-cultural insights into design leadership practices worldwide.", speaker: { name: "John Doe", role: "Global Design Director, UMO Design Foundation", image: "" }, tag: "Plenary Keynote" },
+   52      { time: "4:20 PM", type: "break", title: "Coffee Break & Networking" },
+   53:     { time: "5:20 PM", type: "keynote", title: "Plenary Keynote: The Next Wave of Design", description: "What's next in design leadership and innovation.", speaker: { name: "John Doe", role: "Innovation Strategist, UMO Design Foundation", image: "" }, tag: "Plenary Keynote" },
+   54      { time: "6:00 PM", type: "keynote", title: "Grand Keynote: Design's Role in Transformation", description: "How design drives organizational and social transformation.", speaker: { name: "Doug", role: "Design Transformation Expert", image: "" }, tag: "Grand Keynote" },
+
+   61        sessions: [
+   62:         { room: "Room 1", title: "Opening Remarks", speaker: { name: "John Doe", role: "Design Leader, UMO Design Foundation", image: "" }, description: "Welcome to Day 3 Design Leadership Conference." },
+   63:         { room: "Room 2", title: "Opening Remarks", speaker: { name: "John Doe", role: "Design Entrepreneur, UMO Design Foundation", image: "" }, description: "Welcome to Day 3 Design Entrepreneurship Track." },
+   64        ],
+
+   68        sessions: [
+   69:         { room: "Room 1", title: "Deep Dive Talk", tag: "Deep Dive", speaker: { name: "John Doe", role: "Design Strategist, UMO Design Foundation", image: "" }, description: "Exploring advanced design strategies and implementation." },
+   70:         { room: "Room 2", title: "Deep Dive Talk", tag: "Deep Dive", speaker: { name: "John Doe", role: "Design Entrepreneur, UMO Design Foundation", image: "" }, description: "Building and scaling design-driven businesses." },
+   71        ],
+
+   75        sessions: [
+   76:         { room: "Room 1", title: "Spark Session", tag: "Spark Session", speaker: { name: "John Doe", role: "Design Innovator, UMO Design Foundation", image: "" }, description: "Lightning talks on design innovation." },
+   77:         { room: "Room 2", title: "Spark Session", tag: "Spark Session", speaker: { name: "John Doe", role: "Design Entrepreneur, UMO Design Foundation", image: "" }, description: "Quick insights on entrepreneurial design thinking." },
+   78        ],
+
+   83        sessions: [
+   84:         { room: "Room 1", title: "Spark Session", tag: "Spark Session", speaker: { name: "John Doe", role: "Design Innovator, UMO Design Foundation", image: "" }, description: "Creative approaches to design challenges." },
+   85:         { room: "Room 2", title: "Spark Session", tag: "Spark Session", speaker: { name: "John Doe", role: "Design Entrepreneur, UMO Design Foundation", image: "" }, description: "Entrepreneurial insights from design leaders." },
+   86        ],
+
+   98        leftSessions: [
+   99:         { room: "Room 1", title: "Deep Dive Talk", speaker: { name: "John Doe", role: "Design Strategist, UMO Design Foundation", image: "" }, description: "Advanced strategies for design transformation.", tag: "Deep Dive" },
+  100:         { time: "2:50 PM", room: "Room 1", title: "Spark Session", speaker: { name: "John Doe", role: "Design Innovator, UMO Design Foundation", image: "" }, description: "Final insights and takeaways from the day.", tag: "Spark Session" },
+  101        ],
+
+  104          panelists: [
+  105:           { name: "John Doe", role: "VC Investor, UMO Design Foundation", image: "" },
+  106:           { name: "John Doe", role: "VC Investor, UMO Design Foundation", image: "" },
+  107:           { name: "John Doe", role: "VC Investor, UMO Design Foundation", image: "" },
+  108:           { name: "John Doe", role: "VC Investor, UMO Design Foundation", image: "" },
+  109          ],
+
+  113      { time: "3:15 PM", type: "break", title: "Coffee Break & Networking" },
+  114:     { time: "4:00 PM", type: "closing", title: "Closing Ceremony", tag: "Main Stage", speaker: { name: "John Doe", role: "Conference Lead, UMO Design Foundation", image: "" }, description: "Closing remarks and key takeaways from the conference." },
+  115    ],

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { risingScheduleData } from "@/data/rising-schedule";
 
 const roomColors: Record<string, string> = {
   "Auditorium": "#1D5078",
@@ -17,83 +18,6 @@ const roomColors: Record<string, string> = {
   "Room 8": "#DC2626",
   "Room 9": "#4F46E5",
   "Room 10": "#9333EA",
-};
-
-const scheduleData = {
-  days: [
-    { id: "day1", label: "Conference and Workshops Day 1", date: "Sept 26", endTime: "5:00 PM" },
-    { id: "day2", label: "Conference Day 2", date: "Sept 27", endTime: "4:00 PM" },
-  ],
-  day1: [
-    { time: "8:00 AM", type: "break", title: "Registrations", location: "Auditorium" },
-    { time: "9:00 AM", type: "keynote", title: "Opening Keynote", description: "Setting the stage for the Rising Leaders Forum - a journey of growth, mentorship, and leadership in design.", tag: "Keynote", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
-    { time: "9:40 AM", type: "keynote", title: "Deep Dive Talk", description: "An in-depth exploration of emerging design leadership practices and methodologies.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
-    { time: "10:20 AM", type: "break", title: "Coffee Break", location: "Multiple Rooms" },
-    { time: "11:05 AM", type: "keynote", title: "Deep Dive Talk", description: "Continuing the conversation on design leadership with practical frameworks and insights.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
-    {
-      time: "11:45 AM", type: "panel", title: "Panel Discussion",
-      description: "Industry leaders share their perspectives on navigating the path to design leadership.",
-      tag: "Panel Discussion", location: "Auditorium",
-      panelists: [
-        { name: "Panelist 1", role: "Design Director, Creative Studios", image: "" },
-        { name: "Panelist 2", role: "Head of Design, Innovation Labs", image: "" },
-        { name: "Panelist 3", role: "Design Lead, Digital Ventures", image: "" },
-      ],
-    },
-    { time: "12:45 PM", type: "break", title: "Lunch", location: "Multiple Rooms" },
-    {
-      time: "1:45 PM", endTime: "5:00 PM", type: "parallel-workshops", tag: "Workshop", duration: "90 min",
-      workshops: [
-        { room: "Room 1", title: "Leading Design Teams Through Change", speaker: { name: "Workshop Leader", role: "Expert", image: "" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 2", title: "From Designer to Design Manager", speaker: { name: "Workshop Leader", role: "Expert", image: "" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 3", title: "Building Scalable Design Systems", speaker: { name: "Workshop Leader", role: "Expert", image: "" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 4", title: "Storytelling for Design Leaders", speaker: { name: "Workshop Leader", role: "Expert", image: "" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 5", title: "Research-Driven Decision Making", speaker: { name: "Workshop Leader", role: "Expert", image: "" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 6", title: "Designing with AI in the Loop", speaker: { name: "Workshop Leader", role: "Expert", image: "" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 7", title: "Facilitating High-Impact Workshops", speaker: { name: "Workshop Leader", role: "Expert", image: "" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 8", title: "Communicating Design Value to Stakeholders", speaker: { name: "Workshop Leader", role: "Expert", image: "" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 9", title: "Inclusive and Accessible Design Practices", speaker: { name: "Workshop Leader", role: "Expert", image: "" }, description: "Hands-on workshop focusing on practical design skills." },
-        { room: "Room 10", title: "Measuring and Proving Design Impact", speaker: { name: "Workshop Leader", role: "Expert", image: "" }, description: "Hands-on workshop focusing on practical design skills." },
-      ],
-    },
-    { time: "3:15 PM", type: "break", title: "Coffee Break", location: "Multiple Rooms" },
-    { time: "4:00 PM", type: "continuation", title: "Workshops continue in same rooms after coffee break" },
-  ],
-  day2: [
-    { time: "8:00 AM", type: "break", title: "Registrations", location: "Auditorium" },
-    { time: "9:00 AM", type: "keynote", title: "Opening Keynote", description: "Kicking off Day 2 with inspiring insights on design leadership and the path forward.", tag: "Keynote", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
-    { time: "9:40 AM", type: "keynote", title: "Deep Dive Talk", description: "An in-depth exploration of design leadership practices and methodologies.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
-    { time: "10:20 AM", type: "break", title: "Coffee Break", location: "Multiple Areas" },
-    {
-      time: "11:05 AM", type: "parallel-sessions", duration: "60 min",
-      sessions: [
-        { room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Industry leaders discuss emerging trends in design leadership.", panelists: [{ name: "Panelist 1", role: "Design Director, Creative Studios", image: "" }, { name: "Panelist 2", role: "Head of Design, Innovation Labs", image: "" }] },
-        { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Exploring design-led transformation in organizations.", panelists: [{ name: "Panelist 1", role: "Design Lead, Digital Ventures", image: "" }, { name: "Panelist 2", role: "Product Design Manager, Tech Innovations", image: "" }] },
-        { room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "Building high-performing design teams.", panelists: [{ name: "Panelist 1", role: "UX Lead, Design Systems", image: "" }, { name: "Panelist 2", role: "Design Strategy Director, Future Design Co", image: "" }] },
-      ],
-    },
-    {
-      time: "12:05 PM", type: "parallel-sessions", duration: "25 min",
-      sessions: [
-        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "" }, description: "Quick insights on design innovation." },
-        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "" }, description: "Quick insights on design strategy." },
-        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "" }, description: "Quick insights on design operations." },
-      ],
-    },
-    {
-      time: "12:30 PM", type: "parallel-sessions", duration: "25 min",
-      sessions: [
-        { room: "Mini-Auditorium 1", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "" }, description: "Quick insights on design thinking." },
-        { room: "Mini-Auditorium 2", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "" }, description: "Quick insights on user research." },
-        { room: "Mini-Auditorium 3", title: "Spark Session", type: "spark", tag: "Spark Session", speaker: { name: "Speaker TBA", role: "Expert", image: "" }, description: "Quick insights on design systems." },
-      ],
-    },
-    { time: "12:55 PM", type: "break", title: "Lunch", location: "Multiple Areas" },
-    { time: "2:00 PM", type: "keynote", title: "Deep Dive Talk", description: "Continuing the conversation on design leadership with practical frameworks.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
-    { time: "2:40 PM", type: "keynote", title: "Deep Dive Talk", description: "Advanced strategies for design leadership and team growth.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
-    { time: "3:20 PM", type: "keynote", title: "Closing Ceremony", description: "Celebrating the Rising Leaders Forum and looking ahead to the future.", tag: "Closing", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Conference Host", image: "" } },
-    { time: "4:00 PM", type: "break", title: "High Tea", location: "Multiple Areas" },
-  ],
 };
 
 function parseTimeToMinutes(t: string): number | null {
@@ -123,6 +47,7 @@ const PersonIconDark = ({ size = 28 }: { size?: number }) => (
 );
 
 export default function RisingSchedule() {
+  const scheduleData = risingScheduleData;
   const [activeDay, setActiveDay] = React.useState("day1");
   const currentSessions = activeDay === "day1" ? scheduleData.day1 : scheduleData.day2;
   const activeDayIndex = scheduleData.days.findIndex((d) => d.id === activeDay);
@@ -153,11 +78,10 @@ export default function RisingSchedule() {
                   <button
                     key={day.id}
                     onClick={() => setActiveDay(day.id)}
-                    className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all border cursor-pointer ${
-                      activeDay === day.id
+                    className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all border cursor-pointer ${activeDay === day.id
                         ? "border-2 border-[#E85520] text-[#0D0D0D] bg-transparent"
                         : "border border-[#0D0D0D]/20 text-[#0D0D0D] bg-[#0D0D0D]/5 hover:bg-[#0D0D0D]/10 hover:border-[#0D0D0D]/40"
-                    }`}
+                      }`}
                   >
                     <span className="block truncate">{day.label}</span>
                     <span className={`text-[10px] md:text-xs mt-0.5 block ${activeDay === day.id ? "text-[#E85520]" : "text-[#0D0D0D]/50"}`}>{day.date}</span>
@@ -189,14 +113,15 @@ export default function RisingSchedule() {
                       <span className="px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
                       <p className="text-xs text-[#0D0D0D]/40">{session.time}</p>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-start gap-4">
                       <div className="w-16 h-16 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                         <PersonIconDark size={28} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.tag}</h3>
-                        <p className="font-sans text-sm text-[#0D0D0D]/60 mb-1">Announcing Soon</p>
-                        <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">TBA</p>
+                        <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.title || session.tag}</h3>
+                        <p className="font-sans text-sm text-[#0D0D0D]/60 mb-1">{session.description || "Announcing Soon"}</p>
+                        <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">{session.speaker?.name || "TBA"}</p>
+                        {session.speaker?.role && <p className="font-sans text-xs text-[#0D0D0D]/70 mt-0.5">{session.speaker.role}</p>}
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
                     </div>
@@ -255,17 +180,20 @@ export default function RisingSchedule() {
                     <div className="flex items-start justify-between mb-6">
                       <div>
                         <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.tag}</h3>
-                        <p className="font-sans text-sm text-[#0D0D0D]/60">Announcing Soon</p>
+                        <p className="font-sans text-sm text-[#0D0D0D]/60">{session.description || "Announcing Soon"}</p>
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#1A7A6E] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider shrink-0 ml-4">{session.tag}</span>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-                      {session.panelists.map((panelist, pIndex) => (
-                        <div key={pIndex} className="flex items-center gap-3">
+                      {session.panelists?.map((panelist, pIndex) => (
+                        <div key={pIndex} className={`flex ${panelist.role ? 'items-start' : 'items-center'} gap-3`}>
                           <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                             <PersonIconDark size={22} />
                           </div>
-                          <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">TBA</p>
+                          <div className="flex-1 min-w-0">
+                            <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{panelist.name || "TBA"}</p>
+                            {panelist.role && <p className="font-sans text-xs text-[#0D0D0D]/60 mt-0.5 line-clamp-2">{panelist.role}</p>}
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -286,14 +214,18 @@ export default function RisingSchedule() {
                             <span className="px-2 py-0.5 bg-[#1A7A6E]/10 text-[#1A7A6E] text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">Workshop</span>
                           </div>
                           <h4 className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2 group-hover/ws:line-clamp-none transition-all">
-                            Workshop Leaders
+                            {workshop.title}
                           </h4>
-                          <div className="flex items-center gap-2">
+                          <div className={`flex ${workshop.speaker?.role ? 'items-start' : 'items-center'} gap-2 mb-2`}>
                             <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                               <PersonIconDark size={14} />
                             </div>
-                            <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">TBA</p>
+                            <div className="flex-1">
+                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{workshop.speaker?.name || "TBA"}</p>
+                              {workshop.speaker?.role && <p className="font-sans text-[10px] text-[#0D0D0D]/60">{workshop.speaker.role}</p>}
+                            </div>
                           </div>
+                          {workshop.description && <p className="font-sans text-xs text-[#0D0D0D]/60 leading-snug">{workshop.description}</p>}
                         </div>
                       ))}
                     </div>
@@ -313,23 +245,32 @@ export default function RisingSchedule() {
                             </span>
                             {sess.tag && <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20 shrink-0">{sess.tag}</span>}
                           </div>
-                          <h4 className="font-leadership text-lg text-[#0D0D0D] mb-2">{sess.tag || "Session"}</h4>
-                          <p className="font-sans text-xs text-[#0D0D0D]/60 mb-3 line-clamp-2">Announcing Soon</p>
+                          <h4 className="font-leadership text-lg text-[#0D0D0D] mb-2">{sess.title || sess.tag || "Session"}</h4>
+                          <p className="font-sans text-xs text-[#0D0D0D]/60 mb-3 line-clamp-2">{sess.description || "Announcing Soon"}</p>
                           {sess.type === "panel" && sess.panelists && (
-                            <div className="flex gap-2 mt-3">
+                            <div className="grid grid-cols-2 gap-2 mt-3">
                               {sess.panelists.map((panelist, pIndex) => (
-                                <div key={pIndex} className="w-8 h-8 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0" title="TBA">
-                                  <PersonIconDark size={14} />
+                                <div key={pIndex} className="flex gap-2">
+                                  <div className="w-7 h-7 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0 mt-0.5">
+                                    <PersonIconDark size={12} />
+                                  </div>
+                                  <div className="min-w-0 flex-1">
+                                    <p className="font-sans text-[11px] text-[#0D0D0D]/80 font-medium truncate">{panelist.name || "TBA"}</p>
+                                    {panelist.role && <p className="font-sans text-[9px] text-[#0D0D0D]/60 line-clamp-1">{panelist.role}</p>}
+                                  </div>
                                 </div>
                               ))}
                             </div>
                           )}
                           {sess.type === "spark" && sess.speaker && (
-                            <div className="flex items-center gap-2 mt-3">
+                            <div className={`flex ${sess.speaker?.role ? 'items-start' : 'items-center'} gap-2 mt-3`}>
                               <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                                 <PersonIconDark size={14} />
                               </div>
-                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">TBA</p>
+                              <div className="flex-1 min-w-0">
+                                <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{sess.speaker?.name || "TBA"}</p>
+                                {sess.speaker?.role && <p className="font-sans text-[10px] text-[#0D0D0D]/60">{sess.speaker.role}</p>}
+                              </div>
                             </div>
                           )}
                         </div>

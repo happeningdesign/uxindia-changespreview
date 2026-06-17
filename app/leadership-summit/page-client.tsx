@@ -8,6 +8,7 @@ import WhoAttends from "@/components/events/WhoAttends";
 import SpeakersGrid from "@/components/events/SpeakersGrid";
 import VenueSection from "@/components/events/VenueSection";
 import LeadershipSchedule from "@/components/events/LeadershipSchedule";
+import leadershipSpeakers from "@/data/leadership-speakers";
 import EventDayCards from "@/components/events/EventDayCards";
 
 const leadershipSummitDays = [
@@ -22,14 +23,14 @@ const leadershipSummitDays = [
     badge: "CONFERENCE DAY 1",
     badgeColor: "blue" as const,
     date: "24 September",
-    description: "Industry keynotes and deep-dive talks on design leadership, AI, and business impact, paired with curated roundtables and spark sessions.",
+    description: "Grand keynotes, Plenary Keynotes & Panel Discussions on design leadership, AI, and business impact, paired with curated roundtables and spark sessions.",
     bgColor: "bg-[#0E4D5C]",
   },
   {
     badge: "CONFERENCE DAY 2",
     badgeColor: "orange" as const,
     date: "25 September",
-    description: "TED-style talks, panel discussions, and rapid spark sessions, closing with leadership networking and conversations that carry beyond the stage.",
+    description: "Deep Dive talks, panel discussions, and spark sessions, closing with leadership networking and conversations that carry beyond the stage.",
     bgColor: "bg-[#4A2C3D]",
   },
 ];
@@ -106,50 +107,7 @@ export default function LeadershipSummitPageClient() {
             subtitle="This is where strategy meets craft. Step away from the day to day to think bigger exchange hard won lessons with peers who face the same decisions, pressure test your ideas in intimate roundtables, and leave with sharper conviction, a stronger network, and a clearer view of where design is headed next."
           />
           <SpeakersGrid
-            speakers={[
-              {
-                name: "Velmurugan Paneerselvam",
-                role: "Global Head, Cognizant",
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-                talkType: "Grand Keynote",
-              },
-              {
-                name: "Kate Moran",
-                role: "VP Research, N/NG",
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-                talkType: "Plenary Keynote",
-              },
-              {
-                name: "Prof. Kirti Trivedi",
-                role: "VDP, IIT Indore",
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
-                talkType: "Panel Discussion",
-              },
-              {
-                name: "Rucha Humnabadkar",
-                role: "Director Of Design, Youtube",
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
-                talkType: "Deep Dive Talk",
-              },
-              {
-                name: "Mirjam Wouters",
-                role: "Experience Labs Lead, Royal Philips",
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
-                talkType: "Spark Session",
-              },
-              {
-                name: "Donald Chesnut",
-                role: "CDO, CANDESCENT",
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
-                talkType: "Grand Keynote",
-              },
-              {
-                name: "Ravinder Singh",
-                role: "Co-Founder, Rishihood",
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
-                talkType: "Panel Discussion",
-              },
-            ]}
+            speakers={leadershipSpeakers}
             showMorePlaceholder={true}
           />
           <VenueSection />

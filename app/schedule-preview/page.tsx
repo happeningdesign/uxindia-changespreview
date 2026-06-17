@@ -24,30 +24,30 @@ const scheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Design Foundations & Principles",
+          title: "Workshop 01",
           speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
+            name: "TBA",
+            role: "TBA, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
           },
           description: "Learn foundational design principles and practices.",
         },
         {
           room: "Room 2",
-          title: "Advanced Design Methodologies",
+          title: "Workshop 02",
           speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
+            name: "TBA",
+            role: "TBA, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
           },
-          description: "Explore advanced design methodologies.",
+          description: "Explore Workshop 02.",
         },
         {
           room: "Room 3",
-          title: "Emerging Design Trends & Tools",
+          title: "Workshop 03",
           speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
+            name: "TBA",
+            role: "TBA, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
           },
           description: "Master emerging design trends and tools.",
@@ -77,30 +77,30 @@ const scheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Practical Design Solutions",
+          title: "Workshop 04",
           speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
+            name: "TBA",
+            role: "TBA, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
           },
-          description: "Develop practical design solutions.",
+          description: "Develop Workshop 04.",
         },
         {
           room: "Room 2",
-          title: "Innovating with Design Thinking",
+          title: "Workshop 05",
           speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
+            name: "TBA",
+            role: "TBA, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
           },
           description: "Innovate with design thinking.",
         },
         {
           room: "Room 3",
-          title: "From Ideas to Impactful Design",
+          title: "Workshop 06",
           speaker: {
-            name: "John Doe",
-            role: "Workshop Leader, UMO Design Foundation",
+            name: "TBA",
+            role: "TBA, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
           },
           description: "Transform ideas into impactful designs.",
@@ -137,7 +137,7 @@ const scheduleData = {
           room: "Room 1",
           title: "Opening Remarks",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Design Leader, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
           },
@@ -147,7 +147,7 @@ const scheduleData = {
           room: "Room 2",
           title: "Opening Remarks",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Design Entrepreneur, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
           },
@@ -164,7 +164,7 @@ const scheduleData = {
           title: "Deep Dive Talk",
           tag: "Deep Dive",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Design Strategist, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
           },
@@ -175,7 +175,7 @@ const scheduleData = {
           title: "Deep Dive Talk",
           tag: "Deep Dive",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Design Entrepreneur, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
           },
@@ -192,7 +192,7 @@ const scheduleData = {
           title: "Spark Session",
           tag: "Spark Session",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Design Innovator, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
           },
@@ -203,7 +203,7 @@ const scheduleData = {
           title: "Spark Session",
           tag: "Spark Session",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Design Entrepreneur, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
           },
@@ -225,7 +225,7 @@ const scheduleData = {
           title: "Spark Session",
           tag: "Spark Session",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Design Innovator, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
           },
@@ -236,7 +236,7 @@ const scheduleData = {
           title: "Spark Session",
           tag: "Spark Session",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Design Entrepreneur, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
           },
@@ -253,11 +253,11 @@ const scheduleData = {
           title: "Panel Discussion",
           description: "Discussion on design leadership in modern organizations.",
           tag: "Panel Discussion",
-          panelists: [
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
+          TBAs: [
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png" },
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png" },
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png" },
           ],
         },
         {
@@ -265,11 +265,11 @@ const scheduleData = {
           title: "Panel Discussion",
           description: "Navigating design entrepreneurship and growth.",
           tag: "Panel Discussion",
-          panelists: [
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" },
-            { name: "Panelist TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
+          TBAs: [
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png" },
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png" },
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png" },
+            { name: "TBA TBA", role: "Design Leader", image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png" },
           ],
         },
       ],
@@ -287,7 +287,7 @@ const scheduleData = {
           room: "Room 1",
           title: "Deep Dive Talk",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Design Strategist, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
           },
@@ -299,7 +299,7 @@ const scheduleData = {
           room: "Room 1",
           title: "Spark Session",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Design Innovator, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
           },
@@ -311,24 +311,24 @@ const scheduleData = {
         room: "Room 2",
         title: "Design Pitch VC Sessions",
         tag: "VC Pitch",
-        panelists: [
+        TBAs: [
           {
-            name: "John Doe",
+            name: "TBA",
             role: "VC Investor, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
           },
           {
-            name: "John Doe",
+            name: "TBA",
             role: "VC Investor, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
           },
           {
-            name: "John Doe",
+            name: "TBA",
             role: "VC Investor, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
           },
           {
-            name: "John Doe",
+            name: "TBA",
             role: "VC Investor, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
           },
@@ -347,7 +347,7 @@ const scheduleData = {
       title: "Closing Ceremony",
       tag: "Main Stage",
       speaker: {
-        name: "John Doe",
+        name: "TBA",
         role: "Conference Lead, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
       },
@@ -361,7 +361,7 @@ const scheduleData = {
       title: "The Future of Design Leadership",
       description: "Opening keynote on how design leadership is evolving in the age of AI and rapid technological change.",
       speaker: {
-        name: "John Doe",
+        name: "TBA",
         role: "Global Head of Design, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
       },
@@ -375,7 +375,7 @@ const scheduleData = {
           title: "Building Design Systems at Scale",
           description: "Learn how to create and maintain design systems that work across global organizations.",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "VP Research, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
           },
@@ -384,7 +384,7 @@ const scheduleData = {
           title: "Research-Driven Design Decisions",
           description: "Frameworks for integrating user research into strategic design decisions.",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "VP Design, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
           },
@@ -404,7 +404,7 @@ const scheduleData = {
           tag: "Leadership",
           title: "Managing Up: Design at the C-Suite",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Director Of Design, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
           },
@@ -414,7 +414,7 @@ const scheduleData = {
           tag: "Strategy",
           title: "Design Operations Excellence",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Experience Labs Lead, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
           },
@@ -424,7 +424,7 @@ const scheduleData = {
           tag: "Innovation",
           title: "AI-Augmented Design Process",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "CDO, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
           },
@@ -437,21 +437,21 @@ const scheduleData = {
       type: "panel",
       title: "Panel: The State of Design in 2026",
       description: "Industry leaders discuss trends, challenges, and opportunities in design leadership.",
-      panelists: [
+      TBAs: [
         {
-          name: "John Doe",
+          name: "TBA",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
         },
         {
-          name: "John Doe",
+          name: "TBA",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
         },
         {
-          name: "John Doe",
+          name: "TBA",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
         },
         {
-          name: "John Doe",
+          name: "TBA",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
         },
       ],
@@ -465,7 +465,7 @@ const scheduleData = {
           title: "Building Inclusive Design Teams",
           description: "Creating diverse, equitable, and inclusive design organizations.",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Co-Founder, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
           },
@@ -474,7 +474,7 @@ const scheduleData = {
           title: "Measuring Design Impact",
           description: "Metrics and frameworks for demonstrating design ROI.",
           speaker: {
-            name: "John Doe",
+            name: "TBA",
             role: "Experience Labs Lead, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
           },
@@ -494,7 +494,7 @@ const scheduleData = {
       title: "Opening Design Leadership Vision",
       description: "Setting the tone for day two with insights on the future of design-led organizations.",
       speaker: {
-        name: "John Doe",
+        name: "TBA",
         role: "Design Leader, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
       },
@@ -506,7 +506,7 @@ const scheduleData = {
       title: "Grand Keynote: Design at Enterprise Scale",
       description: "Exploring design leadership in large, complex organizational structures.",
       speaker: {
-        name: "John Doe",
+        name: "TBA",
         role: "Executive Design Lead, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
       },
@@ -523,7 +523,7 @@ const scheduleData = {
       title: "Plenary Keynote: Building Design Culture",
       description: "Creating and sustaining a strong design culture within organizations.",
       speaker: {
-        name: "John Doe",
+        name: "TBA",
         role: "Culture & Design Strategist, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
       },
@@ -535,7 +535,7 @@ const scheduleData = {
       title: "Plenary Keynote: Design Ethics in AI",
       description: "Responsible design practices in an AI-driven world.",
       speaker: {
-        name: "John Doe",
+        name: "TBA",
         role: "Ethical Design Specialist, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
       },
@@ -551,24 +551,24 @@ const scheduleData = {
       type: "panel",
       title: "Panel Discussion: Future of Design Leadership",
       description: "Thought leaders share perspectives on emerging trends and challenges in design leadership.",
-      panelists: [
+      TBAs: [
         {
-          name: "John Doe",
+          name: "TBA",
           role: "Design Director, UMO Design Foundation",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
         },
         {
-          name: "John Doe",
+          name: "TBA",
           role: "Creative Lead, Design Thinking Institute",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
         },
         {
-          name: "John Doe",
+          name: "TBA",
           role: "Product Head, Digital Innovation Lab",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
         },
         {
-          name: "John Doe",
+          name: "TBA",
           role: "Strategy Lead, Design Futures",
           image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
         },
@@ -581,7 +581,7 @@ const scheduleData = {
       title: "Plenary Keynote: Global Design Perspectives",
       description: "Cross-cultural insights into design leadership practices worldwide.",
       speaker: {
-        name: "John Doe",
+        name: "TBA",
         role: "Global Design Director, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
       },
@@ -593,7 +593,7 @@ const scheduleData = {
       title: "Plenary Keynote: The Next Wave of Design",
       description: "What's next in design leadership and innovation.",
       speaker: {
-        name: "John Doe",
+        name: "TBA",
         role: "Innovation Strategist, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
       },
@@ -605,7 +605,7 @@ const scheduleData = {
       title: "Grand Keynote: Design's Role in Transformation",
       description: "How design drives organizational and social transformation.",
       speaker: {
-        name: "John Doe",
+        name: "TBA",
         role: "Design Transformation Expert, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ravinder%202-Ma6qnJURvXf7yIu5JfMG0c79LiCfRF.png",
       },
@@ -622,7 +622,7 @@ const scheduleData = {
       title: "Plenary Keynote: The Next Wave of Design",
       description: "What's next in design leadership and innovation.",
       speaker: {
-        name: "John Doe",
+        name: "TBA",
         role: "Innovation Strategist, UMO Design Foundation",
         image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
       },
@@ -706,11 +706,10 @@ export default function SchedulePreviewPage() {
                     <button
                       key={day.id}
                       onClick={() => setActiveDay(day.id)}
-                      className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all cursor-pointer border ${
-                        activeDay === day.id
-                          ? "border-2 border-[#E85520] text-white bg-transparent"
-                          : "border border-white/20 text-white bg-white/5 hover:bg-white/10 hover:border-white/40"
-                      }`}
+                      className={`px-3 md:px-5 py-3 rounded-lg font-sans text-xs md:text-sm font-semibold transition-all cursor-pointer border ${activeDay === day.id
+                        ? "border-2 border-[#E85520] text-white bg-transparent"
+                        : "border border-white/20 text-white bg-white/5 hover:bg-white/10 hover:border-white/40"
+                        }`}
                     >
                       <span className="block truncate">{day.label}</span>
                       <span className={`text-[10px] md:text-xs mt-0.5 block ${activeDay === day.id ? "text-[#E85520]" : "text-white/50"}`}>{day.date}</span>
@@ -750,7 +749,7 @@ export default function SchedulePreviewPage() {
                         </div>
                         <div className="flex items-start gap-4">
                           <div className="w-16 h-16 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                           </div>
                           <div className="flex-1">
                             <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">
@@ -782,7 +781,7 @@ export default function SchedulePreviewPage() {
                           <div className="flex items-center gap-4">
                             <div className="w-10 h-10 bg-[#E85520]/80 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
                               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white"/>
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white" />
                               </svg>
                             </div>
                             <div>
@@ -890,7 +889,7 @@ export default function SchedulePreviewPage() {
                               <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 bg-[#E85520]/80 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
                                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white" stroke="none"/>
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white" stroke="none" />
                                   </svg>
                                 </div>
                                 <div>
@@ -984,19 +983,19 @@ export default function SchedulePreviewPage() {
                             {session.tag}
                           </span>
                         </div>
-                        {/* Panelists Grid */}
+                        {/* TBAs Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-                          {session.panelists.map((panelist, pIndex) => (
+                          {session.TBAs.map((TBA, pIndex) => (
                             <div key={pIndex} className="flex items-start gap-3">
                               <div className="w-12 h-12 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                               </div>
                               <div className="flex flex-col items-start gap-1 min-w-0">
                                 <p className="font-sans text-sm text-white font-medium leading-tight">
-                                  {panelist.name}
+                                  {TBA.name}
                                 </p>
                                 <p className="font-sans text-xs text-white/60 leading-tight">
-                                  {panelist.role}
+                                  {TBA.role}
                                 </p>
                               </div>
                             </div>
@@ -1029,7 +1028,7 @@ export default function SchedulePreviewPage() {
                             </h3>
                             <div className="flex items-start gap-3 mb-4">
                               <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                               </div>
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-sm text-white/80 font-medium">
@@ -1070,21 +1069,21 @@ export default function SchedulePreviewPage() {
                             <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                               {sess.title}
                             </h3>
-                            {sess.panelists ? (
-                              // Multiple panelists
+                            {sess.TBAs ? (
+                              // Multiple TBAs
                               <>
                                 <div className="grid grid-cols-2 gap-4 mb-4">
-                                  {sess.panelists.map((panelist, pIndex) => (
+                                  {sess.TBAs.map((TBA, pIndex) => (
                                     <div key={pIndex} className="flex items-start gap-2">
                                       <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                                       </div>
                                       <div className="flex flex-col items-start gap-0.5 min-w-0">
                                         <p className="font-sans text-xs text-white font-medium leading-tight truncate">
-                                          {panelist.name}
+                                          {TBA.name}
                                         </p>
                                         <p className="font-sans text-xs text-white/60 leading-tight">
-                                          {panelist.role}
+                                          {TBA.role}
                                         </p>
                                       </div>
                                     </div>
@@ -1095,7 +1094,7 @@ export default function SchedulePreviewPage() {
                               // Single speaker
                               <div className="flex items-start gap-3 mb-4">
                                 <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                                 </div>
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-white/80 font-medium">
@@ -1139,16 +1138,16 @@ export default function SchedulePreviewPage() {
                             <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-5">
                               {sess.description}
                             </p>
-                            {/* Panelists grid */}
+                            {/* TBAs grid */}
                             <div className="grid grid-cols-2 gap-3">
-                              {sess.panelists.map((panelist, pIndex) => (
+                              {sess.TBAs.map((TBA, pIndex) => (
                                 <div key={pIndex} className="flex items-center gap-2">
                                   <div className="w-9 h-9 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                                   </div>
                                   <div className="min-w-0">
-                                    <p className="font-sans text-xs text-white/80 font-medium truncate">{panelist.name}</p>
-                                    <p className="font-sans text-[10px] text-white/40 truncate">{panelist.role}</p>
+                                    <p className="font-sans text-xs text-white/80 font-medium truncate">{TBA.name}</p>
+                                    <p className="font-sans text-[10px] text-white/40 truncate">{TBA.role}</p>
                                   </div>
                                 </div>
                               ))}
@@ -1186,7 +1185,7 @@ export default function SchedulePreviewPage() {
                               </h3>
                               <div className="flex items-start gap-3 mb-4">
                                 <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                                 </div>
                                 <div className="flex-1 min-w-0">
                                   <p className="font-sans text-sm text-white/80 font-medium">
@@ -1229,14 +1228,14 @@ export default function SchedulePreviewPage() {
                               VC Investors
                             </p>
                             <div className="space-y-3">
-                              {session.rightSession.panelists.map((panelist, pIndex) => (
+                              {session.rightSession.TBAs.map((TBA, pIndex) => (
                                 <div key={pIndex} className="flex items-center gap-3">
                                   <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
                                   </div>
                                   <div>
-                                    <p className="font-sans text-sm text-white/80">{panelist.name}</p>
-                                    <p className="font-sans text-xs text-white/40">{panelist.role}</p>
+                                    <p className="font-sans text-sm text-white/80">{TBA.name}</p>
+                                    <p className="font-sans text-xs text-white/40">{TBA.role}</p>
                                   </div>
                                 </div>
                               ))}
@@ -1252,22 +1251,22 @@ export default function SchedulePreviewPage() {
 
             {/* Day ends card - skip for days that already have a dayend session or networking dinner */}
             {activeDay !== "day2" && !currentSessions.some(s => s.type === "dayend") && (
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-              <div className="hidden lg:block lg:col-span-2">
-                <div className="text-sm font-sans text-white/50 sticky top-24">
-                  {scheduleData.days[activeDayIndex]?.endTime}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <div className="hidden lg:block lg:col-span-2">
+                  <div className="text-sm font-sans text-white/50 sticky top-24">
+                    {scheduleData.days[activeDayIndex]?.endTime}
+                  </div>
+                </div>
+                <div className="lg:col-span-10">
+                  <div className="border border-dashed border-white/15 rounded-xl py-5 px-6 flex items-center justify-center gap-3 text-center">
+                    <span className="h-px w-8 bg-white/15" />
+                    <p className="font-sans text-sm text-white/50">
+                      End of {activeDayLabel}
+                    </p>
+                    <span className="h-px w-8 bg-white/15" />
+                  </div>
                 </div>
               </div>
-              <div className="lg:col-span-10">
-                <div className="border border-dashed border-white/15 rounded-xl py-5 px-6 flex items-center justify-center gap-3 text-center">
-                  <span className="h-px w-8 bg-white/15" />
-                  <p className="font-sans text-sm text-white/50">
-                    End of {activeDayLabel}
-                  </p>
-                  <span className="h-px w-8 bg-white/15" />
-                </div>
-              </div>
-            </div>
             )}
           </div>
 

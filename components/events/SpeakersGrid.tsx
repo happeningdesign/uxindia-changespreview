@@ -1,29 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import type { Speaker } from "@/data/leadership-speakers";
 
 const speakerColors = ["#E85520", "#1D5078", "#1A7A6E", "#C8365A"];
-
-interface Speaker {
-  name: string;
-  role: string;
-  image: string;
-  bio?: string;
-  talkType?: string;
-}
 
 interface SpeakersGridProps {
   speakers: Speaker[];
   showMorePlaceholder?: boolean;
   variant?: "dark" | "light";
-}
-
-/** Splits a name into two roughly equal halves at a word boundary */
-function splitNameTwoLines(name: string): [string, string] {
-  const words = name.trim().split(" ");
-  if (words.length === 1) return [words[0], ""];
-  const mid = Math.ceil(words.length / 2);
-  return [words.slice(0, mid).join(" "), words.slice(mid).join(" ")];
 }
 
 function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { speaker: Speaker; index: number; variant?: "dark" | "light"; isFlipped: boolean; onFlip: () => void }) {
@@ -54,7 +39,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
     >
       {/* Photo */}
       <img
-        src={speaker.image}
+        src={speaker.image || `/placeholder.svg?height=500&width=400`}
         alt={speaker.name}
         className="absolute inset-0 w-full h-full object-cover object-top"
         style={isLight ? { filter: "contrast(1.05)" } : undefined}
@@ -89,11 +74,13 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
               }}
             >
               {(() => {
-                const [line1, line2] = splitNameTwoLines(speaker.name);
+                const words = speaker.name.trim().split(" ");
+                const firstName = words[0];
+                const restName = words.slice(1).join(" ");
                 return (
                   <>
-                    <span className="block">{line1}</span>
-                    {line2 && <span className="block">{line2}</span>}
+                    <span className="block" style={{ color: "#F5A623" }}>{firstName}</span>
+                    {restName && <span className="block">{restName}</span>}
                   </>
                 );
               })()}
@@ -104,10 +91,10 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
           </div>
           {/* Orange circle arrow */}
           <div
-            className="shrink-0 w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-0.5"
+            className="shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center mb-0.5"
             style={{ backgroundColor: "#E85520" }}
           >
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>
           </div>
@@ -116,7 +103,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
 
       {/* Glassmorphism overlay — slides up from bottom on hover */}
       <div
-        className="absolute inset-x-0 bottom-0 flex flex-col p-3 md:p-5 transition-all duration-500 ease-out max-h-[85%] overflow-y-auto"
+        className="speaker-overlay absolute inset-x-0 bottom-0 flex flex-col p-3 md:p-5 transition-all duration-500 ease-out max-h-[85%] overflow-y-auto"
         style={{
           background: "rgba(10, 10, 10, 0.55)",
           backdropFilter: "blur(16px)",
@@ -124,8 +111,17 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
           borderTop: `1px solid rgba(255,255,255,0.12)`,
           transform: showOverlay ? "translateY(0%)" : "translateY(100%)",
           opacity: showOverlay ? 1 : 0,
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
         }}
       >
+        <style>{`
+          @media (max-width: 767px) {
+            .speaker-overlay::-webkit-scrollbar {
+              display: none;
+            }
+          }
+        `}</style>
         {/* Talk type chip */}
         {speaker.talkType && (
           <span className="font-sans text-[7px] md:text-[9px] font-semibold text-white/60 tracking-widest uppercase mb-1.5 flex-shrink-0">
@@ -141,16 +137,31 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
         <p className="font-sans text-[9px] md:text-xs text-white/80 leading-relaxed line-clamp-3 md:line-clamp-4 flex-shrink-0">
           {speaker.bio || `${speaker.name} is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.`}
         </p>
-        <button
-          type="button"
-          onClick={(e) => e.stopPropagation()}
-          className="group/btn mt-2 md:mt-3 inline-flex items-center gap-1 self-start font-sans text-[8px] md:text-[11px] font-semibold uppercase tracking-wider cursor-pointer text-[#E85520] flex-shrink-0"
-        >
-          Read more
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover/btn:translate-x-0.5">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </button>
+        {speaker.readMoreLink ? (
+          <a
+            href={speaker.readMoreLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="group/btn mt-2 md:mt-3 inline-flex items-center gap-1 self-start font-sans text-[8px] md:text-[11px] font-semibold uppercase tracking-wider cursor-pointer text-[#E85520] flex-shrink-0 hover:text-[#E85520]/80 transition-colors"
+          >
+            {speaker.readMoreLabel || "Read more"}
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover/btn:translate-x-0.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        ) : (
+          <button
+            type="button"
+            onClick={(e) => e.stopPropagation()}
+            className="group/btn mt-2 md:mt-3 inline-flex items-center gap-1 self-start font-sans text-[8px] md:text-[11px] font-semibold uppercase tracking-wider cursor-pointer text-[#E85520]/60 flex-shrink-0 opacity-50 cursor-not-allowed"
+          >
+            {speaker.readMoreLabel || "Read more"}
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        )}
       </div>
     </div>
   );
