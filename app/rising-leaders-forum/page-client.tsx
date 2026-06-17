@@ -53,7 +53,7 @@ export default function RisingLeadersPageClient() {
           </button>
         </div>
       )}
-      
+
       {activeTab === "overview" && (
         <>
           <section className="bg-[#F5F0E8] w-full py-16 md:py-24">
@@ -76,7 +76,7 @@ export default function RisingLeadersPageClient() {
                     "Deep Dive Talks",
                     "Panel Discussions",
                     "Spark Sessions",
-                    "Workshop Leaders",
+                    "TBAs",
                   ].map((label) => (
                     <div
                       key={label}
@@ -113,7 +113,7 @@ export default function RisingLeadersPageClient() {
       )}
 
       {activeTab === "schedule" && <RisingSchedule />}
-      
+
       <Footer />
     </main>
   );

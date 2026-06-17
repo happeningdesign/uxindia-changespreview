@@ -27,7 +27,7 @@ const scheduleData = {
           title: "Workshop 01",
           speaker: {
             name: "TBA",
-            role: "Workshop Leader, UMO Design Foundation",
+            role: "TBA, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
           },
           description: "Learn foundational design principles and practices.",
@@ -37,7 +37,7 @@ const scheduleData = {
           title: "Workshop 02",
           speaker: {
             name: "TBA",
-            role: "Workshop Leader, UMO Design Foundation",
+            role: "TBA, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
           },
           description: "Explore Workshop 02.",
@@ -47,7 +47,7 @@ const scheduleData = {
           title: "Workshop 03",
           speaker: {
             name: "TBA",
-            role: "Workshop Leader, UMO Design Foundation",
+            role: "TBA, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
           },
           description: "Master emerging design trends and tools.",
@@ -80,7 +80,7 @@ const scheduleData = {
           title: "Workshop 04",
           speaker: {
             name: "TBA",
-            role: "Workshop Leader, UMO Design Foundation",
+            role: "TBA, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Rucha%202-D6aWBOcA3BXuuOmwat1GTMaPDMPrDb.png",
           },
           description: "Develop Workshop 04.",
@@ -90,7 +90,7 @@ const scheduleData = {
           title: "Workshop 05",
           speaker: {
             name: "TBA",
-            role: "Workshop Leader, UMO Design Foundation",
+            role: "TBA, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mirjam%205-su1y8iJkrQl7NGkUZ6TEnCIEkAa3Go.png",
           },
           description: "Innovate with design thinking.",
@@ -100,7 +100,7 @@ const scheduleData = {
           title: "Workshop 06",
           speaker: {
             name: "TBA",
-            role: "Workshop Leader, UMO Design Foundation",
+            role: "TBA, UMO Design Foundation",
             image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Donald%202-QrVCcZvm0T90MBDsDxYFH2zLqlunQF.png",
           },
           description: "Transform ideas into impactful designs.",
