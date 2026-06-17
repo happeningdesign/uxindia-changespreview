@@ -98,10 +98,10 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
           </div>
           {/* Orange circle arrow */}
           <div
-            className="shrink-0 w-6 h-6 md:w-9 md:h-9 rounded-full flex items-center justify-center mb-0.5 opacity-75"
+            className="shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center mb-0.5 opacity-75"
             style={{ backgroundColor: "#E85520" }}
           >
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>
           </div>
