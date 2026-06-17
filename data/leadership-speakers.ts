@@ -27,9 +27,9 @@ export interface Speaker {
 
 const leadershipSpeakers: Speaker[] = [
   {
-    name: "Velmurugan Paneerselvam",
+    name: "Doug Powell",
     role: "Global Head, Cognizant",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
+    image: "public/LS Speaker Images/Doug.webp",
     talkType: "Grand Keynote",
     bio: "Velmurugan is a visionary leader with extensive expertise in digital transformation and enterprise design. He drives innovation across global teams, bringing strategic insights on scalable design systems and user-centered business solutions.",
     readMoreLink: "https://www.cognizant.com",
