@@ -336,7 +336,7 @@ export default function LeadershipSchedule() {
                           <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">{sess.room}</p>
                           <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">{sess.tag}</span>
                         </div>
-                        <h3 className="font-leadership text-lg md:text-xl text-white mb-4">{sess.title || sess.tag}</h3>
+                        <h3 className="font-leadership text-lg md:text-xl text-white mb-4">{sess.title}</h3>
                         <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-5">{sess.description || "Announcing Soon"}</p>
                         <div className="grid grid-cols-2 gap-3">
                           {sess.panelists?.map((panelist, pIndex) => (

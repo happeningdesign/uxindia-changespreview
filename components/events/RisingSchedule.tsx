@@ -123,7 +123,7 @@ export default function RisingSchedule() {
                         )}
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.title || session.tag}</h3>
+                        <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.title}</h3>
                         <p className="font-sans text-sm text-[#0D0D0D]/60 mb-1">{session.description || "Announcing Soon"}</p>
                         <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">{session.speaker?.name || "TBA"}</p>
                         {session.speaker?.role && <p className="font-sans text-xs text-[#0D0D0D]/70 mt-0.5">{session.speaker.role}</p>}
@@ -184,7 +184,7 @@ export default function RisingSchedule() {
                     </div>
                     <div className="flex items-start justify-between mb-6">
                       <div>
-                        <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.tag}</h3>
+                        <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.title}</h3>
                         <p className="font-sans text-sm text-[#0D0D0D]/60">{session.description || "Announcing Soon"}</p>
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#1A7A6E] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider shrink-0 ml-4">{session.tag}</span>
