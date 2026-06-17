@@ -18,14 +18,6 @@ interface SpeakersGridProps {
   variant?: "dark" | "light";
 }
 
-/** Splits a name into two roughly equal halves at a word boundary */
-function splitNameTwoLines(name: string): [string, string] {
-  const words = name.trim().split(" ");
-  if (words.length === 1) return [words[0], ""];
-  const mid = Math.ceil(words.length / 2);
-  return [words.slice(0, mid).join(" "), words.slice(mid).join(" ")];
-}
-
 function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { speaker: Speaker; index: number; variant?: "dark" | "light"; isFlipped: boolean; onFlip: () => void }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isTapped, setIsTapped] = useState(false);
@@ -89,11 +81,13 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
               }}
             >
               {(() => {
-                const [line1, line2] = splitNameTwoLines(speaker.name);
+                const words = speaker.name.trim().split(" ");
+                const firstName = words[0];
+                const restName = words.slice(1).join(" ");
                 return (
                   <>
-                    <span className="block">{line1}</span>
-                    {line2 && <span className="block">{line2}</span>}
+                    <span className="block" style={{ color: "#E85520" }}>{firstName}</span>
+                    {restName && <span className="block">{restName}</span>}
                   </>
                 );
               })()}
