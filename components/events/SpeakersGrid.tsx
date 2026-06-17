@@ -86,7 +86,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
                 const restName = words.slice(1).join(" ");
                 return (
                   <>
-                    <span className="block" style={{ color: "#E85520" }}>{firstName}</span>
+                    <span className="block" style={{ color: "#F5A623" }}>{firstName}</span>
                     {restName && <span className="block">{restName}</span>}
                   </>
                 );
@@ -98,10 +98,10 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
           </div>
           {/* Orange circle arrow */}
           <div
-            className="shrink-0 w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-0.5"
+            className="shrink-0 w-6 h-6 md:w-9 md:h-9 rounded-full flex items-center justify-center mb-0.5 opacity-75"
             style={{ backgroundColor: "#E85520" }}
           >
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>
           </div>
