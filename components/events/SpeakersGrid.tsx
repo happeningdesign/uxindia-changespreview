@@ -39,7 +39,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
     >
       {/* Photo */}
       <img
-        src={speaker.image}
+        src={speaker.image || `/placeholder.svg?height=500&width=400`}
         alt={speaker.name}
         className="absolute inset-0 w-full h-full object-cover object-top"
         style={isLight ? { filter: "contrast(1.05)" } : undefined}

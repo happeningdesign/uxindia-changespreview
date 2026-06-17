@@ -194,8 +194,12 @@ export default function RisingSchedule() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                       {session.panelists?.map((panelist, pIndex) => (
                         <div key={pIndex} className="flex items-start gap-3">
-                          <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
-                            <PersonIconDark size={22} />
+                          <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center overflow-hidden flex-shrink-0">
+                            {panelist.image ? (
+                              <img src={panelist.image} alt={panelist.name} className="w-full h-full object-cover" />
+                            ) : (
+                              <PersonIconDark size={22} />
+                            )}
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className="font-sans text-sm text-[#0D0D0D] font-medium leading-tight">{panelist.name || "TBA"}</p>
@@ -224,8 +228,12 @@ export default function RisingSchedule() {
                             {workshop.title}
                           </h4>
                           <div className="flex items-center gap-2 mb-2">
-                            <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
-                              <PersonIconDark size={14} />
+                            <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center overflow-hidden flex-shrink-0">
+                              {workshop.speaker?.image ? (
+                                <img src={workshop.speaker.image} alt={workshop.speaker.name} className="w-full h-full object-cover" />
+                              ) : (
+                                <PersonIconDark size={14} />
+                              )}
                             </div>
                             <div className="flex-1">
                               <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{workshop.speaker?.name || "TBA"}</p>
@@ -258,8 +266,12 @@ export default function RisingSchedule() {
                             <div className="grid grid-cols-2 gap-3 mt-3">
                               {sess.panelists.map((panelist, pIndex) => (
                                 <div key={pIndex} className="flex gap-2">
-                                  <div className="w-7 h-7 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0 mt-0.5">
-                                    <PersonIconDark size={12} />
+                                  <div className="w-7 h-7 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0 overflow-hidden flex-shrink-0">
+                                    {panelist.image ? (
+                                      <img src={panelist.image} alt={panelist.name} className="w-full h-full object-cover" />
+                                    ) : (
+                                      <PersonIconDark size={12} />
+                                    )}
                                   </div>
                                   <div className="min-w-0 flex-1">
                                     <p className="font-sans text-[11px] text-[#0D0D0D]/80 font-medium truncate">{panelist.name || "TBA"}</p>
@@ -271,8 +283,12 @@ export default function RisingSchedule() {
                           )}
                           {sess.type === "spark" && sess.speaker && (
                             <div className="flex items-start gap-2 mt-3">
-                              <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center mt-0.5">
-                                <PersonIconDark size={14} />
+                              <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center overflow-hidden flex-shrink-0 mt-0.5">
+                                {sess.speaker?.image ? (
+                                  <img src={sess.speaker.image} alt={sess.speaker.name} className="w-full h-full object-cover" />
+                                ) : (
+                                  <PersonIconDark size={14} />
+                                )}
                               </div>
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{sess.speaker?.name || "TBA"}</p>
