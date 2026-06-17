@@ -320,7 +320,6 @@ export default function LeadershipSchedule() {
                             {sess.speaker?.role && <p className="font-sans text-xs text-white/60 mt-0.5">{sess.speaker.role}</p>}
                           </div>
                         </div>
-                          </div>
                         )}
                         <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">{sess.description || "Announcing Soon"}</p>
                       </div>
