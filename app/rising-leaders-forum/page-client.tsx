@@ -8,6 +8,7 @@ import WhoAttends from "@/components/events/WhoAttends";
 import SpeakersGrid from "@/components/events/SpeakersGrid";
 import VenueSection from "@/components/events/VenueSection";
 import RisingSchedule from "@/components/events/RisingSchedule";
+import risingLeadersSpeakers from "@/data/rising-leaders-speakers";
 import EventDayCards from "@/components/events/EventDayCards";
 
 const risingLeadersDays = [
@@ -98,26 +99,7 @@ export default function RisingLeadersPageClient() {
           />
           <SpeakersGrid
             variant="light"
-            speakers={[
-              {
-                name: "Mohan Krishnaraj",
-                role: "Global Head, Cognizant",
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-                talkType: "Mentor Session",
-              },
-              {
-                name: "Kate Moran",
-                role: "VP Research, N/NG",
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kate-LDTO53yItpEnoSxHsyiNn0H6302DJW.png",
-                talkType: "Workshop Lead",
-              },
-              {
-                name: "Prof. Kirti Trivedi",
-                role: "VDP, IIT Indore",
-                image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Kirti%202%202-bzGwR92irRSkBQmceiZr6uK8VKQkWD.png",
-                talkType: "Keynote",
-              },
-            ]}
+            speakers={risingLeadersSpeakers}
             showMorePlaceholder={true}
           />
           <VenueSection

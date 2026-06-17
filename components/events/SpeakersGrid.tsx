@@ -1,16 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import type { Speaker } from "@/data/leadership-speakers";
 
 const speakerColors = ["#E85520", "#1D5078", "#1A7A6E", "#C8365A"];
-
-interface Speaker {
-  name: string;
-  role: string;
-  image: string;
-  bio?: string;
-  talkType?: string;
-}
 
 interface SpeakersGridProps {
   speakers: Speaker[];
