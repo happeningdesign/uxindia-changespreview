@@ -34,7 +34,7 @@ export const leadershipScheduleData = {
     { time: "9:00 AM", type: "keynote", title: "TBA", description: "", speaker: { name: "TBA", role: "", image: "" }, tag: "Opening Keynote" },
     { time: "9:50 AM", type: "keynote", title: "Grand Keynote", description: "", speaker: { name: "TBA", role: "", image: "" }, tag: "Grand Keynote" },
     { time: "10:40 AM", type: "break", title: "Coffee Break" },
-    { time: "11:25 AM", type: "keynote", title: "Plenary Keynote", description: "", speaker: { name: "TBA", role: "", image: "" }, tag: "Plenary Keynote" },
+    { time: "11:25 AM", type: "keynote", title: "Be[coming] a leader in design", description: "A keynote on what it really takes to lead with integrity in design — without losing yourself to politics or pressure.", speaker: { name: "Mario Van der Meulen", role: "CXO Aleph Labs", image: "/LS-Speaker-Images/Van-Mario.webp" }, tag: "Plenary Keynote" },
     { time: "12:05 PM", type: "keynote", title: "Plenary Keynote", description: "", speaker: { name: "TBA", role: "", image: "" }, tag: "Plenary Keynote" },
     { time: "12:45 PM", type: "break", title: "Lunch Break" },
     {

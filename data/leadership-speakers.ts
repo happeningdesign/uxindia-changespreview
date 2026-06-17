@@ -62,6 +62,15 @@ const leadershipSpeakers: Speaker[] = [
     readMoreLink: "",
     readMoreLabel: "Read More",
   },
+  {
+    name: "Mario Van der Meulen",
+    role: "CXO Aleph Labs",
+    image: "/LS-Speaker-Images/Van-Mario.webp",
+    talkType: "Plenary Keynote",
+    bio: "",
+    readMoreLink: "",
+    readMoreLabel: "Read More",
+  },
 ];
 
 export default leadershipSpeakers;

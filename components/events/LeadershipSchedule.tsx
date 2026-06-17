@@ -109,7 +109,7 @@ export default function LeadershipSchedule() {
                         )}
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.tag}</h3>
+                        <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.title}</h3>
                         <p className="font-sans text-sm text-white/60 mb-1">{session.description || "Announcing Soon"}</p>
                         <p className="font-sans text-sm text-white/80 font-medium">{session.speaker?.name || "TBA"}</p>
                         {session.speaker?.role && <p className="font-sans text-xs text-white/70 mt-0.5">{session.speaker.role}</p>}
@@ -218,7 +218,7 @@ export default function LeadershipSchedule() {
                     </div>
                     <div className="flex items-start justify-between mb-6">
                       <div>
-                        <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.tag}</h3>
+                        <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.title}</h3>
                         <p className="font-sans text-sm text-white/60">{session.description || "Announcing Soon"}</p>
                       </div>
                       <span className="hidden lg:inline-block px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20 shrink-0 ml-4">{session.tag}</span>
@@ -336,7 +336,7 @@ export default function LeadershipSchedule() {
                           <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">{sess.room}</p>
                           <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">{sess.tag}</span>
                         </div>
-                        <h3 className="font-leadership text-lg md:text-xl text-white mb-4">{sess.title || sess.tag}</h3>
+                        <h3 className="font-leadership text-lg md:text-xl text-white mb-4">{sess.title}</h3>
                         <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-5">{sess.description || "Announcing Soon"}</p>
                         <div className="grid grid-cols-2 gap-3">
                           {sess.panelists?.map((panelist, pIndex) => (
