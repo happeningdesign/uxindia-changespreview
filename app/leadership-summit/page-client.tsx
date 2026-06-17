@@ -30,7 +30,7 @@ const leadershipSummitDays = [
     badge: "CONFERENCE DAY 2",
     badgeColor: "orange" as const,
     date: "25 September",
-    description: "TED-style talks, panel discussions, and rapid spark sessions, closing with leadership networking and conversations that carry beyond the stage.",
+    description: "Deep Dive talks, panel discussions, and spark sessions, closing with leadership networking and conversations that carry beyond the stage.",
     bgColor: "bg-[#4A2C3D]",
   },
 ];
