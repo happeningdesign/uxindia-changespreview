@@ -28,7 +28,7 @@ export interface Speaker {
 const leadershipSpeakers: Speaker[] = [
   {
     name: "Doug Powell",
-    role: "Global Head, Cognizant",
+    role: "Executive Design Leader",
     image: "/LS-Speaker-Images/Doug.webp",
     talkType: "Grand Keynote",
     bio: "Velmurugan is a visionary leader with extensive expertise in digital transformation and enterprise design. He drives innovation across global teams, bringing strategic insights on scalable design systems and user-centered business solutions.",
