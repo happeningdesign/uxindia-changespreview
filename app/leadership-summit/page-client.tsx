@@ -23,7 +23,7 @@ const leadershipSummitDays = [
     badge: "CONFERENCE DAY 1",
     badgeColor: "blue" as const,
     date: "24 September",
-    description: "Industry keynotes and deep-dive talks on design leadership, AI, and business impact, paired with curated roundtables and spark sessions.",
+    description: "Grand keynotes, Plenary Keynotes & Panel Discussions on design leadership, AI, and business impact, paired with curated roundtables and spark sessions.",
     bgColor: "bg-[#0E4D5C]",
   },
   {
