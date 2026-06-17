@@ -113,11 +113,11 @@ export default function RisingSchedule() {
                       <span className="px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">{session.tag}</span>
                       <p className="text-xs text-[#0D0D0D]/40">{session.time}</p>
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-start gap-4">
                       <div className="w-16 h-16 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                         <PersonIconDark size={28} />
                       </div>
-                      <div className={`flex-1 ${!session.speaker?.role && !session.description ? 'flex items-center' : ''}`}>
+                      <div className="flex-1">
                         <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.title || session.tag}</h3>
                         <p className="font-sans text-sm text-[#0D0D0D]/60 mb-1">{session.description || "Announcing Soon"}</p>
                         <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">{session.speaker?.name || "TBA"}</p>
