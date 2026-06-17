@@ -110,7 +110,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
 
       {/* Glassmorphism overlay — slides up from bottom on hover */}
       <div
-        className="absolute inset-x-0 bottom-0 flex flex-col p-3 md:p-5 transition-all duration-500 ease-out max-h-[85%] overflow-y-auto"
+        className="speaker-overlay absolute inset-x-0 bottom-0 flex flex-col p-3 md:p-5 transition-all duration-500 ease-out max-h-[85%] overflow-y-auto"
         style={{
           background: "rgba(10, 10, 10, 0.55)",
           backdropFilter: "blur(16px)",
@@ -118,8 +118,17 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
           borderTop: `1px solid rgba(255,255,255,0.12)`,
           transform: showOverlay ? "translateY(0%)" : "translateY(100%)",
           opacity: showOverlay ? 1 : 0,
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
         }}
       >
+        <style>{`
+          @media (max-width: 767px) {
+            .speaker-overlay::-webkit-scrollbar {
+              display: none;
+            }
+          }
+        `}</style>
         {/* Talk type chip */}
         {speaker.talkType && (
           <span className="font-sans text-[7px] md:text-[9px] font-semibold text-white/60 tracking-widest uppercase mb-1.5 flex-shrink-0">
