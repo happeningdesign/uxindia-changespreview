@@ -31,10 +31,10 @@ export const leadershipScheduleData = {
   ],
   day2: [
     { time: "8:00 AM", type: "break", title: "Registrations" },
-    { time: "9:00 AM", type: "keynote", title: "Opening Design Leadership Vision", description: "Setting the tone for day two with insights on the future of design-led organizations.", speaker: { name: "TBA", role: "Design Leader, UMO Design Foundation", image: "" }, tag: "Opening Keynote" },
-    { time: "9:50 AM", type: "keynote", title: "Grand Keynote: Design at Enterprise Scale", description: "Exploring design leadership in large, complex organizational structures.", speaker: { name: "TBA", role: "Executive Design Lead, UMO Design Foundation", image: "" }, tag: "Grand Keynote" },
+    { time: "9:00 AM", type: "keynote", title: "TBA", description: "", speaker: { name: "TBA", role: "", image: "" }, tag: "Opening Keynote" },
+    { time: "9:50 AM", type: "keynote", title: "Grand Keynote", description: "", speaker: { name: "TBA", role: "", image: "" }, tag: "Grand Keynote" },
     { time: "10:40 AM", type: "break", title: "Coffee Break" },
-    { time: "11:25 AM", type: "keynote", title: "Plenary Keynote: Building Design Culture", description: "Creating and sustaining a strong design culture within organizations.", speaker: { name: "TBA", role: "Culture & Design Strategist, UMO Design Foundation", image: "" }, tag: "Plenary Keynote" },
+    { time: "11:25 AM", type: "keynote", title: "Plenary Keynote", description: "", speaker: { name: "TBA", role: "", image: "" }, tag: "Plenary Keynote" },
     { time: "12:05 PM", type: "keynote", title: "Plenary Keynote: Design Ethics in AI", description: "Responsible design practices in an AI-driven world.", speaker: { name: "TBA", role: "Ethical Design Specialist, UMO Design Foundation", image: "" }, tag: "Plenary Keynote" },
     { time: "12:45 PM", type: "break", title: "Lunch Break" },
     {
