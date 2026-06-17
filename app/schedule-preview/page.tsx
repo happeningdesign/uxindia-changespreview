@@ -690,8 +690,11 @@ export default function SchedulePreviewPage() {
               <h1 className="font-leadership text-4xl md:text-5xl lg:text-6xl text-white mb-4">
                 Leadership Summit 2026
               </h1>
-              <p className="font-sans text-base text-white/60">
+              <p className="font-sans text-base text-white/60 mb-2">
                 September 23-25, 2026 — Leela Bhartiya City, Bengaluru
+              </p>
+              <p className="font-sans text-sm text-white/50 italic">
+                Please note: Speaker line-up and session timings are subject to change.
               </p>
             </div>
           </div>

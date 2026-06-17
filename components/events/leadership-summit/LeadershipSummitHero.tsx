@@ -59,14 +59,6 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab, hideTabB
               Summit 2026
             </h1>
 
-            {/* Disclaimer */}
-            <p
-              className="animate-float-up opacity-0 font-sans text-xs md:text-sm text-white/60 italic mb-6 md:mb-8"
-              style={{ animationDelay: "0.12s" }}
-            >
-              Please note: Speaker line-up and session timings are subject to change.
-            </p>
-
             {/* Subcopy */}
             <p
               className="animate-float-up opacity-0 font-sans text-base md:text-lg text-white/85 leading-relaxed mb-8 md:mb-10 max-w-full md:max-w-[46ch]"
