@@ -64,7 +64,8 @@ export default function RisingSchedule() {
           <div className="lg:col-span-2" />
           <div className="lg:col-span-10">
             <p className="font-sans text-xs font-semibold uppercase tracking-widest text-[#E85520] mb-3">Schedule</p>
-            <h2 className="font-leadership text-3xl md:text-4xl text-[#0D0D0D]">Rising Leaders Forum 2026</h2>
+            <h2 className="font-leadership text-3xl md:text-4xl text-[#0D0D0D] mb-2">Rising Leaders Forum 2026</h2>
+            <p className="font-sans text-sm text-[#0D0D0D]/50 italic">Please note: Speaker line-up and session timings are subject to change.</p>
           </div>
         </div>
 

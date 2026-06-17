@@ -50,7 +50,8 @@ export default function LeadershipSchedule() {
           <div className="lg:col-span-2" />
           <div className="lg:col-span-10">
             <p className="font-sans text-xs font-semibold uppercase tracking-widest text-[#E85520] mb-3">Schedule</p>
-            <h2 className="font-leadership text-3xl md:text-4xl text-white">Leadership Summit 2026</h2>
+            <h2 className="font-leadership text-3xl md:text-4xl text-white mb-2">Leadership Summit 2026</h2>
+            <p className="font-sans text-sm text-white/50 italic">Please note: Speaker line-up and session timings are subject to change.</p>
           </div>
         </div>
 
