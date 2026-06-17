@@ -103,7 +103,7 @@ export default function LeadershipSchedule() {
                       <div className="w-16 h-16 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                         <PersonIcon size={28} />
                       </div>
-                      <div className="flex-1">
+                      <div className={`flex-1 ${!session.speaker?.role && !session.description ? 'flex items-center' : ''}`}>
                         <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.tag}</h3>
                         <p className="font-sans text-sm text-white/60 mb-1">{session.description || "Announcing Soon"}</p>
                         <p className="font-sans text-sm text-white/80 font-medium">{session.speaker?.name || "TBA"}</p>
@@ -220,7 +220,7 @@ export default function LeadershipSchedule() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                       {session.panelists?.map((panelist, pIndex) => (
-                        <div key={pIndex} className="flex items-start gap-3">
+                        <div key={pIndex} className={`flex ${panelist.role ? 'items-start' : 'items-center'} gap-3`}>
                           <div className="w-12 h-12 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                             <PersonIcon size={22} />
                           </div>
@@ -278,7 +278,7 @@ export default function LeadershipSchedule() {
                         {sess.panelists ? (
                           <div className="grid grid-cols-2 gap-4 mb-4">
                             {sess.panelists.map((panelist, pIndex) => (
-                              <div key={pIndex} className="flex flex-col">
+                              <div key={pIndex} className={`flex ${panelist.role ? 'flex-col' : 'items-center'}`}>
                                 <div className="flex items-center gap-2 mb-1">
                                   <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={14} /></div>
                                   <p className="font-sans text-xs text-white font-medium leading-tight truncate flex-1">{panelist.name || "TBA"}</p>
@@ -288,7 +288,7 @@ export default function LeadershipSchedule() {
                             ))}
                           </div>
                         ) : (
-                          <div className="flex items-start gap-3 mb-4">
+                          <div className={`flex ${sess.speaker?.role ? 'items-start' : 'items-center'} gap-3 mb-4`}>
                             <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={18} /></div>
                             <div className="flex-1 min-w-0">
                               <p className="font-sans text-sm text-white/80 font-medium">{sess.speaker?.name || "TBA"}</p>
@@ -315,7 +315,7 @@ export default function LeadershipSchedule() {
                         <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-5">{sess.description || "Announcing Soon"}</p>
                         <div className="grid grid-cols-2 gap-3">
                           {sess.panelists?.map((panelist, pIndex) => (
-                            <div key={pIndex} className="flex flex-col">
+                            <div key={pIndex} className={`flex ${panelist.role ? 'flex-col' : 'items-center'}`}>
                               <div className="flex items-center gap-3 mb-1">
                                 <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={14} /></div>
                                 <p className="font-sans text-xs text-white/80 font-medium truncate flex-1">{panelist.name || "TBA"}</p>
@@ -365,7 +365,7 @@ export default function LeadershipSchedule() {
                         <p className="font-sans text-xs text-white/40 uppercase tracking-wider mb-3">VC Investors</p>
                         <div className="space-y-3">
                           {session.rightSession.panelists?.map((panelist, pIndex) => (
-                            <div key={pIndex} className="flex items-start gap-3">
+                            <div key={pIndex} className={`flex ${panelist.role ? 'items-start' : 'items-center'} gap-3`}>
                               <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={14} /></div>
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-sm text-white/80">{panelist.name || "TBA"}</p>

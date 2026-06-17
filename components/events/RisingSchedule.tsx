@@ -117,7 +117,7 @@ export default function RisingSchedule() {
                       <div className="w-16 h-16 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                         <PersonIconDark size={28} />
                       </div>
-                      <div className="flex-1">
+                      <div className={`flex-1 ${!session.speaker?.role && !session.description ? 'flex items-center' : ''}`}>
                         <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.title || session.tag}</h3>
                         <p className="font-sans text-sm text-[#0D0D0D]/60 mb-1">{session.description || "Announcing Soon"}</p>
                         <p className="font-sans text-sm text-[#0D0D0D]/80 font-medium">{session.speaker?.name || "TBA"}</p>
@@ -180,13 +180,13 @@ export default function RisingSchedule() {
                     <div className="flex items-start justify-between mb-6">
                       <div>
                         <h3 className="font-leadership text-xl md:text-2xl text-[#0D0D0D] mb-2">{session.tag}</h3>
-                        <p className="font-sans text-sm text-[#0D0D0D]/60">Announcing Soon</p>
+                        <p className="font-sans text-sm text-[#0D0D0D]/60">{session.description || "Announcing Soon"}</p>
                       </div>
                       <span className="hidden lg:inline-block px-3 py-1 bg-[#1A7A6E] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider shrink-0 ml-4">{session.tag}</span>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                       {session.panelists?.map((panelist, pIndex) => (
-                        <div key={pIndex} className="flex items-start gap-3">
+                        <div key={pIndex} className={`flex ${panelist.role ? 'items-start' : 'items-center'} gap-3`}>
                           <div className="w-12 h-12 rounded-full shrink-0 border border-[#0D0D0D]/20 bg-[#0D0D0D]/5 flex items-center justify-center">
                             <PersonIconDark size={22} />
                           </div>
@@ -250,7 +250,7 @@ export default function RisingSchedule() {
                           {sess.type === "panel" && sess.panelists && (
                             <div className="grid grid-cols-2 gap-2 mt-3">
                               {sess.panelists.map((panelist, pIndex) => (
-                                <div key={pIndex} className="flex gap-2">
+                                <div key={pIndex} className={`flex ${panelist.role ? 'gap-2' : 'items-center gap-2'}`}>
                                   <div className="w-7 h-7 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0 mt-0.5">
                                     <PersonIconDark size={12} />
                                   </div>
@@ -263,7 +263,7 @@ export default function RisingSchedule() {
                             </div>
                           )}
                           {sess.type === "spark" && sess.speaker && (
-                            <div className="flex items-start gap-2 mt-3">
+                            <div className={`flex ${sess.speaker?.role ? 'items-start' : 'items-center'} gap-2 mt-3`}>
                               <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                                 <PersonIconDark size={14} />
                               </div>
