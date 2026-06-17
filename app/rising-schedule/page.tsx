@@ -51,7 +51,7 @@ const scheduleData = {
       time: "9:40 AM",
       type: "keynote",
       title: "Deep Dive Talk",
-      description: "An in-depth exploration of emerging design leadership practices and methodologies.",
+      description: "",
       tag: "Deep Dive",
       location: "Auditorium",
       speaker: {
