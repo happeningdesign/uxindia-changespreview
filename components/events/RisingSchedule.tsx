@@ -265,9 +265,13 @@ export default function RisingSchedule() {
                           )}
                           {sess.type === "spark" && sess.speaker && (
                             <div className={`flex ${sess.speaker?.role ? 'items-start' : 'items-center'} gap-2 mt-3`}>
-                              <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
-                                <PersonIconDark size={14} />
-                              </div>
+                              {sess.speaker?.image ? (
+                                <img src={sess.speaker.image} alt={sess.speaker?.name} className="w-8 h-8 rounded-full shrink-0 border border-[#0D0D0D]/15 object-cover" crossOrigin="anonymous" />
+                              ) : (
+                                <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
+                                  <PersonIconDark size={14} />
+                                </div>
+                              )}
                               <div className="flex-1 min-w-0">
                                 <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{sess.speaker?.name || "TBA"}</p>
                                 {sess.speaker?.role && <p className="font-sans text-[10px] text-[#0D0D0D]/60">{sess.speaker.role}</p>}
