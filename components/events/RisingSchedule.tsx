@@ -250,7 +250,7 @@ export default function RisingSchedule() {
                           {sess.type === "panel" && sess.panelists && (
                             <div className="grid grid-cols-2 gap-2 mt-3">
                               {sess.panelists.map((panelist, pIndex) => (
-                                <div key={pIndex} className={`flex ${panelist.role ? 'gap-2' : 'items-center gap-2'}`}>
+                                <div key={pIndex} className="flex gap-2">
                                   <div className="w-7 h-7 rounded-full border border-[#0D0D0D]/10 bg-[#0D0D0D]/5 flex items-center justify-center shrink-0 mt-0.5">
                                     <PersonIconDark size={12} />
                                   </div>

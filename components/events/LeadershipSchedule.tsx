@@ -278,7 +278,7 @@ export default function LeadershipSchedule() {
                         {sess.panelists ? (
                           <div className="grid grid-cols-2 gap-4 mb-4">
                             {sess.panelists.map((panelist, pIndex) => (
-                              <div key={pIndex} className={`flex ${panelist.role ? 'flex-col' : 'items-center'}`}>
+                              <div key={pIndex} className="flex flex-col">
                                 <div className="flex items-center gap-2 mb-1">
                                   <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={14} /></div>
                                   <p className="font-sans text-xs text-white font-medium leading-tight truncate flex-1">{panelist.name || "TBA"}</p>
@@ -315,7 +315,7 @@ export default function LeadershipSchedule() {
                         <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mb-5">{sess.description || "Announcing Soon"}</p>
                         <div className="grid grid-cols-2 gap-3">
                           {sess.panelists?.map((panelist, pIndex) => (
-                            <div key={pIndex} className={`flex ${panelist.role ? 'flex-col' : 'items-center'}`}>
+                            <div key={pIndex} className="flex flex-col">
                               <div className="flex items-center gap-3 mb-1">
                                 <div className="w-8 h-8 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center"><PersonIcon size={14} /></div>
                                 <p className="font-sans text-xs text-white/80 font-medium truncate flex-1">{panelist.name || "TBA"}</p>
