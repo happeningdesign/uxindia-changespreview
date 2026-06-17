@@ -48,7 +48,7 @@ export const risingScheduleData = {
       time: "11:05 AM", type: "parallel-sessions", duration: "60 min",
       sessions: [
         { room: "Mini-Auditorium 1", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "", panelists: [{ name: "TBA", role: "", image: "" }, { name: "TBA", role: "", image: "" }, { name: "TBA", role: "", image: "" }, { name: "TBA", role: "", image: "" }] },
-        { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "", panelists: [{ name: "TBA", role: "D", image: "" }, { name: "TBA", role: "", image: "" }, { name: "TBA", role: "", image: "" }, { name: "TBA", role: "", image: "" }] },
+        { room: "Mini-Auditorium 2", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "", panelists: [{ name: "TBA", role: "", image: "" }, { name: "TBA", role: "", image: "" }, { name: "TBA", role: "", image: "" }, { name: "TBA", role: "", image: "" }] },
         { room: "Mini-Auditorium 3", title: "Panel Discussion", type: "panel", tag: "Panel Discussion", description: "", panelists: [{ name: "TBA", role: "", image: "" }, { name: "TBA", role: "", image: "" }, { name: "TBA", role: "", image: "" }, { name: "TBA", role: "", image: "" }] },
       ],
     },
