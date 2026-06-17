@@ -214,7 +214,7 @@ export default function LeadershipSchedule() {
                     <div className="flex items-start justify-between mb-6">
                       <div>
                         <h3 className="font-leadership text-xl md:text-2xl text-white mb-2">{session.tag}</h3>
-                        <p className="font-sans text-sm text-white/60">Announcing Soon</p>
+                        <p className="font-sans text-sm text-white/60">{session.description || "Announcing Soon"}</p>
                       </div>
                       <span className="hidden lg:inline-block px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20 shrink-0 ml-4">{session.tag}</span>
                     </div>
@@ -247,11 +247,14 @@ export default function LeadershipSchedule() {
                           </div>
                         </div>
                         <h3 className="font-leadership text-lg md:text-xl text-white mb-3">{workshop.title}</h3>
-                        <div className="flex items-center gap-3 mb-4">
+                        <div className="flex items-start gap-3 mb-4">
                           <div className="w-10 h-10 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
                             <PersonIcon size={18} />
                           </div>
-                          <p className="font-sans text-sm text-white/80 font-medium">{workshop.speaker?.name || "TBA"}</p>
+                          <div className="flex-1 min-w-0">
+                            <p className="font-sans text-sm text-white/80 font-medium">{workshop.speaker?.name || "TBA"}</p>
+                            {workshop.speaker?.role && <p className="font-sans text-xs text-white/60 mt-0.5">{workshop.speaker.role}</p>}
+                          </div>
                         </div>
                         <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed">{workshop.description || "Announcing Soon"}</p>
                       </div>

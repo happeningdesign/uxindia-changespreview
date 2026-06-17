@@ -263,11 +263,14 @@ export default function RisingSchedule() {
                             </div>
                           )}
                           {sess.type === "spark" && sess.speaker && (
-                            <div className="flex items-center gap-2 mt-3">
+                            <div className="flex items-start gap-2 mt-3">
                               <div className="w-8 h-8 rounded-full shrink-0 bg-[#0D0D0D]/5 border border-[#0D0D0D]/15 flex items-center justify-center">
                                 <PersonIconDark size={14} />
                               </div>
-                              <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{sess.speaker?.name || "TBA"}</p>
+                              <div className="flex-1 min-w-0">
+                                <p className="font-sans text-xs text-[#0D0D0D]/80 font-medium">{sess.speaker?.name || "TBA"}</p>
+                                {sess.speaker?.role && <p className="font-sans text-[10px] text-[#0D0D0D]/60">{sess.speaker.role}</p>}
+                              </div>
                             </div>
                           )}
                         </div>
