@@ -8,7 +8,7 @@ export const risingScheduleData = {
     { time: "9:00 AM", type: "keynote", title: "Opening Keynote", description: "Announcing Soon", tag: "Keynote", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
     { time: "9:40 AM", type: "keynote", title: "Deep Dive Talk", description: "", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
     { time: "10:20 AM", type: "break", title: "Coffee Break", location: "Multiple Rooms" },
-    { time: "11:05 AM", type: "keynote", title: "Deep Dive Talk", description: "Continuing the conversation on design leadership with practical frameworks and insights.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
+    { time: "11:05 AM", type: "keynote", title: "Deep Dive Talk", description: "Announcing Soon", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
     {
       time: "11:45 AM", type: "panel", title: "Panel Discussion",
       description: "Industry leaders share their perspectives on navigating the path to design leadership.",
@@ -40,7 +40,7 @@ export const risingScheduleData = {
   ],
   day2: [
     { time: "8:00 AM", type: "break", title: "Registrations", location: "Auditorium" },
-    { time: "9:00 AM", type: "keynote", title: "Opening Keynote", description: "Kicking off Day 2 with inspiring insights on design leadership and the path forward.", tag: "Keynote", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
+    { time: "9:00 AM", type: "keynote", title: "Opening Keynote", description: "Announcing Soon", tag: "Keynote", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
     { time: "9:40 AM", type: "keynote", title: "Deep Dive Talk", description: "An in-depth exploration of design leadership practices and methodologies.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Speaker TBA", role: "Design Leader", image: "" } },
     { time: "10:20 AM", type: "break", title: "Coffee Break", location: "Multiple Areas" },
     {
