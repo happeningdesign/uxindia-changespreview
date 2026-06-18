@@ -41,7 +41,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
       <img
         src={speaker.image || `/placeholder.svg?height=500&width=400`}
         alt={speaker.name}
-        className="absolute inset-0 w-full h-full object-cover object-top"
+        className="absolute inset-0 w-full h-full object-cover object-top transform scale-[1.2]"
         style={isLight ? { filter: "contrast(1.05)" } : undefined}
         crossOrigin="anonymous"
       />
@@ -50,7 +50,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
       {isLight ? (
         <div
           className="absolute inset-0"
-          style={{ background: `linear-gradient(to bottom, ${color}00 45%, ${color}ee 100%)` }}
+          style={{ background: `linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.93) 100%)` }}
         />
       ) : (
         <>
@@ -66,12 +66,11 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
       >
         {/* Orange arrow button — bottom right */}
         <div className="flex items-end justify-between gap-1.5">
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 items-start min-w-0">
             <h3
               className="font-leadership text-white leading-[0.92] tracking-tight mb-1.5"
               style={{
                 fontSize: "clamp(1.1rem, 5vw, 2rem)",
-                textShadow: "0 2px 20px rgba(0,0,0,0.8)",
               }}
             >
               {(() => {
@@ -80,7 +79,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
                 const restName = words.slice(1).join(" ");
                 return (
                   <>
-                    <span className="block" style={{ color: "#F5A623" }}>{firstName}</span>
+                    <span className="block" style={{ color: "white" }}>{firstName}</span>
                     {restName && <span className="block">{restName}</span>}
                   </>
                 );
@@ -91,6 +90,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
             </p>
           </div>
           {/* Orange circle arrow */}
+          <div className="flex justify-end items-end">
           <div
             className="shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center mb-0.5"
             style={{ backgroundColor: "#E85520" }}
@@ -98,6 +98,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
             <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>
+          </div>
           </div>
         </div>
       </div>

@@ -27,13 +27,31 @@ export interface Speaker {
 
 const risingLeadersSpeakers: Speaker[] = [
   {
-    name: "Mohan Krishnaraj",
-    role: "Global Head, Cognizant",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mohan%202-K9AB5pP4ZHPfre7Q7Go5ODw5e2M2UX.png",
-    talkType: "Mentor Session",
-    bio: "Mohan brings 20+ years of experience in leading design teams and building world-class design systems. He's passionate about mentoring emerging designers and fostering innovation-driven design cultures.",
-    readMoreLink: "https://www.cognizant.com",
-    readMoreLabel: "Learn More",
+    name: "Deepashree Kale",
+    role: "Head of Design",
+    image: "/RS-Speaker-Images/Deepashree Kale.webp",
+    talkType: "Deep Dive",
+    bio: "",
+    readMoreLink: "",
+    readMoreLabel: "Read More",
+  },
+  {
+    name: "Vineet Gupta",
+    role: "Assistant Vice President, Design & Branding",
+    image: "/RS-Speaker-Images/Vineet Gupta.png",
+    talkType: "Deep Dive",
+    bio: "",
+    readMoreLink: "",
+    readMoreLabel: "Read More",
+  },
+  {
+    name: "Sujit Kumar Pradhan",
+    role: "UX Designer, Google",
+    image: "/RS-Speaker-Images/Sujit Kumar Pradhan.png",
+    talkType: "Deep Dive",
+    bio: "",
+    readMoreLink: "",
+    readMoreLabel: "Read More",
   },
 ];
 
