@@ -41,7 +41,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
       <img
         src={speaker.image || `/placeholder.svg?height=500&width=400`}
         alt={speaker.name}
-        className="absolute inset-0 w-full h-full object-cover object-top"
+        className="absolute inset-0 w-full h-full object-cover object-top transform scale-[1.2]"
         style={isLight ? { filter: "contrast(1.05)" } : undefined}
         crossOrigin="anonymous"
       />
@@ -50,7 +50,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
       {isLight ? (
         <div
           className="absolute inset-0"
-          style={{ background: `linear-gradient(to bottom, ${color}00 45%, ${color}ee 100%)` }}
+          style={{ background: `linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.93) 100%)` }}
         />
       ) : (
         <>
@@ -71,7 +71,6 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
               className="font-leadership text-white leading-[0.92] tracking-tight mb-1.5"
               style={{
                 fontSize: "clamp(1.1rem, 5vw, 2rem)",
-                textShadow: "0 2px 20px rgba(0,0,0,0.8)",
               }}
             >
               {(() => {
@@ -80,7 +79,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
                 const restName = words.slice(1).join(" ");
                 return (
                   <>
-                    <span className="block" style={{ color: "#F5A623" }}>{firstName}</span>
+                    <span className="block" style={{ color: "white" }}>{firstName}</span>
                     {restName && <span className="block">{restName}</span>}
                   </>
                 );
