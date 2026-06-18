@@ -42,7 +42,7 @@ export const risingScheduleData = {
   day2: [
     { time: "8:00 AM", type: "break", title: "Registrations", location: "Auditorium" },
     { time: "9:00 AM", type: "keynote", title: "Opening Keynote", description: "Announcing Soon", tag: "Keynote", location: "Auditorium", speaker: { name: "TBA", role: "", image: "" } },
-    { time: "9:40 AM", type: "keynote", title: "Deep Dive Talk", description: "Announcing Soon", tag: "Deep Dive", location: "Auditorium", speaker: { name: "TBA", role: "", image: "" } },
+    { time: "9:40 AM", type: "keynote", title: "Design Un-automated: Reclaiming the Soul of Design", description: "Exploring how designers can stay at the core of the process as AI reshapes tools, workflows, and creative decisions.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Sujit Kumar Pradhan", role: "UX Designer, Google", image: "/RS-Speaker-Images/Sujit Kumar Pradhan.png" } },
     { time: "10:20 AM", type: "break", title: "Coffee Break", location: "Multiple Areas" },
     {
       time: "11:05 AM", type: "parallel-sessions", duration: "60 min",
