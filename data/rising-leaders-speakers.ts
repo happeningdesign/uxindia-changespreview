@@ -53,6 +53,24 @@ const risingLeadersSpeakers: Speaker[] = [
     readMoreLink: "",
     readMoreLabel: "Read More",
   },
+  {
+    name: "Varedh Nigam",
+    role: "Associate Director, Nagarro Software Pvt. Ltd.",
+    image: "/RS-Speaker-Images/Varedh.png",
+    talkType: "Workshops",
+    bio: "",
+    readMoreLink: "",
+    readMoreLabel: "Read More",
+  },
+  {
+    name: "Anna Gerasimchuk",
+    role: "Head of UIUX Engineering, McKesson, Ontada",
+    image: "/RS-Speaker-Images/Anya.png",
+    talkType: "Workshops",
+    bio: "",
+    readMoreLink: "",
+    readMoreLabel: "Read More",
+  },
 ];
 
 export default risingLeadersSpeakers;
