@@ -24,7 +24,7 @@ export const risingScheduleData = {
     {
       time: "1:45 PM", endTime: "5:00 PM", type: "parallel-workshops", tag: "Workshop", duration: "90 min",
       workshops: [
-        { room: "Room 1", title: "Workshop 1", speaker: { name: "TBA", role: "", image: "" }, description: "" },
+        { room: "Room 1", title: "Designing AI That Cares: A Hands-On Workshop on the HCAI Framework", speaker: { name: "Varedh Nigam", role: "Associate Director, Nagarro Software Pvt. Ltd.", image: "/RS-Speaker-Images/Varedh.png" }, description: "Exploring how the HCAI framework helps teams decide what AI should own, where humans must lead, and where care matters most." },
         { room: "Room 2", title: "Workshop 02", speaker: { name: "TBA", role: "", image: "" }, description: "" },
         { room: "Room 3", title: "Workshop 03", speaker: { name: "TBA", role: "", image: "" }, description: "" },
         { room: "Room 4", title: "Workshop 04", speaker: { name: "TBA", role: "", image: "" }, description: "" },
