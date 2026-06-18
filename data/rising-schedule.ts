@@ -6,7 +6,7 @@ export const risingScheduleData = {
   day1: [
     { time: "8:00 AM", type: "break", title: "Registrations", location: "Auditorium" },
     { time: "9:00 AM", type: "keynote", title: "Opening Keynote", description: "Announcing Soon", tag: "Keynote", location: "Auditorium", speaker: { name: "TBA", role: "", image: "" } },
-    { time: "9:40 AM", type: "keynote", title: "Deep Dive Talk", description: "", tag: "Deep Dive", location: "Auditorium", speaker: { name: "TBA", role: "", image: "" } },
+    { time: "9:40 AM", type: "keynote", title: "Shipped & Imperfect", description: "", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Deepashree Kale", role: "Head of Design", image: "/RS-Speaker-Images/Deepashree Kale.webp" } },
     { time: "10:20 AM", type: "break", title: "Coffee Break", location: "Multiple Rooms" },
     { time: "11:05 AM", type: "keynote", title: "Deep Dive Talk", description: "Announcing Soon", tag: "Deep Dive", location: "Auditorium", speaker: { name: "TBA", role: "", image: "" } },
     {
