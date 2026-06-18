@@ -63,9 +63,9 @@ const risingLeadersSpeakers: Speaker[] = [
     readMoreLabel: "Read More",
   },
   {
-    name: "Anna (Anya) Gerasimchuk",
+    name: "Anna Gerasimchuk",
     role: "Head of UIUX Engineering, McKesson, Ontada",
-    image: "/RS-Speaker-Images/Varedh.png",
+    image: "/RS-Speaker-Images/Anya.png",
     talkType: "Workshops",
     bio: "",
     readMoreLink: "",
