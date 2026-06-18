@@ -44,6 +44,15 @@ const risingLeadersSpeakers: Speaker[] = [
     readMoreLink: "",
     readMoreLabel: "Read More",
   },
+  {
+    name: "Sujit Kumar Pradhan",
+    role: "UX Designer, Google",
+    image: "/RS-Speaker-Images/Vineet Gupta.png",
+    talkType: "Deep Dive",
+    bio: "",
+    readMoreLink: "",
+    readMoreLabel: "Read More",
+  },
 ];
 
 export default risingLeadersSpeakers;

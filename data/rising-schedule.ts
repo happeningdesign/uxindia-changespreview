@@ -8,7 +8,7 @@ export const risingScheduleData = {
     { time: "9:00 AM", type: "keynote", title: "Opening Keynote", description: "Announcing Soon", tag: "Keynote", location: "Auditorium", speaker: { name: "TBA", role: "", image: "" } },
     { time: "9:40 AM", type: "keynote", title: "Shipped & Imperfect", description: "Exploring how AI can help design teams move from endless polishing to imperfect action, faster shipping, and stronger leadership.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Deepashree Kale", role: "Head of Design", image: "/RS-Speaker-Images/Deepashree Kale.webp" } },
     { time: "10:20 AM", type: "break", title: "Coffee Break", location: "Multiple Rooms" },
-    { time: "11:05 AM", type: "keynote", title: "Deep Dive Talk", description: "Announcing Soon", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Vineet Gupta", role: "Assistant Vice President, Design & Branding", image: "" } },
+    { time: "11:05 AM", type: "keynote", title: "Rethinking HCI (Human Computer Interaction) in the Age of AI", description: "Exploring how designers can treat AI as a teammate, using shared context to turn complex problems into working solutions.", tag: "Deep Dive", location: "Auditorium", speaker: { name: "Vineet Gupta", role: "Assistant Vice President, Design & Branding", image: "/RS-Speaker-Images/Vineet Gupta.png" } },
     {
       time: "11:45 AM", type: "panel", title: "Panel Discussion",
       description: "",
