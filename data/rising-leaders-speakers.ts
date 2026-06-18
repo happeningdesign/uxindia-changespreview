@@ -35,6 +35,15 @@ const risingLeadersSpeakers: Speaker[] = [
     readMoreLink: "",
     readMoreLabel: "Read More",
   },
+  {
+    name: "Vineet Gupta",
+    role: "Assistant Vice President, Design & Branding",
+    image: "/RS-Speaker-Images/Vineet Gupta.png",
+    talkType: "Deep Dive",
+    bio: "",
+    readMoreLink: "",
+    readMoreLabel: "Read More",
+  },
 ];
 
 export default risingLeadersSpeakers;

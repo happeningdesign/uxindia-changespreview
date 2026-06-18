@@ -66,7 +66,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
       >
         {/* Orange arrow button — bottom right */}
         <div className="flex items-end justify-between gap-1.5">
-          <div className="flex-1 min-w-0">
+          <div className="flex-1 items-start min-w-0">
             <h3
               className="font-leadership text-white leading-[0.92] tracking-tight mb-1.5"
               style={{
@@ -90,6 +90,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
             </p>
           </div>
           {/* Orange circle arrow */}
+          <div className="flex justify-end items-end">
           <div
             className="shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center mb-0.5"
             style={{ backgroundColor: "#E85520" }}
@@ -97,6 +98,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
             <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M7 17L17 7M17 7H7M17 7v10" />
             </svg>
+          </div>
           </div>
         </div>
       </div>
