@@ -45,7 +45,7 @@ export default function LeadershipSummitPageClient() {
 
       {/* Sticky tab bar — only shown when schedule is active */}
       {activeTab === "schedule" && (
-        <div className="sticky top-[50px] md:top-[68px] z-40 w-full flex border-b border-white/15 bg-[#0D0D0D] shadow-lg">
+        <div className="sticky top-[50px] md:top-[60px] z-40 w-full flex border-b border-white/15 bg-[#0D0D0D] shadow-lg">
           <button
             onClick={() => setActiveTab("overview")}
             className="flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 border-transparent text-white/40 hover:text-white/70 cursor-pointer"
