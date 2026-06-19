@@ -18,7 +18,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/images/rising-leaders-venue.jpg')",
+          backgroundImage: "url('images/rising-leaders-venue.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -26,10 +26,10 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
       />
 
       {/* Left-to-right dark scrim for text legibility */}
-      <div className="absolute inset-0 z-1 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 z-1 bg-black/40 md:bg-black/20 md:bg-gradient-to-r md:from-black/80 md:via-black/40 md:to-transparent" />
 
       {/* Bottom-to-top dark gradient (90% to 20%) */}
-      <div className="absolute inset-0 z-1 bg-gradient-to-b from-transparent via-transparent to-black/90" />
+      <div className="absolute inset-0 z-1 bg-black/55 md:bg-black/20 md:bg-gradient-to-b md:from-transparent md:via-transparent md:to-black/90" />
 
       {/* Optional brand-orange multiply tint (~12%) */}
       <div className="absolute inset-0 z-1 mix-blend-multiply opacity-[0.12] bg-[#E85520]" />
@@ -37,11 +37,11 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
       {/* Hero content container - adds padding at top for nav clearance */}
       <div className="relative z-10 min-h-screen flex flex-col pt-24 md:pt-32 pb-0">
         {/* Main content - positioned to fill space */}
-        <div className="flex-1 flex flex-col justify-end pl-6 md:pl-20 lg:pl-32 pr-6 pb-24">
+        <div className="flex-1 flex flex-col justify-center pl-6 md:pl-20 lg:pl-32 pr-6 pb-24">
           <div className="max-w-2xl">
             {/* Eyebrow kicker */}
             <div className="animate-float-up opacity-0 mb-8">
-              <p className="font-sans text-[11px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] break-words">
+              <p className="font-sans text-[11px] md:text-base text-white font-semibold uppercase tracking-[0.15em] break-words">
                 DESIGN LEADERSHIP WEEK 2026 · TRACK 02
               </p>
             </div>
@@ -61,10 +61,10 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
 
             {/* Subcopy */}
             <p
-              className="animate-float-up opacity-0 font-sans text-base md:text-lg text-white/85 leading-relaxed mb-8 md:mb-10 max-w-full md:max-w-[46ch]"
+              className="animate-float-up opacity-0 font-sans text-base md:text-lg text-white leading-relaxed mb-8 md:mb-10 max-w-full md:max-w-[46ch]"
               style={{ animationDelay: "0.2s" }}
             >
-              For emerging design leaders, mid-career professionals, and leaders in transition ready to scale their impact.
+              For emerging design leaders, mid-career professionals, Students and leaders in transition ready to scale their impact.
             </p>
 
             {/* Thin hairline divider */}

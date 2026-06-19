@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
 import RisingLeadersHero from "@/components/events/rising-leaders/RisingLeadersHero";
@@ -30,29 +30,41 @@ const risingLeadersDays = [
 
 export default function RisingLeadersPageClient() {
   const [activeTab, setActiveTab] = useState("overview");
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  function handleTabChange(tab: string) {
+    setActiveTab(tab);
+    setTimeout(() => {
+      if (contentRef.current) {
+        const y = contentRef.current.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }, 0);
+  }
 
   return (
     <main>
       <Nav forceSolid={false} />
-      <RisingLeadersHero activeTab={activeTab} setActiveTab={setActiveTab} hideTabBar={activeTab === "schedule"} />
+      <RisingLeadersHero activeTab={activeTab} setActiveTab={setActiveTab} hideTabBar={true} />
 
-      {/* Sticky tab bar — only shown when schedule is active */}
-      {activeTab === "schedule" && (
-        <div className="sticky top-[56px] md:top-[68px] z-40 w-full flex border-b border-[#0D0D0D]/20 bg-[#F5F0E8] shadow-lg">
-          <button
-            onClick={() => setActiveTab("overview")}
-            className="flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 border-transparent text-[#0D0D0D]/40 hover:text-[#0D0D0D]/70 cursor-pointer"
-          >
-            Speakers
-          </button>
-          <button
-            onClick={() => setActiveTab("schedule")}
-            className="flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 border-[#E85520] text-[#0D0D0D] cursor-pointer"
-          >
-            Schedule
-          </button>
-        </div>
-      )}
+      {/* Scroll sentinel — sits just before the sticky bar */}
+      <div ref={contentRef} />
+
+      {/* Sticky tab bar — always shown */}
+      <div className="sticky top-[50px] md:top-[60px] z-40 w-full flex border-b border-[#0D0D0D]/20 bg-[#F5F0E8] shadow-lg">
+        <button
+          onClick={() => handleTabChange("overview")}
+          className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${activeTab === "overview" ? "border-[#E85520] text-[#0D0D0D]" : "border-transparent text-[#0D0D0D]/40 hover:text-[#0D0D0D]/70"}`}
+        >
+          Speakers
+        </button>
+        <button
+          onClick={() => handleTabChange("schedule")}
+          className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${activeTab === "schedule" ? "border-[#E85520] text-[#0D0D0D]" : "border-transparent text-[#0D0D0D]/40 hover:text-[#0D0D0D]/70"}`}
+        >
+          Schedule
+        </button>
+      </div>
 
       {activeTab === "overview" && (
         <>

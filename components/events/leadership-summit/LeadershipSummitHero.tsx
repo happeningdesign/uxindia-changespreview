@@ -37,7 +37,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab, hideTabB
       {/* Hero content container - adds padding at top for nav clearance */}
       <div className="relative z-10 min-h-screen flex flex-col pt-24 md:pt-32 pb-0">
         {/* Main content - positioned to fill space */}
-        <div className="flex-1 flex flex-col justify-end pl-6 md:pl-20 lg:pl-32 pr-6 pb-24">
+        <div className="flex-1 flex flex-col justify-center pl-6 md:pl-20 lg:pl-32 pr-6 pb-24">
           <div className="max-w-2xl">
             {/* Eyebrow kicker */}
             <div className="animate-float-up opacity-0 mb-8">
