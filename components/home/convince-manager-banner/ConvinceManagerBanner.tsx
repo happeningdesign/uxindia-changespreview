@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function ConvinceManagerBanner() {
   return (
     <section className="bg-[#0D0D0D] py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-6 md:px-10">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 border border-white/10 rounded-2xl px-8 py-10 md:px-14 md:py-14 bg-white/[0.03]">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 border border-white/10 rounded-2xl px-8 py-10 md:px-16 md:py-16 bg-white/[0.03]">
 
           {/* Left: text */}
           <div className="max-w-xl">
@@ -45,7 +45,7 @@ export default function ConvinceManagerBanner() {
               href="/convince-your-manager"
               className="inline-flex items-center justify-center gap-3 bg-[#E85520] text-white font-sans text-sm font-semibold px-8 py-4 rounded-full hover:bg-[#d04a1a] transition-colors"
             >
-              Build Your Business Case
+              Learn More
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
