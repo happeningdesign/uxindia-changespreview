@@ -383,13 +383,13 @@ export default function ConvinceYourManagerClient() {
             <div className="relative border border-white/10 rounded-2xl p-8 md:p-10 bg-white/[0.04] hover:bg-white/[0.07] transition-colors flex flex-col">
               <div className="mb-6">
                 <span className="inline-block font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E85520] border border-[#E85520]/30 rounded-full px-3 py-1 mb-4">
-                  Leadership Summit
+                  Manager Approval Letter
                 </span>
                 <h3
                   className="text-3xl md:text-4xl text-white leading-tight mb-3"
                   style={{ fontFamily: "'UXILeadershipCondensed'" }}
                 >
-                  Manager Approval Letter
+                  Leadership Summit
                 </h3>
                 <p className="font-sans text-sm text-white/50 leading-relaxed">
                   For attending the UXINDIA 2026 Leadership Summit, 23–25 September, Bengaluru. Covers leadership capability, AI strategy, and ROI for your organisation.
@@ -421,13 +421,13 @@ export default function ConvinceYourManagerClient() {
             <div className="relative border border-white/10 rounded-2xl p-8 md:p-10 bg-white/[0.04] hover:bg-white/[0.07] transition-colors flex flex-col">
               <div className="mb-6">
                 <span className="inline-block font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E85520] border border-[#E85520]/30 rounded-full px-3 py-1 mb-4">
-                  Rising Leaders Forum
+                  Manager Approval Letter
                 </span>
                 <h3
                   className="text-3xl md:text-4xl text-white leading-tight mb-3"
                   style={{ fontFamily: "'UXILeadershipCondensed'" }}
                 >
-                  Manager Approval Letter
+                  Rising Leaders Forum
                 </h3>
                 <p className="font-sans text-sm text-white/50 leading-relaxed">
                   For attending the UXINDIA 2026 Rising Leaders Forum, 26–27 September, Bengaluru. Covers leadership development, collaboration, and career growth ROI.
