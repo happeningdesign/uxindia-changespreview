@@ -10,6 +10,7 @@ import VideoSection from "@/components/home/video-section/VideoSection";
 import TestimonialsSection from "@/components/home/testimonials-section/TestimonialsSection";
 import SponsorsSection from "@/components/home/sponsors-section/SponsorsSection";
 import VenueSection from "@/components/home/venue-section/VenueSection";
+import ConvinceManagerBanner from "@/components/home/convince-manager-banner/ConvinceManagerBanner";
 import FAQSection from "@/components/home/faq-section/FAQSection";
 import Footer from "@/components/global/footer/Footer";
 
@@ -28,6 +29,7 @@ export default function Home() {
       <TestimonialsSection />
       <SponsorsSection />
       <VenueSection />
+      <ConvinceManagerBanner />
       <FAQSection />
       <Footer />
     </main>
