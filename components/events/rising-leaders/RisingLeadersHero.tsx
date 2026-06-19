@@ -18,7 +18,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/images/rising-leaders-venue.jpg')",
+          backgroundImage: "url('images/rising-leaders-venue.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
