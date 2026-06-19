@@ -30,12 +30,15 @@ const risingLeadersDays = [
 
 export default function RisingLeadersPageClient() {
   const [activeTab, setActiveTab] = useState("overview");
-  const tabBarRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   function handleTabChange(tab: string) {
     setActiveTab(tab);
     setTimeout(() => {
-      tabBarRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (contentRef.current) {
+        const y = contentRef.current.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
     }, 0);
   }
 
@@ -44,8 +47,11 @@ export default function RisingLeadersPageClient() {
       <Nav forceSolid={false} />
       <RisingLeadersHero activeTab={activeTab} setActiveTab={setActiveTab} hideTabBar={true} />
 
+      {/* Scroll sentinel — sits just before the sticky bar */}
+      <div ref={contentRef} />
+
       {/* Sticky tab bar — always shown */}
-      <div ref={tabBarRef} className="sticky top-[50px] md:top-[60px] z-40 w-full flex border-b border-[#0D0D0D]/20 bg-[#F5F0E8] shadow-lg">
+      <div className="sticky top-[50px] md:top-[60px] z-40 w-full flex border-b border-[#0D0D0D]/20 bg-[#F5F0E8] shadow-lg">
         <button
           onClick={() => handleTabChange("overview")}
           className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${activeTab === "overview" ? "border-[#E85520] text-[#0D0D0D]" : "border-transparent text-[#0D0D0D]/40 hover:text-[#0D0D0D]/70"}`}
