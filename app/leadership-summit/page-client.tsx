@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
 import LeadershipSummitHero from "@/components/events/leadership-summit/LeadershipSummitHero";
@@ -37,10 +37,13 @@ const leadershipSummitDays = [
 
 export default function LeadershipSummitPageClient() {
   const [activeTab, setActiveTab] = useState("overview");
+  const tabBarRef = useRef<HTMLDivElement>(null);
 
   function handleTabChange(tab: string) {
     setActiveTab(tab);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => {
+      tabBarRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
   }
 
   return (
@@ -49,7 +52,7 @@ export default function LeadershipSummitPageClient() {
       <LeadershipSummitHero activeTab={activeTab} setActiveTab={setActiveTab} hideTabBar={true} />
 
       {/* Sticky tab bar — always shown */}
-      <div className="sticky top-[50px] md:top-[60px] z-40 w-full flex border-b border-white/15 bg-[#0D0D0D] shadow-lg">
+      <div ref={tabBarRef} className="sticky top-[50px] md:top-[60px] z-40 w-full flex border-b border-white/15 bg-[#0D0D0D] shadow-lg">
         <button
           onClick={() => handleTabChange("overview")}
           className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${activeTab === "overview" ? "border-[#E85520] text-white" : "border-transparent text-white/40 hover:text-white/70"}`}
