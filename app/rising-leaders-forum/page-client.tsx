@@ -6,7 +6,7 @@ import Footer from "@/components/global/footer/Footer";
 import RisingLeadersHero from "@/components/events/rising-leaders/RisingLeadersHero";
 import WhoAttends from "@/components/events/WhoAttends";
 import SpeakersGrid from "@/components/events/SpeakersGrid";
-import VenueSection from "@/components/events/VenueSection";
+import RisingLeadersVenueSection from "@/components/events/RisingLeadersVenueSection";
 import RisingSchedule from "@/components/events/RisingSchedule";
 import risingLeadersSpeakers from "@/data/rising-leaders-speakers";
 import EventDayCards from "@/components/events/EventDayCards";
@@ -114,13 +114,7 @@ export default function RisingLeadersPageClient() {
             speakers={risingLeadersSpeakers}
             showMorePlaceholder={true}
           />
-          <VenueSection
-            variant="light"
-            venueName="Srishti Manipal Institute of Art, Design & Technology"
-            locationText="Yelahanka, Govindapura, Bengaluru, Karnataka 560063"
-            mapsUrl="https://maps.app.goo.gl/he73UFRv2daCrPzY8"
-            embedCoords="13.1257435,77.591569"
-          />
+          <RisingLeadersVenueSection variant="light" />
         </>
       )}
 
