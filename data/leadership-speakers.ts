@@ -90,7 +90,7 @@ const leadershipSpeakers: Speaker[] = [
       leadership: {
         type: "Grand Keynote",
         track: "",
-        talkCategory: ""
+        talkCategory: "",
         title: "Announcing Soon",
         description: "",
         keyTakeaway: "",
@@ -110,6 +110,7 @@ const leadershipSpeakers: Speaker[] = [
       leadership: {
         type: "Spark Session - 18 Mins",
         track: "",
+        talkCategory: "Design-Practice",
         title: "Death of the Wireframe",
         description: "The talk opens with a live AI generation demo of a UI built from a single prompt, on stage. I then ask the room: Was that output worse than your last sprint? That question leads to the crux: When generation is free, judgment becomes the bottleneck.From there the talk shifts from diagnosis to toolkit of four designer-native artifacts that bring judgment into every AI-assisted project: The Brief, The Guardrails, The Scorecard, and The Taste Library.Part three addresses the leadership question directly: which teams survive, which don't, and how to reorganise around the work that remains valuable.The talk closes with a provocation for Indian design leadership, that the age-old hierarchy placing Western strategy above Asian execution was built on a distinction AI just deleted. Whoever has the strongest taste, regardless of which side of the world they're on, now wins.",
         keyTakeaway: ["How to write a Design Brief that constrains AI output rather than leaving it to pattern-match toward the average.", "How to build a Taste Library that bakes your team's design DNA into every generation.", "How to replace subjective design reviews with a Scorecard that makes critique structured and less political.", "How to audit your team's deliverables and reorganise around the work that survives when generation costs nothing.", "Why Indian design leadership is uniquely positioned to lead not follow the post-wireframe era."],
