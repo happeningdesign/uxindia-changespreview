@@ -45,7 +45,7 @@ const risingLeadersSpeakers: Speaker[] = [
         type: "Deep Dive",
         track: "",
         title: "",
-        description: "",
+        description: "This talk explores a fundamental shift in Human-Computer Interaction (HCI): moving from direct manipulation to orchestration via shared context. I ground this in a high-stakes, 48-hour client deadline. The turning point is introducing ""Kabir""â€”not a ""magic button"" tool, but an AI teammate driven by deep design context.Attendees will learn how to build this new HCI paradigm into their workflows. They will discover that injecting shared context (like design systems and constraints) is the only way to stop AI from hallucinating generic layouts. A key decision was skipping wireframes to present a live prototype; the trade-off was sacrificing absolute pixel control for massive systemic speed.The biggest challenge was learning to explicitly tell the AI what not to do. If I did this again, I spend 80% of my time organizing constraints before ever prompting. Ultimately, the audience will learn that in modern HCI, curation beats creation, and output is only as good as context.",
         keyTakeaway: "",
         audience: "",
       },
