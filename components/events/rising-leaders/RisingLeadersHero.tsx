@@ -38,7 +38,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
       <div className="relative z-10 min-h-screen flex flex-col pt-24 md:pt-32 pb-0">
         {/* Main content - positioned to fill space */}
         <div className="flex-1 flex flex-col justify-center pl-6 md:pl-20 lg:pl-32 pr-6 pb-24">
-          <div className="max-w-2xl">
+          <div className="max-w-4xl">
             {/* Eyebrow kicker */}
             <div className="animate-float-up opacity-0 mb-8">
               <p className="font-sans text-[11px] md:text-base text-white font-semibold uppercase tracking-[0.15em] break-words">
