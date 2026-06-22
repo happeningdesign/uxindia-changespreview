@@ -131,7 +131,7 @@ const leadershipSpeakers: Speaker[] = [
         track: "",
         title: "The Original Algorithm: Archiving the Intelligence AI Cannot Replicate",
         description: "Exploring how a decade of archived maternal wisdom became the foundation for an AI built on care, not just data.",
-        keyTakeaway: "",
+        keyTakeaway: ["Care is data. The intentional, observed wisdom of caregivers is a knowledge system and designers have a responsibility to treat it as one, not displace it with the next wellness app.", "There is a gap between building wellness tools and preserving wellness wisdom. Recognising that gap is the first design decision worth making.Archiving and building are not opposites.",  "Mommi - an AI agent trained on a mother's intentional care wisdom - shows what becomes possible when you preserve first and build second. Preservation is the design brief."],
         audience: "",
       },
     },
