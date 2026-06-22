@@ -64,8 +64,9 @@ const risingLeadersSpeakers: Speaker[] = [
       rising: {
         type: "Deep Dive",
         track: "",
-        title: "",
-        description: "",
+        talkCategory: "",
+        title: "Design Un-automated: Reclaiming the Soul of Design",
+        description: "This session explores the Hybrid Designer at the frontlines of AI integration. As autonomous systems like Antigravity, Claude, Stitch and Figma make redefine our toolkit, they offer incredible speed but create a dangerous Creative Frame that can trap designers in predictable, algorithmic patterns.I will discuss how to break out of this frame by treating AI as a provocative partner rather than a final executor. The talk focuses on the critical moment where a designer must step in to provide the context, ethics, and human nuance that code cannot replicate.Drawing from my experience at Google, Microsoft, and Amazon, I provide a roadmap for leading AI driven design. We will discuss why the goal isn't just to work faster, but to use that saved time for deeper thinking and systemic impact. The future belongs to those who master automation while remaining the primary architect of the human experience.",
         keyTakeaway: "",
         audience: "",
       },
