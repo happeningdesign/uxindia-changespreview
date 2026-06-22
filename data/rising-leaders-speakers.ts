@@ -107,8 +107,10 @@ const risingLeadersSpeakers: Speaker[] = [
       rising: {
         type: "Workshop",
         track: "",
-        title: "",
-        description: "",
+        title: "Human-Centered AI: Accelerating Design Thinking Without Losing Empathy",
+        description: ""his workshop explores how AI can accelerate traditional human-centered design methods without replacing the core principles that make them effective: empathy, problem framing, collaboration, and continuous learning. In many organizations, teams move slowly because research synthesis, workflow mapping, concept generation, and prototype creation take significant time. AI can help compress those cycles by summarizing research, identifying patterns, generating early design directions, drafting user flows, creating testable prototypes, and surfacing assumptions that need validation.
+ But the workshop is not about using AI to skip discovery or remove human judgment. Instead, it focuses on how AI can strengthen Design Thinking when used intentionally. Participants will learn how to move faster from ambiguity to clarity while still grounding decisions in real user needs, business outcomes, and technical feasibility.
+ A key focus will be empathy-building across trio-teams: Product, Design, and En"",
         keyTakeaway: "",
         audience: "",
       },
