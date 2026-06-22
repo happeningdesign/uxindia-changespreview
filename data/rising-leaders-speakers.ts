@@ -1,75 +1,116 @@
 /**
  * RISING LEADERS FORUM — SPEAKERS DATA
  * ──────────────────────────────────────
- * To add a speaker: copy one of the objects below and fill in the fields.
- * To reorder speakers: move the objects up or down.
- * To remove a speaker: delete the object.
+ * Each speaker object can include profile info, talk details, and social links.
+ * Any field left empty ("") or undefined will NOT be shown on the speaker page.
+ * Import Speaker, slugify, getSpeakerSlug from leadership-speakers if needed for cross-event speakers.
  *
- * Fields:
- *   name           — Full name (required)
- *   role           — Job title and organisation, e.g. "VP Design, Google" (required)
- *   image          — URL to speaker photo — use Vercel Blob or any public CDN URL (required)
- *   talkType       — Session type shown as a small chip, e.g. "Mentor Session" (optional)
- *   bio            — Short bio shown in the overlay card (optional; falls back to a generic sentence)
- *   readMoreLink   — URL for "Read more" button in overlay (optional; if provided, makes button clickable)
- *   readMoreLabel  — Custom text for "Read more" button (optional; defaults to "Read more")
+ * Fields: same as leadership-speakers.ts — see that file for full documentation.
  */
 
-export interface Speaker {
-  name: string;
-  role: string;
-  image: string;
-  talkType?: string;
-  bio?: string;
-  readMoreLink?: string;
-  readMoreLabel?: string;
-}
+import type { Speaker } from "@/data/leadership-speakers";
+export type { Speaker };
 
 const risingLeadersSpeakers: Speaker[] = [
   {
     name: "Deepashree Kale",
     role: "Head of Design",
+    company: "",
     image: "/RS-Speaker-Images/Deepashree Kale.webp",
     talkType: "Deep Dive",
     bio: "",
-    readMoreLink: "",
-    readMoreLabel: "Read More",
+    linkedin: "",
+    twitter: "",
+    events: {
+      rising: {
+        type: "Deep Dive",
+        track: "",
+        title: "",
+        description: "",
+        keyTakeaway: "",
+        audience: "",
+      },
+    },
   },
   {
     name: "Vineet Gupta",
     role: "Assistant Vice President, Design & Branding",
+    company: "",
     image: "/RS-Speaker-Images/Vineet Gupta.png",
     talkType: "Deep Dive",
     bio: "",
-    readMoreLink: "",
-    readMoreLabel: "Read More",
+    linkedin: "",
+    twitter: "",
+    events: {
+      rising: {
+        type: "Deep Dive",
+        track: "",
+        title: "",
+        description: "",
+        keyTakeaway: "",
+        audience: "",
+      },
+    },
   },
   {
     name: "Sujit Kumar Pradhan",
-    role: "UX Designer, Google",
+    role: "UX Designer",
+    company: "Google",
     image: "/RS-Speaker-Images/Sujit Kumar Pradhan.png",
     talkType: "Deep Dive",
     bio: "",
-    readMoreLink: "",
-    readMoreLabel: "Read More",
+    linkedin: "",
+    twitter: "",
+    events: {
+      rising: {
+        type: "Deep Dive",
+        track: "",
+        title: "",
+        description: "",
+        keyTakeaway: "",
+        audience: "",
+      },
+    },
   },
   {
     name: "Varedh Nigam",
-    role: "Associate Director, Nagarro Software Pvt. Ltd.",
+    role: "Associate Director",
+    company: "Nagarro Software Pvt. Ltd.",
     image: "/RS-Speaker-Images/Varedh.png",
-    talkType: "Workshops",
+    talkType: "Workshop",
     bio: "",
-    readMoreLink: "",
-    readMoreLabel: "Read More",
+    linkedin: "",
+    twitter: "",
+    events: {
+      rising: {
+        type: "Workshop",
+        track: "",
+        title: "",
+        description: "",
+        keyTakeaway: "",
+        audience: "",
+      },
+    },
   },
   {
     name: "Anna Gerasimchuk",
-    role: "Head of UIUX Engineering, McKesson, Ontada",
+    role: "Head of UIUX Engineering",
+    company: "McKesson, Ontada",
     image: "/RS-Speaker-Images/Anya.png",
-    talkType: "Workshops",
+    talkType: "Workshop",
     bio: "",
-    readMoreLink: "",
-    readMoreLabel: "Read More",
+    linkedin: "",
+    twitter: "",
+    events: {
+      rising: {
+        type: "Workshop",
+        track: "",
+        title: "",
+        description: "",
+        keyTakeaway: "",
+        audience: "",
+      },
+    },
   },
 ];
 
