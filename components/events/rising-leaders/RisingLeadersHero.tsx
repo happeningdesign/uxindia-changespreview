@@ -64,7 +64,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
               className="animate-float-up opacity-0 font-sans text-base md:text-lg text-white leading-relaxed mb-8 md:mb-10 max-w-full md:max-w-[46ch]"
               style={{ animationDelay: "0.2s" }}
             >
-              For emerging design leaders, mid-career professionals, Students and leaders in transition ready to scale their impact.
+              For emerging design leaders, mid-career designers, design students, and professionals transitioning into leadership roles who are ready to grow their influence, sharpen their strategic thinking, and scale their impact across teams, products, and organisations. ---- Subtext in hero section rising leaders.
             </p>
 
             {/* Thin hairline divider */}
@@ -123,7 +123,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
                   WHO
                 </p>
                 <p className="font-sans text-base md:text-lg text-white font-medium">
-                  Emerging Leaders & Students
+                  UX Designers, Product Designers, Visual Designers, Service Designers Etc
                 </p>
               </div>
             </div>
@@ -133,24 +133,24 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
         {/* Segmented sub-nav at bottom of hero — hidden when schedule is active (sticky version takes over) */}
         {!hideTabBar && (
           <div className="w-full flex border-t border-white/10 bg-black/40 backdrop-blur-md">
-          <button
-            onClick={() => setActiveTab("overview")}
-            className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-[3px] cursor-pointer ${activeTab === "overview"
+            <button
+              onClick={() => setActiveTab("overview")}
+              className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-[3px] cursor-pointer ${activeTab === "overview"
                 ? "text-white border-[#E85520]"
                 : "text-white/40 border-transparent hover:text-white/60"
-              }`}
-          >
-            Speakers
-          </button>
-          <button
-            onClick={handleScheduleClick}
-            className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-[3px] cursor-pointer ${activeTab === "schedule"
+                }`}
+            >
+              Speakers
+            </button>
+            <button
+              onClick={handleScheduleClick}
+              className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-[3px] cursor-pointer ${activeTab === "schedule"
                 ? "text-white border-[#E85520]"
                 : "text-white/40 border-transparent hover:text-white/60"
-              }`}
-          >
-            Schedule
-          </button>
+                }`}
+            >
+              Schedule
+            </button>
           </div>
         )}
       </div>
