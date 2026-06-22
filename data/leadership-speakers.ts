@@ -1,4 +1,4 @@
-/**
+mak/**
  * LEADERSHIP SUMMIT — SPEAKERS DATA
  * ─────────────────────────────────
  * Each speaker object can include profile info, talk details, and social links.
