@@ -39,7 +39,7 @@ function getAccentColor(colorIndex?: number) {
 
 function DarkSectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-sans text-[10px] font-semibold tracking-widest uppercase text-white/30 mb-3">
+    <p className="font-sans text-xs font-semibold tracking-widest uppercase text-white/50 mb-3">
       {children}
     </p>
   );
@@ -53,7 +53,7 @@ function DarkDivider() {
 
 function LightSectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-sans text-[10px] font-semibold tracking-widest uppercase text-[#0D0D0D]/40 mb-3">
+    <p className="font-sans text-xs font-semibold tracking-widest uppercase text-[#0D0D0D]/60 mb-3">
       {children}
     </p>
   );
