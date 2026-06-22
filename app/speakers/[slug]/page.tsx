@@ -259,7 +259,7 @@ export default async function SpeakerPage({
       <main className="max-w-5xl mx-auto px-6 md:px-10 pt-28 md:pt-36 pb-24">
 
         {/* Back */}
-        <Link href="/leadership-summit" className={backCls}>
+        <Link href="/leadership-summit#speakers" className={backCls}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M19 12H5M12 5l-7 7 7 7" />
           </svg>
