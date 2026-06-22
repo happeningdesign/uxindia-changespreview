@@ -90,6 +90,7 @@ const leadershipSpeakers: Speaker[] = [
       leadership: {
         type: "Grand Keynote",
         track: "",
+        talkCategory: ""
         title: "Announcing Soon",
         description: "",
         keyTakeaway: "",
