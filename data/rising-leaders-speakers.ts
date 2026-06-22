@@ -44,10 +44,10 @@ const risingLeadersSpeakers: Speaker[] = [
       rising: {
         type: "Deep Dive",
         track: "",
-        talkCategory: "",
+        talkCategory: "Emerging Tech",
         title: "Rethinking HCI (Human Computer Interaction) in the Age of AI",
         description: "This talk explores a fundamental shift in Human-Computer Interaction (HCI): moving from direct manipulation to orchestration via shared context. I ground this in a high-stakes, 48-hour client deadline. The turning point is introducing 'Kabir' not a 'magic button' tool, but an AI teammate driven by deep design context.Attendees will learn how to build this new HCI paradigm into their workflows. They will discover that injecting shared context (like design systems and constraints) is the only way to stop AI from hallucinating generic layouts. A key decision was skipping wireframes to present a live prototype; the trade-off was sacrificing absolute pixel control for massive systemic speed.The biggest challenge was learning to explicitly tell the AI what not to do. If I did this again, I spend 80% of my time organizing constraints before ever prompting. Ultimately, the audience will learn that in modern HCI, curation beats creation, and output is only as good as context.",
-        keyTakeaway: "",
+        keyTakeaway: ""Shift from Manipulation to Orchestration: Attendees will change how they view their role, moving away from pushing pixels (direct manipulation) to directing AI like a manager (orchestrating intent).", "Master ""Context Injection"": Instead of relying on generic prompts, attendees will learn how to feed their specific design systems, tokens, and business constraints into the AI to get high-quality, relevant outputs.", "Define Negative Constraints: Attendees will learn the crucial skill of explicitly telling the AI what not to do, which is the most effective way to stop AI hallucinations and generic design patterns.", "Skip Wireframes for Live Prototypes: Attendees will learn how to use AI to jump straight from an idea to a working, clickable prototype, turning weeks of static design debates into hours of functional testing."",
         audience: "",
       },
     },
