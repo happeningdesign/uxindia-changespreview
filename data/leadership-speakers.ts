@@ -162,8 +162,8 @@ const leadershipSpeakers: Speaker[] = [
     company: "Aleph Labs",
     image: "/LS-Speaker-Images/Van-Mario.webp",
     talkType: "Plenary Keynote",
-    bio: "",
-    linkedin: "",
+    bio: "Mario Van der Meulen is a design executive, author, and international speaker known for helping leaders unlock meaningful innovation through human-centered design. With 2+ decades of global experience across sectors, he brings depth, clarity, and provocation to every stage. He leads large-scale design systems and outcomes in regulated environments, integrating strategy, design governance, and AI-enabled workflows. Designing coherent, human-centred systems across physical, digital, operational, and service layers.",
+    linkedin: "https://www.linkedin.com/in/mariovdm/",
     twitter: "",
     events: {
       leadership: {
@@ -171,7 +171,7 @@ const leadershipSpeakers: Speaker[] = [
         track: "",
         title: "Be[coming] a leader in design",
         description: "A keynote on what it really takes to lead with integrity in design — without losing yourself to politics or pressure.",
-        keyTakeaway: "",
+        keyTakeaway: ["What design leadership really isâ€”and why most models fail designers", "How to build trust as your core design output (yes, really)", "How power and presence work when you're no longer the hands-on designer"],
         audience: "",
       },
     },
