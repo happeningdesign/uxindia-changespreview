@@ -108,10 +108,7 @@ const leadershipSpeakers: Speaker[] = [
         type: "Spark Session",
         track: "",
         title: "Death of the Wireframe",
-        description: ""The talk opens with a live AI generation demo of a UI built from a single prompt, on stage. I then ask the room: Was that output worse than your last sprint? That question leads to the crux: When generation is free, judgment becomes the bottleneck.
- From there the talk shifts from diagnosis to toolkit of four designer-native artifacts that bring judgment into every AI-assisted project: The Brief, The Guardrails, The Scorecard, and The Taste Library.
- Part three addresses the leadership question directly: which teams survive, which don't, and how to reorganise around the work that remains valuable.
- The talk closes with a provocation for Indian design leadership, that the age-old hierarchy placing Western strategy above Asian execution was built on a distinction AI just deleted. Whoever has the strongest taste, regardless of which side of the world they're on, now wins.",
+        description: "The talk opens with a live AI generation demo of a UI built from a single prompt, on stage. I then ask the room: Was that output worse than your last sprint? That question leads to the crux: When generation is free, judgment becomes the bottleneck.From there the talk shifts from diagnosis to toolkit of four designer-native artifacts that bring judgment into every AI-assisted project: The Brief, The Guardrails, The Scorecard, and The Taste Library.Part three addresses the leadership question directly: which teams survive, which don't, and how to reorganise around the work that remains valuable.The talk closes with a provocation for Indian design leadership, that the age-old hierarchy placing Western strategy above Asian execution was built on a distinction AI just deleted. Whoever has the strongest taste, regardless of which side of the world they're on, now wins.",
         keyTakeaway: ["How to write a Design Brief that constrains AI output rather than leaving it to pattern-match toward the average.", "How to build a Taste Library that bakes your team's design DNA into every generation.", "How to replace subjective design reviews with a Scorecard that makes critique structured and less political.", "How to audit your team's deliverables and reorganise around the work that survives when generation costs nothing.", "Why Indian design leadership is uniquely positioned to lead not follow the post-wireframe era."],
         audience: [],
       },
@@ -130,7 +127,9 @@ const leadershipSpeakers: Speaker[] = [
         type: "Spark Session",
         track: "",
         title: "The Original Algorithm: Archiving the Intelligence AI Cannot Replicate",
-        description: "Exploring how a decade of archived maternal wisdom became the foundation for an AI built on care, not just data.",
+        description: "During my postgraduate capstone, I spent a year mapping my decade-long journey with PCOD through auto-ethnography, interviews, medical data, and data visualization. What emerged was not what I expected. Across every method, the most consistent and effective care I had received came not from clinical systems but from my mother - her intentional, patiently refined wisdom around food, healing, and conscious consumption.
+ I work as a UX designer building enterprise healthcare systems at Optum. I understand what it means to structure knowledge into products. And I have come to believe, that what my mother carries cannot be fully datafied not because it is beyond understanding, but because it is built on relationship, observation, and right intent over decades.
+ Mumma's Archive is a living journal that wisdom before it fades. Mommi is the AI agent I am building on that foundation to make the archive conversational and gently accessible to women who need care but have no one nearby to offer it."",
         keyTakeaway: ["Care is data. The intentional, observed wisdom of caregivers is a knowledge system and designers have a responsibility to treat it as one, not displace it with the next wellness app.", "There is a gap between building wellness tools and preserving wellness wisdom. Recognising that gap is the first design decision worth making.Archiving and building are not opposites.", "Mommi - an AI agent trained on a mother's intentional care wisdom - shows what becomes possible when you preserve first and build second. Preservation is the design brief."],
         audience: "",
       },
