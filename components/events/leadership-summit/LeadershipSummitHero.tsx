@@ -128,7 +128,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab, hideTabB
                     WHO
                   </p>
                   <p className="font-sans text-base md:text-lg text-white font-medium">
-                    Design Leaders & CXOs
+                    Heads of Design, CXO, CDO, Director of Design etc.
                   </p>
                 </div>
               </div>

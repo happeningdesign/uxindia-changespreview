@@ -98,8 +98,7 @@ const leadershipSpeakers: Speaker[] = [
   },
   {
     name: "Vyoma Pathak",
-    role: "Sr. Design Practice Lead",
-    company: "MOURI Tech",
+    role: "Sr. Design Practice Lead, Mouri Tech",
     image: "/LS-Speaker-Images/Vyoma.webp",
     talkType: "Spark Session",
     bio: `Vyoma Pathak is the Head of User Experience (UX) Design at MOURI Tech, where she leads multidisciplinary teams across UX strategy, research, visual design, and digital transformation initiatives. Her experience spans healthcare, HR tech, AI-powered solutions, lifestyle products, and enterprise platforms, with a strong focus on creating human-centered experiences that align user needs with business and technology goals. Over the years, she has worked with both startups and global enterprises, leading projects from concept through execution while mentoring and growing high-performing design teams. She has previously spoken at UXINDIA Conference on UX Writing and participated in mentor panel discussions supporting aspiring designers in their professional journeys. Beyond enterprise UX, Vyoma is also currently co-building HUDAK, a community-led initiative exploring culture, heritage, and local storytelling in collaboration with members associated with INTACH. Her recent interests explore the evolving relationship between UX, AI, culture, and responsible design innovation.`,
@@ -118,8 +117,7 @@ const leadershipSpeakers: Speaker[] = [
   },
   {
     name: "Harshita Hassani",
-    role: "Sr. UX Designer",
-    company: "Optum (United Health Group)",
+    role: "Sr. UX Designer,Optum (United Health Group)",
     image: "/LS-Speaker-Images/Harshita-Hassan.webp",
     talkType: "Spark Session",
     bio: "Harshita Hassani is a UX designer with 5 years of experience building complex, data-dense enterprise healthcare analytics products at Optum. With a foundation in Computer Science and a Master's in Experience Design from Srishti Institute of Art, Design and Technology, she works at the intersection of clinical decision-making and human experience design. Her postgraduate capstone, 'Mapping My Care Network of PCOD,' was a year-long auto-ethnographic research project that arrived at a finding no dataset had surfaced: the most consistent, effective care she ever received was built in her mother's kitchen through decades of intentional, tested, and refined practice. Mumma's Archive is the living documentation of that wisdom and Mommi is the AI agent she is building to make it conversational and accessible to working women and hostellers in real time. She has previously spoken at UX India (2022, 2024), India HCI (2023, 2024), Salesforce Design Days (2024), and the PCOS Conference at IIT Bombay (2025). Outside work, she reads, writes, cooks, sketchnote & practice calisthenics.",
@@ -138,8 +136,7 @@ const leadershipSpeakers: Speaker[] = [
   },
   {
     name: "Ish Awasthi",
-    role: "VP, UX Research",
-    company: "JPMC",
+    role: "VP, UX Research, JPMC",
     image: "/LS-Speaker-Images/Ish-Awasti.webp",
     talkType: "Spark Session",
     bio: "With over 13 years of experience spanning UX research, product design, entrepreneurship, and cross-functional leadership, I have built products and teams across very different contextsâ€”from enterprise tools for asset managers and bankers in the U.S. to mobile experiences for drivers in India.I have built design functions from the ground up, mentored teams, and created processes that improve user experience and product outcomes. My work spans the full spectrum of UX research, product design, and design systems, supported by hands-on experience in product management, business development, and project management. This allows me to approach product building not just through the lens of design, but through the wider realities of business, execution, and growth.The diversity of my journey reflects a continuous evolution in self-understanding, constantly drawing me toward new challenges, unfamiliar domains, and opportunities to keep learning.",
