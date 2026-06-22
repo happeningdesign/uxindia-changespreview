@@ -54,6 +54,8 @@ export interface Speaker {
     leadership?: SpeakerTalk;
     rising?: SpeakerTalk;
   };
+  // set by all-speakers.ts at build time — used for Rising Leaders page accent color
+  colorIndex?: number;
   // legacy fields — kept for backwards compat with grid overlay
   readMoreLink?: string;
   readMoreLabel?: string;

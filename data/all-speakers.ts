@@ -24,11 +24,12 @@ export { getSpeakerSlug };
 function buildAllSpeakers(): Speaker[] {
   const map = new Map<string, Speaker>();
 
-  for (const speaker of leadershipSpeakers) {
+  for (const [idx, speaker] of leadershipSpeakers.entries()) {
     const slug = getSpeakerSlug(speaker);
     const scheduleMatch = lookupLeadershipSchedule(speaker.name);
     const merged: Speaker = {
       ...speaker,
+      colorIndex: idx,
       events: {
         ...speaker.events,
         leadership: speaker.events?.leadership
@@ -44,7 +45,7 @@ function buildAllSpeakers(): Speaker[] {
     map.set(slug, merged);
   }
 
-  for (const speaker of risingLeadersSpeakers) {
+  for (const [idx, speaker] of risingLeadersSpeakers.entries()) {
     const slug = getSpeakerSlug(speaker);
     const scheduleMatch = lookupRisingSchedule(speaker.name);
     const risingTalk = speaker.events?.rising
@@ -68,6 +69,7 @@ function buildAllSpeakers(): Speaker[] {
     } else {
       map.set(slug, {
         ...speaker,
+        colorIndex: idx,
         events: {
           ...speaker.events,
           rising: risingTalk,
