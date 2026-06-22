@@ -151,7 +151,9 @@ const leadershipSpeakers: Speaker[] = [
         track: "",
         title: "The roles they are a-changin: AI and the Great Dissolve",
         description: "AI is dissolving the lines between product, UX, and engineering — three new career paths are emerging in their place.",
-        keyTakeaway: "",
+        keyTakeaway: "1. The skill that matters now is not how fast you can create, but knowing what is right, useful, and worth shipping. Whether you move toward a generalist role or stay as a specialist, the people who will be most valuable in AI-native product teams are those who can look at multiple options and confidently decide which one is right and why.
+2. The designer's value shifts from making interfaces to defining the right one. That reframe changes everything â€” from how you position your role to where you invest your time. The core of the work becomes interpreting user needs and guiding the direction, not producing the output.
+3. As AI makes competent design abundant, originality becomes the premium. This gives rise to a market for handcrafted, thoughtful, context-specific experiences that AI cannot serve. To be part of that market, you need to start building the taste and craft that exceptional design requires.",
         audience: "",
       },
     },
