@@ -77,27 +77,27 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
               <div className="h-px w-full bg-white/25" />
             </div>
 
-            {/* Meta row - DATE / VENUE / LOCATION */}
+            {/* Meta row - WHEN / WHERE / WHO */}
             <div
               className="animate-float-up opacity-0 flex flex-col md:flex-row gap-8 md:gap-0"
               style={{
                 animationDelay: "0.4s",
               }}
             >
-              {/* DATE */}
+              {/* WHEN */}
               <div className="md:border-r md:border-white/15 md:pr-8 md:mr-8">
                 <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
-                  DATE
+                  WHEN
                 </p>
                 <p className="font-sans text-base md:text-lg text-white font-medium">
                   <span className="whitespace-nowrap">26–27 September</span><br />2026
                 </p>
               </div>
 
-              {/* VENUE */}
+              {/* WHERE */}
               <div className="md:border-r md:border-white/15 md:pr-8 md:mr-8 md:max-w-[280px]">
                 <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
-                  VENUE
+                  WHERE
                 </p>
                 <a
                   href="https://maps.app.goo.gl/srishti"
@@ -113,17 +113,17 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
                     className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity mt-0.5"
                     aria-hidden="true"
                   />
-                  Srishti Manipal Institute of Art, Design & Technology
+                  <span>Srishti Manipal Institute<br /><span className="text-sm text-white/70">Bengaluru, India</span></span>
                 </a>
               </div>
 
-              {/* LOCATION */}
+              {/* WHO */}
               <div>
                 <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
-                  LOCATION
+                  WHO
                 </p>
                 <p className="font-sans text-base md:text-lg text-white font-medium">
-                  Bengaluru, India
+                  Emerging Leaders & Students
                 </p>
               </div>
             </div>

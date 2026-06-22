@@ -77,18 +77,18 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab, hideTabB
               <div className="h-px w-full bg-white/25" />
             </div>
 
-            {/* Meta row - DATE / VENUE / LOCATION */}
+            {/* Meta row - WHEN / WHERE / WHO */}
             <div
               className="animate-float-up opacity-0 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 md:border-none"
               style={{
                 animationDelay: "0.4s",
               }}
             >
-              {/* DATE */}
+              {/* WHEN */}
               <div className="flex items-start gap-6 md:gap-0 md:flex-col md:border-r md:border-white/15 md:pr-12">
                 <div className="md:w-full">
                   <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
-                    DATE
+                    WHEN
                   </p>
                   <p className="font-sans text-base md:text-lg text-white font-medium">
                     <span className="whitespace-nowrap">23–25 September</span><br />2026
@@ -96,11 +96,11 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab, hideTabB
                 </div>
               </div>
 
-              {/* VENUE */}
+              {/* WHERE */}
               <div className="flex items-start gap-6 md:gap-0 md:flex-col md:border-r md:border-white/15 md:pr-12">
                 <div className="md:w-full">
                   <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
-                    VENUE
+                    WHERE
                   </p>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Leela+Bhartiya+City"
@@ -116,19 +116,20 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab, hideTabB
                       className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity mt-0.5"
                       aria-hidden="true"
                     />
-                    Leela Bhartiya City
+                    Leela Bhartiya City<br />
+                    <span className="text-sm text-white/70 ml-8">Bengaluru, India</span>
                   </a>
                 </div>
               </div>
 
-              {/* LOCATION */}
+              {/* WHO */}
               <div className="flex items-start gap-6 md:gap-0 md:flex-col">
                 <div className="md:w-full">
                   <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
-                    LOCATION
+                    WHO
                   </p>
                   <p className="font-sans text-base md:text-lg text-white font-medium">
-                    Bengaluru, India
+                    Design Leaders & CXOs
                   </p>
                 </div>
               </div>
