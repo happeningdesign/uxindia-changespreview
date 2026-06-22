@@ -19,6 +19,9 @@
  *     rising        — Talk details for the Rising Leaders Forum (optional)
  *       type        — Session type chip, e.g. "Keynote", "Deep Dive", "Spark Session" (optional)
  *       track       — Track chip, e.g. "AI & Design", "Design Strategy" (optional)
+ *       date        — Date of the session, e.g. "Sept 24" (optional)
+ *       time        — Start time, e.g. "10:05 AM" (optional)
+ *       endTime     — End time, e.g. "10:30 AM" (optional)
  *       title       — Talk title (optional)
  *       description — Talk description (optional)
  *       keyTakeaway — Key takeaway from the talk (optional)
@@ -28,6 +31,9 @@
 export interface SpeakerTalk {
   type?: string;
   track?: string;
+  date?: string;
+  time?: string;
+  endTime?: string;
   title?: string;
   description?: string;
   keyTakeaway?: string | string[];
@@ -103,8 +109,8 @@ const leadershipSpeakers: Speaker[] = [
         track: "AI Leadership",
         title: "Death of the Wireframe",
         description: "Stepping beyond UI generation to explore what design judgment looks like when anyone can design.",
-        keyTakeaway:"How to earn cash",
-        audience: "Design Professionals",
+        keyTakeaway:["How to earn cash", "How to earn fame"],
+        audience: ["Design Professionals", "Design Juniors"],
       },
     },
   },
