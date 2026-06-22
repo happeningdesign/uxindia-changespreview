@@ -361,7 +361,7 @@ export default function ConvinceYourManagerClient() {
       </section>
 
       {/* ── Approval Letters ── */}
-      <section className="py-24 md:py-32 bg-[#0D0D0D]">
+      <section className="pt-16 md:pt-20 pb-24 md:pb-32 bg-[#0D0D0D]">
         <div className="mx-auto max-w-6xl px-6 md:px-10">
           <FadeIn className="text-center mb-14 md:mb-16">
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-[#E85520] mb-4 block">
