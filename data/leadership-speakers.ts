@@ -142,8 +142,7 @@ const leadershipSpeakers: Speaker[] = [
     company: "JPMC",
     image: "/LS-Speaker-Images/Ish-Awasti.webp",
     talkType: "Spark Session",
-    bio: "With over 13 years of experience spanning UX research, product design, entrepreneurship, and cross-functional leadership, I have built products and teams across very different contextsâ€”from enterprise tools for asset managers and bankers in the U.S. to mobile experiences for drivers in India.
- I have built design functions from the ground up, mentored teams, and created processes that improve user experience and product outcomes. My work spans the full spectrum of UX research, product design, and design systems, supported by hands-on experience in product management, business development, and project management. This allows me to approach product building not just through the lens of design, but through the wider realities of business, execution, and growth.
+    bio: "With over 13 years of experience spanning UX research, product design, entrepreneurship, and cross-functional leadership, I have built products and teams across very different contextsâ€”from enterprise tools for asset managers and bankers in the U.S. to mobile experiences for drivers in India.I have built design functions from the ground up, mentored teams, and created processes that improve user experience and product outcomes. My work spans the full spectrum of UX research, product design, and design systems, supported by hands-on experience in product management, business development, and project management. This allows me to approach product building not just through the lens of design, but through the wider realities of business, execution, and growth.
  The diversity of my journey reflects a continuous evolution in self-understanding, constantly drawing me toward new challenges, unfamiliar domains, and opportunities to keep learning.'",
     linkedin: "",
     twitter: "",
