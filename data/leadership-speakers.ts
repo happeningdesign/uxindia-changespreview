@@ -94,17 +94,17 @@ const leadershipSpeakers: Speaker[] = [
     company: "MOURI Tech",
     image: "/LS-Speaker-Images/Vyoma.webp",
     talkType: "Spark Session",
-    bio: "",
-    linkedin: "",
-    twitter: "",
+    bio: "Vyoma is a respected voice in the design community, bringing valuable insights and experience to UXINDIA. Doug Powell is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.Doug Powell is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.Doug Powell is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.Doug Powell is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.",
+    linkedin: "linkedin.com/in/vyomapathak?originalSubdomain=in",
+    twitter: "https://x.com/VyomaPathak",
     events: {
       leadership: {
         type: "Spark Session",
-        track: "",
+        track: "AI Leadership",
         title: "Death of the Wireframe",
         description: "Stepping beyond UI generation to explore what design judgment looks like when anyone can design.",
-        keyTakeaway: "",
-        audience: "",
+        keyTakeaway: "How to earn cash","How to earn fame"
+        audience: "Design Professionals",
       },
     },
   },
