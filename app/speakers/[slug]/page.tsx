@@ -294,8 +294,15 @@ export default async function SpeakerPage({
               <p className={`font-sans text-base md:text-lg font-semibold ${roleCls}`}>
                 {speaker.role}{speaker.company ? `, ${speaker.company}` : ""}
               </p>
-              {speaker.talkType && (
-                <p className="font-sans text-sm text-[#E85520] font-medium">{speaker.talkType}</p>
+              {(speaker.events?.leadership?.title || speaker.events?.rising?.title) && (
+                <p className={`font-sans text-base md:text-lg font-semibold ${roleCls} mt-2`}>
+                  {speaker.events?.leadership?.title || speaker.events?.rising?.title}
+                </p>
+              )}
+              {(speaker.events?.leadership?.type || speaker.events?.rising?.type) && (
+                <p className="font-sans text-sm text-[#E85520] font-medium">
+                  {speaker.events?.leadership?.type || speaker.events?.rising?.type}
+                </p>
               )}
             </div>
 
