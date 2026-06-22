@@ -11,6 +11,7 @@ interface SpeakersGridProps {
   speakers: Speaker[];
   showMorePlaceholder?: boolean;
   variant?: "dark" | "light";
+  event?: "leadership" | "rising";
 }
 
 function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { speaker: Speaker; index: number; variant?: "dark" | "light"; isFlipped: boolean; onFlip: () => void }) {
@@ -142,7 +143,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
           {speaker.bio || `${speaker.name} is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.`}
         </p>
         <Link
-          href={`/leadership-summit/speakers/${getSpeakerSlug(speaker)}`}
+          href={`/${event === "rising" ? "rising-leaders-forum" : "leadership-summit"}/speakers/${getSpeakerSlug(speaker)}`}
           onClick={(e) => e.stopPropagation()}
           className="group/btn mt-2 md:mt-3 inline-flex items-center gap-1 self-start font-sans text-[8px] md:text-[11px] font-semibold uppercase tracking-wider text-[#E85520] flex-shrink-0 hover:text-[#E85520]/80 transition-colors"
         >
@@ -156,7 +157,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
   );
 }
 
-export default function SpeakersGrid({ speakers, showMorePlaceholder = true, variant = "dark" }: SpeakersGridProps) {
+export default function SpeakersGrid({ speakers, showMorePlaceholder = true, variant = "dark", event = "leadership" }: SpeakersGridProps) {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const isLight = variant === "light";

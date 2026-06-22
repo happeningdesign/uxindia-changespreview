@@ -113,6 +113,7 @@ export default function RisingLeadersPageClient() {
             variant="light"
             speakers={risingLeadersSpeakers}
             showMorePlaceholder={true}
+            event="rising"
           />
           <RisingLeadersVenueSection variant="light" />
         </>

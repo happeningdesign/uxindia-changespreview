@@ -121,6 +121,7 @@ export default function LeadershipSummitPageClient() {
           <SpeakersGrid
             speakers={leadershipSpeakers}
             showMorePlaceholder={true}
+            event="leadership"
           />
           <VenueSection />
         </>
