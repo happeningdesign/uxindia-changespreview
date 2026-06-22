@@ -76,7 +76,7 @@ const risingLeadersSpeakers: Speaker[] = [
     role: "Associate Director",
     image: "/RS-Speaker-Images/Varedh.png",
     talkType: "Workshop",
-    bio: "",
+    bio: "Varedh Nigam is a design and CX leader with 15+ years of experience helping organizations navigate digital transformation at the intersection of customer experience, business strategy, and emerging technologies. As Associate Director, Product Experience & Design at Nagarro, she has led global initiatives across banking, aviation, telecommunications, and enterprise ecosystems, partnering with executives, product teams, and technology leaders to turn complex challenges into measurable outcomes.Her work spans CX consulting, service design, innovation programs, large-scale design thinking workshops, and Human-Centered AI initiatives. Known for connecting systems thinking with practical execution, she focuses on designing trust, aligning stakeholders, and ensuring that AI-enabled experiences create value for both people and businesses. Varedh is passionate about advancing the role of design from a delivery function to a strategic driver of transformation, helping organizations shape what could possibly go right when design leads.",
     linkedin: "",
     twitter: "",
     events: {
