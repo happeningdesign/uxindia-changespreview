@@ -103,7 +103,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
                   href="https://maps.app.goo.gl/srishti"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-start gap-2.5 font-sans text-base md:text-lg text-white font-medium leading-snug cursor-pointer hover:text-[#E85520] transition-colors duration-200"
+                  className="group flex items-start gap-2.5 font-sans text-base md:text-lg text-white font-medium leading-snug cursor-pointer hover:text-[#E85520] transition-colors duration-200"
                 >
                   <img
                     src="/venue-location-icon.png"
@@ -113,7 +113,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
                     className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity mt-0.5"
                     aria-hidden="true"
                   />
-                  Srishti Manipal Institute, Bengaluru, India
+                  <span className="line-clamp-2">Srishti Manipal Institute, Bengaluru, India</span>
                 </a>
               </div>
 

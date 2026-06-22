@@ -106,7 +106,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab, hideTabB
                     href="https://www.google.com/maps/search/?api=1&query=Leela+Bhartiya+City"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-start gap-2.5 font-sans text-base md:text-lg text-white font-medium cursor-pointer hover:text-[#E85520] transition-colors duration-200"
+                    className="group flex items-start gap-2.5 font-sans text-base md:text-lg text-white font-medium cursor-pointer hover:text-[#E85520] transition-colors duration-200"
                   >
                     <img
                       src="/venue-location-icon.png"
@@ -116,7 +116,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab, hideTabB
                       className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity mt-0.5"
                       aria-hidden="true"
                     />
-                    Leela Bhartiya City, Bengaluru, India
+                    <span className="line-clamp-2">Leela Bhartiya City, Bengaluru, India</span>
                   </a>
                 </div>
               </div>
