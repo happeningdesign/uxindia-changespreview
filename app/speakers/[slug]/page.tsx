@@ -105,17 +105,39 @@ function TalkBlock({
         </div>
       )}
 
-      {talk.keyTakeaway && (
+      {talk.keyTakeaway && (Array.isArray(talk.keyTakeaway) ? talk.keyTakeaway.length > 0 : true) && (
         <div>
           <SectionLabel>Key takeaway</SectionLabel>
-          <p className="font-sans text-base text-white/60 leading-relaxed">{talk.keyTakeaway}</p>
+          {Array.isArray(talk.keyTakeaway) ? (
+            <ul className="flex flex-col gap-2">
+              {talk.keyTakeaway.map((item, i) => (
+                <li key={i} className="flex items-start gap-2.5 font-sans text-base text-white/60 leading-relaxed">
+                  <span className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-[#E85520]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="font-sans text-base text-white/60 leading-relaxed">{talk.keyTakeaway}</p>
+          )}
         </div>
       )}
 
-      {talk.audience && (
+      {talk.audience && (Array.isArray(talk.audience) ? talk.audience.length > 0 : true) && (
         <div>
           <SectionLabel>Who should attend</SectionLabel>
-          <p className="font-sans text-base text-white/60 leading-relaxed">{talk.audience}</p>
+          {Array.isArray(talk.audience) ? (
+            <ul className="flex flex-col gap-2">
+              {talk.audience.map((item, i) => (
+                <li key={i} className="flex items-start gap-2.5 font-sans text-base text-white/60 leading-relaxed">
+                  <span className="mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-[#E85520]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="font-sans text-base text-white/60 leading-relaxed">{talk.audience}</p>
+          )}
         </div>
       )}
     </div>

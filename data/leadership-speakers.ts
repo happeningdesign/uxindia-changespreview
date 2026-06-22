@@ -30,8 +30,8 @@ export interface SpeakerTalk {
   track?: string;
   title?: string;
   description?: string;
-  keyTakeaway?: string;
-  audience?: string;
+  keyTakeaway?: string | string[];
+  audience?: string | string[];
 }
 
 export interface Speaker {
@@ -103,7 +103,7 @@ const leadershipSpeakers: Speaker[] = [
         track: "AI Leadership",
         title: "Death of the Wireframe",
         description: "Stepping beyond UI generation to explore what design judgment looks like when anyone can design.",
-        keyTakeaway: "How to earn cash","How to earn fame"
+        keyTakeaway:"How to earn cash",
         audience: "Design Professionals",
       },
     },
