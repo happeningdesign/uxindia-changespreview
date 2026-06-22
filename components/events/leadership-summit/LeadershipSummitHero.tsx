@@ -116,8 +116,7 @@ export default function LeadershipSummitHero({ activeTab, setActiveTab, hideTabB
                       className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity mt-0.5"
                       aria-hidden="true"
                     />
-                    Leela Bhartiya City<br />
-                    <span className="text-sm text-white/70 ml-8">Bengaluru, India</span>
+                    Leela Bhartiya City, Bengaluru, India
                   </a>
                 </div>
               </div>
