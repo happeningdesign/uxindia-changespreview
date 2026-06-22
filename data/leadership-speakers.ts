@@ -107,9 +107,6 @@ const leadershipSpeakers: Speaker[] = [
       leadership: {
         type: "Spark Session",
         track: "AI Leadership",
-        date: "Sept 24",
-        time: "10:05 AM",
-        endTime: "10:30 AM",
         title: "Death of the Wireframe",
         description: "Stepping beyond UI generation to explore what design judgment looks like when anyone can design.",
         keyTakeaway:["How to earn cash", "How to earn fame"],
