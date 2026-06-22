@@ -128,7 +128,7 @@ const leadershipSpeakers: Speaker[] = [
     twitter: "",
     events: {
       leadership: {
-        type: "Spark Session",
+        type: "Spark Session - 18 Mins",
         track: "",
         talkCategory: "Social Impact",
         title: "The Original Algorithm: Archiving the Intelligence AI Cannot Replicate",
@@ -168,7 +168,7 @@ const leadershipSpeakers: Speaker[] = [
     twitter: "",
     events: {
       leadership: {
-        type: "Plenary Keynote",
+        type: "Plenary Keynote - 30 Mins",
         track: "",
         talkCategory: "Design Practice",
         title: "Be[coming] a leader in design",
