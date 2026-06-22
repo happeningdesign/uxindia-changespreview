@@ -152,7 +152,7 @@ export default async function SpeakerPage({
 
         {/* Back */}
         <Link
-          href="javascript:history.back()"
+          href="/"
           className="inline-flex items-center gap-1.5 font-sans text-sm text-white/40 hover:text-white transition-colors mb-12"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
