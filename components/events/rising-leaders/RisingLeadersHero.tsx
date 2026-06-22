@@ -64,7 +64,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
               className="animate-float-up opacity-0 font-sans text-base md:text-lg text-white leading-relaxed mb-8 md:mb-10 max-w-full md:max-w-[46ch]"
               style={{ animationDelay: "0.2s" }}
             >
-              For emerging design leaders, mid-career designers, design students, and professionals transitioning into leadership roles who are ready to grow their influence, sharpen their strategic thinking, and scale their impact across teams, products, and organisations. ---- Subtext in hero section rising leaders.
+              For emerging design leaders, mid-career designers, design students, and professionals transitioning into leadership roles who are ready to grow their influence, sharpen their strategic thinking, and scale their impact across teams, products, and organisations.
             </p>
 
             {/* Thin hairline divider */}
