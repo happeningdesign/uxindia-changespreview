@@ -94,14 +94,14 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
           </div>
           {/* Orange circle arrow */}
           <div className="flex justify-end items-end">
-          <div
-            className="shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center mb-0.5"
-            style={{ backgroundColor: "#E85520" }}
-          >
-            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </div>
+            <div
+              className="shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center mb-0.5"
+              style={{ backgroundColor: "#E85520" }}
+            >
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -183,19 +183,18 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
           <h2 className={`font-leadership text-4xl md:text-5xl tracking-tight ${isLight ? "text-[#0D0D0D]" : "text-white"}`}>
             Speakers
           </h2>
-          
+
           {/* Filter chips */}
           {talkTypes.length > 0 && (
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => { setActiveFilter(null); setActiveCard(null); }}
-                className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
-                  activeFilter === null
+                className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${activeFilter === null
                     ? "bg-[#E85520] text-white"
-                    : isLight 
+                    : isLight
                       ? "bg-[#0D0D0D]/10 text-[#0D0D0D]/70 hover:bg-[#0D0D0D]/20"
                       : "bg-white/10 text-white/70 hover:bg-white/20"
-                }`}
+                  }`}
               >
                 All
               </button>
@@ -203,13 +202,12 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
                 <button
                   key={type}
                   onClick={() => { setActiveFilter(type); setActiveCard(null); }}
-                  className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
-                    activeFilter === type
+                  className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${activeFilter === type
                       ? "bg-[#E85520] text-white"
                       : isLight
                         ? "bg-[#0D0D0D]/10 text-[#0D0D0D]/70 hover:bg-[#0D0D0D]/20"
                         : "bg-white/10 text-white/70 hover:bg-white/20"
-                  }`}
+                    }`}
                 >
                   {type}
                 </button>

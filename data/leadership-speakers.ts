@@ -165,7 +165,7 @@ const leadershipSpeakers: Speaker[] = [
         type: "Plenary Keynote",
         track: "",
         title: "Be[coming] a leader in design",
-        description: "A keynote on what it really takes to lead with integrity in design — without losing yourself to politics or pressure.",
+        description: "The talk opens with a provocation. Almost no one leaves our work interactions with what they actually wanted. The person giving feedback walks away unsatisfied. The person receiving it walks away unclear. The leader chairing the meeting walks away wondering what just happened. The cause sits in the expectations we never surface, the conversations we postpone, and the affirmations we hold or hide. Under pressure, we get triggered into silence or violence. We shut down. We sharpen.From there the arc moves into what authentic design leadership actually asks of us. Naming what we want. Hearing what others want. Staying in the room when the temperature rises. The trade off is real. This path moves slowly. It exposes the leader who walks it. Scaling it is difficult work inside most orgs.What I would do differently is lean into the discomfort sooner. The material lands harder when the provocation is allowed to sit. The lesson I keep relearning is that care without honesty becomes decoration",
         keyTakeaway: ["What design leadership really isâ€”and why most models fail designers", "How to build trust as your core design output (yes, really)", "How power and presence work when you're no longer the hands-on designer"],
         audience: "",
       },
