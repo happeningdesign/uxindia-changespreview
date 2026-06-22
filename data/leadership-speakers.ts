@@ -19,6 +19,7 @@
  *     rising        — Talk details for the Rising Leaders Forum (optional)
  *       type        — Session type chip, e.g. "Keynote", "Deep Dive", "Spark Session" (optional)
  *       track       — Track chip, e.g. "AI & Design", "Design Strategy" (optional)
+ *       talkCategory — Talk category chip (optional, reserved for future use)
  *       date        — Date of the session, e.g. "Sept 24" (optional)
  *       time        — Start time, e.g. "10:05 AM" (optional)
  *       endTime     — End time, e.g. "10:30 AM" (optional)
@@ -31,6 +32,7 @@
 export interface SpeakerTalk {
   type?: string;
   track?: string;
+  talkCategory?: string;
   date?: string;
   time?: string;
   endTime?: string;

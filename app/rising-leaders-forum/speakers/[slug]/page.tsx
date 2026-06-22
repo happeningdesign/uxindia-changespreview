@@ -94,6 +94,14 @@ function TrackChip({ label, light }: { label: string; light?: boolean }) {
   );
 }
 
+function CategoryChip({ label, light }: { label: string; light?: boolean }) {
+  return (
+    <span className={`inline-block px-3 py-1 rounded-full font-sans text-xs font-semibold tracking-wide ${light ? "bg-[#0D0D0D]/10 text-[#0D0D0D]/60 border border-[#0D0D0D]/10" : "bg-white/10 text-white/70 border border-white/10"}`}>
+      {label}
+    </span>
+  );
+}
+
 // ─── datetime row ─────────────────────────────────────────────────────────────
 
 function DateTimeRow({ date, time, endTime, light }: { date?: string; time?: string; endTime?: string; light?: boolean }) {
@@ -156,6 +164,7 @@ function TalkBlock({ event, talk, light }: { event: "leadership" | "rising"; tal
         <EventChip event={event} light={light} />
         {talk.type && <TypeChip label={talk.type} light={light} />}
         {talk.track && <TrackChip label={talk.track} light={light} />}
+        {talk.talkCategory && <CategoryChip label={talk.talkCategory} light={light} />}
       </div>
 
       <DateTimeRow date={talk.date} time={talk.time} endTime={talk.endTime} light={light} />
