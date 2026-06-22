@@ -11,6 +11,7 @@ interface SpeakersGridProps {
   speakers: Speaker[];
   showMorePlaceholder?: boolean;
   variant?: "dark" | "light";
+  event?: "leadership" | "rising";
 }
 
 function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { speaker: Speaker; index: number; variant?: "dark" | "light"; isFlipped: boolean; onFlip: () => void }) {
@@ -93,14 +94,14 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
           </div>
           {/* Orange circle arrow */}
           <div className="flex justify-end items-end">
-          <div
-            className="shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center mb-0.5"
-            style={{ backgroundColor: "#E85520" }}
-          >
-            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </div>
+            <div
+              className="shrink-0 w-5 h-5 md:w-6 md:h-6 rounded-full flex items-center justify-center mb-0.5"
+              style={{ backgroundColor: "#E85520" }}
+            >
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -142,9 +143,8 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
           {speaker.bio || `${speaker.name} is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.`}
         </p>
         <Link
-          href={`/speakers/${getSpeakerSlug(speaker)}`}
-          target="_blank"
-          onClick={(e) => e.stopPropagation()}
+          href={`/${event === "rising" ? "rising-leaders-forum" : "leadership-summit"}/speakers/${getSpeakerSlug(speaker)}`}
+          onClick={(e) => e.stopPropagation()} target="_blank"
           className="group/btn mt-2 md:mt-3 inline-flex items-center gap-1 self-start font-sans text-[8px] md:text-[11px] font-semibold uppercase tracking-wider text-[#E85520] flex-shrink-0 hover:text-[#E85520]/80 transition-colors"
         >
           Know More
@@ -157,7 +157,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
   );
 }
 
-export default function SpeakersGrid({ speakers, showMorePlaceholder = true, variant = "dark" }: SpeakersGridProps) {
+export default function SpeakersGrid({ speakers, showMorePlaceholder = true, variant = "dark", event = "leadership" }: SpeakersGridProps) {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const isLight = variant === "light";
@@ -183,19 +183,18 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
           <h2 className={`font-leadership text-4xl md:text-5xl tracking-tight ${isLight ? "text-[#0D0D0D]" : "text-white"}`}>
             Speakers
           </h2>
-          
+
           {/* Filter chips */}
           {talkTypes.length > 0 && (
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => { setActiveFilter(null); setActiveCard(null); }}
-                className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
-                  activeFilter === null
+                className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${activeFilter === null
                     ? "bg-[#E85520] text-white"
-                    : isLight 
+                    : isLight
                       ? "bg-[#0D0D0D]/10 text-[#0D0D0D]/70 hover:bg-[#0D0D0D]/20"
                       : "bg-white/10 text-white/70 hover:bg-white/20"
-                }`}
+                  }`}
               >
                 All
               </button>
@@ -203,13 +202,12 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
                 <button
                   key={type}
                   onClick={() => { setActiveFilter(type); setActiveCard(null); }}
-                  className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
-                    activeFilter === type
+                  className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${activeFilter === type
                       ? "bg-[#E85520] text-white"
                       : isLight
                         ? "bg-[#0D0D0D]/10 text-[#0D0D0D]/70 hover:bg-[#0D0D0D]/20"
                         : "bg-white/10 text-white/70 hover:bg-white/20"
-                  }`}
+                    }`}
                 >
                   {type}
                 </button>

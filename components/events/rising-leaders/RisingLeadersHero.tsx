@@ -38,7 +38,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
       <div className="relative z-10 min-h-screen flex flex-col pt-24 md:pt-32 pb-0">
         {/* Main content - positioned to fill space */}
         <div className="flex-1 flex flex-col justify-center pl-6 md:pl-20 lg:pl-32 pr-6 pb-24">
-          <div className="max-w-2xl">
+          <div className="max-w-4xl">
             {/* Eyebrow kicker */}
             <div className="animate-float-up opacity-0 mb-8">
               <p className="font-sans text-[11px] md:text-base text-white font-semibold uppercase tracking-[0.15em] break-words">
@@ -77,33 +77,33 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
               <div className="h-px w-full bg-white/25" />
             </div>
 
-            {/* Meta row - DATE / VENUE / LOCATION */}
+            {/* Meta row - WHEN / WHERE / WHO */}
             <div
               className="animate-float-up opacity-0 flex flex-col md:flex-row gap-8 md:gap-0"
               style={{
                 animationDelay: "0.4s",
               }}
             >
-              {/* DATE */}
+              {/* WHEN */}
               <div className="md:border-r md:border-white/15 md:pr-8 md:mr-8">
                 <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
-                  DATE
+                  WHEN
                 </p>
                 <p className="font-sans text-base md:text-lg text-white font-medium">
                   <span className="whitespace-nowrap">26–27 September</span><br />2026
                 </p>
               </div>
 
-              {/* VENUE */}
+              {/* WHERE */}
               <div className="md:border-r md:border-white/15 md:pr-8 md:mr-8 md:max-w-[280px]">
                 <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
-                  VENUE
+                  WHERE
                 </p>
                 <a
                   href="https://maps.app.goo.gl/srishti"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-start gap-2.5 font-sans text-base md:text-lg text-white font-medium leading-snug cursor-pointer hover:text-[#E85520] transition-colors duration-200"
+                  className="group flex items-start gap-2.5 font-sans text-base md:text-lg text-white font-medium leading-snug cursor-pointer hover:text-[#E85520] transition-colors duration-200"
                 >
                   <img
                     src="/venue-location-icon.png"
@@ -113,17 +113,17 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
                     className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity mt-0.5"
                     aria-hidden="true"
                   />
-                  Srishti Manipal Institute of Art, Design & Technology
+                  <span>Srishti Manipal Institute,<br />Bengaluru, India</span>
                 </a>
               </div>
 
-              {/* LOCATION */}
+              {/* WHO */}
               <div>
                 <p className="font-sans text-[10px] md:text-xs text-[#E85520] font-semibold uppercase tracking-[0.15em] mb-2">
-                  LOCATION
+                  WHO
                 </p>
                 <p className="font-sans text-base md:text-lg text-white font-medium">
-                  Bengaluru, India
+                  Emerging Leaders & Students
                 </p>
               </div>
             </div>
