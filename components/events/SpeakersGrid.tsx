@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { Speaker } from "@/data/leadership-speakers";
+import { getSpeakerSlug } from "@/data/leadership-speakers";
 
 const speakerColors = ["#E85520", "#1D5078", "#1A7A6E", "#C8365A"];
 
@@ -139,31 +141,16 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
         <p className="font-sans text-[9px] md:text-xs text-white/80 leading-relaxed line-clamp-3 md:line-clamp-4 flex-shrink-0">
           {speaker.bio || `${speaker.name} is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.`}
         </p>
-        {speaker.readMoreLink ? (
-          <a
-            href={speaker.readMoreLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="group/btn mt-2 md:mt-3 inline-flex items-center gap-1 self-start font-sans text-[8px] md:text-[11px] font-semibold uppercase tracking-wider cursor-pointer text-[#E85520] flex-shrink-0 hover:text-[#E85520]/80 transition-colors"
-          >
-            {speaker.readMoreLabel || "Read more"}
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover/btn:translate-x-0.5">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        ) : (
-          <button
-            type="button"
-            onClick={(e) => e.stopPropagation()}
-            className="group/btn mt-2 md:mt-3 inline-flex items-center gap-1 self-start font-sans text-[8px] md:text-[11px] font-semibold uppercase tracking-wider cursor-pointer text-[#E85520]/60 flex-shrink-0 opacity-50 cursor-not-allowed"
-          >
-            {speaker.readMoreLabel || "Read more"}
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </button>
-        )}
+        <Link
+          href={`/speakers/${getSpeakerSlug(speaker)}`}
+          onClick={(e) => e.stopPropagation()}
+          className="group/btn mt-2 md:mt-3 inline-flex items-center gap-1 self-start font-sans text-[8px] md:text-[11px] font-semibold uppercase tracking-wider text-[#E85520] flex-shrink-0 hover:text-[#E85520]/80 transition-colors"
+        >
+          Know More
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-200 group-hover/btn:translate-x-0.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </Link>
       </div>
     </div>
   );
