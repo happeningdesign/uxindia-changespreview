@@ -143,7 +143,7 @@ const leadershipSpeakers: Speaker[] = [
     twitter: "",
     events: {
       leadership: {
-        type: "Spark Session",
+        type: "Spark Session - 18 Mins",
         track: "",
         title: "The roles they are a-changin: AI and the Great Dissolve",
         description: "During a recent stakeholder meeting, the PM came with a fully functional, AI-built prototype. It looked polished and the business liked it. For the next hour I sat shocked and unsure, wondering if my role had just become redundant.But once we had multiple design variations on the table, the question in the room shifted. Not which design looks better, but why. From aesthetics to usability, user needs and design language. That was the moment I understood that my role was never about creating an interface. It was about designing the right one.Multiple sessions like this later, three clear shifts emerged: decisions are the new bottleneck and PM roles will grow around that, specialists will continue but as reviewers and knowledge owners rather than producers and as AI homogenises design output, handcrafted and bespoke experiences will become a premium in their own right.Each of these futures needs different skills. This talk is about figuring out which one you are building towards.",
