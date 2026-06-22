@@ -11,6 +11,8 @@ export interface ScheduleMatch {
   date: string;
   time: string;
   endTime?: string;
+  title?: string;
+  type?: string;
 }
 
 function normalizeName(name: string): string {
@@ -36,14 +38,14 @@ function searchDay(
 
     // Single speaker sessions: keynote, closing, spark
     if (session.speaker?.name && speakerMatchesName(session.speaker.name, speakerName)) {
-      return { date, time, endTime };
+      return { date, time, endTime, title: session.title, type: session.tag };
     }
 
     // Panel: panelists array
     if (session.panelists) {
       for (const p of session.panelists) {
         if (p.name && speakerMatchesName(p.name, speakerName)) {
-          return { date, time, endTime };
+          return { date, time, endTime, title: session.title, type: session.tag };
         }
       }
     }
@@ -52,12 +54,12 @@ function searchDay(
     if (session.sessions) {
       for (const s of session.sessions) {
         if (s.speaker?.name && speakerMatchesName(s.speaker.name, speakerName)) {
-          return { date, time, endTime };
+          return { date, time, endTime, title: s.title, type: s.tag ?? session.tag };
         }
         if (s.panelists) {
           for (const p of s.panelists) {
             if (p.name && speakerMatchesName(p.name, speakerName)) {
-              return { date, time, endTime };
+              return { date, time, endTime, title: s.title, type: s.tag ?? session.tag };
             }
           }
         }
@@ -68,14 +70,14 @@ function searchDay(
     if (session.leftSessions) {
       for (const s of session.leftSessions) {
         if (s.speaker?.name && speakerMatchesName(s.speaker.name, speakerName)) {
-          return { date, s: s.time ?? time, endTime } as any;
+          return { date, time: s.time ?? time, endTime, title: s.title, type: s.tag ?? session.tag };
         }
       }
     }
     if (session.rightSession?.panelists) {
       for (const p of session.rightSession.panelists) {
         if (p.name && speakerMatchesName(p.name, speakerName)) {
-          return { date, time, endTime };
+          return { date, time, endTime, title: session.rightSession.title, type: session.rightSession.tag ?? session.tag };
         }
       }
     }
@@ -84,7 +86,7 @@ function searchDay(
     if (session.workshops) {
       for (const w of session.workshops) {
         if (w.speaker?.name && speakerMatchesName(w.speaker.name, speakerName)) {
-          return { date, time, endTime };
+          return { date, time, endTime, title: w.title, type: w.tag ?? session.tag };
         }
       }
     }

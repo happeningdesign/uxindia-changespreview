@@ -38,6 +38,8 @@ function buildAllSpeakers(): Speaker[] {
               date: speaker.events.leadership.date ?? scheduleMatch?.date,
               time: speaker.events.leadership.time ?? scheduleMatch?.time,
               endTime: speaker.events.leadership.endTime ?? scheduleMatch?.endTime,
+              title: speaker.events.leadership.title ?? scheduleMatch?.title,
+              type: speaker.events.leadership.type ?? scheduleMatch?.type,
             }
           : undefined,
       },
@@ -54,6 +56,8 @@ function buildAllSpeakers(): Speaker[] {
           date: speaker.events.rising.date ?? scheduleMatch?.date,
           time: speaker.events.rising.time ?? scheduleMatch?.time,
           endTime: speaker.events.rising.endTime ?? scheduleMatch?.endTime,
+          title: speaker.events.rising.title ?? scheduleMatch?.title,
+          type: speaker.events.rising.type ?? scheduleMatch?.type,
         }
       : undefined;
 
