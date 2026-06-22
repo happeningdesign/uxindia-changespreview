@@ -155,8 +155,7 @@ const leadershipSpeakers: Speaker[] = [
   },
   {
     name: "Mario Van der Meulen",
-    role: "CXO",
-    company: "Aleph Labs",
+    role: "CXO, Aleph Labs",
     image: "/LS-Speaker-Images/Van-Mario.webp",
     talkType: "Plenary Keynote",
     bio: "Mario Van der Meulen is a design executive, author, and international speaker known for helping leaders unlock meaningful innovation through human-centered design. With 2+ decades of global experience across sectors, he brings depth, clarity, and provocation to every stage. He leads large-scale design systems and outcomes in regulated environments, integrating strategy, design governance, and AI-enabled workflows. Designing coherent, human-centred systems across physical, digital, operational, and service layers.",
