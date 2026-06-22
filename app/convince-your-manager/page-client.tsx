@@ -321,7 +321,7 @@ export default function ConvinceYourManagerClient() {
       </section>
 
       {/* ── Commitment ── */}
-      <section className="py-24 md:py-32 bg-[#F5F0E8]">
+      <section className="py-24 md:py-32 bg-[#0D0D0D]">
         <div className="mx-auto max-w-6xl px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
             <FadeIn>
@@ -329,12 +329,12 @@ export default function ConvinceYourManagerClient() {
                 Attendee Commitment
               </span>
               <h2
-                className="text-4xl md:text-6xl text-[#0D0D0D] leading-[0.95] mb-6 text-balance"
+                className="text-4xl md:text-6xl text-white leading-[0.95] mb-6 text-balance"
                 style={{ fontFamily: "'UXILeadershipCondensed'" }}
               >
                 The Knowledge Comes <span className="text-[#E85520]">Back to You</span>
               </h2>
-              <p className="font-sans text-base text-[#0D0D0D]/60 leading-relaxed">
+              <p className="font-sans text-base text-white/60 leading-relaxed">
                 Following the conference, the attendee will ensure the benefits extend beyond one individual and create lasting value for the organisation.
               </p>
             </FadeIn>
@@ -342,7 +342,7 @@ export default function ConvinceYourManagerClient() {
               {commitments.map((item, i) => (
                 <div
                   key={item}
-                  className="flex items-start gap-4 border border-[#0D0D0D]/10 rounded-xl px-5 py-4 bg-white/60"
+                  className="flex items-start gap-4 border border-white/10 rounded-xl px-5 py-4 bg-white/8"
                 >
                   <span
                     className="text-2xl text-[#E85520]/40 leading-none shrink-0 mt-0.5"
@@ -350,7 +350,7 @@ export default function ConvinceYourManagerClient() {
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="font-sans text-sm md:text-base text-[#0D0D0D]/80 leading-relaxed">
+                  <span className="font-sans text-sm md:text-base text-white/80 leading-relaxed">
                     {item}
                   </span>
                 </div>
