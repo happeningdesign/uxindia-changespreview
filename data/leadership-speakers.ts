@@ -102,8 +102,8 @@ const leadershipSpeakers: Speaker[] = [
     company: "MOURI Tech",
     image: "/LS-Speaker-Images/Vyoma.webp",
     talkType: "Spark Session",
-    bio: "Vyoma is a respected voice in the design community, bringing valuable insights and experience to UXINDIA. Doug Powell is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.Doug Powell is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.Doug Powell is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.Doug Powell is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.",
-    linkedin: "linkedin.com/in/vyomapathak?originalSubdomain=in",
+    bio: `Vyoma Pathak is the Head of User Experience (UX) Design at MOURI Tech, where she leads multidisciplinary teams across UX strategy, research, visual design, and digital transformation initiatives. Her experience spans healthcare, HR tech, AI-powered solutions, lifestyle products, and enterprise platforms, with a strong focus on creating human-centered experiences that align user needs with business and technology goals. Over the years, she has worked with both startups and global enterprises, leading projects from concept through execution while mentoring and growing high-performing design teams. She has previously spoken at UXINDIA Conference on UX Writing and participated in mentor panel discussions supporting aspiring designers in their professional journeys. Beyond enterprise UX, Vyoma is also currently co-building HUDAK, a community-led initiative exploring culture, heritage, and local storytelling in collaboration with members associated with INTACH. Her recent interests explore the evolving relationship between UX, AI, culture, and responsible design innovation.`,
+    linkedin: "linkedin.com/in/vyomapathak/",
     twitter: "https://x.com/VyomaPathak",
     events: {
       leadership: {
