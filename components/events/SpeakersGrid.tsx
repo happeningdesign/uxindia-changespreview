@@ -14,7 +14,7 @@ interface SpeakersGridProps {
   event?: "leadership" | "rising";
 }
 
-function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { speaker: Speaker; index: number; variant?: "dark" | "light"; isFlipped: boolean; onFlip: () => void }) {
+function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip, event = "leadership" }: { speaker: Speaker; index: number; variant?: "dark" | "light"; isFlipped: boolean; onFlip: () => void; event?: "leadership" | "rising" }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isTapped, setIsTapped] = useState(false);
   const color = speakerColors[index % speakerColors.length];
@@ -226,6 +226,7 @@ export default function SpeakersGrid({ speakers, showMorePlaceholder = true, var
               variant={variant}
               isFlipped={activeCard === index}
               onFlip={() => handleFlip(index)}
+              event={event}
             />
           ))}
 
