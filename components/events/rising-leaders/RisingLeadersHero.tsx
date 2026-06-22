@@ -113,7 +113,7 @@ export default function RisingLeadersHero({ activeTab, setActiveTab, hideTabBar 
                     className="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity mt-0.5"
                     aria-hidden="true"
                   />
-                  <span className="line-clamp-2">Srishti Manipal Institute, Bengaluru, India</span>
+                  <span>Srishti Manipal Institute, Bengaluru, India</span>
                 </a>
               </div>
 
