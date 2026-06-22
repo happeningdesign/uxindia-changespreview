@@ -54,7 +54,7 @@ const risingLeadersSpeakers: Speaker[] = [
   },
   {
     name: "Sujit Kumar Pradhan",
-    role: "UX Designer",
+    role: "UX Designer, Google",
     image: "/RS-Speaker-Images/Sujit Kumar Pradhan.png",
     talkType: "Deep Dive - 30 Mins",
     bio: "Sujit is a UX Designer at Google with over nine years of experience architecting complex digital ecosystems and agentic AI experiences. Before Google, he led key design initiatives at Microsoft, where he shaped the extensions ecosystem for the Edge browser and contributed to the vision for Copilot Vision as Lumi Camera project. His career also includes a significant tenure at Amazon, where he drove the UX strategy for Advertising and Brand Stores, deepening his expertise in large scale e-commerce experiences. His professional journey began as a full stack developer, a technical foundation that now fuels his expertise in designing living systems that move beyond static interfaces.A prominent voice in the design community, Sujit is a Design Mentor on ADPList and an active content creator on Instagram, where he shares insights on product design and the future of human AI collaboration. He has been a featured speaker at events like GDG Noida DevFest and dFrost at NID Bangalore, focusing on the era of AI co-creation. Driven by a philosophy of clean, logic driven aesthetics, Sujit focuses on intentionality over visual fluff, helping early career designers and tech leaders navigate the shift from being users of automation to architects of intelligent, human centered systems.",
