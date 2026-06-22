@@ -143,6 +143,7 @@ function SpeakerCard({ speaker, index, variant = "dark", isFlipped, onFlip }: { 
         </p>
         <Link
           href={`/speakers/${getSpeakerSlug(speaker)}`}
+          target="_blank"
           onClick={(e) => e.stopPropagation()}
           className="group/btn mt-2 md:mt-3 inline-flex items-center gap-1 self-start font-sans text-[8px] md:text-[11px] font-semibold uppercase tracking-wider text-[#E85520] flex-shrink-0 hover:text-[#E85520]/80 transition-colors"
         >
