@@ -111,7 +111,7 @@ const leadershipSpeakers: Speaker[] = [
         track: "AI Leadership",
         title: "Death of the Wireframe",
         description: "Stepping beyond UI generation to explore what design judgment looks like when anyone can design.",
-        keyTakeaway:["How to earn cash", "How to earn fame"],
+        keyTakeaway:[“How to write a Design Brief that constrains AI output rather than leaving it to pattern-match toward the average.”, “How to build a Taste Library that bakes your team's design DNA into every generation.”, “How to replace subjective design reviews with a Scorecard that makes critique structured and less political.”, “How to audit your team's deliverables and reorganise around the work that survives when generation costs nothing.”, “Why Indian design leadership is uniquely positioned to lead not follow the post-wireframe era.”],
         audience: ["Design Professionals", "Design Juniors"],
       },
     },
