@@ -308,7 +308,7 @@ export default async function SpeakerPage({
         {/* Bio */}
         {speaker.bio && (
           <>
-            <div className="max-w-3xl">
+            <div className="max-w-4xl">
               <SL>About</SL>
               <p className={`font-sans text-base md:text-lg leading-relaxed whitespace-pre-line ${bioCls}`}>
                 {speaker.bio}
