@@ -7,6 +7,7 @@ import Footer from "@/components/global/footer/Footer";
 
 import { getSpeakerSlug } from "@/types/speaker";
 import { allSpeakers, getSpeakerBySlug } from "@/data/events/all-speakers";
+import { createMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -23,12 +24,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const speaker = getSpeakerBySlug(slug);
   if (!speaker) return {};
-  return {
-    title: `${speaker.name} — UXINDIA 2026`,
-    description:
-      speaker.bio ||
-      `${speaker.name}, ${speaker.role}${speaker.company ? ` at ${speaker.company}` : ""} — Speaker at UXINDIA 2026.`,
-  };
+  const title = `${speaker.name} — UXINDIA 2026`;
+  const description =
+    speaker.bio ||
+    `${speaker.name}, ${speaker.role}${speaker.company ? ` at ${speaker.company}` : ""} — Speaker at UXINDIA 2026 Leadership Summit.`;
+  const image = speaker.ogImage || speaker.image;
+  return createMetadata({ title, description, image });
 }
 
 // ─── color palette (mirrors SpeakersGrid) ────────────────────────────────────

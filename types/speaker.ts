@@ -16,6 +16,7 @@ export interface Speaker {
   role: string;
   company?: string;
   image: string;
+  ogImage?: string;
   slug?: string;
   bio?: string;
   talkType?: string;

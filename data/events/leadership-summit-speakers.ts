@@ -9,6 +9,7 @@
  *   role           — Job title only, e.g. "VP Design" (required)
  *   company        — Company / organisation name (optional)
  *   image          — Path to speaker photo (required)
+ *   ogImage        — Path to OG image for speaker page meta (optional)
  *   slug           — URL slug, auto-derived from name if omitted (optional)
  *   bio            — Full biography shown on the speaker page (optional)
  *   talkType       — Session type chip, e.g. "Grand Keynote", "Spark Session" (optional)
@@ -38,6 +39,7 @@ const leadershipSpeakers: Speaker[] = [
     name: "Doug Powell",
     role: "Executive Design Leader",
     image: "/images/speakers/leadership-summit/Doug.webp",
+    ogImage: "",
     talkType: "Grand Keynote",
     bio: "Doug Powell is an award-winning designer and executive design leader with more than 30 years of experience in a wide range of design disciplines. A recipient of the 2014 Distinguished Alumni Award from the Sam Fox School of Design at Washington University in St. Louis, and the 2014 Fellow Award from AIGA Minnesota, Doug is a lecturer, commentator and thought leader on design issues. He has presented at a variety of global conferences, forums, and universities including Beirut Design Week in Lebanon, Fortune's Brainstorm Design in Singapore, and Yale School of Management. He was on the jury of the 2018 Smithsonian Cooper Hewitt National Design Awards. Between 2011-2013 Doug served as the national president of AIGA, the professional association for design, the largest and most established design organization in the world. In the past decade Doug has served as Vice President of Design at IBM and Expedia Group, where he oversaw design practices, design systems, designer career and leadership programs, as well as the scaling of cross-functional design thinking practices across the companies. He is the producer and host of This Is A Prototype: The Design Leadership Podcast. Alongside his leadership training and coaching practice, Doug serves on the faculty of the Pratt School of Engineering at Duke University, and the Sam Fox School of Design & Visual Art at Washington University in St. Louis.",
     linkedin: "https://www.linkedin.com/in/douglaspowell330/",
@@ -58,6 +60,7 @@ const leadershipSpeakers: Speaker[] = [
     name: "Vyoma Pathak",
     role: "Sr. Design Practice Lead, Mouri Tech",
     image: "/images/speakers/leadership-summit/Vyoma.webp",
+    ogImage: "",
     talkType: "Spark Session",
     bio: `Vyoma Pathak is the Head of User Experience (UX) Design at MOURI Tech, where she leads multidisciplinary teams across UX strategy, research, visual design, and digital transformation initiatives. Her experience spans healthcare, HR tech, AI-powered solutions, lifestyle products, and enterprise platforms, with a strong focus on creating human-centered experiences that align user needs with business and technology goals. Over the years, she has worked with both startups and global enterprises, leading projects from concept through execution while mentoring and growing high-performing design teams. She has previously spoken at UXINDIA Conference on UX Writing and participated in mentor panel discussions supporting aspiring designers in their professional journeys. Beyond enterprise UX, Vyoma is also currently co-building HUDAK, a community-led initiative exploring culture, heritage, and local storytelling in collaboration with members associated with INTACH. Her recent interests explore the evolving relationship between UX, AI, culture, and responsible design innovation.`,
     linkedin: "linkedin.com/in/vyomapathak/",
@@ -85,6 +88,7 @@ const leadershipSpeakers: Speaker[] = [
     name: "Harshita Hassani",
     role: "Sr. UX Designer,Optum (United Health Group)",
     image: "/images/speakers/leadership-summit/Harshita-Hassan.webp",
+    ogImage: "",
     talkType: "Spark Session",
     bio: "Harshita Hassani is a UX designer with 5 years of experience building complex, data-dense enterprise healthcare analytics products at Optum. With a foundation in Computer Science and a Master's in Experience Design from Srishti Institute of Art, Design and Technology, she works at the intersection of clinical decision-making and human experience design. Her postgraduate capstone, 'Mapping My Care Network of PCOD,' was a year-long auto-ethnographic research project that arrived at a finding no dataset had surfaced: the most consistent, effective care she ever received was built in her mother's kitchen through decades of intentional, tested, and refined practice. Mumma's Archive is the living documentation of that wisdom and Mommi is the AI agent she is building to make it conversational and accessible to working women and hostellers in real time. She has previously spoken at UX India (2022, 2024), India HCI (2023, 2024), Salesforce Design Days (2024), and the PCOS Conference at IIT Bombay (2025). Outside work, she reads, writes, cooks, sketchnote & practice calisthenics.",
     linkedin: "https://in.linkedin.com/in/harshita-hassani-69965311a",
@@ -111,6 +115,7 @@ const leadershipSpeakers: Speaker[] = [
     name: "Ish Awasthi",
     role: "VP, UX Research, JPMC",
     image: "/images/speakers/leadership-summit/Ish-Awasti.webp",
+    ogImage: "",
     talkType: "Spark Session",
     bio: "With over 13 years of experience spanning UX research, product design, entrepreneurship, and cross-functional leadership, I have built products and teams across very different contextsâ€”from enterprise tools for asset managers and bankers in the U.S. to mobile experiences for drivers in India.I have built design functions from the ground up, mentored teams, and created processes that improve user experience and product outcomes. My work spans the full spectrum of UX research, product design, and design systems, supported by hands-on experience in product management, business development, and project management. This allows me to approach product building not just through the lens of design, but through the wider realities of business, execution, and growth.The diversity of my journey reflects a continuous evolution in self-understanding, constantly drawing me toward new challenges, unfamiliar domains, and opportunities to keep learning.",
     linkedin: "https://www.linkedin.com/in/ish-awasthi-b38a4732v",
@@ -136,6 +141,7 @@ const leadershipSpeakers: Speaker[] = [
     name: "Mario Van der Meulen",
     role: "CXO, Aleph Labs",
     image: "/images/speakers/leadership-summit/Van-Mario.webp",
+    ogImage: "",
     talkType: "Plenary Keynote",
     bio: "Mario Van der Meulen is a design executive, author, and international speaker known for helping leaders unlock meaningful innovation through human-centered design. With 2+ decades of global experience across sectors, he brings depth, clarity, and provocation to every stage. He leads large-scale design systems and outcomes in regulated environments, integrating strategy, design governance, and AI-enabled workflows. Designing coherent, human-centred systems across physical, digital, operational, and service layers.",
     linkedin: "https://www.linkedin.com/in/mariovdm/",
