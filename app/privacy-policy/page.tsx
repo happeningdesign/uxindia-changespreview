@@ -56,11 +56,11 @@ function Section({
     <AnimatedSection>
       <section id={id} className="mb-16 scroll-mt-32">
         <div className="flex items-start gap-3 mb-6">
-          <span className="font-sans text-sm font-semibold text-[#E85520]">
+          <span className="font-sans text-sm font-semibold text-brand">
             {number}
           </span>
           <h2
-            className="text-3xl md:text-4xl text-[#0D0D0D]"
+            className="text-3xl md:text-4xl text-page"
             style={{ fontFamily: "'UXILeadershipCondensed'", fontWeight: 500 }}
           >
             {title}
@@ -81,7 +81,7 @@ function SubSection({
 }) {
   return (
     <div className="mb-6">
-      <h3 className="font-sans text-lg font-semibold text-[#0D0D0D] mb-3">
+      <h3 className="font-sans text-lg font-semibold text-page mb-3">
         {title}
       </h3>
       {children}
@@ -93,7 +93,7 @@ function ListItem({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex items-start gap-3 mb-3">
       <svg
-        className="w-4 h-4 mt-1 flex-shrink-0 text-[#E85520]"
+        className="w-4 h-4 mt-1 flex-shrink-0 text-brand"
         viewBox="0 0 16 16"
         fill="none"
       >
@@ -120,11 +120,9 @@ function ImportantBox({
   title?: string;
 }) {
   return (
-    <div className="bg-[#E85520]/10 border-l-4 border-[#E85520] p-5 rounded-r-xl my-6">
+    <div className="bg-brand/10 border-l-4 border-brand p-5 rounded-r-xl my-6">
       {title && (
-        <p className="font-sans text-sm font-bold text-[#E85520] mb-2">
-          {title}
-        </p>
+        <p className="font-sans text-sm font-bold text-brand mb-2">{title}</p>
       )}
       <div className="font-sans text-sm text-[#333333]">{children}</div>
     </div>
@@ -133,7 +131,7 @@ function ImportantBox({
 
 function SummaryBox({ items }: { items: string[] }) {
   return (
-    <div className="bg-[#0D0D0D] text-white p-8 rounded-3xl mb-12">
+    <div className="bg-page text-white p-8 rounded-3xl mb-12">
       <h3
         className="text-xl mb-4"
         style={{ fontFamily: "'UXILeadershipCondensed'", fontWeight: 500 }}
@@ -144,7 +142,7 @@ function SummaryBox({ items }: { items: string[] }) {
         {items.map((item, i) => (
           <li key={i} className="flex items-start gap-3">
             <svg
-              className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#E85520]"
+              className="w-5 h-5 mt-0.5 flex-shrink-0 text-brand"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -195,8 +193,10 @@ export default function PrivacyPolicyPage() {
 
   return (
     <>
+      {/* global nav */}
       <Nav forceSolid />
-      <main className="bg-[#F5F0E8]">
+
+      <main className="bg-cream">
         {/* Hero Section */}
         <section
           ref={heroRef}
@@ -204,13 +204,13 @@ export default function PrivacyPolicyPage() {
         >
           <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
             <Image
-              src="/uxindia-stage.jpg"
+              src="/images/bg/privacy/hero.webp"
               alt="UXINDIA conference"
               fill
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-[#0D0D0D]/85" />
+            <div className="absolute inset-0 bg-page/85" />
           </motion.div>
 
           <div className="relative z-10 max-w-4xl mx-auto px-6 py-16 text-center">
@@ -246,7 +246,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         {/* Content Section */}
-        <section className="py-16 md:py-24 bg-[#F5F0E8]">
+        <section className="py-16 md:py-24 bg-cream">
           <div className="max-w-4xl mx-auto px-6">
             {/* Quick Summary */}
             <AnimatedSection>
@@ -265,7 +265,7 @@ export default function PrivacyPolicyPage() {
             <AnimatedSection delay={100}>
               <div className="bg-white rounded-3xl p-8 mb-16 shadow-sm">
                 <h2
-                  className="text-2xl mb-6 text-[#0D0D0D]"
+                  className="text-2xl mb-6 text-page"
                   style={{
                     fontFamily: "'UXILeadershipCondensed'",
                     fontWeight: 500,
@@ -278,7 +278,7 @@ export default function PrivacyPolicyPage() {
                     <a
                       key={item.id}
                       href={`#${item.id}`}
-                      className="font-sans text-sm text-[#333333]/70 hover:text-[#E85520] transition-colors py-1"
+                      className="font-sans text-sm text-[#333333]/70 hover:text-brand transition-colors py-1"
                     >
                       {i + 1}. {item.title}
                     </a>
@@ -316,7 +316,7 @@ export default function PrivacyPolicyPage() {
                 <ListItem>
                   <Link
                     href="https://www.ux-india.org/"
-                    className="text-[#E85520] hover:underline"
+                    className="text-brand hover:underline"
                   >
                     https://www.ux-india.org/
                   </Link>
@@ -324,7 +324,7 @@ export default function PrivacyPolicyPage() {
                 <ListItem>
                   <Link
                     href="https://2026.ux-india.org/"
-                    className="text-[#E85520] hover:underline"
+                    className="text-brand hover:underline"
                   >
                     https://2026.ux-india.org/
                   </Link>
@@ -353,7 +353,7 @@ export default function PrivacyPolicyPage() {
                     <strong>Contact Email:</strong>{" "}
                     <a
                       href="mailto:team@umo.design"
-                      className="text-[#E85520] hover:underline"
+                      className="text-brand hover:underline"
                     >
                       team@umo.design
                     </a>
@@ -849,7 +849,7 @@ export default function PrivacyPolicyPage() {
                   To exercise any of these rights, please contact us at:{" "}
                   <a
                     href="mailto:team@umo.design"
-                    className="text-[#E85520] hover:underline"
+                    className="text-brand hover:underline"
                   >
                     team@umo.design
                   </a>
@@ -1046,7 +1046,7 @@ export default function PrivacyPolicyPage() {
                   please contact us in advance at{" "}
                   <a
                     href="mailto:team@umo.design"
-                    className="text-[#E85520] hover:underline"
+                    className="text-brand hover:underline"
                   >
                     team@umo.design
                   </a>
@@ -1132,7 +1132,7 @@ export default function PrivacyPolicyPage() {
                 contact us in advance at{" "}
                 <a
                   href="mailto:team@umo.design"
-                  className="text-[#E85520] hover:underline"
+                  className="text-brand hover:underline"
                 >
                   team@umo.design
                 </a>
@@ -1174,7 +1174,7 @@ export default function PrivacyPolicyPage() {
                 For any privacy-related questions, concerns, or requests to
                 exercise your rights, please contact us:
               </p>
-              <div className="bg-[#0D0D0D] text-white p-8 rounded-3xl">
+              <div className="bg-page text-white p-8 rounded-3xl">
                 <h3
                   className="text-2xl mb-4"
                   style={{
@@ -1186,20 +1186,20 @@ export default function PrivacyPolicyPage() {
                 </h3>
                 <div className="space-y-3 font-sans text-base mb-6">
                   <p className="flex items-center gap-3">
-                    <span className="text-[#E85520]">Email:</span>
+                    <span className="text-brand">Email:</span>
                     <a
                       href="mailto:team@umo.design"
-                      className="text-white hover:text-[#E85520] transition-colors"
+                      className="text-white hover:text-brand transition-colors"
                     >
                       team@umo.design
                     </a>
                   </p>
                   <p className="flex items-center gap-3">
-                    <span className="text-[#E85520]">Organization:</span>
+                    <span className="text-brand">Organization:</span>
                     <span>UMO Design Foundation</span>
                   </p>
                   <p className="flex items-center gap-3">
-                    <span className="text-[#E85520]">Address:</span>
+                    <span className="text-brand">Address:</span>
                     <span>Hyderabad, Telangana, India</span>
                   </p>
                 </div>
@@ -1271,11 +1271,11 @@ export default function PrivacyPolicyPage() {
 
             {/* Footer Note */}
             <AnimatedSection delay={200}>
-              <div className="text-center mt-16 pt-12 border-t border-[#0D0D0D]/10">
+              <div className="text-center mt-16 pt-12 border-t border-page/10">
                 <p className="font-sans text-sm text-[#333333]/60 italic mb-2">
                   Thank you for trusting UXINDIA with your personal information.
                 </p>
-                <p className="font-sans text-sm font-semibold text-[#0D0D0D]">
+                <p className="font-sans text-sm font-semibold text-page">
                   UXINDIA 2026 | Design Leadership Week
                 </p>
                 <p className="font-sans text-xs text-[#333333]/50 mt-1">
@@ -1286,6 +1286,8 @@ export default function PrivacyPolicyPage() {
           </div>
         </section>
       </main>
+
+      {/* global footer */}
       <Footer />
     </>
   );

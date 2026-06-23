@@ -1,35 +1,30 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 /* Custom Font - UXI Leadership Condensed */
 @font-face {
-  font-family: 'UXILeadershipCondensed';
-  src: url('/UXILeadershipCondensed.otf') format('opentype');
+  font-family: "UXILeadershipCondensed";
+  src: url("/fonts/UXILeadershipCondensed.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-/* Custom utility for UXI Leadership font */
-.font-leadership {
-  font-family: 'UXILeadershipCondensed', sans-serif;
-}
-
 :root {
   /* UXINDIA26 Brand Tokens */
-  --ink: #0D0D0D;
-  --cream: #F5F0E8;
-  --orange: #E85520;
-  --orange-dark: #E85520;
-  --marigold: #F5C518;
-  --indigo: #2D3580;
-  --rose: #C8365A;
-  --teal: #1A7A6E;
-  --white: #FFFFFF;
+  --ink: #0d0d0d;
+  --cream: #f5f0e8;
+  --orange: #e85520;
+  --orange-dark: #e85520;
+  --marigold: #f5c518;
+  --indigo: #2d3580;
+  --rose: #c8365a;
+  --teal: #1a7a6e;
+  --white: #ffffff;
 
   --background: oklch(0.975 0.008 75);
   --foreground: oklch(0.09 0 0);
-  
+
   /* Dynamic navbar height - approximately 5.5rem on desktop, 4rem on mobile */
   --navbar-height-mobile: 4rem;
   --navbar-height-desktop: 5.5rem;
@@ -101,6 +96,95 @@
   --sidebar-ring: oklch(0.439 0 0);
 }
 
+@theme {
+  --color-page: #0d0d0d;
+  --color-cream: #f5f0e8;
+  --color-brand: #e85520;
+
+  /* TICKETS PAGE ONLY */
+  --color-track-summit: #1b7a6e;
+  --color-track-forum: #f5bf42;
+
+  --color-card-summit: #114f47;
+  --color-card-forum: #dcac3b;
+
+  --color-addon-summit: #0e3d36;
+  --color-addon-forum: #c49a2e;
+
+  --color-text-primary: #f5f4f0;
+  --color-text-on-yellow: #1a1200;
+
+  --color-text-muted-teal: rgba(245, 244, 240, 0.65);
+  --color-text-muted-yellow: rgba(26, 18, 0, 0.6);
+
+  --color-summit-primary: #1b7a6e;
+  --color-summit-border: #2a8f80;
+
+  --color-forum-primary: #f5bf42;
+  --color-forum-border: #e6a817;
+
+  --color-vip-gold: #8b6914;
+  --color-vip-gold-light: #ffe58a;
+}
+
+.font-leadership {
+  font-family: "UXILeadershipCondensed", sans-serif !important;
+}
+
+::selection {
+  background: #e85520;
+  color: #fff;
+}
+
+.tickets-page {
+  --radius-card: 16px;
+}
+
+.tickets-page .accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 200ms ease-out;
+}
+
+.tickets-page .accordion-panel[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.tickets-page .accordion-panel-inner {
+  overflow: hidden;
+}
+
+.tickets-page .chevron-icon {
+  transition: transform 200ms ease-out;
+}
+
+.tickets-page .chevron-icon[data-open="true"] {
+  transform: rotate(180deg);
+}
+
+.tickets-page .vip-card-bg {
+  background: radial-gradient(ellipse at top, #1c1400 0%, #0d0d00 100%);
+  /* border: 1px solid #8b6914; */
+}
+
+.tickets-page .tickets-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    rgba(255, 255, 255, 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.font-uxi {
+  font-family: UXILeadershipCondensed !important;
+  font-weight: 500;
+  font-stretch: condensed;
+}
+
 @layer base {
   * {
     border-color: var(--border);
@@ -116,55 +200,107 @@
 
 /* UXINDIA26 Custom Animations */
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes marquee-reverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes float-up {
-  0% { opacity: 0; transform: translateY(40px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes clip-reveal {
-  0% { clip-path: inset(0 100% 0 0); }
-  100% { clip-path: inset(0 0% 0 0); }
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0% 0 0);
+  }
 }
 
 @keyframes pulse-ring {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.15); opacity: 0.7; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.7;
+  }
 }
 
 @keyframes drift-1 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(15px, -10px) rotate(3deg); }
-  66% { transform: translate(-10px, 15px) rotate(-2deg); }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(15px, -10px) rotate(3deg);
+  }
+  66% {
+    transform: translate(-10px, 15px) rotate(-2deg);
+  }
 }
 
 @keyframes drift-2 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(-20px, 10px) rotate(-4deg); }
-  66% { transform: translate(12px, -18px) rotate(2deg); }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(-20px, 10px) rotate(-4deg);
+  }
+  66% {
+    transform: translate(12px, -18px) rotate(2deg);
+  }
 }
 
 @keyframes orbit-card {
-  0% { transform: translateX(0px); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes float-subtle {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 .animate-marquee {
@@ -213,7 +349,7 @@
 .animate-clip-reveal {
   animation-name: clip-reveal;
   animation-duration: 0.8s;
-  animation-timing-function: cubic-bezier(0.77,0,0.175,1);
+  animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
   animation-fill-mode: forwards;
 }
 
@@ -281,7 +417,7 @@
 
 /* Grain texture overlay */
 .grain-overlay::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
@@ -296,10 +432,14 @@
   overflow: hidden;
 }
 .halftone-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(0,0,0,0.12) 1px, transparent 1px);
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.12) 1px,
+    transparent 1px
+  );
   background-size: 4px 4px;
   z-index: 2;
   pointer-events: none;
@@ -307,6 +447,13 @@
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--cream); }
-::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--orange);
+  border-radius: 2px;
+}

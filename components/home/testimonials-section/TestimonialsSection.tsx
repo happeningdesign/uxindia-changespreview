@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState, useCallback } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useEffect, useRef, useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
@@ -12,7 +12,7 @@ const testimonials = [
     initials: "JF",
     bg: "#FFFFFF",
     textColor: "#0D0D0D",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/joseph-fYz7qq56oZdb3C46vbnywfk1HnYAUa.jpeg",
+    image: "/images/testimonials/joseph-fletcher.jpeg",
   },
   {
     quote:
@@ -22,7 +22,7 @@ const testimonials = [
     initials: "SV",
     bg: "#E85520",
     textColor: "#FFFFFF",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/siriki-mybzZV6IPEXRvShMIaFFXKlm4ttvM5.jpeg",
+    image: "/images/testimonials/siriki-vardhan.jpeg",
   },
   {
     quote:
@@ -32,17 +32,17 @@ const testimonials = [
     initials: "SC",
     bg: "#B8D8C8",
     textColor: "#0D0D0D",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shey-7hYf8l47jT3ffwawvUToqE8Yew4NqY.jpeg",
+    image: "/images/testimonials/shey-cobley.jpeg",
   },
   {
     quote:
       "UXINDIA2025 delivered the perfect spark — deep insights, real stories and future-ready design thinking workshops. Energizing, insightful and unforgettable.",
-    name: "Saraswati Viswanathan",
+    name: "Saraswathi Viswanathan",
     title: "Attendee",
     initials: "SV",
     bg: "#C5B8D8",
     textColor: "#0D0D0D",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/saraswathi-MwtyjSz6KHsg2K8NOXlTO7ktRcAWGX.png",
+    image: "/images/testimonials/saraswathi-viswanathan.png",
   },
   {
     quote:
@@ -52,7 +52,7 @@ const testimonials = [
     initials: "SR",
     bg: "#F5C518",
     textColor: "#0D0D0D",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/srinivas-QcDgkxLJm9qgkVmIE2TxzykPznmaJx.jpg",
+    image: "/images/testimonials/srinivasu.jpg",
   },
   {
     quote:
@@ -62,7 +62,7 @@ const testimonials = [
     initials: "RJ",
     bg: "#6B8E7E",
     textColor: "#FFFFFF",
-    image: "/ronak.png",
+    image: "/images/testimonials/ronak-jogeshwar.png",
   },
   {
     quote:
@@ -72,7 +72,7 @@ const testimonials = [
     initials: "BJ",
     bg: "#4A6FA5",
     textColor: "#FFFFFF",
-    image: "/bryce.png",
+    image: "/images/testimonials/bryce-johnson.png",
   },
   {
     quote:
@@ -82,144 +82,154 @@ const testimonials = [
     initials: "NS",
     bg: "#D4A5A5",
     textColor: "#0D0D0D",
-    image: "/neha.png",
+    image: "images/testimonials//neha-saraswat.png",
   },
-]
+];
 
 const STACK_CONFIGS = [
   { xPx: -12, yPx: 16, angle: -5 },
-  { xPx: -8,  yPx: 12, angle: -3.5 },
-  { xPx: -5,  yPx: 8,  angle: -2 },
-  { xPx: -2,  yPx: 4,  angle: -0.5 },
-  { xPx: 0,   yPx: 0,  angle: 0  },
-  { xPx: 2,   yPx: 4,  angle: 0.5  },
-  { xPx: 5,   yPx: 8,  angle: 2  },
-  { xPx: 8,   yPx: 12, angle: 3.5  },
-]
+  { xPx: -8, yPx: 12, angle: -3.5 },
+  { xPx: -5, yPx: 8, angle: -2 },
+  { xPx: -2, yPx: 4, angle: -0.5 },
+  { xPx: 0, yPx: 0, angle: 0 },
+  { xPx: 2, yPx: 4, angle: 0.5 },
+  { xPx: 5, yPx: 8, angle: 2 },
+  { xPx: 8, yPx: 12, angle: 3.5 },
+];
 
-const CARD_WIDTH = 280
-const CARD_HEIGHT = 340
-const CARD_GAP = 24
-const SCROLL_SPEED = 0.6
-const CONTAINER_HEIGHT = CARD_HEIGHT + 76 // fixed, never changes
+const CARD_WIDTH = 280;
+const CARD_HEIGHT = 340;
+const CARD_GAP = 24;
+const SCROLL_SPEED = 0.6;
+const CONTAINER_HEIGHT = CARD_HEIGHT + 76; // fixed, never changes
 
 export default function TestimonialsSection() {
-  const sectionRef   = useRef<HTMLDivElement>(null)
-  const trackRef     = useRef<HTMLDivElement>(null)
-  const rafRef       = useRef<number>(0)
-  const scrollXRef   = useRef(0)
-  const isPausedRef  = useRef(true) // always start paused
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number>(0);
+  const scrollXRef = useRef(0);
+  const isPausedRef = useRef(true); // always start paused
 
-  const [visible, setVisible]               = useState(false)
-  const [phase, setPhase]                   = useState<"stacked" | "spreading" | "scrolling" | "collapsing">("stacked")
-  const [selectedIndex, setSelectedIndex]   = useState<number | null>(null)
-  const [sectionWidth, setSectionWidth]     = useState(800)
+  const [visible, setVisible] = useState(false);
+  const [phase, setPhase] = useState<
+    "stacked" | "spreading" | "scrolling" | "collapsing"
+  >("stacked");
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [sectionWidth, setSectionWidth] = useState(800);
 
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Intersection observer for entrance animation
   useEffect(() => {
     const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) setVisible(true) },
-      { threshold: 0.1 }
-    )
-    if (sectionRef.current) obs.observe(sectionRef.current)
-    return () => obs.disconnect()
-  }, [])
+      ([e]) => {
+        if (e.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.1 },
+    );
+    if (sectionRef.current) obs.observe(sectionRef.current);
+    return () => obs.disconnect();
+  }, []);
 
   // Measure container width
   useEffect(() => {
-    if (!containerRef.current) return
-    const ro = new ResizeObserver(([e]) => setSectionWidth(e.contentRect.width))
-    ro.observe(containerRef.current)
-    return () => ro.disconnect()
-  }, [])
+    if (!containerRef.current) return;
+    const ro = new ResizeObserver(([e]) =>
+      setSectionWidth(e.contentRect.width),
+    );
+    ro.observe(containerRef.current);
+    return () => ro.disconnect();
+  }, []);
 
   // Lock body scroll when card modal open
   useEffect(() => {
-    document.body.style.overflow = selectedIndex !== null ? "hidden" : ""
-    return () => { document.body.style.overflow = "" }
-  }, [selectedIndex])
+    document.body.style.overflow = selectedIndex !== null ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedIndex]);
 
-  const oneSetWidth = testimonials.length * (CARD_WIDTH + CARD_GAP)
-  const loopedCards = [...testimonials, ...testimonials, ...testimonials]
+  const oneSetWidth = testimonials.length * (CARD_WIDTH + CARD_GAP);
+  const loopedCards = [...testimonials, ...testimonials, ...testimonials];
 
   // RAF scroll loop — starts immediately, isPausedRef controls movement
   const startScrollLoop = useCallback(() => {
-    cancelAnimationFrame(rafRef.current)
+    cancelAnimationFrame(rafRef.current);
     const loop = () => {
       if (!isPausedRef.current && trackRef.current) {
-        scrollXRef.current += SCROLL_SPEED
-        if (scrollXRef.current >= oneSetWidth) scrollXRef.current -= oneSetWidth
-        trackRef.current.style.transform = `translateX(${-scrollXRef.current}px)`
+        scrollXRef.current += SCROLL_SPEED;
+        if (scrollXRef.current >= oneSetWidth)
+          scrollXRef.current -= oneSetWidth;
+        trackRef.current.style.transform = `translateX(${-scrollXRef.current}px)`;
       }
-      rafRef.current = requestAnimationFrame(loop)
-    }
-    rafRef.current = requestAnimationFrame(loop)
-  }, [oneSetWidth])
+      rafRef.current = requestAnimationFrame(loop);
+    };
+    rafRef.current = requestAnimationFrame(loop);
+  }, [oneSetWidth]);
 
-  useEffect(() => () => cancelAnimationFrame(rafRef.current), [])
+  useEffect(() => () => cancelAnimationFrame(rafRef.current), []);
 
   // Spread: staggered positions across section width
-  const totalArrangeWidth = testimonials.length * (CARD_WIDTH + CARD_GAP) - CARD_GAP
+  const totalArrangeWidth =
+    testimonials.length * (CARD_WIDTH + CARD_GAP) - CARD_GAP;
   const arrangeLeft = (i: number) =>
-    sectionWidth / 2 - totalArrangeWidth / 2 + i * (CARD_WIDTH + CARD_GAP)
+    sectionWidth / 2 - totalArrangeWidth / 2 + i * (CARD_WIDTH + CARD_GAP);
 
   const handleDeckClick = (e: React.MouseEvent) => {
-    e.stopPropagation()
-    if (phase !== "stacked") return
+    e.stopPropagation();
+    if (phase !== "stacked") return;
     // Phase 1: Spread cards out
-    setPhase("spreading")
+    setPhase("spreading");
     // Phase 2: After spread animation completes, start scrolling from current visual position
     setTimeout(() => {
       // The spread ends with cards centered — calculate offset so scroll continues seamlessly
       // Cards are spread starting from arrangeLeft(0), which is at the center of the section
       // The track's translateX(0) shows cards from the left edge, so we need to offset
-      const centerOffset = (sectionWidth - totalArrangeWidth) / 2
-      scrollXRef.current = centerOffset > 0 ? 0 : Math.abs(centerOffset)
-      
-      setPhase("scrolling")
-      isPausedRef.current = true  // start paused
-      startScrollLoop()
+      const centerOffset = (sectionWidth - totalArrangeWidth) / 2;
+      scrollXRef.current = centerOffset > 0 ? 0 : Math.abs(centerOffset);
+
+      setPhase("scrolling");
+      isPausedRef.current = true; // start paused
+      startScrollLoop();
       // Release on first mouse move
       const onMove = () => {
-        isPausedRef.current = false
-        window.removeEventListener("mousemove", onMove)
-      }
-      window.addEventListener("mousemove", onMove)
-    }, 1100) // wait for spread animation to fully settle
-  }
+        isPausedRef.current = false;
+        window.removeEventListener("mousemove", onMove);
+      };
+      window.addEventListener("mousemove", onMove);
+    }, 1100); // wait for spread animation to fully settle
+  };
 
   const handleCardClick = (e: React.MouseEvent, i: number) => {
-    e.stopPropagation()
+    e.stopPropagation();
     if (phase === "stacked") {
-      handleDeckClick(e)
+      handleDeckClick(e);
     } else if (phase === "scrolling") {
-      setSelectedIndex(prev => (prev === i ? null : i))
+      setSelectedIndex((prev) => (prev === i ? null : i));
     }
-  }
+  };
 
   const handleCollapse = (e: React.MouseEvent) => {
-    e.stopPropagation()
-    cancelAnimationFrame(rafRef.current)
-    isPausedRef.current = true
-    scrollXRef.current = 0
-    setSelectedIndex(null)
+    e.stopPropagation();
+    cancelAnimationFrame(rafRef.current);
+    isPausedRef.current = true;
+    scrollXRef.current = 0;
+    setSelectedIndex(null);
     // Phase 1: Animate back to spread positions
-    setPhase("collapsing")
+    setPhase("collapsing");
     // Phase 2: After collapse animation completes, return to stacked
     setTimeout(() => {
-      setPhase("stacked")
-    }, 1600)
-  }
+      setPhase("stacked");
+    }, 1600);
+  };
 
   const setPaused = (v: boolean) => {
-    isPausedRef.current = v
-  }
+    isPausedRef.current = v;
+  };
 
   // Card positions — stacked, spreading, or collapsing
   const getCardAnimate = (i: number) => {
-    const stack = STACK_CONFIGS[i]
+    const stack = STACK_CONFIGS[i];
     if (phase === "spreading") {
       // Spread horizontally — same positions as the scrolling marquee start
       return {
@@ -227,7 +237,7 @@ export default function TestimonialsSection() {
         y: 28,
         rotate: 0,
         opacity: 1,
-      }
+      };
     }
     if (phase === "collapsing") {
       // First phase of collapse — cards gather back toward center
@@ -236,7 +246,7 @@ export default function TestimonialsSection() {
         y: stack.yPx + 28,
         rotate: stack.angle,
         opacity: 1,
-      }
+      };
     }
     // Stacked
     return {
@@ -244,8 +254,8 @@ export default function TestimonialsSection() {
       y: stack.yPx + 28,
       rotate: stack.angle,
       opacity: 1,
-    }
-  }
+    };
+  };
 
   // Staggered transition for each card
   const getCardTransition = (i: number) => {
@@ -255,25 +265,25 @@ export default function TestimonialsSection() {
         stiffness: 120,
         damping: 18,
         delay: i * 0.06,
-      }
+      };
     }
     if (phase === "collapsing") {
       // Reverse stagger — outer cards move first, slower and more visible
-      const reverseIndex = testimonials.length - 1 - i
+      const reverseIndex = testimonials.length - 1 - i;
       return {
         type: "spring" as const,
         stiffness: 80,
         damping: 14,
         delay: reverseIndex * 0.1,
-      }
+      };
     }
-    return { type: "spring" as const, stiffness: 200, damping: 28 }
-  }
+    return { type: "spring" as const, stiffness: 200, damping: 28 };
+  };
 
   return (
     <section
       ref={sectionRef}
-      className="bg-[#0D0D0D] py-24 md:py-36 overflow-hidden relative"
+      className="bg-page py-24 md:py-36 overflow-hidden relative"
     >
       {/* Grain overlay */}
       <div
@@ -321,7 +331,10 @@ export default function TestimonialsSection() {
             transition={{ type: "spring", stiffness: 260, damping: 28 }}
             onClick={() => setSelectedIndex(null)}
           >
-            <CardContent t={testimonials[selectedIndex]} shadow="0 40px 80px rgba(0,0,0,0.6)" />
+            <CardContent
+              t={testimonials[selectedIndex]}
+              shadow="0 40px 80px rgba(0,0,0,0.6)"
+            />
           </motion.div>
         )}
       </AnimatePresence>
@@ -333,7 +346,7 @@ export default function TestimonialsSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={visible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="font-sans text-xs text-[#E85520] uppercase tracking-[0.25em] mb-4 block"
+            className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4 block"
           >
             The Community
           </motion.span>
@@ -347,8 +360,7 @@ export default function TestimonialsSection() {
               fontWeight: 500,
             }}
           >
-            From the people{" "}
-            <span className="text-[#E85520]">who were there.</span>
+            From the people <span className="text-brand">who were there.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -359,10 +371,10 @@ export default function TestimonialsSection() {
             {phase === "stacked"
               ? "Click the deck to reveal all cards."
               : phase === "spreading"
-              ? "Spreading..."
-              : phase === "collapsing"
-              ? "Collapsing..."
-              : "Hover to pause · Click a card to read it."}
+                ? "Spreading..."
+                : phase === "collapsing"
+                  ? "Collapsing..."
+                  : "Hover to pause · Click a card to read it."}
           </motion.p>
         </div>
       </div>
@@ -374,10 +386,12 @@ export default function TestimonialsSection() {
         style={{ height: CONTAINER_HEIGHT + 64 }}
       >
         {/* STACKED / SPREADING / COLLAPSING CARDS */}
-        {(phase === "stacked" || phase === "spreading" || phase === "collapsing") && (
+        {(phase === "stacked" ||
+          phase === "spreading" ||
+          phase === "collapsing") && (
           <div className="absolute inset-0">
             {testimonials.map((t, i) => {
-              const isTopCard = i === testimonials.length - 1
+              const isTopCard = i === testimonials.length - 1;
               return (
                 <motion.div
                   key={`stack-${i}`}
@@ -398,14 +412,19 @@ export default function TestimonialsSection() {
                     animate={isTopCard ? { y: [0, -14, 0] } : { y: 0 }}
                     transition={
                       isTopCard
-                        ? { duration: 1.6, repeat: Infinity, repeatDelay: 2, ease: "easeInOut" }
+                        ? {
+                            duration: 1.6,
+                            repeat: Infinity,
+                            repeatDelay: 2,
+                            ease: "easeInOut",
+                          }
                         : { duration: 0 }
                     }
                   >
                     <CardContent t={t} shadow="0 8px 32px rgba(0,0,0,0.3)" />
                   </motion.div>
                 </motion.div>
-              )
+              );
             })}
           </div>
         )}
@@ -426,7 +445,7 @@ export default function TestimonialsSection() {
               }}
             >
               {loopedCards.map((t, i) => {
-                const originalIndex = i % testimonials.length
+                const originalIndex = i % testimonials.length;
                 return (
                   <motion.div
                     key={i}
@@ -440,7 +459,7 @@ export default function TestimonialsSection() {
                   >
                     <CardContent t={t} shadow="0 8px 32px rgba(0,0,0,0.25)" />
                   </motion.div>
-                )
+                );
               })}
             </div>
           </div>
@@ -467,15 +486,15 @@ export default function TestimonialsSection() {
         </AnimatePresence>
       </div>
     </section>
-  )
+  );
 }
 
 function CardContent({
   t,
   shadow,
 }: {
-  t: (typeof testimonials)[0]
-  shadow?: string
+  t: (typeof testimonials)[0];
+  shadow?: string;
 }) {
   return (
     <div
@@ -487,18 +506,26 @@ function CardContent({
         boxShadow: shadow ?? "0 8px 32px rgba(0,0,0,0.2)",
       }}
     >
-      <p className="font-sans text-sm font-medium leading-relaxed" style={{ color: t.textColor }}>
+      <p
+        className="font-sans text-sm font-medium leading-relaxed"
+        style={{ color: t.textColor }}
+      >
         &ldquo;{t.quote}&rdquo;
       </p>
       <div className="flex items-center gap-3 mt-6">
         <div className="w-10 h-10 rounded-full flex-shrink-0 overflow-hidden">
           {t.image ? (
-            <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+            <img
+              src={t.image}
+              alt={t.name}
+              className="w-full h-full object-cover"
+            />
           ) : (
             <div
               className="w-full h-full flex items-center justify-center text-sm font-bold"
               style={{
-                backgroundColor: t.bg === "#FFFFFF" ? "#E85520" : `${t.textColor}22`,
+                backgroundColor:
+                  t.bg === "#FFFFFF" ? "#E85520" : `${t.textColor}22`,
                 color: t.bg === "#FFFFFF" ? "#FFFFFF" : t.textColor,
               }}
             >
@@ -507,14 +534,20 @@ function CardContent({
           )}
         </div>
         <div>
-          <p className="font-sans text-sm font-semibold leading-tight" style={{ color: t.textColor }}>
+          <p
+            className="font-sans text-sm font-semibold leading-tight"
+            style={{ color: t.textColor }}
+          >
             {t.name}
           </p>
-          <p className="font-sans text-xs leading-tight mt-0.5" style={{ color: `${t.textColor}99` }}>
+          <p
+            className="font-sans text-xs leading-tight mt-0.5"
+            style={{ color: `${t.textColor}99` }}
+          >
             {t.title}
           </p>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -30,7 +30,7 @@ model SpeakerSubmission {
   speakerPhone      String
   speakerTitle      String
   speakerBio        String
-  speakerPhotoUrl   String
+  speakerPhotoUrl   String?
 
   speakerLinkedin   String?
   speakerWebsite    String?
@@ -40,7 +40,7 @@ model SpeakerSubmission {
   experience        String
   speakingExp       String
   pastTalks         String?
-  presentationLink  String
+  presentationLink  String?
   recordingLink     String?
 
   // Extras

@@ -2,14 +2,16 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import Nav from "@/components/global/nav/Nav";
-import Footer from "@/components/global/footer/Footer";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordian/Accordion";
+
+// Global Imports
+import Nav from "@/components/global/nav/Nav";
+import Footer from "@/components/global/footer/Footer";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -19,35 +21,55 @@ const benefits = [
     title: "Better Leadership Capability",
     description:
       "Attendees gain practical insights into leading teams, influencing stakeholders, managing change, and building high-performing design organisations.",
-    outcomes: ["Stronger leadership pipeline", "Better decision-making", "Improved cross-functional collaboration"],
+    outcomes: [
+      "Stronger leadership pipeline",
+      "Better decision-making",
+      "Improved cross-functional collaboration",
+    ],
   },
   {
     number: "02",
     title: "AI & Emerging Technology Readiness",
     description:
       "Learn how leading organisations are integrating AI into design, research, product development, and customer experience.",
-    outcomes: ["Increased productivity", "Faster innovation cycles", "Better adoption of AI-enabled workflows"],
+    outcomes: [
+      "Increased productivity",
+      "Faster innovation cycles",
+      "Better adoption of AI-enabled workflows",
+    ],
   },
   {
     number: "03",
     title: "Improved Customer Experience",
     description:
       "Global case studies and proven frameworks help teams build products and services that better meet customer needs.",
-    outcomes: ["Higher customer satisfaction", "Better product adoption", "Increased business value"],
+    outcomes: [
+      "Higher customer satisfaction",
+      "Better product adoption",
+      "Increased business value",
+    ],
   },
   {
     number: "04",
     title: "Knowledge Multiplier Effect",
     description:
       "One attendee can share insights, frameworks, and best practices with the broader team through internal presentations and workshops.",
-    outcomes: ["Team-wide learning", "Higher return on training investment", "Continuous capability building"],
+    outcomes: [
+      "Team-wide learning",
+      "Higher return on training investment",
+      "Continuous capability building",
+    ],
   },
   {
     number: "05",
     title: "Industry Benchmarking",
     description:
       "Learn how leading global organisations solve challenges related to product strategy, innovation, research, design operations, and leadership.",
-    outcomes: ["Better strategic planning", "Adoption of proven practices", "Reduced learning curve"],
+    outcomes: [
+      "Better strategic planning",
+      "Adoption of proven practices",
+      "Reduced learning curve",
+    ],
   },
 ];
 
@@ -164,11 +186,12 @@ export default function ConvinceYourManagerClient() {
               className="text-5xl md:text-7xl lg:text-[96px] text-white leading-[0.95] tracking-tight mb-8 text-balance"
               style={{ fontFamily: "'UXILeadershipCondensed'" }}
             >
-              Convince Your{" "}
-              <span className="text-[#E85520]">Manager</span>
+              Convince Your <span className="text-[#E85520]">Manager</span>
             </h1>
             <p className="font-sans text-lg md:text-xl text-white/60 max-w-2xl leading-relaxed mb-10">
-              Everything you need to make the case for attending UXINDIA 2026 — a business case, a ready-to-send approval letter, and answers to every question your manager might ask.
+              Everything you need to make the case for attending UXINDIA 2026 —
+              a business case, a ready-to-send approval letter, and answers to
+              every question your manager might ask.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <a
@@ -176,27 +199,54 @@ export default function ConvinceYourManagerClient() {
                 className="inline-flex items-center gap-3 border border-[#E85520] text-[#E85520] font-sans text-base font-semibold px-8 py-4 rounded-full hover:bg-[#E85520]/10 transition-colors"
               >
                 Buy Your Passes
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
               <a
-                href="/downloads/leadership-approval-letter.pdf"
+                href="/pdfs/leadership-approval-letter.pdf"
                 download
                 className="inline-flex items-center gap-3 border border-white/30 text-white font-sans text-base font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
               >
                 Leadership Summit Letter
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
                 </svg>
               </a>
               <a
-                href="/downloads/rising-leaders-approval-letter.pdf"
+                href="/pdfs/rising-leaders-approval-letter.pdf"
                 download
                 className="inline-flex items-center gap-3 border border-white/30 text-white font-sans text-base font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
               >
                 Rising Leaders Forum Letter
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
                 </svg>
               </a>
@@ -204,7 +254,10 @@ export default function ConvinceYourManagerClient() {
           </FadeIn>
 
           {/* Stats row */}
-          <FadeIn delay={0.2} className="mt-16 md:mt-20 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <FadeIn
+            delay={0.2}
+            className="mt-16 md:mt-20 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-8"
+          >
             {[
               { value: "22+", label: "Years of Legacy" },
               { value: "5", label: "Days of Learning" },
@@ -218,7 +271,9 @@ export default function ConvinceYourManagerClient() {
                 >
                   {stat.value}
                 </p>
-                <p className="font-sans text-sm text-white/50 leading-snug">{stat.label}</p>
+                <p className="font-sans text-sm text-white/50 leading-snug">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </FadeIn>
@@ -236,7 +291,8 @@ export default function ConvinceYourManagerClient() {
               className="text-4xl md:text-6xl lg:text-7xl text-[#0D0D0D] leading-[0.95] text-balance"
               style={{ fontFamily: "'UXILeadershipCondensed'" }}
             >
-              What Your Organisation <span className="text-[#E85520]">Gains</span>
+              What Your Organisation{" "}
+              <span className="text-[#E85520]">Gains</span>
             </h2>
           </FadeIn>
 
@@ -273,7 +329,9 @@ export default function ConvinceYourManagerClient() {
                     {benefit.outcomes.map((outcome) => (
                       <div key={outcome} className="flex items-center gap-2.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#E85520] shrink-0" />
-                        <span className="font-sans text-sm text-[#0D0D0D]/70">{outcome}</span>
+                        <span className="font-sans text-sm text-[#0D0D0D]/70">
+                          {outcome}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -297,10 +355,13 @@ export default function ConvinceYourManagerClient() {
                 className="text-4xl md:text-6xl text-white leading-[0.95] mb-6 text-balance"
                 style={{ fontFamily: "'UXILeadershipCondensed'" }}
               >
-                What Your Employee <span className="text-[#E85520]">Will Learn</span>
+                What Your Employee{" "}
+                <span className="text-[#E85520]">Will Learn</span>
               </h2>
               <p className="font-sans text-base text-white/50 leading-relaxed">
-                The programme spans leadership, technology, strategy, and craft — designed to build capability that transfers directly back to the organisation.
+                The programme spans leadership, technology, strategy, and craft
+                — designed to build capability that transfers directly back to
+                the organisation.
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>
@@ -311,7 +372,9 @@ export default function ConvinceYourManagerClient() {
                     className="flex items-center gap-3 border border-white/10 rounded-xl px-4 py-3.5 bg-white/[0.04] hover:bg-white/[0.07] transition-colors"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#E85520] shrink-0" />
-                    <span className="font-sans text-sm text-white/80 leading-snug">{topic}</span>
+                    <span className="font-sans text-sm text-white/80 leading-snug">
+                      {topic}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -332,10 +395,13 @@ export default function ConvinceYourManagerClient() {
                 className="text-4xl md:text-6xl text-white leading-[0.95] mb-6 text-balance"
                 style={{ fontFamily: "'UXILeadershipCondensed'" }}
               >
-                The Knowledge Comes <span className="text-[#E85520]">Back to You</span>
+                The Knowledge Comes{" "}
+                <span className="text-[#E85520]">Back to You</span>
               </h2>
               <p className="font-sans text-base text-white/60 leading-relaxed">
-                Following the conference, the attendee will ensure the benefits extend beyond one individual and create lasting value for the organisation.
+                Following the conference, the attendee will ensure the benefits
+                extend beyond one individual and create lasting value for the
+                organisation.
               </p>
             </FadeIn>
             <FadeIn delay={0.1} className="flex flex-col gap-4">
@@ -371,10 +437,12 @@ export default function ConvinceYourManagerClient() {
               className="text-4xl md:text-6xl lg:text-7xl text-white leading-[0.95] mb-5 text-balance"
               style={{ fontFamily: "'UXILeadershipCondensed'" }}
             >
-              Download Your Approval <span className="text-[#E85520]">Letter</span>
+              Download Your Approval{" "}
+              <span className="text-[#E85520]">Letter</span>
             </h2>
             <p className="font-sans text-base text-white/50 max-w-xl mx-auto leading-relaxed">
-              A professionally written, ready-to-send letter tailored to each event. Personalise it with your name and send it to your manager.
+              A professionally written, ready-to-send letter tailored to each
+              event. Personalise it with your name and send it to your manager.
             </p>
           </FadeIn>
 
@@ -392,22 +460,33 @@ export default function ConvinceYourManagerClient() {
                   Leadership Summit
                 </h3>
                 <p className="font-sans text-sm text-white/50 leading-relaxed">
-                  For attending the UXINDIA 2026 Leadership Summit, 23–25 September, Bengaluru. Covers leadership capability, AI strategy, and ROI for your organisation.
+                  For attending the UXINDIA 2026 Leadership Summit, 23–25
+                  September, Bengaluru. Covers leadership capability, AI
+                  strategy, and ROI for your organisation.
                 </p>
               </div>
               <div className="mt-auto pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="/downloads/leadership-approval-letter.pdf"
+                  href="/pdfs/leadership-approval-letter.pdf"
                   download
                   className="flex-1 inline-flex items-center justify-center gap-2.5 bg-[#E85520] text-white font-sans text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-[#d04a1a] transition-colors"
                 >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
                   </svg>
                   Download PDF
                 </a>
                 <a
-                  href="/downloads/leadership-approval-letter.pdf"
+                  href="/pdfs/leadership-approval-letter.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 inline-flex items-center justify-center gap-2.5 border border-white/20 text-white/80 font-sans text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-white/10 transition-colors"
@@ -430,22 +509,33 @@ export default function ConvinceYourManagerClient() {
                   Rising Leaders Forum
                 </h3>
                 <p className="font-sans text-sm text-white/50 leading-relaxed">
-                  For attending the UXINDIA 2026 Rising Leaders Forum, 26–27 September, Bengaluru. Covers leadership development, collaboration, and career growth ROI.
+                  For attending the UXINDIA 2026 Rising Leaders Forum, 26–27
+                  September, Bengaluru. Covers leadership development,
+                  collaboration, and career growth ROI.
                 </p>
               </div>
               <div className="mt-auto pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="/downloads/rising-leaders-approval-letter.pdf"
+                  href="/pdfs/rising-leaders-approval-letter.pdf"
                   download
                   className="flex-1 inline-flex items-center justify-center gap-2.5 bg-[#E85520] text-white font-sans text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-[#d04a1a] transition-colors"
                 >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
                     <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
                   </svg>
                   Download PDF
                 </a>
                 <a
-                  href="/downloads/rising-leaders-approval-letter.pdf"
+                  href="/pdfs/rising-leaders-approval-letter.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 inline-flex items-center justify-center gap-2.5 border border-white/20 text-white/80 font-sans text-sm font-semibold px-6 py-3.5 rounded-full hover:bg-white/10 transition-colors"
@@ -469,12 +559,18 @@ export default function ConvinceYourManagerClient() {
               className="text-4xl md:text-6xl lg:text-7xl text-[#0D0D0D] leading-[0.95] text-balance"
               style={{ fontFamily: "'UXILeadershipCondensed'" }}
             >
-              Questions Your Manager <span className="text-[#E85520]">Might Ask</span>
+              Questions Your Manager{" "}
+              <span className="text-[#E85520]">Might Ask</span>
             </h2>
           </FadeIn>
 
           <FadeIn delay={0.15}>
-            <Accordion type="single" collapsible defaultValue="faq-1" className="w-full">
+            <Accordion
+              type="single"
+              collapsible
+              defaultValue="faq-1"
+              className="w-full"
+            >
               {faqItems.map((item) => (
                 <AccordionItem
                   key={item.id}
@@ -493,7 +589,10 @@ export default function ConvinceYourManagerClient() {
           </FadeIn>
 
           {/* Final CTA */}
-          <FadeIn delay={0.2} className="mt-16 md:mt-20 border border-[#0D0D0D]/10 rounded-2xl p-8 md:p-12 bg-white/60 text-center">
+          <FadeIn
+            delay={0.2}
+            className="mt-16 md:mt-20 border border-[#0D0D0D]/10 rounded-2xl p-8 md:p-12 bg-white/60 text-center"
+          >
             <p
               className="text-2xl md:text-3xl text-[#0D0D0D] mb-3 leading-tight text-balance"
               style={{ fontFamily: "'UXILeadershipCondensed'" }}
@@ -501,7 +600,9 @@ export default function ConvinceYourManagerClient() {
               The cost of attending lasts a few days.
             </p>
             <p className="font-sans text-base text-[#0D0D0D]/60 max-w-lg mx-auto leading-relaxed mb-8">
-              The ideas, leadership skills, industry connections, and strategic perspectives gained can influence teams, products, and organisations for years to come.
+              The ideas, leadership skills, industry connections, and strategic
+              perspectives gained can influence teams, products, and
+              organisations for years to come.
             </p>
             <div className="flex justify-center">
               <a
@@ -511,7 +612,16 @@ export default function ConvinceYourManagerClient() {
                 className="inline-flex items-center justify-center gap-3 border border-[#E85520] text-[#E85520] font-sans text-base font-semibold px-8 py-4 rounded-full hover:bg-[#E85520]/10 transition-colors"
               >
                 Buy Your Passes
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>

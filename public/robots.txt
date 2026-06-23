@@ -1,0 +1,50 @@
+# robots.txt for https://www.ux-india.org/
+# UXINDIA — Design Leadership Week 2026
+# Organised by UMO Design Foundation
+
+# ─── All crawlers (default) ──────────────────────────────────────────────────
+User-agent: *
+Allow: /
+Disallow: /draft/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# ─── AI search & answer engines (allow for discoverability) ──────────────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# ─── Pure training scrapers (no search product, no discoverability value) ────
+User-agent: CCBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+# ─── Sitemap ──────────────────────────────────────────────────────────────────
+Sitemap: https://www.ux-india.org/sitemap.xml

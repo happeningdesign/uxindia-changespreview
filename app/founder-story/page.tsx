@@ -50,10 +50,10 @@ function QuoteBlock({
 }) {
   return (
     <blockquote
-      className={`relative pl-6 border-l-4 border-[#E85520] ${className}`}
+      className={`relative pl-6 border-l-4 border-brand ${className}`}
     >
       <p
-        className="text-[#0D0D0D] leading-relaxed italic"
+        className="text-page leading-relaxed italic"
         style={{
           fontFamily: "'UXILeadershipCondensed'",
           fontWeight: 400,
@@ -115,24 +115,24 @@ export default function FounderStoryPage() {
   return (
     <>
       <Nav forceSolid />
-      <main className="bg-[#F5F0E8]">
+      <main className="bg-cream">
         {/* Hero Section */}
         <section
           ref={heroRef}
-          className="relative min-h-screen overflow-hidden bg-[#0D0D0D] pt-[100px]"
+          className="relative min-h-screen overflow-hidden bg-page pt-[100px]"
         >
           <motion.div
             style={{ y: bgY }}
             className="absolute inset-0 z-0 w-full h-full"
           >
             <Image
-              src="/kaladhar-bapu.jpg"
+              src="/images/bg/founder-story/hero.jpg"
               alt="Kaladhar Bapu speaking at UXINDIA conference"
               fill
               className="object-cover object-center opacity-50"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/70 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-page via-page/70 to-transparent" />
           </motion.div>
 
           <div className="relative z-10 min-h-[calc(100vh-100px)] flex flex-col justify-end pb-24 md:pb-32 px-6">
@@ -141,7 +141,7 @@ export default function FounderStoryPage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="font-sans text-xs text-[#E85520] uppercase tracking-[0.25em] mb-4"
+                className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4"
               >
                 Founder & Chair
               </motion.p>
@@ -162,7 +162,7 @@ export default function FounderStoryPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.45 }}
-                className="font-sans text-lg md:text-xl text-[#E85520] mb-6"
+                className="font-sans text-lg md:text-xl text-brand mb-6"
               >
                 Design Leader. Design Activist. Champion of UX in India.
               </motion.p>
@@ -193,14 +193,14 @@ export default function FounderStoryPage() {
         </section>
 
         {/* Origin Story */}
-        <section className="py-24 md:py-32 bg-[#F5F0E8]">
+        <section className="py-24 md:py-32 bg-cream">
           <div className="max-w-4xl mx-auto px-6">
             <AnimatedSection>
-              <p className="font-sans text-xs text-[#E85520] uppercase tracking-[0.25em] mb-4">
+              <p className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4">
                 The Journey
               </p>
               <h2
-                className="text-[#0D0D0D] leading-[1.08] mb-8"
+                className="text-page leading-[1.08] mb-8"
                 style={{
                   fontFamily: "'UXILeadershipCondensed'",
                   fontWeight: 500,
@@ -212,7 +212,7 @@ export default function FounderStoryPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={100}>
-              <p className="font-sans text-base md:text-lg text-[#0D0D0D]/70 leading-relaxed mb-6">
+              <p className="font-sans text-base md:text-lg text-page/70 leading-relaxed mb-6">
                 Kaladhar Bapu&apos;s journey with design began in Amalapuram,
                 Andhra Pradesh, where he was born — and took root in Hyderabad,
                 where he grew up. From his school years at Sisu Vihar, ZPP High
@@ -224,7 +224,7 @@ export default function FounderStoryPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={150}>
-              <p className="font-sans text-base md:text-lg text-[#0D0D0D]/70 leading-relaxed mb-6">
+              <p className="font-sans text-base md:text-lg text-page/70 leading-relaxed mb-6">
                 He pursued Industrial Design at IIT Bombay, where he discovered
                 design as both a creative and strategic discipline. He later
                 studied Strategic Design Management at Pratt Institute, New York
@@ -240,7 +240,7 @@ export default function FounderStoryPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={250}>
-              <p className="font-sans text-base md:text-lg text-[#0D0D0D]/70 leading-relaxed mb-6">
+              <p className="font-sans text-base md:text-lg text-page/70 leading-relaxed mb-6">
                 His career in UX began when he was recruited straight out of IIT
                 Bombay by BaaN ERP, a Dutch enterprise company, as a Usability
                 Engineer — at a time when the concept of usability was virtually
@@ -251,7 +251,7 @@ export default function FounderStoryPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={300}>
-              <p className="font-sans text-base md:text-lg text-[#0D0D0D]/70 leading-relaxed">
+              <p className="font-sans text-base md:text-lg text-page/70 leading-relaxed">
                 His father — an artist and admirer of legendary filmmaker Bapu —
                 named him Kaladhar Bapu, a name he describes as both an
                 inspiration and a lifelong reminder to live with creativity and
@@ -262,10 +262,10 @@ export default function FounderStoryPage() {
         </section>
 
         {/* What He Built */}
-        <section className="py-24 md:py-32 bg-[#0D0D0D]">
+        <section className="py-24 md:py-32 bg-page">
           <div className="max-w-6xl mx-auto px-6">
             <AnimatedSection>
-              <p className="font-sans text-xs text-[#E85520] uppercase tracking-[0.25em] mb-4">
+              <p className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4">
                 Institutions & Impact
               </p>
               <h2
@@ -284,7 +284,7 @@ export default function FounderStoryPage() {
               <AnimatedSection delay={100}>
                 <div className="bg-white/5 rounded-2xl p-8 h-full hover:bg-white/10 transition-colors duration-300">
                   <h3
-                    className="text-[#E85520] mb-3"
+                    className="text-brand mb-3"
                     style={{
                       fontFamily: "'UXILeadershipCondensed'",
                       fontWeight: 500,
@@ -308,7 +308,7 @@ export default function FounderStoryPage() {
               <AnimatedSection delay={150}>
                 <div className="bg-white/5 rounded-2xl p-8 h-full hover:bg-white/10 transition-colors duration-300">
                   <h3
-                    className="text-[#E85520] mb-3"
+                    className="text-brand mb-3"
                     style={{
                       fontFamily: "'UXILeadershipCondensed'",
                       fontWeight: 500,
@@ -330,7 +330,7 @@ export default function FounderStoryPage() {
               <AnimatedSection delay={200}>
                 <div className="bg-white/5 rounded-2xl p-8 h-full hover:bg-white/10 transition-colors duration-300">
                   <h3
-                    className="text-[#E85520] mb-3"
+                    className="text-brand mb-3"
                     style={{
                       fontFamily: "'UXILeadershipCondensed'",
                       fontWeight: 500,
@@ -349,7 +349,7 @@ export default function FounderStoryPage() {
               <AnimatedSection delay={250}>
                 <div className="bg-white/5 rounded-2xl p-8 h-full hover:bg-white/10 transition-colors duration-300">
                   <h3
-                    className="text-[#E85520] mb-3"
+                    className="text-brand mb-3"
                     style={{
                       fontFamily: "'UXILeadershipCondensed'",
                       fontWeight: 500,
@@ -372,7 +372,7 @@ export default function FounderStoryPage() {
         </section>
 
         {/* Quote Break */}
-        <section className="py-20 md:py-28 bg-[#E85520]">
+        <section className="py-20 md:py-28 bg-brand">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <AnimatedSection>
               <p
@@ -391,14 +391,14 @@ export default function FounderStoryPage() {
         </section>
 
         {/* Initiatives */}
-        <section className="py-24 md:py-32 bg-[#F5F0E8]">
+        <section className="py-24 md:py-32 bg-cream">
           <div className="max-w-5xl mx-auto px-6">
             <AnimatedSection>
-              <p className="font-sans text-xs text-[#E85520] uppercase tracking-[0.25em] mb-4">
+              <p className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4">
                 Pioneering Change
               </p>
               <h2
-                className="text-[#0D0D0D] leading-[1.08] mb-12"
+                className="text-page leading-[1.08] mb-12"
                 style={{
                   fontFamily: "'UXILeadershipCondensed'",
                   fontWeight: 500,
@@ -413,12 +413,12 @@ export default function FounderStoryPage() {
               {initiatives.map((item, i) => (
                 <AnimatedSection key={i} delay={i * 80}>
                   <div className="group flex items-start gap-4 p-5 rounded-xl bg-white/50 hover:bg-white transition-colors duration-300">
-                    <div className="w-2 h-2 rounded-full bg-[#E85520] mt-2.5 shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-brand mt-2.5 shrink-0" />
                     <div>
-                      <h3 className="font-sans font-semibold text-[#0D0D0D] mb-1">
+                      <h3 className="font-sans font-semibold text-page mb-1">
                         {item.name}
                       </h3>
-                      <p className="font-sans text-sm text-[#0D0D0D]/60 leading-relaxed">
+                      <p className="font-sans text-sm text-page/60 leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -428,7 +428,7 @@ export default function FounderStoryPage() {
             </div>
 
             <AnimatedSection delay={450}>
-              <p className="font-sans text-sm text-[#0D0D0D]/50 mt-8 italic">
+              <p className="font-sans text-sm text-page/50 mt-8 italic">
                 Earlier programs: TechEase, iINNOVATE, Boycott Bad Designs,
                 World Usability Day — seeding the design awareness movement in
                 India.
@@ -455,7 +455,7 @@ export default function FounderStoryPage() {
                 Vision 2030
               </h2>
               <p
-                className="text-[#E85520] leading-[1.1] mb-12"
+                className="text-brand leading-[1.1] mb-12"
                 style={{
                   fontFamily: "'UXILeadershipCondensed'",
                   fontWeight: 500,
@@ -471,7 +471,7 @@ export default function FounderStoryPage() {
               {visionMissions.map((mission, i) => (
                 <AnimatedSection key={i} delay={i * 100}>
                   <div className="bg-white/10 rounded-2xl p-6 h-full hover:bg-white/15 transition-colors duration-300">
-                    <div className="w-10 h-10 rounded-full bg-[#E85520] flex items-center justify-center text-white font-bold mb-4">
+                    <div className="w-10 h-10 rounded-full bg-brand flex items-center justify-center text-white font-bold mb-4">
                       {i + 1}
                     </div>
                     <h3
@@ -495,14 +495,14 @@ export default function FounderStoryPage() {
         </section>
 
         {/* Philosophy */}
-        <section className="py-24 md:py-32 bg-[#F5F0E8]">
+        <section className="py-24 md:py-32 bg-cream">
           <div className="max-w-4xl mx-auto px-6">
             <AnimatedSection>
-              <p className="font-sans text-xs text-[#E85520] uppercase tracking-[0.25em] mb-4">
+              <p className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4">
                 Philosophy & Mission
               </p>
               <h2
-                className="text-[#0D0D0D] leading-[1.08] mb-8"
+                className="text-page leading-[1.08] mb-8"
                 style={{
                   fontFamily: "'UXILeadershipCondensed'",
                   fontWeight: 500,
@@ -514,7 +514,7 @@ export default function FounderStoryPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={100}>
-              <p className="font-sans text-base md:text-lg text-[#0D0D0D]/70 leading-relaxed mb-6">
+              <p className="font-sans text-base md:text-lg text-page/70 leading-relaxed mb-6">
                 Core belief: &ldquo;Good Design for Better Living&rdquo; —
                 design as a catalyst for social and economic transformation.
                 Focus areas include inclusivity, accessibility, ethical design,
@@ -523,7 +523,7 @@ export default function FounderStoryPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={150}>
-              <p className="font-sans text-base md:text-lg text-[#0D0D0D]/70 leading-relaxed mb-8">
+              <p className="font-sans text-base md:text-lg text-page/70 leading-relaxed mb-8">
                 Kaladhar actively mentors and incubates design-led startups in
                 healthcare, education, sustainability, and AI.
               </p>
@@ -539,11 +539,11 @@ export default function FounderStoryPage() {
         </section>
 
         {/* Personal Side */}
-        <section className="py-24 md:py-32 bg-[#0D0D0D]">
+        <section className="py-24 md:py-32 bg-page">
           <div className="max-w-5xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
               <AnimatedSection>
-                <p className="font-sans text-xs text-[#E85520] uppercase tracking-[0.25em] mb-4">
+                <p className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4">
                   The Human Side
                 </p>
                 <h2
@@ -587,7 +587,7 @@ export default function FounderStoryPage() {
                   Awards & Recognition
                 </p>
                 <div className="space-y-6">
-                  <div className="border-l-2 border-[#E85520] pl-5">
+                  <div className="border-l-2 border-brand pl-5">
                     <p className="font-sans text-sm text-white/90 font-medium mb-1">
                       Grand Prize Winner
                     </p>
@@ -597,7 +597,7 @@ export default function FounderStoryPage() {
                       Things.
                     </p>
                   </div>
-                  <div className="border-l-2 border-[#E85520] pl-5">
+                  <div className="border-l-2 border-brand pl-5">
                     <p className="font-sans text-sm text-white/90 font-medium mb-1">
                       Gold Star Award
                     </p>
@@ -605,7 +605,7 @@ export default function FounderStoryPage() {
                       Outstanding Contribution & High Performance — Microsoft
                     </p>
                   </div>
-                  <div className="border-l-2 border-[#E85520] pl-5">
+                  <div className="border-l-2 border-brand pl-5">
                     <p className="font-sans text-sm text-white/90 font-medium mb-1">
                       Featured in Global Indian
                     </p>
@@ -613,7 +613,7 @@ export default function FounderStoryPage() {
                       Cover Story (Oct 2025)
                     </p>
                   </div>
-                  <div className="border-l-2 border-[#E85520] pl-5">
+                  <div className="border-l-2 border-brand pl-5">
                     <p className="font-sans text-sm text-white/90 font-medium mb-1">
                       Alumni
                     </p>
@@ -629,11 +629,11 @@ export default function FounderStoryPage() {
         </section>
 
         {/* Connect Section */}
-        <section className="py-20 md:py-28 bg-[#F5F0E8]">
+        <section className="py-20 md:py-28 bg-cream">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <AnimatedSection>
               <h2
-                className="text-[#0D0D0D] leading-[1.08] mb-8"
+                className="text-page leading-[1.08] mb-8"
                 style={{
                   fontFamily: "'UXILeadershipCondensed'",
                   fontWeight: 500,
@@ -681,8 +681,8 @@ export default function FounderStoryPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={150}>
-              <div className="mt-12 pt-12 border-t border-[#0D0D0D]/10">
-                <p className="font-sans text-xs text-[#0D0D0D]/40 uppercase tracking-[0.15em] mb-4">
+              <div className="mt-12 pt-12 border-t border-page/10">
+                <p className="font-sans text-xs text-page/40 uppercase tracking-[0.15em] mb-4">
                   Organizations
                 </p>
                 <div className="flex flex-wrap justify-center gap-4 text-sm">
@@ -690,52 +690,52 @@ export default function FounderStoryPage() {
                     href="https://ux-india.org"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-sans text-[#0D0D0D]/60 hover:text-[#E85520] transition-colors"
+                    className="font-sans text-page/60 hover:text-brand transition-colors"
                   >
                     ux-india.org
                   </Link>
-                  <span className="text-[#0D0D0D]/20">|</span>
+                  <span className="text-page/20">|</span>
                   <Link
                     href="https://umo.design"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-sans text-[#0D0D0D]/60 hover:text-[#E85520] transition-colors"
+                    className="font-sans text-page/60 hover:text-brand transition-colors"
                   >
                     umo.design
                   </Link>
-                  <span className="text-[#0D0D0D]/20">|</span>
+                  <span className="text-page/20">|</span>
                   <Link
                     href="https://1mw.umo.design"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-sans text-[#0D0D0D]/60 hover:text-[#E85520] transition-colors"
+                    className="font-sans text-page/60 hover:text-brand transition-colors"
                   >
                     1mw.umo.design
                   </Link>
-                  <span className="text-[#0D0D0D]/20">|</span>
+                  <span className="text-page/20">|</span>
                   <Link
                     href="https://grads.umo.design"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-sans text-[#0D0D0D]/60 hover:text-[#E85520] transition-colors"
+                    className="font-sans text-page/60 hover:text-brand transition-colors"
                   >
                     grads.umo.design
                   </Link>
-                  <span className="text-[#0D0D0D]/20">|</span>
+                  <span className="text-page/20">|</span>
                   <Link
                     href="https://dxs.umo.design"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-sans text-[#0D0D0D]/60 hover:text-[#E85520] transition-colors"
+                    className="font-sans text-page/60 hover:text-brand transition-colors"
                   >
                     dxs.umo.design
                   </Link>
-                  <span className="text-[#0D0D0D]/20">|</span>
+                  <span className="text-page/20">|</span>
                   <Link
                     href="https://happening.design"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-sans text-[#0D0D0D]/60 hover:text-[#E85520] transition-colors"
+                    className="font-sans text-page/60 hover:text-brand transition-colors"
                   >
                     happening.design
                   </Link>

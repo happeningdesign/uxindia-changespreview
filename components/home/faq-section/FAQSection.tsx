@@ -55,13 +55,13 @@ export default function FAQSection() {
           className="text-center mb-12 md:mb-16"
         >
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl text-[#0D0D0D] leading-[1.1]"
+            className="text-4xl md:text-5xl lg:text-6xl text-page leading-[1.1]"
             style={{
               fontFamily: "'UXILeadershipCondensed'",
               fontWeight: 500,
             }}
           >
-            Questions Before You <span className="text-[#E85520]">Commit?</span>
+            Questions Before You <span className="text-brand">Commit?</span>
           </h2>
         </motion.div>
 
@@ -81,12 +81,12 @@ export default function FAQSection() {
               <AccordionItem
                 key={item.id}
                 value={item.id}
-                className="border-b border-[#0D0D0D]/10 last:border-b-0"
+                className="border-b border-page/10 last:border-b-0"
               >
-                <AccordionTrigger className="py-6 text-left text-lg md:text-xl font-semibold text-[#0D0D0D] hover:no-underline [&[data-state=open]>svg]:rotate-180 [&>svg]:text-[#E85520]">
+                <AccordionTrigger className="py-6 text-left text-lg md:text-xl font-semibold text-page hover:no-underline [&[data-state=open]>svg]:rotate-180 [&>svg]:text-brand">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-[#0D0D0D]/60 text-base md:text-lg leading-relaxed pb-6">
+                <AccordionContent className="text-page/60 text-base md:text-lg leading-relaxed pb-6">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>

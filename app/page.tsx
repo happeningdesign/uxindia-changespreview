@@ -1,4 +1,8 @@
+// Global Components
 import Nav from "@/components/global/nav/Nav";
+import Footer from "@/components/global/footer/Footer";
+
+// Page Components
 import Hero from "@/components/home/hero/Hero";
 import SocialProofTicker from "@/components/home/social-proof-ticker/SocialProofTicker";
 import MarqueeBanner from "@/components/home/marquee-banner/MarqueeBanner";
@@ -12,12 +16,14 @@ import SponsorsSection from "@/components/home/sponsors-section/SponsorsSection"
 import VenueSection from "@/components/home/venue-section/VenueSection";
 import ConvinceManagerBanner from "@/components/home/convince-manager-banner/ConvinceManagerBanner";
 import FAQSection from "@/components/home/faq-section/FAQSection";
-import Footer from "@/components/global/footer/Footer";
 
 export default function Home() {
   return (
     <main>
+      {/* global nav */}
       <Nav />
+
+      {/* homepage body */}
       <Hero />
       <SocialProofTicker />
       <MarqueeBanner />
@@ -31,6 +37,9 @@ export default function Home() {
       <VenueSection />
       <ConvinceManagerBanner />
       <FAQSection />
+      {/* end of homepage body */}
+
+      {/* global footer */}
       <Footer />
     </main>
   );

@@ -12,8 +12,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
-import ImageStack from "@/components/image-stack";
-import { EventCard } from "@/components/event-card";
+import ImageStack from "@/components/about/image-stack/ImageStack";
+import { EventCard } from "@/components/ui/event-card/EventCard";
 
 function AnimatedSection({
   children,
@@ -60,16 +60,18 @@ export default function AboutPage() {
 
   return (
     <>
+      {/* global nav */}
       <Nav forceSolid />
-      <main className="bg-[#F5F0E8]">
+
+      <main className="bg-cream">
         {/* 1) Hero Section */}
         <section
           ref={heroRef}
-          className="relative min-h-[100vh] overflow-hidden bg-[#0D0D0D] pt-[105px]"
+          className="relative min-h-[100vh] overflow-hidden bg-page pt-[105px]"
         >
           <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
             <Image
-              src="/uxindia-stage.jpg"
+              src="/images/bg/about/hero.jpg"
               alt="UXINDIA conference stage view with speakers and audience"
               fill
               className="object-cover"
@@ -79,7 +81,7 @@ export default function AboutPage() {
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
           </motion.div>
 
-          <div className="relative z-10 min-h-[85vh] flex flex-col justify-end pb-20 md:pb-28 px-6">
+          <div className="relative z-10 min-h-[85vh] flex flex-col justify-center pb-20 md:pb-28 px-6">
             <div className="max-w-5xl mx-auto w-full">
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
@@ -133,15 +135,15 @@ export default function AboutPage() {
                 >
                   Explore Sponsorship
                 </Link>
-                <Link
-                  href="https://2026.ux-india.org/call-for-speakers/"
+                {/* <Link
+                  href="https://www.ux-india.org/call-for-speakers/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-sans text-sm font-semibold px-7 py-3 rounded-full text-white transition-opacity hover:opacity-85 text-center"
                   style={{ backgroundColor: "#2D3580" }}
                 >
                   Apply to Speak
-                </Link>
+                </Link> */}
                 <span className="group relative font-sans text-sm font-semibold px-7 py-3 rounded-full text-white/50 border border-white/20 cursor-not-allowed overflow-hidden text-center">
                   <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full group-hover:opacity-0">
                     Request Press Access
@@ -156,11 +158,11 @@ export default function AboutPage() {
         </section>
 
         {/* 2) About UXINDIA - More than a conference */}
-        <section className="py-24 md:py-32 bg-[#F5F0E8] relative overflow-hidden">
+        <section className="py-24 md:py-32 bg-cream relative overflow-hidden">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <AnimatedSection>
-                <p className="font-sans text-xs text-[#E85520] uppercase tracking-[0.25em] mb-4">
+                <p className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4">
                   About UXINDIA
                 </p>
                 <h2
@@ -174,7 +176,7 @@ export default function AboutPage() {
                 >
                   More than a conference
                 </h2>
-                <p className="font-sans text-base text-[#0D0D0D]/70 leading-relaxed mb-5">
+                <p className="font-sans text-base text-page/70 leading-relaxed mb-5">
                   UXINDIA is a community-led platform built to advance design,
                   strengthen leadership, and create meaningful conversations
                   across the ecosystem. For over two decades, it has brought
@@ -182,14 +184,14 @@ export default function AboutPage() {
                   to shape the future of design, entrepreneurship, and
                   human-centered innovation.
                 </p>
-                <p className="font-sans text-base text-[#0D0D0D]/70 leading-relaxed mb-8">
+                <p className="font-sans text-base text-page/70 leading-relaxed mb-8">
                   UXINDIA 2026 continues that legacy with a new week-long format
                   designed to make the experience more inclusive, more relevant,
                   and more impactful.
                 </p>
                 <Link
                   href="/"
-                  className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-[#0D0D0D] border border-[#0D0D0D]/30 px-6 py-2.5 rounded-full hover:bg-[#0D0D0D]/5 transition-colors"
+                  className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-page border border-page/30 px-6 py-2.5 rounded-full hover:bg-page/5 transition-colors"
                 >
                   Explore the Week
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -206,7 +208,7 @@ export default function AboutPage() {
               <AnimatedSection delay={150}>
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
                   <Image
-                    src="/uxindia-group.jpg"
+                    src="/images/event/uxindia-team.webp"
                     alt="UXINDIA community gathering"
                     fill
                     className="object-cover"
@@ -218,13 +220,13 @@ export default function AboutPage() {
         </section>
 
         {/* 3) Why it exists */}
-        <section className="py-24 md:py-32 bg-[#0D0D0D] relative overflow-hidden">
+        <section className="py-24 md:py-32 bg-page relative overflow-hidden">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <AnimatedSection delay={150} className="order-2 lg:order-1">
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
                   <Image
-                    src="/uxindia-audience.jpg"
+                    src="/images/event/uxindia-audience.webp"
                     alt="UXINDIA conference audience engaged in a session"
                     fill
                     className="object-cover"
@@ -267,7 +269,7 @@ export default function AboutPage() {
         {/* 4) New format - Design Leadership Week */}
         <section
           id="format"
-          className="py-24 md:py-32 bg-[#E85520] relative overflow-hidden"
+          className="py-24 md:py-32 bg-brand relative overflow-hidden"
         >
           <div className="max-w-5xl mx-auto px-6 text-center">
             <AnimatedSection>
@@ -303,7 +305,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
               <EventCard
                 title={"Leadership Summit"}
-                dates="22–25 Sept"
+                dates="23–25 Sept"
                 location="The Leela Bhartiya City, Bengaluru"
                 bgColor="#1B7A6E"
                 textColor="#FFFFFF"
@@ -353,13 +355,13 @@ export default function AboutPage() {
         </section>
 
         {/* 5) Founder vision */}
-        <section className="py-24 md:py-32 bg-[#F5F0E8] relative overflow-hidden">
+        <section className="py-24 md:py-32 bg-cream relative overflow-hidden">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-center">
               <AnimatedSection className="lg:col-span-2">
                 <div className="relative aspect-[3/4] rounded-3xl overflow-hidden max-w-sm mx-auto lg:mx-0">
                   <Image
-                    src="/Carousel-01.webp"
+                    src="/images/people/bapu-kaladhar.webp"
                     alt="Bapu Kaladhar, Founder of UXINDIA"
                     fill
                     className="object-cover"
@@ -367,7 +369,7 @@ export default function AboutPage() {
                 </div>
               </AnimatedSection>
               <AnimatedSection delay={150} className="lg:col-span-3">
-                <p className="font-sans text-xs text-[#E85520] uppercase tracking-[0.25em] mb-4">
+                <p className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4">
                   Founder Vision
                 </p>
                 <h2
@@ -381,14 +383,14 @@ export default function AboutPage() {
                 >
                   Led by Bapu Kaladhar
                 </h2>
-                <p className="font-sans text-base text-[#0D0D0D]/70 leading-relaxed mb-5">
+                <p className="font-sans text-base text-page/70 leading-relaxed mb-5">
                   UXINDIA was founded by Kaladhar Bapu, whose long-standing
                   vision has been rooted in &quot;Good Design for Better
                   Living&quot;. His work has consistently linked design with
                   social impact, human-centered practice, and the development of
                   stronger design leadership in India.
                 </p>
-                <p className="font-sans text-base text-[#0D0D0D]/70 leading-relaxed mb-8">
+                <p className="font-sans text-base text-page/70 leading-relaxed mb-8">
                   That vision continues to shape UXINDIA 2026: a community where
                   design is treated not as decoration, but as a meaningful force
                   for better products, better organizations, and better lives.
@@ -484,11 +486,11 @@ export default function AboutPage() {
         </section>
 
         {/* 7) Who it is for */}
-        <section className="py-24 md:py-32 bg-[#F5F0E8] relative overflow-hidden">
+        <section className="py-24 md:py-32 bg-cream relative overflow-hidden">
           <div className="max-w-6xl mx-auto px-6">
             <AnimatedSection>
               <div className="text-center mb-16">
-                <p className="font-sans text-xs text-[#E85520] uppercase tracking-[0.25em] mb-4">
+                <p className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4">
                   Who It&apos;s For
                 </p>
                 <h2
@@ -502,7 +504,7 @@ export default function AboutPage() {
                 >
                   For people shaping the future
                 </h2>
-                <p className="font-sans text-base text-[#0D0D0D]/70 leading-relaxed max-w-3xl mx-auto">
+                <p className="font-sans text-base text-page/70 leading-relaxed max-w-3xl mx-auto">
                   UXINDIA 2026 is for design and product leaders, UX and
                   research practitioners, founders, entrepreneurs, educators,
                   students, and innovation teams. It is also for sponsors and
@@ -574,7 +576,7 @@ export default function AboutPage() {
                   >
                     Rising Talent
                   </h3>
-                  <p className="font-sans text-sm text-[#0D0D0D]/80 leading-relaxed">
+                  <p className="font-sans text-sm text-page/80 leading-relaxed">
                     Students, early-career professionals, and emerging voices
                     ready to step into leadership with confidence.
                   </p>
@@ -584,14 +586,14 @@ export default function AboutPage() {
 
             <AnimatedSection delay={400}>
               <div className="text-center mt-12">
-                <p className="font-sans text-base text-[#0D0D0D]/70 leading-relaxed max-w-2xl mx-auto mb-8">
+                <p className="font-sans text-base text-page/70 leading-relaxed max-w-2xl mx-auto mb-8">
                   Whether you are leading an organization, building a product,
                   or starting your career, UXINDIA offers a place to connect,
                   contribute, and grow.
                 </p>
                 <button
                   onClick={() => setShowStats(!showStats)}
-                  className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-[#0D0D0D] border border-[#0D0D0D]/30 px-6 py-2.5 rounded-full hover:bg-[#0D0D0D]/5 transition-colors"
+                  className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-page border border-page/30 px-6 py-2.5 rounded-full hover:bg-page/5 transition-colors"
                 >
                   {showStats ? "Hide Stats" : "See Who Attends"}
                   <motion.svg
@@ -647,7 +649,7 @@ export default function AboutPage() {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.15, duration: 0.3 }}
                       >
-                        <p className="font-sans text-xs font-semibold text-[#0D0D0D]/50 uppercase tracking-[0.15em] mb-6">
+                        <p className="font-sans text-xs font-semibold text-page/50 uppercase tracking-[0.15em] mb-6">
                           By Seniority
                         </p>
                         <div className="space-y-5">
@@ -668,11 +670,11 @@ export default function AboutPage() {
                               }}
                             >
                               <div>
-                                <p className="font-sans text-sm text-[#0D0D0D] mb-1">
+                                <p className="font-sans text-sm text-page mb-1">
                                   {item.label}
                                 </p>
                                 <motion.div
-                                  className="h-1 bg-[#0D0D0D] rounded-full"
+                                  className="h-1 bg-page rounded-full"
                                   initial={{ width: 0 }}
                                   animate={{ width: `${item.value * 1.5}px` }}
                                   transition={{
@@ -682,7 +684,7 @@ export default function AboutPage() {
                                   }}
                                 />
                               </div>
-                              <p className="font-sans text-sm font-medium text-[#0D0D0D]/70">
+                              <p className="font-sans text-sm font-medium text-page/70">
                                 {item.value}%
                               </p>
                             </motion.div>
@@ -696,7 +698,7 @@ export default function AboutPage() {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.3 }}
                       >
-                        <p className="font-sans text-xs font-semibold text-[#0D0D0D]/50 uppercase tracking-[0.15em] mb-6">
+                        <p className="font-sans text-xs font-semibold text-page/50 uppercase tracking-[0.15em] mb-6">
                           By Industry
                         </p>
                         <div className="space-y-5">
@@ -717,11 +719,11 @@ export default function AboutPage() {
                               }}
                             >
                               <div>
-                                <p className="font-sans text-sm text-[#0D0D0D] mb-1">
+                                <p className="font-sans text-sm text-page mb-1">
                                   {item.label}
                                 </p>
                                 <motion.div
-                                  className="h-1 bg-[#0D0D0D] rounded-full"
+                                  className="h-1 bg-page rounded-full"
                                   initial={{ width: 0 }}
                                   animate={{ width: `${item.value * 1.5}px` }}
                                   transition={{
@@ -731,7 +733,7 @@ export default function AboutPage() {
                                   }}
                                 />
                               </div>
-                              <p className="font-sans text-sm font-medium text-[#0D0D0D]/70">
+                              <p className="font-sans text-sm font-medium text-page/70">
                                 {item.value}%
                               </p>
                             </motion.div>
@@ -745,7 +747,7 @@ export default function AboutPage() {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.25, duration: 0.3 }}
                       >
-                        <p className="font-sans text-xs font-semibold text-[#0D0D0D]/50 uppercase tracking-[0.15em] mb-6">
+                        <p className="font-sans text-xs font-semibold text-page/50 uppercase tracking-[0.15em] mb-6">
                           Decision Authority
                         </p>
                         <div className="space-y-5">
@@ -766,11 +768,11 @@ export default function AboutPage() {
                               }}
                             >
                               <div>
-                                <p className="font-sans text-sm text-[#0D0D0D] mb-1">
+                                <p className="font-sans text-sm text-page mb-1">
                                   {item.label}
                                 </p>
                                 <motion.div
-                                  className="h-1 bg-[#0D0D0D] rounded-full"
+                                  className="h-1 bg-page rounded-full"
                                   initial={{ width: 0 }}
                                   animate={{ width: `${item.value * 0.7}px` }}
                                   transition={{
@@ -780,7 +782,7 @@ export default function AboutPage() {
                                   }}
                                 />
                               </div>
-                              <p className="font-sans text-sm font-medium text-[#0D0D0D]/70">
+                              <p className="font-sans text-sm font-medium text-page/70">
                                 {item.value}%
                               </p>
                             </motion.div>
@@ -796,7 +798,7 @@ export default function AboutPage() {
         </section>
 
         {/* 8, 9, 10) Sponsor, Speaker, Press - Cards section */}
-        <section id="get-involved" className="py-24 md:py-32 bg-[#0D0D0D]">
+        <section id="get-involved" className="py-24 md:py-32 bg-page">
           <div className="max-w-6xl mx-auto px-6">
             <AnimatedSection>
               <div className="text-center mb-16">
@@ -897,12 +899,11 @@ export default function AboutPage() {
                     entrepreneurship, and the future of the profession.
                   </p>
                   <Link
-                    href="https://www.ux-india.org/call-for-speakers/"
-                    target="_blank"
+                    href=""
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-white border border-white/30 px-5 py-2.5 rounded-full hover:bg-white/10 transition-colors w-fit"
+                    className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-white border border-white/30 px-5 py-2.5 rounded-full  transition-colors w-fit opacity-45"
                   >
-                    Apply to Speak
+                    Submissions Closed
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                       <path
                         d="M3 7h8M8 4l3 3-3 3"
@@ -989,7 +990,7 @@ export default function AboutPage() {
         </section>
 
         {/* 11) Closing section */}
-        <section className="pt-[80px] bg-[#F5F0E8] relative overflow-hidden">
+        <section className="pt-[80px] bg-cream relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <AnimatedSection>
               <h2
@@ -1003,13 +1004,13 @@ export default function AboutPage() {
               >
                 Come build what&apos;s next
               </h2>
-              <p className="font-sans text-base md:text-lg text-[#0D0D0D]/70 leading-relaxed max-w-3xl mx-auto mb-5">
+              <p className="font-sans text-base md:text-lg text-page/70 leading-relaxed max-w-3xl mx-auto mb-5">
                 UXINDIA: Design Leadership Week 2026 is a space for learning,
                 leadership, and possibility. It is where the community gathers
                 to exchange ideas, recognize talent, and shape the future with
                 purpose.
               </p>
-              <p className="font-sans text-base md:text-lg text-[#0D0D0D]/70 leading-relaxed max-w-3xl mx-auto">
+              <p className="font-sans text-base md:text-lg text-page/70 leading-relaxed max-w-3xl mx-auto">
                 We believe the next chapter of design leadership in India will
                 be written by people who are willing to imagine boldly, build
                 responsibly, and lead together.
@@ -1023,6 +1024,8 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
+
+      {/* global footer */}
       <Footer />
     </>
   );

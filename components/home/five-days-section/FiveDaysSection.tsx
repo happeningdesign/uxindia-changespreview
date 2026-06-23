@@ -1,24 +1,24 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { motion, type Variants } from "framer-motion"
-import Link from "next/link"
+import { useEffect, useRef, useState } from "react";
+import { motion, type Variants } from "framer-motion";
+import Link from "next/link";
 
-const SVG_SIZE = 1000
+const SVG_SIZE = 1000;
 
 const summitPoints = [
   "Strategy for AI-first products and services.",
   "Systems thinking across products, orgs, and ecosystems.",
   "AI + design leadership: governance, ethics, and enablement.",
   "Enterprise case studies from India and global teams.",
-]
+];
 
 const forumPoints = [
   "Foundations for scale: from craft to systems.",
   "Career acceleration and leadership mindset.",
   "Portfolio and narrative for AI-aware organizations.",
   "Mentorship clinics and live portfolio reviews.",
-]
+];
 
 const curtainVariants: Variants = {
   visible: {
@@ -35,45 +35,58 @@ const curtainVariants: Variants = {
       ease: "easeOut",
     },
   },
-}
+};
 
 interface EventCardProps {
-  title: string
-  dates: string
-  location: string
-  bgColor: string
-  textColor: string
-  points: string[]
-  audience: string
-  avatars: string[]
-  visible: boolean
-  hoverBgColor: string
-  delay: string
+  title: string;
+  dates: string;
+  location: string;
+  bgColor: string;
+  textColor: string;
+  points: string[];
+  audience: string;
+  avatars: string[];
+  visible: boolean;
+  hoverBgColor: string;
+  delay: string;
 }
 
-function EventCard({ title, dates, location, bgColor, textColor, hoverBgColor, points, audience, avatars, visible, delay }: EventCardProps) {
-  const [isHovered, setIsHovered] = useState(false)
-  const [displayBgColor, setDisplayBgColor] = useState(bgColor)
-  const [revealed, setRevealed] = useState(false)
+function EventCard({
+  title,
+  dates,
+  location,
+  bgColor,
+  textColor,
+  hoverBgColor,
+  points,
+  audience,
+  avatars,
+  visible,
+  delay,
+}: EventCardProps) {
+  const [isHovered, setIsHovered] = useState(false);
+  const [displayBgColor, setDisplayBgColor] = useState(bgColor);
+  const [revealed, setRevealed] = useState(false);
 
   // Sync both bg color and text reveal state with curtain animation timing
   useEffect(() => {
     if (isHovered) {
-      setDisplayBgColor(hoverBgColor)
-      setRevealed(true)
+      setDisplayBgColor(hoverBgColor);
+      setRevealed(true);
     } else {
       const timer = setTimeout(() => {
-        setDisplayBgColor(bgColor)
-        setRevealed(false)
-      }, 300)
-      return () => clearTimeout(timer)
+        setDisplayBgColor(bgColor);
+        setRevealed(false);
+      }, 300);
+      return () => clearTimeout(timer);
     }
-  }, [isHovered, bgColor, hoverBgColor])
+  }, [isHovered, bgColor, hoverBgColor]);
 
   return (
     <motion.div
-      className={`relative rounded-3xl overflow-hidden transition-all duration-700 cursor-pointer ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-        }`}
+      className={`relative rounded-3xl overflow-hidden transition-all duration-700 cursor-pointer ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+      }`}
       style={{
         backgroundColor: bgColor,
         minHeight: "380px",
@@ -110,10 +123,7 @@ function EventCard({ title, dates, location, bgColor, textColor, hoverBgColor, p
           >
             {dates}
           </p>
-          <p
-            className="font-sans text-base mt-1"
-            style={{ color: textColor }}
-          >
+          <p className="font-sans text-base mt-1" style={{ color: textColor }}>
             {location}
           </p>
         </div>
@@ -147,13 +157,25 @@ function EventCard({ title, dates, location, bgColor, textColor, hoverBgColor, p
             <li key={i} className="flex items-start gap-3">
               <span
                 className="mt-2 text-xs leading-none"
-                style={{ color: revealed ? "rgba(13,13,13,0.5)" : (textColor === "#FFFFFF" ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.4)") }}
+                style={{
+                  color: revealed
+                    ? "rgba(13,13,13,0.5)"
+                    : textColor === "#FFFFFF"
+                      ? "rgba(255,255,255,0.5)"
+                      : "rgba(0,0,0,0.4)",
+                }}
               >
                 •
               </span>
               <span
                 className="font-sans text-sm leading-relaxed"
-                style={{ color: revealed ? "#0D0D0D" : (textColor === "#FFFFFF" ? "rgba(255,255,255,0.9)" : "rgba(0,0,0,0.85)") }}
+                style={{
+                  color: revealed
+                    ? "#0D0D0D"
+                    : textColor === "#FFFFFF"
+                      ? "rgba(255,255,255,0.9)"
+                      : "rgba(0,0,0,0.85)",
+                }}
               >
                 {point}
               </span>
@@ -163,28 +185,43 @@ function EventCard({ title, dates, location, bgColor, textColor, hoverBgColor, p
 
         {/* Audience with avatar group */}
         <div className="mt-auto">
-          <div 
+          <div
             className="inline-flex items-center rounded-full border p-1 shadow shadow-black/5"
-            style={{ 
-              borderColor: revealed ? "rgba(13,13,13,0.2)" : (textColor === "#FFFFFF" ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.15)"),
-              backgroundColor: revealed ? "rgba(13,13,13,0.05)" : (textColor === "#FFFFFF" ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.3)")
+            style={{
+              borderColor: revealed
+                ? "rgba(13,13,13,0.2)"
+                : textColor === "#FFFFFF"
+                  ? "rgba(255,255,255,0.2)"
+                  : "rgba(0,0,0,0.15)",
+              backgroundColor: revealed
+                ? "rgba(13,13,13,0.05)"
+                : textColor === "#FFFFFF"
+                  ? "rgba(255,255,255,0.1)"
+                  : "rgba(255,255,255,0.3)",
             }}
           >
             <div className="flex -space-x-1.5">
-              {avatars && avatars.map((avatar, i) => (
-                <img
-                  key={i}
-                  className={`rounded-full ring-1 ${revealed ? "ring-black/10" : (textColor === "#FFFFFF" ? "ring-white/30" : "ring-black/10")}`}
-                  src={avatar}
-                  width={20}
-                  height={20}
-                  alt={`Audience member ${i + 1}`}
-                />
-              ))}
+              {avatars &&
+                avatars.map((avatar, i) => (
+                  <img
+                    key={i}
+                    className={`rounded-full ring-1 ${revealed ? "ring-black/10" : textColor === "#FFFFFF" ? "ring-white/30" : "ring-black/10"}`}
+                    src={avatar}
+                    width={20}
+                    height={20}
+                    alt={`Audience member ${i + 1}`}
+                  />
+                ))}
             </div>
-            <p 
+            <p
               className="px-2 text-xs"
-              style={{ color: revealed ? "#0D0D0D" : (textColor === "#FFFFFF" ? "rgba(255,255,255,0.7)" : "rgba(0,0,0,0.65)") }}
+              style={{
+                color: revealed
+                  ? "#0D0D0D"
+                  : textColor === "#FFFFFF"
+                    ? "rgba(255,255,255,0.7)"
+                    : "rgba(0,0,0,0.65)",
+              }}
             >
               {audience}
             </p>
@@ -192,43 +229,45 @@ function EventCard({ title, dates, location, bgColor, textColor, hoverBgColor, p
         </div>
       </motion.div>
     </motion.div>
-  )
+  );
 }
 
 export default function FiveDaysSection() {
-  const svgSpinRef = useRef<HTMLDivElement>(null)
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
+  const svgSpinRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
   // Rotation animation
   useEffect(() => {
-    let angle = 0
-    let raf: number
+    let angle = 0;
+    let raf: number;
     const tick = () => {
-      angle += 0.05
+      angle += 0.05;
       if (svgSpinRef.current) {
-        svgSpinRef.current.style.transform = `rotate(${angle}deg)`
+        svgSpinRef.current.style.transform = `rotate(${angle}deg)`;
       }
-      raf = requestAnimationFrame(tick)
-    }
-    raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
-  }, [])
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
-      { threshold: 0.1 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.1 },
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
       id="format-section"
       ref={sectionRef}
-      className="bg-[#0D0D0D] pt-32 pb-24 relative overflow-hidden"
+      className="bg-page pt-32 pb-24 relative overflow-hidden"
     >
       {/* Five Days SVG Object — positioned at top, only bottom half visible, behind headline */}
       <div
@@ -241,9 +280,12 @@ export default function FiveDaysSection() {
           zIndex: 0,
         }}
       >
-        <div ref={svgSpinRef} style={{ width: "100%", height: "100%", opacity: 0.8 }}>
+        <div
+          ref={svgSpinRef}
+          style={{ width: "100%", height: "100%", opacity: 0.8 }}
+        >
           <img
-            src="/five-days-object.svg"
+            src="/icons/home/five-days-section-bg-object.svg"
             alt=""
             style={{ width: "100%", height: "100%" }}
           />
@@ -254,8 +296,9 @@ export default function FiveDaysSection() {
       <div className="relative" style={{ zIndex: 1 }}>
         {/* Headline */}
         <div
-          className={`text-center px-6 mb-16 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          className={`text-center px-6 mb-16 transition-all duration-700 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
         >
           <h2
             className="text-white leading-[1.08] mb-4"
@@ -265,10 +308,13 @@ export default function FiveDaysSection() {
               fontSize: "clamp(2.4rem, 4.5vw, 4rem)",
             }}
           >
-            Five Days. Two Tracks.<br />One Leadership Arc.
+            Five Days. Two Tracks.
+            <br />
+            One Leadership Arc.
           </h2>
           <p className="font-sans text-sm text-white/40 max-w-md mx-auto">
-            Talks may be curated across both forums to maximize impact and cross-pollination.
+            Talks may be curated across both forums to maximize impact and
+            cross-pollination.
           </p>
         </div>
 
@@ -277,7 +323,7 @@ export default function FiveDaysSection() {
           {/* Leadership Summit Card */}
           <EventCard
             title={"Leadership\nSummit"}
-            dates="22–25 Sept"
+            dates="23–25 Sept"
             location="The Leela Bhartiya City, Bengaluru"
             bgColor="#1B7A6E"
             textColor="#FFFFFF"
@@ -317,23 +363,36 @@ export default function FiveDaysSection() {
 
         {/* CTA */}
         <div
-          className={`flex justify-center mt-12 transition-all duration-700 delay-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
+          className={`flex justify-center mt-12 transition-all duration-700 delay-500 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
         >
           <Link
-            href="https://2026.ux-india.org/waitlist/"
+            href="/tickets"
             target="_blank"
             rel="noopener noreferrer"
             className="font-sans text-sm font-semibold py-3 px-8 rounded-full text-white transition-opacity duration-200 hover:opacity-85 cursor-pointer flex items-center gap-2"
             style={{ backgroundColor: "#FF6D35" }}
           >
-            Join Waitlist
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            Get Your Tickets
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </Link>
         </div>
       </div>
     </section>
-  )
+  );
 }

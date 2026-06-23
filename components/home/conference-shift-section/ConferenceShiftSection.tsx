@@ -4,21 +4,21 @@ import Link from "next/link";
 import CurvedSlider from "@/components/ui/curved-slider/CursedSlider";
 
 const CAROUSEL_IMAGES = [
-  "/Carousel-01.webp",
-  "/Carousel-02.webp",
-  "/Carousel-03.webp",
-  "/Carousel-04.webp",
-  "/Carousel-05.webp",
-  "/Carousel-06.webp",
-  "/Carousel-07.webp",
-  "/Carousel-08.webp",
-  "/Carousel-09.webp",
-  "/Carousel-10.webp",
-  "/Carousel-11.webp",
-  "/Carousel-12.webp",
-  "/Carousel-13.webp",
-  "/Carousel-14.webp",
-  "/Carousel-15.webp",
+  "images/carousel/Carousel-01.webp",
+  "images/carousel/Carousel-02.webp",
+  "images/carousel/Carousel-03.webp",
+  "images/carousel/Carousel-04.webp",
+  "images/carousel/Carousel-05.webp",
+  "images/carousel/Carousel-06.webp",
+  "images/carousel/Carousel-07.webp",
+  "images/carousel/Carousel-08.webp",
+  "images/carousel/Carousel-09.webp",
+  "images/carousel/Carousel-10.webp",
+  "images/carousel/Carousel-11.webp",
+  "images/carousel/Carousel-12.webp",
+  "images/carousel/Carousel-13.webp",
+  "images/carousel/Carousel-14.webp",
+  "images/carousel/Carousel-15.webp",
 ];
 
 const SVG_SIZE = 1100; // px — enlarged as requested
@@ -45,7 +45,7 @@ export default function ConferenceShiftSection() {
   return (
     <section
       id="about"
-      className="bg-[#F5F0E8] pt-32 pb-20 relative overflow-hidden"
+      className="bg-cream pt-32 pb-20 relative overflow-hidden"
     >
       {/* UX India Object — half visible at section top, slowly rotating */}
       <div
@@ -60,7 +60,7 @@ export default function ConferenceShiftSection() {
       >
         <div ref={svgSpinRef} style={{ width: "100%", height: "100%" }}>
           <img
-            src="/uxindia-object.svg"
+            src="/icons/home/conference-shift-bg-object.svg"
             alt=""
             style={{ width: "100%", height: "100%" }}
           />
@@ -70,7 +70,7 @@ export default function ConferenceShiftSection() {
       {/* ── Headline ── */}
       <div className="text-center px-6 mb-0 relative" style={{ zIndex: 1 }}>
         <h2
-          className="text-[#0D0D0D] leading-[1.08]"
+          className="text-page leading-[1.08]"
           style={{
             fontFamily: "'UXILeadershipCondensed'",
             fontWeight: 500,
@@ -104,13 +104,13 @@ export default function ConferenceShiftSection() {
         className="max-w-2xl mx-auto px-6 text-center mt-0 space-y-5 relative"
         style={{ zIndex: 1 }}
       >
-        <p className="font-sans text-[16px] text-[#0D0D0D]/70 leading-relaxed">
+        <p className="font-sans text-[16px] text-page/70 leading-relaxed">
           India is no longer just the world&apos;s execution center. It is
           becoming the world&apos;s design leadership engine. We don&apos;t copy
           playbooks built elsewhere. We design for scale, complexity, and an
           AI-powered future from the ground up.
         </p>
-        <p className="font-sans text-[16px] text-[#0D0D0D]/70 leading-relaxed">
+        <p className="font-sans text-[16px] text-page/70 leading-relaxed">
           UXINDIA Design Leadership Week is where that transition becomes
           visible on stage, in hallways, and in boardrooms.
         </p>
@@ -130,23 +130,22 @@ export default function ConferenceShiftSection() {
         >
           Explore Sponsorship
         </Link>
-        <Link
-          href="https://www.ux-india.org/call-for-speakers/"
-          target="_blank"
+        {/* <Link
+          href=""
           rel="noopener noreferrer"
-          className="font-sans text-sm font-semibold px-8 py-3 rounded-full text-white text-center transition-opacity duration-200 hover:opacity-85"
+          className="font-sans text-sm font-semibold px-8 py-3 rounded-full text-white text-center transition-opacity duration-200 opacity-45"
           style={{ backgroundColor: "#2D3580", minWidth: `${BTN_W}px` }}
         >
-          Apply to Speak
-        </Link>
+          Submissions Closed
+        </Link> */}
         <Link
-          href="https://2026.ux-india.org/waitlist/"
+          href="/tickets"
           target="_blank"
           rel="noopener noreferrer"
           className="font-sans text-sm font-semibold px-8 py-3 rounded-full text-white text-center transition-opacity duration-200 hover:opacity-85"
           style={{ backgroundColor: "#C8365A", minWidth: `${BTN_W}px` }}
         >
-          Get Early Access to Tickets
+          Get Your Tickets
         </Link>
       </div>
     </section>

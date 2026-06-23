@@ -43,7 +43,7 @@ export async function POST(req: Request) {
         speakerPhone: data.speakerPhone,
         speakerTitle: data.speakerTitle,
         speakerBio: data.speakerBio,
-        speakerPhotoUrl: data.speakerPhotoUrl,
+        speakerPhotoUrl: data.speakerPhotoUrl ?? null,
 
         speakerLinkedin: data.speakerLinkedin,
         speakerWebsite: data.speakerWebsite,
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
         experience: data.experience,
         speakingExp: data.speakingExp,
         pastTalks: data.pastTalks ?? null,
-        presentationLink: data.presentationLink,
+        presentationLink: data.presentationLink ?? null,
         recordingLink: data.recordingLink,
 
         specialRequirements: data.specialRequirements ?? null,

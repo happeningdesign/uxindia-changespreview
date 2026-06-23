@@ -1,29 +1,37 @@
 "use client";
 
 import { useState, useRef } from "react";
+
+// Global Components
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
-import RisingLeadersHero from "@/components/events/rising-leaders/RisingLeadersHero";
-import WhoAttends from "@/components/events/WhoAttends";
-import SpeakersGrid from "@/components/events/SpeakersGrid";
-import RisingLeadersVenueSection from "@/components/events/RisingLeadersVenueSection";
-import RisingSchedule from "@/components/events/RisingSchedule";
-import risingLeadersSpeakers from "@/data/rising-leaders-speakers";
-import EventDayCards from "@/components/events/EventDayCards";
+
+// Page
+import RisingLeadersHero from "@/components/events/rising-leaders-forum/hero/Hero";
+import WhoAttends from "@/components/events/who-attends/WhoAttends";
+import SpeakersGrid from "@/components/events/speakers-grid/SpeakersGrid";
+import RisingLeadersVenueSection from "@/components/events/rising-leaders-forum/venue-section/VenueSection";
+import RisingSchedule from "@/components/events/rising-leaders-forum/rising-leaders-schedule/RisingSchedule";
+import EventDayCards from "@/components/events/event-day-cards/EventDayCards";
+
+// Data
+import risingLeadersSpeakers from "@/data/events/rising-leaders-speakers";
 
 const risingLeadersDays = [
   {
     badge: "DAY 1",
     badgeColor: "orange" as const,
     date: "26 September",
-    description: "Deep Dive Talks, Panel Discussions with seasoned design leaders, foundational talks on transitioning into leadership, and hands-on workshops on team building and strategy.",
+    description:
+      "Deep Dive Talks, Panel Discussions with seasoned design leaders, foundational talks on transitioning into leadership, and hands-on workshops on team building and strategy.",
     bgColor: "bg-[#1C1C1E]",
   },
   {
     badge: "DAY 2",
     badgeColor: "blue" as const,
     date: "27 September",
-    description: "Deep Dive Talks, Spark Sessions, Panel Discussions and an evening of structured networking with fellow emerging leaders and industry experts.",
+    description:
+      "Deep Dive Talks, Spark Sessions, Panel Discussions and an evening of structured networking with fellow emerging leaders and industry experts.",
     bgColor: "bg-[#0E4D5C]",
   },
 ];
@@ -36,7 +44,8 @@ export default function RisingLeadersPageClient() {
     setActiveTab(tab);
     setTimeout(() => {
       if (contentRef.current) {
-        const y = contentRef.current.getBoundingClientRect().top + window.scrollY;
+        const y =
+          contentRef.current.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({ top: y, behavior: "smooth" });
       }
     }, 0);
@@ -45,7 +54,11 @@ export default function RisingLeadersPageClient() {
   return (
     <main>
       <Nav forceSolid={false} />
-      <RisingLeadersHero activeTab={activeTab} setActiveTab={setActiveTab} hideTabBar={true} />
+      <RisingLeadersHero
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        hideTabBar={true}
+      />
 
       {/* Scroll sentinel — sits just before the sticky bar */}
       <div ref={contentRef} />
@@ -71,9 +84,13 @@ export default function RisingLeadersPageClient() {
           <section className="bg-[#F5F0E8] w-full py-16 md:py-24">
             <div className="max-w-7xl mx-auto px-6">
               <div className="prose max-w-none">
-                <h2 className="font-leadership text-4xl md:text-5xl text-[#0D0D0D] mb-6">Overview</h2>
+                <h2 className="font-leadership text-4xl md:text-5xl text-[#0D0D0D] mb-6">
+                  Overview
+                </h2>
                 <p className="font-sans text-base text-[#0D0D0D]/70 leading-relaxed">
-                  The Rising Leaders Forum is designed for emerging design leaders and mid-career professionals ready to step into leadership roles.
+                  The Rising Leaders Forum is designed for emerging design
+                  leaders and mid-career professionals ready to step into
+                  leadership roles.
                 </p>
               </div>
               <EventDayCards days={risingLeadersDays} />

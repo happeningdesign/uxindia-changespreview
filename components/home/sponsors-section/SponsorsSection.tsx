@@ -1,104 +1,110 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import Link from "next/link"
-import { motion } from "framer-motion"
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const sponsorLogos = [
   {
     name: "Merkle",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo-Merkle-At-UXI24-ElHgxUnO5aJn78lSZfv3Ay9FKxpINf.png",
+    src: "/images/logos/merkle.webp",
     width: 140,
   },
   {
     name: "Candescent",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Candescent-At-UXINDIA-2025-e1753173674303-UVmioPUIpigC83x5LnPF5UGObiIf5Z.png",
+    src: "/images/logos/candescent.webp",
     width: 140,
   },
   {
     name: "JPMorgan Chase",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-jpmorgan-y1csRAdblwOv56P9quaj42wnXHFMQw.webp",
+    src: "/images/logos/jpmorgan.webp",
     width: 130,
   },
   {
     name: "Wongdoody",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Wongdoody-at-UXINDIA24-39v9Ex86PHAXaSEuCQ1v9kVCZatXNT.png",
+    src: "/images/logos/wongdoody.webp",
     width: 140,
   },
   {
     name: "Infoblox",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Infoblox-At-UXINDIA25-ezHG89cFE0aiDZM2bmpjBEo0RXvIT4.webp",
+    src: "/images/logos/infoblox.webp",
     width: 100,
   },
   {
     name: "Infiniqo",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Infiniqo-At-UXINDIA24-1024x616-1-TuNkU5ckpkKfs7o4NZVUlSHc78qia3.png",
+    src: "/images/logos/infiniqo.webp",
     width: 100,
   },
   {
     name: "AND Academy",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-and-academy-51oYUBWC8u0t04UvTQZl1udDYG88tJ.webp",
+    src: "/images/logos/and-academy.webp",
     width: 100,
   },
   {
     name: "Orion Innovation",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Orion-Technologies-bIHtQuESkq3vlk3eNXO8uKQfo2jHPG.webp",
+    src: "/images/logos/orion.webp",
     width: 130,
   },
   {
     name: "Happening",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo-Happening-AT-UXI24-rFYvAOVXmUsHa7yg0KPtiW7UFo5HUe.png",
+    src: "/images/logos/happening.webp",
     width: 100,
   },
   {
     name: "Infosys",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/infosys-TMFbRZHxbreLnfNB4r9AUgcyH1192Z.svg",
+    src: "/images/logos/infosys.svg",
     width: 100,
   },
   {
     name: "Publicis",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/publicis-gAw9j1TxkjpVHEXYolmmL8B77XXznI.svg",
+    src: "/images/logos/publicis-sapient.svg",
     width: 120,
   },
   {
     name: "Qatalyst",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/qatalyst-IumFdUffhdtDF4fa3xv6u6cYEALJhj.svg",
+    src: "/images/logos/qatalyst.svg",
     width: 110,
   },
   {
     name: "Verizon",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/verizon-NjBmiAFEz60U1TviuGLuaUre6qPyY3.svg",
+    src: "/images/logos/verizon.svg",
     width: 100,
   },
   {
     name: "Loops",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/loops-pKE2RRIdS78d3qduE9AmeIsrtv4met.svg",
+    src: "/images/logos/the-loops.svg",
     width: 90,
   },
   {
     name: "Eventum",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/eventum-Izkvh5YCJFsgdbQNo4Xpp2d4MqUiD0.svg",
+    src: "/images/logos/eventum.svg",
     width: 110,
   },
-]
+];
 
 export default function SponsorsSection() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
-      { threshold: 0.1 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.1 },
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="sponsor" ref={sectionRef} className="bg-[#F5F0E8] py-24 md:py-32 overflow-hidden relative">
+    <section
+      id="sponsor"
+      ref={sectionRef}
+      className="bg-cream py-24 md:py-32 overflow-hidden relative"
+    >
       {/* Background text */}
-      <div className="absolute bottom-0 left-0 font-serif text-[16vw] text-[#0D0D0D]/[0.00] leading-none select-none pointer-events-none">
+      <div className="absolute bottom-0 left-0 font-serif text-[16vw] text-page/[0.00] leading-none select-none pointer-events-none">
         SPONSOR
       </div>
 
@@ -106,14 +112,14 @@ export default function SponsorsSection() {
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16 items-end">
           <div>
-            <span className="font-sans text-xs text-[#E85520] uppercase tracking-[0.25em] mb-3 block">
+            <span className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-3 block">
               Sponsorships
             </span>
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
               animate={visible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7 }}
-              className="text-5xl md:text-5xl lg:text-6xl text-[#0D0D0D] leading-[1.05]"
+              className="text-5xl md:text-5xl lg:text-6xl text-page leading-[1.05]"
               style={{
                 fontFamily: "'UXILeadershipCondensed'",
                 fontWeight: 500,
@@ -121,8 +127,7 @@ export default function SponsorsSection() {
             >
               Don’t Sponsor an Event.
               <br />
-              <span className="text-[#E85520]">Achieve a Business Outcome.
-              </span>
+              <span className="text-brand">Achieve a Business Outcome.</span>
             </motion.h2>
           </div>
           <motion.div
@@ -131,8 +136,11 @@ export default function SponsorsSection() {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="space-y-4"
           >
-            <p className="font-sans text-base text-[#0D0D0D]/60 leading-relaxed">
-              UXINDIA is where the design community gathers to learn, connect, and shape what&apos;s next. Sponsoring gives your organization direct access to design leaders, product teams, startups, and emerging talent.
+            <p className="font-sans text-base text-page/60 leading-relaxed">
+              UXINDIA is where the design community gathers to learn, connect,
+              and shape what&apos;s next. Sponsoring gives your organization
+              direct access to design leaders, product teams, startups, and
+              emerging talent.
             </p>
           </motion.div>
         </div>
@@ -150,7 +158,7 @@ export default function SponsorsSection() {
               body: "Own high-intent moments on the main stage, in leadership lounges, and in highlight content.",
               bg: "#1B2E4A",
               text: "#FFFFFF",
-              imgSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Talent%20Acquisition-eMqsGpexGFCeovAkFBkmN2L0DBRl92.png",
+              imgSrc: "/images/illustrations/trophy.webp",
               imgAlt: "3D golden trophy icon",
             },
             {
@@ -158,7 +166,7 @@ export default function SponsorsSection() {
               body: "Become the place top designers and product leaders want to work-before they hit your careers page.",
               bg: "#E85520",
               text: "#FFFFFF",
-              imgSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Thought%20Leadership-a1DJYxh1BUD2ZvcOWuzAprx63W1cTg.png",
+              imgSrc: "/images/illustrations/notepad.webp",
               imgAlt: "3D pen on notepad icon",
             },
             {
@@ -166,23 +174,39 @@ export default function SponsorsSection() {
               body: "Put your product in front of teams that actually control adoption decisions, not just sign-ups.",
               bg: "#C8375B",
               text: "#FFFFFF",
-              imgSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Product%20Launch-0FBsHsLOVizhSZbo104Cpbv329qDWL.png",
-              imgAlt: "3D VR headset icon",
+              imgSrc: "/images/illustrations/glasses.webp",
+              imgAlt: "3D glasses icon",
             },
             {
               title: "Enterprise Relations",
               body: "Host the rooms where CXOs, heads of design, and product leads compare notes and make decisions.",
               bg: "#1B7A6E",
               text: "#FFFFFF",
-              imgSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Brand%20Visibility-Dxa68nFKGjLZi2aEfPUn0xpTA0o3yj.png",
+              imgSrc: "/images/illustrations/megaphone.webp",
               imgAlt: "3D megaphone icon",
             },
-          ].map((card, i) => (
+          ].map((card) => (
             <motion.div
               key={card.title}
-              className="relative flex flex-col justify-between rounded-2xl p-6 overflow-hidden min-h-[200px] group"
-              style={{ backgroundColor: card.bg, border: card.bg === "#F5F0E8" ? "1px solid rgba(13,13,13,0.1)" : "none" }}
-              whileHover={{ scale: 1.02 }}
+              className="relative flex flex-col justify-between rounded-2xl p-6 pb-12 overflow-hidden min-h-[240px]"
+              style={{
+                backgroundColor: card.bg,
+                border:
+                  card.bg === "#F5F0E8"
+                    ? "1px solid rgba(13,13,13,0.1)"
+                    : "none",
+              }}
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+              variants={{
+                rest: {
+                  scale: 1,
+                },
+                hover: {
+                  scale: 1.02,
+                },
+              }}
               transition={{ duration: 0.3 }}
             >
               <div className="relative z-10">
@@ -197,19 +221,42 @@ export default function SponsorsSection() {
                 >
                   {card.title}
                 </h3>
+
                 <p
                   className="font-sans text-sm leading-relaxed"
-                  style={{ color: card.text.toUpperCase() === "#FFFFFF" ? "rgba(255,255,255,0.75)" : "rgba(13,13,13,0.65)" }}
+                  style={{
+                    color:
+                      card.text.toUpperCase() === "#FFFFFF"
+                        ? "rgba(255,255,255,0.75)"
+                        : "rgba(13,13,13,0.65)",
+                  }}
                 >
                   {card.body}
                 </p>
               </div>
+
               <motion.img
                 src={card.imgSrc}
                 alt={card.imgAlt}
-                className="absolute -right-6 -bottom-6 w-36 h-36 object-contain opacity-80 group-hover:opacity-100"
-                whileHover={{ scale: 1.1, rotate: 3, x: 8 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="absolute -right-6 -bottom-6 w-36 h-36 object-contain"
+                variants={{
+                  rest: {
+                    scale: 1,
+                    rotate: 0,
+                    x: 0,
+                    opacity: 0.8,
+                  },
+                  hover: {
+                    scale: 1.1,
+                    rotate: 3,
+                    x: 8,
+                    opacity: 1,
+                  },
+                }}
+                transition={{
+                  duration: 0.4,
+                  ease: "easeInOut",
+                }}
               />
             </motion.div>
           ))}
@@ -221,7 +268,7 @@ export default function SponsorsSection() {
           animate={visible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <p className="font-sans text-xs text-[#0D0D0D]/30 uppercase tracking-[0.2em] mb-10 text-center">
+          <p className="font-sans text-xs text-page/30 uppercase tracking-[0.2em] mb-10 text-center">
             Past sponsors &amp; partners
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-10 items-center">
@@ -236,7 +283,12 @@ export default function SponsorsSection() {
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  style={{ maxWidth: logo.width, width: "100%", height: "100%", objectFit: "contain" }}
+                  style={{
+                    maxWidth: logo.width,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
                 />
               </motion.div>
             ))}
@@ -253,16 +305,22 @@ export default function SponsorsSection() {
               href="https://partner.ux-india.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-[#E85520] hover:bg-[#E85520] text-white font-sans font-semibold text-base px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#E85520]/30"
+              className="inline-flex items-center gap-2.5 bg-brand hover:bg-brand text-white font-sans font-semibold text-base px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-brand/30"
             >
               Partner With Us
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path
+                  d="M3 8h10M9 4l4 4-4 4"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </Link>
           </motion.div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

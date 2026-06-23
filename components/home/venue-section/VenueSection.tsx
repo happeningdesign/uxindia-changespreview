@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useEffect, useRef, useState } from "react"
-import { motion, useMotionValue, useTransform, useSpring } from "framer-motion"
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 
 interface VenueCardProps {
-  eventName: string
-  dates: string
-  venueName: string
-  city: string
-  description: string
-  googleMapsUrl?: string
-  isTBA?: boolean
-  accentColor: string
-  venueImage?: string
+  eventName: string;
+  dates: string;
+  venueName: string;
+  city: string;
+  description: string;
+  googleMapsUrl?: string;
+  isTBA?: boolean;
+  accentColor: string;
+  venueImage?: string;
 }
 
 function VenueCard({
@@ -27,39 +27,39 @@ function VenueCard({
   accentColor,
   venueImage,
 }: VenueCardProps) {
-  const [isHovered, setIsHovered] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const [isHovered, setIsHovered] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
-  const rotateX = useTransform(mouseY, [-100, 100], [4, -4])
-  const rotateY = useTransform(mouseX, [-100, 100], [-4, 4])
+  const rotateX = useTransform(mouseY, [-100, 100], [4, -4]);
+  const rotateY = useTransform(mouseX, [-100, 100], [-4, 4]);
 
-  const springRotateX = useSpring(rotateX, { stiffness: 300, damping: 30 })
-  const springRotateY = useSpring(rotateY, { stiffness: 300, damping: 30 })
+  const springRotateX = useSpring(rotateX, { stiffness: 300, damping: 30 });
+  const springRotateY = useSpring(rotateY, { stiffness: 300, damping: 30 });
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!containerRef.current || isTBA) return
-    const rect = containerRef.current.getBoundingClientRect()
-    const centerX = rect.left + rect.width / 2
-    const centerY = rect.top + rect.height / 2
-    mouseX.set(e.clientX - centerX)
-    mouseY.set(e.clientY - centerY)
-  }
+    if (!containerRef.current || isTBA) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    mouseX.set(e.clientX - centerX);
+    mouseY.set(e.clientY - centerY);
+  };
 
   const handleMouseLeave = () => {
-    mouseX.set(0)
-    mouseY.set(0)
-    setIsHovered(false)
-  }
+    mouseX.set(0);
+    mouseY.set(0);
+    setIsHovered(false);
+  };
 
   const handleClick = () => {
-    if (isTBA) return
+    if (isTBA) return;
     if (googleMapsUrl) {
-      window.open(googleMapsUrl, "_blank")
+      window.open(googleMapsUrl, "_blank");
     }
-  }
+  };
 
   return (
     <motion.div
@@ -86,11 +86,25 @@ function VenueCard({
         <div className="absolute inset-0 opacity-[0.04]">
           <svg width="100%" height="100%" className="absolute inset-0">
             <defs>
-              <pattern id={`grid-venue-${isTBA ? 'tba' : 'leela'}`} width="24" height="24" patternUnits="userSpaceOnUse">
-                <path d="M 24 0 L 0 0 0 24" fill="none" stroke="white" strokeWidth="0.5" />
+              <pattern
+                id={`grid-venue-${isTBA ? "tba" : "leela"}`}
+                width="24"
+                height="24"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 24 0 L 0 0 0 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="0.5"
+                />
               </pattern>
             </defs>
-            <rect width="100%" height="100%" fill={`url(#grid-venue-${isTBA ? 'tba' : 'leela'})`} />
+            <rect
+              width="100%"
+              height="100%"
+              fill={`url(#grid-venue-${isTBA ? "tba" : "leela"})`}
+            />
           </svg>
         </div>
 
@@ -119,44 +133,51 @@ function VenueCard({
 
         {/* Content */}
         <div className="relative z-10 p-6 md:p-8 flex-1 flex flex-col">
-          {/* Venue info with badge aligned to first line */}
-          <div className="space-y-3 flex-1 flex flex-col">
-            <div className="flex items-start gap-3">
-              {/* Event badge aligned to first line of venue name */}
+          {/* Top - Event badge */}
+          <div className="flex items-start justify-between mb-6">
+            <div
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
+              style={{
+                backgroundColor: `${accentColor}15`,
+                border: `1px solid ${accentColor}30`,
+              }}
+            >
               <div
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full shrink-0"
-                style={{ backgroundColor: `${accentColor}15`, border: `1px solid ${accentColor}30` }}
+                className="w-1.5 h-1.5 rounded-full"
+                style={{ backgroundColor: accentColor }}
+              />
+              <span
+                className="font-sans text-[10px] font-semibold uppercase tracking-wider"
+                style={{ color: accentColor }}
               >
-                <div
-                  className="w-1.5 h-1.5 rounded-full"
-                  style={{ backgroundColor: accentColor }}
-                />
-                <span
-                  className="font-sans text-[10px] font-semibold uppercase tracking-wider"
-                  style={{ color: accentColor }}
-                >
-                  {eventName}
-                </span>
-              </div>
-
-              {/* Venue name on same line as badge */}
-              <motion.h3
-                className="text-2xl md:text-3xl text-white leading-tight flex-1"
-                style={{
-                  fontFamily: "'UXILeadershipCondensed'",
-                  fontWeight: 500,
-                }}
-                animate={{
-                  x: isHovered && !isTBA ? 4 : 0,
-                }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              >
-                {venueName}
-              </motion.h3>
+                {eventName}
+              </span>
             </div>
+          </div>
+
+          {/* Venue info */}
+          <div className="space-y-3 flex-1 flex flex-col">
+            <motion.h3
+              className="text-2xl md:text-3xl text-white leading-tight"
+              style={{
+                fontFamily: "'UXILeadershipCondensed'",
+                fontWeight: 500,
+              }}
+              animate={{
+                x: isHovered && !isTBA ? 4 : 0,
+              }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+            >
+              {venueName}
+            </motion.h3>
 
             <div className="flex items-center gap-3">
-              <span className="font-sans text-sm" style={{ color: accentColor }}>{city}</span>
+              <span
+                className="font-sans text-sm"
+                style={{ color: accentColor }}
+              >
+                {city}
+              </span>
               <span className="font-sans text-xs text-white/40">{dates}</span>
             </div>
 
@@ -196,23 +217,23 @@ function VenueCard({
         </div>
       </motion.div>
     </motion.div>
-  )
+  );
 }
 
 export default function VenueSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const [visible, setVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setVisible(true)
+        if (entry.isIntersecting) setVisible(true);
       },
-      { threshold: 0.15 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
+      { threshold: 0.15 },
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
@@ -239,7 +260,8 @@ export default function VenueSection() {
               fontWeight: 500,
             }}
           >
-            A City and Venue Built for <span className="text-[#E85520]">Big Conversations.</span>
+            A City and Venue Built for{" "}
+            <span className="text-brand">Big Conversations.</span>
           </h2>
         </motion.div>
 
@@ -252,13 +274,13 @@ export default function VenueSection() {
         >
           <VenueCard
             eventName="Leadership Summit"
-            dates="22–25 Sept 2026"
+            dates="23–25 Sept 2026"
             venueName="The Leela Bhartiya City"
             city="Bengaluru, India"
             description="An iconic five-star destination known for its grandeur, world-class amenities, and impeccable hospitality."
             googleMapsUrl="https://maps.app.goo.gl/GefGLLqYJ4ECABMcA"
             accentColor="#E85520"
-            venueImage="/The Leela Bhartiya City.jpg"
+            venueImage="/images/venue/the-leela-bhartiya-city.webp"
           />
 
           <VenueCard
@@ -269,10 +291,10 @@ export default function VenueSection() {
             description="A vibrant space for emerging designers to connect, learn, and shape the future of design together."
             googleMapsUrl="https://maps.app.goo.gl/Bec27bPxTosqivvq7"
             accentColor="#F5BF42"
-            venueImage="/srishti-campus.jpg"
+            venueImage="/images/venue/srishti-campus.webp"
           />
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

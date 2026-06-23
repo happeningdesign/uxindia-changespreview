@@ -23,6 +23,10 @@ export function createMetadata({
     title,
     description,
     keywords,
+    icons: {
+      icon: "/favicon.png",
+      apple: "/favicon.png",
+    },
 
     openGraph: {
       title,

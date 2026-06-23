@@ -1,53 +1,70 @@
-"use client"
+"use client";
 
-import { useRef, useState, useEffect } from "react"
-import Image from "next/image"
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
+import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const paths = [
   {
     title: "Practitioners",
     body: "This platform is designed specifically for UX designers, researchers, and product builders who are passionate about creating intuitive and engaging user experiences.",
     cardBg: "#E85520",
-    imageSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-qtgiqt045WlPPGPXONdqgTPm5vgIap.jpg",
-    imageAlt: "UX practitioners collaborating around a round table during a workshop session",
+    imageSrc: "/images/event/uxindia-practitioners-path.webp",
+    imageAlt:
+      "UX practitioners collaborating around a round table during a workshop session",
   },
   {
     title: "Leaders",
     body: "This is intended for heads of Design, Product, Strategy, and Customer Experience who are looking to drive innovation and improve overall business outcomes.",
     cardBg: "#2A3F6B",
-    imageSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2-Hse7pZ6oBJUhehgptCgg8OXPQFUr5i.jpg",
-    imageAlt: "A speaker presenting on stage at a design conference with a large illuminated screen behind them",
+    imageSrc: "/images/event/uxindia-leaders-path.webp",
+    imageAlt:
+      "A speaker presenting on stage at a design conference with a large illuminated screen behind them",
   },
   {
     title: "Entrepreneurs",
     body: "For founders, operators, and design-driven entrepreneurs who are passionate about creating innovative solutions and building impactful businesses that stand out in competitive markets.",
     cardBg: "#B8304A",
-    imageSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3-znEnSHrsuHvhWR83DggKz1MI2WTnpo.jpg",
-    imageAlt: "View from the stage of a large conference audience filling the hall at UXINDIA",
+    imageSrc: "/images/event/uxindia-entrepreneurs-path.webp",
+    imageAlt:
+      "View from the stage of a large conference audience filling the hall at UXINDIA",
   },
-]
+];
 
-function TiltCard({ path, visible, delay }: { path: typeof paths[0]; visible: boolean; delay: number }) {
-  const cardRef = useRef<HTMLDivElement>(null)
+function TiltCard({
+  path,
+  visible,
+  delay,
+}: {
+  path: (typeof paths)[0];
+  visible: boolean;
+  delay: number;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [8, -8]), { stiffness: 300, damping: 30 })
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-8, 8]), { stiffness: 300, damping: 30 })
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [8, -8]), {
+    stiffness: 300,
+    damping: 30,
+  });
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-8, 8]), {
+    stiffness: 300,
+    damping: 30,
+  });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return
-    const rect = cardRef.current.getBoundingClientRect()
-    mouseX.set((e.clientX - rect.left) / rect.width - 0.5)
-    mouseY.set((e.clientY - rect.top) / rect.height - 0.5)
-  }
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    mouseX.set((e.clientX - rect.left) / rect.width - 0.5);
+    mouseY.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
 
   const handleMouseLeave = () => {
-    mouseX.set(0)
-    mouseY.set(0)
-  }
+    mouseX.set(0);
+    mouseY.set(0);
+  };
 
   return (
     <div style={{ perspective: "1000px" }}>
@@ -105,24 +122,30 @@ function TiltCard({ path, visible, delay }: { path: typeof paths[0]; visible: bo
         </div>
       </motion.div>
     </div>
-  )
+  );
 }
 
 export default function ThreeDistinctPathsSection() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
-      { threshold: 0.1 }
-    )
-    if (sectionRef.current) observer.observe(sectionRef.current)
-    return () => observer.disconnect()
-  }, [])
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.1 },
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="paths-section" ref={sectionRef} className="bg-[#F5F0E8] py-24 md:py-32 overflow-hidden">
+    <section
+      id="paths-section"
+      ref={sectionRef}
+      className="bg-cream py-24 md:py-32 overflow-hidden"
+    >
       {/* Headline */}
       <div
         className={`text-center px-6 mb-16 transition-all duration-700 ${
@@ -151,7 +174,7 @@ export default function ThreeDistinctPathsSection() {
         >
           One shared outcome.
         </p>
-        <p className="font-sans text-sm text-[#0D0D0D]/50 mt-5">
+        <p className="font-sans text-sm text-page/50 mt-5">
           Higher-leverage design leadership.
         </p>
       </div>
@@ -163,5 +186,5 @@ export default function ThreeDistinctPathsSection() {
         ))}
       </div>
     </section>
-  )
+  );
 }

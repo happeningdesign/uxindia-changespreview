@@ -1,36 +1,45 @@
 "use client";
 
 import { useState, useRef } from "react";
+
+// Global Components
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
-import LeadershipSummitHero from "@/components/events/leadership-summit/LeadershipSummitHero";
-import WhoAttends from "@/components/events/WhoAttends";
-import SpeakersGrid from "@/components/events/SpeakersGrid";
-import VenueSection from "@/components/events/VenueSection";
-import LeadershipSchedule from "@/components/events/LeadershipSchedule";
-import leadershipSpeakers from "@/data/leadership-speakers";
-import EventDayCards from "@/components/events/EventDayCards";
+
+// Page Components
+import LeadershipSummitHero from "@/components/events/leadership-summit/hero/Hero";
+import WhoAttends from "@/components/events/who-attends/WhoAttends";
+import SpeakersGrid from "@/components/events/speakers-grid/SpeakersGrid";
+import VenueSection from "@/components/events/leadership-summit/venue-section/VenueSection";
+import LeadershipSchedule from "@/components/events/leadership-summit/leadership-schedule/LeadershipSchedule";
+import EventDayCards from "@/components/events/event-day-cards/EventDayCards";
+
+// Data
+import leadershipSpeakers from "@/data//events/leadership-summit-speakers";
 
 const leadershipSummitDays = [
   {
     badge: "PRE-CONFERENCE WORKSHOPS",
     badgeColor: "orange" as const,
     date: "23 September",
-    description: "Full-day, hands-on workshops across parallel rooms — dive deep into design methods, tools, and craft with expert facilitators in small, focused groups.",
+    description:
+      "Full-day, hands-on workshops across parallel rooms — dive deep into design methods, tools, and craft with expert facilitators in small, focused groups.",
     bgColor: "bg-[#1C1C1E]",
   },
   {
     badge: "CONFERENCE DAY 1",
     badgeColor: "blue" as const,
     date: "24 September",
-    description: "Grand keynotes, Plenary Keynotes & Panel Discussions on design leadership, AI, and business impact, paired with curated roundtables and spark sessions.",
+    description:
+      "Grand keynotes, Plenary Keynotes & Panel Discussions on design leadership, AI, and business impact, paired with curated roundtables and spark sessions.",
     bgColor: "bg-[#0E4D5C]",
   },
   {
     badge: "CONFERENCE DAY 2",
     badgeColor: "orange" as const,
     date: "25 September",
-    description: "Deep Dive talks, panel discussions, and spark sessions, closing with leadership networking and conversations that carry beyond the stage.",
+    description:
+      "Deep Dive talks, panel discussions, and spark sessions, closing with leadership networking and conversations that carry beyond the stage.",
     bgColor: "bg-[#4A2C3D]",
   },
 ];
@@ -43,7 +52,8 @@ export default function LeadershipSummitPageClient() {
     setActiveTab(tab);
     setTimeout(() => {
       if (contentRef.current) {
-        const y = contentRef.current.getBoundingClientRect().top + window.scrollY;
+        const y =
+          contentRef.current.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({ top: y, behavior: "smooth" });
       }
     }, 0);
@@ -52,7 +62,11 @@ export default function LeadershipSummitPageClient() {
   return (
     <main>
       <Nav forceSolid={false} />
-      <LeadershipSummitHero activeTab={activeTab} setActiveTab={setActiveTab} hideTabBar={true} />
+      <LeadershipSummitHero
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        hideTabBar={true}
+      />
 
       {/* Scroll sentinel — sits just before the sticky bar */}
       <div ref={contentRef} />
@@ -78,9 +92,13 @@ export default function LeadershipSummitPageClient() {
           <section className="bg-[#0D0D0D] w-full py-16 md:py-24">
             <div className="max-w-7xl mx-auto px-6">
               <div className="prose prose-invert max-w-none">
-                <h2 className="font-leadership text-4xl md:text-5xl text-white mb-6">Overview</h2>
+                <h2 className="font-leadership text-4xl md:text-5xl text-white mb-6">
+                  Overview
+                </h2>
                 <p className="font-sans text-base text-white/70 leading-relaxed">
-                  The Leadership Summit 2026 brings together the most influential design voices to shape the future of design leadership.
+                  The Leadership Summit 2026 brings together the most
+                  influential design voices to shape the future of design
+                  leadership.
                 </p>
               </div>
               <EventDayCards days={leadershipSummitDays} />

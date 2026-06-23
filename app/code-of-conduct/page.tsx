@@ -31,12 +31,12 @@ function AnimatedSection({
 
 function SectionTitle({ number, title }: { number: string; title: string }) {
   return (
-    <div className="flex items-baseline gap-4 mb-8 pb-4 border-b-2 border-[#E85520]">
-      <span className="font-sans text-sm font-semibold text-[#E85520]">
+    <div className="flex items-baseline gap-4 mb-8 pb-4 border-b-2 border-brand">
+      <span className="font-sans text-sm font-semibold text-brand">
         {number}
       </span>
       <h2
-        className="text-3xl md:text-4xl text-[#0D0D0D]"
+        className="text-3xl md:text-4xl text-page"
         style={{ fontFamily: "'UXILeadershipCondensed'", fontWeight: 500 }}
       >
         {title}
@@ -54,7 +54,7 @@ function ListItem({
 }) {
   return (
     <li className="flex gap-3 mb-4">
-      <span className="text-[#E85520] font-semibold mt-0.5 shrink-0">
+      <span className="text-brand font-semibold mt-0.5 shrink-0">
         {icon === "arrow" ? "→" : "✓"}
       </span>
       <span className="font-sans text-base text-[#333333] leading-relaxed">
@@ -72,8 +72,8 @@ function BehaviorCard({
   description: string;
 }) {
   return (
-    <div className="bg-[#0D0D0D]/5 p-5 rounded-xl border-l-3 border-[#E85520] hover:bg-[#0D0D0D]/8 transition-colors">
-      <h4 className="font-sans font-semibold text-[#E85520] mb-2">{title}</h4>
+    <div className="bg-page/5 p-5 rounded-xl border-l-3 border-brand hover:bg-page/8 transition-colors">
+      <h4 className="font-sans font-semibold text-brand mb-2">{title}</h4>
       <p className="font-sans text-sm text-[#333333] leading-relaxed">
         {description}
       </p>
@@ -93,12 +93,12 @@ function Callout({
   const colors = {
     warning: "bg-amber-50 border-amber-400",
     success: "bg-emerald-50 border-emerald-500",
-    accent: "bg-orange-50 border-[#E85520]",
+    accent: "bg-orange-50 border-brand",
   };
 
   return (
     <div className={`${colors[type]} border-l-4 p-5 rounded-r-xl my-6`}>
-      <h4 className="font-sans font-semibold text-[#0D0D0D] mb-2">{title}</h4>
+      <h4 className="font-sans font-semibold text-page mb-2">{title}</h4>
       <div className="font-sans text-sm text-[#333333] leading-relaxed">
         {children}
       </div>
@@ -108,7 +108,7 @@ function Callout({
 
 function ContactCard() {
   return (
-    <div className="bg-[#0D0D0D] text-white p-8 md:p-10 rounded-3xl mt-12">
+    <div className="bg-page text-white p-8 md:p-10 rounded-3xl mt-12">
       <h3
         className="text-2xl md:text-3xl mb-4"
         style={{ fontFamily: "'UXILeadershipCondensed'", fontWeight: 500 }}
@@ -127,7 +127,7 @@ function ContactCard() {
           </p>
           <a
             href="mailto:team@umo.design"
-            className="font-sans text-white hover:text-[#E85520] transition-colors"
+            className="font-sans text-white hover:text-brand transition-colors"
           >
             team@umo.design
           </a>
@@ -138,7 +138,7 @@ function ContactCard() {
           </p>
           <a
             href="tel:+918096204373"
-            className="font-sans text-white hover:text-[#E85520] transition-colors"
+            className="font-sans text-white hover:text-brand transition-colors"
           >
             +91-8096204373
           </a>
@@ -149,7 +149,7 @@ function ContactCard() {
           </p>
           <a
             href="mailto:team@umo.design"
-            className="font-sans text-white hover:text-[#E85520] transition-colors"
+            className="font-sans text-white hover:text-brand transition-colors"
           >
             team@umo.design
           </a>
@@ -177,25 +177,27 @@ export default function CodeOfConductPage() {
 
   return (
     <>
+      {/* global nav */}
       <Nav forceSolid />
-      <main className="min-h-screen bg-[#F5F0E8]">
+
+      <main className="min-h-screen bg-cream">
         {/* Hero Section */}
         <section
           ref={heroRef}
-          className="relative min-h-[70vh] overflow-hidden bg-[#0D0D0D] pt-[100px]"
+          className="relative min-h-[70vh] overflow-hidden bg-page pt-[100px]"
         >
           <motion.div
             style={{ y: bgY }}
             className="absolute inset-0 z-0 w-full h-full"
           >
             <Image
-              src="/uxindia-audience.jpg"
+              src="/images/bg/privacy/hero.webp"
               alt="UXINDIA conference community"
               fill
               className="object-cover object-center opacity-30"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-page via-page/80 to-transparent" />
           </motion.div>
 
           <div className="relative z-10 min-h-[calc(70vh-100px)] flex flex-col justify-end pb-16 md:pb-24 px-6">
@@ -204,7 +206,7 @@ export default function CodeOfConductPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="font-sans text-xs text-[#E85520] uppercase tracking-[0.25em] mb-4"
+                className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4"
               >
                 UXINDIA 2026
               </motion.p>
@@ -236,20 +238,20 @@ export default function CodeOfConductPage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="font-sans text-sm text-white/50 mt-6"
               >
-                22–27 September 2026 · Bengaluru, India
+                23–27 September 2026 · Bengaluru, India
               </motion.p>
             </div>
           </div>
         </section>
 
         {/* Content Section */}
-        <section className="py-16 md:py-24 bg-[#F5F0E8]">
+        <section className="py-16 md:py-24 bg-cream">
           <div className="max-w-4xl mx-auto px-6">
             {/* Introduction */}
             <AnimatedSection>
-              <div className="bg-gradient-to-r from-[#E85520]/10 to-[#E85520]/5 border-l-4 border-[#E85520] p-6 md:p-8 rounded-r-2xl mb-12">
+              <div className="bg-gradient-to-r from-brand/10 to-brand/5 border-l-4 border-brand p-6 md:p-8 rounded-r-2xl mb-12">
                 <p className="font-sans text-base md:text-lg text-[#333333] leading-relaxed mb-4">
-                  <strong className="text-[#E85520]">
+                  <strong className="text-brand">
                     UXINDIA is committed to providing a welcoming, inclusive,
                     safe, and respectful environment for all participants.
                   </strong>{" "}
@@ -270,7 +272,7 @@ export default function CodeOfConductPage() {
             <AnimatedSection className="mb-16">
               <SectionTitle number="01" title="Scope and Applicability" />
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4 mt-8">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4 mt-8">
                 Who This Code Applies To
               </h3>
               <p className="font-sans text-base text-[#333333] mb-4">
@@ -308,7 +310,7 @@ export default function CodeOfConductPage() {
                 </ListItem>
               </ul>
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 Where This Code Applies
               </h3>
               <p className="font-sans text-base text-[#333333] mb-4">
@@ -426,7 +428,7 @@ export default function CodeOfConductPage() {
                 prohibited:
               </p>
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 Harassment and Discrimination
               </h3>
               <p className="font-sans text-base text-[#333333] mb-6">
@@ -461,7 +463,7 @@ export default function CodeOfConductPage() {
                 />
               </div>
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 Discrimination
               </h3>
               <p className="font-sans text-base text-[#333333] mb-4">
@@ -497,7 +499,7 @@ export default function CodeOfConductPage() {
                 </ListItem>
               </ul>
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 Other Prohibited Conduct
               </h3>
               <ul className="list-none mb-6">
@@ -565,7 +567,7 @@ export default function CodeOfConductPage() {
             <AnimatedSection className="mb-16">
               <SectionTitle number="04" title="Reporting Violations" />
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 How to Report
               </h3>
               <p className="font-sans text-base text-[#333333] mb-6">
@@ -583,7 +585,7 @@ export default function CodeOfConductPage() {
                   <strong>Email:</strong> Send a detailed report to{" "}
                   <a
                     href="mailto:team@umo.design"
-                    className="text-[#E85520] hover:underline"
+                    className="text-brand hover:underline"
                   >
                     team@umo.design
                   </a>
@@ -602,7 +604,7 @@ export default function CodeOfConductPage() {
                 </ListItem>
               </ul>
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 What to Include in Your Report
               </h3>
               <p className="font-sans text-base text-[#333333] mb-4">
@@ -631,7 +633,7 @@ export default function CodeOfConductPage() {
                 </ListItem>
               </ul>
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 Confidentiality and Protection
               </h3>
               <p className="font-sans text-base text-[#333333] mb-4">
@@ -656,7 +658,7 @@ export default function CodeOfConductPage() {
             <AnimatedSection className="mb-16">
               <SectionTitle number="05" title="Investigation and Response" />
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 Investigation Process
               </h3>
               <p className="font-sans text-base text-[#333333] mb-4">
@@ -673,7 +675,7 @@ export default function CodeOfConductPage() {
                   "Complete the investigation as promptly as possible, typically within 7-10 days for incidents during the conference",
                 ].map((item, index) => (
                   <li key={index} className="flex gap-3">
-                    <span className="text-[#E85520] font-semibold shrink-0">
+                    <span className="text-brand font-semibold shrink-0">
                       {index + 1}.
                     </span>
                     <span className="font-sans text-base text-[#333333]">
@@ -683,7 +685,7 @@ export default function CodeOfConductPage() {
                 ))}
               </ol>
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 Immediate Actions
               </h3>
               <p className="font-sans text-base text-[#333333] mb-4">
@@ -707,7 +709,7 @@ export default function CodeOfConductPage() {
                 </ListItem>
               </ul>
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 Possible Consequences
               </h3>
               <p className="font-sans text-base text-[#333333] mb-4">
@@ -760,7 +762,7 @@ export default function CodeOfConductPage() {
                 title="Legal Framework and Jurisdiction"
               />
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 Applicable Laws
               </h3>
               <p className="font-sans text-base text-[#333333] mb-4">
@@ -807,7 +809,7 @@ export default function CodeOfConductPage() {
                 </ListItem>
               </ul>
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 Jurisdiction
               </h3>
               <p className="font-sans text-base text-[#333333] mb-8">
@@ -818,7 +820,7 @@ export default function CodeOfConductPage() {
                 accordance with the laws of India.
               </p>
 
-              <h3 className="font-sans font-semibold text-xl text-[#0D0D0D] mb-4">
+              <h3 className="font-sans font-semibold text-xl text-page mb-4">
                 Internal Complaints Committee
               </h3>
               <p className="font-sans text-base text-[#333333] mb-4">
@@ -869,7 +871,7 @@ export default function CodeOfConductPage() {
                   Request accommodations or report accessibility issues to{" "}
                   <a
                     href="mailto:team@umo.design"
-                    className="text-[#E85520] hover:underline"
+                    className="text-brand hover:underline"
                   >
                     team@umo.design
                   </a>
@@ -970,7 +972,7 @@ export default function CodeOfConductPage() {
                 Questions about this Code of Conduct should be directed to{" "}
                 <a
                   href="mailto:team@umo.design"
-                  className="text-[#E85520] hover:underline"
+                  className="text-brand hover:underline"
                 >
                   team@umo.design
                 </a>
@@ -980,9 +982,9 @@ export default function CodeOfConductPage() {
 
             {/* Commitment Box */}
             <AnimatedSection>
-              <div className="bg-gradient-to-r from-[#E85520]/10 to-[#E85520]/5 border-l-4 border-[#E85520] p-6 md:p-8 rounded-r-2xl mb-8">
+              <div className="bg-gradient-to-r from-brand/10 to-brand/5 border-l-4 border-brand p-6 md:p-8 rounded-r-2xl mb-8">
                 <p className="font-sans text-base md:text-lg text-[#333333] leading-relaxed mb-4">
-                  <strong className="text-[#E85520]">
+                  <strong className="text-brand">
                     By participating in UXINDIA 2026, you are helping us create
                     an environment where everyone can learn, connect, and
                     contribute to shaping the future of design.
@@ -1002,8 +1004,8 @@ export default function CodeOfConductPage() {
 
             {/* Organization Info */}
             <AnimatedSection>
-              <div className="text-center mt-12 pt-8 border-t border-[#0D0D0D]/10">
-                <p className="font-sans font-semibold text-[#0D0D0D] mb-2">
+              <div className="text-center mt-12 pt-8 border-t border-page/10">
+                <p className="font-sans font-semibold text-page mb-2">
                   Organized by UMO Design Foundation
                 </p>
                 <p className="font-sans text-sm text-[#333333]/70 max-w-xl mx-auto mb-4">
@@ -1015,7 +1017,7 @@ export default function CodeOfConductPage() {
                   href="https://www.ux-india.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-sans text-sm text-[#E85520] hover:underline"
+                  className="font-sans text-sm text-brand hover:underline"
                 >
                   www.ux-india.org
                 </Link>
@@ -1027,6 +1029,8 @@ export default function CodeOfConductPage() {
           </div>
         </section>
       </main>
+
+      {/* global footer */}
       <Footer />
     </>
   );
