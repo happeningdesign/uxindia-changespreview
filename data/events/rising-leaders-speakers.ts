@@ -87,7 +87,7 @@ const risingLeadersSpeakers: Speaker[] = [
   },
   {
     name: "Deepashree Kale",
-    role: "Head of Design",
+    role: "Head of Design, Apptware",
     image: "/images/speakers/rising-leaders/Deepashree Kale.webp",
     ogImage: "",
     talkType: "Deep Dive",
