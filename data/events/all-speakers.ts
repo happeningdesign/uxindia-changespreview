@@ -99,3 +99,66 @@ export const allSpeakers: Speaker[] = buildAllSpeakers();
 export function getSpeakerBySlug(slug: string): Speaker | undefined {
   return allSpeakers.find((s) => getSpeakerSlug(s) === slug);
 }
+
+// ── Per-event speaker lists for route-scoped static params + lookups ──────────
+// Each list only contains speakers that belong to that event, so a speaker in
+// both events gets two independent pages at their respective URLs.
+
+function buildLeadershipSpeakers(): Speaker[] {
+  return leadershipSpeakers.map((speaker, idx) => {
+    const scheduleMatch = lookupLeadershipSchedule(speaker.name);
+    return {
+      ...speaker,
+      colorIndex: idx,
+      events: {
+        ...speaker.events,
+        leadership: speaker.events?.leadership
+          ? Array.isArray(speaker.events.leadership)
+            ? speaker.events.leadership
+            : {
+                ...speaker.events.leadership,
+                date: speaker.events.leadership.date ?? scheduleMatch?.date,
+                time: speaker.events.leadership.time ?? scheduleMatch?.time,
+                endTime: speaker.events.leadership.endTime ?? scheduleMatch?.endTime,
+                title: speaker.events.leadership.title ?? scheduleMatch?.title,
+                type: speaker.events.leadership.type ?? scheduleMatch?.type,
+              }
+          : undefined,
+      },
+    };
+  });
+}
+
+function buildRisingLeadersSpeakers(): Speaker[] {
+  return risingLeadersSpeakers.map((speaker, idx) => {
+    const scheduleMatch = lookupRisingSchedule(speaker.name);
+    const risingTalk = speaker.events?.rising
+      ? Array.isArray(speaker.events.rising)
+        ? speaker.events.rising
+        : {
+            ...speaker.events.rising,
+            date: speaker.events.rising.date ?? scheduleMatch?.date,
+            time: speaker.events.rising.time ?? scheduleMatch?.time,
+            endTime: speaker.events.rising.endTime ?? scheduleMatch?.endTime,
+            title: speaker.events.rising.title ?? scheduleMatch?.title,
+            type: speaker.events.rising.type ?? scheduleMatch?.type,
+          }
+      : undefined;
+    return {
+      ...speaker,
+      colorIndex: idx,
+      events: { ...speaker.events, rising: risingTalk },
+    };
+  });
+}
+
+export const leadershipSpeakersList: Speaker[] = buildLeadershipSpeakers();
+export const risingLeadersSpeakersList: Speaker[] = buildRisingLeadersSpeakers();
+
+export function getLeadershipSpeakerBySlug(slug: string): Speaker | undefined {
+  return leadershipSpeakersList.find((s) => getSpeakerSlug(s) === slug);
+}
+
+export function getRisingLeadersSpeakerBySlug(slug: string): Speaker | undefined {
+  return risingLeadersSpeakersList.find((s) => getSpeakerSlug(s) === slug);
+}

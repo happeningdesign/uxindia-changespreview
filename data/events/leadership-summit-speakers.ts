@@ -48,7 +48,7 @@ const leadershipSpeakers: Speaker[] = [
     events: {
       leadership: [
         {
-          type: "Grand Keynote",
+          type: "Grand Keynote - 40 Mins",
           track: "",
           talkCategory: "",
           title: "Talk Title: TBA",
@@ -73,15 +73,15 @@ const leadershipSpeakers: Speaker[] = [
     role: "Advisor, Interim Head, Product & Design, Digital Impulsum",
     image: "/images/speakers/leadership-summit/Jose-Coronado.png",
     ogImage: "",
-    talkType: "Grand Keynote",
+    talkType: "Plenary Keynote",
     bio: "Jose Coronado is a bilingual Product and Design Executive specializing in enterprise operating model transformation across global markets. He partners with executive teams to scale product and design organizations, align strategy with execution, and drive measurable performance inside complex, regulated institutions. His work sits at the intersection of strategy, operations, and organizational design. He leads large-scale transformation efforts that modernize operating models, strengthen governance, elevate talent systems, and translate design investment into sustained business impact. Jose advises major financial services institutions across Latin America on enterprise transformation, operating model redesign, and scaling design impact. Fluent in English and Spanish, he helps align executives across regions, accelerate decision-making, and navigate the cultural and regulatory complexity of multinational banking. At Target, Jose built the Strategic Planning & Operations practice from the ground up, hiring and developing senior leaders and establishing the business infrastructure required to support growth at scale. Before that, he served as Executive Director of Experience Design at JPMorgan's Corporate & Investment Bank, where he built and scaled the global Design organization as a strategic capability within a highly complex financial environment. Earlier in his career, Jose partnered with organizations including McKinsey, Accenture, Bain Capital, Aquent, and AIG, advising Fortune 10, 50, and 500 companies such as ADP, Oracle, and AT&T on strategy, transformation, and organizational effectiveness. He also serves as a board advisor and speaks internationally on leadership, operating model evolution, and scaling design for business performance, with more than 100 engagements across North America, Latin America, Europe, and Asia.",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/josecoronado/",
     twitter: "",
     feedbackLink: "",
     events: {
       leadership: [
         {
-          type: "Plenary Keynote",
+          type: "Plenary Keynote - 30 Mins",
           track: "",
           talkCategory: "",
           title: "Talk Title: TBA",
@@ -102,6 +102,54 @@ const leadershipSpeakers: Speaker[] = [
     },
   },
   {
+    name: "Pontus Warnestal",
+    role: "Head of Design, Ambition Group",
+    image: "/images/speakers/leadership-summit/Pontus-Warnestal.png",
+    ogImage: "",
+    talkType: "Plenary Keynote",
+    bio: "Award-winning designer, researcher (PhD), and educator with over two decades of practical experience integrating human-centered design with emerging technologies and AI in academic, industrial, and startup environments. - Published Author and Researcher: Author of 40+ peer-reviewed publications and books, including \"Designing AI-Powered Services\" (2021; 2022; 2023), providing practical insights on AI and design integration. Featured in 20+ podcasts since 2019, sharing expertise on AI and human-centered design. - Education and Learning: Program Director, and lecturer with 25 years of teaching experience. Designed and leads AI and Design education at Ambition Empower, returning guest lecturer at YRGO, and have delivered 150+ keynotes and invited talks since 2020. Published innovative studio pedagogy work, earning two Best Paper Awards. Recipient of the Excellent Teacher Award twice. - Leadership and Strategy: Deputy Vice Chancellor and Program Director at Halmstad University, where I launched and led the Digital Design and Innovation program, collaborating with 90+ companies. Experience leading UX, service design, and AI initiatives across diverse industries, including roles as Head of Design at Crispin Porter + Bogusky Europe, Head of Design Direction at inUse, and Design Lead at AI agency eghed. - Internationally Recognized Research: Developed the award-winning \"Give Me a Break\" app for child cancer survivors, receiving the Livestrong Innovation Prize and a nomination for the Swedish Design Award. Recognized for pioneering participatory design methodologies for children in sensitive contexts and human-centered design for real-world urban and architectural projects, earning a Best of CHI Honorable Mention Award. - Technical Expertise and Design: Skilled in both strategic design thinking and coding, I created design frameworks for business innovation and crafted adaptive spoken dialogue systems for Nokia Home Communication, which led to a patent for its dialogue model implementation, detailed in my PhD thesis. Decades of experience in crafting UX design solutions.",
+    linkedin: "https://www.linkedin.com/in/pontuswarnestal/",
+    twitter: "",
+    feedbackLink: "",
+    events: {
+      leadership: {
+        type: "Plenary Keynote - 30 Mins",
+        track: "",
+        talkCategory: "Design Practice",
+        title: "The Design Leadership Challenge for the AI Era",
+        description: "Generative AI is reshaping what design teams pay attention to, how they collaborate, and which capabilities they lose. This talk examines the less visible costs of AI adoption eroding judgment, weaker focus, and critical thinking that quietly atrophies. Design leaders will leave with practical signals to spot when AI is undermining team effectiveness, and concrete frameworks to guide tool adoption without sacrificing the capabilities that make great design possible.",
+        keyTakeaway: [
+          "A clearer understanding of why declining focus and engagement in AI-augmented teams is a design capability issue, not just a workflow problem.",
+          "Practical signals to watch for when AI tools begin to weaken design judgment and team effectiveness.",
+          "A set of concrete questions and decision frameworks to guide tool adoption, team practices, and capability development.",
+        ],
+        audience: "",
+      },
+    },
+  },
+  {
+    name: "Kaladhar Bapu",
+    role: "Founder, UXINDIA",
+    image: "/images/speakers/leadership-summit/Kaladhar-Bapu.png",
+    ogImage: "",
+    talkType: "Opening Keynote",
+    bio: "Kaladhar Bapu's name comes with a story. He was named after Bapu, the legendary Indian artist and film director who could turn a blank canvas into an entire world. Kaladhar had the rare privilege of working with him. Bapu once told him that creativity was not something he practiced. It was something he lived.That idea stayed with Kaladhar.For the past 25 years, it has quietly shaped everything he has built.Kaladhar has spent a large part of his career leading product design for some of the world's most complex financial systems, across organizations such as BNY Mellon, Goldman Sachs, Citi, and Microsoft. These are not simple products. They serve millions of users, involve high-stakes decisions, and require design systems that do not just look good, but actually help organizations work better.Through that work, he learned something important.Design is no longer just about execution.It is moving into decision-making.AI is only accelerating that shift.And most organizations are not ready for it.But the work that truly drives him goes beyond enterprise systems. It is the larger question of how designers become more influential, more strategic, and more responsible for outcomes.Kaladhar works with leaders and teams to help design move from craft to influence, from output to ownership, and from service function to strategic capability. At its highest level, he believes this shift can turn designers into Designpreneurs — people who do not just create outputs, but own outcomes.Alongside his enterprise work, Kaladhar has spent more than two decades building design ecosystems. He founded UMO Design Foundation and UXINDIA, now one of Asia's most influential design platforms, impacting 90,000+ designers. His intention has always been simple: make design more accessible, more serious, and more useful to the next generation of leaders.One of the initiatives closest to him is **1 Million Women in Design and AI Literacy by 2030**.He also built Bapu Studio as an R&D lab to test a belief he has carried for years: Creativity is not talent.Creativity is a teachable skill.He often says this to teams: If a 12-year-old cannot understand your design system, it is probably too complex for your organization.Kaladhar's education has taken him from Industrial Design at IIT Bombay to Design Management at Pratt Institute in New York, and executive education at The Wharton School. But his real learning has always come from building — building teams, systems, communities, platforms, and sometimes, starting from a blank page.Today, Kaladhar helps organizations and leaders understand where design is going next, especially in the age of AI.Because the future of design will not belong only to people who can make things beautiful.It will belong to people who can make better decisions.",
+    linkedin: "https://www.linkedin.com/in/kbapu/",
+    twitter: "",
+    feedbackLink: "",
+    events: {
+      leadership: {
+        type: "Opening Keynote",
+        track: "",
+        talkCategory: "",
+        title: "Opening Remarks & Keynote",
+        description: "Announcing Soon",
+        keyTakeaway: "",
+        audience: "",
+      },
+    },
+  },
+  {
     name: "Vyoma Pathak",
     role: "Sr. Design Practice Lead, Mouri Tech",
     image: "/images/speakers/leadership-summit/Vyoma.webp",
@@ -113,7 +161,7 @@ const leadershipSpeakers: Speaker[] = [
     feedbackLink: "",
     events: {
       leadership: {
-        type: "Spark Session",
+        type: "Spark Session - 18 Mins",
         track: "",
         talkCategory: "Design Practice",
         title: "Death of the Wireframe",
@@ -169,7 +217,7 @@ const leadershipSpeakers: Speaker[] = [
     feedbackLink: "",
     events: {
       leadership: {
-        type: "Spark Session",
+        type: "Spark Session - 18 Mins",
         track: "",
         talkCategory: "Design Practice",
         title: "The roles they are a-changin: AI and the Great Dissolve",
@@ -196,7 +244,7 @@ const leadershipSpeakers: Speaker[] = [
     feedbackLink: "",
     events: {
       leadership: {
-        type: "Plenary Keynote",
+        type: "Plenary Keynote - 30 Mins",
         track: "",
         talkCategory: "Design Practice",
         title: "Be[coming] a leader in design",
@@ -206,32 +254,6 @@ const leadershipSpeakers: Speaker[] = [
           "What design leadership really is — and why most models fail designers",
           "How to build trust as your core design output (yes, really)",
           "How power and presence work when you're no longer the hands-on designer",
-        ],
-        audience: "",
-      },
-    },
-  },
-{
-    name: "Pontus Warnestal",
-    role: "Head of Design, Ambition Group",
-    image: "/images/speakers/leadership-summit/Pontus-Warnestal.png",
-    ogImage: "",
-    talkType: "Plenary Keynote",
-    bio: "Award-winning designer, researcher (PhD), and educator with over two decades of practical experience integrating human-centered design with emerging technologies and AI in academic, industrial, and startup environments. - Published Author and Researcher: Author of 40+ peer-reviewed publications and books, including \"Designing AI-Powered Services\" (2021; 2022; 2023), providing practical insights on AI and design integration. Featured in 20+ podcasts since 2019, sharing expertise on AI and human-centered design. - Education and Learning: Program Director, and lecturer with 25 years of teaching experience. Designed and leads AI and Design education at Ambition Empower, returning guest lecturer at YRGO, and have delivered 150+ keynotes and invited talks since 2020. Published innovative studio pedagogy work, earning two Best Paper Awards. Recipient of the Excellent Teacher Award twice. - Leadership and Strategy: Deputy Vice Chancellor and Program Director at Halmstad University, where I launched and led the Digital Design and Innovation program, collaborating with 90+ companies. Experience leading UX, service design, and AI initiatives across diverse industries, including roles as Head of Design at Crispin Porter + Bogusky Europe, Head of Design Direction at inUse, and Design Lead at AI agency eghed. - Internationally Recognized Research: Developed the award-winning \"Give Me a Break\" app for child cancer survivors, receiving the Livestrong Innovation Prize and a nomination for the Swedish Design Award. Recognized for pioneering participatory design methodologies for children in sensitive contexts and human-centered design for real-world urban and architectural projects, earning a Best of CHI Honorable Mention Award. - Technical Expertise and Design: Skilled in both strategic design thinking and coding, I created design frameworks for business innovation and crafted adaptive spoken dialogue systems for Nokia Home Communication, which led to a patent for its dialogue model implementation, detailed in my PhD thesis. Decades of experience in crafting UX design solutions.",
-    linkedin: "",
-    twitter: "",
-    feedbackLink: "",
-    events: {
-      leadership: {
-        type: "Plenary Keynote",
-        track: "",
-        talkCategory: "Design Practice",
-        title: "The Design Leadership Challenge for the AI Era",
-        description: "Generative AI is reshaping what design teams pay attention to, how they collaborate, and which capabilities they lose. This talk examines the less visible costs of AI adoption eroding judgment, weaker focus, and critical thinking that quietly atrophies. Design leaders will leave with practical signals to spot when AI is undermining team effectiveness, and concrete frameworks to guide tool adoption without sacrificing the capabilities that make great design possible.",
-        keyTakeaway: [
-      "A clearer understanding of why declining focus and engagement in AI-augmented teams is a design capability issue, not just a workflow problem.",
-      "Practical signals to watch for when AI tools begin to weaken design judgment and team effectiveness.",
-      "A set of concrete questions and decision frameworks to guide tool adoption, team practices, and capability development.",
         ],
         audience: "",
       },

@@ -5,12 +5,12 @@ import Footer from "@/components/global/footer/Footer";
 
 import { getSpeakerSlug } from "@/types/speaker";
 import type { SpeakerTalk } from "@/types/speaker";
-import { allSpeakers, getSpeakerBySlug } from "@/data/events/all-speakers";
+import { risingLeadersSpeakersList, getRisingLeadersSpeakerBySlug } from "@/data/events/all-speakers";
 import { createMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
-  return allSpeakers.map((speaker) => ({
+  return risingLeadersSpeakersList.map((speaker) => ({
     slug: getSpeakerSlug(speaker),
   }));
 }
@@ -21,7 +21,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const speaker = getSpeakerBySlug(slug);
+  const speaker = getRisingLeadersSpeakerBySlug(slug);
   if (!speaker) return {};
   const title = `${speaker.name} — UXINDIA 2026`;
   const description =
@@ -417,7 +417,7 @@ export default async function SpeakerPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const speaker = getSpeakerBySlug(slug);
+  const speaker = getRisingLeadersSpeakerBySlug(slug);
   if (!speaker) notFound();
 
   const leadershipTalks = toTalkArray(speaker.events?.leadership);
