@@ -157,6 +157,34 @@ const risingLeadersSpeakers: Speaker[] = [
       },
     },
   },
+  {
+    name: "Amber Krishan",
+    role: "CEO, Futurris Digital Pvt Ltd",
+    image: "/images/speakers/leadership-summit/Amber-Krishan.webp",
+    ogImage: "",
+    talkType: "Workshop",
+    bio: "Amber Krishan is the Founder & CEO of Futurris, a company built for the future-edge of digital transformation â€\" where product, experience, AI, and customer value converge. Over the last two decades, he has built award-winning creative and delivery organizations focused on product transformation, intelligent CX, omni-channel ecosystems, and metrics-led execution across fintech, SaaS, and enterprise ecosystems. Previously, Amber co-founded and led THEM Consulting, a BFSI-focused design firm with offices in Gurgaon and Mumbai. At PayU, he set up and scaled a global digital product experience center, establishing methods, metrics, and infrastructure to support agile delivery across teams. Earlier, he led technical and training teams at Human Factors International (HFI). Amber has delivered 250+ programs on innovation, product strategy, and digital transformation across America, South Africa, Asia, and the Middle East. He continues to teach at Parsons School of Design, CEPT, Chitkara University, Avantika University, Masters Union, and AND Academy, and has spoken at forums including NASSCOM, IAMAI, UXINDIA, and IIM Ahmedabad.",
+    linkedin: "https://www.linkedin.com/in/amberkrishan/",
+    twitter: "",
+    feedbackLink: "",
+    events: {
+      rising: {
+        type: "Workshop",
+        track: "",
+        talkCategory: "Entrepreneurship",
+        title: "The Science of Moat Engineering",
+        description: "Over the last two decades, I've observed that most product teams approach product building through fragmented layers of requirements, features, interfaces, and delivery cycles. While this improves execution, it often fails to create products that sustain long-term advantage.  The products that consistently win are usually shaped around stronger product moats-systems of value, engagement, lifecycle progression, and business alignment that become increasingly difficult to replicate over time. This workshop introduces a scientific moat-engineering framework for modern product building. Participants will learn how to shape products around primary value narratives, architect product lifecycle depth, define engagement structures, align business KPIs with user behavior, and progressively evolve product systems that drive acquisition, activation, retention, monetization, and ecosystem participation.",
+        keyTakeaway: [
+      "How to identify product moats beyond features and usability",
+      "How lifecycle depth creates long-term defensibility",
+      "How behavior systems influence retention and engagement",
+      "How to align product, business, experience, and growth more cohesively",
+      "Practical frameworks to rethink modern product strategy\"",
+        ],
+        audience: "",
+      },
+    },
+  },
 ];
 
 export default risingLeadersSpeakers;

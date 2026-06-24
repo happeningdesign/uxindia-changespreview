@@ -167,6 +167,60 @@ const leadershipSpeakers: Speaker[] = [
       },
     },
   },
+{
+    name: "Pontus Warnestal",
+    role: "Head of Design at Ambition Group",
+    image: "/images/speakers/leadership-summit/Pontus-Warnestal.webp",
+    ogImage: "",
+    talkType: "Plenary Keynote",
+    bio: "Award-winning designer, researcher (PhD), and educator with over two decades of practical experience integrating human-centered design with emerging technologies and AI in academic, industrial, and startup environments. - Published Author and Researcher: Author of 40+ peer-reviewed publications and books, including \"Designing AI-Powered Services\" (2021; 2022; 2023), providing practical insights on AI and design integration. Featured in 20+ podcasts since 2019, sharing expertise on AI and human-centered design. - Education and Learning: Program Director, and lecturer with 25 years of teaching experience. Designed and leads AI and Design education at Ambition Empower, returning guest lecturer at YRGO, and have delivered 150+ keynotes and invited talks since 2020. Published innovative studio pedagogy work, earning two Best Paper Awards. Recipient of the Excellent Teacher Award twice. - Leadership and Strategy: Deputy Vice Chancellor and Program Director at Halmstad University, where I launched and led the Digital Design and Innovation program, collaborating with 90+ companies. Experience leading UX, service design, and AI initiatives across diverse industries, including roles as Head of Design at Crispin Porter + Bogusky Europe, Head of Design Direction at inUse, and Design Lead at AI agency eghed. - Internationally Recognized Research: Developed the award-winning \"Give Me a Break\" app for child cancer survivors, receiving the Livestrong Innovation Prize and a nomination for the Swedish Design Award. Recognized for pioneering participatory design methodologies for children in sensitive contexts and human-centered design for real-world urban and architectural projects, earning a Best of CHI Honorable Mention Award. - Technical Expertise and Design: Skilled in both strategic design thinking and coding, I created design frameworks for business innovation and crafted adaptive spoken dialogue systems for Nokia Home Communication, which led to a patent for its dialogue model implementation, detailed in my PhD thesis. Decades of experience in crafting UX design solutions.",
+    linkedin: "",
+    twitter: "",
+    feedbackLink: "",
+    events: {
+      leadership: {
+        type: "Plenary Keynote",
+        track: "",
+        talkCategory: "Design Practice",
+        title: "The Design Leadership Challenge for the AI Era",
+        description: "Generative AI is reshaping what design teams pay attention to, how they collaborate, and which capabilities they lose. This talk examines the less visible costs of AI adoption eroding judgment, weaker focus, and critical thinking that quietly atrophies. Design leaders will leave with practical signals to spot when AI is undermining team effectiveness, and concrete frameworks to guide tool adoption without sacrificing the capabilities that make great design possible.",
+        keyTakeaway: [
+      "A clearer understanding of why declining focus and engagement in AI-augmented teams is a design capability issue, not just a workflow problem.",
+      "Practical signals to watch for when AI tools begin to weaken design judgment and team effectiveness.",
+      "A set of concrete questions and decision frameworks to guide tool adoption, team practices, and capability development.",
+        ],
+        audience: "",
+      },
+    },
+  },
+  {
+    name: "Samir Dash",
+    role: "UX Arch Senior Manager",
+    image: "/images/speakers/leadership-summit/Samir-Dash.webp",
+    ogImage: "",
+    talkType: "Workshop",
+    bio: "Samir Dash is a UX Architect and AI Design Strategist with 21+ years of experience across global tech firms like Cisco, IBM, Redhat, Samsung, Dell and Accenture. Currently a UX Arch Senior Manager at Accenture, he leads AI-driven enterprise design related re-invention initiatives as part of OpsInteractive, TFO. An award-winning innovator and mentor, he bridges design, technology, and AI-driven product experiences and specializes in human-AI interaction, ethical design, and scalable intelligent experiences. Have authored several books and academic papers on design-led automation, UX, AI-facilitated Design Thinking across industry and academia. He also has been continued to advocate for AI-powered web and application accessibility.",
+    linkedin: "https://www.linkedin.com/in/mobilewish/",
+    twitter: "",
+    feedbackLink: "",
+    events: {
+      leadership: {
+        type: "Workshop",
+        track: "",
+        talkCategory: "Emerging Tech",
+        title: "AI Design Accelerator: Fixing Context-Drift in Rapid AI-Assisted Design Lifecycle",
+        description: "This workshop will explore a practical challenge many design teams are beginning to face: AI can generate design artifacts and prototypes quickly, but the original user intent often gets diluted as teams move across prompts, tools and handoffs. Participants will work through a three-team activity. Team A will simulate a traditional vibe-coding relay, Team B will use a context-retained workflow, and Team C will jump directly from brief to code. The activity will make trade-offs visible: speed can produce polished UI, but missing context can weaken user fit, accessibility, constraints and business alignment. The session will then introduce a structured AI Design Accelerator framework that connects intent, persona, journey, stories, IA and ReactJS prototype through context handoff summaries. We will also demo an AI Design Accelerator automation application built by the team to show how stakeholders can reduce cycle time while retaining context at each stage.",
+        keyTakeaway: [
+      "Identify where context drift can happen when AI-generated outputs move across prompts, tools and life-cycle stages.",
+      "Use structured handoff summaries to retain product intent, persona signals, journey logic, constraints and business goals.",
+      "Compare traditional vibe-coding, direct brief-to-code and context-retained workflows using a practical scorecard.",
+      "Apply a code-first, refine-later mindset while preserving human review, accessibility validation and design ownership.",
+      "Demo of AI Design Accelerator framework with a solution can reduce time from brief to React prototype without losing context, to show the possibility of ecosystem role in this.",
+        ],
+        audience: "",
+      },
+    },
+  },
 ];
 
 export default leadershipSpeakers;
