@@ -42,7 +42,7 @@ function getAccentColor(colorIndex?: number) {
 
 function DarkSectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-sans text-xs font-semibold tracking-widest uppercase text-white/50 mb-3">
+    <p className="font-sans text-xs font-bold tracking-widest uppercase text-white/80 mb-3">
       {children}
     </p>
   );
@@ -56,7 +56,7 @@ function DarkDivider() {
 
 function LightSectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-sans text-xs font-semibold tracking-widest uppercase text-[#0D0D0D]/60 mb-3">
+    <p className="font-sans text-xs font-bold tracking-widest uppercase text-[#0D0D0D]/80 mb-3">
       {children}
     </p>
   );
@@ -98,7 +98,7 @@ function EventChip({
   );
 }
 
-function TypeChip({ label, light }: { label: string; light?: boolean }) {
+function TypeChip({ label }: { label: string; light?: boolean }) {
   return (
     <span
       className={`inline-block px-3 py-1 rounded-full font-sans text-xs font-semibold tracking-wide bg-[#E85520] text-white`}
@@ -317,17 +317,19 @@ function TalkBlock({
 function SocialLinks({
   linkedin,
   twitter,
+  feedbackLink,
   light,
 }: {
   linkedin?: string;
   twitter?: string;
+  feedbackLink?: string;
   light?: boolean;
 }) {
   const btnCls = light
     ? "flex items-center justify-center w-10 h-10 rounded-full bg-[#0D0D0D]/8 hover:bg-[#0D0D0D]/15 transition-colors"
     : "flex items-center justify-center w-10 h-10 rounded-full bg-white/8 hover:bg-white/15 transition-colors";
   const iconCls = light ? "text-[#0D0D0D]" : "text-white";
-  if (!linkedin && !twitter) return null;
+  if (!linkedin && !twitter && !feedbackLink) return null;
   return (
     <div className="flex gap-2.5 mt-1">
       {linkedin && (
@@ -367,6 +369,30 @@ function SocialLinks({
             className={iconCls}
           >
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
+          </svg>
+        </a>
+      )}
+      {feedbackLink && (
+        <a
+          href={feedbackLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Leave feedback"
+          className={btnCls}
+          title="Leave feedback"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={iconCls}
+          >
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
           </svg>
         </a>
       )}
@@ -457,34 +483,56 @@ export default async function SpeakerPage({
               {speaker.name}
             </h1>
 
-            <div className="flex flex-col gap-1">
-              <p
-                className={`font-sans text-base md:text-lg font-semibold ${roleCls}`}
-              >
-                {speaker.role}
-                {speaker.company ? `, ${speaker.company}` : ""}
+            <p className={`font-sans text-base md:text-lg font-semibold mb-4 ${roleCls}`}>
+              {speaker.role}
+              {speaker.company ? `, ${speaker.company}` : ""}
+            </p>
+
+            {/* Chips */}
+            {(hasLeadershipTalk || hasRisingTalk) && (
+              <div className="flex flex-wrap gap-2 items-center">
+                {hasLeadershipTalk && <EventChip event="leadership" light={isLight} />}
+                {hasRisingTalk && <EventChip event="rising" light={isLight} />}
+                {(speaker.events?.leadership?.type || speaker.events?.rising?.type) && (
+                  <TypeChip
+                    label={speaker.events?.leadership?.type ?? speaker.events?.rising?.type ?? ""}
+                    light={isLight}
+                  />
+                )}
+                {(speaker.events?.leadership?.track || speaker.events?.rising?.track) && (
+                  <TrackChip
+                    label={speaker.events?.leadership?.track ?? speaker.events?.rising?.track ?? ""}
+                    light={isLight}
+                  />
+                )}
+                {(speaker.events?.leadership?.talkCategory || speaker.events?.rising?.talkCategory) && (
+                  <CategoryChip
+                    label={speaker.events?.leadership?.talkCategory ?? speaker.events?.rising?.talkCategory ?? ""}
+                    light={isLight}
+                  />
+                )}
+              </div>
+            )}
+
+            {/* Talk title */}
+            {(speaker.events?.leadership?.title || speaker.events?.rising?.title) && (
+              <p className={`font-sans text-base md:text-lg font-semibold text-balance break-words ${roleCls}`}>
+                {speaker.events?.leadership?.title ?? speaker.events?.rising?.title}
               </p>
-              {(speaker.events?.leadership?.title ||
-                speaker.events?.rising?.title) && (
-                <p
-                  className={`font-sans text-base md:text-lg font-semibold ${roleCls} mt-2`}
-                >
-                  {speaker.events?.leadership?.title ||
-                    speaker.events?.rising?.title}
-                </p>
-              )}
-              {(speaker.events?.leadership?.type ||
-                speaker.events?.rising?.type) && (
-                <p className="font-sans text-sm text-[#E85520] font-medium">
-                  {speaker.events?.leadership?.type ||
-                    speaker.events?.rising?.type}
-                </p>
-              )}
-            </div>
+            )}
+
+            {/* Date / time */}
+            <DateTimeRow
+              date={speaker.events?.leadership?.date ?? speaker.events?.rising?.date}
+              time={speaker.events?.leadership?.time ?? speaker.events?.rising?.time}
+              endTime={speaker.events?.leadership?.endTime ?? speaker.events?.rising?.endTime}
+              light={isLight}
+            />
 
             <SocialLinks
               linkedin={speaker.linkedin}
               twitter={speaker.twitter}
+              feedbackLink={speaker.feedbackLink}
               light={isLight}
             />
           </div>
