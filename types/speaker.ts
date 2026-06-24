@@ -22,6 +22,7 @@ export interface Speaker {
   talkType?: string;
   linkedin?: string;
   twitter?: string;
+  feedbackLink?: string;
   events?: {
     leadership?: SpeakerTalk;
     rising?: SpeakerTalk;

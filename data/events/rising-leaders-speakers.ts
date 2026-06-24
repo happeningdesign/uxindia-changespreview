@@ -22,6 +22,7 @@ const risingLeadersSpeakers: Speaker[] = [
     bio: "Deepashree has a straightforward belief: the future of design won't be shaped by people waiting for a seat at Google. It'll be shaped by people bold enough to build that culture wherever they already are.She works at the crossroads of AI, product strategy, and innovation and has done so across some very different environments. From global organizations like Cisco and Globant to building a design team from scratch, she's seen what it takes to make design matter at scale and from the ground up. At Apptware Design Studio, she grew the team from 1 to 12 and helped define what AI-first product thinking actually looks like in practice, not just in theory.Outside of industry work, she runs DesignHive a community asking harder questions about AI after the hype dies down: what collaboration really looks like now, and what designers are actually supposed to do in a world moving this fast. She also guest lectures and sits on juries at MIT World Peace University, staying close to the next generation of designers, technologists, and builders.She's not just thinking about where design is going. She's been helping push it there.",
     linkedin: "https://www.linkedin.com/in/deepashree-kale-27b3548b",
     twitter: "",
+    feedbackLink: "",
     events: {
       rising: {
         type: "Deep Dive",
@@ -51,6 +52,7 @@ const risingLeadersSpeakers: Speaker[] = [
     bio: "Vineet Gupta is a Product Designer and Head of Design & Branding at Gemini Solutions, where he built design teams and products from the ground up. He has led AI-driven projects across fintech, insurance, sports, and healthcare for clients in the US, India, and UAE. A TEDx speaker, marathon runner, and YouTuber, Vineet is passionate about human-centered design and loves sharing knowledge to empower the next generation through technology and storytelling.",
     linkedin: "https://www.linkedin.com/in/vineetgupta94/",
     twitter: "",
+    feedbackLink: "",
     events: {
       rising: {
         type: "Deep Dive",
@@ -78,6 +80,7 @@ const risingLeadersSpeakers: Speaker[] = [
     bio: "Sujit is a UX Designer at Google with over nine years of experience architecting complex digital ecosystems and agentic AI experiences. Before Google, he led key design initiatives at Microsoft, where he shaped the extensions ecosystem for the Edge browser and contributed to the vision for Copilot Vision as Lumi Camera project. His career also includes a significant tenure at Amazon, where he drove the UX strategy for Advertising and Brand Stores, deepening his expertise in large scale e-commerce experiences. His professional journey began as a full stack developer, a technical foundation that now fuels his expertise in designing living systems that move beyond static interfaces.A prominent voice in the design community, Sujit is a Design Mentor on ADPList and an active content creator on Instagram, where he shares insights on product design and the future of human AI collaboration. He has been a featured speaker at events like GDG Noida DevFest and dFrost at NID Bangalore, focusing on the era of AI co-creation. Driven by a philosophy of clean, logic driven aesthetics, Sujit focuses on intentionality over visual fluff, helping early career designers and tech leaders navigate the shift from being users of automation to architects of intelligent, human centered systems.",
     linkedin: "https://www.linkedin.com/in/sujitkumarpradhan",
     twitter: "",
+    feedbackLink: "",
     events: {
       rising: {
         type: "Deep Dive",
@@ -105,6 +108,7 @@ const risingLeadersSpeakers: Speaker[] = [
     bio: "Varedh Nigam is a design and CX leader with 15+ years of experience helping organizations navigate digital transformation at the intersection of customer experience, business strategy, and emerging technologies. As Associate Director, Product Experience & Design at Nagarro, she has led global initiatives across banking, aviation, telecommunications, and enterprise ecosystems, partnering with executives, product teams, and technology leaders to turn complex challenges into measurable outcomes.Her work spans CX consulting, service design, innovation programs, large-scale design thinking workshops, and Human-Centered AI initiatives. Known for connecting systems thinking with practical execution, she focuses on designing trust, aligning stakeholders, and ensuring that AI-enabled experiences create value for both people and businesses. Varedh is passionate about advancing the role of design from a delivery function to a strategic driver of transformation, helping organizations shape what could possibly go right when design leads.",
     linkedin: "",
     twitter: "",
+    feedbackLink: "",
     events: {
       rising: {
         type: "Workshop",
@@ -134,6 +138,7 @@ const risingLeadersSpeakers: Speaker[] = [
     bio: "Anya Gerasimchuk is design and product leader with deep experience across product management, UX and digital innovation in highly complex, regulated industries. As Senior Director of Product Design and UI/UX Engineering at Ontada, McKesson's oncology technology division, she shapes product vision through customer insight, evidence-based user research, and an empathetic understanding of clinical workflows. Her work focuses on elevating product quality in mission-critical healthcare environments while maturing design practices across the organisation.Across McKesson, GE Digital, EY, and GE Aviation, Anya has built and scaled UX organisations, driven cross-functional collaboration and delivered digital solutions for domains ranging from oncology to aviation, energy and industrial systems. She has led teams through strategy formation, design execution and delivery of human-centred experiences that support safety, operational efficiency and measurable business outcomes.",
     linkedin: "https://www.linkedin.com/in/avgera/",
     twitter: "",
+    feedbackLink: "",
     events: {
       rising: {
         type: "Workshop",
