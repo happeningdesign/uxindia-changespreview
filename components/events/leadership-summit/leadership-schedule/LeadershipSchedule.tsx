@@ -503,20 +503,29 @@ export default function LeadershipSchedule() {
                         key={sIndex}
                         className="bg-gradient-to-br from-white/8 to-white/[0.02] border border-white/10 rounded-2xl p-6 hover:border-[#E85520]/30 transition-all"
                       >
-                        <div className="flex items-center justify-between mb-3">
-                          <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
-                            {sess.room}
-                          </p>
-                          <div className="flex items-center gap-2">
-                            {sess.tag && (
-                              <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
-                                {sess.tag}
-                              </span>
-                            )}
+                        <div className="flex flex-col gap-2 mb-3">
+                          <div className="flex items-center justify-between">
+                            <p className="font-sans text-xs text-[#E85520] font-semibold uppercase tracking-wider">
+                              {sess.room}
+                            </p>
                             <p className="lg:hidden text-xs text-white/40">
                               {session.time}
                             </p>
                           </div>
+                          {(sess.tag || sess.talkCategory) && (
+                            <div className="flex items-center gap-2 flex-wrap">
+                              {sess.tag && (
+                                <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
+                                  {sess.tag}
+                                </span>
+                              )}
+                              {sess.talkCategory && (
+                                <span className="px-2.5 py-0.5 rounded-full bg-white/10 text-white/60 font-sans text-[10px] font-semibold uppercase tracking-wider">
+                                  {sess.talkCategory}
+                                </span>
+                              )}
+                            </div>
+                          )}
                         </div>
                         <h3 className="font-leadership text-lg md:text-xl text-white mb-3">
                           {sess.title || sess.tag || "Session"}

@@ -37,15 +37,17 @@ function buildAllSpeakers(): Speaker[] {
       events: {
         ...speaker.events,
         leadership: speaker.events?.leadership
-          ? {
-              ...speaker.events.leadership,
-              date: speaker.events.leadership.date ?? scheduleMatch?.date,
-              time: speaker.events.leadership.time ?? scheduleMatch?.time,
-              endTime:
-                speaker.events.leadership.endTime ?? scheduleMatch?.endTime,
-              title: speaker.events.leadership.title ?? scheduleMatch?.title,
-              type: speaker.events.leadership.type ?? scheduleMatch?.type,
-            }
+          ? Array.isArray(speaker.events.leadership)
+            ? speaker.events.leadership
+            : {
+                ...speaker.events.leadership,
+                date: speaker.events.leadership.date ?? scheduleMatch?.date,
+                time: speaker.events.leadership.time ?? scheduleMatch?.time,
+                endTime:
+                  speaker.events.leadership.endTime ?? scheduleMatch?.endTime,
+                title: speaker.events.leadership.title ?? scheduleMatch?.title,
+                type: speaker.events.leadership.type ?? scheduleMatch?.type,
+              }
           : undefined,
       },
     };
@@ -56,14 +58,16 @@ function buildAllSpeakers(): Speaker[] {
     const slug = getSpeakerSlug(speaker);
     const scheduleMatch = lookupRisingSchedule(speaker.name);
     const risingTalk = speaker.events?.rising
-      ? {
-          ...speaker.events.rising,
-          date: speaker.events.rising.date ?? scheduleMatch?.date,
-          time: speaker.events.rising.time ?? scheduleMatch?.time,
-          endTime: speaker.events.rising.endTime ?? scheduleMatch?.endTime,
-          title: speaker.events.rising.title ?? scheduleMatch?.title,
-          type: speaker.events.rising.type ?? scheduleMatch?.type,
-        }
+      ? Array.isArray(speaker.events.rising)
+        ? speaker.events.rising
+        : {
+            ...speaker.events.rising,
+            date: speaker.events.rising.date ?? scheduleMatch?.date,
+            time: speaker.events.rising.time ?? scheduleMatch?.time,
+            endTime: speaker.events.rising.endTime ?? scheduleMatch?.endTime,
+            title: speaker.events.rising.title ?? scheduleMatch?.title,
+            type: speaker.events.rising.type ?? scheduleMatch?.type,
+          }
       : undefined;
 
     if (map.has(slug)) {

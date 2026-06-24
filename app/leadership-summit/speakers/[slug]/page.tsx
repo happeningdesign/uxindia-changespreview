@@ -6,6 +6,7 @@ import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
 
 import { getSpeakerSlug } from "@/types/speaker";
+import type { SpeakerTalk } from "@/types/speaker";
 import { allSpeakers, getSpeakerBySlug } from "@/data/events/all-speakers";
 import { createMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -210,9 +211,10 @@ function BulletList({ items, light }: { items: string[]; light?: boolean }) {
 
 // ─── talk block ───────────────────────────────────────────────────────────────
 
-type TalkData = NonNullable<
-  NonNullable<ReturnType<typeof getSpeakerBySlug>>["events"]
->["leadership"];
+function toTalkArray(t: SpeakerTalk | SpeakerTalk[] | undefined): SpeakerTalk[] {
+  if (!t) return [];
+  return Array.isArray(t) ? t : [t];
+}
 
 function TalkBlock({
   event,
@@ -220,7 +222,7 @@ function TalkBlock({
   light,
 }: {
   event: "leadership" | "rising";
-  talk: TalkData;
+  talk: SpeakerTalk;
   light?: boolean;
 }) {
   if (!talk) return null;
@@ -238,11 +240,18 @@ function TalkBlock({
     ? "rounded-2xl border border-[#0D0D0D]/10 bg-[#0D0D0D]/[0.03] p-6 md:p-8 flex flex-col gap-6"
     : "rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8 flex flex-col gap-6";
 
+  const isWorkshop = Array.isArray(talk.type)
+    ? talk.type.includes("Workshop")
+    : talk.type === "Workshop";
+
   return (
     <div className={cardCls}>
       <div className="flex flex-wrap gap-2 items-center">
         <EventChip event={event} light={light} />
-        {talk.type && <TypeChip label={talk.type} light={light} />}
+        {talk.type && (Array.isArray(talk.type)
+          ? talk.type.map((t, i) => <TypeChip key={i} label={t} light={light} />)
+          : <TypeChip label={talk.type as string} light={light} />
+        )}
         {talk.track && <TrackChip label={talk.track} light={light} />}
         {talk.talkCategory && (
           <CategoryChip label={talk.talkCategory} light={light} />
@@ -266,7 +275,7 @@ function TalkBlock({
 
       {talk.description && (
         <div>
-          <SL>About this talk</SL>
+          <SL>{isWorkshop ? "About this workshop" : "About this talk"}</SL>
           <p
             className={`font-sans text-base leading-relaxed ${light ? "text-[#0D0D0D]/60" : "text-white/60"}`}
           >
@@ -280,7 +289,7 @@ function TalkBlock({
           ? talk.keyTakeaway.length > 0
           : !!talk.keyTakeaway) && (
           <div>
-            <SL>Key takeaway</SL>
+            <SL>{isWorkshop ? "Workshop key takeaways" : "Key takeaway"}</SL>
             {Array.isArray(talk.keyTakeaway) ? (
               <BulletList items={talk.keyTakeaway} light={light} />
             ) : (
@@ -413,13 +422,10 @@ export default async function SpeakerPage({
   const speaker = getSpeakerBySlug(slug);
   if (!speaker) notFound();
 
-  const hasLeadershipTalk = !!(
-    speaker.events?.leadership &&
-    Object.values(speaker.events.leadership).some(Boolean)
-  );
-  const hasRisingTalk = !!(
-    speaker.events?.rising && Object.values(speaker.events.rising).some(Boolean)
-  );
+  const leadershipTalks = toTalkArray(speaker.events?.leadership);
+  const risingTalks = toTalkArray(speaker.events?.rising);
+  const hasLeadershipTalk = leadershipTalks.length > 0;
+  const hasRisingTalk = risingTalks.length > 0;
   const hasTalks = hasLeadershipTalk || hasRisingTalk;
 
   // Theme: light only if the speaker has NO leadership talk (Rising-only)
@@ -492,46 +498,55 @@ export default async function SpeakerPage({
               {speaker.company ? `, ${speaker.company}` : ""}
             </p>
 
-            {/* Chips */}
-            {(hasLeadershipTalk || hasRisingTalk) && (
-              <div className="flex flex-wrap gap-2 items-center">
-                {hasLeadershipTalk && <EventChip event="leadership" light={isLight} />}
-                {hasRisingTalk && <EventChip event="rising" light={isLight} />}
-                {(speaker.events?.leadership?.type || speaker.events?.rising?.type) && (
-                  <TypeChip
-                    label={speaker.events?.leadership?.type ?? speaker.events?.rising?.type ?? ""}
-                    light={isLight}
-                  />
-                )}
-                {(speaker.events?.leadership?.track || speaker.events?.rising?.track) && (
-                  <TrackChip
-                    label={speaker.events?.leadership?.track ?? speaker.events?.rising?.track ?? ""}
-                    light={isLight}
-                  />
-                )}
-                {(speaker.events?.leadership?.talkCategory || speaker.events?.rising?.talkCategory) && (
-                  <CategoryChip
-                    label={speaker.events?.leadership?.talkCategory ?? speaker.events?.rising?.talkCategory ?? ""}
-                    light={isLight}
-                  />
-                )}
-              </div>
-            )}
+            {/* Chips — all unique types across all entries, plus track/category from first non-workshop */}
+            {(hasLeadershipTalk || hasRisingTalk) && (() => {
+              const allEntries = [...leadershipTalks, ...risingTalks];
+              const allTypes = Array.from(new Set(
+                allEntries.flatMap((t) => Array.isArray(t.type) ? t.type : t.type ? [t.type] : [])
+              ));
+              const heroTalk = allEntries.find((t) => t.type !== "Workshop") ?? allEntries[0];
+              if (!heroTalk && allTypes.length === 0) return null;
+              return (
+                <div className="flex flex-wrap gap-2 items-center">
+                  {hasLeadershipTalk && <EventChip event="leadership" light={isLight} />}
+                  {hasRisingTalk && <EventChip event="rising" light={isLight} />}
+                  {allTypes.map((v, i) => <TypeChip key={i} label={v} light={isLight} />)}
+                  {heroTalk?.track && <TrackChip label={heroTalk.track} light={isLight} />}
+                  {heroTalk?.talkCategory && <CategoryChip label={heroTalk.talkCategory} light={isLight} />}
+                </div>
+              );
+            })()}
 
-            {/* Talk title */}
-            {(speaker.events?.leadership?.title || speaker.events?.rising?.title) && (
-              <p className={`font-sans text-base md:text-lg font-semibold text-balance break-words ${roleCls}`}>
-                {speaker.events?.leadership?.title ?? speaker.events?.rising?.title}
-              </p>
-            )}
+            {/* Talk title — from first non-workshop entry */}
+            {(() => {
+              const heroTalk = [...leadershipTalks, ...risingTalks].find(
+                (t) => t.type !== "Workshop"
+              ) ?? leadershipTalks[0] ?? risingTalks[0];
+              return heroTalk?.title ? (
+                <p className={`flex items-center gap-1.5 font-sans text-base md:text-lg font-semibold text-balance break-words ${roleCls}`}>
+                  <svg width="13" height="13" viewBox="0 0 213 213" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0" style={{ opacity: 0.5 }}>
+                    <path d="M141.299 0H151.573C153.144 0.644181 155.275 0.801616 156.956 1.23431C159.272 1.83014 161.622 2.64725 163.813 3.59128C174.475 8.18702 182.869 16.8386 187.14 27.6349C191.372 38.4082 191.161 50.4201 186.552 61.0378C181.842 71.7966 173.032 80.2303 162.079 84.4676C151.324 88.5899 139.371 88.2652 128.856 83.5655C118.27 78.8433 109.979 70.1296 105.789 59.3226C101.704 48.4768 102.032 36.4623 106.703 25.856C112.491 12.8535 124.299 3.33986 138.328 0.805953C139.158 0.655878 140.372 0.370495 141.153 0.0597178L141.299 0Z" fill="currentColor"/>
+                    <path d="M34.9703 145.221C32.0659 135.674 36.6639 130.638 42.1736 123.605L50.8084 112.58L77.916 77.8422C81.9023 72.7392 87.6191 65.8762 91.298 60.7319C92.5785 64.1281 93.7878 67.2684 95.4949 70.4906C101.532 81.8969 111.186 90.9756 122.941 96.3015C125.026 97.261 127.178 98.0689 129.379 98.7192C125.554 102.246 118.983 107.07 114.685 110.416L88.9439 130.484L69.4112 145.742C66.529 147.994 61.2783 152.336 58.3743 154.032C55.8216 155.551 52.8812 156.292 49.9136 156.165C48.2304 156.099 46.604 155.723 44.9592 155.374C40.3687 159.241 33.2033 165.381 38.8172 171.603C40.1817 173.105 42.0906 174 44.1185 174.088C52.3217 174.445 55.2783 159.678 71.2699 160.215C77.0917 160.438 82.5868 162.963 86.5473 167.235C90.4002 171.4 92.4287 176.931 92.181 182.599C91.8446 191.286 88.2055 195.006 82.4608 200.712L74.7297 208.389C73.8363 209.277 70.9163 212.066 70.4115 213H70.1446C68.2931 210.914 62.3583 204.979 60.2755 203.21C63.7473 199.398 67.3744 195.922 70.9954 192.28C72.5404 190.725 76.0131 187.496 77.0912 185.78C77.8964 184.522 78.2871 183.042 78.2078 181.55C78.1042 179.469 77.1499 177.522 75.5684 176.165C73.9774 174.802 71.8574 174.259 69.792 174.443C61.7852 175.159 58.9561 189.689 42.2102 188.025C38.0507 187.634 34.101 186.016 30.8615 183.378C26.0547 179.433 23.5644 174.652 22.9641 168.492C22.3975 162.729 24.1741 156.979 27.8937 152.541C30.0245 149.972 33.0275 147.538 34.9703 145.221Z" fill="currentColor"/>
+                  </svg>
+                  {heroTalk.title}
+                </p>
+              ) : null;
+            })()}
 
-            {/* Date / time */}
-            <DateTimeRow
-              date={speaker.events?.leadership?.date ?? speaker.events?.rising?.date}
-              time={speaker.events?.leadership?.time ?? speaker.events?.rising?.time}
-              endTime={speaker.events?.leadership?.endTime ?? speaker.events?.rising?.endTime}
-              light={isLight}
-            />
+            {/* Date / time — from first non-workshop entry */}
+            {(() => {
+              const heroTalk = [...leadershipTalks, ...risingTalks].find(
+                (t) => t.type !== "Workshop"
+              ) ?? leadershipTalks[0] ?? risingTalks[0];
+              return (
+                <DateTimeRow
+                  date={heroTalk?.date}
+                  time={heroTalk?.time}
+                  endTime={heroTalk?.endTime}
+                  light={isLight}
+                />
+              );
+            })()}
 
             <SocialLinks
               linkedin={speaker.linkedin}
@@ -560,25 +575,31 @@ export default async function SpeakerPage({
         )}
 
         {/* Talk details */}
-        {hasTalks && (
+        {hasTalks && (() => {
+          const allEntries = [...leadershipTalks, ...risingTalks];
+          const isWorkshop = (t: SpeakerTalk) => t.type === "Workshop" || (Array.isArray(t.type) && t.type.includes("Workshop"));
+          const hasWorkshop = allEntries.some(isWorkshop);
+          const hasTalk = allEntries.some((t) => !isWorkshop(t));
+          const sectionLabel = hasWorkshop && hasTalk ? "Talk & Workshop details" : hasWorkshop ? "Workshop details" : "Talk details";
+          return (
           <div className="flex flex-col gap-4">
-            <SL>Talk details</SL>
-            {hasLeadershipTalk && (
-              <TalkBlock
-                event="leadership"
-                talk={speaker.events!.leadership}
-                light={false}
-              />
-            )}
-            {hasRisingTalk && (
-              <TalkBlock
-                event="rising"
-                talk={speaker.events!.rising}
-                light={isLight}
-              />
-            )}
+            <SL>{sectionLabel}</SL>
+            {[
+              ...leadershipTalks.map((t) => ({ talk: t, event: "leadership" as const, light: false })),
+              ...risingTalks.map((t) => ({ talk: t, event: "rising" as const, light: isLight })),
+            ]
+              .sort((a, b) => {
+                const aW = a.talk.type === "Workshop" || (Array.isArray(a.talk.type) && a.talk.type.includes("Workshop"));
+                const bW = b.talk.type === "Workshop" || (Array.isArray(b.talk.type) && b.talk.type.includes("Workshop"));
+                return Number(aW) - Number(bW);
+              })
+              .map(({ talk, event, light }, i) => (
+                <TalkBlock key={i} event={event} talk={talk} light={light} />
+              ))
+            }
           </div>
-        )}
+          );
+        })()}
       </main>
 
       <Footer />

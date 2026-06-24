@@ -1,5 +1,5 @@
 export interface SpeakerTalk {
-  type?: string;
+  type?: string | string[];
   track?: string;
   talkCategory?: string;
   date?: string;
@@ -24,8 +24,8 @@ export interface Speaker {
   twitter?: string;
   feedbackLink?: string;
   events?: {
-    leadership?: SpeakerTalk;
-    rising?: SpeakerTalk;
+    leadership?: SpeakerTalk | SpeakerTalk[];
+    rising?: SpeakerTalk | SpeakerTalk[];
   };
   // set by all-speakers.ts at build time — used for Rising Leaders page accent color
   colorIndex?: number;

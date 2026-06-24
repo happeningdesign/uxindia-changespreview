@@ -14,6 +14,34 @@ export type { Speaker };
 
 const risingLeadersSpeakers: Speaker[] = [
   {
+    name: "Anna Gerasimchuk",
+    role: "Head of UIUX Engineering, McKesson, Ontada",
+    image: "/images/speakers/rising-leaders/Anya.png",
+    ogImage: "",
+    talkType: "Workshop",
+    bio: "Anya Gerasimchuk is design and product leader with deep experience across product management, UX and digital innovation in highly complex, regulated industries. As Senior Director of Product Design and UI/UX Engineering at Ontada, McKesson's oncology technology division, she shapes product vision through customer insight, evidence-based user research, and an empathetic understanding of clinical workflows. Her work focuses on elevating product quality in mission-critical healthcare environments while maturing design practices across the organisation.Across McKesson, GE Digital, EY, and GE Aviation, Anya has built and scaled UX organisations, driven cross-functional collaboration and delivered digital solutions for domains ranging from oncology to aviation, energy and industrial systems. She has led teams through strategy formation, design execution and delivery of human-centred experiences that support safety, operational efficiency and measurable business outcomes.",
+    linkedin: "https://www.linkedin.com/in/avgera/",
+    twitter: "",
+    feedbackLink: "",
+    events: {
+      rising: {
+        type: "Workshop",
+        track: "",
+        talkCategory: "Design Practice",
+        title:
+          "Human-Centered AI: Accelerating Design Thinking Without Losing Empathy",
+        description:
+          "This workshop explores how AI can accelerate traditional human-centered design methods without replacing the core principles that make them effective: empathy, problem framing, collaboration, and continuous learning. In many organizations, teams move slowly because research synthesis, workflow mapping, concept generation, and prototype creation take significant time. AI can help compress those cycles by summarizing research, identifying patterns, generating early design directions, drafting user flows, creating testable prototypes, and surfacing assumptions that need validation.But the workshop is not about using AI to skip discovery or remove human judgment. Instead, it focuses on how AI can strengthen Design Thinking when used intentionally. Participants will learn how to move faster from ambiguity to clarity while still grounding decisions in real user needs, business outcomes, and technical feasibility.A key focus will be empathy-building across trio-teams: Product, Design, and Engineering",
+        keyTakeaway: [
+          "AI can accelerate Design Thinking, but should not replace it. Teams can use AI to synthesize research, generate ideas, map workflows, and create prototypes faster - but user empathy, problem framing, and human judgment still guide the work.",
+          "Rapid prototyping becomes a shared learning tool for trio-teams.Product, Design, and Engineering can use AI-assisted prototypes to align earlier, test assumptions faster, and move from abstract discussion to concrete evidence.",
+          "The goal is faster learning, not faster guessing. AI helps teams move from Plan → Build → Validate toward Build → Learn → Harden, but teams still need to validate with users, expose risks, and avoid polished outputs that create false confidence.",
+        ],
+        audience: "",
+      },
+    },
+  },
+  {
     name: "Deepashree Kale",
     role: "Head of Design",
     image: "/images/speakers/rising-leaders/Deepashree Kale.webp",
@@ -130,34 +158,6 @@ const risingLeadersSpeakers: Speaker[] = [
     },
   },
   {
-    name: "Anna Gerasimchuk",
-    role: "Head of UIUX Engineering, McKesson, Ontada",
-    image: "/images/speakers/rising-leaders/Anya.png",
-    ogImage: "",
-    talkType: "Workshop",
-    bio: "Anya Gerasimchuk is design and product leader with deep experience across product management, UX and digital innovation in highly complex, regulated industries. As Senior Director of Product Design and UI/UX Engineering at Ontada, McKesson's oncology technology division, she shapes product vision through customer insight, evidence-based user research, and an empathetic understanding of clinical workflows. Her work focuses on elevating product quality in mission-critical healthcare environments while maturing design practices across the organisation.Across McKesson, GE Digital, EY, and GE Aviation, Anya has built and scaled UX organisations, driven cross-functional collaboration and delivered digital solutions for domains ranging from oncology to aviation, energy and industrial systems. She has led teams through strategy formation, design execution and delivery of human-centred experiences that support safety, operational efficiency and measurable business outcomes.",
-    linkedin: "https://www.linkedin.com/in/avgera/",
-    twitter: "",
-    feedbackLink: "",
-    events: {
-      rising: {
-        type: "Workshop",
-        track: "",
-        talkCategory: "Design Practice",
-        title:
-          "Human-Centered AI: Accelerating Design Thinking Without Losing Empathy",
-        description:
-          "This workshop explores how AI can accelerate traditional human-centered design methods without replacing the core principles that make them effective: empathy, problem framing, collaboration, and continuous learning. In many organizations, teams move slowly because research synthesis, workflow mapping, concept generation, and prototype creation take significant time. AI can help compress those cycles by summarizing research, identifying patterns, generating early design directions, drafting user flows, creating testable prototypes, and surfacing assumptions that need validation.But the workshop is not about using AI to skip discovery or remove human judgment. Instead, it focuses on how AI can strengthen Design Thinking when used intentionally. Participants will learn how to move faster from ambiguity to clarity while still grounding decisions in real user needs, business outcomes, and technical feasibility.A key focus will be empathy-building across trio-teams: Product, Design, and Engineering",
-        keyTakeaway: [
-          "AI can accelerate Design Thinking, but should not replace it. Teams can use AI to synthesize research, generate ideas, map workflows, and create prototypes faster - but user empathy, problem framing, and human judgment still guide the work.",
-          "Rapid prototyping becomes a shared learning tool for trio-teams.Product, Design, and Engineering can use AI-assisted prototypes to align earlier, test assumptions faster, and move from abstract discussion to concrete evidence.",
-          "The goal is faster learning, not faster guessing. AI helps teams move from Plan → Build → Validate toward Build → Learn → Harden, but teams still need to validate with users, expose risks, and avoid polished outputs that create false confidence.",
-        ],
-        audience: "",
-      },
-    },
-  },
-  {
     name: "Amber Krishan",
     role: "CEO, Futurris Digital Pvt Ltd",
     image: "/images/speakers/rising-leaders/Amber-Krishan.png",
@@ -187,7 +187,7 @@ const risingLeadersSpeakers: Speaker[] = [
   },
   {
     name: "Monali Samarth",
-    role: "Product Design Engineer",
+    role: "Product Design Engineer, RIB Software",
     image: "/images/speakers/rising-leaders/Monali-Samarth.png",
     ogImage: "",
     talkType: "Workshop",
@@ -241,36 +241,36 @@ const risingLeadersSpeakers: Speaker[] = [
       },
     },
   },
-  {
-    name: "Roopesh Ramesh Donde",
-    role: "Sr Staff Product Designer",
-    image: "/images/speakers/rising-leaders/Roopesh-Ramesh-Donde.webp",
-    ogImage: "",
-    talkType: "Workshop",
-    bio: "12 years designing for humans. 2 years teaching AI to stay in its lane. Sr. Staff Product Designer at ServiceNow with experience across Adobe, QuillBot, and now designing AI agents. At QuillBot I designed for 50 million monthly users - which teaches you fast that good design has one job: dissapear. The best work I've ever shipped landed so naturally users didn't notice it arrived.. That's the goal. FEEL started as a personal approach a way to make design instinct discussable in rooms that run on data. Flow, Emotion, Expression, Logic. I built it over two years of design reviews, hiring decisions, and mentoring sessions across QuillBot and ServiceNow. It works because it doesn't require anyone to know what kerning is. A PM can use it. A self-taught designer can use it. It just needs someone in the room who trusts what they see. I hold an MBA from IIT Bombay and an NN/g UX Leadership Certificate, mentor designers through ADP, and have spoken at UX India 2023. I've been gaming since 1996 NES to PS5 and that's honestly where I first understood what invisible design feels like, long before I had a name for it.",
-    linkedin: "https://www.linkedin.com/in/roopeshdonde/",
-    twitter: "",
-    feedbackLink: "",
-    events: {
-      rising: {
-        type: "Workshop",
-        track: "",
-        talkCategory: "Design Practice",
-        title: "Pitch Imperfect",
-        description: "For the last year I've been running a quiet experiment with my design team at ServiceNow - using a five-step loop 'PITCH' to validate ideas fast & promote innovation.  Problem: identify real friction, not a trend or a brief.  Inform: brief AI together, align on what solved looks like.  Trace: AI deep-researches clarity, competition, feasibility.  Capture: co-author the PRD clear, testable, one page.  Hatch: build it. AI executes, you direct. The method came from a personal frustration. Every time I fly. Every time I shuffle credit cards at an airport lounge desk - three cards, a Priority Pass, no idea which has visits left. Ten seconds of embarrassment, every trip. One afternoon I sat down with Claude and ran it through what would become PITCH. By evening I had something I actually used. That afternoon became the proof of concept for everything that followed. Also, I found out why it cant be done and made into a product.",
-        keyTakeaway: [
-      "The problem you keep ignoring is the one worth solving : Designers are trained to solve other people's problems. The closest you ever get to genuine problem-solving is when you are the user. PITCH starts there.",
-      "A problem is a problem : Work or personal, the design skill is identical. PITCH makes that transfer explicit, structured, and repeatable - in one sitting, with AI as your collaborator.",
-      "You leave with something real : Not a concept. Not a sticky note. A working prototype or validated brief for a problem you walked in with - hatched in one session.",
-        ],
-        audience: "",
-      },
-    },
-  },
+  // {
+  //   name: "Roopesh Ramesh Donde",
+  //   role: "Sr Staff Product Designer",
+  //   image: "/images/speakers/rising-leaders/Roopesh-Ramesh-Donde.webp",
+  //   ogImage: "",
+  //   talkType: "Workshop",
+  //   bio: "12 years designing for humans. 2 years teaching AI to stay in its lane. Sr. Staff Product Designer at ServiceNow with experience across Adobe, QuillBot, and now designing AI agents. At QuillBot I designed for 50 million monthly users - which teaches you fast that good design has one job: dissapear. The best work I've ever shipped landed so naturally users didn't notice it arrived.. That's the goal. FEEL started as a personal approach a way to make design instinct discussable in rooms that run on data. Flow, Emotion, Expression, Logic. I built it over two years of design reviews, hiring decisions, and mentoring sessions across QuillBot and ServiceNow. It works because it doesn't require anyone to know what kerning is. A PM can use it. A self-taught designer can use it. It just needs someone in the room who trusts what they see. I hold an MBA from IIT Bombay and an NN/g UX Leadership Certificate, mentor designers through ADP, and have spoken at UX India 2023. I've been gaming since 1996 NES to PS5 and that's honestly where I first understood what invisible design feels like, long before I had a name for it.",
+  //   linkedin: "https://www.linkedin.com/in/roopeshdonde/",
+  //   twitter: "",
+  //   feedbackLink: "",
+  //   events: {
+  //     rising: {
+  //       type: "Workshop",
+  //       track: "",
+  //       talkCategory: "Design Practice",
+  //       title: "Pitch Imperfect",
+  //       description: "For the last year I've been running a quiet experiment with my design team at ServiceNow - using a five-step loop 'PITCH' to validate ideas fast & promote innovation.  Problem: identify real friction, not a trend or a brief.  Inform: brief AI together, align on what solved looks like.  Trace: AI deep-researches clarity, competition, feasibility.  Capture: co-author the PRD clear, testable, one page.  Hatch: build it. AI executes, you direct. The method came from a personal frustration. Every time I fly. Every time I shuffle credit cards at an airport lounge desk - three cards, a Priority Pass, no idea which has visits left. Ten seconds of embarrassment, every trip. One afternoon I sat down with Claude and ran it through what would become PITCH. By evening I had something I actually used. That afternoon became the proof of concept for everything that followed. Also, I found out why it cant be done and made into a product.",
+  //       keyTakeaway: [
+  //     "The problem you keep ignoring is the one worth solving : Designers are trained to solve other people's problems. The closest you ever get to genuine problem-solving is when you are the user. PITCH starts there.",
+  //     "A problem is a problem : Work or personal, the design skill is identical. PITCH makes that transfer explicit, structured, and repeatable - in one sitting, with AI as your collaborator.",
+  //     "You leave with something real : Not a concept. Not a sticky note. A working prototype or validated brief for a problem you walked in with - hatched in one session.",
+  //       ],
+  //       audience: "",
+  //     },
+  //   },
+  // },
   {
     name: "Dushyant Kanungo",
-    role: "Director",
-    image: "/images/speakers/rising-leaders/Dushyant-Kanung0.webp",
+    role: "Director, User Experience, Galaxy Weblinks Inc.",
+    image: "/images/speakers/rising-leaders/Dushyant-Kanungo.png",
     ogImage: "",
     talkType: "Workshop",
     bio: "Dushyant Kanungo is a UX leader, author, and public speaker based in Indore, India, with over 20 years of experience in digital product design, UX strategy, and user-centered innovation across web and enterprise platforms. As Director of UX at Galaxy UX Studio / Galaxy Weblinks, he leads UX strategy, research, and design delivery for global, cross-domain products and services. He is the author of 'UX Decoded' and host of the UX Banter podcast. Dushyant is an active mentor on ADPList, recognized as a Top 1% Mentor in Design (February 2025), and has delivered 100+ mentorship sessions to designers worldwide. His speaking engagements span UX India, AI for Developing Nations Forum, IIM Indore, and international conferences, focusing on topics including high-stakes UX, AI ethics, inclusive design, and enterprise UX strategy.",
@@ -382,7 +382,7 @@ const risingLeadersSpeakers: Speaker[] = [
   {
     name: "Saurabh S. Nimsarkar",
     role: "Staff UI/UX Designer / Design Research Lead, Wisk Aero LLC",
-    image: "/images/speakers/rising-leaders/Saurabh-S-Nimsarkar.webp",
+    image: "/images/speakers/rising-leaders/Saurabh-S-Nimsarkar.png",
     ogImage: "",
     talkType: "Spark Session",
     bio: "",
