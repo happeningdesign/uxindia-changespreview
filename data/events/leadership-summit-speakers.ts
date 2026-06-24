@@ -86,33 +86,33 @@ const leadershipSpeakers: Speaker[] = [
       },
     },
   },
-  {
-    name: "Harshita Hassani",
-    role: "Sr. UX Designer,Optum (United Health Group)",
-    image: "/images/speakers/leadership-summit/Harshita-Hassan.webp",
-    ogImage: "",
-    talkType: "Spark Session",
-    bio: "Harshita Hassani is a UX designer with 5 years of experience building complex, data-dense enterprise healthcare analytics products at Optum. With a foundation in Computer Science and a Master's in Experience Design from Srishti Institute of Art, Design and Technology, she works at the intersection of clinical decision-making and human experience design. Her postgraduate capstone, 'Mapping My Care Network of PCOD,' was a year-long auto-ethnographic research project that arrived at a finding no dataset had surfaced: the most consistent, effective care she ever received was built in her mother's kitchen through decades of intentional, tested, and refined practice. Mumma's Archive is the living documentation of that wisdom and Mommi is the AI agent she is building to make it conversational and accessible to working women and hostellers in real time. She has previously spoken at UX India (2022, 2024), India HCI (2023, 2024), Salesforce Design Days (2024), and the PCOS Conference at IIT Bombay (2025). Outside work, she reads, writes, cooks, sketchnote & practice calisthenics.",
-    linkedin: "https://in.linkedin.com/in/harshita-hassani-69965311a",
-    twitter: "",
-    events: {
-      leadership: {
-        type: "Spark Session",
-        track: "",
-        talkCategory: "Social Impact",
-        title:
-          "The Original Algorithm: Archiving the Intelligence AI Cannot Replicate",
-        description:
-          "During my postgraduate capstone, I spent a year mapping my decade-long journey with PCOD through auto-ethnography, interviews, medical data, and data visualization. What emerged was not what I expected. Across every method, the most consistent and effective care I had received came not from clinical systems but from my mother - her intentional, patiently refined wisdom around food, healing, and conscious consumption.I work as a UX designer building enterprise healthcare systems at Optum. I understand what it means to structure knowledge into products. And I have come to believe, that what my mother carries cannot be fully datafied not because it is beyond understanding, but because it is built on relationship, observation, and right intent over decades.Mumma's Archive is a living journal that wisdom before it fades. Mommi is the AI agent I am building on that foundation to make the archive conversational and gently accessible to women who need care but have no one nearby to offer it.",
-        keyTakeaway: [
-          "Care is data. The intentional, observed wisdom of caregivers is a knowledge system and designers have a responsibility to treat it as one, not displace it with the next wellness app.",
-          "There is a gap between building wellness tools and preserving wellness wisdom. Recognising that gap is the first design decision worth making.Archiving and building are not opposites.",
-          "Mommi - an AI agent trained on a mother's intentional care wisdom - shows what becomes possible when you preserve first and build second. Preservation is the design brief.",
-        ],
-        audience: "",
-      },
-    },
-  },
+  // {
+  //   name: "Harshita Hassani",
+  //   role: "Sr. UX Designer,Optum (United Health Group)",
+  //   image: "/images/speakers/leadership-summit/Harshita-Hassan.webp",
+  //   ogImage: "",
+  //   talkType: "Spark Session",
+  //   bio: "Harshita Hassani is a UX designer with 5 years of experience building complex, data-dense enterprise healthcare analytics products at Optum. With a foundation in Computer Science and a Master's in Experience Design from Srishti Institute of Art, Design and Technology, she works at the intersection of clinical decision-making and human experience design. Her postgraduate capstone, 'Mapping My Care Network of PCOD,' was a year-long auto-ethnographic research project that arrived at a finding no dataset had surfaced: the most consistent, effective care she ever received was built in her mother's kitchen through decades of intentional, tested, and refined practice. Mumma's Archive is the living documentation of that wisdom and Mommi is the AI agent she is building to make it conversational and accessible to working women and hostellers in real time. She has previously spoken at UX India (2022, 2024), India HCI (2023, 2024), Salesforce Design Days (2024), and the PCOS Conference at IIT Bombay (2025). Outside work, she reads, writes, cooks, sketchnote & practice calisthenics.",
+  //   linkedin: "https://in.linkedin.com/in/harshita-hassani-69965311a",
+  //   twitter: "",
+  //   events: {
+  //     leadership: {
+  //       type: "Spark Session",
+  //       track: "",
+  //       talkCategory: "Social Impact",
+  //       title:
+  //         "The Original Algorithm: Archiving the Intelligence AI Cannot Replicate",
+  //       description:
+  //         "During my postgraduate capstone, I spent a year mapping my decade-long journey with PCOD through auto-ethnography, interviews, medical data, and data visualization. What emerged was not what I expected. Across every method, the most consistent and effective care I had received came not from clinical systems but from my mother - her intentional, patiently refined wisdom around food, healing, and conscious consumption.I work as a UX designer building enterprise healthcare systems at Optum. I understand what it means to structure knowledge into products. And I have come to believe, that what my mother carries cannot be fully datafied not because it is beyond understanding, but because it is built on relationship, observation, and right intent over decades.Mumma's Archive is a living journal that wisdom before it fades. Mommi is the AI agent I am building on that foundation to make the archive conversational and gently accessible to women who need care but have no one nearby to offer it.",
+  //       keyTakeaway: [
+  //         "Care is data. The intentional, observed wisdom of caregivers is a knowledge system and designers have a responsibility to treat it as one, not displace it with the next wellness app.",
+  //         "There is a gap between building wellness tools and preserving wellness wisdom. Recognising that gap is the first design decision worth making.Archiving and building are not opposites.",
+  //         "Mommi - an AI agent trained on a mother's intentional care wisdom - shows what becomes possible when you preserve first and build second. Preservation is the design brief.",
+  //       ],
+  //       audience: "",
+  //     },
+  //   },
+  // },
   {
     name: "Ish Awasthi",
     role: "VP, UX Research, JPMC",
