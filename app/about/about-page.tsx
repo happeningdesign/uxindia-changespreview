@@ -1085,343 +1085,527 @@ export default function AboutPage() {
             }
             aria-hidden={activeTab !== "partners"}
           >
-            {/* Partners Hero */}
-            <section className="bg-page py-20 md:py-28">
-              <div className="max-w-5xl mx-auto px-6 text-center">
-                <AnimatedSection>
-                  <p className="font-sans text-xs text-[#FF6D35] uppercase tracking-[0.25em] mb-4">
-                    Partners
-                  </p>
-                  <h2
-                    className="leading-[1.06] mb-6"
-                    style={{
-                      fontFamily: "'UXILeadershipCondensed'",
-                      fontWeight: 500,
-                      fontSize: "clamp(2.6rem, 5.5vw, 4.5rem)",
-                      color: "#FFFFFF",
-                    }}
-                  >
-                    Join the World&apos;s Top
-                    <br />
-                    Design Organisations
-                  </h2>
-                  <p className="font-sans text-base md:text-lg text-white/65 leading-relaxed max-w-2xl mx-auto mb-10">
-                    Let&apos;s create something extraordinary together. Get in
-                    touch today.
-                  </p>
-                  <Link
-                    href="https://partner.ux-india.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-sans text-sm font-semibold px-8 py-3.5 rounded-full text-white transition-opacity hover:opacity-85"
-                    style={{ backgroundColor: "#E85520" }}
-                  >
-                    Explore Partnership Packages
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path
-                        d="M3 7h8M8 4l3 3-3 3"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </Link>
+            {/* Partners Hero — cream bg with large editorial headline */}
+            <section className="bg-cream py-20 md:py-28 overflow-hidden">
+              <div className="max-w-6xl mx-auto px-6">
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+                  <AnimatedSection>
+                    <p className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-5">
+                      Partners · UXINDIA 2026
+                    </p>
+                    <h2
+                      className="leading-[1.04] text-balance"
+                      style={{
+                        fontFamily: "'UXILeadershipCondensed'",
+                        fontWeight: 500,
+                        fontSize: "clamp(3rem, 7vw, 6rem)",
+                        color: "#0D0D0D",
+                      }}
+                    >
+                      Join the World&apos;s
+                      <br />
+                      Top Design
+                      <br />
+                      Organisations
+                    </h2>
+                  </AnimatedSection>
+                  <AnimatedSection delay={200}>
+                    <div className="md:max-w-xs">
+                      <p className="font-sans text-base text-page/60 leading-relaxed mb-8">
+                        Partner with India&apos;s most influential design event and
+                        put your brand in the room where design decisions get made.
+                      </p>
+                      <Link
+                        href="https://partner.ux-india.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 font-sans text-sm font-semibold px-7 py-3.5 rounded-full text-white transition-opacity hover:opacity-85"
+                        style={{ backgroundColor: "#E85520" }}
+                      >
+                        Explore Partnership Packages
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </AnimatedSection>
+                </div>
+
+                {/* Stat strip */}
+                <AnimatedSection delay={300}>
+                  <div className="mt-16 pt-10 border-t border-page/10 grid grid-cols-3 gap-6">
+                    {[
+                      { num: "5,000+", label: "Design professionals" },
+                      { num: "5 days", label: "Of curated programming" },
+                      { num: "15+", label: "Cities represented" },
+                    ].map((s) => (
+                      <div key={s.label}>
+                        <p
+                          className="leading-none mb-1"
+                          style={{
+                            fontFamily: "'UXILeadershipCondensed'",
+                            fontWeight: 500,
+                            fontSize: "clamp(1.8rem, 3.5vw, 3rem)",
+                            color: "#E85520",
+                          }}
+                        >
+                          {s.num}
+                        </p>
+                        <p className="font-sans text-xs text-page/50 uppercase tracking-[0.15em]">
+                          {s.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </AnimatedSection>
               </div>
             </section>
 
-            {/* Why Partner */}
-            <section className="bg-cream py-20 md:py-28">
+            {/* Why Partner — bold coloured cards matching site palette */}
+            <section className="bg-page py-20 md:py-28">
               <div className="max-w-6xl mx-auto px-6">
                 <AnimatedSection>
-                  <div className="text-center mb-16">
-                    <p className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4">
-                      Why Partner
-                    </p>
-                    <h2
-                      className="leading-[1.08] mb-4"
-                      style={{
-                        fontFamily: "'UXILeadershipCondensed'",
-                        fontWeight: 500,
-                        fontSize: "clamp(2.2rem, 4vw, 3.5rem)",
-                        color: "#0D0D0D",
-                      }}
-                    >
-                      Why partner with UXINDIA 2026?
-                    </h2>
-                  </div>
+                  <p className="font-sans text-xs text-white/40 uppercase tracking-[0.25em] mb-12">
+                    Why Partner
+                  </p>
                 </AnimatedSection>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                  {/* Card 1 — orange */}
                   <AnimatedSection delay={100}>
-                    <div className="rounded-2xl p-8 h-full bg-page">
-                      <div className="w-10 h-10 rounded-full bg-[#E85520] flex items-center justify-center mb-5">
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                        >
-                          <path
-                            d="M10 2L12.5 7.5H18L13.5 11L15.5 17L10 13.5L4.5 17L6.5 11L2 7.5H7.5L10 2Z"
-                            fill="white"
-                          />
+                    <div
+                      className="rounded-3xl p-8 h-full flex flex-col min-h-[280px]"
+                      style={{ backgroundColor: "#E85520" }}
+                    >
+                      <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center mb-auto">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                          <path d="M9 1.5L11.25 6.75H17L12.5 9.9L14.25 15.5L9 12.15L3.75 15.5L5.5 9.9L1 6.75H6.75L9 1.5Z" fill="white" />
                         </svg>
                       </div>
-                      <h3
-                        className="mb-3"
-                        style={{
-                          fontFamily: "'UXILeadershipCondensed'",
-                          fontWeight: 500,
-                          fontSize: "clamp(1.3rem, 2vw, 1.7rem)",
-                          color: "#FFFFFF",
-                        }}
-                      >
-                        Shape the Future
-                      </h3>
-                      <p className="font-sans text-sm text-white/70 leading-relaxed">
-                        Position your brand at the forefront of design and
-                        innovation. Be part of conversations that define where
-                        the industry is headed.
-                      </p>
+                      <div className="mt-12">
+                        <h3
+                          className="mb-3 text-white"
+                          style={{
+                            fontFamily: "'UXILeadershipCondensed'",
+                            fontWeight: 500,
+                            fontSize: "clamp(1.5rem, 2.2vw, 2rem)",
+                          }}
+                        >
+                          Shape the Future
+                        </h3>
+                        <p className="font-sans text-sm text-white/80 leading-relaxed">
+                          Position your brand at the forefront of design and innovation.
+                          Be part of conversations that define where the industry is headed.
+                        </p>
+                      </div>
                     </div>
                   </AnimatedSection>
-                  <AnimatedSection delay={200}>
-                    <div className="rounded-2xl p-8 h-full bg-page">
-                      <div className="w-10 h-10 rounded-full bg-[#1B7A6E] flex items-center justify-center mb-5">
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                        >
-                          <circle cx="7" cy="8" r="3" fill="white" />
-                          <circle cx="13" cy="8" r="3" fill="white" />
-                          <path
-                            d="M1 17c0-3 2.5-5 6-5M19 17c0-3-2.5-5-6-5M10 17c0-2.5 1.5-4 4-5"
-                            stroke="white"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                          />
+                  {/* Card 2 — teal */}
+                  <AnimatedSection delay={175}>
+                    <div
+                      className="rounded-3xl p-8 h-full flex flex-col min-h-[280px]"
+                      style={{ backgroundColor: "#1B7A6E" }}
+                    >
+                      <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center mb-auto">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                          <circle cx="6" cy="7" r="2.5" fill="white" />
+                          <circle cx="12" cy="7" r="2.5" fill="white" />
+                          <path d="M1 16c0-2.5 2-4.5 5-4.5M17 16c0-2.5-2-4.5-5-4.5M9 16c0-2 1.5-3.5 4-4.5" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
                         </svg>
                       </div>
-                      <h3
-                        className="mb-3"
-                        style={{
-                          fontFamily: "'UXILeadershipCondensed'",
-                          fontWeight: 500,
-                          fontSize: "clamp(1.3rem, 2vw, 1.7rem)",
-                          color: "#FFFFFF",
-                        }}
-                      >
-                        Build Meaningful Connections
-                      </h3>
-                      <p className="font-sans text-sm text-white/70 leading-relaxed">
-                        Network with 5,000+ designers, entrepreneurs, and
-                        industry leaders across five days of curated programming.
-                      </p>
+                      <div className="mt-12">
+                        <h3
+                          className="mb-3 text-white"
+                          style={{
+                            fontFamily: "'UXILeadershipCondensed'",
+                            fontWeight: 500,
+                            fontSize: "clamp(1.5rem, 2.2vw, 2rem)",
+                          }}
+                        >
+                          Build Meaningful Connections
+                        </h3>
+                        <p className="font-sans text-sm text-white/80 leading-relaxed">
+                          Network with 5,000+ designers, entrepreneurs, and industry
+                          leaders across five days of curated programming.
+                        </p>
+                      </div>
                     </div>
                   </AnimatedSection>
-                  <AnimatedSection delay={300}>
-                    <div className="rounded-2xl p-8 h-full bg-page">
-                      <div className="w-10 h-10 rounded-full bg-[#2D3580] flex items-center justify-center mb-5">
-                        <svg
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
-                          fill="none"
-                        >
-                          <rect
-                            x="2"
-                            y="14"
-                            width="16"
-                            height="3"
-                            rx="1"
-                            fill="white"
-                          />
-                          <path
-                            d="M10 3v8M10 3L6 7M10 3l4 4"
-                            stroke="white"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
+                  {/* Card 3 — navy */}
+                  <AnimatedSection delay={250}>
+                    <div
+                      className="rounded-3xl p-8 h-full flex flex-col min-h-[280px]"
+                      style={{ backgroundColor: "#2D3580" }}
+                    >
+                      <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center mb-auto">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                          <rect x="2" y="13" width="14" height="3" rx="1" fill="white" />
+                          <path d="M9 2v9M9 2L5.5 5.5M9 2l3.5 3.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       </div>
-                      <h3
-                        className="mb-3"
-                        style={{
-                          fontFamily: "'UXILeadershipCondensed'",
-                          fontWeight: 500,
-                          fontSize: "clamp(1.3rem, 2vw, 1.7rem)",
-                          color: "#FFFFFF",
-                        }}
-                      >
-                        Own the Stage
-                      </h3>
-                      <p className="font-sans text-sm text-white/70 leading-relaxed">
-                        Share your expertise, inspire the community, and spark
-                        impactful discussions that extend well beyond the event.
-                      </p>
+                      <div className="mt-12">
+                        <h3
+                          className="mb-3 text-white"
+                          style={{
+                            fontFamily: "'UXILeadershipCondensed'",
+                            fontWeight: 500,
+                            fontSize: "clamp(1.5rem, 2.2vw, 2rem)",
+                          }}
+                        >
+                          Own the Stage
+                        </h3>
+                        <p className="font-sans text-sm text-white/80 leading-relaxed">
+                          Share your expertise, inspire the community, and spark
+                          impactful discussions that extend well beyond the event.
+                        </p>
+                      </div>
                     </div>
                   </AnimatedSection>
                 </div>
               </div>
             </section>
 
-            {/* Partner Tiers */}
-            {partnerTiers.map((tier, tierIndex) => {
-              const tierPartners = getPartnersByTier(tier.id);
-              if (tierPartners.length === 0) return null;
-
-              const isDark = tierIndex % 2 === 0;
-              const bgClass = isDark ? "bg-page" : "bg-cream";
-              const labelColor = isDark ? "text-white/40" : "text-page/40";
-              const titleColor = isDark ? "text-white" : "text-[#0D0D0D]";
-              const descColor = isDark ? "text-white/55" : "text-page/55";
-
-              // Diamond & Platinum get special large card treatment
-              const isFeatured =
-                tier.id === "diamond" || tier.id === "platinum";
-
-              return (
-                <section key={tier.id} className={`py-16 md:py-20 ${bgClass}`}>
-                  <div className="max-w-6xl mx-auto px-6">
-                    <AnimatedSection>
-                      <div className="mb-10">
-                        <p
-                          className={`font-sans text-xs uppercase tracking-[0.25em] mb-2 ${labelColor}`}
+            {/* ── DIAMOND PARTNERS — full-width editorial card on cream ── */}
+            {getPartnersByTier("diamond").length > 0 && (
+              <section className="bg-cream py-16 md:py-24">
+                <div className="max-w-6xl mx-auto px-6">
+                  <AnimatedSection>
+                    <div className="flex items-center gap-3 mb-10">
+                      <span
+                        className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full text-white"
+                        style={{ backgroundColor: "#0D0D0D" }}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#E85520]" />
+                        Diamond Partner
+                      </span>
+                    </div>
+                  </AnimatedSection>
+                  <div className="grid grid-cols-1 gap-5">
+                    {getPartnersByTier("diamond").map((partner, i) => (
+                      <AnimatedSection key={partner.name} delay={i * 100}>
+                        <a
+                          href={partner.url ?? "#"}
+                          target={partner.url ? "_blank" : undefined}
+                          rel="noopener noreferrer"
+                          className="group relative flex flex-col md:flex-row overflow-hidden rounded-3xl transition-transform duration-300 hover:-translate-y-1"
+                          style={{ backgroundColor: "#E85520" }}
                         >
-                          {tier.label}
-                        </p>
-                        <p
-                          className={`font-sans text-sm leading-relaxed max-w-xl ${descColor}`}
-                        >
-                          {tier.description}
-                        </p>
-                      </div>
-                    </AnimatedSection>
-
-                    {isFeatured ? (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {tierPartners.map((partner, i) => (
-                          <AnimatedSection key={partner.name} delay={i * 100}>
-                            <a
-                              href={partner.url ?? "#"}
-                              target={partner.url ? "_blank" : undefined}
-                              rel="noopener noreferrer"
-                              className={`group flex flex-col rounded-2xl p-8 border transition-all duration-300 h-full ${
-                                isDark
-                                  ? "border-white/10 hover:border-white/25 bg-white/5"
-                                  : "border-page/10 hover:border-page/25 bg-page/5"
-                              }`}
-                            >
-                              <div className="relative h-14 mb-6 flex items-center">
-                                <Image
-                                  src={partner.logo}
-                                  alt={`${partner.name} logo`}
-                                  fill
-                                  className="object-contain object-left"
-                                />
-                              </div>
-                              <h3
-                                className={`mb-3 font-sans font-semibold text-base ${
-                                  isDark ? "text-white" : "text-page"
-                                }`}
-                              >
-                                {partner.name}
-                              </h3>
+                          {/* Left — logo + name */}
+                          <div className="flex-1 p-10 md:p-14 flex flex-col justify-between">
+                            <div className="relative h-16 w-48 mb-10">
+                              <Image
+                                src={partner.logo}
+                                alt={`${partner.name} logo`}
+                                fill
+                                className="object-contain object-left brightness-0 invert"
+                              />
+                            </div>
+                            <div>
                               {partner.description && (
-                                <p
-                                  className={`font-sans text-sm leading-relaxed ${
-                                    isDark ? "text-white/60" : "text-page/60"
-                                  }`}
-                                >
+                                <p className="font-sans text-base text-white/80 leading-relaxed max-w-md mb-6">
                                   {partner.description}
                                 </p>
                               )}
-                            </a>
-                          </AnimatedSection>
-                        ))}
-                      </div>
-                    ) : (
-                      <div
-                        className={`grid gap-4 ${
-                          tier.id === "gold"
-                            ? "grid-cols-2 md:grid-cols-4"
-                            : tier.id === "silver"
-                            ? "grid-cols-2 md:grid-cols-4"
-                            : "grid-cols-2 md:grid-cols-3"
-                        }`}
+                              <span className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-white border border-white/30 px-5 py-2.5 rounded-full group-hover:bg-white/10 transition-colors">
+                                Visit {partner.name}
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                                  <path d="M2.5 6.5h8M8 4l2.5 2.5L8 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                              </span>
+                            </div>
+                          </div>
+                          {/* Right — accent panel */}
+                          <div
+                            className="hidden md:block w-64 flex-shrink-0"
+                            style={{ backgroundColor: "rgba(0,0,0,0.15)" }}
+                          />
+                        </a>
+                      </AnimatedSection>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* ── PLATINUM PARTNERS — dark bg, large horizontal card ── */}
+            {getPartnersByTier("platinum").length > 0 && (
+              <section className="bg-page py-16 md:py-24">
+                <div className="max-w-6xl mx-auto px-6">
+                  <AnimatedSection>
+                    <div className="flex items-center gap-3 mb-10">
+                      <span
+                        className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full text-page"
+                        style={{ backgroundColor: "#D4C5A0" }}
                       >
-                        {tierPartners.map((partner, i) => (
-                          <AnimatedSection key={partner.name} delay={i * 80}>
-                            <a
-                              href={partner.url ?? "#"}
-                              target={partner.url ? "_blank" : undefined}
-                              rel="noopener noreferrer"
-                              className={`group flex items-center justify-center rounded-xl p-6 border transition-all duration-300 aspect-[3/2] ${
-                                isDark
-                                  ? "border-white/10 hover:border-white/25 bg-white/5"
-                                  : "border-page/10 hover:border-page/20 bg-white"
-                              }`}
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#1B7A6E]" />
+                        Platinum Partner
+                      </span>
+                    </div>
+                  </AnimatedSection>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    {getPartnersByTier("platinum").map((partner, i) => (
+                      <AnimatedSection key={partner.name} delay={i * 100}>
+                        <a
+                          href={partner.url ?? "#"}
+                          target={partner.url ? "_blank" : undefined}
+                          rel="noopener noreferrer"
+                          className="group relative flex flex-col overflow-hidden rounded-3xl transition-transform duration-300 hover:-translate-y-1 h-full"
+                          style={{ backgroundColor: "#1B7A6E" }}
+                        >
+                          <div className="p-10 flex flex-col h-full">
+                            <div className="relative h-14 w-40 mb-8">
+                              <Image
+                                src={partner.logo}
+                                alt={`${partner.name} logo`}
+                                fill
+                                className="object-contain object-left brightness-0 invert"
+                              />
+                            </div>
+                            {partner.description && (
+                              <p className="font-sans text-sm text-white/75 leading-relaxed flex-1 mb-6">
+                                {partner.description}
+                              </p>
+                            )}
+                            <span className="inline-flex items-center gap-2 font-sans text-xs font-semibold text-white border border-white/25 px-4 py-2 rounded-full group-hover:bg-white/10 transition-colors w-fit">
+                              Visit {partner.name}
+                              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M2 6h8M7.5 3.5L10 6l-2.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </span>
+                          </div>
+                        </a>
+                      </AnimatedSection>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* ── GOLD PARTNERS — cream bg, large logo tiles with coloured hover ring ── */}
+            {getPartnersByTier("gold").length > 0 && (
+              <section className="bg-cream py-16 md:py-24">
+                <div className="max-w-6xl mx-auto px-6">
+                  <AnimatedSection>
+                    <div className="flex items-center gap-3 mb-10">
+                      <span
+                        className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full"
+                        style={{ backgroundColor: "#F5A623", color: "#0D0D0D" }}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#0D0D0D" }} />
+                        Gold Partners
+                      </span>
+                      <p className="font-sans text-sm text-page/50">
+                        Champions of craft, community and design excellence
+                      </p>
+                    </div>
+                  </AnimatedSection>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {getPartnersByTier("gold").map((partner, i) => (
+                      <AnimatedSection key={partner.name} delay={i * 70}>
+                        <a
+                          href={partner.url ?? "#"}
+                          target={partner.url ? "_blank" : undefined}
+                          rel="noopener noreferrer"
+                          className="group flex flex-col items-center justify-center rounded-2xl p-8 aspect-square bg-white border-2 border-transparent hover:border-[#F5A623] transition-all duration-300"
+                        >
+                          <div className="relative w-full h-10">
+                            <Image
+                              src={partner.logo}
+                              alt={`${partner.name} logo`}
+                              fill
+                              className="object-contain group-hover:scale-105 transition-transform duration-300"
+                            />
+                          </div>
+                          <p className="font-sans text-xs text-page/40 mt-4 text-center">
+                            {partner.name}
+                          </p>
+                        </a>
+                      </AnimatedSection>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* ── SILVER PARTNERS — dark bg, medium tiles ── */}
+            {getPartnersByTier("silver").length > 0 && (
+              <section className="bg-page py-16 md:py-24">
+                <div className="max-w-6xl mx-auto px-6">
+                  <AnimatedSection>
+                    <div className="flex items-center gap-3 mb-10">
+                      <span
+                        className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full"
+                        style={{ backgroundColor: "#A8B4C0", color: "#0D0D0D" }}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#2D3580" }} />
+                        Silver Partners
+                      </span>
+                      <p className="font-sans text-sm text-white/40">
+                        Supporting the next generation of design leaders
+                      </p>
+                    </div>
+                  </AnimatedSection>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {getPartnersByTier("silver").map((partner, i) => (
+                      <AnimatedSection key={partner.name} delay={i * 70}>
+                        <a
+                          href={partner.url ?? "#"}
+                          target={partner.url ? "_blank" : undefined}
+                          rel="noopener noreferrer"
+                          className="group flex flex-col items-center justify-center rounded-2xl p-8 aspect-square bg-white/6 border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300"
+                        >
+                          <div className="relative w-full h-9">
+                            <Image
+                              src={partner.logo}
+                              alt={`${partner.name} logo`}
+                              fill
+                              className="object-contain brightness-0 invert opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                            />
+                          </div>
+                          <p className="font-sans text-xs text-white/30 mt-4 text-center">
+                            {partner.name}
+                          </p>
+                        </a>
+                      </AnimatedSection>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* ── MEDIA + COMMUNITY — cream, two-column label layout ── */}
+            {(getPartnersByTier("media").length > 0 || getPartnersByTier("community").length > 0) && (
+              <section className="bg-cream py-16 md:py-24">
+                <div className="max-w-6xl mx-auto px-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    {/* Media */}
+                    {getPartnersByTier("media").length > 0 && (
+                      <div>
+                        <AnimatedSection>
+                          <div className="flex items-center gap-3 mb-8">
+                            <span
+                              className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full text-white"
+                              style={{ backgroundColor: "#2D3580" }}
                             >
-                              <div className="relative w-full h-10">
-                                <Image
-                                  src={partner.logo}
-                                  alt={`${partner.name} logo`}
-                                  fill
-                                  className="object-contain group-hover:scale-105 transition-transform duration-300"
-                                />
-                              </div>
-                            </a>
-                          </AnimatedSection>
-                        ))}
+                              <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
+                              Media Partners
+                            </span>
+                          </div>
+                          <p className="font-sans text-sm text-page/50 mb-8">
+                            Amplifying UXINDIA&apos;s reach across the design ecosystem.
+                          </p>
+                        </AnimatedSection>
+                        <div className="grid grid-cols-2 gap-3">
+                          {getPartnersByTier("media").map((partner, i) => (
+                            <AnimatedSection key={partner.name} delay={i * 70}>
+                              <a
+                                href={partner.url ?? "#"}
+                                target={partner.url ? "_blank" : undefined}
+                                rel="noopener noreferrer"
+                                className="group flex items-center justify-center rounded-2xl p-6 aspect-[3/2] bg-white border-2 border-transparent hover:border-[#2D3580] transition-all duration-300"
+                              >
+                                <div className="relative w-full h-8">
+                                  <Image
+                                    src={partner.logo}
+                                    alt={`${partner.name} logo`}
+                                    fill
+                                    className="object-contain group-hover:scale-105 transition-transform duration-300"
+                                  />
+                                </div>
+                              </a>
+                            </AnimatedSection>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Community */}
+                    {getPartnersByTier("community").length > 0 && (
+                      <div>
+                        <AnimatedSection>
+                          <div className="flex items-center gap-3 mb-8">
+                            <span
+                              className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full text-white"
+                              style={{ backgroundColor: "#1B7A6E" }}
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
+                              Community Partners
+                            </span>
+                          </div>
+                          <p className="font-sans text-sm text-page/50 mb-8">
+                            Growing design culture across India.
+                          </p>
+                        </AnimatedSection>
+                        <div className="grid grid-cols-2 gap-3">
+                          {getPartnersByTier("community").map((partner, i) => (
+                            <AnimatedSection key={partner.name} delay={i * 70}>
+                              <a
+                                href={partner.url ?? "#"}
+                                target={partner.url ? "_blank" : undefined}
+                                rel="noopener noreferrer"
+                                className="group flex items-center justify-center rounded-2xl p-6 aspect-[3/2] bg-white border-2 border-transparent hover:border-[#1B7A6E] transition-all duration-300"
+                              >
+                                <div className="relative w-full h-8">
+                                  <Image
+                                    src={partner.logo}
+                                    alt={`${partner.name} logo`}
+                                    fill
+                                    className="object-contain group-hover:scale-105 transition-transform duration-300"
+                                  />
+                                </div>
+                              </a>
+                            </AnimatedSection>
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>
-                </section>
-              );
-            })}
+                </div>
+              </section>
+            )}
 
             {/* Partners CTA */}
-            <section className="py-20 md:py-28 bg-[#E85520]">
-              <div className="max-w-4xl mx-auto px-6 text-center">
+            <section className="py-20 md:py-28 bg-page">
+              <div className="max-w-6xl mx-auto px-6">
                 <AnimatedSection>
-                  <h2
-                    className="leading-[1.08] mb-6"
-                    style={{
-                      fontFamily: "'UXILeadershipCondensed'",
-                      fontWeight: 500,
-                      fontSize: "clamp(2.4rem, 5vw, 4rem)",
-                      color: "#FFFFFF",
-                    }}
+                  <div
+                    className="rounded-3xl p-12 md:p-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8"
+                    style={{ backgroundColor: "#E85520" }}
                   >
-                    Ready to partner with UXINDIA?
-                  </h2>
-                  <p className="font-sans text-base md:text-lg text-white/80 leading-relaxed max-w-2xl mx-auto mb-10">
-                    Connect with India&apos;s most influential design community.
-                    Explore partnership packages and find the right level of
-                    involvement for your brand.
-                  </p>
-                  <Link
-                    href="https://partner.ux-india.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-sans text-sm font-semibold px-8 py-3.5 rounded-full bg-white text-[#E85520] transition-opacity hover:opacity-90"
-                  >
-                    Get the Partnership Deck
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path
-                        d="M3 7h8M8 4l3 3-3 3"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </Link>
+                    <div>
+                      <p className="font-sans text-xs text-white/60 uppercase tracking-[0.2em] mb-4">
+                        Become a Partner
+                      </p>
+                      <h2
+                        className="leading-[1.06] text-white text-balance"
+                        style={{
+                          fontFamily: "'UXILeadershipCondensed'",
+                          fontWeight: 500,
+                          fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                        }}
+                      >
+                        Ready to partner
+                        <br />
+                        with UXINDIA?
+                      </h2>
+                    </div>
+                    <div className="flex flex-col gap-4 md:items-end flex-shrink-0">
+                      <p className="font-sans text-sm text-white/75 leading-relaxed max-w-xs md:text-right">
+                        Connect with India&apos;s most influential design community.
+                        Find the right level of involvement for your brand.
+                      </p>
+                      <Link
+                        href="https://partner.ux-india.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 font-sans text-sm font-semibold px-7 py-3.5 rounded-full bg-white text-[#E85520] transition-opacity hover:opacity-90 w-fit"
+                      >
+                        Get the Partnership Deck
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
                 </AnimatedSection>
               </div>
             </section>
