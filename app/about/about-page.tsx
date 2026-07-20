@@ -1264,16 +1264,13 @@ export default function AboutPage() {
               </div>
             </section>
 
-            {/* ── DIAMOND PARTNERS — full-width editorial card on cream ── */}
+            {/* ── DIAMOND PARTNERS ── */}
             {getPartnersByTier("diamond").length > 0 && (
               <section className="bg-cream py-16 md:py-24">
                 <div className="max-w-6xl mx-auto px-6">
                   <AnimatedSection>
                     <div className="flex items-center gap-3 mb-10">
-                      <span
-                        className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full text-white"
-                        style={{ backgroundColor: "#0D0D0D" }}
-                      >
+                      <span className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-[#E85520]/30 text-[#E85520] bg-[#E85520]/8">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#E85520]" />
                         Diamond Partner
                       </span>
@@ -1286,26 +1283,27 @@ export default function AboutPage() {
                           href={partner.url ?? "#"}
                           target={partner.url ? "_blank" : undefined}
                           rel="noopener noreferrer"
-                          className="group relative flex flex-col md:flex-row overflow-hidden rounded-3xl transition-transform duration-300 hover:-translate-y-1"
-                          style={{ backgroundColor: "#E85520" }}
+                          className="group relative flex flex-col md:flex-row overflow-hidden rounded-3xl bg-white border border-page/8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                         >
-                          {/* Left — logo + name */}
-                          <div className="flex-1 p-10 md:p-14 flex flex-col justify-between">
-                            <div className="relative h-16 w-48 mb-10">
+                          {/* Left accent strip */}
+                          <div className="w-full h-1.5 md:w-1.5 md:h-auto flex-shrink-0 rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none" style={{ backgroundColor: "#E85520" }} />
+                          {/* Content */}
+                          <div className="flex-1 p-10 md:p-14 flex flex-col md:flex-row md:items-center gap-10">
+                            <div className="relative h-14 w-44 flex-shrink-0">
                               <Image
                                 src={partner.logo}
                                 alt={`${partner.name} logo`}
                                 fill
-                                className="object-contain object-left brightness-0 invert"
+                                className="object-contain object-left"
                               />
                             </div>
-                            <div>
+                            <div className="flex-1">
                               {partner.description && (
-                                <p className="font-sans text-base text-white/80 leading-relaxed max-w-md mb-6">
+                                <p className="font-sans text-base text-page/60 leading-relaxed max-w-lg mb-6">
                                   {partner.description}
                                 </p>
                               )}
-                              <span className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-white border border-white/30 px-5 py-2.5 rounded-full group-hover:bg-white/10 transition-colors">
+                              <span className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-[#E85520] border border-[#E85520]/30 px-5 py-2.5 rounded-full group-hover:bg-[#E85520]/6 transition-colors">
                                 Visit {partner.name}
                                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
                                   <path d="M2.5 6.5h8M8 4l2.5 2.5L8 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -1313,11 +1311,6 @@ export default function AboutPage() {
                               </span>
                             </div>
                           </div>
-                          {/* Right — accent panel */}
-                          <div
-                            className="hidden md:block w-64 flex-shrink-0"
-                            style={{ backgroundColor: "rgba(0,0,0,0.15)" }}
-                          />
                         </a>
                       </AnimatedSection>
                     ))}
@@ -1326,18 +1319,15 @@ export default function AboutPage() {
               </section>
             )}
 
-            {/* ── PLATINUM PARTNERS — dark bg, large horizontal card ── */}
+            {/* ── PLATINUM PARTNERS ── */}
             {getPartnersByTier("platinum").length > 0 && (
               <section className="bg-page py-16 md:py-24">
                 <div className="max-w-6xl mx-auto px-6">
                   <AnimatedSection>
                     <div className="flex items-center gap-3 mb-10">
-                      <span
-                        className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full text-page"
-                        style={{ backgroundColor: "#D4C5A0" }}
-                      >
+                      <span className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-[#1B7A6E]/50 text-[#4DB8AA] bg-[#1B7A6E]/12">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#1B7A6E]" />
-                        Platinum Partner
+                        Platinum Partners
                       </span>
                     </div>
                   </AnimatedSection>
@@ -1348,24 +1338,25 @@ export default function AboutPage() {
                           href={partner.url ?? "#"}
                           target={partner.url ? "_blank" : undefined}
                           rel="noopener noreferrer"
-                          className="group relative flex flex-col overflow-hidden rounded-3xl transition-transform duration-300 hover:-translate-y-1 h-full"
-                          style={{ backgroundColor: "#1B7A6E" }}
+                          className="group relative flex flex-col overflow-hidden rounded-3xl bg-white border border-page/8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg h-full"
                         >
-                          <div className="p-10 flex flex-col h-full">
-                            <div className="relative h-14 w-40 mb-8">
+                          {/* Top accent strip */}
+                          <div className="w-full h-1.5 flex-shrink-0 rounded-t-3xl" style={{ backgroundColor: "#1B7A6E" }} />
+                          <div className="p-10 flex flex-col flex-1">
+                            <div className="relative h-12 w-36 mb-8">
                               <Image
                                 src={partner.logo}
                                 alt={`${partner.name} logo`}
                                 fill
-                                className="object-contain object-left brightness-0 invert"
+                                className="object-contain object-left"
                               />
                             </div>
                             {partner.description && (
-                              <p className="font-sans text-sm text-white/75 leading-relaxed flex-1 mb-6">
+                              <p className="font-sans text-sm text-page/60 leading-relaxed flex-1 mb-6">
                                 {partner.description}
                               </p>
                             )}
-                            <span className="inline-flex items-center gap-2 font-sans text-xs font-semibold text-white border border-white/25 px-4 py-2 rounded-full group-hover:bg-white/10 transition-colors w-fit">
+                            <span className="inline-flex items-center gap-2 font-sans text-xs font-semibold text-[#1B7A6E] border border-[#1B7A6E]/30 px-4 py-2 rounded-full group-hover:bg-[#1B7A6E]/6 transition-colors w-fit">
                               Visit {partner.name}
                               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                                 <path d="M2 6h8M7.5 3.5L10 6l-2.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -1386,11 +1377,8 @@ export default function AboutPage() {
                 <div className="max-w-6xl mx-auto px-6">
                   <AnimatedSection>
                     <div className="flex items-center gap-3 mb-10">
-                      <span
-                        className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full"
-                        style={{ backgroundColor: "#F5A623", color: "#0D0D0D" }}
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#0D0D0D" }} />
+                      <span className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-[#F5A623]/40 text-[#B07010] bg-[#F5A623]/12">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#F5A623]" />
                         Gold Partners
                       </span>
                       <p className="font-sans text-sm text-page/50">
@@ -1426,20 +1414,17 @@ export default function AboutPage() {
               </section>
             )}
 
-            {/* ── SILVER PARTNERS — dark bg, medium tiles ── */}
+            {/* ── SILVER PARTNERS ── */}
             {getPartnersByTier("silver").length > 0 && (
-              <section className="bg-page py-16 md:py-24">
+              <section className="bg-cream py-16 md:py-24">
                 <div className="max-w-6xl mx-auto px-6">
                   <AnimatedSection>
                     <div className="flex items-center gap-3 mb-10">
-                      <span
-                        className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full"
-                        style={{ backgroundColor: "#A8B4C0", color: "#0D0D0D" }}
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "#2D3580" }} />
+                      <span className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-[#8A9BAD]/40 text-[#4A6070] bg-[#A8B4C0]/15">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#8A9BAD]" />
                         Silver Partners
                       </span>
-                      <p className="font-sans text-sm text-white/40">
+                      <p className="font-sans text-sm text-page/50">
                         Supporting the next generation of design leaders
                       </p>
                     </div>
@@ -1451,17 +1436,17 @@ export default function AboutPage() {
                           href={partner.url ?? "#"}
                           target={partner.url ? "_blank" : undefined}
                           rel="noopener noreferrer"
-                          className="group flex flex-col items-center justify-center rounded-2xl p-8 aspect-square bg-white/6 border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-300"
+                          className="group flex flex-col items-center justify-center rounded-2xl p-8 aspect-square bg-white border-2 border-transparent hover:border-[#A8B4C0] transition-all duration-300"
                         >
                           <div className="relative w-full h-9">
                             <Image
                               src={partner.logo}
                               alt={`${partner.name} logo`}
                               fill
-                              className="object-contain brightness-0 invert opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                              className="object-contain group-hover:scale-105 transition-transform duration-300"
                             />
                           </div>
-                          <p className="font-sans text-xs text-white/30 mt-4 text-center">
+                          <p className="font-sans text-xs text-page/40 mt-4 text-center">
                             {partner.name}
                           </p>
                         </a>
@@ -1482,11 +1467,8 @@ export default function AboutPage() {
                       <div>
                         <AnimatedSection>
                           <div className="flex items-center gap-3 mb-8">
-                            <span
-                              className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full text-white"
-                              style={{ backgroundColor: "#2D3580" }}
-                            >
-                              <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
+                            <span className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-[#2D3580]/30 text-[#2D3580] bg-[#2D3580]/8">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#2D3580]" />
                               Media Partners
                             </span>
                           </div>
@@ -1523,11 +1505,8 @@ export default function AboutPage() {
                       <div>
                         <AnimatedSection>
                           <div className="flex items-center gap-3 mb-8">
-                            <span
-                              className="inline-flex items-center gap-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full text-white"
-                              style={{ backgroundColor: "#1B7A6E" }}
-                            >
-                              <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
+                            <span className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-4 py-2 rounded-full border border-[#1B7A6E]/30 text-[#1B7A6E] bg-[#1B7A6E]/8">
+                              <span className="w-1.5 h-1.5 rounded-full bg-[#1B7A6E]" />
                               Community Partners
                             </span>
                           </div>
