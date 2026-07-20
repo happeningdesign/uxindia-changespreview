@@ -1284,7 +1284,7 @@ export default function AboutPage() {
                             rel="noopener noreferrer"
                             className="group flex flex-col md:flex-row md:items-center gap-8 bg-white rounded-2xl p-8 md:p-10 border border-page/8 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(13,13,13,0.08)]"
                           >
-                            <div className="relative h-12 w-40 flex-shrink-0">
+                            <div className="relative h-16 w-56 flex-shrink-0">
                               <Image src={partner.logo} alt={`${partner.name} logo`} fill className="object-contain object-left" />
                             </div>
                             {partner.description && (
