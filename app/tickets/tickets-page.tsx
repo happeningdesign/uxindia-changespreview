@@ -3,31 +3,19 @@
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
 
-// components
-// import { TicketsHero } from "@/components/tickets/tickets-hero/TicketsHero";
-
 import { TicketsArcHero } from "@/components/tickets/tickets-arc-hero/TicketsArcHero";
-
-// import {
-//   SummitTrackColumn,
-//   ForumTrackColumn,
-// } from "@/components/tickets/track-column/TrackColumn";
 
 import { SummitTrackColumn } from "@/components/tickets/summit-track-column/SummitTrackColumn";
 import { ForumTrackColumn } from "@/components/tickets/forum-track-column/ForumTrackColumn";
-
-// import { BundleBanner } from "@/components/tickets/bundle-banner/BundleBanner";
-// import { PoliciesSection } from "@/components/tickets/policies-section/PoliciesSection";
-// import { TicketsFAQ } from "@/components/tickets/tickets-faq/TicketsFAQ";
 
 import { BundleBanner } from "@/components/tickets/bundle-banner/BundleBanner";
 import { TicketsFAQ } from "@/components/tickets/tickets-faq/TicketsFAQ";
 import { PoliciesSection } from "@/components/tickets/policies-section/PoliciesSection";
 
 // data
-import { summitTiers } from "@/data/summitTiers";
-import { forumProfessionalTiers } from "@/data/forumTiers";
-import { studentTiers } from "@/data/studentTiers";
+import { summitTiers } from "@/data/tickets/summitTiers";
+import { forumProfessionalTiers } from "@/data/tickets/forumTiers";
+import { studentTiers } from "@/data/tickets/studentTiers";
 
 export default function TicketsPage() {
   return (

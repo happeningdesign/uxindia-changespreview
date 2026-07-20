@@ -56,3 +56,92 @@ model SpeakerSubmission {
   confirmRecording      Boolean
   confirmCoc            Boolean
 }
+
+model InvitedSpeakerSubmission {
+  id                    String   @id @default(cuid())
+
+  createdAt             DateTime @default(now())
+
+  // Speaker Info
+  speakerName           String
+  speakerEmail          String
+  countryCode           String?
+  speakerPhone          String?
+
+  speakerTitle          String?
+  speakerBio            String?
+
+  speakerPhotoUrl       String?
+
+  speakerLinkedin       String?
+  speakerWebsite        String?
+  speakerTwitter        String?
+
+  // Event Info
+  track                 String?
+
+  // Session Info
+  formats               Json
+  sessions              Json
+
+  // Additional Details
+  specialRequirements   String?
+  attendeeMaterials     String?
+
+  // Confirmations
+  confirmOriginal       Boolean
+  confirmNonPromotional Boolean
+  confirmAvailable      Boolean
+  confirmIteration      Boolean
+  confirmRecording      Boolean
+  confirmCoc            Boolean
+
+  // Notes
+  additionalNotes       String?
+}
+
+model DesignPitchProspect {
+  id           String   @id @default(cuid())
+
+  name         String
+  email        String   @unique
+  phone        String
+  organization String
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([email])
+  @@index([createdAt])
+}
+
+model Contributor {
+  id                     String   @id @default(cuid())
+
+  role                   String
+  otherRole              String?
+
+  fullName               String
+
+  email                  String   @unique
+  phone                  String
+
+  professionalTitle      String?
+  professionalBio        String
+
+  photoUrl               String?
+
+  linkedin               String?
+  twitter                String?
+  website                String?
+
+  additionalNotes        String?
+
+  confirmInformation     Boolean
+  confirmMediaConsent    Boolean
+
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+
+  @@index([role])
+}

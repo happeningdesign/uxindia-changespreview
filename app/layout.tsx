@@ -3,6 +3,10 @@ import { createMetadata } from "@/lib/seo";
 import { DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+
+// Design Pitch
+import { Shrikhand, Google_Sans } from "next/font/google";
+
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -10,6 +14,22 @@ const dmSans = DM_Sans({
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
+});
+
+// Design Pitch Fonts
+const shrikhand = Shrikhand({
+  subsets: ["latin"],
+  weight: "400", // Shrikhand only has one weight
+  display: "swap",
+  variable: "--font-shrikhand",
+  adjustFontFallback: false,
+});
+
+const googleSans = Google_Sans({
+  subsets: ["latin"],
+  variable: "--font-google-sans",
+  display: "swap",
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = createMetadata({
@@ -38,7 +58,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} relative`}>
+    <html
+      lang="en"
+      className={`${dmSans.variable} ${shrikhand.variable} ${googleSans.variable} relative`}
+    >
       <body
         suppressHydrationWarning={true}
         className="font-sans antialiased bg-cream text-page relative"

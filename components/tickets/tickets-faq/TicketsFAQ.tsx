@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { summitFaq, forumFaq } from "@/data/ticketsFaq";
+import { summitFaq, forumFaq } from "@/data/tickets/ticketsFaq";
 
 type FaqTrack = "summit" | "forum";
 

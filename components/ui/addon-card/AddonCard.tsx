@@ -1,6 +1,6 @@
 "use client";
 
-import { type CardConfig } from "@/data/tickets";
+import { type CardConfig } from "@/data/tickets/tickets";
 
 interface AddonCardProps {
   card: CardConfig;

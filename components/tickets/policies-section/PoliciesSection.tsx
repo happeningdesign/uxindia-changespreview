@@ -1,4 +1,4 @@
-import { policySections } from "@/data/ticketsFaq";
+import { policySections } from "@/data/tickets/ticketsFaq";
 
 export function PoliciesSection() {
   return (
@@ -9,7 +9,8 @@ export function PoliciesSection() {
             Policies &amp; Terms
           </h2>
           <p className="mx-auto mt-4 max-w-md font-sans text-sm text-text-primary/40">
-            Important information about registrations, cancellations, and event policies.
+            Important information about registrations, cancellations, and event
+            policies.
           </p>
         </div>
 

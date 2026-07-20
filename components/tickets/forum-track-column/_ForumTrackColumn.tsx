@@ -10,7 +10,7 @@ import {
   addOnAsTier,
   pickTiers,
 } from "@/types/ticketCatalog";
-import { forumAddOn } from "@/data/forumTiers";
+import { forumAddOn } from "@/data/tickets/forumTiers";
 import { OfferCard } from "../offer-card/OfferCard";
 import { TierLadderCard } from "../tier-ladder-card/TierLadderCard";
 import { TrackGstNote } from "../track-gst-note/TrackGstNote";

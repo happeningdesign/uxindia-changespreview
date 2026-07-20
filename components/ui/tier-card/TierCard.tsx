@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronUp, ChevronDown } from "lucide-react";
-import { type TicketTier, type TierState } from "@/data/tickets";
+import { type TicketTier, type TierState } from "@/data/tickets/tickets";
 
 interface TierCardProps {
   tier: TicketTier;

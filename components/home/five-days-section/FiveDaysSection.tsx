@@ -344,7 +344,7 @@ export default function FiveDaysSection() {
           <EventCard
             title={"Rising Leaders\nForum"}
             dates="26–27 Sept"
-            location="Srishti Institute of Art, Design and Technology, Bengaluru"
+            location="Srishti Manipal Institute, Bengaluru"
             bgColor="#F5BF42"
             textColor="#0D0D0D"
             hoverBgColor="#F9D98E"

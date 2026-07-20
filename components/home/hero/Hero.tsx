@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 
+import { LogoCarousel } from "../logo-carousel/LogoCarousel";
+
 export default function Hero() {
   const [countdown, setCountdown] = useState({
     days: 0,
@@ -52,7 +54,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen overflow-hidden w-full"
+      className="relative min-h-screen overflow-hidden w-full flex flex-col justify-center"
       style={{ backgroundColor: "#0D0D0D" }}
     >
       {/* Full-bleed background video with parallax */}
@@ -81,7 +83,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Content layer — two groups: top (countdown+date) and lower (badge+headline) */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center text-center px-6">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6">
         {/* ── TOP GROUP: countdown + date, offset 64px below nav ── */}
         <div
           className="flex flex-col items-center gap-4 w-full"
@@ -92,7 +94,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-3 font-sans text-white/80 text-sm tracking-wide border border-white/20 rounded-full px-5 py-2"
+            className="inline-flex items-center gap-3 font-sans text-white/80 text-sm tracking-wide border border-white/20 rounded-full px-5 py-1"
             style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
           >
             <span>
@@ -157,8 +159,9 @@ export default function Hero() {
         {/* <div className="flex-1" /> */}
 
         {/* ── LOWER GROUP: badge + headline + subtitle ── */}
-        <div className="flex flex-col items-center gap-6 max-w-4xl w-full pb-28 mt-8">
+        <div className="flex flex-col items-center gap-6 max-w-4xl w-full pb-40 mt-8">
           {/* Applications open badge with blinking dot */}
+          {/*
           <motion.span
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -175,8 +178,9 @@ export default function Hero() {
                 ease: "easeInOut",
               }}
             />
-            Early Bird Tickets Now Open
+            Regular & VIP Tickets Now Open
           </motion.span>
+          */}
 
           {/* Headline — UXILeadershipCondensed */}
           <motion.h1
@@ -188,12 +192,12 @@ export default function Hero() {
               fontFamily: "'UXILeadershipCondensed'",
               fontWeight: 500,
               fontStretch: "condensed",
-              fontSize: "clamp(3rem, 7.5vw, 6rem)",
+              fontSize: "clamp(2.5rem, 10vw, 6rem)",
               letterSpacing: "-0.01em",
             }}
           >
             <span style={{ display: "block", whiteSpace: "normal" }}>
-              Asia&apos;s definitive design
+              Asia's definitive design
             </span>
             <span style={{ display: "block", whiteSpace: "normal" }}>
               leadership platform.
@@ -237,6 +241,14 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+
+      {/* Logo Carousel */}
+      {/* <div className="absolute w-full bottom-[10px] left-0">
+        <h6 className="font-sans text-[10px] font-semibold text-white/75 tracking-[0.22em] uppercase text-center">
+          Our Esteemed Partners
+        </h6>
+        <LogoCarousel />
+      </div> */}
 
       {/* Scroll indicator */}
       <motion.div

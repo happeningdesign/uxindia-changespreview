@@ -115,7 +115,7 @@ export default function Hero({
                   WHERE
                 </p>
                 <a
-                  href="https://maps.app.goo.gl/srishti"
+                  href="https://maps.app.goo.gl/Bec27bPxTosqivvq7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-start gap-2.5 font-sans text-base md:text-lg text-white font-medium leading-snug cursor-pointer hover:text-[#E85520] transition-colors duration-200"
@@ -142,8 +142,8 @@ export default function Hero({
                   WHO
                 </p>
                 <p className="font-sans text-base md:text-lg text-white font-medium">
-                  UX Designers, Product Designers, <br /> Visual Designers,
-                  Service Designers Etc
+                  Design Engineers, UX Designers, Product Designers, Students
+                  etc.
                 </p>
               </div>
             </div>

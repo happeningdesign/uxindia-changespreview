@@ -23,20 +23,20 @@ export function isRegisterNowLabel(ctaLabel: string): boolean {
 /** Register Now is only clickable for tiers whose sale starts on OPEN_REGISTRATION_SALE_START. */
 export function isTierCtaDisabled(tier: TierCtaFields): boolean {
   if (tier.ctaDisabled) return true;
-  if (isRegisterNowLabel(tier.ctaLabel)) {
-    return tier.saleStarts !== OPEN_REGISTRATION_SALE_START;
-  }
+  // if (isRegisterNowLabel(tier.ctaLabel)) {
+  //   return tier.saleStarts !== OPEN_REGISTRATION_SALE_START;
+  // }
   return false;
 }
 
 export function getTierCtaLabel(tier: TierCtaFields): string {
-  if (
-    isRegisterNowLabel(tier.ctaLabel) &&
-    tier.saleStarts !== OPEN_REGISTRATION_SALE_START &&
-    !tier.ctaDisabled
-  ) {
-    return `Opens ${tier.saleStarts} →`;
-  }
+  // if (
+  //   isRegisterNowLabel(tier.ctaLabel) &&
+  //   tier.saleStarts !== OPEN_REGISTRATION_SALE_START &&
+  //   !tier.ctaDisabled
+  // ) {
+  //   return `Opens ${tier.saleStarts} →`;
+  // }
   return tier.ctaLabel;
 }
 

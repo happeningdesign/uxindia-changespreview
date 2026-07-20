@@ -10,44 +10,17 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+
+// Global Components
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
-import ImageStack from "@/components/about/image-stack/ImageStack";
+
+// UI Components
 import { EventCard } from "@/components/ui/event-card/EventCard";
 
-function AnimatedSection({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
-      { threshold: 0.15 },
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-}
+// Page Components
+import { AnimatedSection } from "@/components/about/animated-section/AnimatedSection";
+import ImageStack from "@/components/about/image-stack/ImageStack";
 
 export default function AboutPage() {
   const heroRef = useRef<HTMLDivElement>(null);

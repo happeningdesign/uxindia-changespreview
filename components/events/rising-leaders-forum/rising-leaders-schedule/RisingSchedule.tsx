@@ -187,7 +187,7 @@ export default function RisingSchedule() {
                           </p>
                         )}
                       </div>
-                      <div className="hidden lg:flex flex-col items-end gap-2">
+                      <div className="hidden lg:flex flex-row items-end gap-2">
                         <span className="px-3 py-1 bg-[#1D5078] text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider">
                           {session.tag}
                         </span>

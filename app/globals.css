@@ -310,6 +310,7 @@
   animation-iteration-count: infinite;
   animation-play-state: running;
 }
+
 @media (max-width: 768px) {
   .animate-marquee {
     animation-duration: 44s;
@@ -431,6 +432,7 @@
   position: relative;
   overflow: hidden;
 }
+
 .halftone-card::before {
   content: "";
   position: absolute;
@@ -450,10 +452,36 @@
 ::-webkit-scrollbar {
   width: 4px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--cream);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--orange);
   border-radius: 2px;
+}
+
+/* Logo Carousel Animations */
+.logo-marquee {
+  animation-name: logo-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes logo-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee {
+    animation-play-state: paused;
+  }
 }

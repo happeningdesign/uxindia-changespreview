@@ -4,21 +4,21 @@ import Link from "next/link";
 import CurvedSlider from "@/components/ui/curved-slider/CursedSlider";
 
 const CAROUSEL_IMAGES = [
-  "images/carousel/Carousel-01.webp",
-  "images/carousel/Carousel-02.webp",
-  "images/carousel/Carousel-03.webp",
-  "images/carousel/Carousel-04.webp",
-  "images/carousel/Carousel-05.webp",
-  "images/carousel/Carousel-06.webp",
-  "images/carousel/Carousel-07.webp",
-  "images/carousel/Carousel-08.webp",
-  "images/carousel/Carousel-09.webp",
-  "images/carousel/Carousel-10.webp",
-  "images/carousel/Carousel-11.webp",
-  "images/carousel/Carousel-12.webp",
-  "images/carousel/Carousel-13.webp",
-  "images/carousel/Carousel-14.webp",
-  "images/carousel/Carousel-15.webp",
+  "/images/carousel/home/Carousel-01.webp",
+  "/images/carousel/home/Carousel-02.webp",
+  "/images/carousel/home/Carousel-03.webp",
+  "/images/carousel/home/Carousel-04.webp",
+  "/images/carousel/home/Carousel-05.webp",
+  "/images/carousel/home/Carousel-06.webp",
+  "/images/carousel/home/Carousel-07.webp",
+  "/images/carousel/home/Carousel-08.webp",
+  "/images/carousel/home/Carousel-09.webp",
+  "/images/carousel/home/Carousel-10.webp",
+  "/images/carousel/home/Carousel-11.webp",
+  "/images/carousel/home/Carousel-12.webp",
+  "/images/carousel/home/Carousel-13.webp",
+  "/images/carousel/home/Carousel-14.webp",
+  "/images/carousel/home/Carousel-15.webp",
 ];
 
 const SVG_SIZE = 1100; // px — enlarged as requested

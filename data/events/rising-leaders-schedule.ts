@@ -24,10 +24,15 @@ export const risingScheduleData = {
       time: "9:00 AM",
       type: "keynote",
       title: "Opening Keynote",
-      description: "Opening remarks and keynote address to set the tone for the conference.",
+      description:
+        "Opening remarks and keynote address to set the tone for the conference.",
       tag: "Keynote",
       location: "Auditorium",
-      speaker: { name: "Kaladhar Bapu", role: "Founder, UXINDIA", image: "/images/speakers/rising-leaders/Kaladhar-Bapu-rs.png" },
+      speaker: {
+        name: "Kaladhar Bapu",
+        role: "Founder, UXINDIA",
+        image: "/images/speakers/rising-leaders-forum/kaladhar-bapu.webp",
+      },
     },
     {
       time: "9:40 AM",
@@ -41,7 +46,7 @@ export const risingScheduleData = {
       speaker: {
         name: "Deepashree Kale",
         role: "Head of Design, Apptware",
-        image: "/images/speakers/rising-leaders/Deepashree Kale.webp",
+        image: "/images/speakers/rising-leaders-forum/deepashree-kale.webp",
       },
     },
     {
@@ -61,8 +66,8 @@ export const risingScheduleData = {
       location: "Auditorium",
       speaker: {
         name: "Vineet Gupta",
-        role: "Assistant Vice President, Design & Branding",
-        image: "/images/speakers/rising-leaders/Vineet Gupta.png",
+        role: "Assistant Vice President, Design & Branding, Gemini Solutions Pvt Ltd",
+        image: "/images/speakers/rising-leaders-forum/vineet-gupta.webp",
       },
     },
     {
@@ -99,7 +104,7 @@ export const risingScheduleData = {
           speaker: {
             name: "Varedh Nigam",
             role: "Associate Director, Nagarro Software Pvt. Ltd.",
-            image: "/images/speakers/rising-leaders/Varedh.png",
+            image: "/images/speakers/rising-leaders-forum/varedh-nigam.webp",
           },
           description:
             "Exploring how the HCAI framework helps teams decide what AI should own, where humans must lead, and where care matters most.",
@@ -113,44 +118,81 @@ export const risingScheduleData = {
         {
           room: "Room 3",
           title: "The Science of Moat Engineering",
-          speaker: { name: "Amber Krishan", role: "CEO, Futurris Digital Pvt Ltd", image: "/images/speakers/rising-leaders/Amber-Krishan.png" },
-          description: "Exploring how product teams can move beyond features and journeys to build defensible moats through lifecycle depth, engagement systems, and KPI-driven behavior.",
+          speaker: {
+            name: "Amber Krishan",
+            role: "Founder & CEO, Futurris",
+            image: "/images/speakers/rising-leaders-forum/amber-krishan.webp",
+          },
+          description:
+            "Exploring how product teams can move beyond features and journeys to build defensible moats through lifecycle depth, engagement systems, and KPI-driven behavior.",
         },
         {
           room: "Room 4",
           title: "The last mile of UX - protecting design intent in production",
-          speaker: { name: "Monali Samarth", role: "Product Design Engineer, RIB Software", image: "/images/speakers/rising-leaders/Monali-Samarth.png" },
-          description: "Exploring how designers can protect design intent from Figma to production through AI-assisted prompting, red-teaming, and practical workflow guardrails.",
+          speaker: {
+            name: "Monali Samarth",
+            role: "Product Design Engineer, RIB Software",
+            image: "/images/speakers/rising-leaders-forum/monali-samarth.webp",
+          },
+          description:
+            "Exploring how designers can protect design intent from Figma to production through AI-assisted prompting, red-teaming, and practical workflow guardrails.",
         },
         {
           room: "Room 5",
-          title: "Conflict as a Coherence Engine: Building AI Products for Human Coordination",
-          speaker: { name: "Thejashwini", role: "Ex - Experience Design Strategist", image: "/images/speakers/rising-leaders/Thejashwini.png" },
-          description: "Exploring how conflict can become a signal for better coordination, helping teams build AI products that turn disagreement into clearer decisions and stronger coherence",
+          title:
+            "Conflict as a Coherence Engine: Building AI Products for Human Coordination",
+          speaker: {
+            name: "Thejashwini",
+            role: "Ex - Experience Design Strategist",
+            image: "/images/speakers/rising-leaders-forum/thejashwini.webp",
+          },
+          description:
+            "Exploring how conflict can become a signal for better coordination, helping teams build AI products that turn disagreement into clearer decisions and stronger coherence",
         },
         {
           room: "Room 6",
           title: "Workshop: TBA",
-          speaker: { name: "Jose Coronado", role: "Advisor, Interim Head, Product & Design, Digital Impulsum", image: "/images/speakers/rising-leaders/Jose-Coronado-rs.png" },
+          speaker: {
+            name: "Jose Coronado",
+            role: "Advisor, Interim Head, Product & Design, Digital Impulsum",
+            image: "/images/speakers/rising-leaders-forum/jose-coronado.webp",
+          },
           description: "",
         },
         {
           room: "Room 7",
-          title: "Workshop 07",
-          speaker: { name: "TBA", role: "", image: "" },
-          description: "",
+          title: "Pitch Imperfect",
+          speaker: {
+            name: "Roopesh Ramesh Donde",
+            role: "Sr Staff Product Designer, ServiceNow",
+            image: "/images/speakers/rising-leaders-forum/roopesh-donde.webp",
+          },
+          description:
+            "Pitch Imperfect is a hands-on workshop built around PITCH: a five-step method for going from real felt friction to working prototype in one sitting. Problem, Inform, Trace, Capture, Hatch.",
         },
         {
           room: "Room 8",
-          title: "Design-ops for AI-Ready UX Teams: From Chaos to Operating System",
-          speaker: { name: "Dushyant Kanungo", role: "Director, User Experience, Galaxy Weblinks Inc.", image: "/images/speakers/rising-leaders/Dushyant-Kanungo.png" },
-          description: "Exploring how UX teams can turn scattered AI experiments into a sustainable operating system of workflows, roles, rituals, templates, and guardrails.",
+          title:
+            "Design-ops for AI-Ready UX Teams: From Chaos to Operating System",
+          speaker: {
+            name: "Dushyant Kanungo",
+            role: "Director, User Experience, Galaxy Weblinks Inc.",
+            image:
+              "/images/speakers/rising-leaders-forum/dushyant-kanungo.webp",
+          },
+          description:
+            "Exploring how UX teams can turn scattered AI experiments into a sustainable operating system of workflows, roles, rituals, templates, and guardrails.",
         },
         {
           room: "Room 9",
           title: "Workshop 09",
-          speaker: { name: "TBA", role: "", image: "" },
-          description: "",
+          speaker: {
+            name: "Astha Khurana",
+            role: "Head of Design, Adalat AI",
+            image: "/images/speakers/rising-leaders-forum/astha-khurana.webp",
+          },
+          description:
+            "Designers in tech today aren't handed briefs to make pretty. They're asked to decide what to build, scope it with engineers, and ship it.",
         },
         {
           room: "Room 10",
@@ -200,7 +242,7 @@ export const risingScheduleData = {
       speaker: {
         name: "Sujit Kumar Pradhan",
         role: "UX Designer, Google",
-        image: "/images/speakers/rising-leaders/Sujit Kumar Pradhan.png",
+        image: "/images/speakers/rising-leaders-forum/sujit-kumar-pradhan.webp",
       },
     },
     {
@@ -262,19 +304,32 @@ export const risingScheduleData = {
       sessions: [
         {
           room: "Mini-Auditorium 1",
-          title: "Spark Session",
+          title:
+            "Beyond Borders: Unmasking Cultural Blind Spots with Service Design",
           type: "spark",
           tag: "Spark Session",
-          speaker: { name: "TBA", role: "", image: "" },
-          description: "",
+          speaker: {
+            name: "Poorva Soman-Lavate",
+            role: "Lead Experience Design, ThoughtWorks",
+            image: "/images/speakers/rising-leaders-forum/poorva-lavate.webp",
+          },
+          description:
+            "In this piece, Poorva will share her experience and perspective on the critical role culture plays in onboarding and driving adoption among global users in a B2B context.",
         },
         {
           room: "Mini-Auditorium 2",
-          title: "The AI Was Wrong; Now What? Designing Recovery Into High Stakes AI",
+          title:
+            "The AI Was Wrong; Now What? Designing Recovery Into High Stakes AI",
           type: "spark",
           tag: "Spark Session",
-          speaker: { name: "Anika Shrivastava", role: "Senior UX Designer, LTIMindtree", image: "/images/speakers/rising-leaders/Anika-Shrivastava.png" },
-          description: "Exploring how designers can build graceful recovery into high-stakes AI systems by treating failure not as an edge case but as a core design surface.",
+          speaker: {
+            name: "Anika Shrivastava",
+            role: "Senior UX Designer, LTIMindtree",
+            image:
+              "/images/speakers/rising-leaders-forum/anika-shrivastava.webp",
+          },
+          description:
+            "Exploring how designers can build graceful recovery into high-stakes AI systems by treating failure not as an edge case but as a core design surface.",
         },
         {
           room: "Mini-Auditorium 3",
@@ -293,19 +348,24 @@ export const risingScheduleData = {
       sessions: [
         {
           room: "Mini-Auditorium 1",
-          title: "Designing the Future of Accessible Autonomous Air Taxis with People with Disabilities",
+          title: "Spark Session",
           type: "spark",
           tag: "Spark Session",
-          speaker: { name: "Saurabh S. Nimsarkar", role: "Staff UI/UX Designer / Design Research Lead, Wisk Aero LLC", image: "/images/speakers/rising-leaders/Saurabh-S-Nimsarkar.png" },
-          description: "Exploring how inclusive design research with people with disabilities can reshape the future of autonomous air mobility from the ground up.",
+          speaker: { name: "TBA", role: "", image: "" },
+          description: "",
         },
         {
           room: "Mini-Auditorium 2",
           title: "The Designer Who Refused to Stay a Designer",
           type: "spark",
           tag: "Spark Session",
-          speaker: { name: "Anil Reddy", role: "Founder & Designer, Happy Pet", image: "/images/speakers/rising-leaders/Anil-Reddy.png" },
-          description: "Exploring how a designer can step beyond craft into entrepreneurship by building a product, a company, and a new identity without losing what made them good to begin with.",
+          speaker: {
+            name: "Anil Reddy",
+            role: "Founder & Designer, Happy Pet",
+            image: "/images/speakers/rising-leaders-forum/anil-reddy.webp",
+          },
+          description:
+            "Exploring how a designer can step beyond craft into entrepreneurship by building a product, a company, and a new identity without losing what made them good to begin with.",
         },
         {
           room: "Mini-Auditorium 3",

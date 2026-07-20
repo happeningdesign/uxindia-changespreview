@@ -1,0 +1,18 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1920 220"
+    preserveAspectRatio="none"
+>
+    <path
+        fill="#08273B"
+        d="
+            M0,90
+            C120,0 360,0 620,55
+            C930,120 1230,20 1540,80
+            C1730,115 1850,150 1920,180
+            L1920,220
+            L0,220
+            Z
+        "
+    />
+</svg>

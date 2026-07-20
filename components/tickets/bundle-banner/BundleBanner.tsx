@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { summitAddOn, summitTiers } from "@/data/summitTiers";
-import { forumProfessionalTiers } from "@/data/forumTiers";
+import { summitAddOn, summitTiers } from "@/data/tickets/summitTiers";
+import { forumProfessionalTiers } from "@/data/tickets/forumTiers";
 import { formatPrice } from "@/types/format";
 import { PriceWithGst } from "../price-with-gst/PriceWithGst";
 
 /** Full Week Pass at regular pricing (no Early Bird bundle tier). */
-const FULL_WEEK_PASS_PRICE = 35999;
+const FULL_WEEK_PASS_PRICE = 30339;
 
 const summitRegularPrice =
   summitTiers.find((t) => t.id === "summit-regular")?.price ?? 23999;

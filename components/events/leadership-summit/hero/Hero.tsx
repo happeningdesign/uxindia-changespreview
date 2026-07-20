@@ -145,7 +145,7 @@ export default function Hero({
                     WHO
                   </p>
                   <p className="font-sans text-base md:text-lg text-white font-medium">
-                    Heads of Design, CXO, CDO, Director of Design etc.
+                    CXO, CDO, CTO, CPO, Heads of Design, Senior Designers etc.
                   </p>
                 </div>
               </div>

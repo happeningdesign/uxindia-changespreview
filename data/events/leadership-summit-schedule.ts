@@ -29,21 +29,36 @@ export const leadershipScheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "Workshop: TBA",
-          speaker: { name: "Jose Coronado", role: "Advisor, Interim Head, Product & Design, Digital Impulsum", image: "/images/speakers/leadership-summit/Jose-Coronado.png" },
-          description: "",
+          title: "Growing and expanding design leadership",
+          speaker: {
+            name: "Jose Coronado",
+            role: "Advisor, Interim Head, Product & Design, Digital Impulsum",
+            image: "/images/speakers/leadership-summit/jose-coronado.webp",
+          },
+          description:
+            "Participants will go through three areas of design leadership development to build a strong foundation of impact, adopt new behaviors, and evolve in their leadership journey.",
         },
         {
           room: "Room 2",
           title: "Workshop: TBA",
-          speaker: { name: "Doug Powell", role: "Executive Design Leader", image: "/images/speakers/leadership-summit/Doug.webp" },
+          speaker: {
+            name: "Doug Powell",
+            role: "Executive Design Leader",
+            image: "/images/speakers/leadership-summit/doug-powell.webp",
+          },
           description: "",
         },
         {
           room: "Room 3",
-          title: "Workshop: TBA",
-          speaker: { name: "Mario Van der Meulen", role: "CXO, Aleph Labs", image: "/images/speakers/leadership-summit/Van-Mario.webp" },
-          description: "",
+          title: "Lead[ing] the Room You're In",
+          speaker: {
+            name: "Mario Van der Meulen",
+            role: "CXO, Aleph Labs",
+            image:
+              "/images/speakers/leadership-summit/mario-van-der-meulen.webp",
+          },
+          description:
+            "In this session, the participants will see how these moments get built, and why the very instinct that made you a good designer can quietly work against you as a leader. Then you do something about it.",
         },
       ],
     },
@@ -62,9 +77,15 @@ export const leadershipScheduleData = {
       workshops: [
         {
           room: "Room 1",
-          title: "AI Design Accelerator: Fixing Context-Drift in Rapid AI-Assisted Design Lifecycle",
-          speaker: { name: "Samir Dash", role: "UX Arch Senior Manager, Accenture", image: "/images/speakers/leadership-summit/Samir-Dash.png" },
-          description: "Exploring how design teams can use AI to move from brief to prototype faster while preventing context drift through structured handoffs, scorecards, and human-led validation.",
+          title:
+            "AI Design Accelerator: Fixing Context-Drift in Rapid AI-Assisted Design Lifecycle",
+          speaker: {
+            name: "Samir Dash",
+            role: "UX Arch Senior Manager, Accenture",
+            image: "/images/speakers/leadership-summit/samir-dash.webp",
+          },
+          description:
+            "Exploring how design teams can use AI to move from brief to prototype faster while preventing context drift through structured handoffs, scorecards, and human-led validation.",
         },
         {
           room: "Room 2",
@@ -74,9 +95,15 @@ export const leadershipScheduleData = {
         },
         {
           room: "Room 3",
-          title: "Workshop 06",
-          speaker: { name: "TBA", role: "", image: "" },
-          description: "",
+          title:
+            "Designing What Could Go Right: Building the Agentic Design Studio (+)",
+          speaker: {
+            name: "Manish Vashist",
+            role: "Executive Design Leader, Innovation and Customer Experience, EY Studio+",
+            image: "/images/speakers/leadership-summit/manish-vashist.webp",
+          },
+          description:
+            "AI is changing design, but the real question is not what AI can generate. It is what design leaders must choose, shape, govern and protect. This hands-on workshop helps participants design an Agentic Design Studio where human creativity, judgement and AI agents work together responsibly.",
         },
       ],
     },
@@ -94,16 +121,26 @@ export const leadershipScheduleData = {
       time: "9:00 AM",
       type: "keynote",
       title: "Opening Keynote",
-      description: "Opening remarks and keynote address to set the tone for the conference.",
-      speaker: { name: "Kaladhar Bapu", role: "Founder, UXINDIA", image: "/images/speakers/leadership-summit/Kaladhar-Bapu.png" },
+      description:
+        "Opening remarks and keynote address to set the tone for the conference.",
+      speaker: {
+        name: "Kaladhar Bapu",
+        role: "Founder, UXINDIA",
+        image: "/images/speakers/leadership-summit/kaladhar-bapu.webp",
+      },
       tag: "Opening Keynote",
     },
     {
       time: "9:50 AM",
       type: "keynote",
       title: "Grand Keynote",
-      description: "Exploring how design leadership can evolve beyond craft and execution to shape strategy, culture, and the next generation of design-driven organisations.",
-      speaker: { name: "Doug Powell", role: "Executive Design Leader", image: "/images/speakers/leadership-summit/Doug.webp" },
+      description:
+        "Exploring how design leadership can evolve beyond craft and execution to shape strategy, culture, and the next generation of design-driven organisations.",
+      speaker: {
+        name: "Doug Powell",
+        role: "Executive Design Leader",
+        image: "/images/speakers/leadership-summit/doug-powell.webp",
+      },
       tag: "Grand Keynote - 40 Mins",
     },
     { time: "10:40 AM", type: "break", title: "Coffee Break" },
@@ -111,11 +148,12 @@ export const leadershipScheduleData = {
       time: "11:25 AM",
       type: "keynote",
       title: "Be[coming] a leader in design",
-      description: "A keynote on what it really takes to lead with integrity in design — without losing yourself to politics or pressure.",
+      description:
+        "A keynote on what it really takes to lead with integrity in design — without losing yourself to politics or pressure.",
       speaker: {
         name: "Mario Van der Meulen",
         role: "CXO, Aleph Labs",
-        image: "/images/speakers/leadership-summit/Van-Mario.webp",
+        image: "/images/speakers/leadership-summit/mario-van-der-meulen.webp",
       },
       tag: "Plenary Keynote - 30 Mins",
       talkCategory: "Design Practice",
@@ -123,9 +161,14 @@ export const leadershipScheduleData = {
     {
       time: "12:05 PM",
       type: "keynote",
-      title: "Talk Title: TBA",
-      description: "",
-      speaker: { name: "Jose Coronado", role: "Advisor, Interim Head, Product & Design, Digital Impulsum", image: "/images/speakers/leadership-summit/Jose-Coronado.png" },
+      title: "Closing the Gap: Design Embraces Business",
+      description:
+        "Drawing from enterprise transformation across global organizations, this talk explores how design leaders increase organizational maturity, strengthen partnerships, and amplify design’s impact.",
+      speaker: {
+        name: "Jose Coronado",
+        role: "Advisor, Interim Head, Product & Design, Digital Impulsum",
+        image: "/images/speakers/leadership-summit/jose-coronado.webp",
+      },
       tag: "Plenary Keynote - 30 Mins",
     },
     { time: "12:45 PM", type: "break", title: "Lunch Break" },
@@ -135,8 +178,16 @@ export const leadershipScheduleData = {
       title: "Asian Design Futures Dialogue",
       description: "",
       panelists: [
-        { name: "TBA", role: "", image: "" },
-        { name: "TBA", role: "", image: "" },
+        {
+          name: "Jesvin Yeo Puay Hwa",
+          role: "Associate Vice Provost (Strategy), Undergraduate Education, NTU",
+          image: "/images/speakers/leadership-summit/jesvin-yeo.webp",
+        },
+        {
+          name: "Prof. Kirti Trivedi",
+          role: "Project Head & Visiting Distinguished Professor, School of Innovation, IIT Indore",
+          image: "/images/speakers/leadership-summit/kirti-trivedi.webp",
+        },
         { name: "TBA", role: "", image: "" },
         { name: "TBA", role: "", image: "" },
       ],
@@ -163,8 +214,13 @@ export const leadershipScheduleData = {
       time: "5:30 PM",
       type: "keynote",
       title: "The Design Leadership Challenge for the AI Era",
-      description: "Exploring how design leaders can adopt AI without weakening the judgment, focus, and critical thinking great design depends on.",
-      speaker: { name: "Pontus Warnestal", role: "Head of Design, Ambition Group", image: "/images/speakers/leadership-summit/Pontus-Warnestal.png" },
+      description:
+        "Exploring how design leaders can adopt AI without weakening the judgment, focus, and critical thinking great design depends on.",
+      speaker: {
+        name: "Pontus Warnestal",
+        role: "Head of Design, Ambition Group",
+        image: "/images/speakers/leadership-summit/pontus-warnestal.webp",
+      },
       tag: "Plenary Keynote - 30 Mins",
       talkCategory: "Design Practice",
     },
@@ -173,8 +229,12 @@ export const leadershipScheduleData = {
       type: "keynote",
       title: "Grand Keynote",
       description: "",
-      speaker: { name: "", role: "", image: "" },
-      tag: "Grand Keynote",
+      speaker: {
+        name: "Jesvin Yeo Puay Hwa",
+        role: "Associate Vice Provost (Strategy), Undergraduate Education, NTU",
+        image: "/images/speakers/leadership-summit/jesvin-yeo.webp",
+      },
+      tag: "Grand Keynote - 40 Mins",
     },
     { time: "7:00 PM", type: "break", title: "Networking Dinner" },
   ],
@@ -227,15 +287,25 @@ export const leadershipScheduleData = {
           title: "The Death of the Wireframe",
           tag: "Spark Session - 18 Mins",
           talkCategory: "Design Practice",
-          speaker: { name: "Vyoma Pathak", role: "Sr. Design Practice Lead, Mouri Tech", image: "/images/speakers/leadership-summit/Vyoma.webp" },
-          description: "Exploring how the death of the wireframe pushes design teams to redefine their value around taste, strategy, and decision-making.",
+          speaker: {
+            name: "Vyoma Pathak",
+            role: "Sr. Design Practice Lead, Mouri Tech",
+            image: "/images/speakers/leadership-summit/vyoma-pathak.webp",
+          },
+          description:
+            "Exploring how the death of the wireframe pushes design teams to redefine their value around taste, strategy, and decision-making.",
         },
         {
           room: "Room 2",
-          title: "",
+          title: "Why Chat Interfaces Fail Human Relationships",
           tag: "Spark Session",
-          speaker: { name: "", role: "", image: "" },
-          description: "",
+          speaker: {
+            name: "Sundeep Verma",
+            role: "Founder, Wingit.chat",
+            image: "/images/speakers/leadership-summit/sundeep-verma.webp",
+          },
+          description:
+            "This talk explores why today’s chat interfaces fail at human relationships, and why the future of AI may depend not on better responses, but on designing systems that can sustain continuity, memory, and and relational under",
         },
       ],
     },
@@ -262,7 +332,8 @@ export const leadershipScheduleData = {
           title: "Why Chat Interfaces Fail Human Relationships",
           tag: "Spark Session - 18 Mins",
           speaker: { name: "Sundeep Verma", role: "Founder", image: "" },
-          description: "Exploring why AI chat interfaces fail at relationships when they lose continuity, memory, tone, and emotional context.",
+          description:
+            "Exploring why AI chat interfaces fail at relationships when they lose continuity, memory, tone, and emotional context.",
         },
         {
           room: "Room 2",
@@ -316,10 +387,15 @@ export const leadershipScheduleData = {
       time: "4:00 PM",
       type: "keynote",
       title: "The roles they are a-changin: AI and the Great Dissolve",
-      description: "Exploring how AI is dissolving the boundaries between product, design, and engineering roles, creating new career paths for designers.",
-      speaker: { name: "Ish Awasthi", role: "VP, UX Research, JPMC", image: "/images/speakers/leadership-summit/Ish-Awasti.webp" },
+      description:
+        "Exploring how AI is dissolving the boundaries between product, design, and engineering roles, creating new career paths for designers.",
+      speaker: {
+        name: "Ish Awasthi",
+        role: "VP, UX Research, JPMC",
+        image: "/images/speakers/leadership-summit/ish-awasthi.webp",
+      },
       tag: "Spark Session - 18 Mins",
-      talkCategory: "Design Practice",  
+      talkCategory: "Design Practice",
     },
     { time: "4:25 PM", type: "break", title: "Coffee Break" },
     {

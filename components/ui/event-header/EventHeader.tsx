@@ -1,6 +1,6 @@
 "use client";
 
-import { type EventConfig } from "@/data/tickets";
+import { type EventConfig } from "@/data/tickets/tickets";
 
 interface EventHeaderProps {
   event: EventConfig;

@@ -37,8 +37,8 @@ const risingLeadersImages = [
   },
 ];
 
-const MAPS_URL = "https://maps.app.goo.gl/example"; // Update with actual Rising Leaders venue URL
-const EMBED_COORDS = "13.0846294,77.643066"; // Update with actual venue coordinates
+const MAPS_URL = "https://maps.app.goo.gl/Bec27bPxTosqivvq7"; // Update with actual Rising Leaders venue URL
+const EMBED_COORDS = "13.126733148915585, 77.59170620646292"; // Update with actual venue coordinates
 
 export default function RisingLeadersVenueSection({
   variant = "light",

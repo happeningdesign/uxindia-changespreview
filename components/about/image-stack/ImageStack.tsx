@@ -4,43 +4,43 @@ import Image from "next/image";
 
 const cards = [
   {
-    image: "images/carousel/Carousel-05.webp",
+    image: "/images/carousel/home/Carousel-05.webp",
     scale: 0.65,
     offset: -320,
     zIndex: 1,
   }, // far left
   {
-    image: "images/carousel/Carousel-08.webp",
+    image: "/images/carousel/home/Carousel-08.webp",
     scale: 0.75,
     offset: -210,
     zIndex: 2,
   }, // left
   {
-    image: "images/carousel/Carousel-01.webp",
+    image: "/images/carousel/home/Carousel-01.webp",
     scale: 0.85,
     offset: -105,
     zIndex: 3,
   }, // center-left
   {
-    image: "images/carousel/Carousel-12.webp",
+    image: "/images/carousel/home/Carousel-12.webp",
     scale: 1.0,
     offset: 0,
     zIndex: 4,
   }, // center
   {
-    image: "images/carousel/Carousel-09.webp",
+    image: "/images/carousel/home/Carousel-09.webp",
     scale: 0.85,
     offset: 105,
     zIndex: 3,
   }, // center-right
   {
-    image: "images/carousel/Carousel-14.webp",
+    image: "/images/carousel/home/Carousel-14.webp",
     scale: 0.75,
     offset: 210,
     zIndex: 2,
   }, // right
   {
-    image: "images/carousel/Carousel-03.webp",
+    image: "/images/carousel/home/Carousel-03.webp",
     scale: 0.65,
     offset: 320,
     zIndex: 1,

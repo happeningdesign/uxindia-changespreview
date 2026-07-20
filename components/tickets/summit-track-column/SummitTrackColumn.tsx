@@ -5,8 +5,8 @@ import {
   addOnAsTier,
   pickTiers,
 } from "@/types/ticketCatalog";
-import { summitAddOn } from "@/data/summitTiers";
-import { summitTshirtAddOn } from "@/data/tierAddOns";
+import { summitAddOn } from "@/data/tickets/summitTiers";
+import { summitTshirtAddOn } from "@/data/tickets/tierAddOns";
 import { OfferCard } from "../offer-card/OfferCard";
 import { TierLadderCard } from "../tier-ladder-card/TierLadderCard";
 import { TrackGstNote } from "../track-gst-note/TrackGstNote";
