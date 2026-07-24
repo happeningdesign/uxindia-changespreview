@@ -1,10 +1,10 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { orgs, categories, categoryColors } from "@/data/ux-focussed-orgs";
-import type { OrgCategory } from "@/data/ux-focussed-orgs";
+import Image from "next/image";
 import Link from "next/link";
+import { motion, useInView } from "framer-motion";
+import { partners } from "@/data/partners";
 
 // ─── Reveal wrapper ──────────────────────────────────────────────────────────
 function Reveal({
@@ -31,19 +31,28 @@ function Reveal({
   );
 }
 
-// ─── Org tile ────────────────────────────────────────────────────────────────
-function OrgTile({
+// ─── Logo tile ───────────────────────────────────────────────────────────────
+function LogoTile({
   name,
-  category,
+  logo,
+  url,
   index,
 }: {
   name: string;
-  category: OrgCategory;
+  logo: string;
+  url?: string;
   index: number;
 }) {
-  const color = categoryColors[category];
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.05 });
+  const inView = useInView(ref, { once: true, amount: 0.1 });
+
+  const inner = (
+    <div className="group flex items-center justify-center bg-white rounded-2xl border border-page/8 p-6 aspect-[3/2] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(13,13,13,0.09)] hover:border-page/15">
+      <div className="relative w-full h-9 transition-transform duration-300 group-hover:scale-105">
+        <Image src={logo} alt={`${name} logo`} fill className="object-contain" />
+      </div>
+    </div>
+  );
 
   return (
     <motion.div
@@ -52,97 +61,23 @@ function OrgTile({
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{
         duration: 0.45,
-        delay: (index % 12) * 0.035,
+        delay: (index % 10) * 0.04,
         ease: [0.25, 0.1, 0.25, 1],
       }}
     >
-      <div
-        className="group relative flex flex-col items-start justify-between bg-white rounded-2xl border border-page/8 p-5 aspect-[3/2] cursor-default transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(13,13,13,0.09)] overflow-hidden"
-      >
-        {/* Colour accent — top strip, reveals on hover */}
-        <div
-          className="absolute top-0 left-0 right-0 h-0.5 transition-all duration-300 group-hover:h-1"
-          style={{ backgroundColor: color }}
-        />
-
-        {/* Category dot */}
-        <span
-          className="w-2 h-2 rounded-full flex-shrink-0 transition-transform duration-300 group-hover:scale-125 mt-1"
-          style={{ backgroundColor: color }}
-        />
-
-        {/* Org name */}
-        <p
-          className="leading-tight text-page/85 transition-colors duration-200 group-hover:text-page font-medium"
-          style={{
-            fontFamily: "'UXILeadershipCondensed'",
-            fontWeight: 500,
-            fontSize: "clamp(1.05rem, 1.5vw, 1.35rem)",
-          }}
-        >
-          {name}
-        </p>
-      </div>
+      {url ? (
+        <a href={url} target="_blank" rel="noopener noreferrer" aria-label={name}>
+          {inner}
+        </a>
+      ) : (
+        inner
+      )}
     </motion.div>
-  );
-}
-
-// ─── Tier section ────────────────────────────────────────────────────────────
-function TierSection({
-  category,
-  items,
-  cols,
-}: {
-  category: OrgCategory;
-  items: typeof orgs;
-  cols: string;
-}) {
-  const color = categoryColors[category];
-
-  return (
-    <div className="mb-14">
-      <Reveal>
-        <div className="flex items-center gap-3 mb-5">
-          <span
-            className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full border"
-            style={{
-              color,
-              borderColor: `${color}40`,
-              backgroundColor: `${color}08`,
-            }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: color }} />
-            {category}
-          </span>
-          <span className="h-px flex-1 bg-page/8" />
-          <span className="font-sans text-xs text-page/30">{items.length}</span>
-        </div>
-      </Reveal>
-
-      <div className={`grid ${cols} gap-3`}>
-        {items.map((org, i) => (
-          <OrgTile key={org.name} name={org.name} category={org.category} index={i} />
-        ))}
-      </div>
-    </div>
   );
 }
 
 // ─── Page ────────────────────────────────────────────────────────────────────
 export default function UXFocussedOrgsPage() {
-  // Group orgs by category, preserving category order
-  const grouped = categories.map((cat) => ({
-    category: cat,
-    items: orgs.filter((o) => o.category === cat),
-  })).filter((g) => g.items.length > 0);
-
-  // Grid cols by category size
-  const colsForCount = (n: number) => {
-    if (n >= 12) return "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6";
-    if (n >= 6) return "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5";
-    return "grid-cols-2 sm:grid-cols-3 md:grid-cols-4";
-  };
-
   return (
     <main className="bg-cream min-h-screen">
       {/* ── Hero ─────────────────────────────────────────────────────── */}
@@ -174,43 +109,29 @@ export default function UXFocussedOrgsPage() {
 
             <Reveal delay={0.14}>
               <div className="md:max-w-xs">
-                <p className="font-sans text-base text-page/55 leading-relaxed mb-6">
+                <p className="font-sans text-base text-page/55 leading-relaxed">
                   Companies and studios that invest deeply in UX as a strategic
                   discipline — attending and shaping UXINDIA 2026.
                 </p>
-                <div className="flex items-center gap-4">
-                  <span
-                    className="leading-none text-page/12"
-                    style={{
-                      fontFamily: "'UXILeadershipCondensed'",
-                      fontWeight: 500,
-                      fontSize: "clamp(2.8rem, 4vw, 4.5rem)",
-                    }}
-                  >
-                    {orgs.length}
-                  </span>
-                  <span className="font-sans text-xs text-page/35 uppercase tracking-[0.18em] leading-tight">
-                    Organisations
-                    <br />
-                    listed
-                  </span>
-                </div>
               </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ── Org grid by category ──────────────────────────────────────── */}
+      {/* ── Uniform logo grid ─────────────────────────────────────────── */}
       <section className="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        {grouped.map(({ category, items }) => (
-          <TierSection
-            key={category}
-            category={category}
-            items={items}
-            cols={colsForCount(items.length)}
-          />
-        ))}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {partners.map((org, i) => (
+            <LogoTile
+              key={org.name}
+              name={org.name}
+              logo={org.logo}
+              url={org.url}
+              index={i}
+            />
+          ))}
+        </div>
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────────────── */}
