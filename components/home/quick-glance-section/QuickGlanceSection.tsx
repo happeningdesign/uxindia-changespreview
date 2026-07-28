@@ -4,8 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 const SUMMIT = "#1B7A6E";
-const FORUM = "#F5BF42";
-const BOTH = "#FF6D35";
+const FORUM = "#FF6D35";
+/** Cross-event programs stay neutral so the two event chips carry the colour */
+const BOTH = "#FFFFFF";
 
 type Program = {
   code: string;
@@ -139,12 +140,8 @@ function ProgramCard({
       <div className="flex min-h-6 items-start gap-1.5">
         {program.event ? (
           <span
-            className="font-sans rounded-full border px-2.5 py-1 text-[0.62rem] font-semibold uppercase leading-none tracking-[0.1em]"
-            style={{
-              color: program.accent,
-              borderColor: `${program.accent}59`,
-              backgroundColor: `${program.accent}1a`,
-            }}
+            className="font-sans rounded-full px-2.5 py-1.5 text-[0.62rem] font-semibold uppercase leading-none tracking-[0.1em] text-white"
+            style={{ backgroundColor: program.accent }}
           >
             {program.event}
           </span>
@@ -160,12 +157,8 @@ function ProgramCard({
               <span
                 key={badge.label}
                 aria-hidden="true"
-                className="font-sans flex h-6 w-6 items-center justify-center rounded-full border text-[0.55rem] font-semibold uppercase leading-none tracking-[0.02em]"
-                style={{
-                  color: badge.color,
-                  borderColor: `${badge.color}59`,
-                  backgroundColor: `${badge.color}1a`,
-                }}
+                className="font-sans flex h-6 w-6 items-center justify-center rounded-full text-[0.55rem] font-semibold uppercase leading-none tracking-[0.02em] text-white"
+                style={{ backgroundColor: badge.color }}
               >
                 {badge.label}
               </span>
