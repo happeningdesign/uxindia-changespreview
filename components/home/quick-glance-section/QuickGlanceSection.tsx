@@ -4,9 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 const SUMMIT = "#1B7A6E";
-const FORUM = "#FF6D35";
+const FORUM = "#F5BF42";
 /** Cross-event programs stay neutral so the two event chips carry the colour */
 const BOTH = "#FFFFFF";
+
+/** Marigold is too light for white text — use the dark page ink instead */
+const chipInk = (bg: string) => (bg === FORUM ? "#0D0D0D" : "#FFFFFF");
 
 type Program = {
   code: string;
@@ -140,8 +143,11 @@ function ProgramCard({
       <div className="flex min-h-6 items-start gap-1.5">
         {program.event ? (
           <span
-            className="font-sans rounded-full px-2.5 py-1.5 text-[0.62rem] font-semibold uppercase leading-none tracking-[0.1em] text-white"
-            style={{ backgroundColor: program.accent }}
+            className="font-sans rounded-full px-2.5 py-1.5 text-[0.62rem] font-semibold uppercase leading-none tracking-[0.1em]"
+            style={{
+              backgroundColor: program.accent,
+              color: chipInk(program.accent),
+            }}
           >
             {program.event}
           </span>
@@ -157,8 +163,11 @@ function ProgramCard({
               <span
                 key={badge.label}
                 aria-hidden="true"
-                className="font-sans flex h-6 w-6 items-center justify-center rounded-full text-[0.55rem] font-semibold uppercase leading-none tracking-[0.02em] text-white"
-                style={{ backgroundColor: badge.color }}
+                className="font-sans flex h-6 w-6 items-center justify-center rounded-full text-[0.55rem] font-semibold uppercase leading-none tracking-[0.02em]"
+                style={{
+                  backgroundColor: badge.color,
+                  color: chipInk(badge.color),
+                }}
               >
                 {badge.label}
               </span>
