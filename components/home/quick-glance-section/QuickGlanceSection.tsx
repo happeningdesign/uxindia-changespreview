@@ -3,9 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
+const SUMMIT = "#1B7A6E";
+const FORUM = "#F5BF42";
+const BOTH = "#FF6D35";
+
 type Program = {
   code: string;
-  track: string;
+  /** Event chip — omitted when the program runs across both events */
+  event?: "Leadership Summit" | "Rising Leaders Forum";
   title: string;
   desc: string;
   when: string;
@@ -17,83 +22,80 @@ type Program = {
 const programs: Program[] = [
   {
     code: "GK",
-    track: "Keynotes",
+    event: "Leadership Summit",
     title: "Grand & Plenary Keynotes",
     desc: "Big-stage talks from global design leaders anchoring each day.",
     when: "23–25 Sept",
     venue: "Main Stage",
     href: "/leadership-summit",
-    accent: "#FF6D35",
+    accent: SUMMIT,
   },
   {
     code: "DD",
-    track: "Deep Dive Talks",
     title: "Deep Dive Talks",
     desc: "Focused, single-topic sessions that go further than a keynote allows.",
-    when: "23–25 Sept",
+    when: "23–27 Sept",
     venue: "Breakout Rooms",
     href: "/leadership-summit",
-    accent: "#FF6D35",
+    accent: BOTH,
   },
   {
     code: "SS",
-    track: "Spark Sessions",
     title: "Spark Sessions",
     desc: "Short, high-energy talks built for quick, punchy takeaways.",
-    when: "23–25 Sept",
+    when: "23–27 Sept",
     venue: "Breakout Rooms",
     href: "/leadership-summit",
-    accent: "#FF6D35",
+    accent: BOTH,
   },
   {
     code: "PD",
-    track: "Panels",
+    event: "Leadership Summit",
     title: "Panel Discussions",
     desc: "Moderated conversations putting multiple design leaders in one room.",
     when: "23–25 Sept",
     venue: "Main Stage",
     href: "/leadership-summit",
-    accent: "#FF6D35",
+    accent: SUMMIT,
   },
   {
     code: "WS",
-    track: "Workshops",
+    event: "Leadership Summit",
     title: "Hands-On Workshops",
     desc: "Practitioner-led sessions in small rooms across 3–5 parallel tracks.",
     when: "23–24 Sept",
     venue: "Workshop Rooms",
     href: "/leadership-summit",
-    accent: "#1B7A6E",
+    accent: SUMMIT,
   },
   {
     code: "DP",
-    track: "Design Pitch",
+    event: "Leadership Summit",
     title: "Design Pitch — VC Sessions",
     desc: "Founders pitch design-led products live to a panel of investors.",
     when: "25 Sept",
     venue: "Design Entrepreneurship Track",
     href: "/design-pitch",
-    accent: "#1B7A6E",
+    accent: SUMMIT,
   },
   {
     code: "MC",
-    track: "Mentorship",
-    title: "Clinics & Portfolio Reviews",
+    event: "Rising Leaders Forum",
+    title: "Mentorship & Portfolio Reviews",
     desc: "1:1 and small-group reviews with senior designers.",
     when: "26–27 Sept",
     venue: "Srishti Manipal Institute",
     href: "/rising-leaders-forum",
-    accent: "#F5BF42",
+    accent: FORUM,
   },
   {
     code: "ND",
-    track: "Networking",
     title: "CXO, Speaker & Networking Dinners",
     desc: "Curated evenings where the real hallway conversations happen.",
-    when: "23–24 Sept",
+    when: "23–27 Sept",
     venue: "Evenings",
     href: "/tickets",
-    accent: "#F5BF42",
+    accent: BOTH,
   },
 ];
 
@@ -134,13 +136,21 @@ function ProgramCard({
         }}
       />
 
-      <div className="flex items-start justify-between gap-3">
-        <span
-          className="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em]"
-          style={{ color: program.accent }}
-        >
-          {program.track}
-        </span>
+      <div className="flex min-h-6 items-start justify-between gap-3">
+        {program.event ? (
+          <span
+            className="font-sans rounded-full border px-2.5 py-1 text-[0.62rem] font-semibold uppercase leading-none tracking-[0.1em]"
+            style={{
+              color: program.accent,
+              borderColor: `${program.accent}59`,
+              backgroundColor: `${program.accent}1a`,
+            }}
+          >
+            {program.event}
+          </span>
+        ) : (
+          <span aria-hidden="true" />
+        )}
         <span
           className="font-sans text-[0.7rem] font-semibold tracking-wider text-white/25 transition-colors duration-300 group-hover:text-white/50"
         >
