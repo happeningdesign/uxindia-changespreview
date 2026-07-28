@@ -136,8 +136,8 @@ function ProgramCard({
         }}
       />
 
-      <div className="flex min-h-6 items-start justify-between gap-3">
-        {program.event ? (
+      <div className="flex min-h-6 items-start">
+        {program.event && (
           <span
             className="font-sans rounded-full border px-2.5 py-1 text-[0.62rem] font-semibold uppercase leading-none tracking-[0.1em]"
             style={{
@@ -148,14 +148,7 @@ function ProgramCard({
           >
             {program.event}
           </span>
-        ) : (
-          <span aria-hidden="true" />
         )}
-        <span
-          className="font-sans text-[0.7rem] font-semibold tracking-wider text-white/25 transition-colors duration-300 group-hover:text-white/50"
-        >
-          {program.code}
-        </span>
       </div>
 
       <div className="mt-6 flex-1">
