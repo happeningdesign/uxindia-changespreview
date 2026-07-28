@@ -136,8 +136,8 @@ function ProgramCard({
         }}
       />
 
-      <div className="flex min-h-6 items-start">
-        {program.event && (
+      <div className="flex min-h-6 items-start gap-1.5">
+        {program.event ? (
           <span
             className="font-sans rounded-full border px-2.5 py-1 text-[0.62rem] font-semibold uppercase leading-none tracking-[0.1em]"
             style={{
@@ -148,6 +148,29 @@ function ProgramCard({
           >
             {program.event}
           </span>
+        ) : (
+          <>
+            <span className="sr-only">
+              Happens at both the Leadership Summit and the Rising Leaders Forum
+            </span>
+            {[
+              { label: "LS", color: SUMMIT },
+              { label: "RLF", color: FORUM },
+            ].map((badge) => (
+              <span
+                key={badge.label}
+                aria-hidden="true"
+                className="font-sans flex h-6 w-6 items-center justify-center rounded-full border text-[0.55rem] font-semibold uppercase leading-none tracking-[0.02em]"
+                style={{
+                  color: badge.color,
+                  borderColor: `${badge.color}59`,
+                  backgroundColor: `${badge.color}1a`,
+                }}
+              >
+                {badge.label}
+              </span>
+            ))}
+          </>
         )}
       </div>
 
