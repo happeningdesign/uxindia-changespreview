@@ -93,12 +93,13 @@ const programs: Program[] = [
   },
   {
     code: "ND",
+    event: "Leadership Summit",
     title: "CXO, Speaker & Networking Dinners",
     desc: "Curated evenings where the real hallway conversations happen.",
-    when: "23–27 Sept",
+    when: "23–25 Sept",
     venue: "Evenings",
     href: "/tickets",
-    accent: BOTH,
+    accent: SUMMIT,
   },
 ];
 
