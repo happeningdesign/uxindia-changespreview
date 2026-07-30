@@ -13,7 +13,6 @@ type Program = {
   title: string;
   /** Event chip — omitted when the program runs across both events */
   event?: "Leadership Summit" | "Rising Leaders Forum";
-  desc: string;
   when: string;
   image: string;
   alt: string;
@@ -23,7 +22,6 @@ type Program = {
 const programs: Program[] = [
   {
     title: "UX Job Board",
-    desc: "Live openings from hiring design teams on campus.",
     when: "23–27 Sept",
     image: "/images/carousel/home/Carousel-10.webp",
     alt: "Attendees gathered around laptops at a UXINDIA desk",
@@ -31,7 +29,6 @@ const programs: Program[] = [
   {
     title: "Design Leadership",
     event: "Leadership Summit",
-    desc: "How senior leaders build teams, influence and craft.",
     when: "23–25 Sept",
     image: "/images/carousel/home/Carousel-05.webp",
     alt: "A design leader speaking on the UXINDIA main stage",
@@ -39,7 +36,6 @@ const programs: Program[] = [
   {
     title: "Design Mentorship",
     event: "Rising Leaders Forum",
-    desc: "Small-group guidance with designers a few steps ahead.",
     when: "26–27 Sept",
     image: "/images/carousel/home/Carousel-12.webp",
     alt: "A mentor in conversation with a small group of designers",
@@ -47,14 +43,12 @@ const programs: Program[] = [
   {
     title: "Portfolio Reviews",
     event: "Rising Leaders Forum",
-    desc: "One-on-one critique of your work with senior designers.",
     when: "26–27 Sept",
     image: "/images/event/home/UXI10.webp",
     alt: "Designers reviewing work together around a table",
   },
   {
     title: "Women In Design",
-    desc: "Voices and paths of women shaping design in India.",
     when: "23–27 Sept",
     image: "/images/event/home/UXI11.webp",
     alt: "A woman speaking with a microphone on stage at UXINDIA",
@@ -62,7 +56,6 @@ const programs: Program[] = [
   {
     title: "Design Pitch",
     event: "Leadership Summit",
-    desc: "Founders pitch design-led products live to investors.",
     when: "25 Sept",
     image: "/images/carousel/home/Carousel-01.webp",
     alt: "A founder pitching on stage with a microphone",
@@ -70,14 +63,12 @@ const programs: Program[] = [
   {
     title: "Design Entrepreneurship",
     event: "Leadership Summit",
-    desc: "Building a studio, product or practice of your own.",
     when: "23–25 Sept",
     image: "/images/event/home/UXI15.webp",
     alt: "Two founders presenting at a UXINDIA stand",
   },
   {
     title: "Design & AI",
-    desc: "What AI actually changes in day-to-day design work.",
     when: "23–27 Sept",
     image: "/images/event/home/UXI2.webp",
     alt: "A speaker on stage in front of a large projected visual",
@@ -85,7 +76,6 @@ const programs: Program[] = [
   {
     title: "Hands-on Workshops",
     event: "Leadership Summit",
-    desc: "Practitioner-led sessions across parallel tracks.",
     when: "23–24 Sept",
     image: "/images/event/home/UXI9.webp",
     alt: "Workshop table with building blocks and sketched worksheets",
@@ -93,7 +83,6 @@ const programs: Program[] = [
   {
     title: "Networking Dinner",
     event: "Leadership Summit",
-    desc: "Curated evenings where hallway conversations happen.",
     when: "23–25 Sept",
     image: "/images/event/home/UXI3.webp",
     alt: "Attendees laughing together over drinks at UXINDIA",
@@ -168,7 +157,7 @@ function ProgramCard({
         </div>
 
         <h3
-          className="text-white text-balance"
+          className="flex-1 text-white text-balance"
           style={{
             fontFamily: "'UXILeadershipCondensed'",
             fontWeight: 500,
@@ -178,10 +167,6 @@ function ProgramCard({
         >
           {program.title}
         </h3>
-
-        <p className="font-sans mt-2 flex-1 text-[0.8rem] leading-relaxed text-white/45">
-          {program.desc}
-        </p>
 
         <div className="mt-4 flex items-center gap-2 border-t border-white/8 pt-3">
           <span aria-hidden="true" className="h-px w-3 bg-[#FF6D35]" />
