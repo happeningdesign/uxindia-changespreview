@@ -74,12 +74,13 @@ function ProgramCard({
 }) {
   return (
     <figure
-      className={`group relative overflow-hidden rounded-xl bg-white/[0.03] transition-all duration-700 ease-out ${
+      className={`group flex flex-col overflow-hidden rounded-xl border border-white/8 bg-white/[0.03] transition-all duration-700 ease-out hover:border-white/15 hover:bg-white/[0.055] ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
       }`}
       style={{ transitionDelay: `${100 + index * 50}ms` }}
     >
-      <div className="relative aspect-[4/5] overflow-hidden">
+      {/* photo band — a slice of the card, not the whole card */}
+      <div className="relative aspect-[16/10] overflow-hidden">
         <Image
           src={program.image}
           alt={program.alt}
@@ -87,31 +88,25 @@ function ProgramCard({
           sizes="(min-width: 1024px) 20vw, (min-width: 640px) 33vw, 50vw"
           className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
         />
-
-        {/* legibility scrim — kept to the lower half so the photo stays bright */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 top-1/4 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/55 to-transparent"
-        />
-
-        <figcaption className="absolute inset-x-0 bottom-0 p-4">
-          <span
-            aria-hidden="true"
-            className="mb-2.5 block h-[2px] w-5 origin-left bg-[#FF6D35] transition-transform duration-500 ease-out group-hover:scale-x-[2.4]"
-          />
-          <h3
-            className="text-white text-balance"
-            style={{
-              fontFamily: "'UXILeadershipCondensed'",
-              fontWeight: 500,
-              fontSize: "1.35rem",
-              lineHeight: 1.1,
-            }}
-          >
-            {program.title}
-          </h3>
-        </figcaption>
       </div>
+
+      <figcaption className="flex flex-1 flex-col p-4">
+        <span
+          aria-hidden="true"
+          className="mb-3 block h-[2px] w-5 origin-left bg-[#FF6D35] transition-transform duration-500 ease-out group-hover:scale-x-[2.4]"
+        />
+        <h3
+          className="text-white text-balance"
+          style={{
+            fontFamily: "'UXILeadershipCondensed'",
+            fontWeight: 500,
+            fontSize: "1.25rem",
+            lineHeight: 1.12,
+          }}
+        >
+          {program.title}
+        </h3>
+      </figcaption>
     </figure>
   );
 }
