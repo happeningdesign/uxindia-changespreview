@@ -16,7 +16,7 @@ type Program = {
   brief: string;
   when: string;
   image: string;
-  /** Abstract art is decorative, but described for anyone using a reader */
+  /** Decorative imagery, but described for anyone using a reader */
   alt: string;
 };
 
@@ -27,7 +27,7 @@ const programs: Program[] = [
     brief: "How senior teams set direction, earn trust and scale craft.",
     when: "23–25 Sept",
     image: "/images/programs/design-leadership.png",
-    alt: "Abstract lines radiating outward from a single point",
+    alt: "Warm ember glow against dark charcoal",
   },
   {
     label: "Rising Leaders Forum",
@@ -35,7 +35,7 @@ const programs: Program[] = [
     brief: "Small-group guidance pairing new designers with practising leads.",
     when: "26–27 Sept",
     image: "/images/programs/design-mentorship.png",
-    alt: "Abstract overlapping circles meeting at a centre point",
+    alt: "Soft warm bokeh orbs on a dark background",
   },
   {
     label: "Rising Leaders Forum",
@@ -43,7 +43,7 @@ const programs: Program[] = [
     brief: "Honest 1:1 critique of your work from senior reviewers.",
     when: "26–27 Sept",
     image: "/images/programs/portfolio-reviews.png",
-    alt: "Abstract layered rectangles offset like stacked sheets",
+    alt: "Warm light raking across a textured surface",
   },
   {
     label: "Leadership Summit",
@@ -51,7 +51,7 @@ const programs: Program[] = [
     brief: "Founders pitch design-led products live to a panel of investors.",
     when: "25 Sept",
     image: "/images/programs/design-pitch.png",
-    alt: "Abstract ascending diagonal lines crossing at a point",
+    alt: "Warm light streak rising diagonally through haze",
   },
   {
     label: "Both Events",
@@ -59,7 +59,7 @@ const programs: Program[] = [
     brief: "What actually changes in our craft once AI joins the team.",
     when: "23–27 Sept",
     image: "/images/programs/design-ai.png",
-    alt: "Abstract network of dots connected by fine lines",
+    alt: "Scattered warm points of light like particles",
   },
   {
     label: "Leadership Summit",
@@ -67,7 +67,7 @@ const programs: Program[] = [
     brief: "Practitioner-led sessions in small rooms across parallel tracks.",
     when: "23–24 Sept",
     image: "/images/programs/hands-on-workshops.png",
-    alt: "Abstract wireframe grid of squares, some shifted out of line",
+    alt: "Warm light glinting off a rough textured surface",
   },
 ];
 
@@ -87,18 +87,18 @@ function ProgramCard({
       }`}
       style={{ transitionDelay: `${100 + index * 70}ms` }}
     >
-      {/* Abstract art band — a slice of the card, not the whole card */}
-      <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-white/[0.02]">
+      {/* Small imagery accent — a thumbnail, not the whole card */}
+      <div className="relative h-16 w-16 overflow-hidden rounded-lg bg-white/[0.02]">
         <Image
           src={program.image}
           alt={program.alt}
           fill
-          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
+          sizes="64px"
+          className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.08]"
         />
       </div>
 
-      <p className="font-sans mt-6 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--accent)]">
+      <p className="font-sans mt-5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--accent)]">
         {program.label}
       </p>
 
