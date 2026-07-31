@@ -1,128 +1,85 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 
-const SUMMIT = "#1B7A6E";
-const FORUM = "#F5BF42";
-
-/** Marigold is too light for white text — use the dark page ink instead */
-const chipInk = (bg: string) => (bg === FORUM ? "#0D0D0D" : "#FFFFFF");
+/**
+ * Single accent for the whole section, exposed as a CSS variable so it can be
+ * swapped in one place.
+ */
+const ACCENT = "#FF6D35";
 
 type Program = {
+  label: string;
   title: string;
-  /** Event chip — omitted when the program runs across both events */
-  event?: "Leadership Summit" | "Rising Leaders Forum";
+  /** One-line brief shown under the title */
+  brief: string;
   when: string;
-  image: string;
+  href: string;
+  /** Glossy 3D object icon on a transparent background */
+  icon: string;
+  /** Decorative imagery, but described for anyone using a reader */
   alt: string;
 };
 
-/** Ten programs, in running order — photography is from past UXINDIA editions. */
 const programs: Program[] = [
   {
-    title: "UX Job Board",
-    when: "23–27 Sept",
-    image: "/images/carousel/home/Carousel-10.webp",
-    alt: "Attendees gathered around laptops at a UXINDIA desk",
-  },
-  {
+    label: "Leadership Summit",
     title: "Design Leadership",
-    event: "Leadership Summit",
+    brief: "How senior teams set direction, earn trust and scale craft.",
     when: "23–25 Sept",
-    image: "/images/carousel/home/Carousel-05.webp",
-    alt: "A design leader speaking on the UXINDIA main stage",
+    href: "/leadership-summit",
+    icon: "/images/programs/icon-design-leadership.png",
+    alt: "Glossy 3D chess king piece",
   },
   {
+    label: "Rising Leaders Forum",
     title: "Design Mentorship",
-    event: "Rising Leaders Forum",
+    brief: "Small-group guidance pairing new designers with practising leads.",
     when: "26–27 Sept",
-    image: "/images/carousel/home/Carousel-12.webp",
-    alt: "A mentor in conversation with a small group of designers",
+    href: "/rising-leaders-forum",
+    icon: "/images/programs/icon-design-mentorship.png",
+    alt: "Two glossy 3D speech bubbles",
   },
   {
+    label: "Rising Leaders Forum",
     title: "Portfolio Reviews",
-    event: "Rising Leaders Forum",
+    brief: "Honest 1:1 critique of your work from senior reviewers.",
     when: "26–27 Sept",
-    image: "/images/event/home/UXI10.webp",
-    alt: "Designers reviewing work together around a table",
+    href: "/rising-leaders-forum",
+    icon: "/images/programs/icon-portfolio-reviews.png",
+    alt: "Glossy 3D magnifying glass over a stack of cards",
   },
   {
-    title: "Women In Design",
-    when: "23–27 Sept",
-    image: "/images/event/home/UXI11.webp",
-    alt: "A woman speaking with a microphone on stage at UXINDIA",
-  },
-  {
+    label: "Leadership Summit",
     title: "Design Pitch",
-    event: "Leadership Summit",
+    brief: "Founders pitch design-led products live to a panel of investors.",
     when: "25 Sept",
-    image: "/images/carousel/home/Carousel-01.webp",
-    alt: "A founder pitching on stage with a microphone",
+    href: "/design-pitch",
+    icon: "/images/programs/icon-design-pitch.png",
+    alt: "Glossy 3D rocket",
   },
   {
-    title: "Design Entrepreneurship",
-    event: "Leadership Summit",
-    when: "23–25 Sept",
-    image: "/images/event/home/UXI15.webp",
-    alt: "Two founders presenting at a UXINDIA stand",
-  },
-  {
+    label: "Both Events",
     title: "Design & AI",
+    brief: "What actually changes in our craft once AI joins the team.",
     when: "23–27 Sept",
-    image: "/images/event/home/UXI2.webp",
-    alt: "A speaker on stage in front of a large projected visual",
+    href: "/leadership-summit",
+    icon: "/images/programs/icon-design-ai.png",
+    alt: "Glossy 3D microchip with a spark of light",
   },
   {
+    label: "Leadership Summit",
     title: "Hands-on Workshops",
-    event: "Leadership Summit",
+    brief: "Practitioner-led sessions in small rooms across parallel tracks.",
     when: "23–24 Sept",
-    image: "/images/event/home/UXI9.webp",
-    alt: "Workshop table with building blocks and sketched worksheets",
-  },
-  {
-    title: "Networking Dinner",
-    event: "Leadership Summit",
-    when: "23–25 Sept",
-    image: "/images/event/home/UXI3.webp",
-    alt: "Attendees laughing together over drinks at UXINDIA",
+    href: "/leadership-summit",
+    icon: "/images/programs/icon-hands-on-workshops.png",
+    alt: "Glossy 3D stacked building blocks",
   },
 ];
-
-function EventChips({ event }: { event?: Program["event"] }) {
-  if (event) {
-    const color = event === "Rising Leaders Forum" ? FORUM : SUMMIT;
-    return (
-      <span
-        className="font-sans rounded-full px-2 py-1 text-[0.55rem] font-semibold uppercase leading-none tracking-[0.08em]"
-        style={{ backgroundColor: color, color: chipInk(color) }}
-      >
-        {event}
-      </span>
-    );
-  }
-
-  return (
-    <>
-      <span className="sr-only">
-        Happens at both the Leadership Summit and the Rising Leaders Forum
-      </span>
-      {[
-        { label: "LS", color: SUMMIT },
-        { label: "RLF", color: FORUM },
-      ].map((badge) => (
-        <span
-          key={badge.label}
-          aria-hidden="true"
-          className="font-sans flex h-[1.35rem] w-[1.35rem] items-center justify-center rounded-full text-[0.5rem] font-semibold uppercase leading-none"
-          style={{ backgroundColor: badge.color, color: chipInk(badge.color) }}
-        >
-          {badge.label}
-        </span>
-      ))}
-    </>
-  );
-}
 
 function ProgramCard({
   program,
@@ -134,48 +91,80 @@ function ProgramCard({
   index: number;
 }) {
   return (
-    <figure
-      className={`group flex flex-col overflow-hidden rounded-xl border border-white/8 bg-white/[0.03] transition-all duration-700 ease-out hover:border-white/15 hover:bg-white/[0.055] ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+    <article
+      className={`group relative flex flex-col overflow-hidden rounded-2xl border border-white/8 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.85)] transition-all duration-700 ease-out hover:-translate-y-1 hover:border-white/15 ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       }`}
-      style={{ transitionDelay: `${100 + index * 50}ms` }}
+      style={{
+        transitionDelay: `${100 + index * 70}ms`,
+        background:
+          "linear-gradient(180deg, #262626 0%, #1F1F1F 42%, #1B1B1B 100%)",
+      }}
     >
-      {/* photo band — a slice of the card, not the whole card */}
-      <div className="relative aspect-[16/10] overflow-hidden">
-        <Image
-          src={program.image}
-          alt={program.alt}
-          fill
-          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
-        />
-      </div>
+      {/* soft accent bloom, revealed on hover */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100"
+        style={{ background: "radial-gradient(circle, rgba(255,109,53,0.22), transparent 70%)" }}
+      />
 
-      <figcaption className="flex flex-1 flex-col p-5">
-        <div className="mb-3.5 flex min-h-[1.35rem] items-start gap-1.5">
-          <EventChips event={program.event} />
-        </div>
+      {/* Text leads the card */}
+      <div className="flex flex-col p-7 pb-0">
+        <p className="font-sans text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--accent)]">
+          {program.label}
+        </p>
 
         <h3
-          className="flex-1 text-white text-balance"
+          className="mt-3 text-[#F5F5F0] text-balance"
           style={{
             fontFamily: "'UXILeadershipCondensed'",
             fontWeight: 500,
-            fontSize: "1.4rem",
-            lineHeight: 1.12,
+            fontSize: "clamp(1.55rem, 2.1vw, 1.85rem)",
+            lineHeight: 1.1,
           }}
         >
           {program.title}
         </h3>
 
-        <div className="mt-4 flex items-center gap-2 border-t border-white/8 pt-3">
-          <span aria-hidden="true" className="h-px w-3 bg-[#FF6D35]" />
-          <span className="font-sans text-[0.68rem] font-medium uppercase tracking-[0.1em] text-white/50">
+        <p className="font-sans mt-2.5 text-[0.84rem] leading-relaxed text-white/45">
+          {program.brief}
+        </p>
+
+        <div className="mt-5 flex items-center gap-3">
+          <Link
+            href={program.href}
+            className="font-sans inline-flex items-center gap-1.5 rounded-full bg-[#F5F5F0] px-4 py-2 text-[0.78rem] font-semibold text-[#0D0D0D] transition-colors duration-300 hover:bg-[color:var(--accent)] hover:text-white"
+          >
+            Explore
+            <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
+          </Link>
+          <span className="font-sans text-[0.68rem] tracking-[0.02em] text-white/35">
             {program.when}
           </span>
         </div>
-      </figcaption>
-    </figure>
+      </div>
+
+      {/* Large glossy 3D object anchored at the bottom — its #1B1B1B ground
+          matches the card base so it reads as emerging from the card. */}
+      <div
+        className="relative mt-2 h-52 w-full overflow-hidden"
+        style={{
+          // Fade the icon's flat ground into the card so no square seam shows
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, #000 22%, #000 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, #000 22%, #000 100%)",
+        }}
+      >
+        <Image
+          src={program.icon}
+          alt={program.alt}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="scale-125 object-contain object-bottom transition-transform duration-[900ms] ease-out group-hover:scale-[1.32]"
+        />
+      </div>
+    </article>
   );
 }
 
@@ -198,41 +187,38 @@ export default function QuickGlanceSection() {
     <section
       id="quick-glance"
       ref={sectionRef}
-      className="bg-page pt-8 pb-24"
+      className="bg-page py-24 md:py-32"
       aria-labelledby="quick-glance-heading"
+      style={{ "--accent": ACCENT } as CSSProperties}
     >
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div
-          className={`mb-10 flex flex-col gap-5 transition-all duration-700 md:flex-row md:items-end md:justify-between ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          className={`mb-16 flex flex-col gap-6 transition-all duration-700 md:mb-20 md:flex-row md:items-end md:justify-between ${
+            visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
-          <div>
-            <div className="font-sans mb-4 flex items-center gap-2.5 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#FF6D35]">
-              <span aria-hidden="true" className="h-px w-6 bg-[#FF6D35]" />
-              Sep 23–27 · Bengaluru
-            </div>
-            <h2
-              id="quick-glance-heading"
-              className="text-white text-balance"
-              style={{
-                fontFamily: "'UXILeadershipCondensed'",
-                fontWeight: 500,
-                fontSize: "clamp(2.2rem, 4vw, 3.4rem)",
-                lineHeight: 1.08,
-              }}
-            >
-              Everything Happening On Stage.
-            </h2>
-          </div>
-          <p className="font-sans max-w-[15rem] text-sm leading-relaxed text-white/40">
-            Ten programs, five days, one campus of design.
+          <h2
+            id="quick-glance-heading"
+            className="max-w-[24ch] text-[#F5F5F0] text-balance"
+            style={{
+              fontFamily: "'UXILeadershipCondensed'",
+              fontWeight: 500,
+              fontSize: "clamp(2.4rem, 5vw, 4rem)",
+              lineHeight: 1.05,
+            }}
+          >
+            Everything Happening On Stage.
+          </h2>
+          <p className="font-sans max-w-[16rem] text-sm leading-relaxed text-white/40 md:text-right">
+            Six flagship programs, five days,
+            <br />
+            one campus of design.
           </p>
         </div>
 
         {/* Program cards */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {programs.map((program, i) => (
             <ProgramCard
               key={program.title}
