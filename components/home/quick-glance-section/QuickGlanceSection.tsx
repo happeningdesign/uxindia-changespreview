@@ -1,175 +1,75 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 /**
  * Single accent for the whole section, exposed as a CSS variable so it can be
- * swapped in one place. The brief drops the previous teal + gold badge system.
+ * swapped in one place.
  */
 const ACCENT = "#FF6D35";
-
-type Motif =
-  | "radiate"
-  | "circles"
-  | "layers"
-  | "intersect"
-  | "cluster"
-  | "grid";
 
 type Program = {
   label: string;
   title: string;
+  /** One-line brief shown under the title */
+  brief: string;
   when: string;
-  motif: Motif;
-  /** Described to screen readers in place of the decorative line art */
-  motifAlt: string;
+  image: string;
+  /** Abstract art is decorative, but described for anyone using a reader */
+  alt: string;
 };
 
 const programs: Program[] = [
   {
     label: "Leadership Summit",
     title: "Design Leadership",
+    brief: "How senior teams set direction, earn trust and scale craft.",
     when: "23–25 Sept",
-    motif: "radiate",
-    motifAlt: "Lines radiating outward from a single point",
+    image: "/images/programs/design-leadership.png",
+    alt: "Abstract lines radiating outward from a single point",
   },
   {
     label: "Rising Leaders Forum",
     title: "Design Mentorship",
+    brief: "Small-group guidance pairing new designers with practising leads.",
     when: "26–27 Sept",
-    motif: "circles",
-    motifAlt: "Two overlapping circles",
+    image: "/images/programs/design-mentorship.png",
+    alt: "Abstract overlapping circles meeting at a centre point",
   },
   {
     label: "Rising Leaders Forum",
     title: "Portfolio Reviews",
+    brief: "Honest 1:1 critique of your work from senior reviewers.",
     when: "26–27 Sept",
-    motif: "layers",
-    motifAlt: "Three layered rectangles",
+    image: "/images/programs/portfolio-reviews.png",
+    alt: "Abstract layered rectangles offset like stacked sheets",
   },
   {
     label: "Leadership Summit",
     title: "Design Pitch",
+    brief: "Founders pitch design-led products live to a panel of investors.",
     when: "25 Sept",
-    motif: "intersect",
-    motifAlt: "Two intersecting diagonal lines rising to the right",
+    image: "/images/programs/design-pitch.png",
+    alt: "Abstract ascending diagonal lines crossing at a point",
   },
   {
     label: "Both Events",
     title: "Design & AI",
+    brief: "What actually changes in our craft once AI joins the team.",
     when: "23–27 Sept",
-    motif: "cluster",
-    motifAlt: "A cluster of dots connected by fine lines",
+    image: "/images/programs/design-ai.png",
+    alt: "Abstract network of dots connected by fine lines",
   },
   {
     label: "Leadership Summit",
     title: "Hands-on Workshops",
+    brief: "Practitioner-led sessions in small rooms across parallel tracks.",
     when: "23–24 Sept",
-    motif: "grid",
-    motifAlt: "A wireframe grid of squares",
+    image: "/images/programs/hands-on-workshops.png",
+    alt: "Abstract wireframe grid of squares, some shifted out of line",
   },
 ];
-
-/**
- * Spokes for the "radiate" motif, rounded to 2dp. Raw trig results serialise to
- * slightly different strings on server vs client, which trips hydration.
- */
-const spokes = Array.from({ length: 12 }, (_, i) => {
-  const angle = (i * Math.PI * 2) / 12;
-  const round = (n: number) => Number(n.toFixed(2));
-  return {
-    x1: round(32 + Math.cos(angle) * 9),
-    y1: round(32 + Math.sin(angle) * 9),
-    x2: round(32 + Math.cos(angle) * 27),
-    y2: round(32 + Math.sin(angle) * 27),
-  };
-});
-
-/** Monochrome line art — inherits colour from the card so there is one accent. */
-function MotifArt({ motif }: { motif: Motif }) {
-  const common = {
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1,
-    strokeLinecap: "round" as const,
-  };
-
-  switch (motif) {
-    case "radiate":
-      return (
-        <>
-          <circle cx="32" cy="32" r="4" {...common} />
-          {spokes.map((spoke, i) => (
-            <line key={i} {...spoke} {...common} />
-          ))}
-        </>
-      );
-
-    case "circles":
-      return (
-        <>
-          <circle cx="24" cy="32" r="16" {...common} />
-          <circle cx="40" cy="32" r="16" {...common} />
-          <circle cx="32" cy="32" r="4" {...common} />
-        </>
-      );
-
-    case "layers":
-      return (
-        <>
-          <rect x="8" y="20" width="34" height="24" rx="1" {...common} />
-          <rect x="15" y="15" width="34" height="24" rx="1" {...common} />
-          <rect x="22" y="10" width="34" height="24" rx="1" {...common} />
-        </>
-      );
-
-    case "intersect":
-      return (
-        <>
-          <line x1="8" y1="52" x2="56" y2="14" {...common} />
-          <line x1="8" y1="22" x2="56" y2="50" {...common} />
-          <circle cx="35" cy="33" r="3.5" {...common} />
-          <line x1="8" y1="58" x2="56" y2="58" {...common} />
-        </>
-      );
-
-    case "cluster":
-      return (
-        <>
-          <line x1="16" y1="18" x2="46" y2="30" {...common} />
-          <line x1="46" y1="30" x2="24" y2="48" {...common} />
-          <line x1="24" y1="48" x2="16" y2="18" {...common} />
-          <line x1="46" y1="30" x2="54" y2="50" {...common} />
-          {[
-            [16, 18],
-            [46, 30],
-            [24, 48],
-            [54, 50],
-          ].map(([cx, cy]) => (
-            <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="3" {...common} />
-          ))}
-        </>
-      );
-
-    case "grid":
-      return (
-        <>
-          {[12, 27, 42].map((y) =>
-            [12, 27, 42].map((x) => (
-              <rect
-                key={`${x}-${y}`}
-                x={x}
-                y={y}
-                width="11"
-                height="11"
-                {...common}
-              />
-            )),
-          )}
-        </>
-      );
-  }
-}
 
 function ProgramCard({
   program,
@@ -187,33 +87,36 @@ function ProgramCard({
       }`}
       style={{ transitionDelay: `${100 + index * 70}ms` }}
     >
-      {/* Abstract graphic — deliberately a small share of the card height */}
-      <div className="mb-7 flex h-20 items-center">
-        <svg
-          viewBox="0 0 64 64"
-          role="img"
-          aria-label={program.motifAlt}
-          className="h-full w-auto text-[color:var(--accent)] opacity-70 transition-opacity duration-500 group-hover:opacity-100"
-        >
-          <MotifArt motif={program.motif} />
-        </svg>
+      {/* Abstract art band — a slice of the card, not the whole card */}
+      <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-white/[0.02]">
+        <Image
+          src={program.image}
+          alt={program.alt}
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.05]"
+        />
       </div>
 
-      <p className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--accent)]">
+      <p className="font-sans mt-6 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--accent)]">
         {program.label}
       </p>
 
       <h3
-        className="mt-3 flex-1 text-[#F5F5F0] text-balance"
+        className="mt-2.5 text-[#F5F5F0] text-balance"
         style={{
           fontFamily: "'UXILeadershipCondensed'",
           fontWeight: 500,
-          fontSize: "clamp(1.75rem, 2.4vw, 2rem)",
+          fontSize: "clamp(1.6rem, 2.2vw, 1.9rem)",
           lineHeight: 1.1,
         }}
       >
         {program.title}
       </h3>
+
+      <p className="font-sans mt-2.5 flex-1 text-[0.82rem] leading-relaxed text-white/45">
+        {program.brief}
+      </p>
 
       {/* Hairline that extends into a longer accent line on hover */}
       <div className="relative mt-5 h-px w-full bg-white/12">
@@ -283,7 +186,7 @@ export default function QuickGlanceSection() {
         </div>
 
         {/* Program cards */}
-        <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-16">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-16">
           {programs.map((program, i) => (
             <ProgramCard
               key={program.title}
