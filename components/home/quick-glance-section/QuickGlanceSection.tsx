@@ -1,127 +1,174 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 
-const SUMMIT = "#1B7A6E";
-const FORUM = "#F5BF42";
+/**
+ * Single accent for the whole section, exposed as a CSS variable so it can be
+ * swapped in one place. The brief drops the previous teal + gold badge system.
+ */
+const ACCENT = "#FF6D35";
 
-/** Marigold is too light for white text — use the dark page ink instead */
-const chipInk = (bg: string) => (bg === FORUM ? "#0D0D0D" : "#FFFFFF");
+type Motif =
+  | "radiate"
+  | "circles"
+  | "layers"
+  | "intersect"
+  | "cluster"
+  | "grid";
 
 type Program = {
+  label: string;
   title: string;
-  /** Event chip — omitted when the program runs across both events */
-  event?: "Leadership Summit" | "Rising Leaders Forum";
   when: string;
-  image: string;
-  alt: string;
+  motif: Motif;
+  /** Described to screen readers in place of the decorative line art */
+  motifAlt: string;
 };
 
-/** Ten programs, in running order — photography is from past UXINDIA editions. */
 const programs: Program[] = [
   {
-    title: "UX Job Board",
-    when: "23–27 Sept",
-    image: "/images/carousel/home/Carousel-10.webp",
-    alt: "Attendees gathered around laptops at a UXINDIA desk",
-  },
-  {
+    label: "Leadership Summit",
     title: "Design Leadership",
-    event: "Leadership Summit",
     when: "23–25 Sept",
-    image: "/images/carousel/home/Carousel-05.webp",
-    alt: "A design leader speaking on the UXINDIA main stage",
+    motif: "radiate",
+    motifAlt: "Lines radiating outward from a single point",
   },
   {
+    label: "Rising Leaders Forum",
     title: "Design Mentorship",
-    event: "Rising Leaders Forum",
     when: "26–27 Sept",
-    image: "/images/carousel/home/Carousel-12.webp",
-    alt: "A mentor in conversation with a small group of designers",
+    motif: "circles",
+    motifAlt: "Two overlapping circles",
   },
   {
+    label: "Rising Leaders Forum",
     title: "Portfolio Reviews",
-    event: "Rising Leaders Forum",
     when: "26–27 Sept",
-    image: "/images/event/home/UXI10.webp",
-    alt: "Designers reviewing work together around a table",
+    motif: "layers",
+    motifAlt: "Three layered rectangles",
   },
   {
-    title: "Women In Design",
-    when: "23–27 Sept",
-    image: "/images/event/home/UXI11.webp",
-    alt: "A woman speaking with a microphone on stage at UXINDIA",
-  },
-  {
+    label: "Leadership Summit",
     title: "Design Pitch",
-    event: "Leadership Summit",
     when: "25 Sept",
-    image: "/images/carousel/home/Carousel-01.webp",
-    alt: "A founder pitching on stage with a microphone",
+    motif: "intersect",
+    motifAlt: "Two intersecting diagonal lines rising to the right",
   },
   {
-    title: "Design Entrepreneurship",
-    event: "Leadership Summit",
-    when: "23–25 Sept",
-    image: "/images/event/home/UXI15.webp",
-    alt: "Two founders presenting at a UXINDIA stand",
-  },
-  {
+    label: "Both Events",
     title: "Design & AI",
     when: "23–27 Sept",
-    image: "/images/event/home/UXI2.webp",
-    alt: "A speaker on stage in front of a large projected visual",
+    motif: "cluster",
+    motifAlt: "A cluster of dots connected by fine lines",
   },
   {
+    label: "Leadership Summit",
     title: "Hands-on Workshops",
-    event: "Leadership Summit",
     when: "23–24 Sept",
-    image: "/images/event/home/UXI9.webp",
-    alt: "Workshop table with building blocks and sketched worksheets",
-  },
-  {
-    title: "Networking Dinner",
-    event: "Leadership Summit",
-    when: "23–25 Sept",
-    image: "/images/event/home/UXI3.webp",
-    alt: "Attendees laughing together over drinks at UXINDIA",
+    motif: "grid",
+    motifAlt: "A wireframe grid of squares",
   },
 ];
 
-function EventChips({ event }: { event?: Program["event"] }) {
-  if (event) {
-    const color = event === "Rising Leaders Forum" ? FORUM : SUMMIT;
-    return (
-      <span
-        className="font-sans rounded-full px-2 py-1 text-[0.55rem] font-semibold uppercase leading-none tracking-[0.08em]"
-        style={{ backgroundColor: color, color: chipInk(color) }}
-      >
-        {event}
-      </span>
-    );
-  }
+/**
+ * Spokes for the "radiate" motif, rounded to 2dp. Raw trig results serialise to
+ * slightly different strings on server vs client, which trips hydration.
+ */
+const spokes = Array.from({ length: 12 }, (_, i) => {
+  const angle = (i * Math.PI * 2) / 12;
+  const round = (n: number) => Number(n.toFixed(2));
+  return {
+    x1: round(32 + Math.cos(angle) * 9),
+    y1: round(32 + Math.sin(angle) * 9),
+    x2: round(32 + Math.cos(angle) * 27),
+    y2: round(32 + Math.sin(angle) * 27),
+  };
+});
 
-  return (
-    <>
-      <span className="sr-only">
-        Happens at both the Leadership Summit and the Rising Leaders Forum
-      </span>
-      {[
-        { label: "LS", color: SUMMIT },
-        { label: "RLF", color: FORUM },
-      ].map((badge) => (
-        <span
-          key={badge.label}
-          aria-hidden="true"
-          className="font-sans flex h-[1.35rem] w-[1.35rem] items-center justify-center rounded-full text-[0.5rem] font-semibold uppercase leading-none"
-          style={{ backgroundColor: badge.color, color: chipInk(badge.color) }}
-        >
-          {badge.label}
-        </span>
-      ))}
-    </>
-  );
+/** Monochrome line art — inherits colour from the card so there is one accent. */
+function MotifArt({ motif }: { motif: Motif }) {
+  const common = {
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1,
+    strokeLinecap: "round" as const,
+  };
+
+  switch (motif) {
+    case "radiate":
+      return (
+        <>
+          <circle cx="32" cy="32" r="4" {...common} />
+          {spokes.map((spoke, i) => (
+            <line key={i} {...spoke} {...common} />
+          ))}
+        </>
+      );
+
+    case "circles":
+      return (
+        <>
+          <circle cx="24" cy="32" r="16" {...common} />
+          <circle cx="40" cy="32" r="16" {...common} />
+          <circle cx="32" cy="32" r="4" {...common} />
+        </>
+      );
+
+    case "layers":
+      return (
+        <>
+          <rect x="8" y="20" width="34" height="24" rx="1" {...common} />
+          <rect x="15" y="15" width="34" height="24" rx="1" {...common} />
+          <rect x="22" y="10" width="34" height="24" rx="1" {...common} />
+        </>
+      );
+
+    case "intersect":
+      return (
+        <>
+          <line x1="8" y1="52" x2="56" y2="14" {...common} />
+          <line x1="8" y1="22" x2="56" y2="50" {...common} />
+          <circle cx="35" cy="33" r="3.5" {...common} />
+          <line x1="8" y1="58" x2="56" y2="58" {...common} />
+        </>
+      );
+
+    case "cluster":
+      return (
+        <>
+          <line x1="16" y1="18" x2="46" y2="30" {...common} />
+          <line x1="46" y1="30" x2="24" y2="48" {...common} />
+          <line x1="24" y1="48" x2="16" y2="18" {...common} />
+          <line x1="46" y1="30" x2="54" y2="50" {...common} />
+          {[
+            [16, 18],
+            [46, 30],
+            [24, 48],
+            [54, 50],
+          ].map(([cx, cy]) => (
+            <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="3" {...common} />
+          ))}
+        </>
+      );
+
+    case "grid":
+      return (
+        <>
+          {[12, 27, 42].map((y) =>
+            [12, 27, 42].map((x) => (
+              <rect
+                key={`${x}-${y}`}
+                x={x}
+                y={y}
+                width="11"
+                height="11"
+                {...common}
+              />
+            )),
+          )}
+        </>
+      );
+  }
 }
 
 function ProgramCard({
@@ -134,48 +181,55 @@ function ProgramCard({
   index: number;
 }) {
   return (
-    <figure
-      className={`group flex flex-col overflow-hidden rounded-xl border border-white/8 bg-white/[0.03] transition-all duration-700 ease-out hover:border-white/15 hover:bg-white/[0.055] ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+    <article
+      className={`group flex flex-col transition-all duration-700 ease-out ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       }`}
-      style={{ transitionDelay: `${100 + index * 50}ms` }}
+      style={{ transitionDelay: `${100 + index * 70}ms` }}
     >
-      {/* photo band — a slice of the card, not the whole card */}
-      <div className="relative aspect-[16/10] overflow-hidden">
-        <Image
-          src={program.image}
-          alt={program.alt}
-          fill
-          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
+      {/* Abstract graphic — deliberately a small share of the card height */}
+      <div className="mb-7 flex h-20 items-center">
+        <svg
+          viewBox="0 0 64 64"
+          role="img"
+          aria-label={program.motifAlt}
+          className="h-full w-auto text-[color:var(--accent)] opacity-70 transition-opacity duration-500 group-hover:opacity-100"
+        >
+          <MotifArt motif={program.motif} />
+        </svg>
+      </div>
+
+      <p className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--accent)]">
+        {program.label}
+      </p>
+
+      <h3
+        className="mt-3 flex-1 text-[#F5F5F0] text-balance"
+        style={{
+          fontFamily: "'UXILeadershipCondensed'",
+          fontWeight: 500,
+          fontSize: "clamp(1.75rem, 2.4vw, 2rem)",
+          lineHeight: 1.1,
+        }}
+      >
+        {program.title}
+      </h3>
+
+      {/* Hairline that extends into a longer accent line on hover */}
+      <div className="relative mt-5 h-px w-full bg-white/12">
+        <span
+          aria-hidden="true"
+          className="absolute inset-y-0 left-0 w-10 origin-left bg-[color:var(--accent)] transition-transform duration-500 ease-out group-hover:scale-x-[3.4]"
         />
       </div>
 
-      <figcaption className="flex flex-1 flex-col p-5">
-        <div className="mb-3.5 flex min-h-[1.35rem] items-start gap-1.5">
-          <EventChips event={program.event} />
-        </div>
-
-        <h3
-          className="flex-1 text-white text-balance"
-          style={{
-            fontFamily: "'UXILeadershipCondensed'",
-            fontWeight: 500,
-            fontSize: "1.4rem",
-            lineHeight: 1.12,
-          }}
-        >
-          {program.title}
-        </h3>
-
-        <div className="mt-4 flex items-center gap-2 border-t border-white/8 pt-3">
-          <span aria-hidden="true" className="h-px w-3 bg-[#FF6D35]" />
-          <span className="font-sans text-[0.68rem] font-medium uppercase tracking-[0.1em] text-white/50">
-            {program.when}
-          </span>
-        </div>
-      </figcaption>
-    </figure>
+      <div className="mt-3.5 flex items-center gap-2">
+        <span aria-hidden="true" className="h-px w-3 bg-[color:var(--accent)]" />
+        <span className="font-sans text-[0.68rem] font-medium uppercase tracking-[0.12em] text-white/45">
+          {program.when}
+        </span>
+      </div>
+    </article>
   );
 }
 
@@ -198,41 +252,38 @@ export default function QuickGlanceSection() {
     <section
       id="quick-glance"
       ref={sectionRef}
-      className="bg-page pt-8 pb-24"
+      className="bg-page py-24 md:py-32"
       aria-labelledby="quick-glance-heading"
+      style={{ "--accent": ACCENT } as CSSProperties}
     >
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div
-          className={`mb-10 flex flex-col gap-5 transition-all duration-700 md:flex-row md:items-end md:justify-between ${
-            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          className={`mb-16 flex flex-col gap-6 transition-all duration-700 md:mb-20 md:flex-row md:items-end md:justify-between ${
+            visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
           }`}
         >
-          <div>
-            <div className="font-sans mb-4 flex items-center gap-2.5 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#FF6D35]">
-              <span aria-hidden="true" className="h-px w-6 bg-[#FF6D35]" />
-              Sep 23–27 · Bengaluru
-            </div>
-            <h2
-              id="quick-glance-heading"
-              className="text-white text-balance"
-              style={{
-                fontFamily: "'UXILeadershipCondensed'",
-                fontWeight: 500,
-                fontSize: "clamp(2.2rem, 4vw, 3.4rem)",
-                lineHeight: 1.08,
-              }}
-            >
-              Everything Happening On Stage.
-            </h2>
-          </div>
-          <p className="font-sans max-w-[15rem] text-sm leading-relaxed text-white/40">
-            Ten programs, five days, one campus of design.
+          <h2
+            id="quick-glance-heading"
+            className="max-w-[24ch] text-[#F5F5F0] text-balance"
+            style={{
+              fontFamily: "'UXILeadershipCondensed'",
+              fontWeight: 500,
+              fontSize: "clamp(2.4rem, 5vw, 4rem)",
+              lineHeight: 1.05,
+            }}
+          >
+            Everything Happening On Stage.
+          </h2>
+          <p className="font-sans max-w-[16rem] text-sm leading-relaxed text-white/40 md:text-right">
+            Six flagship programs, five days,
+            <br />
+            one campus of design.
           </p>
         </div>
 
         {/* Program cards */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-16">
           {programs.map((program, i) => (
             <ProgramCard
               key={program.title}
