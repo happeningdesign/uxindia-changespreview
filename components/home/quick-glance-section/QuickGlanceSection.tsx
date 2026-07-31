@@ -31,8 +31,8 @@ const programs: Program[] = [
     brief: "A movement to bring a million women into design and AI careers.",
     when: "23–27 Sept",
     href: "/leadership-summit",
-    icon: "/images/programs/icon-design-ai.png",
-    alt: "Glossy 3D microchip with a spark of light",
+    icon: "/images/programs/icon-women-design-ai.png",
+    alt: "Glossy 3D silhouette of a woman's head merging into an AI circuit network",
   },
   {
     label: "Leadership Summit",
