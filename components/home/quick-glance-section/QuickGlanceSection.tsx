@@ -92,13 +92,13 @@ function ProgramCard({
 }) {
   return (
     <article
-      className={`group relative flex flex-col overflow-hidden rounded-2xl border border-white/8 p-7 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.85)] transition-all duration-700 ease-out hover:-translate-y-1 hover:border-white/15 ${
+      className={`group relative flex flex-col overflow-hidden rounded-2xl border border-white/8 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.85)] transition-all duration-700 ease-out hover:-translate-y-1 hover:border-white/15 ${
         visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       }`}
       style={{
         transitionDelay: `${100 + index * 70}ms`,
         background:
-          "linear-gradient(155deg, #242424 0%, #171717 52%, #0E0E0E 100%)",
+          "linear-gradient(180deg, #262626 0%, #1F1F1F 42%, #1B1B1B 100%)",
       }}
     >
       {/* soft accent bloom, revealed on hover */}
@@ -108,45 +108,61 @@ function ProgramCard({
         style={{ background: "radial-gradient(circle, rgba(255,109,53,0.22), transparent 70%)" }}
       />
 
-      {/* Glossy 3D object icon, seated in a matching tile */}
-      <div className="relative h-24 w-24 overflow-hidden rounded-xl border border-white/8 bg-[#1b1b1b]">
+      {/* Text leads the card */}
+      <div className="flex flex-col p-7 pb-0">
+        <p className="font-sans text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--accent)]">
+          {program.label}
+        </p>
+
+        <h3
+          className="mt-3 text-[#F5F5F0] text-balance"
+          style={{
+            fontFamily: "'UXILeadershipCondensed'",
+            fontWeight: 500,
+            fontSize: "clamp(1.55rem, 2.1vw, 1.85rem)",
+            lineHeight: 1.1,
+          }}
+        >
+          {program.title}
+        </h3>
+
+        <p className="font-sans mt-2.5 text-[0.84rem] leading-relaxed text-white/45">
+          {program.brief}
+        </p>
+
+        <div className="mt-5 flex items-center gap-3">
+          <Link
+            href={program.href}
+            className="font-sans inline-flex items-center gap-1.5 rounded-full bg-[#F5F5F0] px-4 py-2 text-[0.78rem] font-semibold text-[#0D0D0D] transition-colors duration-300 hover:bg-[color:var(--accent)] hover:text-white"
+          >
+            Explore
+            <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
+          </Link>
+          <span className="font-sans text-[0.68rem] tracking-[0.02em] text-white/35">
+            {program.when}
+          </span>
+        </div>
+      </div>
+
+      {/* Large glossy 3D object anchored at the bottom — its #1B1B1B ground
+          matches the card base so it reads as emerging from the card. */}
+      <div
+        className="relative mt-2 h-52 w-full overflow-hidden"
+        style={{
+          // Fade the icon's flat ground into the card so no square seam shows
+          maskImage:
+            "linear-gradient(to bottom, transparent 0%, #000 22%, #000 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, transparent 0%, #000 22%, #000 100%)",
+        }}
+      >
         <Image
           src={program.icon}
           alt={program.alt}
           fill
-          sizes="96px"
-          className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          className="scale-125 object-contain object-bottom transition-transform duration-[900ms] ease-out group-hover:scale-[1.32]"
         />
-      </div>
-
-      <h3
-        className="mt-8 text-[#F5F5F0] text-balance"
-        style={{
-          fontFamily: "'UXILeadershipCondensed'",
-          fontWeight: 500,
-          fontSize: "clamp(1.55rem, 2.1vw, 1.85rem)",
-          lineHeight: 1.1,
-        }}
-      >
-        {program.title}
-      </h3>
-
-      <p className="font-sans mt-3 flex-1 text-[0.84rem] leading-relaxed text-white/45">
-        {program.brief}
-      </p>
-
-      {/* Explore button + quiet meta line */}
-      <div className="mt-7 flex items-center justify-between gap-4">
-        <Link
-          href={program.href}
-          className="font-sans inline-flex items-center gap-1.5 rounded-full bg-[#F5F5F0] px-4 py-2 text-[0.78rem] font-semibold text-[#0D0D0D] transition-colors duration-300 hover:bg-[color:var(--accent)] hover:text-white"
-        >
-          Explore
-          <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={2.5} />
-        </Link>
-        <span className="font-sans text-[0.68rem] tracking-[0.02em] text-white/35">
-          {program.when}
-        </span>
       </div>
     </article>
   );
