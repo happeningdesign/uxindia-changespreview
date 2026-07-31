@@ -88,22 +88,18 @@ function ProgramCard({
       style={{ transitionDelay: `${100 + index * 70}ms` }}
     >
       {/* Small imagery accent — a thumbnail, not the whole card */}
-      <div className="relative h-16 w-16 overflow-hidden rounded-lg bg-white/[0.02]">
+      <div className="relative h-14 w-14 overflow-hidden rounded-full bg-white/[0.02]">
         <Image
           src={program.image}
           alt={program.alt}
           fill
-          sizes="64px"
+          sizes="56px"
           className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.08]"
         />
       </div>
 
-      <p className="font-sans mt-5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--accent)]">
-        {program.label}
-      </p>
-
       <h3
-        className="mt-2.5 text-[#F5F5F0] text-balance"
+        className="mt-7 text-[#F5F5F0] text-balance"
         style={{
           fontFamily: "'UXILeadershipCondensed'",
           fontWeight: 500,
@@ -114,24 +110,18 @@ function ProgramCard({
         {program.title}
       </h3>
 
-      <p className="font-sans mt-2.5 flex-1 text-[0.82rem] leading-relaxed text-white/45">
+      <p className="font-sans mt-3 flex-1 text-[0.82rem] leading-relaxed text-white/45">
         {program.brief}
       </p>
 
-      {/* Hairline that extends into a longer accent line on hover */}
-      <div className="relative mt-5 h-px w-full bg-white/12">
-        <span
-          aria-hidden="true"
-          className="absolute inset-y-0 left-0 w-10 origin-left bg-[color:var(--accent)] transition-transform duration-500 ease-out group-hover:scale-x-[3.4]"
-        />
-      </div>
-
-      <div className="mt-3.5 flex items-center gap-2">
-        <span aria-hidden="true" className="h-px w-3 bg-[color:var(--accent)]" />
-        <span className="font-sans text-[0.68rem] font-medium uppercase tracking-[0.12em] text-white/45">
-          {program.when}
+      {/* Single muted meta line — event and dates, no competing accents */}
+      <p className="font-sans mt-6 text-[0.7rem] tracking-[0.02em] text-white/35">
+        <span className="text-white/55">{program.label}</span>
+        <span aria-hidden="true" className="mx-2 text-white/20">
+          /
         </span>
-      </div>
+        {program.when}
+      </p>
     </article>
   );
 }
@@ -186,7 +176,7 @@ export default function QuickGlanceSection() {
         </div>
 
         {/* Program cards */}
-        <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-16">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
           {programs.map((program, i) => (
             <ProgramCard
               key={program.title}
