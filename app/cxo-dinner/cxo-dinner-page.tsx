@@ -22,23 +22,15 @@ import { FormInput } from "@/components/forms/form-input/FormInput";
 import { FormTextarea } from "@/components/forms/form-textarea/FormTextArea";
 
 // Event constants
-const EVENT_START = new Date("2026-09-23T19:00:00+05:30");
-const EVENT_END = new Date("2026-09-23T22:00:00+05:30");
-const VENUE_URL =
-  "https://www.theleela.com/the-leela-bhartiya-city-bengaluru/restaurants/falak?utm";
-
-const toGCalDate = (d: Date) =>
-  d.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+// Exact time and address are withheld until RSVP approval — only the
+// date and the hotel name are public.
+const EVENT_DATE = new Date("2026-09-23T00:00:00+05:30");
 
 const GCAL_URL = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
   "CXO Networking Dinner — UXINDIA26",
-)}&dates=${toGCalDate(EVENT_START)}/${toGCalDate(
-  EVENT_END,
-)}&details=${encodeURIComponent(
-  "An invite-only evening for design & technology leaders, hosted by Rohan Sridhar & Bapu. Curated by Happening.",
-)}&location=${encodeURIComponent(
-  "Falak, The Leela Bhartiya City, Bengaluru",
-)}`;
+)}&dates=20260923/20260924&details=${encodeURIComponent(
+  "An invite-only evening for design & technology leaders, hosted by Rohan Sridhar & Bapu. Curated by Happening. Exact time and address will be shared upon RSVP approval.",
+)}&location=${encodeURIComponent("The Leela Bhartiya City, Bengaluru")}`;
 
 // Placeholder gallery images from past UXINDIA / Happening gatherings.
 const GALLERY_IMAGES = [
@@ -65,36 +57,22 @@ const HOSTS = [
   },
 ];
 
-function useCountdown(target: Date) {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-  });
+function useDaysUntil(target: Date) {
+  const [days, setDays] = useState(0);
 
   useEffect(() => {
     const tick = () => {
       const diff = target.getTime() - Date.now();
-
-      if (diff <= 0) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0 });
-        return;
-      }
-
-      setTimeLeft({
-        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((diff / (1000 * 60)) % 60),
-      });
+      setDays(Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24))));
     };
 
     tick();
-    const interval = setInterval(tick, 30000);
+    const interval = setInterval(tick, 60000);
 
     return () => clearInterval(interval);
   }, [target]);
 
-  return timeLeft;
+  return days;
 }
 
 export default function CxoDinnerPage() {
@@ -105,7 +83,7 @@ export default function CxoDinnerPage() {
   });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
 
-  const countdown = useCountdown(EVENT_START);
+  const daysUntil = useDaysUntil(EVENT_DATE);
 
   // Form state
   const [firstName, setFirstName] = useState("");
@@ -193,7 +171,7 @@ export default function CxoDinnerPage() {
           <motion.div style={{ y: bgY }} className="absolute inset-0 z-0">
             <Image
               src="/images/venue/the-leela-bhartiya-city.webp"
-              alt="Falak, The Leela Bhartiya City, Bengaluru"
+              alt="The Leela Bhartiya City, Bengaluru"
               fill
               className="object-cover opacity-45"
               priority
@@ -283,22 +261,16 @@ export default function CxoDinnerPage() {
                 <div className="inline-flex items-center gap-2">
                   <Clock size={15} className="text-brand" />
                   <span className="font-sans text-sm text-white/80">
-                    7:00 &ndash; 10:00 PM IST
+                    Time shared upon approval
                   </span>
                 </div>
                 <span className="hidden sm:inline text-white/15">|</span>
-                <Link
-                  href={VENUE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors"
-                >
+                <div className="inline-flex items-center gap-1.5 text-white/80">
                   <MapPin size={15} className="text-brand" />
                   <span className="font-sans text-sm">
-                    Falak, The Leela Bhartiya City
+                    The Leela Bhartiya City, Bengaluru
                   </span>
-                  <ArrowUpRight size={12} className="text-white/40" />
-                </Link>
+                </div>
               </motion.div>
 
               {/* Countdown */}
@@ -306,33 +278,20 @@ export default function CxoDinnerPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="flex items-center justify-center gap-6 md:gap-10 mb-10"
+                className="flex flex-col items-center justify-center mb-10"
               >
-                {[
-                  { label: "Days", value: countdown.days },
-                  { label: "Hours", value: countdown.hours },
-                  { label: "Minutes", value: countdown.minutes },
-                ].map((unit, i) => (
-                  <div key={unit.label} className="flex items-center gap-6 md:gap-10">
-                    <div className="text-center">
-                      <div
-                        className="text-3xl md:text-4xl text-vip-gold-light"
-                        style={{
-                          fontFamily: "'UXILeadershipCondensed'",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {String(unit.value).padStart(2, "0")}
-                      </div>
-                      <div className="font-sans text-[10px] uppercase tracking-[0.2em] text-white/40 mt-1">
-                        {unit.label}
-                      </div>
-                    </div>
-                    {i < 2 && (
-                      <div className="w-px h-8 bg-white/10 hidden sm:block" />
-                    )}
-                  </div>
-                ))}
+                <div
+                  className="text-4xl md:text-5xl text-vip-gold-light"
+                  style={{
+                    fontFamily: "'UXILeadershipCondensed'",
+                    fontWeight: 500,
+                  }}
+                >
+                  {daysUntil}
+                </div>
+                <div className="font-sans text-[10px] uppercase tracking-[0.2em] text-white/40 mt-1">
+                  Days To Go
+                </div>
               </motion.div>
 
               {/* CTAs */}
@@ -529,9 +488,10 @@ export default function CxoDinnerPage() {
                 A Rooftop Table Above the City
               </h2>
               <p className="font-sans text-base text-white/60 leading-relaxed">
-                Falak sits high above Bengaluru at The Leela Bhartiya City
-                &mdash; private enough for a candid table, striking enough
-                to remember.
+                High above Bengaluru at The Leela Bhartiya City &mdash;
+                private enough for a candid table, striking enough to
+                remember. Exact address and timing will be shared once
+                your RSVP is approved.
               </p>
             </AnimatedSection>
 
@@ -540,7 +500,7 @@ export default function CxoDinnerPage() {
                 <div className="relative aspect-[4/3] md:aspect-auto">
                   <Image
                     src="/images/venue/the-leela-bhartiya-city.webp"
-                    alt="Falak, The Leela Bhartiya City, Bengaluru"
+                    alt="The Leela Bhartiya City, Bengaluru"
                     fill
                     className="object-cover"
                   />
@@ -553,21 +513,15 @@ export default function CxoDinnerPage() {
                       fontWeight: 500,
                     }}
                   >
-                    Falak, The Leela Bhartiya City
+                    The Leela Bhartiya City, Bengaluru
                   </h3>
                   <p className="font-sans text-sm text-white/55 leading-relaxed mb-6">
                     An intimate rooftop setting in Bengaluru, chosen for a
                     calm, unhurried evening away from the conference buzz.
                   </p>
-                  <Link
-                    href={VENUE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-brand hover:underline w-fit"
-                  >
-                    View Venue Details
-                    <ArrowUpRight size={14} />
-                  </Link>
+                  <p className="font-sans text-sm font-semibold text-white/40 w-fit">
+                    Exact address shared upon approval
+                  </p>
                 </div>
               </div>
             </AnimatedSection>
