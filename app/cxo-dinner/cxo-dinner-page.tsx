@@ -42,8 +42,8 @@ const GCAL_URL = `https://calendar.google.com/calendar/render?action=TEMPLATE&te
 
 // Placeholder gallery images from past UXINDIA / Happening gatherings.
 const GALLERY_IMAGES = [
-  "/images/cxo-dinner/imgcx1.png",
   "/images/cxo-dinner/imgcx2.png",
+  "/images/cxo-dinner/imgcx1.png",
   "/images/cxo-dinner/imgcx3.png",
   "/images/cxo-dinner/Falak-restaurant-Bhartiya-City.png",
   "/images/cxo-dinner/Falak-speciality-restaurant-image-4.jpg",
@@ -475,8 +475,8 @@ export default function CxoDinnerPage() {
 
             {/* Photo gallery — landscape bento */}
             <AnimatedSection delay={150}>
-              <div className="grid grid-cols-4 gap-3">
-                <div className="col-span-3 relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10">
+              <div className="grid grid-cols-3 gap-3 mb-3">
+                <div className="col-span-2 relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10">
                   <Image
                     src={GALLERY_IMAGES[0]}
                     alt="Moments from a past UXINDIA gathering"
@@ -492,6 +492,8 @@ export default function CxoDinnerPage() {
                     className="object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
+              </div>
+              <div className="grid grid-cols-4 gap-3">
                 {GALLERY_IMAGES.slice(2).map((src, i) => (
                   <div
                     key={src}
