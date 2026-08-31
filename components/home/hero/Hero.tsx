@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 
-import { LogoCarousel } from "../logo-carousel/LogoCarousel";
+import { LogoCarousel } from "@/components/home/logo-carousel/LogoCarousel";
 
 export default function Hero() {
   const [countdown, setCountdown] = useState({
@@ -243,15 +243,15 @@ export default function Hero() {
       </div>
 
       {/* Logo Carousel */}
-      {/* <div className="absolute w-full bottom-[10px] left-0">
+      <div className="absolute w-full  max-w-[1440px] bottom-[10px] left-1/2 -translate-x-1/2">
         <h6 className="font-sans text-[10px] font-semibold text-white/75 tracking-[0.22em] uppercase text-center">
           Our Esteemed Partners
         </h6>
         <LogoCarousel />
-      </div> */}
+      </div>
 
       {/* Scroll indicator */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
         transition={{ delay: 1.8 }}
@@ -270,7 +270,7 @@ export default function Hero() {
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           />
         </div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

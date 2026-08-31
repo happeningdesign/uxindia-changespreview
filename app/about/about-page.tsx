@@ -17,6 +17,7 @@ import Footer from "@/components/global/footer/Footer";
 
 // UI Components
 import { EventCard } from "@/components/ui/event-card/EventCard";
+import { TeamCard } from "@/components/ui/team-card/TeamCard";
 
 // Page Components
 import { AnimatedSection } from "@/components/about/animated-section/AnimatedSection";
@@ -24,6 +25,127 @@ import ImageStack from "@/components/about/image-stack/ImageStack";
 
 // Data
 import { partners, partnerTiers, getPartnersByTier } from "@/data/partners";
+
+export const coreTeam = [
+  {
+    name: "Shyama Duriseti",
+    designation: "Co-chair, Content Strategy",
+    // company: "Happening Design",
+    image: "/images/people/shyama-duriseti.webp",
+    linkedin: "https://www.linkedin.com/in/sduriseti/",
+    color: "#000",
+  },
+  {
+    name: "Rohan Sridhar",
+    designation: "Co-chair, Leadership Summit",
+    // company: "Happening Design",
+    image: "/images/speakers/leadership-summit/rohan-sridhar.webp",
+    linkedin: "https://www.linkedin.com/in/rohansridhar137/",
+    color: "#000",
+  },
+  {
+    name: "Madhukar Joshi",
+    designation: "Co-chair, Rising Leaders Forum",
+    // company: "Happening Design",
+    image: "/images/people/madhukar-joshi.webp",
+    linkedin: "https://www.linkedin.com/in/madhukar-joshi-3493a923/",
+    color: "#000",
+  },
+  {
+    name: "Shaistha Jabeen",
+    designation: "Co-chair, Community & Outreach",
+    // company: "Happening Design",
+    image: "/images/people/shaistha-jabeen.webp",
+    linkedin: "https://www.linkedin.com/in/jabeen-shaistha-980bb7176/",
+    color: "#000",
+  },
+  {
+    name: "Nithya Kappini",
+    designation: "Co-chair, 1 Million Women",
+    // company: "Happening Design",
+    image: "/images/people/nithya-kappini.webp",
+    linkedin: "https://www.linkedin.com/in/nithya-kappini-48a5b439/",
+    color: "#000",
+  },
+  {
+    name: "Ranjeet Tayi",
+    designation: "",
+    // company: "Happening Design",
+    image: "/images/people/ranjeet-tayi.webp",
+    linkedin: "https://www.linkedin.com/in/ranzeeth/",
+    color: "#000",
+  },
+];
+
+export const conferenceExperienceTeam = [
+  {
+    name: "Yadav Narayan",
+    designation: "Creative Production Lead",
+    // company: "Happening Design",
+    image: "/images/people/yadav-narayan.webp",
+    linkedin: "",
+    color: "#000",
+  },
+  {
+    name: "Ruthik Gonela",
+    designation: "Creative Production Associate",
+    // company: "Happening Design",
+    image: "/images/people/ruthik-gonela.webp",
+    linkedin: "",
+    color: "#000",
+  },
+  {
+    name: "Rishika Jain",
+    designation: "Visual Designer",
+    // company: "Happening Design",
+    image: "/images/people/rishika-jain.webp",
+    linkedin: "",
+    color: "#000",
+  },
+  // {
+  //   name: "Aviral Sharma",
+  //   designation: "Visual Designer",
+  //   // company: "Happening Design",
+  //   image: "/images/people/ruchita-dutta.webp",
+  //   linkedin: "",
+  //   color: "#000",
+  // },
+  {
+    name: "Ruchita Dutta",
+    designation: "Design Student",
+    // company: "Happening Design",
+    image: "/images/people/ruchita-dutta.webp",
+    linkedin: "",
+    color: "#000",
+  },
+  {
+    name: "Manasvi Udayagiri",
+    designation: "Design Student",
+    // company: "Happening Design",
+    image: "/images/people/manasvi-udayagiri.webp",
+    linkedin: "",
+    color: "#000",
+  },
+];
+
+export const volunteerTeam = [
+  {
+    name: "Bhagyashree Bhagwatkar",
+    // designation: "",
+    // company: "Happening Design",
+    image: "/images/people/bhagyashree-bhagwatkar.webp",
+    linkedin: "",
+    color: "#000",
+  },
+  {
+    name: "Fatema Shakir",
+    // designation: "",
+    // company: "Happening Design",
+    image: "/images/people/fatema-shakir.webp",
+    linkedin: "",
+    color: "#000",
+  },
+];
 
 export default function AboutPage() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -39,27 +161,46 @@ export default function AboutPage() {
   useEffect(() => {
     const setTabFromHash = () => {
       const hash = window.location.hash.replace("#", "");
+
       if (hash === "partners") {
         setActiveTab("partners");
+        scrollToTabs();
       } else {
         setActiveTab("about");
+
+        if (hash === "about") {
+          scrollToTabs();
+        }
       }
     };
+
     setTabFromHash();
+
     window.addEventListener("hashchange", setTabFromHash);
-    return () => window.removeEventListener("hashchange", setTabFromHash);
+
+    return () => {
+      window.removeEventListener("hashchange", setTabFromHash);
+    };
   }, []);
+
+  const scrollToTabs = () => {
+    requestAnimationFrame(() => {
+      if (!contentRef.current) return;
+
+      const y =
+        contentRef.current.getBoundingClientRect().top + window.scrollY - 70; // Adjust if your sticky nav height changes
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    });
+  };
 
   function handleTabChange(tab: "about" | "partners") {
     setActiveTab(tab);
     window.history.replaceState(null, "", `#${tab}`);
-    requestAnimationFrame(() => {
-      if (contentRef.current) {
-        const y =
-          contentRef.current.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }
-    });
+    scrollToTabs();
   }
 
   return (
@@ -116,9 +257,9 @@ export default function AboutPage() {
                 transition={{ duration: 0.6, delay: 0.45 }}
                 className="font-sans text-base md:text-lg text-white/70 leading-relaxed max-w-3xl"
               >
-                India&apos;s premier design leadership gathering returns to
-                Bengaluru this September with a wider, deeper, and more
-                intentional format. UXINDIA 2026 brings together design leaders,
+                Asia's premier design leadership gathering returns to Bengaluru
+                this September with a wider, deeper, and more intentional
+                format. UXINDIA 2026 brings together design leaders,
                 practitioners, founders, students, and ecosystem partners for
                 five days of learning, dialogue, and connection.
               </motion.p>
@@ -130,23 +271,20 @@ export default function AboutPage() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="flex flex-wrap gap-4 mt-10"
               >
-                <Link
-                  href="https://partner.ux-india.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-sans text-sm font-semibold px-7 py-3 rounded-full text-white transition-opacity hover:opacity-85 text-center"
+                <button
+                  onClick={() => handleTabChange("about")}
+                  className="font-sans text-sm font-semibold px-7 py-3 rounded-full text-white transition-opacity hover:opacity-85 text-center cursor-pointer"
                   style={{ backgroundColor: "#E85520" }}
                 >
-                  Become a Partner
-                </Link>
-                <span className="group relative font-sans text-sm font-semibold px-7 py-3 rounded-full text-white/50 border border-white/20 cursor-not-allowed overflow-hidden text-center">
-                  <span className="inline-block transition-transform duration-300 group-hover:-translate-y-full group-hover:opacity-0">
-                    Request Press Access
-                  </span>
-                  <span className="absolute inset-0 flex items-center justify-center translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                    Coming Soon
-                  </span>
-                </span>
+                  More About UXINDIA
+                </button>
+
+                <button
+                  onClick={() => handleTabChange("partners")}
+                  className="inline-flex items-center gap-2.5 bg-transparent border border-brand hover:bg-brand text-brand font-sans font-semibold text-base px-6 py-2 rounded-full transition-all duration-300 hover:text-white hover:shadow-xl hover:shadow-brand/30 cursor-pointer"
+                >
+                  Know Our Partners
+                </button>
               </motion.div>
             </div>
           </div>
@@ -156,13 +294,13 @@ export default function AboutPage() {
         <div ref={contentRef} />
 
         {/* Sticky Tab Bar — same pattern as Leadership Summit */}
-        <div className="sticky top-[50px] md:top-[60px] z-40 w-full flex border-b border-white/15 bg-[#0D0D0D] shadow-lg">
+        <div className="sticky top-[50px] md:top-[68px] z-40 w-full flex border-b border-white/15 bg-[#0D0D0D] bg-cream shadow-lg">
           <button
             onClick={() => handleTabChange("about")}
             className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${
               activeTab === "about"
-                ? "border-[#E85520] text-white"
-                : "border-transparent text-white/40 hover:text-white/70"
+                ? "border-[#E85520] text-black"
+                : "border-transparent text-black/40 hover:text-black/70"
             }`}
           >
             About
@@ -171,8 +309,8 @@ export default function AboutPage() {
             onClick={() => handleTabChange("partners")}
             className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${
               activeTab === "partners"
-                ? "border-[#E85520] text-white"
-                : "border-transparent text-white/40 hover:text-white/70"
+                ? "border-[#E85520] text-black"
+                : "border-transparent text-black/40 hover:text-black/70"
             }`}
           >
             Partners
@@ -219,15 +357,20 @@ export default function AboutPage() {
                     </p>
                     <p className="font-sans text-base text-page/70 leading-relaxed mb-8">
                       UXINDIA 2026 continues that legacy with a new week-long
-                      format designed to make the experience more inclusive, more
-                      relevant, and more impactful.
+                      format designed to make the experience more inclusive,
+                      more relevant, and more impactful.
                     </p>
                     <Link
                       href="/"
                       className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-page border border-page/30 px-6 py-2.5 rounded-full hover:bg-page/5 transition-colors"
                     >
                       Explore the Week
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                      >
                         <path
                           d="M3 7h8M8 4l3 3-3 3"
                           stroke="currentColor"
@@ -284,15 +427,15 @@ export default function AboutPage() {
                     <p className="font-sans text-base text-white/70 leading-relaxed mb-5">
                       Design today is not only about usability. It is about
                       decisions, strategy, leadership, and the ability to
-                      influence products, teams, businesses, and culture. UXINDIA
-                      2026 exists for people who want to move the discipline
-                      forward with clarity, courage, and community.
+                      influence products, teams, businesses, and culture.
+                      UXINDIA 2026 exists for people who want to move the
+                      discipline forward with clarity, courage, and community.
                     </p>
                     <p className="font-sans text-base text-white/70 leading-relaxed">
                       This year&apos;s theme, &quot;What could possibly go
-                      right?&quot;, invites the community to look beyond fear and
-                      toward possibility, especially in a world being reshaped by
-                      AI and accelerating change.
+                      right?&quot;, invites the community to look beyond fear
+                      and toward possibility, especially in a world being
+                      reshaped by AI and accelerating change.
                     </p>
                   </AnimatedSection>
                 </div>
@@ -419,14 +562,14 @@ export default function AboutPage() {
                       UXINDIA was founded by Kaladhar Bapu, whose long-standing
                       vision has been rooted in &quot;Good Design for Better
                       Living&quot;. His work has consistently linked design with
-                      social impact, human-centered practice, and the development
-                      of stronger design leadership in India.
+                      social impact, human-centered practice, and the
+                      development of stronger design leadership in India.
                     </p>
                     <p className="font-sans text-base text-page/70 leading-relaxed mb-8">
                       That vision continues to shape UXINDIA 2026: a community
                       where design is treated not as decoration, but as a
-                      meaningful force for better products, better organizations,
-                      and better lives.
+                      meaningful force for better products, better
+                      organizations, and better lives.
                     </p>
                     <div className="flex flex-wrap gap-3">
                       <Link
@@ -520,7 +663,7 @@ export default function AboutPage() {
             </section>
 
             {/* 7) Who it is for */}
-            <section className="py-24 md:py-32 bg-cream relative overflow-hidden">
+            <section className="py-24 md:py-32 bg-white relative overflow-hidden">
               <div className="max-w-6xl mx-auto px-6">
                 <AnimatedSection>
                   <div className="text-center mb-16">
@@ -540,10 +683,10 @@ export default function AboutPage() {
                     </h2>
                     <p className="font-sans text-base text-page/70 leading-relaxed max-w-3xl mx-auto">
                       UXINDIA 2026 is for design and product leaders, UX and
-                      research practitioners, founders, entrepreneurs, educators,
-                      students, and innovation teams. It is also for partners and
-                      media who want to engage with one of India&apos;s most
-                      trusted design communities.
+                      research practitioners, founders, entrepreneurs,
+                      educators, students, and innovation teams. It is also for
+                      partners and media who want to engage with one of
+                      India&apos;s most trusted design communities.
                     </p>
                   </div>
                 </AnimatedSection>
@@ -567,8 +710,8 @@ export default function AboutPage() {
                         Leaders
                       </h3>
                       <p className="font-sans text-sm text-white/85 leading-relaxed">
-                        Design heads, CXOs, VPs of Product and Design, and senior
-                        practitioners driving transformation at scale.
+                        Design heads, CXOs, VPs of Product and Design, and
+                        senior practitioners driving transformation at scale.
                       </p>
                     </div>
                   </AnimatedSection>
@@ -589,8 +732,9 @@ export default function AboutPage() {
                         Practitioners
                       </h3>
                       <p className="font-sans text-sm text-white/85 leading-relaxed">
-                        UX designers, researchers, product builders, and founders
-                        passionate about creating impactful experiences.
+                        UX designers, researchers, product builders, and
+                        founders passionate about creating impactful
+                        experiences.
                       </p>
                     </div>
                   </AnimatedSection>
@@ -611,8 +755,8 @@ export default function AboutPage() {
                         Rising Talent
                       </h3>
                       <p className="font-sans text-sm text-page/80 leading-relaxed">
-                        Students, early-career professionals, and emerging voices
-                        ready to step into leadership with confidence.
+                        Students, early-career professionals, and emerging
+                        voices ready to step into leadership with confidence.
                       </p>
                     </div>
                   </AnimatedSection>
@@ -837,6 +981,107 @@ export default function AboutPage() {
               </div>
             </section>
 
+            {/* Core Team  */}
+            <section className="bg-cream py-24 pb-12 md:py-32 md:pb-12 overflow-hidden border border-b-0 border-t">
+              <div className="max-w-7xl mx-auto px-6">
+                {/* Title */}
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+                  <div>
+                    <h2
+                      className={`text-5xl md:text-6xl lg:text-7xl text-page leading-[1.05] transition-all duration-700 opacity-100 translate-y-0`}
+                      style={{
+                        fontFamily: "'UXILeadershipCondensed'",
+                        fontWeight: 500,
+                      }}
+                    >
+                      <span className="text-brand">Core </span>
+                      Team
+                    </h2>
+                  </div>
+                </div>
+
+                {/* Uniform 4-column grid for Leadership Summit */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+                  {coreTeam.map((member, index) => (
+                    <TeamCard
+                      key={member.name}
+                      member={member}
+                      index={index}
+                      visible={true}
+                    />
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Conference Experience Team  */}
+            <section className="bg-cream py-24 pb-12 md:py-32 md:pt-12 md:pb-12 overflow-hidden border border-b-0 border-t">
+              <div className="max-w-7xl mx-auto px-6">
+                {/* Title */}
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+                  <div>
+                    <h2
+                      className={`text-5xl md:text-6xl lg:text-7xl text-page leading-[1.05] transition-all duration-700 opacity-100 translate-y-0`}
+                      style={{
+                        fontFamily: "'UXILeadershipCondensed'",
+                        fontWeight: 500,
+                      }}
+                    >
+                      <span className="text-brand">Conference Experience </span>
+                      Team
+                    </h2>
+                  </div>
+                </div>
+
+                {/* Uniform 4-column grid for Leadership Summit */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+                  {conferenceExperienceTeam.map((member, index) => (
+                    <TeamCard
+                      key={member.name}
+                      member={member}
+                      index={index}
+                      visible={true}
+                      aspectRatio="aspect-[6/7]"
+                    />
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Volunteers Team  */}
+            <section className="bg-cream py-24 pt-12 md:py-32 md:pt-12 overflow-hidden">
+              <div className="max-w-7xl mx-auto px-6">
+                {/* Title */}
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+                  <div>
+                    <h2
+                      className={`text-5xl md:text-6xl lg:text-7xl text-page leading-[1.05] transition-all duration-700 opacity-100 translate-y-0`}
+                      style={{
+                        fontFamily: "'UXILeadershipCondensed'",
+                        fontWeight: 500,
+                      }}
+                    >
+                      <span className="text-brand">Volunteer </span>
+                      Team
+                    </h2>
+                  </div>
+                </div>
+
+                {/* Uniform 4-column grid for Leadership Summit */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 mb-20">
+                  {volunteerTeam.map((member, index) => (
+                    <TeamCard
+                      key={member.name}
+                      member={member}
+                      index={index}
+                      visible={true}
+                      aspectRatio="aspect-[20/21]"
+                    />
+                  ))}
+                </div>
+              </div>
+            </section>
+
             {/* 8) Get Involved */}
             <section id="get-involved" className="py-24 md:py-32 bg-page">
               <div className="max-w-6xl mx-auto px-6">
@@ -881,10 +1126,10 @@ export default function AboutPage() {
                       <p className="font-sans text-sm text-white/85 leading-relaxed flex-1 mb-5">
                         Partnering with UXINDIA 2026 means aligning with a
                         platform that carries credibility, community trust, and
-                        long-term relevance. Partners gain visibility among design
-                        decision-makers, emerging talent, and innovation leaders
-                        while supporting an ecosystem that values substance and
-                        impact.
+                        long-term relevance. Partners gain visibility among
+                        design decision-makers, emerging talent, and innovation
+                        leaders while supporting an ecosystem that values
+                        substance and impact.
                       </p>
                       <p className="font-sans text-sm text-white/85 leading-relaxed mb-6">
                         If your brand wants to be part of a meaningful
@@ -941,8 +1186,8 @@ export default function AboutPage() {
                         ideas that can move the discipline forward.
                       </p>
                       <p className="font-sans text-sm text-white/85 leading-relaxed mb-6">
-                        We are especially interested in talks that explore design
-                        leadership, AI, systems thinking, team culture,
+                        We are especially interested in talks that explore
+                        design leadership, AI, systems thinking, team culture,
                         entrepreneurship, and the future of the profession.
                       </p>
                       <Link
@@ -994,9 +1239,9 @@ export default function AboutPage() {
                         age of AI all create strong angles for coverage.
                       </p>
                       <p className="font-sans text-sm text-white/85 leading-relaxed mb-6">
-                        Journalists and editors can request official information,
-                        speaker details, and media assets for coverage and
-                        interviews.
+                        Journalists and editors can request official
+                        information, speaker details, and media assets for
+                        coverage and interviews.
                       </p>
                       <span className="group relative inline-flex items-center gap-2 font-sans text-sm font-semibold text-white/50 border border-white/20 px-5 py-2.5 rounded-full cursor-not-allowed w-fit overflow-hidden">
                         <span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:-translate-y-full group-hover:opacity-0">
@@ -1056,10 +1301,10 @@ export default function AboutPage() {
                     Come build what&apos;s next
                   </h2>
                   <p className="font-sans text-base md:text-lg text-page/70 leading-relaxed max-w-3xl mx-auto mb-5">
-                    UXINDIA: Design Leadership Week 2026 is a space for learning,
-                    leadership, and possibility. It is where the community
-                    gathers to exchange ideas, recognize talent, and shape the
-                    future with purpose.
+                    UXINDIA: Design Leadership Week 2026 is a space for
+                    learning, leadership, and possibility. It is where the
+                    community gathers to exchange ideas, recognize talent, and
+                    shape the future with purpose.
                   </p>
                   <p className="font-sans text-base md:text-lg text-page/70 leading-relaxed max-w-3xl mx-auto">
                     We believe the next chapter of design leadership in India
@@ -1112,8 +1357,9 @@ export default function AboutPage() {
                   <AnimatedSection delay={200}>
                     <div className="md:max-w-xs">
                       <p className="font-sans text-base text-page/60 leading-relaxed mb-8">
-                        Partner with India&apos;s most influential design event and
-                        put your brand in the room where design decisions get made.
+                        Partner with Asia's most influential design event and
+                        put your brand in the room where design decisions get
+                        made.
                       </p>
                       <Link
                         href="https://partner.ux-india.org"
@@ -1123,8 +1369,19 @@ export default function AboutPage() {
                         style={{ backgroundColor: "#E85520" }}
                       >
                         Explore Partnership Packages
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                          <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                        >
+                          <path
+                            d="M3 7h8M8 4l3 3-3 3"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
                         </svg>
                       </Link>
                     </div>
@@ -1136,8 +1393,8 @@ export default function AboutPage() {
                   <div className="mt-16 pt-10 border-t border-page/10 grid grid-cols-3 gap-6">
                     {[
                       { num: "5,000+", label: "Design professionals" },
-                      { num: "5 days", label: "Of curated programming" },
-                      { num: "15+", label: "Cities represented" },
+                      { num: "5 days", label: "Of curated sessions" },
+                      { num: "15+", label: "Countries represented" },
                     ].map((s) => (
                       <div key={s.label}>
                         <p
@@ -1161,85 +1418,24 @@ export default function AboutPage() {
               </div>
             </section>
 
-            {/* Why Partner — bold coloured cards on cream */}
-            <section className="bg-cream py-16 md:py-20 border-t border-page/8">
-              <div className="max-w-6xl mx-auto px-6">
-                <AnimatedSection>
-                  <p className="font-sans text-xs text-page/40 uppercase tracking-[0.25em] mb-10">
-                    Why Partner
-                  </p>
-                </AnimatedSection>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                  <AnimatedSection delay={100}>
-                    <div className="rounded-3xl p-8 h-full flex flex-col min-h-[260px]" style={{ backgroundColor: "#E85520" }}>
-                      <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center mb-auto">
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                          <path d="M9 1.5L11.25 6.75H17L12.5 9.9L14.25 15.5L9 12.15L3.75 15.5L5.5 9.9L1 6.75H6.75L9 1.5Z" fill="white" />
-                        </svg>
-                      </div>
-                      <div className="mt-10">
-                        <h3 className="mb-3 text-white" style={{ fontFamily: "'UXILeadershipCondensed'", fontWeight: 500, fontSize: "clamp(1.4rem, 2vw, 1.9rem)" }}>
-                          Shape the Future
-                        </h3>
-                        <p className="font-sans text-sm text-white/80 leading-relaxed">
-                          Position your brand at the forefront of design and innovation. Be part of conversations that define where the industry is headed.
-                        </p>
-                      </div>
-                    </div>
-                  </AnimatedSection>
-                  <AnimatedSection delay={160}>
-                    <div className="rounded-3xl p-8 h-full flex flex-col min-h-[260px]" style={{ backgroundColor: "#1B7A6E" }}>
-                      <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center mb-auto">
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                          <circle cx="6" cy="7" r="2.5" fill="white" />
-                          <circle cx="12" cy="7" r="2.5" fill="white" />
-                          <path d="M1 16c0-2.5 2-4.5 5-4.5M17 16c0-2.5-2-4.5-5-4.5M9 16c0-2 1.5-3.5 4-4.5" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
-                        </svg>
-                      </div>
-                      <div className="mt-10">
-                        <h3 className="mb-3 text-white" style={{ fontFamily: "'UXILeadershipCondensed'", fontWeight: 500, fontSize: "clamp(1.4rem, 2vw, 1.9rem)" }}>
-                          Build Meaningful Connections
-                        </h3>
-                        <p className="font-sans text-sm text-white/80 leading-relaxed">
-                          Network with 5,000+ designers, entrepreneurs, and industry leaders across five days of curated programming.
-                        </p>
-                      </div>
-                    </div>
-                  </AnimatedSection>
-                  <AnimatedSection delay={220}>
-                    <div className="rounded-3xl p-8 h-full flex flex-col min-h-[260px]" style={{ backgroundColor: "#2D3580" }}>
-                      <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center mb-auto">
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                          <rect x="2" y="13" width="14" height="3" rx="1" fill="white" />
-                          <path d="M9 2v9M9 2L5.5 5.5M9 2l3.5 3.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </div>
-                      <div className="mt-10">
-                        <h3 className="mb-3 text-white" style={{ fontFamily: "'UXILeadershipCondensed'", fontWeight: 500, fontSize: "clamp(1.4rem, 2vw, 1.9rem)" }}>
-                          Own the Stage
-                        </h3>
-                        <p className="font-sans text-sm text-white/80 leading-relaxed">
-                          Share your expertise, inspire the community, and spark impactful discussions that extend well beyond the event.
-                        </p>
-                      </div>
-                    </div>
-                  </AnimatedSection>
-                </div>
-              </div>
-            </section>
-
             {/* ── PARTNER TIERS — single cream canvas, hierarchy via size ── */}
-            <section className="bg-cream py-16 md:py-24">
+            <section className="bg-cream py-16 md:py-24 border-t border-page/10">
               <div className="max-w-6xl mx-auto px-6">
-
                 {/* Section header */}
                 <AnimatedSection>
                   <div className="flex items-end justify-between mb-16 pb-6 border-b border-page/10">
                     <div>
-                      <p className="font-sans text-xs text-page/40 uppercase tracking-[0.25em] mb-2">Our Partners</p>
+                      <p className="font-sans text-xs text-page/40 uppercase tracking-[0.25em] mb-2">
+                        Our Partners
+                      </p>
                       <h3
                         className="leading-tight text-balance"
-                        style={{ fontFamily: "'UXILeadershipCondensed'", fontWeight: 500, fontSize: "clamp(1.8rem, 3vw, 2.8rem)", color: "#0D0D0D" }}
+                        style={{
+                          fontFamily: "'UXILeadershipCondensed'",
+                          fontWeight: 500,
+                          fontSize: "clamp(1.8rem, 3vw, 2.8rem)",
+                          color: "#0D0D0D",
+                        }}
                       >
                         Organisations shaping
                         <br />
@@ -1254,56 +1450,23 @@ export default function AboutPage() {
                     >
                       Become a partner
                       <svg
-                        width="14" height="14" viewBox="0 0 14 14" fill="none"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
                         className="transition-transform duration-200 group-hover:translate-x-1"
                       >
-                        <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path
+                          d="M3 7h8M8 4l3 3-3 3"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     </Link>
                   </div>
                 </AnimatedSection>
-
-                {/* ── DIAMOND — widest, most prominent ── */}
-                {getPartnersByTier("diamond").length > 0 && (
-                  <div className="mb-12">
-                    <AnimatedSection>
-                      <div className="flex items-center gap-3 mb-5">
-                        <span className="inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full border border-[#E85520]/25 text-[#E85520] bg-[#E85520]/6">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#E85520]" />
-                          Diamond
-                        </span>
-                        <span className="hidden md:block h-px flex-1 bg-page/10" />
-                      </div>
-                    </AnimatedSection>
-                    <div className="grid grid-cols-1 gap-4">
-                      {getPartnersByTier("diamond").map((partner, i) => (
-                        <AnimatedSection key={partner.name} delay={i * 80}>
-                          <a
-                            href={partner.url ?? "#"}
-                            target={partner.url ? "_blank" : undefined}
-                            rel="noopener noreferrer"
-                            className="group flex flex-col md:flex-row md:items-center gap-8 bg-white rounded-2xl p-8 md:p-10 border border-page/8 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(13,13,13,0.08)]"
-                          >
-                            <div className="relative h-16 w-56 flex-shrink-0">
-                              <Image src={partner.logo} alt={`${partner.name} logo`} fill className="object-contain object-left" />
-                            </div>
-                            {partner.description && (
-                              <p className="font-sans text-sm text-page/55 leading-relaxed flex-1">
-                                {partner.description}
-                              </p>
-                            )}
-                            <span className="flex-shrink-0 inline-flex items-center gap-2 font-sans text-sm font-semibold text-[#E85520] group-hover:gap-3 transition-all duration-200">
-                              Visit
-                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-200 group-hover:translate-x-1">
-                                <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
-                            </span>
-                          </a>
-                        </AnimatedSection>
-                      ))}
-                    </div>
-                  </div>
-                )}
 
                 {/* ── PLATINUM — 2 col ── */}
                 {getPartnersByTier("platinum").length > 0 && (
@@ -1327,7 +1490,12 @@ export default function AboutPage() {
                             className="group flex flex-col bg-white rounded-2xl p-8 border border-page/8 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(13,13,13,0.08)] h-full"
                           >
                             <div className="relative h-14 w-48 mb-6">
-                              <Image src={partner.logo} alt={`${partner.name} logo`} fill className="object-contain object-left" />
+                              <Image
+                                src={partner.logo}
+                                alt={`${partner.name} logo`}
+                                fill
+                                className="object-contain object-left"
+                              />
                             </div>
                             {partner.description && (
                               <p className="font-sans text-sm text-page/55 leading-relaxed flex-1 mb-5">
@@ -1336,8 +1504,20 @@ export default function AboutPage() {
                             )}
                             <span className="inline-flex items-center gap-2 font-sans text-xs font-semibold text-[#1B7A6E] w-fit group-hover:gap-3 transition-all duration-200">
                               Visit {partner.name}
-                              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-1">
-                                <path d="M2 6h8M7.5 3.5L10 6l-2.5 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                className="transition-transform duration-200 group-hover:translate-x-1"
+                              >
+                                <path
+                                  d="M2 6h8M7.5 3.5L10 6l-2.5 2.5"
+                                  stroke="currentColor"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
                               </svg>
                             </span>
                           </a>
@@ -1347,7 +1527,7 @@ export default function AboutPage() {
                   </div>
                 )}
 
-                {/* ── GOLD — 4 col square tiles ── */}
+                {/* ── GOLD — 3 col square tiles ── */}
                 {getPartnersByTier("gold").length > 0 && (
                   <div className="mb-12">
                     <AnimatedSection>
@@ -1359,19 +1539,23 @@ export default function AboutPage() {
                         <span className="hidden md:block h-px flex-1 bg-page/10" />
                       </div>
                     </AnimatedSection>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                       {getPartnersByTier("gold").map((partner, i) => (
                         <AnimatedSection key={partner.name} delay={i * 60}>
                           <a
                             href={partner.url ?? "#"}
                             target={partner.url ? "_blank" : undefined}
                             rel="noopener noreferrer"
-                            className="group flex flex-col items-center justify-center bg-white rounded-xl p-6 aspect-[4/3] border border-page/8 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(13,13,13,0.08)] hover:border-[#F5A623]/40"
+                            className="group flex flex-col items-center justify-center bg-white rounded-xl p-6 aspect-[5/3] border border-page/8 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_6px_24px_rgba(13,13,13,0.08)] hover:border-[#F5A623]/40"
                           >
-                            <div className="relative w-full h-9 transition-transform duration-300 group-hover:scale-105">
-                              <Image src={partner.logo} alt={`${partner.name} logo`} fill className="object-contain" />
+                            <div className="relative w-46 max-w-full h-12 transition-transform duration-300 group-hover:scale-105">
+                              <Image
+                                src={partner.logo}
+                                alt={`${partner.name} logo`}
+                                fill
+                                className="object-contain"
+                              />
                             </div>
-                            <p className="font-sans text-[10px] text-page/35 mt-3 text-center tracking-wide">{partner.name}</p>
                           </a>
                         </AnimatedSection>
                       ))}
@@ -1379,7 +1563,7 @@ export default function AboutPage() {
                   </div>
                 )}
 
-                {/* ── SILVER — 5 col smaller tiles ── */}
+                {/* ── SILVER — 4 col smaller tiles ── */}
                 {getPartnersByTier("silver").length > 0 && (
                   <div className="mb-12">
                     <AnimatedSection>
@@ -1391,7 +1575,7 @@ export default function AboutPage() {
                         <span className="hidden md:block h-px flex-1 bg-page/10" />
                       </div>
                     </AnimatedSection>
-                    <div className="grid grid-cols-3 md:grid-cols-5 gap-3">
+                    <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
                       {getPartnersByTier("silver").map((partner, i) => (
                         <AnimatedSection key={partner.name} delay={i * 50}>
                           <a
@@ -1400,8 +1584,13 @@ export default function AboutPage() {
                             rel="noopener noreferrer"
                             className="group flex items-center justify-center bg-white rounded-xl p-5 aspect-[4/3] border border-page/8 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(13,13,13,0.07)] hover:border-[#8A9BAD]/40"
                           >
-                            <div className="relative w-full h-7 transition-transform duration-300 group-hover:scale-105">
-                              <Image src={partner.logo} alt={`${partner.name} logo`} fill className="object-contain" />
+                            <div className="relative w-full h-8 transition-transform duration-300 group-hover:scale-105">
+                              <Image
+                                src={partner.logo}
+                                alt={`${partner.name} logo`}
+                                fill
+                                className="object-contain"
+                              />
                             </div>
                           </a>
                         </AnimatedSection>
@@ -1411,8 +1600,9 @@ export default function AboutPage() {
                 )}
 
                 {/* ── MEDIA + COMMUNITY — inline two-col ── */}
-                {(getPartnersByTier("media").length > 0 || getPartnersByTier("community").length > 0) && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-4 border-t border-page/8">
+                {(getPartnersByTier("media").length > 0 ||
+                  getPartnersByTier("community").length > 0) && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-4 border-t border-page/8 mb-12">
                     {getPartnersByTier("media").length > 0 && (
                       <div>
                         <AnimatedSection>
@@ -1423,7 +1613,7 @@ export default function AboutPage() {
                             </span>
                           </div>
                         </AnimatedSection>
-                        <div className="grid grid-cols-3 gap-3">
+                        <div className="grid grid-cols-2 gap-3">
                           {getPartnersByTier("media").map((partner, i) => (
                             <AnimatedSection key={partner.name} delay={i * 50}>
                               <a
@@ -1433,7 +1623,12 @@ export default function AboutPage() {
                                 className="group flex items-center justify-center bg-white rounded-xl p-4 aspect-[3/2] border border-page/8 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(13,13,13,0.07)] hover:border-[#2D3580]/30"
                               >
                                 <div className="relative w-full h-6 transition-transform duration-300 group-hover:scale-105">
-                                  <Image src={partner.logo} alt={`${partner.name} logo`} fill className="object-contain" />
+                                  <Image
+                                    src={partner.logo}
+                                    alt={`${partner.name} logo`}
+                                    fill
+                                    className="object-contain"
+                                  />
                                 </div>
                               </a>
                             </AnimatedSection>
@@ -1451,7 +1646,7 @@ export default function AboutPage() {
                             </span>
                           </div>
                         </AnimatedSection>
-                        <div className="grid grid-cols-3 gap-3">
+                        <div className="grid grid-cols-2 gap-3">
                           {getPartnersByTier("community").map((partner, i) => (
                             <AnimatedSection key={partner.name} delay={i * 50}>
                               <a
@@ -1461,7 +1656,12 @@ export default function AboutPage() {
                                 className="group flex items-center justify-center bg-white rounded-xl p-4 aspect-[3/2] border border-page/8 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(13,13,13,0.07)] hover:border-[#1B7A6E]/30"
                               >
                                 <div className="relative w-full h-6 transition-transform duration-300 group-hover:scale-105">
-                                  <Image src={partner.logo} alt={`${partner.name} logo`} fill className="object-contain" />
+                                  <Image
+                                    src={partner.logo}
+                                    alt={`${partner.name} logo`}
+                                    fill
+                                    className="object-contain"
+                                  />
                                 </div>
                               </a>
                             </AnimatedSection>
@@ -1472,6 +1672,41 @@ export default function AboutPage() {
                   </div>
                 )}
 
+                {/* ── ACADEMIC — 3 col smaller tiles ── */}
+                {getPartnersByTier("academic").length > 0 && (
+                  <div className="mb-12">
+                    <AnimatedSection>
+                      <div className="flex items-center gap-3 mb-5">
+                        <span className="inline-flex items-center gap-2 font-sans text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full border border-[#8A9BAD]/25 text-[#4A6070] bg-[#A8B4C0]/25">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#8A9BAD]" />
+                          Academic Partners - Rising Leaders
+                        </span>
+                        <span className="hidden md:block h-px flex-1 bg-page/10" />
+                      </div>
+                    </AnimatedSection>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                      {getPartnersByTier("academic").map((partner, i) => (
+                        <AnimatedSection key={partner.name} delay={i * 50}>
+                          <a
+                            href={partner.url ?? "#"}
+                            target={partner.url ? "_blank" : undefined}
+                            rel="noopener noreferrer"
+                            className="group flex items-center justify-center bg-white rounded-xl p-5 aspect-[5/3] border border-page/8 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(13,13,13,0.07)] hover:border-[#8A9BAD]/40"
+                          >
+                            <div className="relative w-full h-10 transition-transform duration-300 group-hover:scale-105">
+                              <Image
+                                src={partner.logo}
+                                alt={`${partner.name} logo`}
+                                fill
+                                className="object-contain"
+                              />
+                            </div>
+                          </a>
+                        </AnimatedSection>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </section>
 
@@ -1489,7 +1724,11 @@ export default function AboutPage() {
                       </p>
                       <h2
                         className="leading-[1.06] text-white text-balance"
-                        style={{ fontFamily: "'UXILeadershipCondensed'", fontWeight: 500, fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
+                        style={{
+                          fontFamily: "'UXILeadershipCondensed'",
+                          fontWeight: 500,
+                          fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                        }}
                       >
                         Ready to partner
                         <br />
@@ -1498,8 +1737,9 @@ export default function AboutPage() {
                     </div>
                     <div className="flex flex-col gap-4 md:items-end flex-shrink-0">
                       <p className="font-sans text-sm text-white/75 leading-relaxed max-w-xs md:text-right">
-                        Connect with India&apos;s most influential design community.
-                        Find the right level of involvement for your brand.
+                        Connect with India&apos;s most influential design
+                        community. Find the right level of involvement for your
+                        brand.
                       </p>
                       <Link
                         href="https://partner.ux-india.org"
@@ -1508,8 +1748,20 @@ export default function AboutPage() {
                         className="group inline-flex items-center gap-2 font-sans text-sm font-semibold px-7 py-3.5 rounded-full bg-white text-[#E85520] transition-all hover:opacity-90 w-fit"
                       >
                         Get the Partnership Deck
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-200 group-hover:translate-x-1">
-                          <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          className="transition-transform duration-200 group-hover:translate-x-1"
+                        >
+                          <path
+                            d="M3 7h8M8 4l3 3-3 3"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
                         </svg>
                       </Link>
                     </div>

@@ -66,7 +66,8 @@ export const summitTiers: PassTier[] = [
     name: "Leadership Summit Pass",
     badge: "Regular",
     badgeVariant: "popular",
-    price: 23999,
+    // price: 23999,
+    price: 0,
     saleStarts: "",
     description:
       "2-day access to Grand Keynotes, Deep Dives, Spark Sessions and Panel Discussions. Networking Dinner included on 24th Sept. Group discounts available for 4+ attendees.",
@@ -81,7 +82,7 @@ export const summitTiers: PassTier[] = [
     // ctaStyle: "muted",
     ctaStyle: "brand",
 
-    isExpanded: true,
+    // isExpanded: true,
   },
   {
     id: "summit-last-minute",
@@ -95,13 +96,12 @@ export const summitTiers: PassTier[] = [
     inclusions: SUMMIT_INCLUSIONS,
     opensOn: "2026-08-17",
 
-    // ctaLabel: "Register Now →",
-    // ctaHref: ticketUrl("leadershipSummit", "summit-last-minute"),
+    ctaLabel: "Register Now →",
+    ctaHref: ticketUrl("leadershipSummit", "summit-last-minute"),
 
-    ctaLabel: "Opens Soon",
-    ctaHref: "#",
+    ctaStyle: "brand",
 
-    ctaStyle: "muted",
+    isExpanded: true,
   },
   {
     id: "summit-walkin",

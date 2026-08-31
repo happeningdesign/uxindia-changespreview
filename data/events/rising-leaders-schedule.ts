@@ -55,33 +55,55 @@ export const risingScheduleData = {
       title: "Coffee Break",
       location: "Multiple Rooms",
     },
-    {
-      time: "11:05 AM",
-      type: "keynote",
-      title: "Rethinking HCI (Human Computer Interaction) in the Age of AI",
-      description:
-        "Exploring how designers can treat AI as a teammate, using shared context to turn complex problems into working solutions.",
-      tag: "Deep Dive",
-      talkCategory: "Emerging Tech",
-      location: "Auditorium",
-      speaker: {
-        name: "Vineet Gupta",
-        role: "Assistant Vice President, Design & Branding, Gemini Solutions Pvt Ltd",
-        image: "/images/speakers/rising-leaders-forum/vineet-gupta.webp",
-      },
-    },
+
     {
       time: "11:45 AM",
       type: "panel",
-      title: "Panel Discussion",
-      description: "",
+      title: "Design & AI",
+      description:
+        "Explore how AI is reshaping design workflows, creativity, and the future of human-centered innovation.",
       tag: "Panel Discussion",
       location: "Auditorium",
       panelists: [
+        {
+          name: "Ranjeet Tayi",
+          role: "Senior Director, AI Experience Design - Salesforce",
+          image: "/images/speakers/rising-leaders-forum/ranjeet-tayi.webp",
+        },
         { name: "TBA", role: "", image: "" },
         { name: "TBA", role: "", image: "" },
         { name: "TBA", role: "", image: "" },
-        { name: "TBA", role: "", image: "" },
+      ],
+    },
+    {
+      time: "11:05 AM",
+      type: "panel",
+      title: "Design Connect",
+      description:
+        "Connect with speakers, industry leaders, and fellow attendees in an informal networking session.",
+      tag: "Networking",
+      location: "Auditorium",
+      panelists: [
+        {
+          name: "Doug Powell",
+          role: "Executive Design Leader | VP of Design | Former IBM & Expedia | Lead Lecturer, iF Design Academy",
+          image: "/images/speakers/leadership-summit/doug-powell.webp",
+        },
+        {
+          name: "Jose Coronado",
+          role: "Advisor, Interim Head, Product & Design, Digital Impulsum",
+          image: "/images/speakers/leadership-summit/jose-coronado.webp",
+        },
+        {
+          name: "Jesvin Yeo Puay Hwa",
+          role: "Associate Vice Provost (Strategy), Undergraduate Education, NTU",
+          image: "/images/speakers/leadership-summit/jesvin-yeo.webp",
+        },
+        {
+          name: "Kaladhar Bapu",
+          role: "Design Executive, Founder, UMO Design Foundation & Curator, UXINDIA",
+          image: "/images/speakers/leadership-summit/kaladhar-bapu.webp",
+        },
       ],
     },
     {
@@ -89,6 +111,12 @@ export const risingScheduleData = {
       type: "break",
       title: "Lunch",
       location: "Multiple Rooms",
+    },
+    {
+      time: "1:45 PM",
+      type: "break",
+      title: "LEAD Commons' Roundtable",
+      location: "Auditorium",
     },
     {
       time: "1:45 PM",
@@ -112,8 +140,12 @@ export const risingScheduleData = {
         {
           room: "Room 2",
           title: "Workshop 02",
-          speaker: { name: "TBA", role: "", image: "" },
-          description: "",
+          speaker: {
+            name: "Rohan Sridhar",
+            role: "CXO & Co-founder, Happening Design",
+            image: "/images/speakers/leadership-summit/rohan-sridhar.webp",
+          },
+          description: "Announcing Soon.",
         },
         {
           room: "Room 3",
@@ -196,9 +228,14 @@ export const risingScheduleData = {
         },
         {
           room: "Room 10",
-          title: "Workshop 10",
-          speaker: { name: "TBA", role: "", image: "" },
-          description: "",
+          title: "The Seam: Designing Emotional Complexity in the Age of AI",
+          speaker: {
+            name: "Hemanth Ramesh",
+            role: "Sr. Manager, Cognizant",
+            image: "",
+          },
+          description:
+            "AI is fluent and hollow. Humans are clumsy and full. The craft is designing the seam between them honestly.",
         },
       ],
     },
@@ -208,6 +245,7 @@ export const risingScheduleData = {
       title: "Coffee Break",
       location: "Multiple Rooms",
     },
+
     {
       time: "4:00 PM",
       type: "continuation",
@@ -228,7 +266,11 @@ export const risingScheduleData = {
       description: "",
       tag: "Deep Dive",
       location: "Auditorium",
-      speaker: { name: "TBA", role: "", image: "" },
+      speaker: {
+        name: "Rohan Sridhar",
+        role: "CXO & Co-founder, Happening Design",
+        image: "/images/speakers/leadership-summit/rohan-sridhar.webp",
+      },
     },
     {
       time: "9:40 AM",
@@ -258,10 +300,11 @@ export const risingScheduleData = {
       sessions: [
         {
           room: "Mini-Auditorium 1",
-          title: "Panel Discussion",
+          title: "Design Entreprenuership",
           type: "panel",
           tag: "Panel Discussion",
-          description: "",
+          description:
+            "Insights from design founders on entrepreneurship, leadership, growth, and the future of design businesses.",
           panelists: [
             { name: "TBA", role: "", image: "" },
             { name: "TBA", role: "", image: "" },
@@ -271,23 +314,35 @@ export const risingScheduleData = {
         },
         {
           room: "Mini-Auditorium 2",
-          title: "Panel Discussion",
+          title: "Design Mentorship & Portfolio Review",
           type: "panel",
           tag: "Panel Discussion",
-          description: "",
+          description:
+            "Design leaders discuss the power of mentorship, knowledge sharing, and nurturing future talent.",
           panelists: [
-            { name: "TBA", role: "", image: "" },
-            { name: "TBA", role: "", image: "" },
+            {
+              name: "Madhukar Joshi",
+              role: "Director - Design Strategy and Ops, Kyndryl",
+              image:
+                "/images/speakers/rising-leaders-forum/madhukar-joshi.webp",
+            },
+            {
+              name: "Nithya Kappini",
+              role: "Senior Director, Cognizant",
+              image:
+                "/images/speakers/rising-leaders-forum/nithya-kappini.webp",
+            },
             { name: "TBA", role: "", image: "" },
             { name: "TBA", role: "", image: "" },
           ],
         },
         {
           room: "Mini-Auditorium 3",
-          title: "Panel Discussion",
+          title: "Design Pitch Presentations",
           type: "panel",
-          tag: "Panel Discussion",
-          description: "",
+          tag: "Design Pitch",
+          description:
+            "Get personalized feedback from experienced design leaders to strengthen your portfolio and tell your story with confidence.",
           panelists: [
             { name: "TBA", role: "", image: "" },
             { name: "TBA", role: "", image: "" },
@@ -324,20 +379,25 @@ export const risingScheduleData = {
           tag: "Spark Session",
           speaker: {
             name: "Anika Shrivastava",
-            role: "Senior UX Designer, LTIMindtree",
+            role: "Strategic Product Designer | Fintech & AI Experience, LTIMindtree",
             image:
               "/images/speakers/rising-leaders-forum/anika-shrivastava.webp",
           },
           description:
-            "Exploring how designers can build graceful recovery into high-stakes AI systems by treating failure not as an edge case but as a core design surface.",
+            "This talk explores a question we often overlook when designing AI: When things go wrong, have we designed what happens next?",
         },
         {
           room: "Mini-Auditorium 3",
-          title: "Spark Session",
+          title: "I Am My Own Most Neglected User",
           type: "spark",
           tag: "Spark Session",
-          speaker: { name: "TBA", role: "", image: "" },
-          description: "",
+          speaker: {
+            name: "Sushrut Jangid",
+            role: "Product Designer, ServiceNow",
+            image: "/images/speakers/rising-leaders-forum/sushrut-jangid.webp",
+          },
+          description:
+            "This talk follows one story. A product designer who maps friction for users every day had never once mapped it for himself. When he did, he applied the same process he uses at work: write a brief, define the smallest fix, ship it to yourself. He built a floating window that connected his AI context directly to his design tools. 16 days, 1700 plus prompts, 3945 lines of code. The honest part comes next.",
         },
       ],
     },
@@ -386,35 +446,37 @@ export const risingScheduleData = {
     {
       time: "2:00 PM",
       type: "keynote",
-      title: "Deep Dive Talk",
-      description: "Announcing Soon",
+      title: "Rethinking HCI (Human Computer Interaction) in the Age of AI",
+      description:
+        "Exploring how designers can treat AI as a teammate, using shared context to turn complex problems into working solutions.",
       tag: "Deep Dive",
+      talkCategory: "Emerging Tech",
       location: "Auditorium",
-      speaker: { name: "TBA", role: "", image: "" },
+      speaker: {
+        name: "Vineet Gupta",
+        role: "Vice President, Design & Branding, Gemini Solutions Pvt Ltd",
+        image: "/images/speakers/rising-leaders-forum/vineet-gupta.webp",
+      },
     },
     {
       time: "2:40 PM",
       type: "keynote",
-      title: "Deep Dive Talk",
-      description: "Announcing Soon",
+      title: "Designing for 1.6 Billion People We Keep Forgetting",
+      description:
+        "This talk walks through four barriers neurodivergent users face and shows where AI closes each gap with tools most teams already have. The improvements do not stop at neurodivergent users.",
       tag: "Deep Dive",
+      talkCategory: "Emerging Tech",
       location: "Auditorium",
-      speaker: { name: "TBA", role: "", image: "" },
+      speaker: {
+        name: "Pratik Joglekar",
+        role: "Senior Product Designer, Coursera",
+        image: "/images/speakers/rising-leaders-forum/pratik-joglekar.webp",
+      },
     },
     {
       time: "3:20 PM",
-      type: "keynote",
-      title: "Closing Ceremony",
-      description: "Announcing Soon",
-      tag: "Closing",
-      location: "Auditorium",
-      speaker: { name: "TBA", role: "", image: "" },
-    },
-    {
-      time: "4:00 PM",
       type: "break",
-      title: "High Tea",
-      location: "Multiple Areas",
+      title: "Closing Ceremony & High Tea",
     },
   ],
 };

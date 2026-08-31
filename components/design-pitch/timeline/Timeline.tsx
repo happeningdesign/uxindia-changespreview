@@ -19,20 +19,20 @@ const timeline = [
   },
   {
     number: 3,
-    date: "Aug 14",
+    date: "Aug 19",
     description: "Submission deadline",
     position: "top",
   },
   {
     number: 4,
-    date: "Aug 16 - Aug 23",
+    date: "Aug 20 - Aug 26",
     description: "Online Jury Review",
     position: "bottom",
   },
   {
     number: 5,
     date: "Aug 27",
-    description: "Top 25 shortlisted announced. Top 100 published",
+    description: "Top 25 shortlisted announced. Top 50 published",
     position: "top",
   },
   {

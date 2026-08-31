@@ -58,15 +58,14 @@ export const studentTiers: PassTier[] = [
 
     // ctaDisabled: true,
     // ctaStyle: "muted",
-
-    isExpanded: true,
   },
   {
     id: "forum-regular-student",
     name: "Student Pass",
     badge: "Regular",
     badgeVariant: "popular",
-    price: 4299,
+    // price: 4299,
+    price: 0,
     saleStarts: "26 Jun",
     description: STUDENT_DESCRIPTION,
     note: LIMITED_SEATS_NOTE,
@@ -81,8 +80,6 @@ export const studentTiers: PassTier[] = [
 
     ctaStyle: "muted",
     // ctaStyle: "brand",
-
-    isExpanded: true,
   },
   {
     id: "forum-last-minute-student",
@@ -96,13 +93,12 @@ export const studentTiers: PassTier[] = [
     inclusions: STUDENT_INCLUSIONS,
     opensOn: "2026-08-17",
 
-    // ctaLabel: "Register Now →",
-    // ctaHref: ticketUrl("risingLeaderForum", "forum-last-minute-student"),
-
-    ctaLabel: "Opens Soon",
-    ctaHref: "#",
+    ctaLabel: "Register Now →",
+    ctaHref: ticketUrl("risingLeaderForum", "forum-last-minute-student"),
 
     ctaStyle: "muted",
+
+    isExpanded: true,
   },
   {
     id: "forum-walkin-student",

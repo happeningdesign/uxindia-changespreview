@@ -3,45 +3,45 @@ import type { AddOnItem, PassTier } from "@/types/pricing";
 export const SUMMIT_FEATURED_IDS = [
   // "summit-seb",
   // "summit-eb",
-  "summit-regular",
+
+  "summit-last-minute",
   "summit-vip",
   "summit-grand-conf",
 ] as const;
 
 export const SUMMIT_LADDER_IDS = [
-  // "summit-regular",
-  "summit-last-minute",
   "summit-walkin",
   "summit-seb",
   "summit-eb",
+  "summit-regular",
 ] as const;
 
 export const FORUM_PRO_FEATURED_IDS = [
   // "forum-seb-pro",
   // "forum-eb-pro",
-  "forum-regular-pro",
+  // "forum-regular-pro",
+  "forum-last-minute-pro",
 ] as const;
 
 export const FORUM_PRO_LADDER_IDS = [
-  // "forum-regular-pro",
-  "forum-last-minute-pro",
   "forum-walkin-pro",
   "forum-seb-pro",
   "forum-eb-pro",
+  "forum-regular-pro",
 ] as const;
 
 export const FORUM_STUDENT_FEATURED_IDS = [
   // "forum-eb-student",
   // "forum-seb-student",
-  "forum-regular-student",
+  // "forum-regular-student",
+  "forum-last-minute-student",
 ] as const;
 
 export const FORUM_STUDENT_LADDER_IDS = [
-  "forum-regular-student",
-  "forum-last-minute-student",
   "forum-walkin-student",
   "forum-seb-student",
   "forum-eb-student",
+  "forum-regular-student",
 ] as const;
 
 export function pickTiers(

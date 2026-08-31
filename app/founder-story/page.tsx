@@ -732,7 +732,7 @@ export default function FounderStoryPage() {
                   </Link>
                   <span className="text-page/20">|</span>
                   <Link
-                    href="https://happening.design"
+                    href="https://happening.design/?utm_source=uxindia&utm_medium=website&utm_campaign=uxindia_2026"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-sans text-page/60 hover:text-brand transition-colors"

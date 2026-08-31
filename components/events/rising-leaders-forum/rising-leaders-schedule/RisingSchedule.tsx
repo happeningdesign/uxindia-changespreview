@@ -226,9 +226,9 @@ export default function RisingSchedule() {
                 {/* BREAK */}
                 {session.type === "break" &&
                   (() => {
-                    const isLunch =
-                      session.title.toLowerCase().includes("lunch") ||
-                      session.title.toLowerCase().includes("tea");
+                    const isLunch = session.title
+                      .toLowerCase()
+                      .includes("lunch");
                     const isRegistration = session.title
                       .toLowerCase()
                       .includes("registration");
@@ -241,6 +241,9 @@ export default function RisingSchedule() {
                       !isRegistration && start !== null && nextStart !== null
                         ? formatDuration(nextStart - start)
                         : null;
+                    const isRoundtable = session.title
+                      .toLowerCase()
+                      .includes("lead");
 
                     return (
                       <div className="bg-[#E85520]/10 border border-[#0D0D0D]/10 rounded-xl p-4 flex items-center gap-4">
@@ -266,6 +269,24 @@ export default function RisingSchedule() {
                             >
                               <path d="M2 9a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9z" />
                               <path d="M9 5v14" />
+                            </svg>
+                          ) : isRoundtable ? (
+                            <svg
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="#E85520"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <circle cx="12" cy="12" r="4" />
+                              <circle cx="12" cy="4" r="1.5" />
+                              <circle cx="20" cy="12" r="1.5" />
+                              <circle cx="12" cy="20" r="1.5" />
+                              <circle cx="4" cy="12" r="1.5" />
+                              <path d="M12 5.5v2.5M18.5 12H16M12 18.5V16M5.5 12H8" />
                             </svg>
                           ) : (
                             <svg
@@ -294,6 +315,17 @@ export default function RisingSchedule() {
                           {isRegistration && (
                             <p className="font-sans text-[11px] text-[#0D0D0D]/60 mt-1">
                               Student attendees must show valid student ID
+                            </p>
+                          )}
+                          {isRoundtable && (
+                            <p className="max-w-[600px] font-sans text-[12px] text-[#0D0D0D]/60 mt-1">
+                              An exclusive, invite-only roundtable for design
+                              leaders to engage in candid conversations on
+                              leadership, organizational challenges, emerging
+                              trends, and the future of design.
+                              <br />
+                              <br />
+                              This is for both Industry and Academia.
                             </p>
                           )}
                           <p className="font-sans text-xs text-[#0D0D0D]/40 lg:hidden">
@@ -377,7 +409,7 @@ export default function RisingSchedule() {
                         >
                           <div className="flex items-center gap-2 mb-3">
                             <span
-                              className="px-2 py-0.5 text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider"
+                              className="px-2 py-0.5 text-white text-[10px] font-sans font-semibold rounded-full uppercase tracking-wider leading-[1rem]"
                               style={{
                                 backgroundColor:
                                   roomColors[workshop.room] || "#1D5078",
@@ -389,7 +421,7 @@ export default function RisingSchedule() {
                               Workshop
                             </span>
                           </div>
-                          <h4 className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2 group-hover/ws:line-clamp-none transition-all">
+                          <h4 className="font-leadership text-base text-[#0D0D0D] mb-2 line-clamp-2 transition-all">
                             {workshop.title}
                           </h4>
                           <div
@@ -484,7 +516,7 @@ export default function RisingSchedule() {
                                       {panelist.name || "TBA"}
                                     </p>
                                     {panelist.role && (
-                                      <p className="font-sans text-[9px] text-[#0D0D0D]/60 line-clamp-1">
+                                      <p className="font-sans text-[9px] leading-[0.75rem] text-[#0D0D0D]/60">
                                         {panelist.role}
                                       </p>
                                     )}

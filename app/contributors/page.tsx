@@ -9,7 +9,7 @@ export const metadata: Metadata = createMetadata({
   title: "Contributors — UXINDIA26",
   description:
     "Share your profile information with the UXINDIA team. This page is for speakers, workshop leads, panelists, volunteers, core team members, moderators, mentors, and other conference contributors.",
-  image: "/og/og-speakers.jpg",
+  image: "/og/og-default.jpg",
 });
 
 export default function Contributors() {

@@ -145,7 +145,9 @@ export default function LeadershipSchedule() {
                           </span>
                         )}
                       </div>
-                      <p className="text-xs text-white/40 shrink-0 ml-2">{session.time}</p>
+                      <p className="text-xs text-white/40 shrink-0 ml-2">
+                        {session.time}
+                      </p>
                     </div>
                     <div className="flex items-start gap-4">
                       <div className="w-16 h-16 rounded-full shrink-0 border border-white/15 bg-white/10 flex items-center justify-center">
@@ -450,7 +452,7 @@ export default function LeadershipSchedule() {
                             {workshop.room}
                           </p>
                           <div className="flex items-center gap-2">
-                            <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/15 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider border border-[#E85520]/20">
+                            <span className="px-2.5 py-0.5 rounded-full bg-[#E85520]/5 text-[#E85520] font-sans text-[10px] font-semibold uppercase tracking-wider leading-[1rem] border border-[#E85520]/30">
                               Workshop
                             </span>
                             <p className="lg:hidden text-xs text-white/40">

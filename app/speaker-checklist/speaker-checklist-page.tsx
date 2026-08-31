@@ -3,27 +3,460 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, ArrowUpRight, ShieldAlert } from "lucide-react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import Nav from "@/components/global/nav/Nav";
 import Footer from "@/components/global/footer/Footer";
-import SectionRail from "./_components/SectionRail";
-import FaqAccordion from "./_components/FaqAccordion";
-import {
-  conductDos,
-  contacts,
-  duringCards,
-  internationalCards,
-  quickFacts,
-  registrationSteps,
-  sections,
-  speakerCards,
-  travelSteps,
-  venues,
-} from "./_components/content";
 
-/* ── Reveal-on-scroll wrapper ─────────────────────────────────────────────── */
-function Reveal({
+interface ChecklistItem {
+  item: string;
+  note?: string;
+}
+
+interface ChecklistGroup {
+  title: string;
+  items: ChecklistItem[];
+}
+
+interface VenueInfo {
+  label: string;
+  value: string;
+  sub: string;
+}
+
+// ─── Venue Information ──────────────────────────────────────────────────────
+
+const venueInfo: VenueInfo[] = [
+  {
+    label: "Leadership Summit",
+    value: "September 23–25, 2026",
+    sub: "The Leela Bhartiya City, Bengaluru",
+  },
+  {
+    label: "Rising Leaders Forum",
+    value: "September 26–27, 2026",
+    sub: "Srishti Manipal Institute, Bengaluru",
+  },
+];
+
+// ─── General Information ──────────────────────────────────────────────────────
+
+const generalInformation: ChecklistGroup[] = [
+  {
+    title: "Speaker Confirmation",
+    items: [
+      {
+        item: "Reply to the official speaker confirmation email from team@umo.design.",
+      },
+      {
+        item: "If your availability changes before the conference, please inform the Speaker Relations team immediately.",
+      },
+    ],
+  },
+
+  {
+    title: "Speaker Profile",
+    items: [
+      {
+        item: "Verify that your name, designation, organization, bio, and headshot are accurate on the UXINDIA website.",
+      },
+      {
+        item: "If any information needs updating, write to team@umo.design.",
+      },
+    ],
+  },
+
+  {
+    title: "Presentation Guidelines",
+    items: [
+      {
+        item: "Submit your final presentation by the deadline communicated in your confirmation email.",
+      },
+      {
+        item: "Use a 16:9 widescreen presentation format.",
+      },
+      {
+        item: "Ensure your presentation aligns with your accepted session abstract.",
+      },
+      {
+        item: "Focus on practical insights, experiences, and value for the audience rather than product promotion.",
+      },
+      {
+        item: "The curation team may request revisions if your presentation differs significantly from the accepted proposal.",
+      },
+    ],
+  },
+
+  {
+    title: "Presentation Backup",
+    items: [
+      {
+        item: "Carry a USB backup of your presentation.",
+      },
+      {
+        item: "Keep a cloud backup using Google Drive, Dropbox, OneDrive, or similar services.",
+      },
+      {
+        item: "We also recommend carrying a PDF version of your slides.",
+      },
+      {
+        item: "Venue Wi-Fi cannot be guaranteed, so plan accordingly.",
+      },
+    ],
+  },
+
+  {
+    title: "Technical Requirements",
+    items: [
+      {
+        item: "If your session requires any special setup, please let us know well in advance.",
+        note: "Examples include your own laptop, HDMI adapters, Figma, AI tools, live demos, mobile hotspots, workshop software, printed materials, or additional AV requirements.",
+      },
+    ],
+  },
+
+  {
+    title: "Rehearsals",
+    items: [
+      {
+        item: "Some sessions may require a rehearsal or technical dry run.",
+      },
+      {
+        item: "If requested, please coordinate a suitable time with the Speaker Relations team.",
+      },
+    ],
+  },
+
+  {
+    title: "Recording & Photography",
+    items: [
+      {
+        item: "Selected sessions may be photographed and professionally recorded.",
+      },
+      {
+        item: "Recordings may be published on UXINDIA channels including YouTube and social media.",
+      },
+      {
+        item: "By participating, you agree to the recording and publication of your session unless discussed otherwise beforehand.",
+      },
+    ],
+  },
+];
+
+// ─── Registration & Conference Day ───────────────────────────────────────────
+
+const conferenceDay: ChecklistGroup[] = [
+  {
+    title: "Registration",
+    items: [
+      {
+        item: "Register using the complimentary Speaker Pass (100% discount code) shared via email.",
+      },
+      {
+        item: "If you have not received your registration details, contact team@umo.design.",
+      },
+      {
+        item: "Proceed to the dedicated Speaker Registration Counter upon arrival.",
+      },
+      {
+        item: "Carry your registration confirmation and a valid government-issued photo ID.",
+      },
+      {
+        item: "Registration opens at 8:00 AM. Please arrive early to avoid delays.",
+      },
+    ],
+  },
+
+  {
+    title: "Before Your Session",
+    items: [
+      {
+        item: "Arrive at your session room 20–30 minutes before your scheduled start time.",
+      },
+      {
+        item: "Meet your Track Lead and technical volunteer.",
+      },
+      {
+        item: "Test your presentation, audio, display resolution, and clicker.",
+      },
+      {
+        item: "Confirm whether you'll use the venue laptop or your own device.",
+      },
+      {
+        item: "If using your own laptop, please carry all necessary adapters.",
+      },
+    ],
+  },
+
+  {
+    title: "Internet Access",
+    items: [
+      {
+        item: "Venue Wi-Fi cannot be guaranteed.",
+      },
+      {
+        item: "If your session depends on internet access for live demonstrations, Figma, AI tools, or cloud software, please bring your own mobile hotspot with sufficient data.",
+      },
+    ],
+  },
+
+  {
+    title: "During Your Session",
+    items: [
+      {
+        item: "Begin and finish within your allocated time.",
+      },
+      {
+        item: "Leave time for audience questions wherever possible.",
+      },
+      {
+        item: "Encourage attendees to complete the session feedback form using the QR code displayed after your presentation.",
+      },
+    ],
+  },
+
+  {
+    title: "Conference Experience",
+    items: [
+      {
+        item: "Lunch and refreshments will be provided throughout the conference.",
+      },
+      {
+        item: "Food counters close before sessions resume, so please plan accordingly.",
+      },
+      {
+        item: "Business casual attire is recommended throughout the conference.",
+      },
+      {
+        item: "Please keep your phone on silent during conference sessions.",
+      },
+    ],
+  },
+];
+
+// ─── Local Speakers ───────────────────────────────────────────────────────────
+
+const localSpeakers: ChecklistGroup[] = [
+  {
+    title: "Getting to Bengaluru",
+    items: [
+      {
+        item: "Book your travel to Bengaluru as early as possible.",
+      },
+      {
+        item: "If flying, arrive at Kempegowda International Airport (BLR).",
+      },
+      {
+        item: "The venue can be reached using Uber, Ola, Airport Taxi, or BMTC Vayu Vajra Airport Buses.",
+      },
+      {
+        item: "Bengaluru traffic can be unpredictable, especially during weekday mornings. Please allow extra travel time.",
+      },
+    ],
+  },
+
+  {
+    title: "Accommodation",
+    items: [
+      {
+        item: "Accommodation for Keynote and Plenary Speakers will be coordinated by the UXINDIA team.",
+      },
+      {
+        item: "Unless communicated otherwise, all other speakers are responsible for arranging their own accommodation.",
+      },
+      {
+        item: "We recommend booking your hotel early as availability becomes limited closer to the conference.",
+      },
+    ],
+  },
+
+  {
+    title: "What to Bring",
+    items: [
+      {
+        item: "Government-issued photo ID.",
+      },
+      {
+        item: "Laptop and charger.",
+      },
+      {
+        item: "HDMI or USB-C adapters (if required).",
+      },
+      {
+        item: "Mobile charger.",
+      },
+      {
+        item: "USB backup of your presentation.",
+      },
+      {
+        item: "Personal mobile hotspot if your presentation requires internet access.",
+      },
+    ],
+  },
+];
+
+// ─── International Speakers ───────────────────────────────────────────────────
+
+const internationalSpeakers: ChecklistGroup[] = [
+  {
+    title: "Before You Travel",
+    items: [
+      {
+        item: "Ensure your passport is valid for at least six months beyond your travel dates.",
+      },
+      {
+        item: "Confirm your passport has sufficient blank pages for immigration requirements.",
+      },
+    ],
+  },
+
+  {
+    title: "Visa",
+    items: [
+      {
+        item: "Most international visitors require a valid visa to enter India.",
+      },
+      {
+        item: "Please check the visa requirements applicable to your nationality well before booking travel.",
+      },
+      {
+        item: "Apply for your visa as early as possible to avoid delays.",
+      },
+      {
+        item: "If you require an official invitation letter to support your visa application, please contact team@umo.design.",
+      },
+      {
+        item: "While UXINDIA can provide supporting documents, visa approvals remain solely at the discretion of the Government of India.",
+      },
+    ],
+  },
+
+  {
+    title: "Flights",
+    items: [
+      {
+        item: "Book your flights to Kempegowda International Airport (BLR), Bengaluru.",
+      },
+      {
+        item: "We recommend arriving at least one day before your scheduled session to account for immigration, travel delays, and jet lag.",
+      },
+    ],
+  },
+
+  {
+    title: "Accommodation",
+    items: [
+      {
+        item: "Accommodation for Keynote and Plenary Speakers will be coordinated directly by the UXINDIA team.",
+      },
+      {
+        item: "All other speakers should arrange accommodation unless informed otherwise.",
+      },
+    ],
+  },
+
+  {
+    title: "Travel Insurance",
+    items: [
+      {
+        item: "Travel insurance is strongly recommended.",
+      },
+      {
+        item: "Ideally, your policy should cover medical emergencies, flight delays, lost baggage, and trip cancellations.",
+      },
+    ],
+  },
+
+  {
+    title: "Currency",
+    items: [
+      {
+        item: "India's official currency is the Indian Rupee (INR).",
+      },
+      {
+        item: "International credit and debit cards are accepted at most hotels and restaurants.",
+      },
+      {
+        item: "We recommend carrying a small amount of cash for taxis, local transport, and smaller vendors.",
+      },
+    ],
+  },
+
+  {
+    title: "Mobile Connectivity",
+    items: [
+      {
+        item: "International roaming can be expensive.",
+      },
+      {
+        item: "Consider purchasing an Indian prepaid SIM card after arrival or an international eSIM before departure.",
+      },
+      {
+        item: "Reliable mobile data is recommended if your presentation depends on internet access.",
+      },
+    ],
+  },
+
+  {
+    title: "Power & Charging",
+    items: [
+      {
+        item: "India uses 230V / 50Hz electricity.",
+      },
+      {
+        item: "Power outlets use Type C, D, and M plugs.",
+      },
+      {
+        item: "Please carry a universal travel adapter if your devices use different plug types.",
+      },
+    ],
+  },
+
+  {
+    title: "Immigration",
+    items: [
+      {
+        item: "Carry both printed and digital copies of your passport, visa/e-Visa approval, hotel reservation, return flight itinerary, and conference invitation letter (if applicable).",
+      },
+      {
+        item: "Immigration officers may request these documents upon arrival.",
+      },
+    ],
+  },
+
+  {
+    title: "Health & Weather",
+    items: [
+      {
+        item: "September in Bengaluru is generally pleasant with occasional rain.",
+      },
+      {
+        item: "Carry a reusable water bottle and stay hydrated throughout the conference.",
+      },
+      {
+        item: "Pack a light rain jacket or umbrella.",
+      },
+      {
+        item: "Comfortable walking shoes are recommended.",
+      },
+    ],
+  },
+];
+
+// ─── Speaker Code of Conduct ──────────────────────────────────────────────────
+
+const etiquetteRules = [
+  "Arrive on time for your session.",
+  "Deliver original, thoughtful, and well-prepared content.",
+  "Avoid promotional or sales-oriented presentations.",
+  "Credit collaborators and sources where appropriate.",
+  "Encourage respectful and inclusive discussions.",
+  "Treat volunteers, attendees, organizers, and fellow speakers with courtesy.",
+  "Attend sessions beyond your own whenever possible.",
+  "Help create a welcoming and inspiring environment for everyone.",
+];
+
+// ─── Reusable animated wrapper ────────────────────────────────────────────────
+function AnimatedSection({
   children,
   className = "",
   delay = 0,
@@ -33,13 +466,13 @@ function Reveal({
   delay?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.15 });
+  const inView = useInView(ref, { once: true, amount: 0.08 });
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : undefined}
-      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0, y: 24 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, delay }}
       className={className}
     >
       {children}
@@ -47,57 +480,109 @@ function Reveal({
   );
 }
 
-/* ── Section header ───────────────────────────────────────────────────────── */
-function SectionHeader({
-  index,
-  title,
-  lede,
-  onDark = false,
-}: {
-  index: number;
-  title: string;
-  lede?: string;
-  onDark?: boolean;
-}) {
+// ─── Section heading ───────────────────────────────────────────────────────────
+function SectionHeading({ number, title }: { number: string; title: string }) {
   return (
-    <div className="mb-8 md:mb-10">
-      <div className="flex items-center gap-3">
-        <span className="font-sans text-[0.7rem] font-semibold tabular-nums tracking-[0.2em] text-brand">
-          {String(index).padStart(2, "0")}
-        </span>
-        <span
-          aria-hidden="true"
-          className={`h-px flex-1 ${onDark ? "bg-white/15" : "bg-page/10"}`}
-        />
-      </div>
+    <div className="flex items-baseline gap-4 mb-8 pb-4 border-b-2 border-brand">
+      <span className="font-sans text-sm font-semibold text-brand">
+        {number}
+      </span>
       <h2
-        className={`font-leadership mt-3 text-4xl leading-[0.95] md:text-5xl ${
-          onDark ? "text-white" : "text-page"
-        }`}
-        style={{ fontWeight: 500 }}
+        className="text-3xl md:text-4xl text-page"
+        style={{ fontFamily: "'UXILeadershipCondensed'", fontWeight: 500 }}
       >
         {title}
       </h2>
-      {lede && (
-        <p
-          className={`font-sans mt-3 max-w-2xl text-[0.95rem] leading-relaxed ${
-            onDark ? "text-white/60" : "text-page/60"
-          }`}
-        >
-          {lede}
-        </p>
-      )}
     </div>
   );
 }
 
+// ─── Check list item ───────────────────────────────────────────────────────────
+function CheckItem({
+  children,
+  note,
+}: {
+  children: React.ReactNode;
+  note?: string;
+}) {
+  return (
+    <li className="flex gap-4 py-4 border-b border-page/8 last:border-b-0">
+      <span
+        className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full border-2 border-brand/40 flex items-center justify-center"
+        aria-hidden="true"
+      >
+        <span className="w-2 h-2 rounded-full bg-brand/30" />
+      </span>
+      <div>
+        <p className="font-sans text-base text-page leading-relaxed">
+          {children}
+        </p>
+        {note && (
+          <p className="font-sans text-sm text-page/50 mt-1 leading-relaxed">
+            {note}
+          </p>
+        )}
+      </div>
+    </li>
+  );
+}
+
+// ─── Info card ─────────────────────────────────────────────────────────────────
+function InfoCard({
+  label,
+  value,
+  sub,
+}: {
+  label: string;
+  value: string;
+  sub?: string;
+}) {
+  return (
+    <div className="bg-white border border-page/8 rounded-2xl p-5 flex flex-col gap-1">
+      <span className="font-sans text-xs font-semibold text-brand uppercase tracking-[0.18em]">
+        {label}
+      </span>
+      <span
+        className="text-xl text-page leading-tight"
+        style={{ fontFamily: "'UXILeadershipCondensed'", fontWeight: 500 }}
+      >
+        {value}
+      </span>
+      {sub && <span className="font-sans text-sm text-page/50">{sub}</span>}
+    </div>
+  );
+}
+
+// ─── Callout block ─────────────────────────────────────────────────────────────
+function Callout({
+  children,
+  variant = "brand",
+}: {
+  children: React.ReactNode;
+  variant?: "brand" | "ink";
+}) {
+  if (variant === "ink") {
+    return (
+      <div className="bg-page text-white p-6 md:p-8 rounded-2xl">
+        {children}
+      </div>
+    );
+  }
+  return (
+    <div className="bg-gradient-to-r from-brand/10 to-brand/5 border-l-4 border-brand p-6 md:p-8 rounded-r-2xl">
+      {children}
+    </div>
+  );
+}
+
+// ─── Page ──────────────────────────────────────────────────────────────────────
 export default function SpeakerChecklistPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
     <>
@@ -107,516 +592,514 @@ export default function SpeakerChecklistPage() {
         {/* ── Hero ─────────────────────────────────────────────────────────── */}
         <section
           ref={heroRef}
-          className="relative overflow-hidden bg-page pt-[110px]"
+          className="relative min-h-[70vh] overflow-hidden bg-page pt-[100px]"
         >
           <motion.div
             style={{ y: bgY }}
-            className="absolute inset-0 z-0 h-full w-full"
+            className="absolute inset-0 z-0 w-full h-full"
           >
             <Image
               src="/images/bg/default.jpg"
-              alt=""
+              alt="UXINDIA 2026 conference stage"
               fill
-              className="object-cover object-center opacity-25"
+              className="object-cover object-center opacity-30"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-page via-page/85 to-page/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-page via-page/80 to-transparent" />
           </motion.div>
 
-          <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pb-12 pt-12 md:pt-20">
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="font-sans text-[0.7rem] uppercase tracking-[0.25em] text-brand"
-            >
-              UXINDIA 2026 · Design Leadership Week
-            </motion.p>
+          <div className="relative z-10 min-h-[calc(70vh-100px)] flex flex-col justify-end pb-16 md:pb-24 px-6">
+            <div className="max-w-5xl mx-auto w-full">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="font-sans text-xs text-brand uppercase tracking-[0.25em] mb-4"
+              >
+                UXINDIA 2026 · For Selected Speakers
+              </motion.p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.08 }}
-              className="font-leadership mt-4 text-[3.25rem] leading-[0.88] text-white sm:text-7xl lg:text-[6.5rem]"
-              style={{ fontWeight: 500 }}
-            >
-              Know Before
-              <br />
-              <span className="text-brand">You Go</span>
-            </motion.h1>
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-5xl md:text-7xl lg:text-8xl text-white mb-6"
+                style={{
+                  fontFamily: "'UXILeadershipCondensed'",
+                  fontWeight: 500,
+                }}
+              >
+                Speaker Checklist
+              </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.16 }}
-              className="font-sans mt-6 max-w-xl text-base leading-relaxed text-white/65 md:text-lg"
-            >
-              Attendee, speaker, workshop lead, sponsor, partner or volunteer —
-              this is everything you need to arrive prepared. Registration,
-              venues, etiquette and answers, in one place.
-            </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="font-sans text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed"
+              >
+                Your complete guide to arriving prepared, presenting with
+                confidence, and making the most of UXINDIA Design Leadership
+                Week 2026.
+              </motion.p>
 
-            {/* Quick facts strip */}
-            <motion.dl
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.24 }}
-              className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/12 bg-white/12 lg:grid-cols-4"
-            >
-              {quickFacts.map((fact) => (
-                <div
-                  key={fact.label}
-                  className="flex flex-col gap-2 bg-page/85 p-4 md:p-5"
-                >
-                  <fact.icon
-                    aria-hidden="true"
-                    className="h-4 w-4 text-brand"
-                    strokeWidth={1.75}
-                  />
-                  <dt className="font-sans text-[0.62rem] uppercase tracking-[0.16em] text-white/40">
-                    {fact.label}
-                  </dt>
-                  <dd className="font-sans text-sm font-medium leading-snug text-white">
-                    {fact.value}
-                  </dd>
-                </div>
-              ))}
-            </motion.dl>
-
-            {/* Mobile / tablet jump chips */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.32 }}
-              className="mt-8 flex flex-wrap gap-2 lg:hidden"
-            >
-              {sections.map((section) => (
-                <a
-                  key={section.id}
-                  href={`#${section.id}`}
-                  className="font-sans rounded-full border border-white/20 px-3 py-1.5 text-[0.7rem] text-white/70 transition-colors duration-200 hover:border-brand hover:text-white"
-                >
-                  {section.label}
-                </a>
-              ))}
-            </motion.div>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="font-sans text-sm text-white/50 mt-6"
+              >
+                September 23–27, 2026 · Bengaluru, India
+              </motion.p>
+            </div>
           </div>
         </section>
 
-        {/* ── Body: sticky rail + sections ─────────────────────────────────── */}
-        <div className="mx-auto flex w-full max-w-6xl gap-12 px-6 py-16 md:py-24">
-          <aside className="hidden w-56 shrink-0 lg:block">
-            <div className="sticky top-[calc(var(--navbar-height-desktop)+2rem)]">
-              <SectionRail />
-            </div>
-          </aside>
+        {/* ── Content ──────────────────────────────────────────────────────── */}
+        <section className="py-16 md:py-24 bg-cream">
+          <div className="max-w-4xl mx-auto px-6">
+            {/* Intro callout */}
+            <AnimatedSection>
+              <Callout>
+                <p className="font-sans text-base md:text-lg text-[#333333] leading-relaxed mb-3">
+                  <strong className="text-brand">
+                    Congratulations on being selected as a speaker at UXINDIA
+                    2026.
+                  </strong>{" "}
+                  This guide contains everything you need to prepare for your
+                  session—from confirming your participation and submitting your
+                  presentation to arriving in Bengaluru and presenting with
+                  confidence.
+                </p>
 
-          <div className="min-w-0 flex-1">
-            {/* ── 01 Before You Travel ─────────────────────────────────── */}
-            <section id="before-you-travel" className="scroll-mt-32">
-              <Reveal>
-                <SectionHeader
-                  index={1}
-                  title="Before You Travel"
-                  lede="Coming from Bengaluru, elsewhere in India, or overseas — take care of these seven things before you arrive."
-                />
-              </Reveal>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                {travelSteps.map((step, index) => (
-                  <Reveal key={step.title} delay={index * 0.04}>
-                    <article className="group relative h-full overflow-hidden rounded-2xl border border-page/8 bg-white p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-brand/30 hover:shadow-[0_12px_32px_-18px_rgba(13,13,13,0.35)]">
-                      <div className="flex items-center justify-between">
-                        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand/10 text-brand transition-colors duration-300 group-hover:bg-brand group-hover:text-white">
-                          <step.icon
-                            aria-hidden="true"
-                            className="h-4 w-4"
-                            strokeWidth={1.75}
-                          />
-                        </span>
-                        <span className="font-leadership text-2xl tabular-nums text-page/10 transition-colors duration-300 group-hover:text-brand/25">
-                          {String(index + 1).padStart(2, "0")}
-                        </span>
-                      </div>
-                      <h3 className="font-sans mt-4 text-[0.95rem] font-semibold leading-snug text-page">
-                        {step.title}
-                      </h3>
-                      <p className="font-sans mt-1.5 text-sm leading-relaxed text-page/55">
-                        {step.body}
-                      </p>
-                    </article>
-                  </Reveal>
-                ))}
-              </div>
-            </section>
-
-            {/* ── 02 Registration ──────────────────────────────────────── */}
-            <section id="registration" className="mt-20 scroll-mt-32 md:mt-28">
-              <Reveal>
-                <SectionHeader
-                  index={2}
-                  title="Registration & Check-in"
-                  lede="Four steps between the front door and your first session."
-                />
-              </Reveal>
-
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {registrationSteps.map((step, index) => (
-                  <Reveal key={step.title} delay={index * 0.05}>
-                    <article className="flex h-full flex-col rounded-2xl border border-page/8 bg-white p-5">
-                      <step.icon
-                        aria-hidden="true"
-                        className="h-5 w-5 text-brand"
-                        strokeWidth={1.75}
-                      />
-                      <h3 className="font-sans mt-4 text-[0.9rem] font-semibold leading-snug text-page">
-                        {step.title}
-                      </h3>
-                      <p className="font-sans mt-1.5 text-sm leading-relaxed text-page/55">
-                        {step.body}
-                      </p>
-                    </article>
-                  </Reveal>
-                ))}
-              </div>
-
-              <Reveal delay={0.1}>
-                <div className="mt-4 flex items-start gap-3 rounded-2xl border border-brand/25 bg-brand/[0.06] p-5">
-                  <span
-                    aria-hidden="true"
-                    className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-brand"
-                  />
-                  <p className="font-sans text-sm leading-relaxed text-page/75">
-                    <strong className="font-semibold text-page">
-                      Speakers:
-                    </strong>{" "}
-                    head to the dedicated Speaker Registration counter on
-                    arrival — it&apos;s separate from the delegate queue.
-                  </p>
-                </div>
-              </Reveal>
-            </section>
-
-            {/* ── 03 Venues ────────────────────────────────────────────── */}
-            <section id="venues" className="mt-20 scroll-mt-32 md:mt-28">
-              <Reveal>
-                <SectionHeader
-                  index={3}
-                  title="Venues & Travel"
-                  lede="Two venues, one week. Check your schedule so you arrive at the right one."
-                />
-              </Reveal>
-
-              <div className="grid gap-5 md:grid-cols-2">
-                {venues.map((venue, index) => (
-                  <Reveal key={venue.event} delay={index * 0.08}>
-                    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-page/8 bg-white">
-                      <div className="relative aspect-[16/10] overflow-hidden">
-                        <Image
-                          src={venue.image}
-                          alt={venue.name}
-                          fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-page/70 via-transparent to-transparent" />
-                        <span
-                          className="font-sans absolute left-4 top-4 rounded-full px-2.5 py-1.5 text-[0.62rem] font-semibold uppercase leading-none tracking-[0.1em]"
-                          style={{
-                            backgroundColor: venue.accent,
-                            color:
-                              venue.accent === "#f5bf42"
-                                ? "#0d0d0d"
-                                : "#ffffff",
-                          }}
-                        >
-                          {venue.event}
-                        </span>
-                        <p className="font-sans absolute bottom-4 left-4 text-xs font-medium text-white/90">
-                          {venue.dates}
-                        </p>
-                      </div>
-
-                      <div className="flex flex-1 flex-col p-5">
-                        <h3
-                          className="font-leadership text-2xl leading-tight text-page"
-                          style={{ fontWeight: 500 }}
-                        >
-                          {venue.name}
-                        </h3>
-                        <p className="font-sans mt-1 text-sm text-page/45">
-                          {venue.city}
-                        </p>
-                        <ul className="mt-4 flex flex-col gap-2.5 border-t border-page/8 pt-4">
-                          {venue.notes.map((note) => (
-                            <li
-                              key={note}
-                              className="font-sans flex gap-2.5 text-sm leading-relaxed text-page/60"
-                            >
-                              <span
-                                aria-hidden="true"
-                                className="mt-[0.45rem] h-1 w-1 shrink-0 rounded-full"
-                                style={{ backgroundColor: venue.accent }}
-                              />
-                              {note}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </article>
-                  </Reveal>
-                ))}
-              </div>
-            </section>
-
-            {/* ── 04 During the Conference ─────────────────────────────── */}
-            <section id="during" className="mt-20 scroll-mt-32 md:mt-28">
-              <Reveal>
-                <SectionHeader
-                  index={4}
-                  title="During the Conference"
-                  lede="The practical stuff, on site."
-                />
-              </Reveal>
-
-              <div className="grid gap-px overflow-hidden rounded-2xl border border-page/10 bg-page/10 sm:grid-cols-2 lg:grid-cols-3">
-                {duringCards.map((card) => (
-                  <article
-                    key={card.title}
-                    className="flex h-full flex-col bg-white p-5 transition-colors duration-300 hover:bg-cream/70"
+                <p className="font-sans text-base text-[#333333] leading-relaxed">
+                  Whether you're travelling from within India or
+                  internationally, we've compiled the essential information
+                  you'll need before, during, and after the conference. If you
+                  have any questions not covered here, contact{" "}
+                  <a
+                    href="mailto:team@umo.design"
+                    className="text-brand font-semibold hover:underline"
                   >
-                    <card.icon
-                      aria-hidden="true"
-                      className="h-5 w-5 text-brand"
-                      strokeWidth={1.75}
-                    />
-                    <h3 className="font-sans mt-4 text-[0.9rem] font-semibold leading-snug text-page">
-                      {card.title}
-                    </h3>
-                    <p className="font-sans mt-1.5 text-sm leading-relaxed text-page/55">
-                      {card.body}
-                    </p>
-                  </article>
+                    team@umo.design
+                  </a>{" "}
+                  or call Jabeen at{" "}
+                  <a
+                    href="tel:+918096204373"
+                    className="text-brand font-semibold hover:underline"
+                  >
+                    +91 80962 04373
+                  </a>
+                  .
+                </p>
+              </Callout>
+            </AnimatedSection>
+
+            {/* Quick info cards */}
+            <AnimatedSection className="mt-12 mb-16">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {venueInfo.map((card) => (
+                  <InfoCard key={card.label} {...card} />
                 ))}
               </div>
-            </section>
+            </AnimatedSection>
 
-            {/* ── 05 For Speakers ─────────────────────────────────────── */}
-            <section id="speakers" className="mt-20 scroll-mt-32 md:mt-28">
-              <Reveal>
-                <div className="relative overflow-hidden rounded-3xl bg-page p-6 md:p-10">
-                  <Image
-                    src="/images/illustrations/megaphone.webp"
-                    alt=""
-                    width={220}
-                    height={220}
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -right-6 -top-6 hidden w-40 opacity-20 md:block lg:w-52"
-                  />
+            {/* ── 01 Before the Conference ──────────────────────────────────── */}
 
-                  <div className="relative">
-                    <SectionHeader
-                      index={5}
-                      title="For Speakers"
-                      lede="On stage this year? These six things keep your session running clean."
-                      onDark
-                    />
+            <AnimatedSection className="mb-16">
+              <SectionHeading number="01" title="General Information" />
 
-                    <div className="grid gap-px overflow-hidden rounded-2xl bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-                      {speakerCards.map((card) => (
-                        <article
-                          key={card.title}
-                          className="flex h-full flex-col bg-page p-5"
-                        >
-                          <card.icon
-                            aria-hidden="true"
-                            className="h-5 w-5 text-brand"
-                            strokeWidth={1.75}
-                          />
-                          <h3 className="font-sans mt-4 text-[0.9rem] font-semibold leading-snug text-white">
-                            {card.title}
-                          </h3>
-                          <p className="font-sans mt-1.5 text-sm leading-relaxed text-white/55">
-                            {card.body}
-                          </p>
-                        </article>
-                      ))}
-                    </div>
-                  </div>
+              {generalInformation.map((group) => (
+                <div key={group.title} className="mb-12">
+                  <h3
+                    className="text-2xl text-page mb-4"
+                    style={{
+                      fontFamily: "'UXILeadershipCondensed'",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {group.title}
+                  </h3>
+
+                  <ul className="divide-y divide-page/8">
+                    {group.items.map((entry, index) => (
+                      <CheckItem key={index} note={entry.note}>
+                        {entry.item}
+                      </CheckItem>
+                    ))}
+                  </ul>
                 </div>
-              </Reveal>
-            </section>
+              ))}
+            </AnimatedSection>
 
-            {/* ── 06 International Visitors ───────────────────────────── */}
-            <section id="international" className="mt-20 scroll-mt-32 md:mt-28">
-              <Reveal>
-                <SectionHeader
-                  index={6}
-                  title="For International Visitors"
-                  lede="Flying in from outside India? Sort these five before you board."
-                />
-              </Reveal>
+            {/* ── 02 Registration & Conference Day ───────────────────────────── */}
 
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {internationalCards.map((card, index) => (
-                  <Reveal key={card.title} delay={index * 0.05}>
-                    <article className="flex h-full flex-col rounded-2xl border border-page/8 bg-white p-5">
-                      <div className="flex items-start justify-between gap-3">
-                        <card.icon
-                          aria-hidden="true"
-                          className="h-5 w-5 text-brand"
-                          strokeWidth={1.75}
-                        />
-                        <span className="font-sans rounded-full bg-page px-2.5 py-1 text-[0.6rem] font-semibold uppercase leading-none tracking-[0.08em] text-white">
-                          {card.fact}
-                        </span>
-                      </div>
-                      <h3 className="font-sans mt-4 text-[0.9rem] font-semibold leading-snug text-page">
-                        {card.title}
-                      </h3>
-                      <p className="font-sans mt-1.5 text-sm leading-relaxed text-page/55">
-                        {card.body}
-                      </p>
-                    </article>
-                  </Reveal>
+            <AnimatedSection className="mb-16">
+              <SectionHeading
+                number="02"
+                title="Registration & Conference Day"
+              />
+
+              {conferenceDay.map((group) => (
+                <div key={group.title} className="mb-12">
+                  <h3
+                    className="text-2xl text-page mb-4"
+                    style={{
+                      fontFamily: "'UXILeadershipCondensed'",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {group.title}
+                  </h3>
+
+                  <ul className="divide-y divide-page/8">
+                    {group.items.map((entry, index) => (
+                      <CheckItem key={index} note={entry.note}>
+                        {entry.item}
+                      </CheckItem>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </AnimatedSection>
+
+            {/* ── 03 Local Speakers ───────────────────────────────────────────── */}
+
+            <AnimatedSection className="mb-16">
+              <SectionHeading
+                number="03"
+                title="For Speakers Travelling from Within India"
+              />
+
+              {localSpeakers.map((group) => (
+                <div key={group.title} className="mb-12">
+                  <h3
+                    className="text-2xl text-page mb-4"
+                    style={{
+                      fontFamily: "'UXILeadershipCondensed'",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {group.title}
+                  </h3>
+
+                  <ul className="divide-y divide-page/8">
+                    {group.items.map((entry, index) => (
+                      <CheckItem key={index} note={entry.note}>
+                        {entry.item}
+                      </CheckItem>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </AnimatedSection>
+
+            {/* ── 04 International Speakers ───────────────────────────── */}
+
+            <AnimatedSection className="mb-16">
+              <SectionHeading number="04" title="For International Speakers" />
+
+              {internationalSpeakers.map((group) => (
+                <div key={group.title} className="mb-12">
+                  <h3
+                    className="text-2xl text-page mb-4"
+                    style={{
+                      fontFamily: "'UXILeadershipCondensed'",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {group.title}
+                  </h3>
+
+                  <ul className="divide-y divide-page/8">
+                    {group.items.map((entry, index) => (
+                      <CheckItem key={index} note={entry.note}>
+                        {entry.item}
+                      </CheckItem>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </AnimatedSection>
+
+            {/* ── 05 Speaker Etiquette ──────────────────────────────────────── */}
+            <AnimatedSection className="mb-16">
+              <SectionHeading number="05" title="Speaker Code of Conduct" />
+              <p className="font-sans text-base text-page/60 leading-relaxed mb-6">
+                UXINDIA is a curated community built on openness, respect, and
+                meaningful conversations. As a speaker, we ask that you help
+                create an inspiring, inclusive, and welcoming experience for
+                every participant.
+              </p>
+              <ul className="space-y-3">
+                {etiquetteRules.map((rule, i) => (
+                  <li key={i} className="flex gap-3 items-start">
+                    <span className="text-brand font-semibold font-sans shrink-0 mt-0.5">
+                      →
+                    </span>
+                    <span className="font-sans text-base text-page/80 leading-relaxed">
+                      {rule}
+                    </span>
+                  </li>
                 ))}
-              </div>
-            </section>
+              </ul>
+            </AnimatedSection>
 
-            {/* ── 07 Code of Conduct ─────────────────────────────────── */}
-            <section id="conduct" className="mt-20 scroll-mt-32 md:mt-28">
-              <Reveal>
-                <SectionHeader
-                  index={7}
-                  title="Code of Conduct"
-                  lede="UXINDIA is committed to a welcoming, inclusive and respectful environment. We ask every participant to:"
-                />
-              </Reveal>
+            {/* ── 06 Volunteers note ────────────────────────────────────────── */}
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                {conductDos.map((rule, index) => (
-                  <Reveal key={rule.text} delay={index * 0.04}>
-                    <div className="flex h-full items-start gap-3.5 rounded-2xl border border-page/8 bg-white p-4">
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-page text-white">
-                        <rule.icon
-                          aria-hidden="true"
-                          className="h-4 w-4"
-                          strokeWidth={1.75}
-                        />
-                      </span>
-                      <p className="font-sans pt-1 text-sm leading-relaxed text-page/75">
-                        {rule.text}
-                      </p>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
+            <AnimatedSection className="mb-16">
+              <Callout>
+                <p className="font-sans text-base md:text-lg text-[#333333] leading-relaxed mb-3">
+                  <strong className="text-brand">
+                    UXINDIA is proudly volunteer-driven.
+                  </strong>{" "}
+                  Every coordinator, track lead, session moderator,
+                  photographer, and logistics volunteer contributes their time
+                  and energy to create an exceptional experience for our
+                  community.
+                </p>
 
-              <Reveal delay={0.1}>
-                <div className="mt-4 flex items-start gap-3 rounded-2xl bg-page p-5">
-                  <ShieldAlert
-                    aria-hidden="true"
-                    className="mt-0.5 h-5 w-5 shrink-0 text-brand"
-                    strokeWidth={1.75}
-                  />
-                  <p className="font-sans text-sm leading-relaxed text-white/70">
-                    Participants who violate the Code of Conduct may be asked to
-                    leave the event without refund.
+                <p className="font-sans text-base text-[#333333] leading-relaxed">
+                  We appreciate your patience, kindness, and cooperation
+                  throughout the conference. A little understanding and
+                  encouragement from our speakers goes a long way in helping our
+                  volunteers create a memorable experience for everyone.
+                </p>
+              </Callout>
+            </AnimatedSection>
+
+            {/* ── 07 Contact & Support ─────────────────────────────────────── */}
+
+            <AnimatedSection className="mb-16">
+              <SectionHeading number="06" title="Contact & Support" />
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="bg-white border border-page/8 rounded-2xl p-6">
+                  <p className="font-sans text-xs font-semibold text-brand uppercase tracking-[0.18em] mb-3">
+                    Speaker Relations
+                  </p>
+
+                  <a
+                    href="mailto:team@umo.design"
+                    className="font-sans text-lg font-semibold text-page hover:text-brand transition-colors"
+                  >
+                    team@umo.design
+                  </a>
+
+                  <p className="font-sans text-sm text-page/60 mt-4 leading-relaxed">
+                    Contact us for:
+                  </p>
+
+                  <ul className="font-sans text-sm text-page/70 mt-3 space-y-2">
+                    <li>• Presentation submissions</li>
+                    <li>• Speaker profile updates</li>
+                    <li>• Workshop requirements</li>
+                    <li>• Invitation letters</li>
+                    <li>• Travel questions</li>
+                    <li>• General logistics</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white border border-page/8 rounded-2xl p-6">
+                  <p className="font-sans text-xs font-semibold text-brand uppercase tracking-[0.18em] mb-3">
+                    On-Site Assistance
+                  </p>
+
+                  <a
+                    href="tel:+918096204373"
+                    className="font-sans text-lg font-semibold text-page hover:text-brand transition-colors"
+                  >
+                    Jabeen
+                    <br />
+                    +91 80962 04373
+                  </a>
+
+                  <p className="font-sans text-sm text-page/60 mt-4 leading-relaxed">
+                    Available on WhatsApp throughout the conference for speaker
+                    support, registration assistance, session coordination, and
+                    venue logistics.
                   </p>
                 </div>
-              </Reveal>
-            </section>
-
-            {/* ── 08 FAQs ────────────────────────────────────────────── */}
-            <section id="faqs" className="mt-20 scroll-mt-32 md:mt-28">
-              <Reveal>
-                <SectionHeader
-                  index={8}
-                  title="Frequently Asked Questions"
-                  lede="Short answers to what gets asked most."
-                />
-              </Reveal>
-              <Reveal>
-                <FaqAccordion />
-              </Reveal>
-            </section>
-
-            {/* ── 09 Contact ─────────────────────────────────────────── */}
-            <section id="contact" className="mt-20 scroll-mt-32 md:mt-28">
-              <Reveal>
-                <SectionHeader
-                  index={9}
-                  title="Contact & Support"
-                  lede="Still stuck? Reach the people who can help."
-                />
-              </Reveal>
-
-              <div className="grid gap-4 md:grid-cols-3">
-                {contacts.map((contact, index) => (
-                  <Reveal key={contact.title} delay={index * 0.06}>
-                    <article className="flex h-full flex-col rounded-2xl border border-page/8 bg-white p-5">
-                      <contact.icon
-                        aria-hidden="true"
-                        className="h-5 w-5 text-brand"
-                        strokeWidth={1.75}
-                      />
-                      <h3 className="font-sans mt-4 text-[0.9rem] font-semibold leading-snug text-page">
-                        {contact.title}
-                      </h3>
-                      <p className="font-sans mt-1.5 flex-1 text-sm leading-relaxed text-page/55">
-                        {contact.body}
-                      </p>
-                      {contact.email && (
-                        <a
-                          href={`mailto:${contact.email}`}
-                          className="font-sans mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand transition-colors duration-200 hover:text-page"
-                        >
-                          {contact.email}
-                          <ArrowUpRight
-                            aria-hidden="true"
-                            className="h-3.5 w-3.5"
-                          />
-                        </a>
-                      )}
-                    </article>
-                  </Reveal>
-                ))}
               </div>
+            </AnimatedSection>
 
-              <Reveal delay={0.1}>
-                <div className="mt-6 flex flex-col gap-5 rounded-3xl bg-page p-6 md:flex-row md:items-center md:justify-between md:p-8">
-                  <div>
-                    <h3
-                      className="font-leadership text-3xl leading-tight text-white md:text-4xl"
-                      style={{ fontWeight: 500 }}
-                    >
-                      Ready for the week?
-                    </h3>
-                    <p className="font-sans mt-2 max-w-md text-sm leading-relaxed text-white/60">
-                      Explore the programme and lock in the sessions you
-                      don&apos;t want to miss.
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap gap-3">
-                    <Link
-                      href="/schedule"
-                      className="font-sans inline-flex items-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5"
-                    >
-                      View Schedule
-                      <ArrowRight aria-hidden="true" className="h-4 w-4" />
-                    </Link>
-                    <Link
-                      href="/tickets"
-                      className="font-sans inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:border-white"
-                    >
-                      Get Tickets
-                    </Link>
-                  </div>
+            {/* ── 07 FAQs ─────────────────────────────────────── */}
+
+            <AnimatedSection className="mb-16">
+              <SectionHeading number="07" title="Frequently Asked Questions" />
+
+              <div className="space-y-6">
+                <div>
+                  <h3
+                    className="text-xl text-page mb-2"
+                    style={{
+                      fontFamily: "'UXILeadershipCondensed'",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Will UXINDIA reimburse my travel expenses?
+                  </h3>
+
+                  <p className="font-sans text-page/70 leading-relaxed">
+                    Travel and accommodation are only covered where explicitly
+                    communicated in your speaker invitation. If you're unsure,
+                    please contact the Speaker Relations team.
+                  </p>
                 </div>
-              </Reveal>
-            </section>
+
+                <div>
+                  <h3
+                    className="text-xl text-page mb-2"
+                    style={{
+                      fontFamily: "'UXILeadershipCondensed'",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Can I update my presentation after submission?
+                  </h3>
+
+                  <p className="font-sans text-page/70 leading-relaxed">
+                    Minor updates are perfectly acceptable. If your presentation
+                    changes significantly from the approved abstract, please
+                    inform the curation team beforehand.
+                  </p>
+                </div>
+
+                <div>
+                  <h3
+                    className="text-xl text-page mb-2"
+                    style={{
+                      fontFamily: "'UXILeadershipCondensed'",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Can I use my own laptop?
+                  </h3>
+
+                  <p className="font-sans text-page/70 leading-relaxed">
+                    Yes. Please arrive 20–30 minutes before your session to test
+                    your laptop, presentation, and any required adapters with
+                    the Track Lead.
+                  </p>
+                </div>
+
+                <div>
+                  <h3
+                    className="text-xl text-page mb-2"
+                    style={{
+                      fontFamily: "'UXILeadershipCondensed'",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Is Wi-Fi available?
+                  </h3>
+
+                  <p className="font-sans text-page/70 leading-relaxed">
+                    Limited Wi-Fi may be available in some areas, but it should
+                    not be relied upon for presentations or workshops. If
+                    internet access is essential, please arrange your own mobile
+                    hotspot.
+                  </p>
+                </div>
+
+                <div>
+                  <h3
+                    className="text-xl text-page mb-2"
+                    style={{
+                      fontFamily: "'UXILeadershipCondensed'",
+                      fontWeight: 500,
+                    }}
+                  >
+                    What should I do if my flight is delayed?
+                  </h3>
+
+                  <p className="font-sans text-page/70 leading-relaxed">
+                    Please inform the Speaker Relations team as soon as possible
+                    so we can coordinate any necessary schedule adjustments.
+                  </p>
+                </div>
+
+                <div>
+                  <h3
+                    className="text-xl text-page mb-2"
+                    style={{
+                      fontFamily: "'UXILeadershipCondensed'",
+                      fontWeight: 500,
+                    }}
+                  >
+                    How do I request an invitation letter?
+                  </h3>
+
+                  <p className="font-sans text-page/70 leading-relaxed">
+                    Invitation letters are available for confirmed speakers who
+                    require one to support their visa application. Please email
+                    team@umo.design as early as possible.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            {/* ── Final CTA ─────────────────────────────────────────────────── */}
+
+            <AnimatedSection>
+              <div className="bg-page text-white p-8 md:p-10 rounded-3xl">
+                <p className="font-sans text-white/70 mb-8 max-w-xl leading-relaxed">
+                  We're looking forward to welcoming you to UXINDIA Design
+                  Leadership Week 2026. If you have any questions before your
+                  session, our Speaker Relations team is here to help every step
+                  of the way.
+                </p>
+                <h3
+                  className="text-2xl md:text-3xl mb-4"
+                  style={{
+                    fontFamily: "'UXILeadershipCondensed'",
+                    fontWeight: 500,
+                  }}
+                >
+                  UXINDIA 2026 · September 23–27
+                </h3>
+                <p className="font-sans text-white/70 mb-8 max-w-lg leading-relaxed">
+                  Questions about your session or logistics? Write to us at{" "}
+                  <a
+                    href="mailto:team@umo.design"
+                    className="text-brand hover:underline"
+                  >
+                    team@umo.design
+                  </a>{" "}
+                  and the team will get back to you promptly.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    href="/speaker-faqs"
+                    className="inline-flex items-center justify-center gap-2 bg-brand text-white font-sans font-semibold px-8 py-4 rounded-full hover:bg-[#D14910] transition-colors"
+                  >
+                    Speaker FAQs
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </Link>
+                  <Link
+                    href="/"
+                    className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-sans font-semibold px-8 py-4 rounded-full hover:border-white/60 transition-colors"
+                  >
+                    Back to Home
+                  </Link>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
-        </div>
+        </section>
       </main>
 
       <Footer />

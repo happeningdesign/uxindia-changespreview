@@ -19,7 +19,7 @@ export interface Speaker {
   ogImage?: string;
   slug?: string;
   bio?: string;
-  talkType?: string;
+  talkType?: string | string[];
   linkedin?: string;
   twitter?: string;
   feedbackLink?: string;

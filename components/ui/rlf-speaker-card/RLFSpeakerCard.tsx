@@ -16,8 +16,7 @@ export const RisingLeadersForumSpeakersData = [
   },
   {
     name: "Vineet Gupta",
-    title:
-      "Assistant Vice President, Design & Branding, Gemini Solutions Pvt Ltd",
+    title: "Vice President, Design & Branding, Gemini Solutions Pvt Ltd",
     company: "",
     image: "/images/speakers/rising-leaders-forum/vineet-gupta.webp",
     color: speakerColors[1],
@@ -34,13 +33,13 @@ export const RisingLeadersForumSpeakersData = [
     talkType: "Deep Dive Talk",
   },
   {
-    name: "Jose Coronado",
-    title: "Advisor, Interim Head, Product & Design, Digital Impulsum",
+    name: "Anil Reddy",
+    title: "Founder & Designer, Happy Pet",
     company: "",
-    image: "/images/speakers/rising-leaders-forum/jose-coronado.webp",
+    image: "/images/speakers/rising-leaders-forum/anil-reddy.webp",
     color: speakerColors[3],
-    bio: "Jose Coronado is a bilingual Product and Design Executive specializing in enterprise operating model transformation across global markets. He partners with executive teams to scale product and design organizations, align strategy with execution, and drive measurable performance inside complex, regulated institutions.",
-    talkType: "Workshop",
+    bio: "Artist by heart. Designer by soul. Entrepreneur by choice. I'm the Founder and Design Director of Lollypop.Design, a research-driven studio that reimagined digital experiences. What began in a garage with two people grew into a 240-member global team, creating work that impacted millions and earned international recognition. After my exit, my love for pets led me back to entrepreneurship. I founded Happy Pet, India's first pet-tech company, bringing technology, data, empathy, and AI together to build better pet care in India and beyond.",
+    talkType: "Spark Session",
   },
   {
     name: "Varedh Nigam",
@@ -168,7 +167,7 @@ export function RLFSpeakerCard({
           <div className="flex items-center justify-between flex-shrink-0 mb-2 md:mb-0">
             <div className="bg-white/20 rounded-md px-2 py-1">
               <span className="font-sans text-[10px] font-bold text-white tracking-wider">
-                UXI25
+                UXI26
               </span>
             </div>
             <div

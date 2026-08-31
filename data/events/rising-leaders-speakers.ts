@@ -13,34 +13,33 @@ import type { Speaker } from "@/types/speaker";
 export type { Speaker };
 
 const risingLeadersSpeakers: Speaker[] = [
-  // {
-  //   name: "Anna Gerasimchuk",
-  //   role: "Head of UIUX Engineering, McKesson, Ontada",
-  //   image: "/images/speakers/rising-leaders-forum/anya-gerasimchuk.webp",
-  //   ogImage: "/og/speakers/rising-leaders-forum/anya-gerasimchuk.png",
-  //   talkType: "Workshop",
-  //   bio: "Anya Gerasimchuk is design and product leader with deep experience across product management, UX and digital innovation in highly complex, regulated industries. As Senior Director of Product Design and UI/UX Engineering at Ontada, McKesson's oncology technology division, she shapes product vision through customer insight, evidence-based user research, and an empathetic understanding of clinical workflows. Her work focuses on elevating product quality in mission-critical healthcare environments while maturing design practices across the organisation.Across McKesson, GE Digital, EY, and GE Aviation, Anya has built and scaled UX organisations, driven cross-functional collaboration and delivered digital solutions for domains ranging from oncology to aviation, energy and industrial systems. She has led teams through strategy formation, design execution and delivery of human-centred experiences that support safety, operational efficiency and measurable business outcomes.",
-  //   linkedin: "https://www.linkedin.com/in/avgera/",
-  //   twitter: "",
-  //   feedbackLink: "",
-  //   events: {
-  //     rising: {
-  //       type: "Workshop",
-  //       track: "",
-  //       talkCategory: "Design Practice",
-  //       title:
-  //         "Human-Centered AI: Accelerating Design Thinking Without Losing Empathy",
-  //       description:
-  //         "This workshop explores how AI can accelerate traditional human-centered design methods without replacing the core principles that make them effective: empathy, problem framing, collaboration, and continuous learning. In many organizations, teams move slowly because research synthesis, workflow mapping, concept generation, and prototype creation take significant time. AI can help compress those cycles by summarizing research, identifying patterns, generating early design directions, drafting user flows, creating testable prototypes, and surfacing assumptions that need validation.But the workshop is not about using AI to skip discovery or remove human judgment. Instead, it focuses on how AI can strengthen Design Thinking when used intentionally. Participants will learn how to move faster from ambiguity to clarity while still grounding decisions in real user needs, business outcomes, and technical feasibility.A key focus will be empathy-building across trio-teams: Product, Design, and Engineering",
-  //       keyTakeaway: [
-  //         "AI can accelerate Design Thinking, but should not replace it. Teams can use AI to synthesize research, generate ideas, map workflows, and create prototypes faster - but user empathy, problem framing, and human judgment still guide the work.",
-  //         "Rapid prototyping becomes a shared learning tool for trio-teams.Product, Design, and Engineering can use AI-assisted prototypes to align earlier, test assumptions faster, and move from abstract discussion to concrete evidence.",
-  //         "The goal is faster learning, not faster guessing. AI helps teams move from Plan → Build → Validate toward Build → Learn → Harden, but teams still need to validate with users, expose risks, and avoid polished outputs that create false confidence.",
-  //       ],
-  //       audience: "",
-  //     },
-  //   },
-  // },
+  {
+    name: "Doug Powell",
+    role: "Executive Design Leader | VP of Design | Former IBM & Expedia | Lead Lecturer, iF Design Academy",
+    image: "/images/speakers/rising-leaders-forum/doug-powell.webp",
+    ogImage: "/og/speakers/rising-leaders-forum/doug-powell.png",
+    talkType: "Panel",
+    bio: "Doug Powell is an award-winning designer and executive design leader with more than 30 years of experience in a wide range of design disciplines. A recipient of the 2014 Distinguished Alumni Award from the Sam Fox School of Design at Washington University in St. Louis, and the 2014 Fellow Award from AIGA Minnesota, Doug is a lecturer, commentator and thought leader on design issues. He has presented at a variety of global conferences, forums, and universities including Beirut Design Week in Lebanon, Fortune's Brainstorm Design in Singapore, and Yale School of Management. \n \nHe was on the jury of the 2018 Smithsonian Cooper Hewitt National Design Awards. Between 2011-2013 Doug served as the national president of AIGA, the professional association for design, the largest and most established design organization in the world. In the past decade Doug has served as Vice President of Design at IBM and Expedia Group, where he oversaw design practices, design systems, designer career and leadership programs, as well as the scaling of cross-functional design thinking practices across the companies. \n \nHe is the producer and host of This Is A Prototype: The Design Leadership Podcast. Alongside his leadership training and coaching practice, Doug serves on the faculty of the Pratt School of Engineering at Duke University, and the Sam Fox School of Design & Visual Art at Washington University in St. Louis.",
+    linkedin: "https://www.linkedin.com/in/douglaspowell330/",
+    twitter: "",
+    feedbackLink: "",
+    events: {
+      rising: [
+        {
+          type: "Design Connect",
+          track: "",
+          talkCategory: "Networking",
+          date: "Sept 26",
+          time: "11:05 AM",
+          title: "Design Connect",
+          description:
+            "Connect with speakers, industry leaders, and fellow attendees in an informal setting designed for meaningful conversations beyond the main sessions. Exchange ideas, share experiences, discover common interests, and build new relationships with people shaping the future of design. Whether you're looking to meet potential collaborators, reconnect with peers, or simply have a conversation with someone new, this is your opportunity to connect with the UXINDIA community.",
+          keyTakeaway: [],
+          audience: "",
+        },
+      ],
+    },
+  },
   {
     name: "Deepashree Kale",
     role: "Head of Design, Apptware",
@@ -53,7 +52,7 @@ const risingLeadersSpeakers: Speaker[] = [
     feedbackLink: "",
     events: {
       rising: {
-        type: "Deep Dive - 30 Mins",
+        type: "Deep Dive",
         track: "",
         talkCategory: "Design Practice",
         date: "Sept 26",
@@ -75,7 +74,7 @@ const risingLeadersSpeakers: Speaker[] = [
   },
   {
     name: "Vineet Gupta",
-    role: "Assistant Vice President, Design & Branding, Gemini Solutions Pvt Ltd",
+    role: "Vice President, Design & Branding, Gemini Solutions Pvt Ltd",
     image: "/images/speakers/rising-leaders-forum/vineet-gupta.webp",
     ogImage: "/og/speakers/rising-leaders-forum/vineet-gupta.png",
     talkType: "Spark Session",
@@ -85,7 +84,7 @@ const risingLeadersSpeakers: Speaker[] = [
     feedbackLink: "",
     events: {
       rising: {
-        type: "Spark Session - 18 Mins",
+        type: "Spark Session",
         track: "",
         talkCategory: "Emerging Tech",
         date: "Sept 26",
@@ -115,7 +114,7 @@ const risingLeadersSpeakers: Speaker[] = [
     feedbackLink: "",
     events: {
       rising: {
-        type: "Deep Dive - 30 Mins",
+        type: "Deep Dive",
         track: "",
         talkCategory: "Design Practice",
         title: "Design Un-automated: Reclaiming the Soul of Design",
@@ -134,27 +133,68 @@ const risingLeadersSpeakers: Speaker[] = [
     },
   },
   {
+    name: "Jesvin Yeo Puay Hwa",
+    role: "Associate Vice Provost (Strategy), Undergraduate Education, NTU",
+    image: "/images/speakers/rising-leaders-forum/jesvin-yeo.webp",
+    ogImage: "/og/speakers/rising-leaders-forum/jesvin-yeo.png",
+    talkType: "Panel",
+    bio: "Professor Jesvin Yeo is currently a Professor of Visual Communication Design at the School of Art, Design and Media, Nanyang Technological University, Singapore, and serves as the university’s Associate Vice Provost (Strategy) for undergraduate education. She leads strategic initiatives that advance institutional transformation, interdisciplinary collaboration, and global engagement. With extensive experience in design education, research, and academic leadership, she has been instrumental in shaping the strategic growth of design and creative disciplines within higher education. Her scholarship explores the intersections of design, culture, heritage, innovation, and emerging technologies, with a particular interest in how design can address complex societal challenges. As an educator and strategist, Professor Yeo promotes design as a catalyst for driving human-centric innovation, sustainable development, and responsible technological advancement.",
+    linkedin: "https://www.linkedin.com/in/jesvinyeo/",
+    twitter: "",
+    feedbackLink: "",
+    events: {
+      rising: [
+        {
+          type: "Design Connect",
+          track: "",
+          talkCategory: "Networking",
+          date: "Sept 26",
+          time: "11:05 AM",
+          title: "Design Connect",
+          description:
+            "Connect with speakers, industry leaders, and fellow attendees in an informal setting designed for meaningful conversations beyond the main sessions. Exchange ideas, share experiences, discover common interests, and build new relationships with people shaping the future of design. Whether you're looking to meet potential collaborators, reconnect with peers, or simply have a conversation with someone new, this is your opportunity to connect with the UXINDIA community.",
+          keyTakeaway: [],
+          audience: "",
+        },
+      ],
+    },
+  },
+  {
     name: "Jose Coronado",
     role: "Advisor, Interim Head, Product & Design, Digital Impulsum",
     image: "/images/speakers/rising-leaders-forum/jose-coronado.webp",
     ogImage: "/og/speakers/rising-leaders-forum/jose-coronado.png",
-    talkType: "Workshop",
-    bio: "Jose Coronado is a recognized Design & Operations executive. His experience spans financial services, management consulting, and enterprise technology, with a focus on leading global teams. As a Strategic Advisor, Jose partners with Chief Design Officers and Global Heads of Design to help them solve critical problems within their organizations. \n \n Jose brings his experience scaling design organizations, directing large-scale transformation programs, and building world-class teams at Fortune 50 companies. Most recently, at Target, he built the Strategic Planning & Operations practice from the ground up, establishing business processes to support its growth. Jose has held leadership roles at JPMorgan, McKinsey, Accenture, ADP, and Oracle, where he amplified the impact and maximized the business value of design investment.",
+    talkType: ["Workshop", "Panel"],
+    bio: "Jose Coronado is a recognized Design & Operations executive. His experience spans financial services, management consulting, and enterprise technology, with a focus on leading global teams. As a Strategic Advisor, Jose partners with Chief Design Officers and Global Heads of Design to help them solve critical problems within their organizations. \n \nJose brings his experience scaling design organizations, directing large-scale transformation programs, and building world-class teams at Fortune 50 companies. Most recently, at Target, he built the Strategic Planning & Operations practice from the ground up, establishing business processes to support its growth. Jose has held leadership roles at JPMorgan, McKinsey, Accenture, ADP, and Oracle, where he amplified the impact and maximized the business value of design investment.",
     linkedin: "https://www.linkedin.com/in/josecoronado/",
     twitter: "",
     feedbackLink: "",
     events: {
-      rising: {
-        type: "Workshop",
-        track: "",
-        talkCategory: "",
-        date: "Sept 26",
-        time: "1:45 PM",
-        title: "Workshop: TBA",
-        description: "",
-        keyTakeaway: "",
-        audience: "",
-      },
+      rising: [
+        {
+          type: "Workshop",
+          track: "",
+          talkCategory: "",
+          date: "Sept 26",
+          time: "1:45 PM",
+          title: "Workshop: TBA",
+          description: "",
+          keyTakeaway: "",
+          audience: "",
+        },
+        {
+          type: "Design Connect",
+          track: "",
+          talkCategory: "Networking",
+          date: "Sept 26",
+          time: "11:05 AM",
+          title: "Design Connect",
+          description:
+            "Connect with speakers, industry leaders, and fellow attendees in an informal setting designed for meaningful conversations beyond the main sessions. Exchange ideas, share experiences, discover common interests, and build new relationships with people shaping the future of design. Whether you're looking to meet potential collaborators, reconnect with peers, or simply have a conversation with someone new, this is your opportunity to connect with the UXINDIA community.",
+          keyTakeaway: [],
+          audience: "",
+        },
+      ],
     },
   },
   {
@@ -162,7 +202,7 @@ const risingLeadersSpeakers: Speaker[] = [
     role: "Design Executive, Founder, UMO Design Foundation & Curator, UXINDIA",
     image: "/images/speakers/rising-leaders-forum/kaladhar-bapu.webp",
     ogImage: "/og/speakers/rising-leaders-forum/kaladhar-bapu.png",
-    talkType: "Opening Remarks",
+    talkType: ["Keynote", "Panel"],
     bio: "Kaladhar Bapu is an award-winning design leader, entrepreneur, and strategist with over 25 years of experience helping organizations harness design as a driver of innovation, business growth, and organizational transformation. He is the recipient of the Fast Company World Changing Ideas Award 2026 for 1 Million Women in Design and AI, an initiative that aims to equip one million women with design and AI literacy by 2030.Throughout his career, Kaladhar has led product design and digital transformation initiatives for global organizations including BNY Mellon, Goldman Sachs, Citi, and Microsoft, working at the intersection of design, technology, and business strategy.He is the Founder of the UMO Design Foundation and Curator of UXINDIA, one of Asia's longest-running and most influential design leadership platforms. Over the past 25 years, UXINDIA has connected and inspired more than 90,000 designers, researchers, product leaders, educators, and innovators, helping shape the evolution of the design profession across India and beyond.An alumnus of IIT Bombay, Pratt Institute, New York, and The Wharton School, Kaladhar advises organizations on building design-led cultures and preparing teams for the opportunities and challenges created by AI. His work focuses on helping designers evolve from execution to leadership, creating professionals who influence strategy, drive business outcomes, and lead meaningful change.Kaladhar believes the future belongs to Designpreneurs, leaders who take ownership of outcomes, not just outputs.",
     linkedin: "https://www.linkedin.com/in/kbapu/",
     twitter: "",
@@ -225,7 +265,7 @@ const risingLeadersSpeakers: Speaker[] = [
     feedbackLink: "",
     events: {
       rising: {
-        type: "Spark Session - 18 Mins",
+        type: "Spark Session",
         track: "",
         talkCategory: "Entrepreneurship",
         date: "Sept 26",
@@ -410,12 +450,12 @@ const risingLeadersSpeakers: Speaker[] = [
     feedbackLink: "",
     events: {
       rising: {
-        type: "Deep Dive - 30 Mins",
+        type: "Deep Dive",
         track: "",
         talkCategory: "Emerging Tech",
         title: "Designing for 1.6 Billion People We Keep Forgetting",
         description:
-          "Most AI talks make the same argument. AI is changing everything, move fast, stay relevant. This talk makes a different one.  1 in 5 people worldwide is neurodivergent. The AI products being designed right now will define how people work and learn for the next decade, and most are being built without that 5th person in mind.  Microsoft's Persona Spectrum research showed that designing for users with the highest friction improves the experience for everyone. Closed captions and voice control started as accessibility features and became universal defaults. The same pattern is available in AI today.  This talk walks through four barriers neurodivergent users face and shows where AI closes each gap with tools most teams already have. The improvements do not stop at neurodivergent users. They compound across the entire product.  The barrier is not technical. It is a decision. This talk gives design leaders the argument to make that call.",
+          "Most AI talks make the same argument. AI is changing everything, move fast, stay relevant. This talk makes a different one.  1 in 5 people worldwide is neurodivergent. The AI products being designed right now will define how people work and learn for the next decade, and most are being built without that 5th person in mind.  Microsoft's Persona Spectrum research showed that designing for users with the highest friction improves the experience for everyone. Closed captions and voice control started as accessibility features and became universal defaults. The same pattern is available in AI today. This talk walks through four barriers neurodivergent users face and shows where AI closes each gap with tools most teams already have. The improvements do not stop at neurodivergent users. They compound across the entire product. The barrier is not technical. It is a decision. This talk gives design leaders the argument to make that call.",
         keyTakeaway: [
           "Inclusive design is not a values statement. It is a product strategy. The teams building AI with neurodivergent users in mind are producing experiences that work better for everyone, and they are doing it with tools already in their stack.",
           "There are four specific, well-documented barriers neurodivergent users face in digital products today. Each one is solvable. This talk shows exactly how.",
@@ -433,8 +473,8 @@ const risingLeadersSpeakers: Speaker[] = [
     image: "/images/speakers/rising-leaders-forum/sushrut-jangid.webp",
     ogImage: "",
     talkType: "Spark Session",
-    bio: "",
-    linkedin: "",
+    bio: "Sushrut is a Product Designer at ServiceNow in Hyderabad, working on Legal and Contract Operations and Core Business Suite, enterprise products used by over 240 customers globally. \n \nHe has around four and a half years of experience across enterprise SaaS and agency work at Wongdoody (Infosys), where he worked with clients including United Airlines and John Deere. \n \nHe is a recent visiting faculty at VIT Vellore teaching Visual Hierarchy and Semantics and has run design workshops at Kaarwaan. He holds an MDes degree and has a publication, Synesthetes Type, from IDC Typoday 2021. \n \nHe designs, vibe-codes, and illustrates, and has spent the last year thinking seriously about what AI makes possible for designers who are willing to turn their own process on themselves.",
+    linkedin: "https://www.linkedin.com/in/jangidsushrut/",
     twitter: "",
     feedbackLink: "",
     events: {
@@ -458,18 +498,18 @@ const risingLeadersSpeakers: Speaker[] = [
   },
   {
     name: "Anika Shrivastava",
-    role: "Senior UX Designer, LTIMindtree",
+    role: "Strategic Product Designer | Fintech & AI Experience, LTIMindtree",
     image: "/images/speakers/rising-leaders-forum/anika-shrivastava.webp",
     ogImage: "/og/speakers/rising-leaders-forum/anika-shrivastava.png",
     talkType: "Spark Session",
-    bio: "A Senior UX Designer with 9+ years of experience designing complex digital products across enterprise, fintech, and data-driven platforms. I specialise in systems thinking, decision-centric UX, and scaling design practices that align user needs with business strategy. My work focuses on simplifying complexity, improving product adoption, and enabling cross-functional collaboration through research-backed design approaches. Alongside product design, I actively explore organisational change, AI-enabled workflows, and the evolving role of design leadership in modern teams.I am passionate about creating thoughtful, human centered experiences and contribute to conversations that push UX beyond interfaces into strategy, culture, and meaningful impact.",
+    bio: "A Senior UX Designer with 9+ years of experience designing complex digital products across enterprise, fintech, and data-driven platforms. I specialise in systems thinking, decision-centric UX, and scaling design practices that align user needs with business strategy. My work focuses on simplifying complexity, improving product adoption, and enabling cross-functional collaboration through research-backed design approaches. Alongside product design, I actively explore organisational change, AI-enabled workflows, and the evolving role of design leadership in modern teams. I am passionate about creating thoughtful, human centered experiences and contribute to conversations that push UX beyond interfaces into strategy, culture, and meaningful impact.",
     linkedin:
       "https://www.linkedin.com/in/anika-shrivastava-2b8304158?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     twitter: "",
     feedbackLink: "",
     events: {
       rising: {
-        type: "Spark Session - 18 Mins",
+        type: "Spark Session",
         track: "",
         talkCategory: "Emerging Tech",
         date: "Sept 26",
@@ -477,13 +517,12 @@ const risingLeadersSpeakers: Speaker[] = [
         title:
           "The AI Was Wrong; Now What? Designing Recovery Into High Stakes AI",
         description:
-          "Three weeks after we launched an AI-powered banking assistant, a support ticket landed in our internal Slack. A user had written: 'This app flagged my rent payment as suspicious. Now I do not trust anything it tells me anymore.' Our accuracy metrics were green. Leadership was happy. And somewhere out there, a real person had quietly stopped trusting us, not because the model broke, but because we had given her nowhere to go when it got something wrong.That ticket broke something open for me. We had spent months designing the AI. We had never once designed the moment after it failed. This talk is the story of rebuilding that product around four recovery moments. What I would do differently: start these conversations in discovery, not after launch. The recovery layer is not a patch. It is a design decision that should shape the whole product. I learned that the hard way and this talk is honest about that.",
+          "What happens when AI gets it wrong and the user stops trusting it? In high stakes products, an incorrect answer is not always the biggest problem. Sometimes, the real failure begins after the mistake. \n \nThis talk explores a question we often overlook when designing AI: When things go wrong, have we designed what happens next? Through a real-world story, we will look at why recovery deserves a place in the design process and what changes when we design not just for AI to succeed, but for the moments when it does not.",
         keyTakeaway: [
-          "A four part Recovery Layer Framework; Explanation, Correction, Escalation, Confidence with concrete design decisions behind each one, not just labels on a slide.",
-          "A reframe that genuinely changes how you build: users do not need AI that is always right. They need AI that is honest when it is not and gives them a clear path forward.",
-          "A practical way to design AI explanations not tooltips or legal disclaimers, but reasoning that actually reduces user anxiety at the moment they are most frustrated.",
-          "Language for the internal arguments you will have specifically how to make the case for showing uncertainty when engineering wants confidence and compliance wants simplicity.",
-          "Four questions to pressure test any AI feature before it ships: Can users understand why? Can they correct it? Can they reach a human? Can they tell how confident the system actually is?",
+          "A new way to think about trust after AI makes a mistake—and why recovery deserves to be designed, not patched on later.",
+          "A practical perspective on designing AI experiences that are honest about uncertainty while still helping users move forward.",
+          "A shift in mindset: instead of asking only “How do we make AI right?”, start asking “What happens when it isn't?”",
+          "A way to pressure-test high-stakes AI experiences by looking beyond accuracy—and considering what happens to the person, their confidence, and their next step when the system gets it wrong.",
         ],
         audience: "",
       },
@@ -505,7 +544,7 @@ const risingLeadersSpeakers: Speaker[] = [
         track: "",
         talkCategory: "Design Practice",
         date: "Sept 26",
-        time: "12:05 PM",
+        time: "1:45 PM",
         title:
           "You're the PM Now: Owning Product Features End-to-End as a Designer",
         description:
@@ -546,6 +585,108 @@ const risingLeadersSpeakers: Speaker[] = [
         description:
           "Over the past five years, I have led Service Design initiatives for a large global automotive company in Europe (Mercedes Benz), working across multiple business and legacy transformation programs. During this journey of conceptualizing and defining a digital data product for one of the key transformation touchpoints, I encountered an interesting adoption challenge.\n\nWhile the product itself remained the same, differences in acceptance and adoption across multiple countries revealed nuanced patterns that went beyond usability or functionality. This prompted me to reflect on some fundamental cultural influences at play. In this piece, I will share my experience and perspective on the critical role culture plays in onboarding and driving adoption among global users in a B2B context.",
         keyTakeaway: "",
+        audience: "",
+      },
+    },
+  },
+  {
+    name: "Madhukar Joshi",
+    role: "Director - Design Strategy and Ops @ Kyndryl",
+    image: "/images/speakers/rising-leaders-forum/madhukar-joshi.webp",
+    ogImage: "",
+    talkType: "Panel",
+    bio: "A seasoned design strategist and leader with over two decades of experience, currently serving as Director of Design Strategy and Ops at Kyndryl. Skilled in leading cross-functional teams to elevate user experiences, they focus on mentoring and fostering growth within their team while driving solutions through Design Thinking and automation. Their expertise includes user experience design, accessibility, and professional services, with a strong emphasis on aligning design strategy with business objectives. \n\nPreviously at EY, Madhukar spearheaded a global digital content production and UX team, enhancing digital user experiences and optimizing business operations. Known for his ability to integrate design with innovation, he has successfully facilitated structured thinking sessions and built scalable processes. Committed to delivering impactful design solutions, empowering organizations to achieve their strategic goals through innovation and thoughtful design execution.",
+    linkedin: "https://www.linkedin.com/in/madhukar-joshi-3493a923/",
+    twitter: "",
+    feedbackLink: "",
+    events: {
+      rising: {
+        type: "Panel Discussion",
+        track: "",
+        talkCategory: "Mentorship",
+        date: "Sept 27",
+        time: "11:05 AM",
+        title: "Design Mentorship & Portfolio Review",
+        description: "",
+        keyTakeaway: "",
+        audience: "",
+      },
+    },
+  },
+  {
+    name: "Ranjeet Tayi",
+    role: "Senior Director, AI Experience Design - Salesforce",
+    image: "/images/speakers/rising-leaders-forum/ranjeet-tayi.webp",
+    ogImage: "",
+    talkType: "Panel",
+    bio: "Ranjeet Tayi is a Senior Director, AI Experience Design at Salesforce, where he leads a team of designers and engineers to create the next generation of AI-powered experiences. He has over 20 years of experience in the design industry, with a focus on user experience, design systems, and artificial intelligence. He has worked with some of the world's largest companies, including Google, Facebook, and Microsoft. He is a frequent speaker at design conferences and has authored several articles on design and AI.",
+    linkedin: "https://www.linkedin.com/in/ranjeet-tayi-3493a923/",
+    twitter: "",
+    feedbackLink: "",
+    events: {
+      rising: {
+        type: "Panel Discussion",
+        track: "",
+        talkCategory: "Emerging Tech",
+        date: "Sept 26",
+        time: "11:45 AM",
+        title: "AI in Design: The Future of User Experience",
+        description: "",
+        keyTakeaway: "",
+        audience: "",
+      },
+    },
+  },
+  {
+    name: "Nithya Kappini",
+    role: "Senior Director, Cognizant",
+    image: "/images/speakers/rising-leaders-forum/nithya-kappini.webp",
+    ogImage: "",
+    talkType: "Panel",
+    bio: "Senior Director and Head of Design Strategy & Growth, shaping experiences and strategies where design, business, and technology converge to drive innovation and meaningful impact. \n \nWith a foundation in both agency and consulting environments, I bring a dual lens: creative leadership to craft meaningful customer experiences, and strategic acumen to align those experiences with business growth. Across roles at Cognizant (Cognizant Moment), Infosys (WongDoody), and HARMAN (a Samsung company), I've worked with Fortune 100 clients on initiatives spanning design strategy, brand evolution, digital marketing, and experience innovation. \n \nI've also led go-to-market initiatives with strategic partners including Microsoft and Adobe, co-creating offerings, shaping joint value propositions, and accelerating market traction. \n \nI've played a key role in three consecutive mergers & acquisitions, positioning design as a core differentiator within broader M&A and growth strategies. I've helped shape offerings that speak to evolving buying centers, CMOs, CDOs, and business transformation leaders, while building teams that blend design excellence with commercial impact. \n \nRecognitions include the Red Dot Award, iF Award, LinkedIn Innovative Campaign Award, multiple Deal Catalyst honors, and being the youngest recipient of the CEO’s Excellence Award.",
+    linkedin: "https://www.linkedin.com/in/nithya-kappini-48a5b439/",
+    twitter: "",
+    feedbackLink: "",
+    events: {
+      rising: {
+        type: "Panel Discussion",
+        track: "",
+        talkCategory: "Mentorship",
+        date: "Sept 27",
+        time: "11:05 AM",
+        title: "Design Mentorship & Portfolio Review",
+        description: "",
+        keyTakeaway: "",
+        audience: "",
+      },
+    },
+  },
+  {
+    name: "Hemanth Ramesh",
+    role: "Sr. Manager, Cognizant",
+    image: "",
+    ogImage: "",
+    talkType: "Workshop",
+    bio: "A CX and design leader who turns ambiguous business problems into structured, human-centered experiences. Deep expertise across user research, visual design, content, and brand strategy — now amplified by AI-augmented design that accelerates discovery, synthesis, and concept generation without displacing craft or judgment. Leads multi-disciplinary teams to deliver creative solutions that meet real client objectives, and builds the frameworks that make them repeatable — experience models, opportunity matrices, and journey maps that reconcile business goals with user needs. Works fluently across proven design frameworks — Double Diamond, Jobs-to-be-Done, service blueprinting, journey mapping across touchpoints — paired with generative-AI methods that scaffold thinking rather than replace it: rapid research synthesis, persona shaping, and concept exploration. Sets product vision grounded in research, defines personas and end-to-end journeys, and translates opportunities into compelling artifacts that align stakeholders. Also drives the creative side of sales pursuits — shaping opportunities and crafting winning proposals.",
+    linkedin: "",
+    twitter: "",
+    feedbackLink: "",
+    events: {
+      rising: {
+        type: "Workshop",
+        track: "",
+        talkCategory: "Design Practice",
+        date: "Sept 26",
+        time: "1:45 PM",
+        title: "The Seam: Designing Emotional Complexity in the Age of AI",
+        description:
+          "AI is a median-seeking machine — emotional complexity is the opposite of the median. Left to optimize, AI pulls every register toward reassuring, frictionless, resolved. Not ugly design, an emotional monoculture of pleasantness.\n\nThis workshop doesn't lecture that. It makes you feel it, then hands you the tools to design against it: AI is fluent and hollow. Humans are clumsy and full. The craft is designing the seam between them honestly.",
+        keyTakeaway: [
+          "Tell the difference between articulated emotion and earned emotion — and know why it matters in a product.",
+          "Diagnose where an emotional moment gets its charge, using four lenses: stakes, contradiction, cost, time.",
+          "Redesign a moment to hold a contradiction instead of resolving it.",
+          "Define a 'seam protocol' for their own work: what emotional labor to give AI, what to reserve for human judgment, and how to be honest about provenance.",
+        ],
         audience: "",
       },
     },

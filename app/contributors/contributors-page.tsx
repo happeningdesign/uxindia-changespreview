@@ -796,10 +796,10 @@ export default function ContributorsPage() {
                     </p>
 
                     <a
-                      href="mailto:team@ux-india.org"
+                      href="mailto:team@umo.design"
                       className="font-sans text-brand font-semibold hover:underline"
                     >
-                      team@ux-india.org
+                      team@umo.design
                     </a>
                   </div>
 

@@ -10,15 +10,38 @@ interface LogoCarouselProps {
 }
 
 const logos = [
-  "/images/logos/happening.webp",
-  "/images/logos/jpmorgan.webp",
-  "/images/logos/infoblox.webp",
-  "/images/logos/candescent.webp",
-  "/images/logos/merkle.webp",
-  "/images/logos/orion.webp",
-  "/images/logos/wongdoody.webp",
-  "/images/logos/the-loops.svg",
-  "/images/logos/verizon.svg",
+  // {
+  //   src: "/images/logos/sponsors/jpmorgan.webp",
+  //   className: "w-24 h-auto",
+  // },
+  // {
+  //   src: "/images/logos/sponsors/accenture-song.webp",
+  //   className: "w-36 h-auto",
+  // },
+  {
+    src: "/images/logos/sponsors/if-design.webp",
+    className: "w-24 h-auto",
+  },
+  {
+    src: "/images/logos/sponsors/happening.svg",
+    className: "w-36 h-auto",
+  },
+  {
+    src: "/images/logos/sponsors/bayone--dark.svg",
+    className: "w-24 h-auto",
+  },
+  {
+    src: "/images/logos/sponsors/srishti-manipal.webp",
+    className: "w-56 h-auto",
+  },
+  {
+    src: "/images/logos/sponsors/eventum.svg",
+    className: "w-32 h-auto",
+  },
+  {
+    src: "/images/logos/sponsors/realcx-ai.svg",
+    className: "w-20 h-auto",
+  },
 ];
 
 const speedConfig = {
@@ -43,9 +66,9 @@ export const LogoCarousel: React.FC<LogoCarouselProps> = ({
       onMouseLeave={() => pauseOnHover && setIsHovered(false)}
     >
       {/* Carousel Pill */}
-      <div className="relative w-full overflow-hidden rounded-[32px] md:rounded-[44px] bg-white/5 backdrop-blur-md">
+      <div className="relative w-full overflow-hidden rounded-[32px] md:rounded-[44px] bg-white/10 backdrop-blur-md">
         {/* Marquee */}
-        <div className="overflow-hidden py-3">
+        <div className="overflow-hidden py-4">
           <div
             className="logo-marquee flex w-max"
             style={{
@@ -55,6 +78,7 @@ export const LogoCarousel: React.FC<LogoCarouselProps> = ({
             }}
           >
             <LogoGroup />
+            <LogoGroup ariaHidden />
             <LogoGroup ariaHidden />
           </div>
         </div>
@@ -75,18 +99,16 @@ function LogoGroup({ ariaHidden = false }: LogoGroupProps) {
     >
       {logos.map((logo, index) => (
         <div
-          key={`${logo}-${index}`}
-          className="flex h-12 w-24 shrink-0 items-center justify-center md:h-10 md:w-24"
+          key={`${logo.src}-${index}`}
+          className={`flex shrink-0 items-center justify-center ${logo.className}`}
         >
-          <div className="relative h-full w-full grayscale invert">
-            <Image
-              src={logo}
-              alt={ariaHidden ? "" : `Partner logo ${index + 1}`}
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 176px"
-            />
-          </div>
+          <Image
+            src={logo.src}
+            alt={ariaHidden ? "" : `Partner logo ${index + 1}`}
+            width={300}
+            height={120}
+            className={`w-full h-full object-contain grayscale invert`}
+          />
         </div>
       ))}
     </div>

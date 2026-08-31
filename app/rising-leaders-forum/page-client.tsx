@@ -93,27 +93,27 @@ export default function RisingLeadersPageClient() {
       <div ref={contentRef} />
 
       {/* Sticky Tab Bar */}
-      <div className="sticky top-[50px] md:top-[60px] z-40 w-full flex border-b border-[#0D0D0D]/20 bg-[#F5F0E8] shadow-lg">
+      <div className="sticky top-[60px] md:top-[72px] z-40 w-full flex border-b border-[#0D0D0D]/20 bg-[#F5F0E8] shadow-lg">
         <button
-          onClick={() => handleTabChange("overview")}
-          className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${
-            activeTab === "overview"
+          onClick={() => handleTabChange("schedule")}
+          className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-4 cursor-pointer ${
+            activeTab === "schedule"
               ? "border-[#E85520] text-[#0D0D0D]"
-              : "border-transparent text-[#0D0D0D]/40 hover:text-[#0D0D0D]/70"
+              : "border-transparent text-[#0D0D0D]/70 hover:text-[#0D0D0D]"
           }`}
         >
-          Speakers
+          View Schedule
         </button>
 
         <button
-          onClick={() => handleTabChange("schedule")}
-          className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${
-            activeTab === "schedule"
+          onClick={() => handleTabChange("overview")}
+          className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-4 cursor-pointer ${
+            activeTab === "overview"
               ? "border-[#E85520] text-[#0D0D0D]"
-              : "border-transparent text-[#0D0D0D]/40 hover:text-[#0D0D0D]/70"
+              : "border-transparent text-[#0D0D0D]/70 hover:text-[#0D0D0D]"
           }`}
         >
-          Schedule
+          View Speakers
         </button>
       </div>
 

@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function Hero({
   activeTab,
   setActiveTab,
@@ -79,6 +81,28 @@ export default function Hero({
               thinking, and scale their impact across teams, products, and
               organisations.
             </p>
+
+            {/* Hero CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-wrap gap-4 mb-12"
+            >
+              <button
+                onClick={() => setActiveTab("schedule")}
+                className="font-sans text-[13px] font-semibold tracking-[1.5px] px-7 py-2.5 rounded-full bg-brand text-white uppercase text-center cursor-pointer"
+              >
+                Know The Schedule
+              </button>
+
+              <button
+                onClick={() => setActiveTab("overview")}
+                className="font-sans text-[13px] font-semibold tracking-[1.5px] px-7 py-2.5 rounded-full border border-white text-white hover:bg-white hover:text-[#0D0D0D] uppercase transition-all duration-300 text-center cursor-pointer"
+              >
+                Know The Speakers
+              </button>
+            </motion.div>
 
             {/* Thin hairline divider */}
             <div

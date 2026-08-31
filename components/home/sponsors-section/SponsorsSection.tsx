@@ -5,80 +5,55 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const sponsorLogos = [
-  {
-    name: "Merkle",
-    src: "/images/logos/merkle.webp",
-    width: 140,
-  },
-  {
-    name: "Candescent",
-    src: "/images/logos/candescent.webp",
-    width: 140,
-  },
-  {
-    name: "JPMorgan Chase",
-    src: "/images/logos/jpmorgan.webp",
-    width: 130,
-  },
-  {
-    name: "Wongdoody",
-    src: "/images/logos/wongdoody.webp",
-    width: 140,
-  },
-  {
-    name: "Infoblox",
-    src: "/images/logos/infoblox.webp",
-    width: 100,
-  },
-  {
-    name: "Infiniqo",
-    src: "/images/logos/infiniqo.webp",
-    width: 100,
-  },
-  {
-    name: "AND Academy",
-    src: "/images/logos/and-academy.webp",
-    width: 100,
-  },
-  {
-    name: "Orion Innovation",
-    src: "/images/logos/orion.webp",
-    width: 130,
-  },
+  // {
+  //   name: "Accenture Song",
+  //   src: "/images/logos/sponsors/accenture-song.webp",
+  //   width: 160,
+  // },
   {
     name: "Happening",
-    src: "/images/logos/happening.webp",
+    src: "/images/logos/sponsors/happening.svg",
+    width: 160,
+  },
+  // {
+  //   name: "JP Morgan",
+  //   src: "/images/logos/sponsors/jpmorgan.webp",
+  //   width: 120,
+  // },
+  {
+    name: "If Design",
+    src: "/images/logos/sponsors/if-design.webp",
     width: 100,
   },
   {
-    name: "Infosys",
-    src: "/images/logos/infosys.svg",
+    name: "BayOne",
+    src: "/images/logos/sponsors/bayone.svg",
     width: 100,
   },
   {
-    name: "Publicis",
-    src: "/images/logos/publicis-sapient.svg",
-    width: 120,
+    name: "Srishti Manipal Institute",
+    src: "/images/logos/sponsors/srishti-manipal.webp",
+    width: 210,
   },
   {
-    name: "Qatalyst",
-    src: "/images/logos/qatalyst.svg",
-    width: 110,
-  },
-  {
-    name: "Verizon",
-    src: "/images/logos/verizon.svg",
-    width: 100,
-  },
-  {
-    name: "Loops",
-    src: "/images/logos/the-loops.svg",
+    name: "Ask Sa",
+    src: "/images/logos/sponsors/asksamika.svg",
     width: 90,
   },
   {
+    name: "RealCX AI",
+    src: "/images/logos/sponsors/realcx-ai.svg",
+    width: 90,
+  },
+  {
+    name: "UISer",
+    src: "/images/logos/sponsors/uiser.webp",
+    width: 80,
+  },
+  {
     name: "Eventum",
-    src: "/images/logos/eventum.svg",
-    width: 110,
+    src: "/images/logos/sponsors/eventum.svg",
+    width: 180,
   },
 ];
 
@@ -104,8 +79,8 @@ export default function SponsorsSection() {
       className="bg-cream py-24 md:py-32 overflow-hidden relative"
     >
       {/* Background text */}
-      <div className="absolute bottom-0 left-0 font-serif text-[16vw] text-page/[0.00] leading-none select-none pointer-events-none">
-        SPONSOR
+      <div className="absolute bottom-0 left-0 font-serif text-[16vw] text-page/2 leading-none uppercase select-none pointer-events-none">
+        Partners
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -138,9 +113,9 @@ export default function SponsorsSection() {
           >
             <p className="font-sans text-base text-page/60 leading-relaxed">
               UXINDIA is where the design community gathers to learn, connect,
-              and shape what&apos;s next. Sponsoring gives your organization
-              direct access to design leaders, product teams, startups, and
-              emerging talent.
+              and shape what's next. Sponsoring gives your organization direct
+              access to design leaders, product teams, startups, and emerging
+              talent.
             </p>
           </motion.div>
         </div>
@@ -269,16 +244,16 @@ export default function SponsorsSection() {
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <p className="font-sans text-xs text-page/30 uppercase tracking-[0.2em] mb-10 text-center">
-            Past sponsors &amp; partners
+            Our Esteemed partners
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-10 items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-8 md:gap-10 items-center">
             {sponsorLogos.map((logo, i) => (
               <motion.div
                 key={logo.name}
                 initial={{ opacity: 0, y: 15 }}
                 animate={visible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.35 + i * 0.05 }}
-                className="flex items-center justify-center h-28 py-2 grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+                className="flex items-center justify-center h-28 py-2 hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
               >
                 <img
                   src={logo.src}
@@ -302,12 +277,12 @@ export default function SponsorsSection() {
             className="flex justify-center mt-12"
           >
             <Link
-              href="https://partner.ux-india.org"
+              href="/about#partners"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 bg-brand hover:bg-brand text-white font-sans font-semibold text-base px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-brand/30"
             >
-              Partner With Us
+              Know Our Partners
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path
                   d="M3 8h10M9 4l4 4-4 4"

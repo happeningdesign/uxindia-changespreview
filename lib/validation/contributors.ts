@@ -23,33 +23,13 @@ export const contributorsSchema = z
       .min(50, "Please provide a short professional bio.")
       .max(1500),
 
-    photoUrl: z
-      .string()
-      .trim()
-      .url("Please enter a valid photo URL.")
-      .optional()
-      .or(z.literal("")),
+    photoUrl: z.string().trim().optional().or(z.literal("")),
 
-    linkedin: z
-      .string()
-      .trim()
-      .url("Please enter a valid LinkedIn URL.")
-      .optional()
-      .or(z.literal("")),
+    linkedin: z.string().trim().optional().or(z.literal("")),
 
-    twitter: z
-      .string()
-      .trim()
-      .url("Please enter a valid Twitter/X URL.")
-      .optional()
-      .or(z.literal("")),
+    twitter: z.string().trim().optional().or(z.literal("")),
 
-    website: z
-      .string()
-      .trim()
-      .url("Please enter a valid website URL.")
-      .optional()
-      .or(z.literal("")),
+    website: z.string().trim().optional().or(z.literal("")),
 
     // Additional Notes
     additionalNotes: z.string().max(3000).optional(),

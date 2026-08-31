@@ -29,55 +29,95 @@ const programs: Program[] = [
     label: "Both Events",
     title: "1 Million Women in Design & AI",
     brief: "A movement to bring a million women into design and AI careers.",
-    when: "23–27 Sept",
+    when: "25th Sept",
     href: "/leadership-summit",
-    icon: "/images/programs/icon-women-design-ai.png",
+    icon: "/icons/home/quick-glance/women-in-design-and-ai.webp",
     alt: "Glossy 3D silhouette of a woman's head merging into an AI circuit network",
   },
   {
     label: "Leadership Summit",
     title: "Asian Design Futures Dialogue",
     brief: "Leaders across Asia debate where the region's design is headed.",
-    when: "23–25 Sept",
+    when: "24th Sept",
     href: "/leadership-summit",
-    icon: "/images/programs/icon-design-mentorship.png",
+    icon: "/icons/home/quick-glance/asian-design-dialogue.webp",
     alt: "Two glossy 3D speech bubbles",
   },
   {
     label: "Leadership Summit",
     title: "Design Pitch",
     brief: "Founders pitch design-led products live to a panel of investors.",
-    when: "25 Sept",
+    when: "25th Sept",
     href: "/design-pitch",
-    icon: "/images/programs/icon-design-pitch.png",
+    icon: "/icons/home/quick-glance/design-pitch.webp",
     alt: "Glossy 3D rocket",
   },
   {
     label: "Leadership Summit",
     title: "Design Leadership",
     brief: "How senior teams set direction, earn trust and scale craft.",
-    when: "23–25 Sept",
+    when: "25th Sept",
     href: "/leadership-summit",
-    icon: "/images/programs/icon-design-leadership.png",
+    icon: "/icons/home/quick-glance/design-leadership.webp",
     alt: "Glossy 3D chess king piece",
   },
   {
-    label: "Leadership Summit",
+    label: "Rising Leaders Summit",
     title: "Design Entrepreneurship",
     brief: "Turning design instinct into ventures, products and businesses.",
-    when: "23–25 Sept",
+    when: "27th Sept",
     href: "/leadership-summit",
-    icon: "/images/programs/icon-design-entrepreneurship.png",
+    icon: "/icons/home/quick-glance/design-entrepreneurship.webp",
     alt: "Glossy 3D lightbulb with a gear inside",
   },
   {
-    label: "Both Events",
+    label: "Leadership Summit",
     title: "Networking Dinner",
     brief: "Curated evenings where the real hallway conversations happen.",
-    when: "23–27 Sept",
+    when: "24 Sept",
     href: "/leadership-summit",
-    icon: "/images/programs/icon-networking-dinner.png",
+    icon: "/icons/home/quick-glance/networking-dinner.webp",
     alt: "Two glossy 3D wine glasses toasting",
+  },
+  {
+    label: "Rising Leaders Forum",
+    title: "Design & AI",
+    brief:
+      "Exploring how AI is reshaping creativity, products and design practice.",
+    when: "26th Sept",
+    href: "/rising-leaders-forum",
+    icon: "/icons/home/quick-glance/design-ai.webp",
+    alt: "Glossy 3D AI chip with creative spark",
+  },
+  {
+    label: "Rising Leaders Forum",
+    title: "Design Mentorship",
+    brief:
+      "Experienced leaders share guidance for building meaningful design careers.",
+    when: "27th Sept",
+    href: "/rising-leaders-forum",
+    icon: "/icons/home/quick-glance/mentorship.webp",
+    alt: "Glossy 3D mentor and mentee connected by a path",
+  },
+  // {
+  //   label: "Rising Leaders Forum",
+  //   title: "Curated Workshops",
+  //   brief:
+  //     "Hands-on learning in small groups with limited seats and expert facilitators.",
+  //   when: "26–27th Sept",
+  //   href: "/rising-leaders-forum",
+  //   icon: "/icons/home/quick-glance/workshops.webp",
+  //   alt: "Glossy 3D notebook and pencil with workshop tools",
+  // },
+  {
+    label: "Leadership Summit",
+    title: "UX & Design Leadership Focused Organizations",
+    brief:
+      "Organizations putting design leadership at the heart of strategy, culture and growth.",
+    when: "23–25th Sept",
+    href: "/design-leadership-focused-orgs",
+    icon: "/icons/home/quick-glance/design-leadership-focused-orgs.webp",
+    alt: "Glossy 3D compass surrounded by a leadership team",
   },
 ];
 
@@ -105,11 +145,14 @@ function ProgramCard({
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100"
-        style={{ background: "radial-gradient(circle, rgba(255,109,53,0.22), transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(circle, rgba(255,109,53,0.22), transparent 70%)",
+        }}
       />
 
       {/* Text leads the card */}
-      <div className="flex flex-col p-7 pb-0">
+      <div className="min-h-[250px] relative z-10 flex flex-col p-7 pr-28 pb-7">
         <p className="font-sans text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--accent)]">
           {program.label}
         </p>
@@ -146,22 +189,13 @@ function ProgramCard({
 
       {/* Large glossy 3D object anchored at the bottom — its #1B1B1B ground
           matches the card base so it reads as emerging from the card. */}
-      <div
-        className="relative mt-2 h-52 w-full overflow-hidden"
-        style={{
-          // Fade the icon's flat ground into the card so no square seam shows
-          maskImage:
-            "linear-gradient(to bottom, transparent 0%, #000 22%, #000 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to bottom, transparent 0%, #000 22%, #000 100%)",
-        }}
-      >
+      <div className="pointer-events-none absolute -right-15 -bottom-15 w-60 h-60 transition-all duration-500 ease-out group-hover:translate-x-2 group-hover:scale-110 group-hover:rotate-3">
         <Image
           src={program.icon}
           alt={program.alt}
           fill
-          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          className="scale-125 object-contain object-bottom transition-transform duration-[900ms] ease-out group-hover:scale-[1.32]"
+          sizes="160px"
+          className="object-contain opacity-90 group-hover:opacity-100"
         />
       </div>
     </article>
@@ -211,9 +245,9 @@ export default function QuickGlanceSection() {
             Everything Happening On Stage.
           </h2>
           <p className="font-sans max-w-[16rem] text-sm leading-relaxed text-white/40 md:text-right">
-            Six flagship programs, five days,
+            Six flagship programs,
             <br />
-            one campus of design.
+            five days, two venues.
           </p>
         </div>
 

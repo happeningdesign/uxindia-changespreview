@@ -6,7 +6,7 @@ export const LeadershipSummitSpeakersData = [
   {
     name: "Doug Powell",
     title:
-      "Executive Design Leader & Coach Former VP of Design, IBM & Expedia, Past President, AIGA",
+      "Executive Design Leader | VP of Design | Former IBM & Expedia | Lead Lecturer, iF Design Academy",
     company: "",
     image: "/images/speakers/leadership-summit/doug-powell.webp",
     color: "#000000",
@@ -14,13 +14,13 @@ export const LeadershipSummitSpeakersData = [
     talkType: "Grand Keynote",
   },
   {
-    name: "Vyoma Pathak",
-    title: "Sr. Design Practice Lead, Mouri Tech",
+    name: "Jesvin Yeo Puay Hwa",
+    title: "Associate Vice Provost (Strategy), Undergraduate Education, NTU",
     company: "",
-    image: "/images/speakers/leadership-summit/vyoma-pathak.webp",
+    image: "/images/speakers/leadership-summit/jesvin-yeo.webp",
     color: "#000000",
-    bio: "Vyoma Pathak is the Head of User Experience (UX) Design at MOURI Tech, where she leads multidisciplinary teams across UX strategy, research, visual design, and digital transformation initiatives.",
-    talkType: "Spark Session",
+    bio: "Professor Jesvin Yeo is currently a Professor of Visual Communication Design at the School of Art, Design and Media, Nanyang Technological University, Singapore, and serves as the university’s Associate Vice Provost (Strategy) for undergraduate education.",
+    talkType: "Grand Keynote",
   },
   {
     name: "Prof. Kirti Trivedi",
@@ -42,8 +42,18 @@ export const LeadershipSummitSpeakersData = [
     talkType: "Plenary Keynote",
   },
   {
+    name: "Vyoma Pathak",
+    title: "Sr. Design Practice Lead, Mouri Tech",
+    company: "",
+    image: "/images/speakers/leadership-summit/vyoma-pathak.webp",
+    color: "#000000",
+    bio: "Vyoma Pathak is the Head of User Experience (UX) Design at MOURI Tech, where she leads multidisciplinary teams across UX strategy, research, visual design, and digital transformation initiatives.",
+    talkType: "Spark Session",
+  },
+  {
     name: "Pontus Warnestal",
-    title: "Head of Design, Ambition Group",
+    title:
+      "Head of Design, Ambition Group, Deputy Professor, Halmstad University",
     company: "",
     image: "/images/speakers/leadership-summit/pontus-warnestal.webp",
     color: "#000000",
@@ -58,15 +68,6 @@ export const LeadershipSummitSpeakersData = [
     color: "#000000",
     bio: "Mario Van der Meulen is a design executive, author, and international speaker known for helping leaders unlock meaningful innovation through human-centered design. With 2+ decades of global experience across sectors, he brings depth, clarity, and provocation to every stage.",
     talkType: "Plenary Keynote",
-  },
-  {
-    name: "Ish Awasthi",
-    title: "VP, UX Research, JPMC",
-    company: "",
-    image: "/images/speakers/leadership-summit/ish-awasthi.webp",
-    color: "#000000",
-    bio: "With over 13 years of experience spanning UX research, product design, entrepreneurship, and cross-functional leadership, Ish has built products and teams across very different contexts - from enterprise tools for asset managers and bankers in the U.S. to mobile experiences for drivers in India. ",
-    talkType: "Spark Session",
   },
 ];
 
@@ -167,7 +168,7 @@ export function LSSpeakerCard({
           <div className="flex items-center justify-between flex-shrink-0 mb-2 md:mb-0">
             <div className="bg-white/20 rounded-md px-2 py-1">
               <span className="font-sans text-[10px] font-bold text-white tracking-wider">
-                UXI25
+                UXI26
               </span>
             </div>
             <div

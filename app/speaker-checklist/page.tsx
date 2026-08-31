@@ -1,20 +1,22 @@
 import { createMetadata } from "@/lib/seo";
-import SpeakerChecklistPage from "./speaker-checklist-page";
+// import SpeakerChecklistPage from "./speaker-checklist-page";
+
+import { redirect } from "next/navigation";
 
 export const metadata = createMetadata({
-  title: "Know Before You Go — UXINDIA 2026",
+  title: "Speaker Checklist — UXINDIA 2026",
   description:
-    "Everything you need to prepare for UXINDIA 2026 — registration and check-in, both venues, on-site essentials, speaker logistics, international travel tips, code of conduct and FAQs.",
+    "Everything selected UXINDIA 2026 speakers need to know — from arriving at the venue to getting your slides ready and navigating the conference.",
   image: "/og/og-default.jpg",
   keywords: [
-    "UXINDIA 2026 know before you go",
-    "UXINDIA attendee guide",
-    "UXINDIA 2026 venue",
-    "design conference Bengaluru",
+    "UXINDIA 2026 speaker",
+    "speaker checklist",
+    "design conference speaker",
     "UXINDIA speaker guide",
   ],
 });
 
 export default function Page() {
-  return <SpeakerChecklistPage />;
+  redirect("/checklist");
+  // return <SpeakerChecklistPage />;
 }

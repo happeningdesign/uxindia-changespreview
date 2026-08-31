@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 
 // Modal
@@ -31,7 +32,7 @@ const steps = [
   },
   {
     number: 4,
-    text: "Submit before August 14, 2026.",
+    text: "Submit before August 19, 2026.",
     icon: "/design-pitch/icons/feasible.svg",
     iconPosition: "left-[510px] top-[370px]",
     textPosition: "left-[580px] top-[380px]",
@@ -88,6 +89,8 @@ const iconVariants: Variants = {
 
 export default function HowToEnter() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const submissionLink = "https://app.eventum.co/";
 
   return (
     <motion.section
@@ -207,9 +210,9 @@ export default function HowToEnter() {
           {/* Submit */}
           <motion.div
             variants={fadeUpVariants}
-            className="absolute bottom-[40px] left-[53%] w-[280px] -translate-x-1/2"
+            className="absolute bottom-[55px] left-[53%] w-[280px] -translate-x-1/2"
           >
-            <motion.button
+            {/* <motion.button
               onClick={() => setIsModalOpen(true)}
               initial="rest"
               animate="rest"
@@ -239,7 +242,39 @@ export default function HowToEnter() {
               style={{ fontFamily: "Shrikhand" }}
             >
               Submit
-            </motion.button>
+            </motion.button> */}
+            <Link href="#submit">
+              <motion.button
+                initial="rest"
+                animate="rest"
+                whileHover="hover"
+                whileTap="tap"
+                variants={{
+                  rest: {
+                    y: 0,
+                    boxShadow: "0px 5px 0px #E6A900",
+                  },
+                  hover: {
+                    y: -5,
+                    boxShadow: "0px 10px 0px #E6A900",
+                  },
+                  tap: {
+                    y: 3,
+                    scale: 0.98,
+                    boxShadow: "0px 2px 0px #E6A900",
+                  },
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20,
+                }}
+                className="w-full rounded-full bg-black px-8 py-4 text-[20px] text-white disabled:cursor-not-allowed"
+                style={{ fontFamily: "Shrikhand" }}
+              >
+                Submissions Closed
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
 
@@ -278,7 +313,7 @@ export default function HowToEnter() {
             variants={fadeUpVariants}
             className="mx-auto mt-6 w-full max-w-[280px]"
           >
-            <motion.button
+            {/* <motion.button
               onClick={() => setIsModalOpen(true)}
               whileHover={{
                 y: -5,
@@ -296,10 +331,41 @@ export default function HowToEnter() {
               }}
             >
               Submit
-            </motion.button>
+            </motion.button> */}
+            <Link href="#submit">
+              <motion.button
+                whileHover={{
+                  y: -5,
+                  boxShadow: "0px 10px 0px #E6A900",
+                }}
+                whileTap={{
+                  y: 3,
+                  scale: 0.98,
+                  boxShadow: "0px 2px 0px #E6A900",
+                }}
+                className="w-full rounded-full bg-black px-8 py-4 text-[26px] text-white disabled:cursor-not-allowed"
+                style={{
+                  fontFamily: "Shrikhand",
+                  boxShadow: "0px 5px 0px #E6A900",
+                }}
+              >
+                Submit
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
+
+      <motion.div variants={fadeUpVariants} className="text-center">
+        <p
+          className="mx-auto mt-4 max-w-[550px] text-[16px] leading-[1.5] text-black"
+          style={{ fontFamily: "Google Sans" }}
+        >
+          Please note: Design Pitch requires a separate Eventum account.
+          Existing accounts created during ticket purchases cannot be used for
+          submissions.
+        </p>
+      </motion.div>
 
       <SubmitInterestModal
         open={isModalOpen}

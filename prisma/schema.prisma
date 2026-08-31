@@ -115,6 +115,24 @@ model DesignPitchProspect {
   @@index([createdAt])
 }
 
+model CxoDinnerRSVP {
+  id            String   @id @default(cuid())
+  createdAt     DateTime @default(now())
+
+  firstName     String
+  lastName      String
+  workEmail     String
+  phone         String
+
+  company       String?
+  designation   String?
+
+  message       String?
+
+  @@index([workEmail])
+  @@index([createdAt])
+}
+
 model Contributor {
   id                     String   @id @default(cuid())
 

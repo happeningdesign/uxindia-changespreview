@@ -16,6 +16,10 @@ interface SpeakersGridProps {
   event?: "leadership" | "rising";
 }
 
+/* ============================================================
+   SPEAKER CARD
+============================================================ */
+
 function SpeakerCard({
   speaker,
   index,
@@ -33,6 +37,7 @@ function SpeakerCard({
 }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isTapped, setIsTapped] = useState(false);
+
   const color = speakerColors[index % speakerColors.length];
   const isLight = variant === "light";
   const showOverlay = isHovered || isTapped;
@@ -45,14 +50,13 @@ function SpeakerCard({
         boxShadow: isLight
           ? "0 8px 24px rgba(0,0,0,0.12)"
           : "0 8px 28px rgba(0,0,0,0.55)",
-        ring: isLight
+        border: isLight
           ? "1px solid rgba(13,13,13,0.08)"
           : "1px solid rgba(255,255,255,0.12)",
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => {
-        // On touch devices, toggle the overlay; on desktop this is a no-op (hover handles it)
         if (window.matchMedia("(hover: none)").matches) {
           setIsTapped((prev) => !prev);
         } else {
@@ -60,7 +64,10 @@ function SpeakerCard({
         }
       }}
     >
-      {/* Photo */}
+      {/* ========================================================
+          PHOTO
+      ======================================================== */}
+
       <img
         src={speaker.image || `/placeholder.svg?height=500&width=400`}
         alt={speaker.name}
@@ -69,12 +76,16 @@ function SpeakerCard({
         crossOrigin="anonymous"
       />
 
-      {/* Base gradient — tighter on mobile so face shows, fuller on desktop */}
+      {/* ========================================================
+          BASE GRADIENT
+      ======================================================== */}
+
       {isLight ? (
         <div
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.93) 100%)`,
+            background:
+              "linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.93) 100%)",
           }}
         />
       ) : (
@@ -86,16 +97,19 @@ function SpeakerCard({
                 "linear-gradient(to top, black 0%, rgba(0,0,0,0.7) 35%, transparent 55%)",
             }}
           />
+
           <div className="absolute inset-0 hidden md:block bg-gradient-to-t from-black via-black/50 to-transparent" />
         </>
       )}
 
-      {/* Front card name/role — visible when not hovered */}
+      {/* ========================================================
+          FRONT CARD CONTENT
+      ======================================================== */}
+
       <div
         className="absolute bottom-0 left-0 right-0 p-3 md:p-5 transition-opacity duration-300"
         style={{ opacity: showOverlay ? 0 : 1 }}
       >
-        {/* Orange arrow button — bottom right */}
         <div className="flex items-end justify-between gap-1.5">
           <div className="flex-1 items-start min-w-0">
             <h3
@@ -108,20 +122,24 @@ function SpeakerCard({
                 const words = speaker.name.trim().split(" ");
                 const firstName = words[0];
                 const restName = words.slice(1).join(" ");
+
                 return (
                   <>
                     <span className="block" style={{ color: "white" }}>
                       {firstName}
                     </span>
+
                     {restName && <span className="block">{restName}</span>}
                   </>
                 );
               })()}
             </h3>
+
             <p className="font-sans text-[10px] md:text-sm text-white/70 leading-tight">
               {speaker.role}
             </p>
           </div>
+
           {/* Orange circle arrow */}
           <div className="flex justify-end items-end">
             <div
@@ -145,14 +163,17 @@ function SpeakerCard({
         </div>
       </div>
 
-      {/* Glassmorphism overlay — slides up from bottom on hover */}
+      {/* ========================================================
+          GLASSMORPHISM OVERLAY
+      ======================================================== */}
+
       <div
         className="speaker-overlay absolute inset-x-0 bottom-0 flex flex-col p-3 md:p-5 transition-all duration-500 ease-out max-h-[85%] overflow-y-auto"
         style={{
           background: "rgba(10, 10, 10, 0.55)",
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
-          borderTop: `1px solid rgba(255,255,255,0.12)`,
+          borderTop: "1px solid rgba(255,255,255,0.12)",
           transform: showOverlay ? "translateY(0%)" : "translateY(100%)",
           opacity: showOverlay ? 1 : 0,
           scrollbarWidth: "none",
@@ -166,24 +187,33 @@ function SpeakerCard({
             }
           }
         `}</style>
-        {/* Talk type chip */}
+
+        {/* Talk type */}
         {speaker.talkType && (
           <span className="font-sans text-[7px] md:text-[9px] font-semibold text-white/60 tracking-widest uppercase mb-1.5 flex-shrink-0">
-            {speaker.talkType}
+            {Array.isArray(speaker.talkType)
+              ? speaker.talkType.join(" · ")
+              : speaker.talkType}
           </span>
         )}
+
         <h3 className="font-leadership text-sm md:text-lg text-white leading-tight mb-1 flex-shrink-0">
           {speaker.name}
         </h3>
+
         <p className="font-sans text-[8px] md:text-[11px] font-semibold text-white/60 uppercase tracking-widest mb-2 flex-shrink-0">
           {speaker.role}
         </p>
+
         <p className="font-sans text-[9px] md:text-xs text-white/80 leading-relaxed line-clamp-3 md:line-clamp-4 flex-shrink-0">
           {speaker.bio ||
             `${speaker.name} is a respected voice in the design community, bringing valuable insights and experience to UXINDIA.`}
         </p>
+
         <Link
-          href={`/${event === "rising" ? "rising-leaders-forum" : "leadership-summit"}/speakers/${getSpeakerSlug(speaker)}`}
+          href={`/${
+            event === "rising" ? "rising-leaders-forum" : "leadership-summit"
+          }/speakers/${getSpeakerSlug(speaker)}`}
           onClick={(e) => e.stopPropagation()}
           target="_blank"
           className="group/btn mt-2 md:mt-3 inline-flex items-center gap-1 self-start font-sans text-[8px] md:text-[11px] font-semibold uppercase tracking-wider text-[#E85520] flex-shrink-0 hover:text-[#E85520]/80 transition-colors"
@@ -208,132 +238,434 @@ function SpeakerCard({
   );
 }
 
+/* ============================================================
+   SPEAKER SECTION
+============================================================ */
+
+function SpeakerSection({
+  title,
+  speakers,
+  variant,
+  event,
+  activeCard,
+  onFlip,
+  showMorePlaceholder = false,
+  startIndex = 0,
+}: {
+  title: string;
+  speakers: Speaker[];
+  variant: "dark" | "light";
+  event: "leadership" | "rising";
+  activeCard: number | null;
+  onFlip: (index: number) => void;
+  showMorePlaceholder?: boolean;
+  startIndex?: number;
+}) {
+  const isLight = variant === "light";
+
+  if (speakers.length === 0 && !showMorePlaceholder) {
+    return null;
+  }
+
+  return (
+    <section
+      className={`${isLight ? "bg-[#F5F0E8]" : "bg-[#0D0D0D]"} py-12 md:py-16`}
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section heading */}
+        <div className="flex items-end justify-between gap-4 mb-8 md:mb-12">
+          <div>
+            {/* <p className="font-sans text-[10px] md:text-xs font-semibold uppercase tracking-[0.18em] text-[#E85520] mb-2">
+              {speakers.length} {speakers.length === 1 ? "Speaker" : "Speakers"}
+            </p> */}
+
+            <h2
+              className={`font-leadership text-4xl md:text-5xl tracking-tight ${
+                isLight ? "text-[#0D0D0D]" : "text-white"
+              }`}
+            >
+              {title}
+            </h2>
+          </div>
+        </div>
+
+        {/* Speaker grid */}
+        {speakers.length > 0 && (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+            {speakers.map((speaker, index) => {
+              const cardIndex = startIndex + index;
+
+              return (
+                <SpeakerCard
+                  key={`${speaker.name}-${cardIndex}`}
+                  speaker={speaker}
+                  index={cardIndex}
+                  variant={variant}
+                  isFlipped={activeCard === cardIndex}
+                  onFlip={() => onFlip(cardIndex)}
+                  event={event}
+                />
+              );
+            })}
+
+            {/* More speakers placeholder */}
+            {showMorePlaceholder && (
+              <div
+                className={`relative aspect-[4/5] rounded-lg border border-dashed flex items-center justify-center bg-transparent ${
+                  isLight ? "border-[#0D0D0D]/20" : "border-white/20"
+                }`}
+              >
+                <div className="text-center px-4">
+                  <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#E85520]/50 mb-3">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      className="text-[#E85520]"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </div>
+
+                  <p
+                    className={`font-sans text-xs md:text-sm ${
+                      isLight ? "text-[#0D0D0D]/60" : "text-white/60"
+                    }`}
+                  >
+                    More speakers
+                  </p>
+
+                  <p
+                    className={`font-sans text-xs ${
+                      isLight ? "text-[#0D0D0D]/40" : "text-white/40"
+                    }`}
+                  >
+                    announced soon.
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+/* ============================================================
+   MAIN SPEAKERS GRID
+============================================================ */
+
 export default function SpeakersGrid({
   speakers,
   showMorePlaceholder = true,
   variant = "dark",
   event = "leadership",
 }: SpeakersGridProps) {
-  const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [activeCard, setActiveCard] = useState<number | null>(null);
+
   const isLight = variant === "light";
 
   const handleFlip = (index: number) => {
     setActiveCard((prev) => (prev === index ? null : index));
   };
 
-  // Extract unique talk types from speakers
-  const talkTypes = Array.from(
-    new Set(speakers.map((s) => s.talkType).filter(Boolean)),
-  ) as string[];
+  /* ============================================================
+     SESSION TYPE HELPERS
+  ============================================================ */
 
-  // Filter speakers based on active filter
-  const filteredSpeakers = activeFilter
-    ? speakers.filter((s) => s.talkType === activeFilter)
-    : speakers;
+  /**
+   * Normalises:
+   *
+   * "Workshop"
+   *
+   * into:
+   *
+   * ["workshop"]
+   *
+   * and:
+   *
+   * ["Grand Keynote", "Workshop"]
+   *
+   * into:
+   *
+   * ["grand keynote", "workshop"]
+   */
+  const normalizeTypes = (value?: string | string[]): string[] => {
+    if (!value) return [];
+
+    if (Array.isArray(value)) {
+      return value.filter(Boolean).map((type) => type.toLowerCase().trim());
+    }
+
+    return [value.toLowerCase().trim()];
+  };
+
+  /**
+   * Get all session types associated with a speaker.
+   *
+   * We intentionally look at BOTH:
+   *
+   * 1. speaker.talkType
+   * 2. speaker.events[event].type
+   *
+   * This makes the component backwards compatible with
+   * your current data structure.
+   */
+  const getSpeakerTalkTypes = (speaker: Speaker): string[] => {
+    const types: string[] = [];
+
+    // Top-level talkType
+    types.push(...normalizeTypes(speaker.talkType));
+
+    // Event-specific talks
+    const eventTalks = speaker.events?.[event];
+
+    if (eventTalks) {
+      const talks = Array.isArray(eventTalks) ? eventTalks : [eventTalks];
+
+      talks.forEach((talk) => {
+        types.push(...normalizeTypes(talk.type));
+      });
+    }
+
+    // Remove duplicates
+    return [...new Set(types)];
+  };
+
+  /**
+   * Checks whether a speaker has a session matching
+   * the supplied matcher.
+   */
+  const hasTalkType = (
+    speaker: Speaker,
+    matcher: (type: string) => boolean,
+  ): boolean => {
+    const types = getSpeakerTalkTypes(speaker);
+
+    return types.some(matcher);
+  };
+
+  /* ============================================================
+     SESSION CLASSIFICATION
+  ============================================================ */
+
+  /**
+   * KEYNOTES
+   *
+   * Includes:
+   * - Grand Keynote
+   * - Plenary Keynote
+   * - Opening Keynote
+   *
+   * We use "includes" so this also handles values such as:
+   *
+   * "Grand Keynote - 40 Mins"
+   * "Plenary Keynote - 30 Mins"
+   */
+  const isKeynote = (speaker: Speaker): boolean =>
+    hasTalkType(speaker, (type) => {
+      return (
+        type.includes("grand keynote") ||
+        type.includes("plenary keynote") ||
+        type.includes("opening keynote")
+      );
+    });
+
+  /**
+   * PANELS
+   */
+  const isPanel = (speaker: Speaker): boolean =>
+    hasTalkType(speaker, (type) => type.includes("panel"));
+
+  /**
+   * WORKSHOPS
+   */
+  const isWorkshop = (speaker: Speaker): boolean =>
+    hasTalkType(speaker, (type) => type.includes("workshop"));
+
+  /**
+   * GENERAL SPEAKERS
+   *
+   * Includes:
+   * - Deep Dive
+   * - Spark Session
+   * - Announcing Soon
+   *
+   * And any future session type that isn't explicitly
+   * classified as a Keynote, Panel, or Workshop.
+   */
+  const isGeneralSpeaker = (speaker: Speaker): boolean => {
+    const types = getSpeakerTalkTypes(speaker);
+
+    const hasExplicitGeneralType = types.some(
+      (type) =>
+        type.includes("deep dive") ||
+        type.includes("spark session") ||
+        type.includes("announcing soon"),
+    );
+
+    const hasAnyType =
+      isKeynote(speaker) || isPanel(speaker) || isWorkshop(speaker);
+
+    return hasExplicitGeneralType || !hasAnyType;
+  };
+
+  /* ============================================================
+     BUILD SECTIONS
+  ============================================================ */
+
+  /**
+   * IMPORTANT:
+   *
+   * These filters are completely independent.
+   *
+   * We DO NOT exclude a speaker if they appear in another
+   * section.
+   *
+   * Example:
+   *
+   * Doug Powell:
+   *
+   * [
+   *   "Grand Keynote",
+   *   "Workshop"
+   * ]
+   *
+   * appears in:
+   *
+   * Keynotes
+   * AND
+   * Workshops
+   */
+
+  const keynoteSpeakers = speakers.filter(isKeynote);
+
+  const panelSpeakers = speakers.filter(isPanel);
+
+  const workshopSpeakers = speakers.filter(isWorkshop);
+
+  const generalSpeakers = speakers.filter(isGeneralSpeaker);
+
+  /* ============================================================
+     CARD INDEXES
+  ============================================================ */
+
+  /**
+   * Each section gets its own index range.
+   *
+   * A speaker appearing in two sections therefore has two
+   * independent card indexes.
+   */
+  const panelsStartIndex = keynoteSpeakers.length;
+
+  const workshopsStartIndex = panelsStartIndex + panelSpeakers.length;
+
+  const speakersStartIndex = workshopsStartIndex + workshopSpeakers.length;
+
+  /* ============================================================
+     RENDER
+  ============================================================ */
 
   return (
     <section
-      className={`${isLight ? "bg-[#F5F0E8]" : "bg-[#0D0D0D]"} py-16 md:py-24`}
       id="speakers"
+      className={isLight ? "bg-[#F5F0E8]" : "bg-[#0D0D0D]"}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6 mb-12 md:mb-16">
-          <h2
-            className={`font-leadership text-4xl md:text-5xl tracking-tight ${isLight ? "text-[#0D0D0D]" : "text-white"}`}
-          >
-            Speakers
-          </h2>
+      {/* ========================================================
+          MAIN INTRO
+      ======================================================== */}
 
-          {/* Filter chips */}
-          {talkTypes.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => {
-                  setActiveFilter(null);
-                  setActiveCard(null);
-                }}
-                className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
-                  activeFilter === null
-                    ? "bg-[#E85520] text-white"
-                    : isLight
-                      ? "bg-[#0D0D0D]/10 text-[#0D0D0D]/70 hover:bg-[#0D0D0D]/20"
-                      : "bg-white/10 text-white/70 hover:bg-white/20"
-                }`}
-              >
-                All
-              </button>
-              {talkTypes.map((type) => (
-                <button
-                  key={type}
-                  onClick={() => {
-                    setActiveFilter(type);
-                    setActiveCard(null);
-                  }}
-                  className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all cursor-pointer ${
-                    activeFilter === type
-                      ? "bg-[#E85520] text-white"
-                      : isLight
-                        ? "bg-[#0D0D0D]/10 text-[#0D0D0D]/70 hover:bg-[#0D0D0D]/20"
-                        : "bg-white/10 text-white/70 hover:bg-white/20"
-                  }`}
-                >
-                  {type}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
+      <div className="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-4 md:pb-8">
+        <p className="font-sans text-[10px] md:text-xs font-semibold uppercase tracking-[0.18em] text-[#E85520] mb-2">
+          Meet the people shaping the conversation
+        </p>
 
-        {/* Speakers grid - 4 columns on desktop to match design */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-          {filteredSpeakers.map((speaker, index) => (
-            <SpeakerCard
-              key={index}
-              speaker={speaker}
-              index={index}
-              variant={variant}
-              isFlipped={activeCard === index}
-              onFlip={() => handleFlip(index)}
-              event={event}
-            />
-          ))}
-
-          {/* More speakers placeholder */}
-          {showMorePlaceholder && !activeFilter && (
-            <div
-              className={`relative aspect-[4/5] rounded-lg border border-dashed flex items-center justify-center bg-transparent ${isLight ? "border-[#0D0D0D]/20" : "border-white/20"}`}
-            >
-              <div className="text-center px-4">
-                <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border border-[#E85520]/50 mb-3">
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="text-[#E85520]"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </div>
-                <p
-                  className={`font-sans text-xs md:text-sm ${isLight ? "text-[#0D0D0D]/60" : "text-white/60"}`}
-                >
-                  More speakers
-                </p>
-                <p
-                  className={`font-sans text-xs ${isLight ? "text-[#0D0D0D]/40" : "text-white/40"}`}
-                >
-                  announced soon.
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
+        <h2
+          className={`font-leadership text-5xl md:text-6xl lg:text-7xl tracking-tight ${
+            isLight ? "text-[#0D0D0D]" : "text-white"
+          }`}
+        >
+          Speakers
+        </h2>
       </div>
+
+      {/* ========================================================
+          KEYNOTES
+      ======================================================== */}
+
+      {keynoteSpeakers.length > 0 && (
+        <div id="keynotes">
+          <SpeakerSection
+            title="Keynotes"
+            speakers={keynoteSpeakers}
+            variant={variant}
+            event={event}
+            activeCard={activeCard}
+            onFlip={handleFlip}
+            startIndex={0}
+          />
+        </div>
+      )}
+
+      {/* ========================================================
+          DEEP DIVE & SPARK SPEAKERS
+      ======================================================== */}
+
+      {generalSpeakers.length > 0 && (
+        <div id="speakers-list">
+          <SpeakerSection
+            title="Deep Dive & Spark Sessions"
+            speakers={generalSpeakers}
+            variant={variant}
+            event={event}
+            activeCard={activeCard}
+            onFlip={handleFlip}
+            showMorePlaceholder={showMorePlaceholder}
+            startIndex={speakersStartIndex}
+          />
+        </div>
+      )}
+
+      {/* ========================================================
+          PANELS
+      ======================================================== */}
+
+      {panelSpeakers.length > 0 && (
+        <div id="panels">
+          <SpeakerSection
+            title="Panels"
+            speakers={panelSpeakers}
+            variant={variant}
+            event={event}
+            activeCard={activeCard}
+            onFlip={handleFlip}
+            startIndex={panelsStartIndex}
+          />
+        </div>
+      )}
+
+      {/* ========================================================
+          WORKSHOPS
+      ======================================================== */}
+
+      {workshopSpeakers.length > 0 && (
+        <div id="workshops">
+          <SpeakerSection
+            title="Workshops"
+            speakers={workshopSpeakers}
+            variant={variant}
+            event={event}
+            activeCard={activeCard}
+            onFlip={handleFlip}
+            startIndex={workshopsStartIndex}
+          />
+        </div>
+      )}
     </section>
   );
 }

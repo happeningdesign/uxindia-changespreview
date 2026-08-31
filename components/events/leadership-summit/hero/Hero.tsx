@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function Hero({
   activeTab,
   setActiveTab,
@@ -77,6 +79,28 @@ export default function Hero({
               strategic decision-makers shaping design inside their
               organisations.
             </p>
+
+            {/* Hero CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-wrap gap-4 mb-12"
+            >
+              <button
+                onClick={() => setActiveTab("schedule")}
+                className="font-sans text-[13px] font-semibold tracking-[1.5px] px-7 py-2.5 rounded-full bg-brand text-white uppercase text-center cursor-pointer"
+              >
+                Know The Schedule
+              </button>
+
+              <button
+                onClick={() => setActiveTab("overview")}
+                className="font-sans text-[13px] font-semibold tracking-[1.5px] px-7 py-2.5 rounded-full border border-white text-white hover:bg-white hover:text-[#0D0D0D] uppercase transition-all duration-300 text-center cursor-pointer"
+              >
+                Know The Speakers
+              </button>
+            </motion.div>
 
             {/* Thin hairline divider */}
             <div
@@ -158,7 +182,7 @@ export default function Hero({
           <div className="w-full flex border-t border-white/10 bg-black/40 backdrop-blur-md">
             <button
               onClick={() => setActiveTab("overview")}
-              className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${
+              className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-t-2 border-b-2 cursor-pointer ${
                 activeTab === "overview"
                   ? "text-white border-[#E85520]"
                   : "text-white/40 border-transparent hover:text-white/60"
@@ -168,7 +192,7 @@ export default function Hero({
             </button>
             <button
               onClick={handleScheduleClick}
-              className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${
+              className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-t-2 border-b-2 cursor-pointer ${
                 activeTab === "schedule"
                   ? "text-white border-[#E85520]"
                   : "text-white/40 border-transparent hover:text-white/60"

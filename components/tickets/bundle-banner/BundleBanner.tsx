@@ -5,13 +5,13 @@ import { formatPrice } from "@/types/format";
 import { PriceWithGst } from "../price-with-gst/PriceWithGst";
 
 /** Full Week Pass at regular pricing (no Early Bird bundle tier). */
-const FULL_WEEK_PASS_PRICE = 30339;
+const FULL_WEEK_PASS_PRICE = 39999;
 
 const summitRegularPrice =
-  summitTiers.find((t) => t.id === "summit-regular")?.price ?? 23999;
+  summitTiers.find((t) => t.id === "summit-last-minute")?.price ?? 25999;
 const forumRegularPrice =
-  forumProfessionalTiers.find((t) => t.id === "forum-regular-pro")?.price ??
-  12999;
+  forumProfessionalTiers.find((t) => t.id === "forum-last-minute-pro")?.price ??
+  14999;
 const workshopsPrice = summitAddOn.price;
 
 const buySeparatelyTotal =
@@ -64,7 +64,7 @@ export function BundleBanner() {
           </div>
 
           <Link
-            href="mailto:team@umo.design?subject=Full%20Week%20Pass%20Enquiry"
+            href="https://uxi.goeventum.com/leadership-summit/tickets?utm_source=tickets&utm_campaign=full-week-pass"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0D0D0D] px-6 py-3.5 font-sans text-sm font-semibold text-white transition hover:scale-[1.02] hover:shadow-lg"
           >
             Enquire About Bundles

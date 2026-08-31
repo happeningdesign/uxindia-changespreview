@@ -5,7 +5,7 @@ import Footer from "@/components/global/footer/Footer";
 // Page Components
 import Hero from "@/components/home/hero/Hero";
 import SocialProofTicker from "@/components/home/social-proof-ticker/SocialProofTicker";
-import MarqueeBanner from "@/components/home/marquee-banner/MarqueeBanner";
+// import MarqueeBanner from "@/components/home/marquee-banner/MarqueeBanner";
 import ConferenceShiftSection from "@/components/home/conference-shift-section/ConferenceShiftSection";
 import ThreeDistinctPathsSection from "@/components/home/three-distinct-paths-section/ThreeDistinctPathsSection";
 import FiveDaysSection from "@/components/home/five-days-section/FiveDaysSection";
@@ -27,7 +27,7 @@ export default function Home() {
       {/* homepage body */}
       <Hero />
       <SocialProofTicker />
-      <MarqueeBanner />
+      {/* <MarqueeBanner /> */}
       <ConferenceShiftSection />
       <ThreeDistinctPathsSection />
       <FiveDaysSection />

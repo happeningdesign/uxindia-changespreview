@@ -66,7 +66,8 @@ export const forumProfessionalTiers: PassTier[] = [
     name: "Rising Leaders Pass",
     badge: "Regular",
     badgeVariant: "popular",
-    price: 12999,
+    // price: 12999,
+    price: 0,
     saleStarts: "26 Jun",
     description: FORUM_DESCRIPTION,
     note: LIMITED_SEATS_NOTE,
@@ -81,8 +82,6 @@ export const forumProfessionalTiers: PassTier[] = [
 
     ctaStyle: "muted",
     // ctaStyle: "brand",
-
-    isExpanded: true,
   },
   {
     id: "forum-last-minute-pro",
@@ -96,13 +95,12 @@ export const forumProfessionalTiers: PassTier[] = [
     inclusions: FORUM_INCLUSIONS,
     opensOn: "2026-08-17",
 
-    // ctaLabel: "Register Now →",
-    // ctaHref: ticketUrl("risingLeaderForum", "forum-last-minute-pro"),
+    ctaLabel: "Register Now →",
+    ctaHref: ticketUrl("risingLeaderForum", "forum-last-minute-pro"),
 
-    ctaLabel: "Opens on 17th Aug",
-    ctaHref: "#",
+    ctaStyle: "brand",
 
-    ctaStyle: "muted",
+    isExpanded: true,
   },
   {
     id: "forum-walkin-pro",

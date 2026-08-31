@@ -100,27 +100,27 @@ export default function LeadershipSummitPageClient() {
       <div ref={contentRef} />
 
       {/* Sticky Tab Bar */}
-      <div className="sticky top-[50px] md:top-[60px] z-40 w-full flex border-b border-white/15 bg-[#0D0D0D] shadow-lg">
+      <div className="sticky top-[60px] md:top-[72px] z-40 w-full flex border border-white/25 bg-[#000] shadow-lg">
         <button
-          onClick={() => handleTabChange("overview")}
-          className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${
-            activeTab === "overview"
+          onClick={() => handleTabChange("schedule")}
+          className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-4 cursor-pointer ${
+            activeTab === "schedule"
               ? "border-[#E85520] text-white"
-              : "border-transparent text-white/40 hover:text-white/70"
+              : "border-transparent text-white/70 hover:text-white"
           }`}
         >
-          Speakers
+          View Schedule
         </button>
 
         <button
-          onClick={() => handleTabChange("schedule")}
-          className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-2 cursor-pointer ${
-            activeTab === "schedule"
+          onClick={() => handleTabChange("overview")}
+          className={`flex-1 py-4 px-6 font-sans text-base md:text-lg font-medium transition-all duration-300 border-b-4 cursor-pointer ${
+            activeTab === "overview"
               ? "border-[#E85520] text-white"
-              : "border-transparent text-white/40 hover:text-white/70"
+              : "border-transparent text-white/70 hover:text-white"
           }`}
         >
-          Schedule
+          View Speakers
         </button>
       </div>
 
