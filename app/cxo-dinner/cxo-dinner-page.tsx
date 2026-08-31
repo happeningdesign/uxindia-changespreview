@@ -41,13 +41,13 @@ const GCAL_URL = `https://calendar.google.com/calendar/render?action=TEMPLATE&te
 )}`;
 
 // Placeholder gallery images from past UXINDIA / Happening gatherings.
-// Swap these for real CXO dinner / past meet photography when available.
 const GALLERY_IMAGES = [
-  "/images/carousel/home/Carousel-12.webp",
-  "/images/carousel/home/Carousel-08.webp",
-  "/images/carousel/home/Carousel-01.webp",
-  "/images/carousel/home/Carousel-09.webp",
-  "/images/carousel/home/Carousel-05.webp",
+  "/images/cxo-dinner/imgcx1.png",
+  "/images/cxo-dinner/imgcx2.png",
+  "/images/cxo-dinner/imgcx3.png",
+  "/images/cxo-dinner/Falak-restaurant-Bhartiya-City.png",
+  "/images/cxo-dinner/Falak-speciality-restaurant-image-4.jpg",
+  "/images/cxo-dinner/Falak-speciality-restaurant-image-5.png",
 ];
 
 const HOSTS = [
@@ -475,8 +475,8 @@ export default function CxoDinnerPage() {
 
             {/* Photo gallery — landscape bento */}
             <AnimatedSection delay={150}>
-              <div className="grid grid-cols-3 gap-3">
-                <div className="col-span-2 relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10">
+              <div className="grid grid-cols-4 gap-3">
+                <div className="col-span-3 relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10">
                   <Image
                     src={GALLERY_IMAGES[0]}
                     alt="Moments from a past UXINDIA gathering"
